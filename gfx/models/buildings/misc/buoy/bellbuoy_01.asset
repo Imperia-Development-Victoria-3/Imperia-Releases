@@ -1,9 +1,7 @@
 pdxmesh = {
 	name = "bellbuoy_01_mesh"
 	file = "bellbuoy_01.mesh"
-
 	scale = 0.7
-
 	meshsettings = {
 		name = "|bellbuoy_01|LOD_0|bellbuoy_01|bellbuoy_01Shape"
 		index = 0
