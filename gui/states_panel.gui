@@ -2382,6 +2382,19 @@ types state_panel_types
 							blockoverride "chart_button_button_position" {
 								position = { 0 0 }
 							}
+					
+							empty_state = {
+								blockoverride "visible" {
+									visible = "[IsDataModelEmpty(State.AccessPopTypes)]"
+								}
+								blockoverride "text" {
+									text = "NO_POP_TYPES"
+								}
+								blockoverride "size" {
+									minimumsize = { 125 -1 }
+									maximumsize = { 125 -1 }
+								}
+							}
 						}
 						state_ig_piechart = {
 							blockoverride "title" {}
@@ -2395,6 +2408,19 @@ types state_panel_types
 							}
 							blockoverride "chart_button_button_position" {
 								position = { 0 0 }
+							}
+
+							empty_state = {
+								blockoverride "visible" {
+									visible = "[IsDataModelEmpty(State.AccessPopInterestGroups)]"
+								}
+								blockoverride "text" {
+									text = "NO_INTEREST_GROUPS"
+								}
+								blockoverride "size" {
+									minimumsize = { 125 -1 }
+									maximumsize = { 125 -1 }
+								}
 							}
 						}
 					}
@@ -2414,7 +2440,7 @@ types state_panel_types
 						enabled = "[GreaterThan_int32( StatesPanel.AccessState.GetNumConstructableUrbanBuildings,'(int32)0')]"
 						size = { 220 45 }
 						tooltip = "BUILD_URBAN_BUILDING"
-						onclick = "[StatesPanel.ToggleBuildUrbanBuildingsMenu(PdxGuiWidget.Self)]"
+						onclick = "[StatesPanel.ToggleBuildUrbanBuildingsMenu(PdxGuiWidget.AccessSelf)]"
 						blockoverride "icon_size" {
 							size = { 45 100% }
 						}
