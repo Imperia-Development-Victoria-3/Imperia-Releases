@@ -98,7 +98,9 @@
 		}
 	}
 	ai = {
-		check_acceptance_for_will_break = yes
+		will_break = {
+			always = no
+		}
 		will_propose = {
 			always = no
 		}
@@ -328,7 +330,7 @@
 		}
 
 		propose_break_score = {
-			value = 10
+			value = 5
 		}
 		
 		use_obligation_chance = {
@@ -453,5 +455,13 @@ break_guarantee = {
 				type = ask_for_guarantee 
 			}
 		}		
+	}
+	ai = {
+		will_propose = {
+			always = no
+		}
+		will_break = {
+			always = no
+		}
 	}
 }
