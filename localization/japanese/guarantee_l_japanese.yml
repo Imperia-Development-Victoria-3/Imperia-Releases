@@ -1,4 +1,4 @@
-﻿l_japanese:
+l_japanese:
   ask_for_guarantee: "$concept_guarantee$"
   ask_for_guarantee_desc: "#header $ask_for_guarantee$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [Concept('concept_guarantee', '$concept_guarantee$')] of Independence on the requesting [Concept('concept_country', '$concept_country$')]."
   concept_guarantee: "Guarantee"
@@ -94,3 +94,9 @@
   break_guarantee_action_notification_name: "[Concept('concept_guarantee', '$concept_guarantee$')] of independence was removed!"
   break_guarantee_action_notification_desc: "[INITIATOR_COUNTRY.GetName] removed their [Concept('concept_guarantee', '$concept_guarantee$')] from us."
   break_guarantee_action_notification_effects_desc: "$break_guarantee_desc$"
+
+  guarantee_another_country_action_notification_third_party_name: "A [Concept('concept_guarantee', '$concept_guaranteed$')] has been made."
+  guarantee_another_country_action_notification_third_party_desc: "[INITIATOR_COUNTRY.GetName] [Concept('concept_guarantee', '$concept_guaranteed$')] [TARGET_COUNTRY.GetName]."
+  break_guarantee_action_notification_third_party_name: "[Concept('concept_guarantee', '$concept_guarantee$')] of independence was removed!"
+  break_guarantee_action_notification_third_party_desc: "[TARGET_COUNTRY.GetName] removed their [Concept('concept_guarantee', '$concept_guarantee$')] from [INITIATOR_COUNTRY.GetName]."
+  
