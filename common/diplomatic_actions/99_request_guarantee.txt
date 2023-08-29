@@ -394,7 +394,8 @@ guarantee_another_country = {
 					who = root
 					type = ask_for_guarantee
 				}		
-			}					
+			}
+			NOT = { is_country_type = decentralized }     				
 		}		
 		has_diplomatic_relevance = scope:target_country			
 		is_revolutionary = no
