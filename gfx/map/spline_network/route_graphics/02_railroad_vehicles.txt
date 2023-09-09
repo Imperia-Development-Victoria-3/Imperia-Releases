@@ -1,4 +1,4 @@
-﻿passanger_train = {
+﻿passenger_train = {
 	valid_spline_styles = { "railroad" }
 
 	speed = 0.6
@@ -8,7 +8,7 @@
 	max_path_length = 5
 
 	route_entities = {
-		locomotive_1 = {
+		steam_locomotive_01 = {
 			entity = "european_train_locomotive_01_entity"
 			position = 0
 			
@@ -16,9 +16,18 @@
 			
 			possible = {
 				scope:state = {
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					market = {
+						mg:transportation = {
+							market_goods_sell_orders > 20
+						}
+					}
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -28,7 +37,7 @@
 			}
 		}
 		
-		locomotive_1_some_variation = {
+		steam_locomotive_02 = {
 			entity = "european_train_locomotive_02_entity"
 			position = 0
 			
@@ -36,9 +45,18 @@
 			
 			possible = {
 				scope:state = {
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					market = {
+						mg:transportation = {
+							market_goods_sell_orders > 20
+						}
+					}
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -48,7 +66,7 @@
 			}
 		}
 		
-		locomotive_1_some_variation = {
+		steam_locomotive_03 = {
 			entity = "european_train_locomotive_03_entity"
 			position = 0
 			
@@ -56,9 +74,18 @@
 			
 			possible = {
 				scope:state = {
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					market = {
+						mg:transportation = {
+							market_goods_sell_orders > 20
+						}
+					}
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -68,7 +95,7 @@
 			}
 		}
 		
-		locomotive_1_some_variation = {
+		steam_locomotive_04 = {
 			entity = "european_train_locomotive_04_entity"
 			position = 0
 			
@@ -76,9 +103,18 @@
 			
 			possible = {
 				scope:state = {
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					market = {
+						mg:transportation = {
+							market_goods_sell_orders > 20
+						}
+					}
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -88,7 +124,7 @@
 			}
 		}
 
-		locomotive_1_some_variation = {
+		steam_locomotive_05 = {
 			entity = "european_train_locomotive_05_entity"
 			position = 0
 			
@@ -96,9 +132,18 @@
 			
 			possible = {
 				scope:state = {
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					market = {
+						mg:transportation = {
+							market_goods_sell_orders > 20
+						}
+					}
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -108,7 +153,7 @@
 			}
 		}
 
-		locomotive_2 = {
+		electric_locomotive_01 = {
 			entity = "train_electric_01_entity"
 			position = 0
 			
@@ -116,7 +161,11 @@
 			
 			possible = {
 				scope:state = {
-					has_building = building_railway
+					market = {
+						mg:transportation = {
+							market_goods_sell_orders > 20
+						}
+					}
 					any_scope_building = {
 						has_active_production_method = pm_electric_trains
 					}
@@ -128,15 +177,19 @@
 			}
 		}
 
-		locomotive_3 = {
+		diesel_locomotive_01 = {
 			entity = "train_diesel_01_entity"
 			position = 0
 			
-			entity_length = 1.2.1
+			entity_length = 1.21
 			
 			possible = {
 				scope:state = {
-					has_building = building_railway
+					market = {
+						mg:transportation = {
+							market_goods_sell_orders > 20
+						}
+					}
 					any_scope_building = {
 						has_active_production_method = pm_diesel_trains
 					}
@@ -175,7 +228,7 @@
 					}
 				}
 				divide = 1000
-				add = 2
+				add = 1
 				max = 6
 			}
 		}
@@ -204,7 +257,7 @@
 					}
 				}
 				divide = 1000
-				add = 2
+				add = 1
 				max = 6
 			}
 		}
@@ -233,7 +286,7 @@
 					}
 				}
 				divide = 1000
-				add = 2
+				add = 1
 				max = 6
 			}
 		}
@@ -258,7 +311,7 @@ mining_train = {
 	max_path_length = 5
 
 	route_entities = {
-		locomotive_steam_01 = {
+		steam_locomotive_01 = {
 			entity = "european_train_locomotive_01_entity"
 			position = 0
 			
@@ -272,9 +325,13 @@ mining_train = {
 						has_building = building_steel_mills
 						has_building = building_sulfur_mine
 					}
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -284,7 +341,7 @@ mining_train = {
 			}
 		}
 		
-		locomotive_steam_02 = {
+		steam_locomotive_02 = {
 			entity = "european_train_locomotive_02_entity"
 			position = 0
 			
@@ -298,9 +355,13 @@ mining_train = {
 						has_building = building_steel_mills
 						has_building = building_sulfur_mine
 					}
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -310,7 +371,7 @@ mining_train = {
 			}
 		}
 		
-		locomotive_steam_03 = {
+		steam_locomotive_03 = {
 			entity = "european_train_locomotive_03_entity"
 			position = 0
 			
@@ -324,9 +385,13 @@ mining_train = {
 						has_building = building_steel_mills
 						has_building = building_sulfur_mine
 					}
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -336,7 +401,7 @@ mining_train = {
 			}
 		}
 		
-		locomotive_steam_04 = {
+		steam_locomotive_04 = {
 			entity = "european_train_locomotive_04_entity"
 			position = 0
 			
@@ -350,9 +415,13 @@ mining_train = {
 						has_building = building_steel_mills
 						has_building = building_sulfur_mine
 					}
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -362,7 +431,7 @@ mining_train = {
 			}
 		}
 
-		locomotive_steam_05 = {
+		steam_locomotive_05 = {
 			entity = "european_train_locomotive_05_entity"
 			position = 0
 			
@@ -376,9 +445,13 @@ mining_train = {
 						has_building = building_steel_mills
 						has_building = building_sulfur_mine
 					}
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -388,7 +461,7 @@ mining_train = {
 			}
 		}
 
-		locomotive_electric = {
+		electric_locomotive_01 = {
 			entity = "train_electric_01_entity"
 			position = 0
 			
@@ -402,7 +475,6 @@ mining_train = {
 						has_building = building_steel_mills
 						has_building = building_sulfur_mine
 					}
-					has_building = building_railway
 					any_scope_building = {
 						has_active_production_method = pm_electric_trains
 					}
@@ -414,11 +486,11 @@ mining_train = {
 			}
 		}
 
-		locomotive_diesel = {
+		diesel_locomotive_01 = {
 			entity = "train_diesel_01_entity"
 			position = 0
 			
-			entity_length = 1.2
+			entity_length = 1.21
 			
 			possible = {
 				scope:state = {
@@ -428,7 +500,6 @@ mining_train = {
 						has_building = building_steel_mills
 						has_building = building_sulfur_mine
 					}
-					has_building = building_railway
 					any_scope_building = {
 						has_active_production_method = pm_diesel_trains
 					}
@@ -451,11 +522,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_coal_mine
-					market = {
-						mg:coal = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -482,11 +548,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_coal_mine
-					market = {
-						mg:coal = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -513,11 +574,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_coal_mine
-					market = {
-						mg:coal = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -547,11 +603,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_iron_mine
-					market = {
-						mg:iron = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -578,11 +629,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_iron_mine
-					market = {
-						mg:iron = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -609,11 +655,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_iron_mine
-					market = {
-						mg:iron = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -643,12 +684,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_steel_mills
-					
-					market = {
-						mg:steel = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -675,12 +710,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_steel_mills
-					
-					market = {
-						mg:steel = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -707,12 +736,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_steel_mills
-					
-					market = {
-						mg:steel = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -739,12 +762,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_steel_mills
-					
-					market = {
-						mg:steel = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -774,11 +791,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_sulfur_mine
-					market = {
-							mg:sulfur = {
-								market_goods_sell_orders > 50
-							}
-					}
 				}
 			}
 			
@@ -805,11 +817,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_sulfur_mine
-					market = {
-							mg:sulfur = {
-								market_goods_sell_orders > 50
-							}
-					}
 				}
 			}
 			
@@ -836,11 +843,6 @@ mining_train = {
 			possible = {
 				scope:state = {
 					has_building = building_sulfur_mine
-					market = {
-							mg:sulfur = {
-								market_goods_sell_orders > 50
-							}
-					}
 				}
 			}
 			
@@ -881,7 +883,7 @@ forestry_train = {
 	max_path_length = 5
 
 	route_entities = {
-		locomotive_1 = {
+		steam_locomotive = {
 			entity = "european_train_locomotive_01_entity"
 			position = 0
 			
@@ -890,10 +892,14 @@ forestry_train = {
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
-					}
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
+					}	
 				}
 			}
 			
@@ -902,7 +908,7 @@ forestry_train = {
 			}
 		}
 		
-		locomotive_1_some_variation = {
+		steam_locomotive_02 = {
 			entity = "european_train_locomotive_02_entity"
 			position = 0
 			
@@ -911,9 +917,13 @@ forestry_train = {
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -923,7 +933,7 @@ forestry_train = {
 			}
 		}
 		
-		locomotive_1_some_variation = {
+		steam_locomotive_03 = {
 			entity = "european_train_locomotive_03_entity"
 			position = 0
 			
@@ -932,9 +942,13 @@ forestry_train = {
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -944,7 +958,7 @@ forestry_train = {
 			}
 		}
 		
-		locomotive_1_some_variation = {
+		steam_locomotive_04 = {
 			entity = "european_train_locomotive_04_entity"
 			position = 0
 			
@@ -953,9 +967,13 @@ forestry_train = {
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -965,7 +983,7 @@ forestry_train = {
 			}
 		}
 
-		locomotive_1_some_variation = {
+		steam_locomotive_05 = {
 			entity = "european_train_locomotive_05_entity"
 			position = 0
 			
@@ -974,9 +992,13 @@ forestry_train = {
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					has_building = building_railway
-					any_scope_building = {
-						has_active_production_method = pm_steam_trains
+					NOR = {
+						any_scope_building = {
+							has_active_production_method = pm_electric_trains
+						}
+						any_scope_building = {
+							has_active_production_method = pm_diesel_trains
+						}
 					}
 				}
 			}
@@ -986,7 +1008,7 @@ forestry_train = {
 			}
 		}
 
-		locomotive_2 = {
+		electric_locomotive_01 = {
 			entity = "train_electric_01_entity"
 			position = 0
 			
@@ -995,7 +1017,6 @@ forestry_train = {
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					has_building = building_railway
 					any_scope_building = {
 						has_active_production_method = pm_electric_trains
 					}
@@ -1007,7 +1028,7 @@ forestry_train = {
 			}
 		}
 
-		locomotive_3 = {
+		diesel_locomotive_01 = {
 			entity = "train_diesel_01_entity"
 			position = 0
 			
@@ -1016,7 +1037,6 @@ forestry_train = {
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					has_building = building_railway
 					any_scope_building = {
 						has_active_production_method = pm_diesel_trains
 					}
@@ -1077,12 +1097,6 @@ forestry_train = {
 					any_scope_building = {
 						has_active_production_method = pm_no_hardwood
 					}
-
-					market = {
-						mg:wood = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -1112,12 +1126,6 @@ forestry_train = {
 					any_scope_building = {
 						has_active_production_method = pm_no_hardwood
 					}
-
-					market = {
-						mg:wood = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -1146,12 +1154,6 @@ forestry_train = {
 					has_building = building_logging_camp
 					any_scope_building = {
 						has_active_production_method = pm_no_hardwood
-					}
-
-					market = {
-						mg:wood = {
-							market_goods_sell_orders > 100
-						}
 					}
 				}
 			}
@@ -1185,12 +1187,6 @@ forestry_train = {
 					any_scope_building = {
 						has_active_production_method = pm_hardwood
 					}
-
-					market = {
-						mg:hardwood = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -1219,12 +1215,6 @@ forestry_train = {
 					has_building = building_logging_camp
 					any_scope_building = {
 						has_active_production_method = pm_hardwood
-					}
-
-					market = {
-						mg:hardwood = {
-							market_goods_sell_orders > 100
-						}
 					}
 				}
 			}
@@ -1255,12 +1245,6 @@ forestry_train = {
 					any_scope_building = {
 						has_active_production_method = pm_hardwood
 					}
-
-					market = {
-						mg:hardwood = {
-							market_goods_sell_orders > 100
-						}
-					}
 				}
 			}
 			
@@ -1289,12 +1273,6 @@ forestry_train = {
 					has_building = building_logging_camp
 					any_scope_building = {
 						has_active_production_method = pm_hardwood
-					}
-
-					market = {
-						mg:hardwood = {
-							market_goods_sell_orders > 100
-						}
 					}
 				}
 			}
