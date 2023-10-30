@@ -51,10 +51,8 @@
                     african_diaspora_pop_clothes_trigger = yes
                     AND = {
                         native_american_clothes_pop_trigger = yes
-                        AND = {
-                            scope:pop ?= {
-                                NOT = { culture = cu:inuit }
-                            }
+                        scope:pop ?= {
+                        	NOT = { culture = cu:inuit }
                         }
                     }
                 }
@@ -316,4 +314,34 @@
 			}
 		}
 	}
+    # VTM
+    vtm_teddy_shoulders = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = epaulettes
+                template = no_epaulette
+                range = { 0 1 } # For the randomness to work correctly
+           }  
+        }
+        weight = {
+            base = 0
+            modifier = {
+                add = 100001
+                scope:character ?= {
+                    has_template = usa_roosevelt_character_template
+                    OR = {
+                        has_role = general
+                        has_role = admiral
+                        AND = {
+                            is_ruler = yes
+                            owner = {
+                                is_at_war = yes
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

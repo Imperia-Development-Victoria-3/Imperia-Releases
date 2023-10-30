@@ -54,54 +54,6 @@ state_trait_sicilian_sulfur_mines = {
 	}
 }
 
-state_trait_rhine_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 20
-	}
-}
-
-state_trait_elbe_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 15
-	}
-}
-
-state_trait_oder_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 15
-	}
-}
-
-state_trait_rhone_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 15
-	}
-}
-
-state_trait_loire_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 15
-	}
-}
-
-state_trait_seine_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 15
-	}
-}
-
 state_trait_bremerhaven = {
 	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
 	
@@ -125,7 +77,7 @@ state_trait_alps_mountains = {
     icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
 		
 	modifier = {
-		state_construction_mult = -0.15
+		#state_construction_mult = -0.15
 		state_infrastructure_mult = -0.15
 	}
 }
@@ -135,13 +87,5 @@ state_trait_basque_iron_ore = {
 	
 	modifier = {
 		building_iron_mine_throughput_add = 0.2
-	}
-}
-
-state_trait_po_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 15
 	}
 }

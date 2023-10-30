@@ -1,0 +1,104 @@
+types doodlez_military_formation_panel_types
+{
+	type vtm_military_formation_unit_group_very_small = container { # edit of military_formation_unit_group_simple
+		datacontext = "[MilitaryFormationUnitEntry.GetUnitType]"
+		#minimumsize = { 90 110 }
+	
+		flowcontainer = {
+			direction = vertical
+			#size = { 70 90 }
+			minimumsize = { 80 100 }
+			margin_top = 7
+			margin_bottom = 5
+			spacing = 5
+	
+			background = {
+				using = entry_bg_simple
+			}
+	
+			background = {
+				using = fade_top_entry_header_colored
+				color = "[MilitaryFormationUnitEntry.GetUnitType.GetGroup.GetUIColor]"
+				alpha = 0.15
+			}
+	
+			widget = {
+				size = { 50 50 }
+				parentanchor = hcenter
+	
+				tooltipwidget = {
+					FancyTooltip_CombatUnitType = {}
+				}
+	
+				background = {
+					texture = "[CombatUnitType.GetTextureForCulture( MilitaryFormation.GetPrimaryCultureForGroup( MilitaryFormationUnitEntry.GetUnitType.GetGroup.Self ) )]"
+	
+					modify_texture = {
+						using = simple_frame_mask
+					}
+				}
+	
+				icon = {
+					parentanchor = hcenter
+					using = simple_frame
+					size = { 100% 100% }
+				}
+			}
+	
+			textbox = {
+				raw_text = "[CombatUnitType.GetName]"
+				parentanchor = hcenter
+				#autoresize = yes
+				size = { 65 20 }
+				fontsize = 14
+				#minimumsize = { 50 -1 }
+				#maximumsize = { 50 -1 }
+				elide = right
+				align = nobaseline|hcenter
+			}
+	
+			textbox = {
+				visible = "[MilitaryFormation.IsArmy]"
+				parentanchor = hcenter
+				size = { 65 20 }
+				#autoresize = yes
+				align = nobaseline|hcenter
+				#using = fontsize_medium
+				fontsize = 14
+				max_width = 65
+				elide = right
+				text = "MILITARY_FORMATION_NUMBER_OF_BATTALIONS"
+				tooltip = "UNIT_TYPE_REGULAR_BATTALIONS_TOOLTIP_FOR_GUI"
+			}
+	
+			textbox = {
+				visible = "[MilitaryFormation.IsArmy]"
+				parentanchor = hcenter
+				size = { 65 20 }
+				#autoresize = yes
+				align = nobaseline|hcenter
+				#using = fontsize_medium
+				fontsize = 14
+				max_width = 65
+				elide = right
+				text = "MILITARY_FORMATION_NUMBER_OF_CONSCRIPTS" #todo jons
+				tooltip = "UNIT_TYPE_CONSCRIPT_BATTALIONS_TOOLTIP_FOR_GUI" #todo jons
+			}
+	
+			textbox = {
+				visible = "[MilitaryFormation.IsFleet]"
+				parentanchor = hcenter
+				size = { 65 20 }
+				#autoresize = yes
+				align = nobaseline|hcenter
+				#using = fontsize_medium
+				fontsize = 14
+				max_width = 65
+				elide = right
+				text = "MILITARY_FORMATION_NUMBER_OF_FLOTILLAS"
+				tooltip = "UNIT_TYPE_FLOTILLAS_TOOLTIP_FOR_GUI_ON_MILITARY_PANEL"
+			}
+	
+		}
+	}
+}

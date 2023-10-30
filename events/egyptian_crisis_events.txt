@@ -52,6 +52,7 @@ egyptian_crisis_events.1 = {
 	option = {
 		name = egyptian_crisis_events.1.a
 		# country_influence_mult
+		default_option = yes
 		add_modifier = {
 			name = working_with_the_great_powers
 			months = long_modifier_time
@@ -94,11 +95,15 @@ egyptian_crisis_events.1 = {
 		c:EGY = {
 			trigger_event = { id = egyptian_crisis_events.2 }
 		}
+
+		ai_chance = {
+			base = 3
+		}
 	}
 
     option = {
 		name = egyptian_crisis_events.1.b
-        default_option = yes
+        #default_option = yes
         every_country = {
         	limit = {
         		country_rank = rank_value:great_power
@@ -117,6 +122,10 @@ egyptian_crisis_events.1 = {
         c:EGY = {
         	trigger_event = { id = egyptian_crisis_events.2 }
         }
+
+		ai_chance = {
+			base = 1
+		}
 	}
 }
 
@@ -188,6 +197,28 @@ egyptian_crisis_events.4 = {
         default_option = yes
 
         add_declared_interest = region_arabic
+		add_declared_interest = region_anatolia
+
+		hidden_effect = {
+			random_list = {
+				2 = {
+					set_secret_goal = {
+						country = c:TUR
+						secret_goal = protect
+					}
+				}
+				1 = {}
+			}
+			random_list = {
+				1 = {
+					set_secret_goal = {
+						country = c:EGY
+						secret_goal = antagonize
+					}				
+				}
+				2 = {}
+			}			
+		}
 	}
 
 	option = {

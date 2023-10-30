@@ -1,61 +1,58 @@
 ﻿france_annex_savoy = {
 	is_shown = {
-		has_dlc_feature = voice_of_the_people_content
-		exists = c:FRA
-		c:FRA = ROOT
-		NOT = { has_global_variable = fra_annexed_savoy }
-		is_subject = no
-		NOT = { owns_entire_state_region = STATE_SAVOY }
-		any_country = {
-			NOT = { THIS = ROOT }
-			any_scope_state = {
-				state_region = s:STATE_SAVOY
-				is_split_state = no
-				is_capital = no
-			}
-			is_player = no
-		}
+		always = no
+		# has_dlc_feature = voice_of_the_people_content
+		# exists = c:FRA
+		# c:FRA = ROOT
+		# NOT = { has_global_variable = fra_annexed_savoy }
+		# is_subject = no
+		# NOT = { owns_entire_state_region = STATE_SAVOY }
+		# any_country = {
+		# 	NOT = { THIS = ROOT }
+		# 	any_scope_state = {
+		# 		state_region = s:STATE_SAVOY
+		# 		is_split_state = no
+		# 		is_capital = no
+		# 	}
+		# 	is_player = no
+		# }
 	}
 
 	possible = {
-		has_technology_researched = nationalism
-		any_country = {
-			custom_tooltip = {
-				text = at_peace_nocontext_tt
-				is_at_war = no
-			}
-			any_scope_state = {
-				state_region = s:STATE_SAVOY
-				is_split_state = no
-				is_capital = no
-			}
-			custom_tooltip = {
-				text = relations_amicable_nocontext_tt
-				relations:root >= relations_threshold:amicable
-			}
-			is_revolutionary = no
-			OR = {
-				is_subject = no
-				is_subject_of = ROOT
-			}
-			trigger_if = {
-				limit = {
-					is_subject = no
-				}
-				owes_obligation_to = ROOT
-			}
-		}
+		always = no # moved to scripted buttons
+		# has_technology_researched = nationalism
+		# any_country = {
+		# 	custom_tooltip = {
+		# 		text = at_peace_nocontext_tt
+		# 		is_at_war = no
+		# 	}
+		# 	any_scope_state = {
+		# 		state_region = s:STATE_SAVOY
+		# 		is_split_state = no
+		# 		is_capital = no
+		# 	}
+		# 	custom_tooltip = {
+		# 		text = relations_amicable_nocontext_tt
+		# 		relations:root >= relations_threshold:amicable
+		# 	}
+		# 	is_revolutionary = no
+		# 	OR = {
+		# 		is_subject = no
+		# 		is_subject_of = ROOT
+		# 	}
+		# 	trigger_if = {
+		# 		limit = {
+		# 			is_subject = no
+		# 		}
+		# 		owes_obligation_to = ROOT
+		# 	}
+		# }
 	}
 
 	when_taken = {
 		set_global_variable = fra_annexed_savoy
 		custom_tooltip = obligation_for_savoy_tt
 		trigger_event = { id = natural_borders.3 popup = yes }
-		show_as_tooltip = {
-			s:STATE_SAVOY = {
-				remove_homeland = north_italian
-			}
-		}
 	}
 
 	ai_chance = {
@@ -63,27 +60,33 @@
 	}
 }
 
+
+
+
+#### TODO: turn this into a Risorgimento scripted button for Sardinia
 sell_savoy = {
 	is_shown = {
-		exists = c:FRA
-		NOT = { has_global_variable = fra_annexed_savoy }
-		any_scope_state = {
-			state_region = s:STATE_SAVOY
-			is_split_state = no
-			is_capital = no
-		}
-		is_subject = no
+		always = no
+		#exists = c:FRA
+		#NOT = { has_global_variable = fra_annexed_savoy }
+		#any_scope_state = {
+		#	state_region = s:STATE_SAVOY
+		#	is_split_state = no
+		#	is_capital = no
+		#}
+		#is_subject = no
 	}
 
 	possible = {
-		has_technology_researched = nationalism
-		c:FRA = {
-			is_at_war = no
-			owns_entire_state_region = STATE_RHONE
-			is_subject = no
-			NOT = { owes_obligation_to = ROOT }
-			relations:root >= relations_threshold:cordial
-		}
+		always = no
+		#has_technology_researched = nationalism
+		#c:FRA = {
+		#	is_at_war = no
+		#	owns_entire_state_region = STATE_RHONE
+		#	is_subject = no
+		#	NOT = { owes_obligation_to = ROOT }
+		#	relations:root >= relations_threshold:cordial
+		#}
 	}
 
 	when_taken = {
@@ -117,11 +120,6 @@ sell_savoy = {
 			}
 		}
 		c:FRA = { trigger_event = { id = natural_borders.3 popup = yes } }
-		show_as_tooltip = {
-			s:STATE_SAVOY = {
-				remove_homeland = north_italian
-			}
-		}
 	}
 
 	ai_chance = {

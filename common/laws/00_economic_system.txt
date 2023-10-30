@@ -27,7 +27,7 @@ law_traditionalism = {
 		state_tax_capacity_mult = -0.25
 		country_private_construction_allocation_mult = 0.25
 
-		state_market_access_price_impact = -0.15
+		#state_market_access_price_impact = -0.15
 		
 		country_subsidies_bg_infrastructure = yes
 		country_subsidies_bg_trade = yes
@@ -64,6 +64,24 @@ law_traditionalism = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -145,28 +163,28 @@ law_interventionism = {
 		is_subject_of = scope:initiator	
 	} 
 
-	pop_support = {
-		value = 0
-		add = {
-			desc = "POP_CAPITALISTS"			
-			if = {
-				limit = {
-					owner = {
-						OR = { 
-							has_law = law_type:law_agrarianism 
-							has_law = law_type:law_traditionalism 
-						}
-					}
-					is_pop_type = capitalists
-				}
-				value = 0.33
-			}
-		}
-	}
 
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -276,6 +294,24 @@ law_agrarianism = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -414,6 +450,24 @@ law_industry_banned = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -503,6 +557,24 @@ law_laissez_faire = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -587,6 +659,24 @@ law_cooperative_ownership = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -662,20 +752,6 @@ law_command_economy = {
 			}
 		}
 	}
-
-	pop_support = {
-		value = 0
-		add = {
-			desc = "POP_BUREAUCRATS"			
-			if = {
-				limit = {
-					is_pop_type = bureaucrats
-				}
-				value = 0.2
-			}
-		}
-	}
-
 	can_impose = { 
 		is_subject_of = scope:initiator	
 	} 
@@ -686,8 +762,10 @@ law_command_economy = {
 			AND = {
 				has_law = law_type:law_council_republic
 				ruler ?= {
-					has_ideology = ideology:ideology_vanguardist
-					has_ideology = ideology:ideology_communist
+					OR = {
+						has_ideology = ideology:ideology_vanguardist
+						has_ideology = ideology:ideology_communist
+					}
 				}			
 			}
 		}
@@ -696,6 +774,24 @@ law_command_economy = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition

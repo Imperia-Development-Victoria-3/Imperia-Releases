@@ -45,8 +45,8 @@ types topbar_components
 
 			flowcontainer = {
 				name = "tutorial_highlight_gdp"
-				minimumsize = { 90 30 }
-				maximumsize = { 90 30 }
+				minimumsize = { 80 30 }
+				maximumsize = { 80 30 }
 				spacing = 2
 				using = GDP_tooltip_with_graph
 				using = tooltip_below
@@ -69,8 +69,8 @@ types topbar_components
 			}
 
 			flowcontainer = {
-				minimumsize = { 90 30 }
-				maximumsize = { 90 30 }
+				minimumsize = { 80 30 }
+				maximumsize = { 80 30 }
 				spacing = 2
 				using = literacy_tooltip_with_graph
 				using = tooltip_below
@@ -91,8 +91,8 @@ types topbar_components
 				}
 			}
 			flowcontainer = {
-				minimumsize = { 90 30 }
-				maximumsize = { 90 30 }
+				minimumsize = { 80 30 }
+				maximumsize = { 80 30 }
 				spacing = 2
 				using = average_standard_of_living_tooltip_with_graph
 				using = tooltip_below
@@ -117,8 +117,8 @@ types topbar_components
 				}
 			}
 			flowcontainer = {
-				minimumsize = { 90 30 }
-				maximumsize = { 90 30 }
+				minimumsize = { 80 30 }
+				maximumsize = { 80 30 }
 				spacing = 2
 				using = population_tooltip_with_graph
 				using = tooltip_below
@@ -139,8 +139,8 @@ types topbar_components
 				}
 			}
 			flowcontainer = {
-				minimumsize = { 90 30 }
-				maximumsize = { 90 30 }
+				minimumsize = { 80 30 }
+				maximumsize = { 80 30 }
 				spacing = 2
 				using = radicals_tooltip_with_graph
 				using = tooltip_below
@@ -162,8 +162,8 @@ types topbar_components
 				}
 			}
 			flowcontainer = {
-				minimumsize = { 90 30 }
-				maximumsize = { 90 30 }
+				minimumsize = { 80 30 }
+				maximumsize = { 80 30 }
 				spacing = 2
 				using = loyalists_tooltip_with_graph
 				using = tooltip_below
@@ -183,6 +183,10 @@ types topbar_components
 					autoresize = yes
 					align = left|nobaseline
 				}
+			}
+			### COLONIES
+			flowcontainer = {
+				using = zz_colonization_colonial_capacity
 			}
 		}
 	}
@@ -567,7 +571,7 @@ types topbar_components
 				visible = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
 				size = { 24 24 }
 				parentanchor = bottom|right
-				position = { -30 -9 }
+				position = { -5 -9 }
 
 				alpha = 0
 

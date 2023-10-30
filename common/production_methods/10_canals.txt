@@ -12,12 +12,14 @@
 			# input goods
 			goods_input_tools_add = 10
 			goods_input_coal_add = 15
+			goods_output_gold_add = 50
+			country_minting_add = 1500
 		}
 
 		level_scaled = {
 			building_employment_clerks_add = 2000
 			building_employment_machinists_add = 2500
-			building_employment_capitalists_add = 500
+			building_employment_bureaucrats_add = 500
 		}
 	}
 }

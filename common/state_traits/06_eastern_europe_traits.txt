@@ -35,41 +35,7 @@ state_trait_caucasus_mountains = {
 	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
 	
 	modifier = {
-		state_construction_mult = -0.2
+		#state_construction_mult = -0.2
 		state_infrastructure_mult = -0.2
-	}
-}
-
-state_trait_drava_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 15
-	}
-}
-
-state_trait_danube_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 20
-	}
-}
-
-state_trait_volga_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 20
-	}
-}
-
-
-
-state_trait_dnieper_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 15
 	}
 }

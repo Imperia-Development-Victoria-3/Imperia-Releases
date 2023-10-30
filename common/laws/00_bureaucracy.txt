@@ -58,6 +58,24 @@
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -132,6 +150,24 @@ law_appointed_bureaucrats = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -168,6 +204,7 @@ law_elected_bureaucrats = {
 	
 	modifier = {
 		country_bureaucracy_investment_cost_factor_mult = -0.15
+		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.1
 	}
 	
 	possible_political_movements = {
@@ -196,6 +233,24 @@ law_elected_bureaucrats = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition

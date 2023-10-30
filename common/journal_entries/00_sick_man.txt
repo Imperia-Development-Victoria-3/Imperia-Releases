@@ -113,7 +113,7 @@ je_sick_man_syria = {
 	}
 
 	transferable = no
-
+	should_be_pinned_by_default = yes
 	weight = 5000
 }
 
@@ -153,7 +153,7 @@ je_sick_man_egypt = {
 	}
 
 	transferable = no
-
+	should_be_pinned_by_default = yes
 	weight = 5000
 }
 
@@ -186,7 +186,7 @@ je_sick_man_economy = {
 	}
 
 	transferable = no
-
+	should_be_pinned_by_default = yes
 	weight = 5000
 }
 
@@ -219,7 +219,6 @@ je_sick_man_education = {
 	}
 
 	goal_add_value = {
-		value = root.literacy_rate
 		add = 0.2
 	}
 
@@ -231,7 +230,7 @@ je_sick_man_education = {
 	}
 
 	transferable = no
-
+	should_be_pinned_by_default = yes
 	weight = 5000
 
 	progressbar = yes
@@ -295,7 +294,7 @@ je_sick_man_separatism = {
 	}
 
 	transferable = no
-
+	should_be_pinned_by_default = yes
 	weight = 5000
 
 	progressbar = yes
@@ -314,9 +313,8 @@ je_sick_man_army = {
 				OR = {
 					building_has_goods_shortage = yes
 					has_active_production_method = pm_no_organization
-					# TO DO: Hook this whole part into Formation composition rather than old barracks PM 
-					# has_active_production_method = pm_no_artillery
-					# has_active_production_method = pm_cannon_artillery
+					#has_active_production_method = pm_no_artillery # wait for 1 5 changes
+					#has_active_production_method = pm_cannon_artillery
 				}
 			}
 		}
@@ -345,7 +343,7 @@ je_sick_man_army = {
 	}
 
 	transferable = no
-
+	should_be_pinned_by_default = yes
 	weight = 5000
 }
 
@@ -371,7 +369,15 @@ je_sick_man_bureaucracy = {
 			name = sick_man_var
 			add = 1
 		}
-		remove_modifier = outmoded_bureaucracy
+		show_as_tooltip = {
+			remove_modifier = outmoded_bureaucracy
+			remove_modifier = millet_system
+		}
+	}
+
+	modifiers_while_active = {
+		outmoded_bureaucracy
+		millet_system
 	}
 
 	on_monthly_pulse = {
@@ -389,7 +395,42 @@ je_sick_man_bureaucracy = {
 	}
 
 	transferable = no
-
+	should_be_pinned_by_default = yes
 	weight = 5000
 }
 
+je_dead_man_walking = {
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	complete = {
+		has_law = law_type:law_multicultural
+		has_law = law_type:law_total_separation
+		bureaucracy >= 0 
+		approaching_bureaucracy_shortage = no
+	}
+
+	on_complete = {
+		trigger_event = {
+			id = dead_man.1
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			150 = 0
+			10 = peoples_springtime.120
+		}
+	}
+
+	on_timeout = {
+		trigger_event = {
+			id = dead_man.3
+		}
+	}
+
+	transferable = yes
+
+	weight = 10000
+	should_be_pinned_by_default = yes
+	timeout = 5475
+}

@@ -92,9 +92,15 @@ conservative_party = {
 			triggered_desc = {
 				desc = party_resistance_party
 				trigger = {
-					exists = c:FRA
-					THIS = c:FRA
-					has_variable = orleanist_restoration_var
+					c:FRA ?= this
+					OR = {
+						has_variable = orleanist_restoration_var
+						py:conservative_party ?= {
+							any_member = {
+								has_ideology = ideology:ideology_orleanist
+							}
+						}
+					}
 				}
 			}
 			triggered_desc = {
@@ -658,6 +664,76 @@ conservative_party = {
 				desc = "from_more_than_three_prior_members"
 			}
 		}
+
+		### FRANCE ###
+		### VTM ###
+		if = { # The traditional party of the Orleanists
+			limit = {
+				OR = {
+					is_powerful = yes
+					owner = {
+						has_law = law_type:law_monarchy
+					}
+				}
+				leader = {
+					has_ideology = ideology:ideology_orleanist
+				}
+			}
+			add = {
+				value = 50
+				desc = "from_traditional_orleanist_party"
+			}
+		}
+
+		if = { # If not explicitly Orleanist but the King is a member of the IG 
+			limit = {
+				owner = {
+					has_law = law_type:law_monarchy
+				}
+				owner.ruler = {
+					interest_group = prev
+					has_ideology = ideology:ideology_orleanist
+				}
+				NOT = {
+					leader = {
+						has_ideology = ideology:ideology_orleanist
+					}
+				}			
+			}
+			add = {
+				value = 5
+				desc = "from_kings_party"
+			}
+		}
+
+		if = { # Weak Monarchists in Republic may fall in line (Party of Order)
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_monarchy }
+					exists = py:conservative_party
+					any_interest_group = {
+						is_member_of_party = owner.py:conservative_party
+						is_powerful = yes
+						leader = {
+							has_ideology = ideology:ideology_orleanist
+						}
+					}
+				}
+				is_powerful = no
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_bonapartist
+						has_ideology = ideology:ideology_legitimist
+					}					
+				}
+			}
+			add = {
+				value = 3
+				desc = "from_weak_monarchists_in_republic"
+			}
+		}
+		### VTM END ###
+
 		if = { # anti-orleanist
 			limit = {
 				leader = {

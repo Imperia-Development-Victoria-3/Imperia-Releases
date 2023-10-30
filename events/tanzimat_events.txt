@@ -445,6 +445,7 @@ tanzimat_events.5 = {
 			has_variable = tanzimat_cooldown 
 		}
 		any_neighbouring_state = {
+			#state_is_in_europe = yes
 			owner = { 
 				OR = { 
 					religion = rel:orthodox
@@ -472,6 +473,7 @@ tanzimat_events.5 = {
 	immediate = {
 		random_neighbouring_state = {
 			limit = {
+				#state_is_in_europe = yes
 				owner = { 
 					OR = { 
 						religion = rel:orthodox
@@ -485,6 +487,7 @@ tanzimat_events.5 = {
 		}
 		random_scope_state = {
 			limit = {
+				#state_is_in_europe = yes
 				is_incorporated = yes
 				any_scope_pop = {
 					religion = rel:sunni
@@ -668,7 +671,7 @@ tanzimat_events.6 = {
 				culture = scope:mob_victim_culture
 			}
 			add_radicals_in_state = {
-				value = large_radicals
+				value = very_large_radicals
 				religion = scope:mob_religion
 			}
 		}
@@ -697,11 +700,11 @@ tanzimat_events.6 = {
 		}
 		scope:mob_state_scope = {
 			add_radicals_in_state = {
-				value = large_radicals
+				value = very_large_radicals
 				culture = scope:mob_victim_culture
 			}
 			add_radicals_in_state = {
-				value = large_radicals
+				value = very_large_radicals
 				religion = scope:mob_religion
 			}
 		}
@@ -729,7 +732,7 @@ tanzimat_events.6 = {
 				culture = scope:mob_victim_culture
 			}
 			add_radicals_in_state = {
-				value = large_radicals
+				value = very_large_radicals
 				religion = scope:mob_religion
 			}
 		}
@@ -834,11 +837,11 @@ tanzimat_events.7 = {
 		}
 		scope:massacre_state_scope = {
 			add_radicals_in_state = {
-				value = large_radicals
+				value = very_large_radicals
 				religion = rel:sunni
 			}
 			add_radicals_in_state = {
-				value = large_radicals
+				value = very_large_radicals
 				religion = scope:massacre_victims
 			}
 		}

@@ -36,13 +36,14 @@ meiji.1 = {
 		}
 		if = {
 			limit = {
-				year < 1852
+				year < 1846
 			}
 			create_character = {
 				# Emperor Ninko
 				first_name = "Ninko"
 				last_name = "Yamato"
 				historical = yes
+				culture = cu:japanese
 				ruler = yes
 				birth_date = 1800.1.1
 				dna = dna_ninko
@@ -56,6 +57,7 @@ meiji.1 = {
 				first_name = "Komei"
 				last_name = Yamato
 				historical = yes
+				culture = cu:japanese
 				heir = yes
 				birth_date = 1831.1.1
 				dna = dna_emperor_komei
@@ -67,13 +69,14 @@ meiji.1 = {
 		}
 		else_if = {
 			limit = {
-				year >= 1852
-				year < 1879
+				year >= 1846
+				year < 1867
 			}
 			create_character = {
 				first_name = "Komei"
 				last_name = "Yamato"
 				historical = yes
+				culture = cu:japanese
 				ruler = yes
 				birth_date = 1831.1.1
 				dna = dna_emperor_komei
@@ -82,29 +85,36 @@ meiji.1 = {
 					reserved # ditto
 				}
 			}
-			create_character = {
-				first_name = "Meiji"
-				last_name = "Yamato"
-				historical = yes
-				heir = yes
-				birth_date = 1852.1.1
-				dna = dna_emperor_meiji
-				interest_group = ig_industrialists
-				traits = {
-					innovative
-					charismatic
+			if = {
+				limit = {
+					year >= 1852
+				}
+				create_character = {
+					first_name = "Meiji"
+					last_name = "Yamato"
+					historical = yes
+					culture = cu:japanese
+					heir = yes
+					birth_date = 1852.1.1
+					dna = dna_emperor_meiji
+					interest_group = ig_industrialists
+					traits = {
+						innovative
+						charismatic
+					}
 				}
 			}
 		}
 		else_if = {
 			limit = {
-				year >= 1879
+				year >= 1867
 				year < 1912
 			}
 			create_character = {
 				first_name = "Meiji"
 				last_name = "Yamato"
 				historical = yes
+				culture = cu:japanese
 				ruler = yes
 				birth_date = 1852.1.1
 				dna = dna_emperor_meiji
@@ -114,26 +124,33 @@ meiji.1 = {
 					charismatic
 				}
 			}
-			create_character = {
-				first_name = "Taisho"
-				last_name = "Yamato"
-				historical = yes
-				heir = yes
-				birth_date = 1879.1.1
-				interest_group = ig_industrialists
-				traits = {
+			if = {
+				limit = {
+					year >= 1879
+				}
+				create_character = {
+					first_name = "Taisho"
+					last_name = "Yamato"
+					historical = yes
+					culture = cu:japanese
+					heir = yes
+					birth_date = 1879.1.1
+					interest_group = ig_industrialists
+					traits = {
+					}
 				}
 			}
 		}
 		else_if = {
 			limit = {
 				year >= 1912
-				year < 1928
+				year < 1926
 			}
 			create_character = {
 				first_name = "Taisho"
 				last_name = "Yamato"
 				historical = yes
+				culture = cu:japanese
 				ruler = yes
 				birth_date = 1879.1.1
 				interest_group = ig_industrialists
@@ -144,6 +161,7 @@ meiji.1 = {
 				first_name = "Showa" # Hirohito
 				last_name = "Yamato"
 				historical = yes
+				culture = cu:japanese
 				heir = yes
 				birth_date = 1901.1.1
 				interest_group = ig_armed_forces
@@ -153,13 +171,14 @@ meiji.1 = {
 		}
 		else_if = {
 			limit = {
-				year >= 1928
+				year >= 1926
 				year < 1989
 			}
 			create_character = {
 				first_name = "Showa" # Hirohito
 				last_name = "Yamato"
 				historical = yes
+				culture = cu:japanese
 				heir = yes
 				birth_date = 1901.1.1
 				interest_group = ig_armed_forces
@@ -232,8 +251,8 @@ meiji.1 = {
 						is_building_type = building_barracks
 						OR = {
 							has_active_production_method = pm_no_organization
-							# has_active_production_method = pm_no_artillery
-							# has_active_production_method = pm_cannon_artillery
+							#has_active_production_method = pm_no_artillery # fix later in 1 5
+							#has_active_production_method = pm_cannon_artillery
 						}
 					}
 				}
@@ -323,8 +342,8 @@ meiji.1 = {
 						is_building_type = building_barracks
 						OR = {
 							has_active_production_method = pm_no_organization
-							# has_active_production_method = pm_no_artillery
-							# has_active_production_method = pm_cannon_artillery
+							#has_active_production_method = pm_no_artillery
+							#has_active_production_method = pm_cannon_artillery
 						}
 					}
 				}
@@ -1524,7 +1543,7 @@ meiji.13 = {
 		}
 		hidden_effect = { 
 			set_strategy = ai_strategy_industrial_expansion
-			set_strategy = ai_strategy_progressive_agenda 
+			set_strategy = ai_strategy_anti_shogunate_agenda
 			set_strategy = ai_strategy_maintain_power_balance
 		}
 		set_variable = { name = japan_forced_to_open_market years = 30 } # affects AI strategy
@@ -1535,7 +1554,9 @@ meiji.13 = {
 		scope:shogunate_ig = {
 			add_modifier = {
 				name = shogun_ig_forced_to_open_market
-				months = very_long_modifier_time
+				months = 361
+				multiplier = 4
+				is_decaying = yes
 			}
 		}
 		scope:shogun_scope = {

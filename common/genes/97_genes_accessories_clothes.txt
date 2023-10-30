@@ -1,7 +1,6 @@
 ﻿special_genes = {
 	accessory_genes = {
 
-
 	#####################################
 	#									#
 	# 			   OUTFITS			    #
@@ -74,10 +73,10 @@
 				female = male
 				boy = male
 				girl = male
-			}	
+			}		
 
 
-	## AFRICAN ##
+			## AFRICAN ##
 
 			african_outfits = {
 				index = 2
@@ -97,7 +96,7 @@
 
 			}
 
-	## ARABIC ##
+			## ARABIC ##
 
 			arabic_outfits = {
 				index = 3
@@ -134,7 +133,7 @@
 
 
 
-	## CHINESE ##
+			## CHINESE ##
 
 			chinese_imperial_outfits = {
 				index = 5
@@ -191,7 +190,7 @@
 			}
 
 
-	## ETHIOPIAN ##
+			## ETHIOPIAN ##
 
 			ethiopian_outfits = {
 				index = 9
@@ -208,7 +207,7 @@
 			}
 
 
-	## EUROPEAN ##
+			## EUROPEAN ##
 
 			european_common_outfits = {
 				index = 10
@@ -249,101 +248,92 @@
 
 
 
-	## INDIAN ##
+			## INDIAN ##
 
-indian_common_outfits = {
-	index = 13
-	male = {
-		1 = male_outfit_indian_common_01
-	}
-	female = {
-		1 = female_outfit_indian_low_01
-		1 = female_outfit_indian_common_01
-	}
-	boy = male
-	girl = female
-}
+			indian_common_outfits = {
+				index = 13
+				male = {
+					1 = male_outfit_indian_common_01
+				}
+				female = {
+					1 = female_outfit_indian_low_01
+					1 = female_outfit_indian_common_01
+				}
+				boy = male
+				girl = female
+			}
+
+			indian_high_outfits = {
+				index = 32
+				male = {
+					1 = male_outfit_indian_common_02
+				}
+				female = {
+					1 = female_outfit_indian_high_01
+				}
+				boy = male
+				girl = female
+			}
 
 
-indian_high_outfits = {
-	index = 32
-	male = {
-		1 = male_outfit_indian_common_02
-	}
-	female = {
-		1 = female_outfit_indian_high_01
-	}
-	boy = male
-	girl = female
-}
+			## JAPANESE ##
 
-
-	## JAPANESE ##
-
-		japanese_imperial_outfits = {
+			japanese_imperial_outfits = {
 				index = 14
 				male = {
 					1 = male_outfit_japanese_imperial_01
-					
 				}
 				female = {
 					1 = female_outfit_japanese_01_high
 				}
 				boy = male
 				girl = female
-		}
+			}
 
-		japanese_common_outfits = {
+			japanese_common_outfits = {
 				index = 15
 				male = {
 					1 = male_outfit_japanese_common_01
-					
 				}
 				female = {
 					1 = female_outfit_japanese_01_mid
-
 				}
 				boy = male
 				girl = female
-		}
+			}
 
 
-		japanese_low_outfits = {
+			japanese_low_outfits = {
 				index = 16
 				male = {
 					1 = male_outfit_japanese_01_low
-					
 				}
 				female = {
 					1 = female_outfit_japanese_01_low	
-					
-
 				}
 				boy = male
 				girl = female
-		}
+			}
 
 
-	## KOREAN ##
+			## KOREAN ##
 
-		korean_imperial_outfits = {
-					index = 17
-					male = {
-						1 = male_outfit_korean_imperial_01
-						
-					}
-					female = {
-						1 = female_outfit_korean_high_01
-					}
-					boy = male
-					girl = female
+			korean_imperial_outfits = {
+				index = 17
+				male = {
+					1 = male_outfit_korean_imperial_01
 				}
+				female = {
+					1 = female_outfit_korean_high_01
+				}
+				boy = male
+				girl = female
+			}
 
-		korean_common_outfits = {
+			korean_common_outfits = {
 				index = 18
 				male = {
 					1 = male_outfit_korean_common_01
-					
 				}
 				female = {
 					1 = female_outfit_korean_common_01
@@ -352,11 +342,10 @@ indian_high_outfits = {
 				girl = female
 			}
 
-		korean_low_outfits = {
+			korean_low_outfits = {
 				index = 19
 				male = {
 					1 = male_outfit_korean_01_low
-					
 				}
 				female = {
 					1 = female_outfit_korean_low_01
@@ -368,7 +357,7 @@ indian_high_outfits = {
 
 
 
-	## NATIVE AMERICAN ##
+			## NATIVE AMERICAN ##
 
 			native_american_outfits = {
 				index = 20
@@ -376,25 +365,21 @@ indian_high_outfits = {
 					1 = empty
 					1 = male_outfit_native_american_01_low
 					1 = male_outfit_native_american_01_mid
-					1 = male_outfit_native_american_01_high
-					
+					1 = male_outfit_native_american_01_high	
 				}
 				female = {
 					1 = female_outfit_native_american_01_low				
 					1 = female_outfit_native_american_01_mid
 					1 = female_outfit_native_american_01_high
-
-
 				}
 				boy = male
 				girl = female
-
 			}
 
 
-	## SIAMESE ##
+			## SIAMESE ##
 
-		siamese_outfits = {
+			siamese_outfits = {
 				index = 21
 				male = {
 					1 = male_outfit_siamese_common_01
@@ -409,25 +394,23 @@ indian_high_outfits = {
 
 			## PEASANTS ##
 
-		peasant_outfits = {
+			peasant_outfits = {
 				index = 22
 				male = {
-					1 = male_outfit_peasant_common_01
-					
+					1 = male_outfit_peasant_common_01			
 				}
 				female = {
-						1 = female_outfit_peasant_common_01
+					1 = female_outfit_peasant_common_01
 				}
 				boy = male
 				girl = female
 			}
 
-
 				
 
-	## CHRISTIAN ##
+			## CHRISTIAN ##
 
-		christian_outfits = {
+			christian_outfits = {
 				index = 23
 				male = {
 					1 = male_outfit_christian_priest_01					
@@ -439,7 +422,7 @@ indian_high_outfits = {
 				girl = female
 			}		
 
-		pope_outfits = {
+			pope_outfits = {
 				index = 24
 				male = {
 					1 = male_outfit_christian_pope_01				
@@ -448,9 +431,9 @@ indian_high_outfits = {
 				}
 				boy = male
 				girl = female
-		}
+			}
 
-		native_american_outfits_north = {
+			native_american_outfits_north = {
 				index = 25
 				male = {
 					1 = male_outfit_parka_01
@@ -460,11 +443,11 @@ indian_high_outfits = {
 				}
 				boy = male
 				girl = female
-		}
+			}
 
 		
 
-		siamese_royal_outfits = {
+			siamese_royal_outfits = {
 				index = 26
 				male = {
 					1 = male_outfit_siamese_royal_01
@@ -477,9 +460,9 @@ indian_high_outfits = {
 				girl = female
 			}
 
-	## SLAVIC ##
+			## SLAVIC ##
 
-		slavic_outfits = {
+			slavic_outfits = {
 				index = 27
 				male = {
 						1 = male_outfit_slavic_01_low
@@ -493,16 +476,15 @@ indian_high_outfits = {
 				}
 				boy = male
 				girl = female
-		}	
+			}	
 
-	## polynesian ##
+			## polynesian ##
 
-		polynesian_outfits = {
+			polynesian_outfits = {
 				index = 28
 				male = {
 					1 = male_outfit_polynesian_01_low
-					1 = male_outfit_polynesian_01_high
-					
+					1 = male_outfit_polynesian_01_high	
 				}
 				female = {
 					1 = female_outfit_polynesian_01_low
@@ -512,9 +494,9 @@ indian_high_outfits = {
 				girl = female
 			}
 
-	## SOUTH AMERICCAN ##
+			## SOUTH AMERICCAN ##
 
-		south_american_outfits = {
+			south_american_outfits = {
 				index = 29
 				male = {
 						1 = male_outfit_south_american_01_low
@@ -527,193 +509,185 @@ indian_high_outfits = {
 				}
 				boy = male
 				girl = female
-		}	
+			}	
 
 
-	## CIRCUMPOLAR ##
+			## CIRCUMPOLAR ##
 
-		circumpolar_outfits = {
-				index = 30
+			circumpolar_outfits = {
+					index = 30
+					male = {
+							1 = male_outfit_circumpolar_01_low
+							1 = male_outfit_circumpolar_01_high										
+					}
+
+					female = {
+							1 = female_outfit_circumpolar_01_low
+							1 = female_outfit_circumpolar_01_high
+					}
+					boy = male
+					girl = female
+			}	
+
+
+			## CENTRAL ASIAN ##
+
+			central_asian_outfits = {
+					index = 31
+					male = {
+							1 = male_outfit_central_asian_01_low
+							1 = male_outfit_central_asian_01_high										
+					}
+
+					female = {
+							1 = female_outfit_central_asian_01_low
+							1 = female_outfit_central_asian_01_high
+					}
+					boy = male
+					girl = female
+			}
+
+			semitic_upper_outfits = {
+				index = 33
 				male = {
-						1 = male_outfit_circumpolar_01_low
-						1 = male_outfit_circumpolar_01_high										
-				}
+					1 = male_civilian_coat_arabic_01
 
+				}
 				female = {
-						1 = female_outfit_circumpolar_01_low
-						1 = female_outfit_circumpolar_01_high
+					1 = female_outfit_european_common_01
 				}
 				boy = male
 				girl = female
-		}	
 
+			}
 
-		## CENTRAL ASIAN ##
-
-		central_asian_outfits = {
-				index = 31
+			peasant_outfits_02 = {
+				index = 34
 				male = {
-						1 = male_outfit_central_asian_01_low
-						1 = male_outfit_central_asian_01_high										
-				}
+					1 = empty
 
+				}
 				female = {
-						1 = female_outfit_central_asian_01_low
-						1 = female_outfit_central_asian_01_high
+					1 = female_outfit_peasant_common_01
+					1 = female_outfit_african_common_01
 				}
 				boy = male
 				girl = female
-		}
+			}
 
-		semitic_upper_outfits = {
-			index = 33
-			male = {
-				1 = male_civilian_coat_arabic_01
-				
-			}
-			female = {
-				1 = female_outfit_european_common_01
-			}
-			boy = male
-			girl = female
+			african_outfits_politician = {
+				index = 35
+				male = {
+					1 = male_outfit_african_common_03
+					1 = male_outfit_african_common_02
+					1 = male_outfit_african_common_01
 
-		}
+				}
+				female = {
+					1 = female_outfit_arabic_low_tier_01
+					1 = female_outfit_african_common_02
+					1 = female_outfit_african_common_03
+				}
+				boy = male
+				girl = female
 
-		peasant_outfits_02 = {
-			index = 34
-			male = {
-				1 = empty
-				
 			}
-			female = {
-				1 = female_outfit_peasant_common_01
-				1 = female_outfit_african_common_01
-			}
-			boy = male
-			girl = female
-		}
-
-		african_outfits_politician = {
-			index = 35
-			male = {
-				1 = male_outfit_african_common_03
-				1 = male_outfit_african_common_02
-				1 = male_outfit_african_common_01
-				 
-			}
-			female = {
-				1 = female_outfit_arabic_low_tier_01
-				1 = female_outfit_african_common_02
-				1 = female_outfit_african_common_03
-			}
-			boy = male
-			girl = female
-
-		}
 
 		
-		european_outfits_agitator = {
-			index = 36
-			male = {
-				1 = male_outfit_european_agitator_01
-			}
-			female = {
-				1 = female_outfit_european_agitator_01
-			}
-			boy = male
-			girl = female
+			european_outfits_agitator = {
+				index = 36
+				male = {
+					1 = male_outfit_european_agitator_01
+				}
+				female = {
+					1 = female_outfit_european_agitator_01
+				}
+				boy = male
+				girl = female
 
-		}
-
-		chinese_outfits_agitator = {
-			index = 37
-			male = {
-				1 = male_outfit_chinese_agitator_01
-			}
-			female = {
-				1 = female_outfit_chinese_agitator_01
 			}
 
-			boy = male
-			girl = female
+			chinese_outfits_agitator = {
+				index = 37
+				male = {
+					1 = male_outfit_chinese_agitator_01
+				}
+				female = {
+					1 = female_outfit_chinese_agitator_01
+				}
 
-		}
+				boy = male
+				girl = female
 
-## HISTORICAL ##
+			}
 
 
-		historical_outfits_judge = {
+
+			## HISTORICAL ##
+
+			historical_outfits_judge = {
 				index = 38
 				male = {
-						1 = male_outfit_historical_judge
-													
+					1 = male_outfit_historical_judge
 				}
-
 				female = {
-						1 = female_outfit_slavic_01_low
-						
+					1 = female_outfit_slavic_01_low
 				}
 				boy = male
 				girl = female
-		}	
+			}	
 
 
 
+			## CHILDREN##
+
+			children_outfit_royal = {
+
+					index = 39
+					male = {
+							1 = male_outfit_children_royal_01
+					}
+
+					female = {
+							1 = female_outfit_children_royal_01
+
+					}
+					boy = male
+					girl = female
+			}	
 
 
-		## CHILDREN##
-
-		children_outfit_royal = {
-
-				index = 39
+			garibaldi_redshirts_outfit = {
+				index = 40
 				male = {
-						1 = male_outfit_children_royal_01
+					1 = male_outfit_south_american_01_camicia_rossa
+				}
+				female = {
+					1 = female_outfit_european_common_01
 				}
 
-				female = {
-						1 = female_outfit_children_royal_01
-						
-				}
 				boy = male
 				girl = female
-		}	
 
-
-
-
-
-
-		garibaldi_redshirts_outfit = {
-			index = 40
-			male = {
-				1 = male_outfit_south_american_01_camicia_rossa
-			}
-			female = {
-				1 = female_outfit_european_common_01
 			}
 
-			boy = male
-			girl = female
+			late_american_soldier_outfit = {
+				index = 41
+				male = {
+					1 = male_outfit_south_american_01_late_american
+				}
+				female = {
+					1 = female_outfit_european_common_01
+				}
 
-		}
+				boy = male
+				girl = female
 
-		late_american_soldier_outfit = {
-			index = 41
-			male = {
-				1 = male_outfit_south_american_01_late_american
 			}
-			female = {
-				1 = female_outfit_european_common_01
-			}
+			
+			## SLAVIC OUTFIT DLC ##
 
-			boy = male
-			girl = female
-
-		}
-
-		## SLAVIC OUTFIT DLC ##
-
-		slavic_outfits_kokoshnik = {
+			slavic_outfits_kokoshnik = {
 				index = 42
 				male = {
 						1 = male_outfit_slavic_01_low
@@ -726,12 +700,11 @@ indian_high_outfits = {
 				}
 				boy = male
 				girl = female
-		}	
+			}	
 
-		## INDIAN OUTFIT DLC ##
+			## INDIAN OUTFIT DLC ##
 
-		female_outfit_indian_diwali = {
-
+			female_outfit_indian_diwali = {
 				index = 43
 				male = {
 						1 = male_outfit_indian_common_02						
@@ -743,14 +716,11 @@ indian_high_outfits = {
 				}
 				boy = male
 				girl = female
-		}	
+			}
 
+			## Slavic OUTFIT DLC ##
 
-
-		## Slavic OUTFIT DLC ##
-
-		female_outfit_midsummer = {
-
+			female_outfit_midsummer = {
 				index = 44
 				male = {
 						1 = male_outfit_slavic_01_low
@@ -763,12 +733,11 @@ indian_high_outfits = {
 				}
 				boy = male
 				girl = female
-		}	
+			}
+			
+			## Pierrot OUTFIT DLC ##
 
-		## Pierrot OUTFIT DLC ##
-
-		male_outfit_european_carnaval_pierrot_01 = {
-
+			male_outfit_european_carnaval_pierrot_01 = {
 				index = 45
 				male = {
 					1 = male_outfit_european_carnaval_pierrot_01
@@ -779,8 +748,19 @@ indian_high_outfits = {
 				}
 				boy = male
 				girl = female
+			}									
+			
+			opb_suit = {
+				index = 46
+				male = {
+					1 = male_clothes_secular_opb_suit
+				}
+				female = {
+					1 = empty	
+				}
+				boy = male
+				girl = female
 			}
-
 		}
 
 
@@ -1122,7 +1102,7 @@ indian_high_outfits = {
 				girl = male
 			}	
 
-	## EUROPEAN ##
+			## EUROPEAN ##
 
 			european_civilian_coats = {
 				index = 2
@@ -1135,12 +1115,7 @@ indian_high_outfits = {
 				}
 				boy = male
 				girl = female
-			}  
-
-		
-
-			
-		
+			}  	
 		}	
 		
 		
@@ -1185,7 +1160,7 @@ indian_high_outfits = {
 				girl = male
 			}	
 
-	## Prussian ##			 
+			## Prussian ##			 
 
 			prussian_epaulettes = {
 				index = 2
@@ -1199,7 +1174,6 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			}	 
-		
 		}
 
 	#####################################
@@ -1238,7 +1212,7 @@ indian_high_outfits = {
 
 
 
-	## Prussian ##
+			## Prussian ##
 
 			prussian_sashes = {
 				index = 2
@@ -1391,7 +1365,6 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			}
-		
 		}
 
 
@@ -1453,7 +1426,6 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			}	
-
 		}
 
 
@@ -1613,7 +1585,7 @@ indian_high_outfits = {
 				girl = male
 			}	 
 
-	## ETHIOPIAN ##
+			## ETHIOPIAN ##
 
 			ethiopian_top_layer= {
 				index = 2
@@ -1628,7 +1600,7 @@ indian_high_outfits = {
 				girl = male
 			} 
 
-	## EUROPEAN ##
+			## EUROPEAN ##
 
 			european_top_layer= {
 				index = 3
@@ -1638,14 +1610,14 @@ indian_high_outfits = {
 				}
 
 				female = {
-	#					1 = female_top_layer_ethiopian_royal_01
+					#1 = female_top_layer_ethiopian_royal_01
 				}
 				boy = male
 				girl = male
 			} 
 
 
-	## INDIAN ##
+			## INDIAN ##
 
 			indian_top_layer = {
 				index = 4
@@ -1662,7 +1634,7 @@ indian_high_outfits = {
 			} 
 
 
-	## NATIVE AMERICAN ##
+			## NATIVE AMERICAN ##
 
 			native_american_top_layer = {
 				index = 5
@@ -1679,7 +1651,7 @@ indian_high_outfits = {
 		
 		
 
-	## JAPANESE ##
+			## JAPANESE ##
 
 			japanese_top_layer = {
 				index = 6
@@ -1692,8 +1664,10 @@ indian_high_outfits = {
 				}
 				boy = male
 				girl = female
-			} 
+			}
+			
 
+			## Nappy 3
 			napoleon_iii_top_layer = {
 				index = 7
 				male = {
@@ -1708,8 +1682,7 @@ indian_high_outfits = {
 			} 		
 		
 
-
-		south_american_bandit_lampiao = {
+			south_american_bandit_lampiao = {
 				index = 8
 				male = {
 						1 = male_top_layer_south_american_bandit_lampiao_01
@@ -1735,8 +1708,6 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			} 	
-
-
 		}
 
 
@@ -1751,7 +1722,7 @@ indian_high_outfits = {
 
 
 
-	## ALL ##		
+			## ALL ##		
 			
 			all_necklaces = {
 				index = 0
@@ -1779,7 +1750,7 @@ indian_high_outfits = {
 				  
 
 
-	## AFRICAN ##
+			## AFRICAN ##
 
 
 			african_necklaces = {
@@ -1797,7 +1768,7 @@ indian_high_outfits = {
 			}
 
 
-	## INDIAN ##
+			## INDIAN ##
 
 
 			indian_necklaces = {
@@ -1816,7 +1787,7 @@ indian_high_outfits = {
 				girl = female
 			}
 
-	## POLYNESIAN ##
+			## POLYNESIAN ##
 
 
 			polynesian_necklaces = {
@@ -1834,7 +1805,7 @@ indian_high_outfits = {
 				girl = female
 			}
 
-	## SOUTH AMERICAN ##
+			## SOUTH AMERICAN ##
 
 
 			south_american_necklaces = {
@@ -1853,7 +1824,7 @@ indian_high_outfits = {
 		
 
 
-	## CHINESE ##
+			## CHINESE ##
 
 
 			chinese_necklaces = {
@@ -1875,7 +1846,7 @@ indian_high_outfits = {
 
 
 
-## HISTORICAL ##
+			## HISTORICAL ##
 
 
 			necklace_louis_delescluze = {
@@ -1910,7 +1881,7 @@ indian_high_outfits = {
 
 
 
-	## ALL ##		
+			## ALL ##		
 			
 			all_aiguillettes = {
 				index = 0
@@ -1936,9 +1907,6 @@ indian_high_outfits = {
 				boy = male
 				girl = male
 			}
-				  
-
-		
 		}
 
 
@@ -1973,7 +1941,7 @@ indian_high_outfits = {
 			}	
 
 
-	## EUROPEAN ##
+			## EUROPEAN ##
 
 
 			european_legwear = {
@@ -2004,7 +1972,7 @@ indian_high_outfits = {
 			}  
 
 
-	## NATIVE AMERICAN ##
+			## NATIVE AMERICAN ##
 
 			native_american_legwear = {
 				index = 4
@@ -2020,7 +1988,7 @@ indian_high_outfits = {
 				girl = female
 			}
 
-	## SLAVIC ##
+			## SLAVIC ##
 
 
 			slavic_legwear = {
@@ -2040,7 +2008,7 @@ indian_high_outfits = {
 
 
 
-	## POLYNESIAN ##
+			## POLYNESIAN ##
 
 
 			polynesian_legwear = {
@@ -2057,7 +2025,7 @@ indian_high_outfits = {
 			}
 		
 
-	## CIRCUMPOLAR ##
+			## CIRCUMPOLAR ##
 
 			circumpolar_legwear = {
 				index = 7
@@ -2074,7 +2042,7 @@ indian_high_outfits = {
 
 	
 
-	## SOUTH AMERICAN ##
+			## SOUTH AMERICAN ##
 
 
 			south_american_legwear = {
@@ -2094,7 +2062,7 @@ indian_high_outfits = {
 
 		
 
-	## JAPANESE ##
+			## JAPANESE ##
 
 
 			japanese_legwear = {
@@ -2151,8 +2119,7 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			}
-
-
+			
 			south_american_bandit_lampiao = {
 				index = 13
 				male = {		
@@ -2166,6 +2133,20 @@ indian_high_outfits = {
 				boy = male
 				girl = female
 			}
+			
+			opb_suit_legwear = {
+				index = 14
+				
+				male = {
+					1 = male_legwear_secular_opb_suit
+				}
+			
+				female = {
+					1 = empty	
+				}
+				boy = male
+				girl = female
+			}			
 		}
 
 
@@ -2201,7 +2182,7 @@ indian_high_outfits = {
 			}	
 
 
-	## EUROPEAN ##
+			## EUROPEAN ##
 
 
 			european_shirt = {
@@ -2218,7 +2199,7 @@ indian_high_outfits = {
 				girl = female
 			}  
 
-	## WORKING_CLASS ##
+			## WORKING_CLASS ##
 
 
 			working_class_shirt = {
@@ -2234,9 +2215,6 @@ indian_high_outfits = {
 				girl = female
 			}
 		}
-
-	
-
-
-}
+	}
+}	
 

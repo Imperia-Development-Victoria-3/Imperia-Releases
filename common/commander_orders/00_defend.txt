@@ -13,7 +13,7 @@
     }
 
     modifier = {
-        character_attrition_risk_add = 0.05
+        character_attrition_risk_add = 0.01
         front_enemy_advancement_speed_mult = -0.5
 		unit_defense_mult = 0.1
     }
@@ -46,7 +46,7 @@ defend_dig_in = {
     }
 
     modifier = {
-        character_attrition_risk_add = 0.05
+        character_attrition_risk_add = 0.025
         front_enemy_advancement_speed_mult = -0.5
         unit_defense_mult = 0.1
         unit_defense_add = 10

@@ -83,15 +83,15 @@ front_country_troop_weight = {
 # distance_to_closest_war_goal = *squared* distance to this front closest War Goal, if any (use `exists` to check). Always > 0.0 when it exists.
 # if the console variable `debug_front_battle_weight` is enabled, data will be logged to std::cout.
 front_battle_state_weight = {
-    value = 100000
+    value = 500
     if = {
         limit = {
             scope:is_strategic_objective = yes
         }
-        add = 100
+        add = 500
     }
     else = {
-        subtract = 100
+        subtract = 250
     }
 }
 

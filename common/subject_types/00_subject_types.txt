@@ -272,10 +272,11 @@ subject_type_dominion = {
 	valid_overlord_ranks = {
 		great_power
 		major_power
-		minor_power	
+		minor_power
 	}
 	
 	valid_subject_ranks = {
+		major_power
 		minor_power
 		insignificant_power
 		unrecognized_regional_power

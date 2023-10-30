@@ -35,6 +35,24 @@ law_outlawed_dissent = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -78,6 +96,24 @@ law_censorship = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -145,6 +181,24 @@ law_right_of_assembly = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -219,6 +273,24 @@ law_protected_speech = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition

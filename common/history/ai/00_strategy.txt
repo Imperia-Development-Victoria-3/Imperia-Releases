@@ -146,7 +146,15 @@
 		}			
 		set_strategy = ai_strategy_armed_isolationism
 		set_strategy = ai_strategy_conservative_agenda
-	}		
+	}
+	
+	# VTM
+	c:BIC = {
+		set_strategy = ai_strategy_territorial_expansion
+	}
+	c:DEI = {
+		set_strategy = ai_strategy_territorial_expansion
+	}
 }	
 
 

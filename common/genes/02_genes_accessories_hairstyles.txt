@@ -1,11 +1,11 @@
 ﻿accessory_genes = {
 
 
-#####################################
-#									#
-# 			   HAIR 			    #
-#									#
-#####################################
+	#####################################
+	#									#
+	# 			   HAIR 			    #
+	#									#
+	#####################################
 
 
 	hairstyles = {
@@ -64,7 +64,7 @@
 
 
 
-# AFRICAN # 
+		# AFRICAN # 
 
 
 		african_hairstyles = {
@@ -82,13 +82,12 @@
 			boy = {
 				1 = male_hair_african_01
 				1 = male_hair_african_02
-
-			}
+			}			
 			girl = female
 		}    
 
 
-# ARABIC # 
+		# ARABIC # 
 
 
 			arabic_hairstyles = {
@@ -101,25 +100,24 @@
 				1 = male_hair_european_04
 				1 = male_hair_european_08
 			}
-	
-			
 
 			female = {
 				1 = female_hair_arabic_01
 			}
+			
 			boy = {
 				1 = male_hair_indian_02
 				1 = male_hair_african_01
 				1 = male_hair_african_02
 
 				1 = male_hair_european_04
-
 			}
+			
 			girl = female
 		}  
 
 
-# CHINESE # 
+		# CHINESE # 
 
 
 			chinese_hairstyles = { # note that chinese_hairstyles only inlcude Manchu hairstyles atm.
@@ -137,7 +135,7 @@
 		} 
 
 
- #EUROPEAN # 
+ 		#EUROPEAN # 
 
 
 		european_hairstyles = {
@@ -180,7 +178,7 @@
 		}  
 
 
-# INDIAN # 
+		# INDIAN # 
 
 
 		indian_hairstyles = {
@@ -200,7 +198,7 @@
 
 
 
-# JAPANESE # 
+		# JAPANESE # 
 
 
 		japanese_hairstyles = {
@@ -217,7 +215,7 @@
 			girl = female
 		} 
 
-# HISTORICAL # 
+		# HISTORICAL # 
 
 
 		historical_hairstyles = {
@@ -274,8 +272,7 @@
 				1 = male_hair_european_13
 				1 = male_hair_european_16
 				4 = male_hair_african_01
-				4 = male_hair_african_02
-				
+				4 = male_hair_african_02			
 			}
 			girl = female
 		}
@@ -390,7 +387,6 @@
 				
 				
 				1 = male_hair_european_07
-
 				1 = male_hair_european_10
 				1 = male_hair_european_12
 				1 = male_hair_european_13
@@ -437,5 +433,5 @@
 			boy = male
 			girl = female
 		} 
-		
 	}
+}	

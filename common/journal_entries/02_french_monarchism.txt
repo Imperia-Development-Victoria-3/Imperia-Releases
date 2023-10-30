@@ -316,7 +316,7 @@ je_cement_the_rightful_dynasty = {
 				civil_war_progress > 0.10
 			}
 		}
-		government_legitimacy >= 50
+		government_legitimacy >= 75 #50
 	}
 	
 	progress_desc = {
@@ -469,7 +469,7 @@ je_cement_the_rightful_dynasty = {
 					}
 					change_variable = {
 						name = french_dynastic_primary_progress_var
-						add = 2
+						add = 1.5 #2
 					}
 				}
 				else_if = {
@@ -478,15 +478,15 @@ je_cement_the_rightful_dynasty = {
 					}
 					change_variable = {
 						name = french_dynastic_primary_progress_var
-						add = 1
+						add = 1 #1.5
 					}
 				}
-				else = {
-					change_variable = {
-						name = french_dynastic_primary_progress_var
-						add = 0.5
-					}
-				}
+				#else = {
+				#	change_variable = {
+				#		name = french_dynastic_primary_progress_var
+				#		add = 1
+				#	}
+				#}
 			}
 		}
 		random_events = {

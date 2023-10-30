@@ -2,7 +2,7 @@
 	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
 
 	modifier = {
-		state_construction_mult = -0.1
+		#state_construction_mult = -0.1
 		state_infrastructure_mult = -0.1
 	}
 }
@@ -11,7 +11,7 @@ state_trait_alborz_mountains = {
 	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
 
 	modifier = {
-		state_construction_mult = -0.1
+		#state_construction_mult = -0.1
 		state_infrastructure_mult = -0.2
 	}
 }
@@ -45,35 +45,10 @@ state_trait_baluchistan_mountains = {
 	icon = "gfx/interface/icons/state_trait_icons/mountain.dds"
 
 	modifier = {
-		state_construction_mult = -0.2
+		#state_construction_mult = -0.2
 		state_infrastructure_mult = -0.2
 	}
 }
-
-state_trait_tigris_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 20
-	}
-}
-
-state_trait_euphrates_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 20
-	}
-}
-
-state_trait_ob_river = {
-	icon = "gfx/interface/icons/state_trait_icons/river.dds"
-	
-	modifier = {
-		state_infrastructure_add = 15
-	}
-}
-
 state_trait_arabian_desert = {
 	icon = "gfx/interface/icons/state_trait_icons/dry_climate.dds"
 		   
@@ -81,7 +56,7 @@ state_trait_arabian_desert = {
         building_group_bg_ranching_throughput_add = -0.1
 		building_group_bg_agriculture_throughput_add = -0.2
 		building_group_bg_plantations_throughput_add = -0.2
-		state_construction_mult = -0.25
+		#state_construction_mult = -0.25
 		state_infrastructure_mult = -0.25
     }
 }

@@ -4,10 +4,12 @@ CHARACTERS = {
 	c:TUR = {
 		create_character = {
 			template = tur_mahmut_osmanoglu_template
+			ideology = vtm_ideology_modernizer
 		}
 
 		create_character = {
 			template = tur_abdulmecid_osmanoglu_template
+			ideology = vtm_ideology_modernizer
 		}
 
 
@@ -19,7 +21,7 @@ CHARACTERS = {
 			age = 56 # not sure of his actual birth date, born in 1780
 			ig_leader = yes
 			interest_group = ig_landowners
-			ideology = ideology_moderate
+			ideology = ideology_royalist
 			traits = {
 				cautious
 			}
@@ -33,7 +35,7 @@ CHARACTERS = {
 			birth_date = 1800.3.13
 			ig_leader = yes
 			interest_group = ig_intelligentsia
-			ideology = ideology_moderate
+			ideology = vtm_ideology_modernizer
 			traits = {
 				experienced_political_operator
 				experienced_diplomat
@@ -64,7 +66,7 @@ CHARACTERS = {
 			age = 67 # not sure of his actual birth date, born in 1756 or thereabouts
 			ig_leader = yes
 			interest_group = ig_armed_forces
-			ideology = ideology_moderate
+			ideology = vtm_ideology_modernizer
 			traits = {
 			}
 		}

@@ -6,6 +6,7 @@
 			last_name = "von_Baden"
 			historical = yes
 			ruler = yes
+			religion = protestant
 			age = 46
 			interest_group = ig_intelligentsia
 			ideology = ideology_reformer
@@ -23,6 +24,7 @@
 			last_name = von_Baden
 			historical = yes
 			heir = yes
+			religion = protestant
 			age = 12
 			interest_group = ig_landowners
 			ideology = ideology_moderate
@@ -36,6 +38,7 @@
 			first_name = "Ludwig_Georg"
 			last_name = "Winter"
 			historical = yes
+			culture = cu:south_german
 			age = 58
 			ig_leader = yes
 			interest_group = ig_intelligentsia
@@ -49,6 +52,7 @@
 			first_name = "Friedrich"
 			last_name = "von_Blittersdorf"
 			historical = yes
+			culture = cu:south_german
 			age = 44
 			ig_leader = yes
 			interest_group = ig_landowners
@@ -63,6 +67,7 @@
 			first_name = Karl_Wilhelm_Eugen
 			last_name = von_Freydorf
 			historical = yes
+			culture = cu:south_german
 			birth_date = 1781.2.3
 			ig_leader = yes
 			interest_group = ig_armed_forces

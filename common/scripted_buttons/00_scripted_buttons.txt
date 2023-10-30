@@ -544,7 +544,14 @@ je_confederation_of_the_rhine_confederate_button = {
 	}
 
 	ai_chance = {
-		base = 50
+		base = 0
+
+		modifier = {
+			trigger = {
+				c:FRA ?= this
+			}
+			add = 10
+		}
 	}
 
 	effect = {

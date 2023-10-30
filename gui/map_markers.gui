@@ -1577,6 +1577,7 @@ container = {
 				textbox = {
 					position = { -23 0 }
 					raw_text = "[Battle.GetCurrentAttackerUnits|0v]#!"
+					#raw_text = "[Battle.CalcCurrentAttackerManpower|0v]#!"
 					autoresize = yes
 					align = right|nobaseline
 					parentanchor = right|vcenter
@@ -1595,6 +1596,7 @@ container = {
 				textbox = {
 					position = { 23 0 }
 					raw_text = "[Battle.GetCurrentDefenderUnits|0v]#!"
+					#raw_text = "[Battle.CalcCurrentDefenderManpower|0v]#!"
 					autoresize = yes
 					align = left|nobaseline
 					parentanchor = left|vcenter
@@ -1645,7 +1647,8 @@ container = {
 					}
 
 					textbox = {
-						raw_text = "[Battle.GetCurrentAttackerUnits|0v]#!"
+						#raw_text = "[Battle.GetCurrentAttackerUnits|0v]#!"
+						raw_text = "[Battle.CalcCurrentAttackerManpower|vD]#!"
 						autoresize = yes
 						align = right|nobaseline
 						parentanchor = right|vcenter
@@ -1691,7 +1694,8 @@ container = {
 					}
 
 					textbox = {
-						raw_text = "[Battle.GetCurrentDefenderUnits|0v]#!"
+						#raw_text = "[Battle.GetCurrentDefenderUnits|0v]#!"
+						raw_text = "[Battle.CalcCurrentDefenderManpower|vD]#!"
 						autoresize = yes
 						align = left|nobaseline
 						parentanchor = left|vcenter
@@ -1822,6 +1826,7 @@ button = {
 			visible = "[IsZoomLevelNear]"
 			margin = { 5 5 }
 			minimumsize = { 100 -1 }
+			#spacing = 5			
 
 			icon = {
 				visible = "[MilitaryFormation.IsArmy]"
@@ -1852,30 +1857,37 @@ button = {
 					using = fontsize_small
 					parentanchor = hcenter
 				}
-
 				flowcontainer = {
 					parentanchor = hcenter
 					spacing = 5
 
-					icon = {
-						visible = "[MilitaryFormation.IsArmy]"
-						size = { 25 25 }
-						texture = "gfx/interface/icons/generic_icons/battalions.dds"
-						parentanchor = vcenter
-					}
-
-					icon = {
-						visible = "[MilitaryFormation.IsFleet]"
-						size = { 25 25 }
-						texture = "gfx/interface/icons/generic_icons/flotillas.dds"
-						parentanchor = vcenter
-					}
+					flag_icon = {	
+						size = { 33 24 }
+						parentanchor = vcenter		
+						texture = "[MilitaryFormation.GetCountry.GetFlag.GetMediumFlagTexture]"
+						frame = "[MilitaryFormation.GetCountry.GetFlag.GetMediumFlagFrame]"
+						framesize = "[GetMediumFlagFrameSize]"
+						block "flag_tooltip" {
+							datacontext = "[MilitaryFormation.GetCountry]"
+						}
+						icon = {
+							name = frame
+							texture = "gfx/interface/flag/flag_power_small.dds"
+							size = { 44 32 }
+							framesize = { 124 92 }
+							frame = "[Country.GetRankIconIndex]"
+							alwaystransparent = yes
+							parentanchor = center
+						}
+					}	
 					
 					textbox = {
-						text = "COMBAT_UNITS_TYPE_AND_NUM"
+						#text = "COMBAT_UNITS_TYPE_AND_NUM"
+						text = "[MilitaryFormation.GetCurrentManpower|vD]"
 						using = transparent_if_unmobilized_in_conflict
 						autoresize = yes
-						align = nobaseline
+						minimumsize = { 50 -1 }
+						align = vcenter|nobaseline
 						parentanchor = vcenter
 					}
 				}
@@ -1901,12 +1913,50 @@ button = {
 					}
 				}
 			}
+
+			flowcontainer = {
+				direction = horizontal
+				parentanchor = vcenter
+				spacing = 5
+
+				### STRENGTH BAR
+				white_progressbar_vertical = {
+					size = { 7 30 }
+					parentanchor = vcenter
+				
+					blockoverride "values" {
+						min = 0
+						max = "[MilitaryFormation.GetMaxManpower]"
+						value = "[MilitaryFormation.GetCurrentManpower]"
+					}
+				
+					blockoverride "color" {
+						#color = { 0.5 0.5 0.5 1.0 }
+						color = { 0.75 0.50 0.20 1.0 }
+					}
+				}
+
+				### MORALE BAR
+				morale_bar = {
+					size = { 7 30 }
+					parentanchor = vcenter
+
+					blockoverride "morale_value" {
+						value = "[FixedPointToFloat( MilitaryFormation.GetMorale )]"
+					}
+					blockoverride "morale_color" {
+						#color = "[GetMoraleColorVec( MilitaryFormation.GetMorale )]"
+						color = { 0.15 0.65 0.25 1.0 }
+					}
+				}				
+			}
 		}
 
 		flowcontainer = {
-			visible = "[Not( IsZoomLevelNear )]"
-			margin = { 2 2 }
+			visible = "[And(Not( IsZoomLevelNear ), Not( IsZoomLevelFar ))]"
+			margin = { 5 5 }
 			minimumsize = { 60 -1 }
+			#spacing = 5
 
 			icon = {
 				visible = "[MilitaryFormation.IsArmy]"
@@ -1925,14 +1975,37 @@ button = {
 			}
 
 			flowcontainer = {
-				direction = vertical
+				direction = horizontal
 				parentanchor = vcenter
+				spacing = 5
+
+				flag_icon = {
+					size = { 26 20 }
+					parentanchor = vcenter
+					texture = "[MilitaryFormation.GetCountry.GetFlag.GetMediumFlagTexture]"
+					frame = "[MilitaryFormation.GetCountry.GetFlag.GetMediumFlagFrame]"	
+					framesize = "[GetMediumFlagFrameSize]"
+					block "flag_tooltip" {
+						datacontext = "[MilitaryFormation.GetCountry]"
+					}
+					icon = {
+						name = frame
+						texture = "gfx/interface/flag/flag_power_small.dds"
+						size = { 35 26 }
+						framesize = { 124 92 }
+						frame = "[Country.GetRankIconIndex]"
+						alwaystransparent = yes
+						parentanchor = center
+					}
+				}
 
 				textbox = {
-					text = "COMBAT_UNITS_TYPE_AND_NUM"
+					#text = "COMBAT_UNITS_TYPE_AND_NUM"
+					text = "[MilitaryFormation.GetCurrentManpower|vD]"
 					using = transparent_if_unmobilized_in_conflict
 					autoresize = yes
-					align = nobaseline
+					minimumsize = { 50 -1 }
+					align = vcenter|nobaseline
 				}
 
 				textbox = {
@@ -1942,6 +2015,73 @@ button = {
 					align = hcenter|nobaseline
 					using = fontsize_small
 				}
+			}
+
+			flowcontainer = {
+				direction = horizontal
+				parentanchor = vcenter
+				spacing = 5	
+
+				### STRENGTH BAR
+				white_progressbar_vertical = {
+					size = { 5 25 }
+					parentanchor = vcenter
+				
+					blockoverride "values" {
+						min = 0
+						max = "[MilitaryFormation.GetMaxManpower]"
+						value = "[MilitaryFormation.GetCurrentManpower]"
+					}
+				
+					blockoverride "color" {
+						#color = { 0.5 0.5 0.5 1.0 }
+						color = { 0.75 0.50 0.20 1.0 }
+					}
+				}
+				### MORALE BAR
+				morale_bar = {
+					size = { 5 25 }
+					parentanchor = vcenter
+
+					blockoverride "morale_value" {
+						value = "[FixedPointToFloat( MilitaryFormation.GetMorale )]"
+					}
+					blockoverride "morale_color" {
+						#color = "[GetMoraleColorVec( MilitaryFormation.GetMorale )]"
+						color = { 0.15 0.65 0.25 1.0 }
+					}
+				}
+			}			
+		}
+
+		flowcontainer = {
+			visible = "[IsZoomLevelFar]"
+			margin = { 1 1 }
+			minimumsize = { 20 -1 }
+
+			icon = {
+				visible = "[MilitaryFormation.IsArmy]"
+				parentanchor = vcenter
+				size = { 20 20 }
+				### TODO - CHANGE TO THE GET TEXTURE FUNCTION
+				texture = "gfx/interface/icons/military_icons/military_formation_identity_icons/army_01.dds"
+			}
+
+			icon = {
+				visible = "[MilitaryFormation.IsFleet]"
+				parentanchor = vcenter
+				size = { 20 20 }
+				### TODO - CHANGE TO THE GET TEXTURE FUNCTION
+				texture = "gfx/interface/icons/military_icons/military_formation_identity_icons/fleet_01.dds"
+			}
+
+			textbox = {
+				text = "COMBAT_UNITS_TYPE_AND_NUM"
+				#text = "[MilitaryFormation.GetCurrentManpower|vD]"
+				using = transparent_if_unmobilized_in_conflict
+				autoresize = yes
+				minimumsize = { 20 -1 }
+				align = center|nobaseline
 			}
 		}
 	}

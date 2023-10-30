@@ -495,7 +495,6 @@ pm_merchant_guilds_building_fishing_wharf = {
 
 	unlocking_production_methods = {
 		pm_simple_fishing
-		pm_fishing_trawlers
 	}
 
 	disallowing_laws = {
@@ -751,7 +750,6 @@ pm_merchant_guilds_building_whaling_station = {
 
 	unlocking_production_methods = {
 		pm_simple_whaling
-		pm_wooden_whaling_ships
 	}
 
 	disallowing_laws = {

@@ -43,6 +43,15 @@ liberal_party = {
 				}
 			}
 			triggered_desc = {
+				desc = party_movement_party
+				trigger = {
+					c:FRA ?= this
+					has_law = law_type:law_monarchy
+					has_variable = fra_republic_counter
+					var:fra_republic_counter ?= 1
+				}
+			}
+			triggered_desc = {
 				desc = party_republican_party
 				trigger = {
 					exists = c:FRA
@@ -804,7 +813,7 @@ liberal_party = {
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
+					has_variable = only_valid_party
 	         	}
 	         	NOT = {
 			        owner.var:only_valid_party = {

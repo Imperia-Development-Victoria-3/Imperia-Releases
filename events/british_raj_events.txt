@@ -482,7 +482,7 @@ raj.6 = {
 				}
 				set_variable = bic_incorporated_state
 			}
-		}
+		}	
 		if = {
 			limit = {
 				NOT = { exists = c:MUG }
@@ -492,6 +492,9 @@ raj.6 = {
 				tag = MUG
 				origin = c:BIC
 				state = s:STATE_DELHI.region_state:BIC
+				on_created = {
+					add_declared_interest = region_south_india
+				}
 			}
 		}
 		else_if = {
@@ -517,7 +520,10 @@ raj.6 = {
 		}
 		if = {
 			limit = { exists = s:STATE_AWADH.region_state:BIC }
-			s:STATE_AWADH.region_state:BIC = { set_state_owner = c:MUG }
+			s:STATE_AWADH.region_state:BIC = { 
+				set_state_owner = c:MUG 
+				set_state_type = incorporated
+			}
 		}
 		if = {
 			limit = {
@@ -606,7 +612,7 @@ raj.6 = {
 				ideology = ideology_jingoist_leader
 				traits = { 
 					stalwart_defender 
-					# experienced_artillery_commander 
+					#experienced_artillery_commander 
 				}
 			}
 		}
@@ -664,6 +670,29 @@ raj.6 = {
 					traits = {
 					}
 				}
+				if = {
+					limit = {
+						year >= 1848
+					}
+					create_character = {
+						first_name = "vtm_lakshmibai"
+						last_name = "Newalkar"
+						historical = yes
+						birth_date = 1828.11.19
+						culture = cu:kanauji
+						religion = hindu
+						female = yes
+						noble = yes
+						is_general = yes
+						interest_group = ig_landowners
+						ideology = ideology_royalist
+						traits = {
+							brave
+							direct
+							resupply_commander					
+						}
+					}
+				}
 			}
 		}
 	}
@@ -677,6 +706,8 @@ raj.6 = {
 		play_as = c:MUG
 		hidden_effect = {
 			c:MUG = {
+				activate_law = law_type:law_monarchy
+				activate_law = law_type:law_oligarchy
 				create_character = {
 					first_name = "Mirza_Mughal"
 					last_name = "Gurkani"
@@ -721,6 +752,31 @@ raj.6 = {
 					interest_group = ig_landowners
 					ideology = ideology_royalist
 					traits = { 
+					}
+				}				
+			}
+			if = {
+				limit = {
+					year >= 1848
+				}
+				c:MUG = {
+					create_character = {
+						first_name = "vtm_lakshmibai"
+						last_name = "Newalkar"
+						historical = yes
+						birth_date = 1828.11.19
+						culture = cu:kanauji
+						religion = hindu
+						female = yes
+						noble = yes
+						is_general = yes
+						interest_group = ig_landowners
+						ideology = ideology_royalist
+						traits = {
+							brave
+							direct
+							resupply_commander					
+						}
 					}
 				}
 			}
@@ -767,6 +823,7 @@ raj.7 = {
 		default_option = yes
 		custom_tooltip = activate_british_raj
 		custom_tooltip = doctrine_of_lapse_disabled
+		set_variable = is_british_raj_var
 		show_as_tooltip = {
 			c:GBR = {
 				create_diplomatic_pact = {

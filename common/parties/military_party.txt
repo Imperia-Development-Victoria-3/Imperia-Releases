@@ -20,6 +20,22 @@ military_party = {
 				}
 			}
 			triggered_desc = {
+				desc = party_bonapartist_party
+				trigger = {
+					c:FRA ?= this
+					OR = {
+						has_variable = bonapartist_restoration_var
+						py:military_party ?= {
+							any_member = {
+								leader = {
+									has_ideology = ideology:ideology_bonapartist
+								}
+							}
+						}						
+					}
+				}
+			}
+			triggered_desc = {
 				desc = party_union_of_rights
 				trigger = {
 					exists = c:FRA
@@ -359,6 +375,75 @@ military_party = {
 				desc = from_authoritarian
 			}
 		}
+
+		### FRANCE ###
+		### VTM ###
+		if = { # The Bonapartists were a expansionist militarist and statist faction
+			limit = {
+				OR = {
+					is_powerful = yes
+					owner = {
+						has_law = law_type:law_monarchy
+					}
+				}
+				leader = {
+					has_ideology = ideology:ideology_bonapartist
+				}
+			}
+			add = {
+				value = 50
+				desc = "from_traditional_bonapartist_party"
+			}
+		}
+
+		if = { # If not explicitly Bonapartist but the King is a member of the IG 
+			limit = {
+				owner = {
+					has_law = law_type:law_monarchy
+				}
+				owner.ruler = {
+					interest_group = prev
+					has_ideology = ideology:ideology_bonapartist
+				}
+				NOT = {
+					leader = {
+						has_ideology = ideology:ideology_bonapartist
+					}
+				}			
+			}
+			add = {
+				value = 5
+				desc = "from_kings_party"
+			}
+		}
+
+		if = { # Weak Monarchists in Republic may fall in line
+			limit = {
+				owner = {
+					NOT = { has_law = law_type:law_monarchy }
+					exists = py:military_party
+					any_interest_group = {
+						is_member_of_party = owner.py:military_party
+						is_powerful = yes
+						leader = {
+							has_ideology = ideology:ideology_bonapartist
+						}
+					}
+				}
+				is_powerful = no
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_orleanist
+						has_ideology = ideology:ideology_legitimist
+					}					
+				}
+			}
+			add = {
+				value = 3
+				desc = "from_weak_monarchists_in_republic"
+			}
+		}
+		### VTM END ###
 		if = { # anti-orleanist
 			limit = {
 				leader = {

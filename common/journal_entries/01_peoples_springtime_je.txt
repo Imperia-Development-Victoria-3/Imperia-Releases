@@ -2,8 +2,8 @@
 	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
 
 	is_shown_when_inactive = {
-		has_global_variable = peoples_springtime_happening
 		has_technology_researched = egalitarianism
+		year <= 1865
 		capital = {
 			OR = {
 				region = sr:region_england
@@ -26,17 +26,61 @@
 	}
 
 	possible = {
-		any_interest_group = {
-			OR = {
-				is_powerful = yes
-				is_insurrectionary = yes
+		OR = {
+			any_interest_group = {
+				OR = {
+					is_powerful = yes
+					is_insurrectionary = yes
+				}
+				leader = { has_ideology = ideology:ideology_radical }
 			}
-			leader = { has_ideology = ideology:ideology_radical }
+			any_interest_group = {
+				is_marginal = no
+				ig_approval <= -10
+				leader = { has_ideology = ideology:ideology_radical }
+			}
 		}
+		is_revolutionary = no
 	}
 
 	immediate = {
 		trigger_event = { id = 1848.4 }
+		hidden_effect = {
+			if = {
+				limit = {
+					is_revolutionary = no
+					}
+				save_scope_as = originator
+				every_country = {
+					limit = {
+						OR = {
+							capital = {
+							OR = {
+								region = sr:region_england
+								region = sr:region_north_sea_coast
+								region = sr:region_iberia
+								region = sr:region_france
+								region = sr:region_occitania
+								region = sr:region_rhine
+								region = sr:region_italy
+								region = sr:region_balkans
+								region = sr:region_north_germany
+								region = sr:region_south_germany
+								region = sr:region_baltic
+								region = sr:region_danubia
+								region = sr:region_poland
+								region = sr:region_russia
+								region = sr:region_dnieper
+							}
+							} 
+							has_interest_marker_in_region = scope:originator.capital.region
+						}
+						NOT = { this = root }
+					}
+					post_notification = springtime_of_the_people_je_opened
+				}
+			}
+		}
 	}
 
 	complete = {
@@ -124,6 +168,9 @@
 			10 = peoples_springtime.3
 			10 = peoples_springtime.4
 			10 = peoples_springtime.5
+			#15 = peoples_springtime.100
+			#10 = peoples_springtime.110
+			#10 = peoples_springtime.120
 		}
 	}
 
@@ -135,7 +182,45 @@
 	should_be_pinned_by_default = yes
 
 	transferable = no
-	can_revolution_inherit = no
 
 	timeout = 3650
+
+	on_timeout = {
+		hidden_effect = {
+			if = {
+				limit = {
+					is_revolutionary = no
+					}
+				save_scope_as = originator
+				every_country = {
+					limit = {
+						OR = {
+							capital = {
+							OR = {
+								region = sr:region_england
+								region = sr:region_north_sea_coast
+								region = sr:region_iberia
+								region = sr:region_france
+								region = sr:region_occitania
+								region = sr:region_rhine
+								region = sr:region_italy
+								region = sr:region_balkans
+								region = sr:region_north_germany
+								region = sr:region_south_germany
+								region = sr:region_baltic
+								region = sr:region_danubia
+								region = sr:region_poland
+								region = sr:region_russia
+								region = sr:region_dnieper
+							}
+							} 
+							has_interest_marker_in_region = scope:originator.capital.region
+						}
+						NOT = { this = root }
+					}
+					post_notification = springtime_of_the_people_je_over
+				}
+			}
+		}
+	}
 }

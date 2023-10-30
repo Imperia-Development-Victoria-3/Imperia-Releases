@@ -6,6 +6,7 @@
 			last_name = "von_Wettin"
 			historical = yes
 			ruler = yes
+			religion = catholic
 			age = 81 # died June 6th, 1836
 			interest_group = ig_landowners
 			ideology = ideology_moderate
@@ -23,6 +24,7 @@
 			last_name = "von_Wettin"
 			historical = yes
 			heir = yes
+			religion = catholic
 			age = 29
 			interest_group = ig_petty_bourgeoisie
 			ideology = ideology_moderate

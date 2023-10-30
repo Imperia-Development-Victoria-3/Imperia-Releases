@@ -1587,6 +1587,35 @@ types TooltipTypes
 
 		blockoverride "tooltip_content_after" {
 
+			### VTM UNITS
+
+			widget = {
+				size = { 15 15 }
+			}
+
+			DefaultTooltipTextBox = {
+				visible = "[Not(IsDataModelEmpty(MilitaryFormation.GetCombatUnitEntries))]"
+				text = "COMBAT_UNIT_GROUPS_CONCEPT"
+				margin_bottom = 5
+				autoresize = yes
+				multiline = yes
+				maximumsize = { 550 -1 }
+				fonttintcolor = "[TooltipInfo.GetTintColor]"
+			}
+
+			dynamicgridbox = {
+				visible = "[Not(IsDataModelEmpty(MilitaryFormation.GetCombatUnitEntries))]"
+				datamodel = "[MilitaryFormation.GetCombatUnitEntries]"
+				flipdirection = yes
+				parentanchor = left
+
+				item = {
+					vtm_military_formation_unit_group_very_small = {}
+				}
+			}		
+			
+			###
+
 			widget = {
 				size = { 15 15 }
 			}
@@ -1614,62 +1643,62 @@ types TooltipTypes
 			dynamicgridbox = {
 				visible = "[Not(IsDataModelEmpty(MilitaryFormation.GetCommanders))]"
 				datamodel = "[MilitaryFormation.GetCommanders]"
+				flipdirection = yes
+				parentanchor = left				
 
 				item = {
 					flowcontainer = {
-						spacing = 5
-
-						icon = {
-							datacontext = "[Character.GetOrderType]"
-							parentanchor = vcenter
-							size = { 40 40 }
-							texture = "[CommanderOrderType.GetTexture]"
-							tooltip = "COMMANDER_PANEL_ORDER_TOOLTIP"
-						}
-
-						icon = {
-							visible = "[Character.GetNextOrderType.IsValid]"
-							parentanchor = vcenter
-							size = { 25 25 }
-							texture = "gfx/interface/icons/generic_icons/turns_into.dds"
-						}
-
-						icon = {
-							visible = "[Character.GetNextOrderType.IsValid]"
-							datacontext = "[Character.GetNextOrderType]"
-							parentanchor = vcenter
-							size = { 40 40 }
-							texture = "[CommanderOrderType.GetTexture]"
-							tooltip = "COMMANDER_PANEL_ORDER_TOOLTIP"
-						}
-
-						character_portrait_small = {
+						character_portrait_medium = {
 							blockoverride "portrait_button_onrightclick" {}
 
-							blockoverride "commander_order_icon" {}
+							#blockoverride "commander_order_icon" {}
 						}
 
-						DefaultTooltipTextBox = {
-							parentanchor = vcenter
-							text = "[Character.GetFullName]"
-							align = nobaseline
-							autoresize = yes
-							multiline = yes
-							maximumsize = { 500 -1 }
-							fonttintcolor = "[TooltipInfo.GetTintColor]"
-						}
+						# icon = {
+						# 	datacontext = "[Character.GetOrderType]"
+						# 	parentanchor = center
+						# 	size = { 40 40 }
+						# 	texture = "[CommanderOrderType.GetTexture]"
+						# 	tooltip = "COMMANDER_PANEL_ORDER_TOOLTIP"
+						# }
 
-						button_icon_goto = {
-							parentanchor = vcenter
-							size = { 30 30 }
+						# icon = {
+						# 	visible = "[Character.GetNextOrderType.IsValid]"
+						# 	parentanchor = center
+						# 	size = { 25 25 }
+						# 	texture = "gfx/interface/icons/generic_icons/turns_into.dds"
+						# }
 
-							blockoverride "icon_size" {
-								size = { 100% 100% }
-							}
+						# icon = {
+						# 	visible = "[Character.GetNextOrderType.IsValid]"
+						# 	datacontext = "[Character.GetNextOrderType]"
+						# 	parentanchor = center
+						# 	size = { 40 40 }
+						# 	texture = "[CommanderOrderType.GetTexture]"
+						# 	tooltip = "COMMANDER_PANEL_ORDER_TOOLTIP"
+						# }
 
- 							onclick = "[InformationPanelBar.OpenCommanderPanel(Character.AccessSelf)]"
-							tooltip = "GO_TO_BUTTON_CHARACTER"
- 						}
+						# DefaultTooltipTextBox = {
+						# 	parentanchor = vcenter
+						# 	text = "[Character.GetFullName]"
+						# 	align = nobaseline
+						# 	autoresize = yes
+						# 	multiline = yes
+						# 	maximumsize = { 500 -1 }
+						# 	fonttintcolor = "[TooltipInfo.GetTintColor]"
+						# }
+
+						# button_icon_goto = {
+						# 	parentanchor = vcenter
+						# 	size = { 30 30 }
+
+						# 	blockoverride "icon_size" {
+						# 		size = { 100% 100% }
+						# 	}
+
+ 						# 	onclick = "[InformationPanelBar.OpenCommanderPanel(Character.AccessSelf)]"
+						# 	tooltip = "GO_TO_BUTTON_CHARACTER"
+ 						# }
 					}
 				}
 			}

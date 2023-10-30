@@ -362,7 +362,7 @@
 				add_ideology = ideology_sikh_moralist
 			}
 		}
-	}
+	}		
 	on_disable = {}
 	on_character_ig_membership = {
 		if = {
@@ -382,7 +382,7 @@
 
 
 	pop_potential = {
-		has_state_religion = yes
+		religion = scope:interest_group.leader.religion
 		NOT = {
 			has_pop_religion = atheist
 		}
@@ -408,56 +408,6 @@
 					is_pop_type = peasants
 				}
 				value = 100
-			}
-		}
-
-		if = {
-			limit = {
-				owner = {
-					has_law = law_type:law_state_atheism
-				}
-			}
-			multiply = {
-				desc = "STATE_ATHEISM_LAW"
-				value = 0.1
-			}
-		}
-		
-		if = {
-			limit = {
-				owner = {
-					has_law = law_type:law_state_religion
-				}
-			}
-			multiply = {
-				desc = "STATE_RELIGION_LAW"
-				value = 1.5
-			}
-		}
-		
-		if = {
-			limit = {
-				owner = {
-					has_law = law_type:law_freedom_of_conscience
-				}
-			}
-			multiply = {
-				desc = "FREEDOM_OF_CONSCIENCE_LAW"
-				value = 1.25
-			}
-		}
-
-		if = {
-			limit = {
-				owner = {
-					has_law = law_type:law_religious_schools
-				}
-			}
-			multiply = {
-				desc = "RELIGIOUS_SCHOOLS_LAW"
-				value = owner.institution:institution_schools.investment
-				divide = 5
-				add = 1
 			}
 		}
 		
@@ -522,6 +472,15 @@
 				add = 1
 			}
 		}
+		# VTM
+		if = {
+			limit = {
+				has_pop_religion = atheist
+			}
+			multiply = {
+				value = 0.0
+			}
+		}		
 	}
 
 	monarch_weight = {

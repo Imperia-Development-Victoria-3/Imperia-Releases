@@ -1,0 +1,19 @@
+﻿state_trait_difficult_terrain = {
+	icon = "gfx/interface/icons/state_trait_icons/difficult_terrain.dds"
+
+	disabling_technologies = { "dynamite" }
+
+	modifier = {
+		state_construction_mult = -0.1
+	}
+}
+
+state_trait_very_difficult_terrain = {
+	icon = "gfx/interface/icons/state_trait_icons/very_difficult_terrain.dds"
+
+	disabling_technologies = { "dynamite" }
+
+	modifier = {
+		state_construction_mult = -0.2
+	}
+}

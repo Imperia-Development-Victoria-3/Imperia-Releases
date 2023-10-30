@@ -748,7 +748,12 @@
 		region_state:AUS = {
 			create_pop = {
 				culture = hungarian
-				size = 989200
+				size = 932000
+			}
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 57200
 			}
 			create_pop = {
 				culture = hungarian
@@ -774,7 +779,12 @@
 		region_state:AUS = {
 			create_pop = {
 				culture = hungarian
-				size = 189292
+				size = 147492
+			}
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 41800
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -812,7 +822,12 @@
 		region_state:AUS = {
 			create_pop = {
 				culture = hungarian
-				size = 1375796
+				size = 1312496
+			}
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 63300
 			}
 			create_pop = {
 				culture = croat
@@ -855,7 +870,12 @@
 			}
 			create_pop = {
 				culture = hungarian
-				size = 160000
+				size = 139800
+			}
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 20200
 			}
 			create_pop = {
 				culture = slovak
@@ -887,7 +907,12 @@
 			}
 			create_pop = {
 				culture = hungarian
-				size = 57228
+				size = 24828
+			}
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 32400
 			}
 			create_pop = {
 				culture = croat
@@ -917,7 +942,12 @@
 		region_state:AUS = {
 			create_pop = {
 				culture = hungarian
-				size = 237000
+				size = 181500
+			}
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 55500
 			}
 			create_pop = {
 				culture = south_german
@@ -950,7 +980,12 @@
 		region_state:AUS = {
 			create_pop = {
 				culture = hungarian
-				size = 150848
+				size = 117748
+			}
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 33100
 			}
 			create_pop = {
 				culture = slovak
@@ -992,7 +1027,12 @@
 			}
 			create_pop = {
 				culture = hungarian
-				size = 60004
+				size = 36004
+			}
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 24000
 			}
 			create_pop = {
 				culture = romanian
@@ -1033,7 +1073,12 @@
 			}
 			create_pop = {
 				culture = hungarian
-				size = 142000
+				size = 115200
+			}
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 26800
 			}
 			create_pop = {
 				culture = ashkenazi

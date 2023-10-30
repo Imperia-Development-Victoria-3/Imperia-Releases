@@ -76,6 +76,24 @@ law_autocracy = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -123,7 +141,7 @@ law_technocracy = {
 	}
 
 	unlocking_technologies = {
-		central_archives 
+		central_planning 
 	}
 	
 	possible_political_movements = {
@@ -165,6 +183,24 @@ law_technocracy = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -249,6 +285,24 @@ law_oligarchy = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -314,6 +368,24 @@ law_elder_council = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -404,6 +476,24 @@ law_landed_voting = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -486,6 +576,24 @@ law_wealth_voting = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -566,6 +674,24 @@ law_census_voting = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -656,6 +782,24 @@ law_universal_suffrage = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -733,6 +877,24 @@ law_anarchy = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -896,6 +1058,24 @@ law_single_party_state = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition

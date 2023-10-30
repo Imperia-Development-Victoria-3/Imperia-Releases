@@ -19,22 +19,243 @@ dei_breakup.1 = {
 	
 	duration = 3
 	
-	cooldown = { months = very_long_modifier_time }
-
 	trigger = {
 		c:DEI ?= this
 		is_subject = no
 		is_at_war = no
+		NOT = {
+			has_global_variable = dei_collapse_var
+		}
 	}
 
 	immediate = {
-		set_variable = bic_collapse_var #Intended
+		cu:dutch = {
+			save_scope_as = dutch_culture
+		}
+		set_global_variable = dei_collapse_var
 	}
 
 	option = {
 		name = dei_breakup.1.a
 		ai_chance = {
-			base = 8 # this is the default pick for the AI
+			base = 9 # this is the default pick for the AI
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { exists = c:ACE }
+					exists = s:STATE_ACEH.region_state:DEI
+				}
+				create_country = { # SUNNI
+					tag = ACE
+					origin = c:DEI
+					state = s:STATE_ACEH.region_state:DEI
+					on_created = {
+						random_list = {
+							50 = {
+								activate_law = law_type:law_monarchy
+								activate_law = law_type:law_autocracy
+							}
+							50 = {
+								activate_law = law_type:law_presidential_republic
+								activate_law = law_type:law_autocracy
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = c:SAK }
+					exists = s:STATE_NORTH_SUMATRA.region_state:DEI
+				}
+				create_country = { # SUNNI
+					tag = SAK
+					origin = c:DEI
+					state = s:STATE_NORTH_SUMATRA.region_state:DEI
+					on_created = {
+						random_list = {
+							50 = {
+								activate_law = law_type:law_monarchy
+								activate_law = law_type:law_autocracy
+							}
+							50 = {
+								activate_law = law_type:law_presidential_republic
+								activate_law = law_type:law_autocracy
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = c:JMB } 
+					exists = s:STATE_SOUTH_SUMATRA.region_state:DEI
+				}
+				create_country = { # SUNNI
+					tag = JMB
+					origin = c:DEI
+					state = s:STATE_SOUTH_SUMATRA.region_state:DEI
+					on_created = {
+						random_list = {
+							50 = {
+								activate_law = law_type:law_monarchy
+								activate_law = law_type:law_autocracy
+							}
+							50 = {
+								activate_law = law_type:law_presidential_republic
+								activate_law = law_type:law_autocracy
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = c:BAL }
+					exists = s:STATE_SUNDA_ISLANDS.region_state:DEI
+				}
+				create_country = { # HINDU
+					tag = BAL
+					origin = c:DEI
+					state = s:STATE_SUNDA_ISLANDS.region_state:DEI
+					on_created = {
+						random_list = {
+							50 = {
+								activate_law = law_type:law_monarchy
+								activate_law = law_type:law_autocracy
+							}
+							50 = {
+								activate_law = law_type:law_presidential_republic
+								activate_law = law_type:law_autocracy
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = c:TID }
+					exists = s:STATE_MOLUCCAS.region_state:DEI
+				}
+				create_country = { # SUNNI
+					tag = TID
+					origin = c:DEI
+					state = s:STATE_MOLUCCAS.region_state:DEI
+					on_created = {
+						if = {
+							limit = {
+								exists = s:STATE_WESTERN_NEW_GUINEA.region_state:DEI
+							}
+							s:STATE_WESTERN_NEW_GUINEA.region_state:DEI = {
+								set_state_owner = c:TID
+							}
+						}
+						random_list = {
+							50 = {
+								activate_law = law_type:law_monarchy
+								activate_law = law_type:law_autocracy
+							}
+							50 = {
+								activate_law = law_type:law_presidential_republic
+								activate_law = law_type:law_autocracy
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = c:BTN } 
+					exists = s:STATE_CELEBES.region_state:DEI
+				}
+				create_country = { # SUNNI
+					tag = BTN
+					origin = c:DEI
+					state = s:STATE_CELEBES.region_state:DEI
+					on_created = {
+						random_list = {
+							50 = {
+								activate_law = law_type:law_monarchy
+								activate_law = law_type:law_autocracy
+							}
+							50 = {
+								activate_law = law_type:law_presidential_republic
+								activate_law = law_type:law_autocracy
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = c:KTI } 
+					exists = s:STATE_EAST_BORNEO.region_state:DEI
+				}
+				create_country = { # SUNNI
+					tag = KTI
+					origin = c:DEI
+					state = s:STATE_EAST_BORNEO.region_state:DEI
+					on_created = {
+						random_list = {
+							50 = {
+								activate_law = law_type:law_monarchy
+								activate_law = law_type:law_autocracy
+							}
+							50 = {
+								activate_law = law_type:law_presidential_republic
+								activate_law = law_type:law_autocracy
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = c:BRU } 
+					exists = s:STATE_NORTH_BORNEO.region_state:DEI
+				}
+				create_country = { # SUNNI
+					tag = BRU
+					origin = c:DEI
+					state = s:STATE_NORTH_BORNEO.region_state:DEI
+					on_created = {
+						random_list = {
+							50 = {
+								activate_law = law_type:law_monarchy
+								activate_law = law_type:law_autocracy
+							}
+							50 = {
+								activate_law = law_type:law_presidential_republic
+								activate_law = law_type:law_autocracy
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = c:PON } 
+					exists = s:STATE_WEST_BORNEO.region_state:DEI
+				}
+				create_country = { # SUNNI
+					tag = PON
+					origin = c:DEI
+					state = s:STATE_WEST_BORNEO.region_state:DEI
+					on_created = {
+						random_list = {
+							50 = {
+								activate_law = law_type:law_monarchy
+								activate_law = law_type:law_autocracy
+							}
+							50 = {
+								activate_law = law_type:law_presidential_republic
+								activate_law = law_type:law_autocracy
+							}
+						}
+					}
+				}
+			}			
 		}
 		while = {
 			limit = {
@@ -46,18 +267,17 @@ dei_breakup.1 = {
 						}
 					}
 					any_neighbouring_state = {
-						owner = { is_subject_of = ROOT }
+						owner = {
+							capital.region = sr:region_indonesia
+						}
 					}
 				}
 			}
+
+
 			random_country = {
 				limit = {
-					OR = {
-						is_subject_of = ROOT
-						any_primary_culture = {
-							has_discrimination_trait = malay_culture
-						}
-					}
+					capital.region = sr:region_indonesia
 					any_scope_state = {
 						any_neighbouring_state = {
 							is_capital = no
@@ -98,18 +318,17 @@ dei_breakup.1 = {
 			}
 		}
 		change_tag = JAV
+		set_country_type = unrecognized
 		hidden_effect = {
 			remove_primary_culture = cu:dutch
 			add_primary_culture = cu:javan
 			set_state_religion = rel:sunni
 			every_scope_character = {
 				limit = {
-					OR = {
-						culture = cu:dutch
-					}
+					culture = cu:dutch
 				}
 				kill_character = yes
-			}
+			}						
 		}
 	}
 
@@ -120,19 +339,20 @@ dei_breakup.1 = {
 			has_technology_researched = pan-nationalism
 		}
 		ai_chance = {
-			factor = 1
+			base = 1 # VANILLA = 2 # Feel free to turn this back up if you like but I personally prefer this off without further narrative support.
 		}
 		change_tag = IDN
 		hidden_effect = {
 			remove_primary_culture = cu:dutch
+			add_primary_culture = cu:javan
 			add_primary_culture = cu:balinese
 			add_primary_culture = cu:batak
 			add_primary_culture = cu:bornean
 			add_primary_culture = cu:dayak
-			add_primary_culture = cu:javan
 			add_primary_culture = cu:malay
 			add_primary_culture = cu:moluccan
 			add_primary_culture = cu:sumatran
+			set_state_religion = rel:sunni
 			every_scope_character = {
 				limit = {
 					culture = cu:dutch
@@ -144,7 +364,7 @@ dei_breakup.1 = {
 	option = {
 		name = dei_breakup.1.c
 		ai_chance = {
-			base = 0
+			base = 0 # AI will never do this
 		}
 		default_option = yes
 		add_radicals = {

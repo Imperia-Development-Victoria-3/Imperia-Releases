@@ -27,6 +27,24 @@
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -100,6 +118,24 @@ law_national_guard = {
 		value = 0
 		
 		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
+		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
@@ -141,6 +177,24 @@ law_secret_police = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -185,6 +239,7 @@ law_guaranteed_liberties = {
 		}
 	}
 
+
 	can_impose = { 
 		is_subject_of = scope:initiator	
 	} 
@@ -192,6 +247,24 @@ law_guaranteed_liberties = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
+		if = {
+			limit = {
+				law_is_essential = yes
+			}
+			add = 1500
+		}
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		if = {
+			limit = {
+				law_is_desirable = yes
+			}
+			add = 250
+		}
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition

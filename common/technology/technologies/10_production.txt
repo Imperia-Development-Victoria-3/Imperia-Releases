@@ -299,7 +299,7 @@ railways = {
 					 has_strategy = ai_strategy_resource_expansion
 				}
 			}
-			add = 2
+			add = 3
 		}		
 	}
 }

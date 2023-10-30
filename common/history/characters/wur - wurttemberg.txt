@@ -6,6 +6,7 @@
 			last_name = "von_Wurttemberg"
 			historical = yes
 			ruler = yes
+			religion = protestant
 			age = 57
 			interest_group = ig_landowners
 			ideology = ideology_moderate
@@ -23,6 +24,7 @@
 			last_name = "von_Wurttemberg"
 			historical = yes
 			heir = yes
+			religion = protestant
 			age = 13
 			interest_group = ig_landowners
 			ideology = ideology_moderate

@@ -44,8 +44,8 @@ occupation_cost = {
 	add = {
 		add = state_population
 		divide = 1000
-		max = 1000
 		min = 10
+		max = 1000
 		desc = "OCCUPATION_COST_FROM_POPULATION"
 	}
 	
@@ -140,7 +140,7 @@ occupation_cost = {
 	}
 }
 
-# root = battleside
+# root = battle
 battle_victory_score = {
 	add = {
 		add = 100
@@ -148,10 +148,10 @@ battle_victory_score = {
 	}
 
 	multiply = {
-			add = 1
-			add = modifier:unit_occupation_mult
-			min = 0
-		}
+		add = 1
+		add = modifier:unit_occupation_mult
+		min = 0
+	}
 	
 	save_temporary_value_as = pre_min_amount_cap
 	if = {

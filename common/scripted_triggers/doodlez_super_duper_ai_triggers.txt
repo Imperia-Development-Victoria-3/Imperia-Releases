@@ -1,0 +1,116 @@
+﻿# I would like to apologize to the computer science people
+law_is_essential = {
+	# OR = {
+		# Meiji Restoration
+		AND = {
+			has_strategy = ai_strategy_anti_shogunate_agenda
+			OR = {
+				# Trade Policy - je_meiji_diplomacy, Japan should be opened up but just in case
+				AND = {
+					has_law = law_type:law_isolationism
+					OR = {
+						scope:law.type = law_type:law_mercantilism
+						scope:law.type = law_type:law_protectionism
+						scope:law.type = law_type:law_free_trade
+					}
+				}
+				# Migration - je_meiji_diplomacy
+				AND = {
+					has_law = law_type:law_closed_borders
+					OR = {
+						scope:law.type = law_type:law_no_migration_controls
+						scope:law.type = law_type:law_migration_controls
+					}
+				}
+				# Economic System - je_meiji_diplomacy
+				AND = {
+					OR = { # If we do have any of these pass any other law
+						has_law = law_type:law_traditionalism
+						has_law = law_type:law_industry_banned
+					}
+					OR = {
+						scope:law.type = law_type:law_agrarianism
+						scope:law.type = law_type:law_interventionism
+						scope:law.type = law_type:law_laissez_faire
+					}
+				}
+				# Land Reform - je_meiji_army
+				AND = {
+					has_law = law_type:law_serfdom # kami-sama has forsaken us
+					OR = {
+						scope:law.type = law_type:law_tenant_farmers
+						scope:law.type = law_type:law_homesteading
+						scope:law.type = law_type:law_commercialized_agriculture
+					}
+				}							
+			}
+		}
+		# cutoff		
+	# }
+}
+
+law_is_important = {
+	# OR = {
+		# Meiji Restoration
+		AND = {
+			has_strategy = ai_strategy_anti_shogunate_agenda
+			OR = {			
+				# Army Model
+				AND = {
+					has_law = law_type:law_peasant_levies
+					OR = {
+						scope:law.type = law_type:law_professional_army
+						scope:law.type = law_type:law_national_militia
+						scope:law.type = law_type:law_mass_conscription
+					}
+				}
+				# Taxation
+				AND = {
+					has_law = law_type:law_land_based_taxation
+					OR = {
+						scope:law.type = law_type:law_per_capita_based_taxation
+						scope:law.type = law_type:law_proportional_taxation				
+					}
+				}
+				# Education
+				AND = {
+					has_law = law_type:law_no_schools
+					OR = {
+						scope:law.type = law_type:law_private_schools
+						scope:law.type = law_type:law_public_schools
+					}
+				}
+			}		
+		}
+		# cutoff
+	# }	
+}
+
+law_is_desirable = {
+	# OR = {
+		# Meiji Restoration
+		AND = {
+			has_strategy = ai_strategy_anti_shogunate_agenda
+			OR = {			
+				# Disribution of Power
+				AND = {
+					has_law = law_type:law_autocracy
+					OR = {
+						scope:law.type = law_type:law_oligarchy
+						scope:law.type = law_type:law_landed_voting
+						scope:law.type = law_type:law_wealth_voting
+					}
+				}
+				# Colonization
+				AND = {
+					has_law = law_type:law_no_colonial_affairs
+					OR = {
+						scope:law.type = law_type:law_colonial_resettlement
+						scope:law.type = law_type:law_colonial_exploitation	
+					}
+				}
+			}		
+		}
+		# cutoff
+	# }	
+}

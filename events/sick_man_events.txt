@@ -209,21 +209,24 @@ sick_man.3 = {
 	option = {
 		name = sick_man.3.a
 		if = {
-			limit = {				
-				is_subject = no
+			limit = {
 				any_subject_or_below = {
-					NOT = { any_overlord_or_above = { NOT = { ROOT = this } } }
-					NOT = {
+					NOR = {
 						is_country_type = unrecognized
+						overlord = {
+							NOT = { ROOT = this }
+						}
 					}
 				}
 			}
 			every_subject_or_below = {
 				limit = {
-					NOT = { any_overlord_or_above = { NOT = { ROOT = this } } }
 					OR = {
-						NOT = {
+						NOR = {
 							is_country_type = unrecognized
+							overlord = {
+								NOT = { ROOT = this }
+							}
 						}
 						is_subject_type = subject_type_protectorate
 						is_subject_type = subject_type_dominion
@@ -236,6 +239,9 @@ sick_man.3 = {
 		set_country_type = unrecognized
 		ruler = {
 			kill_character = yes
+		}
+		add_journal_entry = {
+			type = je_dead_man_walking
 		}
 	}
 }

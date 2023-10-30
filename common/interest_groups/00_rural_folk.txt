@@ -59,11 +59,23 @@
 		if = {
 			limit = {
 				OR = {
-					c:HBC ?= this
-					c:CHL ?= this
-					c:ARG ?= this
+					# America
 					country_has_primary_culture = cu:yankee
 					country_has_primary_culture = cu:dixie
+					country_has_primary_culture = cu:anglo_canadian
+					country_has_primary_culture = cu:franco_canadian
+					country_has_primary_culture = cu:mexican
+					country_has_primary_culture = cu:central_american
+					country_has_primary_culture = cu:north_andean
+					country_has_primary_culture = cu:south_andean
+					country_has_primary_culture = cu:brazilian
+					country_has_primary_culture = cu:platinean
+
+					# Africa (White)
+					country_has_primary_culture = cu:boer
+
+					# Africa (Native)
+					# Russia
 				}
 			}
 			ig:ig_rural_folk = {

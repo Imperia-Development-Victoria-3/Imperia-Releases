@@ -35,7 +35,7 @@ heavenly.1 = {
 					religion = rel:protestant
 				}
 			}
-			average_sol < average_expected_sol
+			average_sol < 10
 			any_neighbouring_state = {
 				is_treaty_port = yes
 				owner = {

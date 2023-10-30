@@ -1,0 +1,17 @@
+﻿missouri_compromise = { #edited to increase landowner strength in USA
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_landowners_pol_str_mult = 0.3
+	country_aristocrats_voting_power_add = 50
+	country_farmers_voting_power_add = 25
+}
+
+opium_wars_addiction_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	state_radicals_from_sol_change_mult = 0.50
+    state_standard_of_living_add = -1
+	state_mortality_mult = 0.025
+	unit_offense_mult = -0.25
+	unit_defense_mult = -0.25
+	country_prestige_from_army_power_projection_mult = -0.33
+	state_conscription_rate_add = -0.05
+}

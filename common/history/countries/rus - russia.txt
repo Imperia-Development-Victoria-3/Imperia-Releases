@@ -21,5 +21,13 @@
 		ig:ig_intelligentsia = { 
 			set_ig_suppression = yes
 		}
+
+		ig:ig_devout = {
+			add_ruling_interest_group = yes
+		}
+
+		ig:ig_landowners = {
+			add_ruling_interest_group = yes
+		}
 	}
 }

@@ -25,7 +25,7 @@ historical_agitators.1 = { #Vladimir Lenin
 		empty_agitator_slots >= 1
 		c:RUS ?= this
 		ig:ig_trade_unions = {
-			is_marginal = no
+		#	is_marginal = no
 			ig_approval < 0	
 		}
 		game_date > 1890.1.1
@@ -939,7 +939,7 @@ historical_agitators.10 = { #Kropotkin
 		empty_agitator_slots >= 1
 		c:RUS ?= this
 		ig:ig_trade_unions = {
-			is_marginal = no
+		#	is_marginal = no
 			ig_approval < 0	
 		}
 		game_date > 1872.1.1
@@ -1051,7 +1051,7 @@ historical_agitators.11 = { #Bakunin
 		empty_agitator_slots >= 1
 		c:RUS ?= this
 		ig:ig_trade_unions = {
-			is_marginal = no
+	#		is_marginal = no
 			ig_approval < 0	
 		}
 		game_date > 1863.1.1

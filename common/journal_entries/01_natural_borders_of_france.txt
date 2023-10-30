@@ -1,10 +1,30 @@
 ﻿je_french_natural_borders = {
 	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
 
+	scripted_button = vtm_je_french_natural_borders_button_a
+	scripted_button = vtm_je_french_natural_borders_button_b
+	scripted_button = vtm_je_french_natural_borders_button_c
+
 	is_shown_when_inactive = {
 		exists = c:FRA
 		this = c:FRA
 		has_dlc_feature = voice_of_the_people_content
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					any_scope_state = {
+						OR = {
+							state_region = s:STATE_RHINELAND
+							state_region = s:STATE_NORTH_RHINE
+						}
+					}
+				}
+				set_global_variable = german_homelands_under_threat
+			}
+		}
 	}
 
 	possible = {
@@ -25,10 +45,6 @@
 				}
 			}
 		}
-	}
-
-	immediate = {
-		trigger_event = { id = natural_borders.1 popup = yes }
 	}
 
 	complete = {
@@ -72,7 +88,10 @@
 	}
 
 	invalid = {
-		has_variable = reject_natural_borders
+		custom_tooltip = {
+			text = vtm_reject_natural_borders_tt
+			has_variable = reject_natural_borders
+		}
 	}
 
 	should_be_pinned_by_default = yes

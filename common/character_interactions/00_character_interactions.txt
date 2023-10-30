@@ -17,7 +17,10 @@ grant_command_to_ruler = {
 	clicksound = "event:/SFX/UI/Military/command_grant"
 
 	potential = {
-		is_ruler = yes
+		OR = {
+			is_ruler = yes
+			has_template = usa_roosevelt_character_template
+		}
 		NOT = {
 			has_role = general
 		}
@@ -27,8 +30,11 @@ grant_command_to_ruler = {
 	possible = {
 		age >= define:NCharacters|ADULT_AGE
 		is_female = no
-		owner = {
-			ruler_can_have_command = yes
+		OR = {
+			has_template = usa_roosevelt_character_template
+			owner = {
+				ruler_can_have_command = yes
+			}
 		}
 		exists = owner.capital.land_hq
 	}
@@ -88,7 +94,10 @@ remove_command_from_ruler = {
 	clicksound = "event:/SFX/UI/Military/command_remove"
 
 	potential = {
-		is_ruler = yes
+		OR = {
+			is_ruler = yes
+			has_template = usa_roosevelt_character_template
+		}
 		has_role = general
 		owner = scope:actor
 	}
@@ -557,7 +566,7 @@ exile_character = {
 		}
 	}
 
-	cooldown = { months = normal_modifier_time }
+	cooldown = { months = long_modifier_time }
 	show_confirmation_box = yes
 
 	ai_chance = {
@@ -907,7 +916,7 @@ retire_commander = {
 			limit = {
 				OR = {	
 					has_trait = expert_convoy_raider
-					# has_trait = expert_artillery_commander
+					#has_trait = expert_artillery_commander
 					has_trait = expert_offensive_planner
 					has_trait = expert_defensive_strategist
 					has_trait = expert_naval_commander
@@ -919,7 +928,7 @@ retire_commander = {
 			limit = {
 				OR = {	
 					has_trait = experienced_convoy_raider
-					# has_trait = experienced_artillery_commander
+					#has_trait = experienced_artillery_commander
 					has_trait = experienced_offensive_planner
 					has_trait = experienced_defensive_strategist
 					has_trait = experienced_naval_commander
