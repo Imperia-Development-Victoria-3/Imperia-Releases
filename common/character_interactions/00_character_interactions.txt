@@ -697,7 +697,7 @@ exile_character = {
 		}
 	}
 
-	cooldown = { months = long_modifier_time }
+	cooldown = { months = normal_modifier_time }	#VTM long_modifier_time which created too much inflexibility
 	show_confirmation_box = yes
 
 	ai_chance = {

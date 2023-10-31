@@ -7,8 +7,9 @@ vtm_ideology_modernizer = { # Centralizer
 
 	lawgroup_bureaucracy = {
 		law_elected_bureaucrats = disapprove
-		law_appointed_bureaucrats = approve
 		law_hereditary_bureaucrats = neutral
+		law_appointed_bureaucrats = approve
+		law_meritocratic_bureaucracy = approve
 	}
 
 	lawgroup_army_model = {
@@ -19,12 +20,12 @@ vtm_ideology_modernizer = { # Centralizer
 	}
 
 	lawgroup_economic_system = {
-		law_cooperative_ownership = disapprove
-		law_command_economy = neutral
+		law_command_economy = strongly_disapprove
+		law_cooperative_ownership = strongly_disapprove
 		law_interventionism = approve
-		law_agrarianism = disapprove
-		law_traditionalism = strongly_disapprove
-		law_laissez_faire = neutral
+		law_agrarianism = neutral
+		law_traditionalism = disapprove	
+		law_laissez_faire = disapprove
 		law_industry_banned = strongly_disapprove
 	}
 
@@ -72,7 +73,7 @@ vtm_ideology_modernizer = { # Centralizer
 
 			# more likely if the crown has something to lose
 			add = {
-				value = 5
+				value = 4
 				multiply = owner.country_rank # from x0 to x7 with Egypt for example being a 5
 			}
 
@@ -83,7 +84,7 @@ vtm_ideology_modernizer = { # Centralizer
 						has_technology_researched = empiricism
 					}
 				}
-				multiply = 1.5
+				multiply = 1.25
 			}
 		}
 		# more likely AS LONG AS issues are relevant
@@ -164,7 +165,7 @@ vtm_ideology_modernizer = { # Centralizer
 					}
 				}
 			}
-			add = 75
+			add = 50
 
 			if = {
 				limit = {
@@ -194,7 +195,7 @@ vtm_ideology_modernizer = { # Centralizer
 					is_in_government = yes
 				}
 			}
-			multiply = 1.25
+			multiply = 1.1
 		}
 
 		# less likely for Landowners and Devout

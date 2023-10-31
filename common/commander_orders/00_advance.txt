@@ -61,8 +61,9 @@ advance_reckless = {
         unit_offense_mult = 0.15
         unit_morale_loss_mult = 0.1
         unit_recovery_rate_add = -0.1
-        character_battle_condition_aggressive_maneuver_mult = 1
-        character_battle_condition_blunder_mult = 1.5
+        character_battle_condition_aggressive_maneuver_mult = 0.5
+        character_battle_condition_ramming_maneuver_mult = 2
+        character_battle_condition_blunder_mult = 2
     }
 
 	entity_animation = "advance"
