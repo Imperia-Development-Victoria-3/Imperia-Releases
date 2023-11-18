@@ -1,4 +1,4 @@
-l_polish:
+﻿l_polish:
   ask_for_guarantee: "$concept_guarantee$"
   ask_for_guarantee_desc: "#header $ask_for_guarantee$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] ustanawia [Concept('concept_guarantee', '$concept_guarantee$')] niepodległości na prośbę [Concept('concept_country', '$concept_country$')]."
   concept_guarantee: "Gwarancję"

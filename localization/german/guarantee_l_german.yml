@@ -1,4 +1,4 @@
-l_german:
+﻿l_german:
   ask_for_guarantee: "$concept_guarantee$"
   ask_for_guarantee_desc: "#header $ask_for_guarantee$#!\n$TOOLTIP_DELIMITER$\nA [concept_diplomatic_pact] that establishes a [Concept('concept_guarantee', '$concept_guarantee$')] of Independence on the requesting [Concept('concept_country', '$concept_country$')]."
   concept_guarantee: "Guarantee"
