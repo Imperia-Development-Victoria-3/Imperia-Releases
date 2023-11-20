@@ -236,7 +236,7 @@
 	ethnicities = {
 		1 = asian
 	}
-	graphics = asian
+	graphics = east_asian
 }
 
 ainu={
@@ -320,5 +320,5 @@ ainu={
 	ethnicities = {
 		1 = circumpolar
 	}
-	graphics = asian
+	graphics = east_asian
 }

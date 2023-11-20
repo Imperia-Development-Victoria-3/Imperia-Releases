@@ -432,7 +432,7 @@ korean={
 	ethnicities = {
 		1 = asian
 	}
-	graphics = asian
+	graphics = east_asian
 }
 
 manchu={
@@ -616,7 +616,7 @@ manchu={
 	ethnicities = {
 		1 = asian
 	}
-	graphics = asian
+	graphics = east_asian
 }
 
 han={
@@ -1229,7 +1229,7 @@ han={
 	ethnicities = {
 		1 = asian
 	}
-	graphics = asian
+	graphics = east_asian
 }
 
 hakka={
@@ -1706,7 +1706,7 @@ hakka={
 	ethnicities = {
 		1 = asian
 	}
-	graphics = asian
+	graphics = east_asian
 }
 
 vietnamese={
@@ -2021,7 +2021,7 @@ vietnamese={
 	ethnicities = {
 		1 = asian
 	}
-	graphics = asian
+	graphics = east_asian
 }
 
 mongol={
@@ -2146,7 +2146,7 @@ mongol={
 	ethnicities = {
 		1 = central_asian
 	}
-	graphics = asian
+	graphics = east_asian
 }
 
 kalmyk={
@@ -2271,6 +2271,6 @@ kalmyk={
 	ethnicities = {
 		1 = central_asian
 	}
-	graphics = asian
+	graphics = east_asian
 }
 
