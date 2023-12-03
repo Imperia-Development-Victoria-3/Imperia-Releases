@@ -11,31 +11,16 @@
 		value = 0
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -134,78 +119,27 @@ law_migration_controls = {
 		}	
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
-	pop_support = {
-		value = 0
-		add = {
-			desc = "POP_LOWER_STRATA"
-			if = {
-				limit = { 
-					owner = { 
-						NOT = { 
-							has_law = law_type:law_closed_borders
-						} 
-					}
-					state = {
-						state_unemployment_rate >= 0.1
-					}
-				}
-				value = 0.1
+	on_enact = {
+		if = {
+			limit = {
+				c:CHI ?= this
+				has_journal_entry = je_chinese_missions
 			}
-			if = {
+			every_scope_state = {
 				limit = {
-					owner = { 
-						NOT = { 
-							has_law = law_type:law_closed_borders
-						} 
+					NOT = {
+						any_neighbouring_state = {
+							is_treaty_port = yes
+							owner = {
+								religion = {
+									has_discrimination_trait = christian
+								}
+							}
+						}
 					}
-					state = {
-						state_unemployment_rate >= 0.2
-					}
+					has_variable = open_to_missionaries_state
 				}
-				value = 0.1
-			}
-			if = {
-				limit = { 
-					owner = { 
-						NOT = { 
-							has_law = law_type:law_closed_borders
-						} 
-					}
-					state = {
-						state_unemployment_rate >= 0.3
-					}
-				}
-				value = 0.1
-			}
-			if = {
-				limit = {
-					owner = { 
-						NOT = { 
-							has_law = law_type:law_closed_borders
-						} 
-					}
-					state = {
-						state_unemployment_rate >= 0.4
-					}
-				}
-				value = 0.1
-			}
-			if = {
-				limit = {
-					owner = { 
-						NOT = { 
-							has_law = law_type:law_closed_borders
-						} 
-					}
-					state = {
-						state_unemployment_rate >= 0.5
-					}
-				}
-				value = 0.1
+				remove_variable = open_to_missionaries_state
 			}
 		}
 	}
@@ -213,24 +147,13 @@ law_migration_controls = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -304,53 +227,27 @@ law_closed_borders = {
 		}	
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
-	pop_support = {
-		value = 0
-		add = {
-			desc = "POP_LOWER_STRATA"
-			if = {
-				limit = { 
-					state = {
-						state_unemployment_rate >= 0.1
-					}
-				}
-				value = 0.1
+	on_enact = {
+		if = {
+			limit = {
+				c:CHI ?= this
+				has_journal_entry = je_chinese_missions
 			}
-			if = {
+			every_scope_state = {
 				limit = {
-					state = {
-						state_unemployment_rate >= 0.2
+					NOT = {
+						any_neighbouring_state = {
+							is_treaty_port = yes
+							owner = {
+								religion = {
+									has_discrimination_trait = christian
+								}
+							}
+						}
 					}
+					has_variable = open_to_missionaries_state
 				}
-				value = 0.1
-			}
-			if = {
-				limit = { 
-					state = {
-						state_unemployment_rate >= 0.3
-					}
-				}
-				value = 0.1
-			}
-			if = {
-				limit = {
-					state = {
-						state_unemployment_rate >= 0.4
-					}
-				}
-				value = 0.1
-			}
-			if = {
-				limit = {
-					state = {
-						state_unemployment_rate >= 0.5
-					}
-				}
-				value = 0.1
+				remove_variable = open_to_missionaries_state
 			}
 		}
 	}
@@ -358,24 +255,13 @@ law_closed_borders = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition

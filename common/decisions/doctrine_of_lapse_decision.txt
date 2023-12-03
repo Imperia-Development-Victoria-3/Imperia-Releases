@@ -35,7 +35,7 @@
 			trigger = {
 				infamy < infamy_threshold:infamous
 			}
-			add = 0
+			add = 5
 		}
 	}
 }

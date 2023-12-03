@@ -15,10 +15,6 @@
 		value = 0
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	# AI shouldn't try to abolish institutions
 	ai_will_do = {
 		always = no
@@ -27,24 +23,13 @@
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -91,11 +76,7 @@ law_local_police = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-	
-	# Don't return to local police if we have something more advanced
+		# Don't return to local police if we have something more advanced
 	ai_will_do = {
 		NOR = {
 			has_law = law_type:law_dedicated_police
@@ -106,24 +87,13 @@ law_local_police = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -192,31 +162,16 @@ law_dedicated_police = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -277,31 +232,16 @@ law_militarized_police = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition

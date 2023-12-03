@@ -473,7 +473,6 @@ tanzimat_events.5 = {
 	immediate = {
 		random_neighbouring_state = {
 			limit = {
-				#state_is_in_europe = yes
 				owner = { 
 					OR = { 
 						religion = rel:orthodox
@@ -487,7 +486,6 @@ tanzimat_events.5 = {
 		}
 		random_scope_state = {
 			limit = {
-				#state_is_in_europe = yes
 				is_incorporated = yes
 				any_scope_pop = {
 					religion = rel:sunni

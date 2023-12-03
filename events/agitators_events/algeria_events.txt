@@ -110,6 +110,9 @@ algeria_events.1 = {
 		s:STATE_MARRAKECH = {
 			add_claim = c:FRA
 		}
+		s:STATE_MAURITANIA = {
+			add_claim = c:FRA
+		}
 	}
 	option = { # Focus on migration
 		name = algeria_events.1.b
@@ -169,6 +172,9 @@ algeria_events.1 = {
 			add_claim = c:FRA
 		}
 		s:STATE_MARRAKECH = {
+			add_claim = c:FRA
+		}
+		s:STATE_MAURITANIA = {
 			add_claim = c:FRA
 		}
 	}
@@ -243,6 +249,9 @@ algeria_events.1 = {
 		s:STATE_MARRAKECH = {
 			add_claim = c:FRA
 		}
+		s:STATE_MAURITANIA = {
+			add_claim = c:FRA
+		}
 	}
 }
 
@@ -297,6 +306,7 @@ algeria_events.2 = {
 					has_ideology = ideology:ideology_social_democrat
 					has_ideology = ideology:ideology_market_liberal
 					has_ideology = ideology:ideology_humanitarian
+					has_ideology = ideology:ideology_humanitarian_royalist
 				}
 				NOT = { has_trait = bigoted }
 			}
@@ -346,6 +356,7 @@ algeria_events.2 = {
 						has_ideology = ideology:ideology_social_democrat
 						has_ideology = ideology:ideology_market_liberal
 						has_ideology = ideology:ideology_humanitarian
+						has_ideology = ideology:ideology_humanitarian_royalist
 					}
 					NOT = { has_trait = bigoted }
 				}

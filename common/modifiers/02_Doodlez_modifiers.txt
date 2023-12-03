@@ -23,4 +23,3 @@ millet_system = {
 	state_conversion_mult = -0.9
 	state_radicals_from_discrimination_mult = -0.25
 }
-

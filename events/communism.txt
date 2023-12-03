@@ -63,6 +63,20 @@ communism.1 = {
 			}
 			custom_tooltip = communist_unions.tt
 		}
+		if = {
+			limit = {
+				AND = {
+					exists = ig:ig_trade_unions
+					ig:ig_trade_unions = { is_marginal = yes }		
+				}
+			}
+			add_modifier = {
+				name = communist_pressure_modifier
+				months = normal_modifier_time
+				is_decaying = yes
+			}
+		}
+		
 	}
 	option = { # ban slavery
 		name = communism.1.b
@@ -77,6 +91,19 @@ communism.1 = {
 				}
 			}
 			custom_tooltip = communist_unions.tt
+		}
+		if = {
+			limit = {
+				AND = {
+					exists = ig:ig_trade_unions
+					ig:ig_trade_unions = { is_marginal = yes }		
+				}
+			}
+			add_modifier = {
+				name = communist_pressure_modifier
+				months = normal_modifier_time
+				is_decaying = yes
+			}
 		}
 	}
 	option = { # Regulatory bodies
@@ -93,6 +120,19 @@ communism.1 = {
 				}
 			}
 			custom_tooltip = communist_unions.tt
+		}
+		if = {
+			limit = {
+				AND = {
+					exists = ig:ig_trade_unions
+					ig:ig_trade_unions = { is_marginal = yes }		
+				}
+			}
+			add_modifier = {
+				name = communist_pressure_modifier
+				months = normal_modifier_time
+				is_decaying = yes
+			}
 		}
 	}
 	option = {
@@ -119,6 +159,19 @@ communism.1 = {
 			add_modifier = {
 				name = communist_government_modifier
 				months = normal_modifier_time
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					exists = ig:ig_trade_unions
+					ig:ig_trade_unions = { is_marginal = yes }		
+				}
+			}
+			add_modifier = {
+				name = communist_pressure_modifier
+				months = normal_modifier_time
+				is_decaying = yes
 			}
 		}
 		add_loyalists = {
@@ -764,7 +817,7 @@ communism.9 = {
 			any_scope_pop = {
 				pop_is_discriminated = no
 				standard_of_living > 15
-				workplace = {
+				workplace ?= {
 					OR = {
 					    has_active_production_method = pm_worker_cooperative_building_food_industry
 					    has_active_production_method = pm_worker_cooperative_building_textile_mills
@@ -803,7 +856,7 @@ communism.9 = {
 				any_scope_pop = {
 					pop_is_discriminated = no
 					standard_of_living > 15
-					workplace = {
+					workplace ?= {
 						OR = {
                             has_active_production_method = pm_worker_cooperative_building_food_industry
                             has_active_production_method = pm_worker_cooperative_building_textile_mills
@@ -836,7 +889,7 @@ communism.9 = {
 				limit = {
 					pop_is_discriminated = no
 					standard_of_living > 15
-					workplace = {
+					workplace ?= {
 						OR = {
                             has_active_production_method = pm_worker_cooperative_building_food_industry
                             has_active_production_method = pm_worker_cooperative_building_textile_mills

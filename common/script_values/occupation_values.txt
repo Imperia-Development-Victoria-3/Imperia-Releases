@@ -140,7 +140,7 @@ occupation_cost = {
 	}
 }
 
-# root = battle
+# root = battleside
 battle_victory_score = {
 	add = {
 		add = 100
@@ -148,10 +148,11 @@ battle_victory_score = {
 	}
 
 	multiply = {
-		add = 1
-		add = modifier:unit_occupation_mult
-		min = 0
-	}
+			add = 1
+			add = modifier:unit_occupation_mult
+			min = 0
+			desc = "BATTLE_VICTORY_UNIT_OCCUPATION_MULT"
+		}
 	
 	save_temporary_value_as = pre_min_amount_cap
 	if = {

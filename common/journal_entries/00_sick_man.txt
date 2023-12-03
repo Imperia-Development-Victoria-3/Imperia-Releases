@@ -1,6 +1,8 @@
 ﻿je_sick_man_main = {
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 
+	group = je_group_historical_content
+
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
@@ -39,6 +41,8 @@
 
 je_sick_man_syria = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_historical_content
 
 	complete = {
 		owns_entire_state_region = STATE_ALEPPO
@@ -120,6 +124,8 @@ je_sick_man_syria = {
 je_sick_man_egypt = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
+	group = je_group_historical_content
+
 	complete = {
 		OR = {
 			AND = {
@@ -160,6 +166,8 @@ je_sick_man_egypt = {
 je_sick_man_economy = {
 	icon = "gfx/interface/icons/event_icons/event_industry.dds"
 
+	group = je_group_historical_content
+
 	complete = {
 		in_default = no
 		any_scope_state = {
@@ -194,15 +202,18 @@ je_sick_man_economy = {
 je_sick_man_education = {
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
+	group = je_group_historical_content
+
 	complete = {
 		any_scope_building = {
 			is_building_type = building_university
 			occupancy > 0.9
 			level >= 5
 		}
-		scope:journal_entry = {
-			is_goal_complete = yes
-		}
+		# scope:journal_entry = {
+		# 	is_goal_complete = yes
+		# }
+		literacy_rate >= 0.25
 	}
 
 	on_complete = {
@@ -219,7 +230,8 @@ je_sick_man_education = {
 	}
 
 	goal_add_value = {
-		add = 0.2
+		subtract = root.literacy_rate
+		add = 0.25
 	}
 
 	invalid = {
@@ -239,6 +251,8 @@ je_sick_man_education = {
 # Nationalism
 je_sick_man_separatism = {
 	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+
+	group = je_group_historical_content
 
 	complete = {
 		scope:journal_entry = {
@@ -304,6 +318,8 @@ je_sick_man_separatism = {
 je_sick_man_army = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
+	group = je_group_historical_content
+
 	complete = {
 		army_size >= 150
 		has_technology_researched = napoleonic_warfare
@@ -316,6 +332,15 @@ je_sick_man_army = {
 					#has_active_production_method = pm_no_artillery # wait for 1 5 changes
 					#has_active_production_method = pm_cannon_artillery
 				}
+			}
+			any_military_formation = {
+				filter = {
+					is_army = yes
+				}
+				any_combat_unit = {
+					has_unit_type = unit_type:combat_unit_type_irregular_infantry
+				}
+				percent >= 0.25
 			}
 		}
 	}
@@ -351,6 +376,8 @@ je_sick_man_army = {
 # Bureaucractic Reform
 je_sick_man_bureaucracy = {
 	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	group = je_group_historical_content
 
 	complete = {
 		NOR = { 
@@ -401,6 +428,8 @@ je_sick_man_bureaucracy = {
 
 je_dead_man_walking = {
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	group = je_group_historical_content
 
 	complete = {
 		has_law = law_type:law_multicultural

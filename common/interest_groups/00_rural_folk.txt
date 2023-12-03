@@ -25,6 +25,7 @@
 		ig:ig_rural_folk = {
 			if = {
 				limit = {
+					has_dlc_feature = rp1_content
 					owner = { c:BRZ ?= this }
 				}
 				set_ig_trait = ig_trait:ig_trait_old_ways
@@ -55,32 +56,18 @@
 			}
 		}
 	
-		# Frontier Expansion Ideology
+		# Jeffersonian Ideology
 		if = {
 			limit = {
 				OR = {
-					# America
 					country_has_primary_culture = cu:yankee
 					country_has_primary_culture = cu:dixie
-					country_has_primary_culture = cu:anglo_canadian
-					country_has_primary_culture = cu:franco_canadian
-					country_has_primary_culture = cu:mexican
-					country_has_primary_culture = cu:central_american
-					country_has_primary_culture = cu:north_andean
-					country_has_primary_culture = cu:south_andean
-					country_has_primary_culture = cu:brazilian
-					country_has_primary_culture = cu:platinean
-
-					# Africa (White)
-					country_has_primary_culture = cu:boer
-
-					# Africa (Native)
-					# Russia
 				}
 			}
 			ig:ig_rural_folk = {
-				remove_ideology = ideology_isolationist
-				add_ideology = ideology_isolationist_expansionism
+				remove_ideology = ideology_agrarian
+				add_ideology = ideology_agrarian_jeffersonian
+				set_interest_group_name = ig_yeoman_farmers
 			}
 		}
 

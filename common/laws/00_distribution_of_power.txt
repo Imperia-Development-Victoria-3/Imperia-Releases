@@ -68,31 +68,16 @@ law_autocracy = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -176,31 +161,16 @@ law_technocracy = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -277,31 +247,16 @@ law_oligarchy = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -361,31 +316,16 @@ law_elder_council = {
 		value = 0
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -468,31 +408,16 @@ law_landed_voting = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -568,31 +493,16 @@ law_wealth_voting = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -667,31 +577,16 @@ law_census_voting = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -774,31 +669,16 @@ law_universal_suffrage = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -870,31 +750,16 @@ law_anarchy = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -1051,31 +916,16 @@ law_single_party_state = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition

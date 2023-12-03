@@ -6,6 +6,7 @@
 			last_name = "von_Wurttemberg"
 			historical = yes
 			ruler = yes
+			culture = cu:south_german
 			religion = protestant
 			age = 57
 			interest_group = ig_landowners
@@ -24,6 +25,7 @@
 			last_name = "von_Wurttemberg"
 			historical = yes
 			heir = yes
+			culture = cu:south_german
 			religion = protestant
 			age = 13
 			interest_group = ig_landowners

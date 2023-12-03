@@ -6,6 +6,7 @@
 			last_name = "von_Baden"
 			historical = yes
 			ruler = yes
+			culture = cu:south_german
 			religion = protestant
 			age = 46
 			interest_group = ig_intelligentsia
@@ -24,6 +25,7 @@
 			last_name = von_Baden
 			historical = yes
 			heir = yes
+			culture = cu:south_german
 			religion = protestant
 			age = 12
 			interest_group = ig_landowners

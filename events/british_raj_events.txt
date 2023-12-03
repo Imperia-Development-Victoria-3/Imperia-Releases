@@ -538,9 +538,10 @@ raj.6 = {
 			create_diplomatic_play = {
 				name = sepoy_mutiny
 				type = dp_annex_war
-				escalation = 80
+				escalation = 33 #80 MUG needs time
 				target_state = s:STATE_DELHI.region_state:MUG
 			}
+			change_infamy = -50
 			random_diplomatic_play = {
 				limit = {
 					any_scope_play_involved = {

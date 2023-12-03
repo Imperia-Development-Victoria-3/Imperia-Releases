@@ -1000,7 +1000,7 @@ radio = {
 	}
 	
 	ai_weight = {
-		value = 1
+		value = 5
 	}
 }
 
@@ -1016,7 +1016,7 @@ telephone = {
 	}
 	
 	ai_weight = {
-		value = 1
+		value = 5
 	}
 }
 

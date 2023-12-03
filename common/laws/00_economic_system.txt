@@ -30,6 +30,7 @@ law_traditionalism = {
 		#state_market_access_price_impact = -0.15
 		
 		country_subsidies_bg_infrastructure = yes
+		country_subsidies_bg_power = yes
 		country_subsidies_bg_trade = yes
 	}
 	
@@ -46,10 +47,6 @@ law_traditionalism = {
 		value = 0
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	build_from_investment_pool = {
 		bg_agriculture
 		bg_plantations
@@ -64,24 +61,13 @@ law_traditionalism = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -159,32 +145,16 @@ law_interventionism = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -224,6 +194,7 @@ law_agrarianism = {
 		country_subsidies_bg_ranching = yes
 		country_subsidies_bg_plantations = yes
 		country_subsidies_bg_infrastructure = yes
+		country_subsidies_bg_power = yes
 		country_subsidies_bg_trade = yes
 	}
 
@@ -280,11 +251,7 @@ law_agrarianism = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-		
-	ai_will_do = {
+		ai_will_do = {
 		OR = {
 			has_law = law_type:law_traditionalism
 			literacy_rate < 0.4
@@ -294,24 +261,13 @@ law_agrarianism = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -392,6 +348,7 @@ law_industry_banned = {
 
 	modifier = {
 		building_group_bg_agriculture_throughput_add = 0.1
+building_group_bg_plantations_throughput_add = 0.1
 		state_expected_sol_mult = -0.1
 		interest_group_ig_rural_folk_pol_str_mult = 0.5
 		state_aristocrats_investment_pool_contribution_add = 0.25
@@ -402,6 +359,7 @@ law_industry_banned = {
 		country_subsidies_bg_ranching = yes
 		country_subsidies_bg_plantations = yes
 		country_subsidies_bg_infrastructure = yes
+		country_subsidies_bg_power = yes
 		country_subsidies_bg_trade = yes
 	}
 
@@ -438,10 +396,6 @@ law_industry_banned = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_will_do = {
 		always = no
 	}
@@ -449,24 +403,13 @@ law_industry_banned = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -506,6 +449,7 @@ law_laissez_faire = {
 		country_max_companies_add = 1
 		
 		country_subsidies_bg_infrastructure = yes
+		country_subsidies_bg_power = yes
 		country_subsidies_bg_trade = yes
 		country_private_buildings_protected = yes
 	}
@@ -549,31 +493,16 @@ law_laissez_faire = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -651,31 +580,16 @@ law_cooperative_ownership = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -752,11 +666,8 @@ law_command_economy = {
 			}
 		}
 	}
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-	
-	ai_will_do = {
+
+		ai_will_do = {
 		OR = {
 			has_law = law_type:law_technocracy
 			AND = {
@@ -774,24 +685,13 @@ law_command_economy = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition

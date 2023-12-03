@@ -339,7 +339,7 @@ dei_breakup.1 = {
 			has_technology_researched = pan-nationalism
 		}
 		ai_chance = {
-			base = 1 # VANILLA = 2 # Feel free to turn this back up if you like but I personally prefer this off without further narrative support.
+			base = 1
 		}
 		change_tag = IDN
 		hidden_effect = {

@@ -1,6 +1,5 @@
 ﻿ig_trait_be_fruitful_and_multiply = {
 	icon = "gfx/interface/icons/ig_trait_icons/be_fruitful_and_multiply.dds"
-
 	min_approval = loyal
 	
 	modifier = {
@@ -10,7 +9,6 @@
 
 ig_trait_divine_right = {
 	icon = "gfx/interface/icons/ig_trait_icons/divine_right.dds"
-
 	min_approval = happy
 	
 	modifier = {

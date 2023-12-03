@@ -1,5 +1,5 @@
-﻿### REGULAR TEDDY
-
+﻿### TEDDY
+# deprecated and superseded by vanilla
 dna_vtm_teddy = {
 	portrait_info = {
 		genes={ 		

@@ -10,7 +10,7 @@ character_events.100 = {
 			leader = {
 				is_ruler = no
 				is_busy = no
-				is_historical = no
+				#is_historical = no
 			}
 		}
 	}
@@ -49,7 +49,7 @@ character_events.100 = {
 						kill_character = {
 							hidden = yes
 						}
-						#post_notification = ig_leader_memento_mori
+						owner = { post_notification = ig_leader_memento_mori }
 					}
 					3 = {}
 				}
@@ -58,10 +58,10 @@ character_events.100 = {
 				kill_character = {
 					hidden = yes
 				}
-				#post_notification = ig_leader_memento_mori
+				owner = { post_notification = ig_leader_memento_mori }
 			}
 		}
-		post_notification = ig_leader_memento_mori
+		#post_notification = ig_leader_memento_mori
 		# Kill an Agitator occasionally, but not too often
 		if = {
 			limit = {

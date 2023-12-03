@@ -4,7 +4,7 @@
 	type = political
 	
 	revolution_aversion = {
-		value = 75	
+		value = 75
 	}
 	
 	min_law_chance_to_pass = {
@@ -21,24 +21,12 @@
 						has_journal_entry = je_government_petition
 						var:desired_law_var	?= scope:law			
 					}
-					law_is_essential = yes
+					law_is_important = yes
 				}
 			}
 			multiply = 0.33
 		}
-		if = {
-			limit = {
-				law_is_important = yes
 			}
-			multiply = 0.5
-		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			multiply = 0.66
-		}
-	}
 	
 	max_progressiveness = {
 		value = 50
@@ -157,24 +145,12 @@ ai_strategy_reactionary_agenda = {
 						has_journal_entry = je_government_petition
 						var:desired_law_var	?= scope:law			
 					}
-					law_is_essential = yes
+					law_is_important = yes
 				}
 			}
 			multiply = 0.5
 		}
-		if = {
-			limit = {
-				law_is_important = yes
 			}
-			multiply = 0.66
-		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			multiply = 0.75
-		}
-	}
 	
 	max_progressiveness = {
 		value = 25
@@ -244,11 +220,11 @@ ai_strategy_reactionary_agenda = {
 					is_interest_group_type = ig_industrialists
 				}
 			}
-			# OR = {
-			# 	has_ideology = ideology:ideology_traditionalist
-			# 	has_ideology = ideology:ideology_slaver
-			# 	has_ideology = ideology:ideology_theocrat
-			# }
+			OR = {
+				has_ideology = ideology:ideology_traditionalist
+				has_ideology = ideology:ideology_slaver
+				has_ideology = ideology:ideology_theocrat
+			}
 		}
 		OR = {
 			AND = {
@@ -349,24 +325,12 @@ ai_strategy_progressive_agenda = {
 						has_journal_entry = je_government_petition
 						var:desired_law_var	?= scope:law			
 					}
-					law_is_essential = yes
+					law_is_important = yes
 				}
 			}
 			multiply = 0.5
 		}
-		if = {
-			limit = {
-				law_is_important = yes
 			}
-			multiply = 0.66
-		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			multiply = 0.75
-		}
-	}
 	
 	max_progressiveness = {
 		value = 100
@@ -543,24 +507,12 @@ ai_strategy_egalitarian_agenda = {
 						has_journal_entry = je_government_petition
 						var:desired_law_var	?= scope:law			
 					}
-					law_is_essential = yes
+					law_is_important = yes
 				}
 			}
 			multiply = 0.5
 		}
-		if = {
-			limit = {
-				law_is_important = yes
 			}
-			multiply = 0.66
-		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			multiply = 0.75
-		}
-	}
 	
 	max_progressiveness = {
 		value = 1000
@@ -720,24 +672,12 @@ ai_strategy_nationalist_agenda = {
 						has_journal_entry = je_government_petition
 						var:desired_law_var	?= scope:law			
 					}
-					law_is_essential = yes
+					law_is_important = yes
 				}
 			}
 			multiply = 0.5
 		}
-		if = {
-			limit = {
-				law_is_important = yes
 			}
-			multiply = 0.66
-		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			multiply = 0.75
-		}	
-	}
 	
 	max_progressiveness = {
 		value = 50
@@ -894,24 +834,12 @@ ai_strategy_maintain_mandate_of_heaven = {
 						has_journal_entry = je_government_petition
 						var:desired_law_var	?= scope:law			
 					}
-					law_is_essential = yes
+					law_is_important = yes
 				}
 			}
 			multiply = 0.25
 		}
-		if = {
-			limit = {
-				law_is_important = yes
 			}
-			multiply = 0.33
-		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			multiply = 0.5
-		}
-	}
 	
 	max_progressiveness = {
 		value = 25
@@ -1012,31 +940,19 @@ ai_strategy_anti_shogunate_agenda = {
 						has_journal_entry = je_government_petition
 						var:desired_law_var	?= scope:law			
 					}
-					law_is_essential = yes
+					law_is_important = yes
 				}
 			}
 			multiply = 0.5
 		}
-		if = {
-			limit = {
-				law_is_important = yes
 			}
-			multiply = 0.66
-		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			multiply = 0.75
-		}
-	}
 	
 	max_progressiveness = {
 		value = 100
 	}
 	
 	max_regressiveness = {
-		value = 25
+		value = 0
 	}
 	
 	change_law_chance = { 

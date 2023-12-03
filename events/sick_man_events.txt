@@ -209,24 +209,21 @@ sick_man.3 = {
 	option = {
 		name = sick_man.3.a
 		if = {
-			limit = {
+			limit = {				
+				is_subject = no
 				any_subject_or_below = {
-					NOR = {
+					NOT = { any_overlord_or_above = { NOT = { ROOT = this } } }
+					NOT = {
 						is_country_type = unrecognized
-						overlord = {
-							NOT = { ROOT = this }
-						}
 					}
 				}
 			}
 			every_subject_or_below = {
 				limit = {
+					NOT = { any_overlord_or_above = { NOT = { ROOT = this } } }
 					OR = {
-						NOR = {
+						NOT = {
 							is_country_type = unrecognized
-							overlord = {
-								NOT = { ROOT = this }
-							}
 						}
 						is_subject_type = subject_type_protectorate
 						is_subject_type = subject_type_dominion

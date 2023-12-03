@@ -69,27 +69,7 @@
 					}					
 				}
 				
-				add = 20
-			}
-
-			if = {
-				limit = {
-					OR = {
-						c:TEX ?= this
-						c:USA ?= this
-					}
-					OR = {
-						has_journal_entry = je_texas_tex
-						has_journal_entry = je_texas_usa
-					}
-					scope:target_country = {
-						OR = {
-							c:TEX ?= this
-							c:USA ?= this
-						}
-					}
-				}
-				add = 30
+				add = 50
 			}
 			
 			add = {

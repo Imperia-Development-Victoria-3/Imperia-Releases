@@ -55,27 +55,7 @@ law_consumption_based_taxation = {
 		}
 	}
 
-	pop_support = {
-		value = 0
-		add = {
-			desc = "POP_PEASANTS"
-			if = {
-				limit = {
-					owner = {
-						has_law = law_type:law_land_based_taxation
-					}
-					is_pop_type = peasants
-				}
-				value = 0.75
-			}
-		}
-	}
-
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-	
-	# AI shouldn't change to consumption-based-taxation as it's likely to wreck their economy
+		# AI shouldn't change to consumption-based-taxation as it's likely to wreck their economy
 	ai_will_do = {
 		always = no
 	}
@@ -83,24 +63,13 @@ law_consumption_based_taxation = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -168,25 +137,7 @@ law_land_based_taxation = {
 		}
 	}
 	
-	pop_support = {
-		value = 0
-		
-		add = {
-			desc = "POP_ARISTOCRATS"
-			if = {
-				limit = { 
-					is_pop_type = aristocrats
-				}
-				value = 0.33
-			}
-		}
-	}
-
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
-	# AI shouldn't change to land based taxation from more advanced taxation forms
+		# AI shouldn't change to land based taxation from more advanced taxation forms
 	ai_will_do = {
 		has_law = law_type:law_consumption_based_taxation
 	}
@@ -196,22 +147,11 @@ law_land_based_taxation = {
 		
 		if = {
 			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
-			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -292,33 +232,18 @@ law_per_capita_based_taxation = {
 				value = 0.75
 			}
 		}
-	}
-
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
+		} 
 
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
 		if = {
 			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
-			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -396,31 +321,16 @@ law_proportional_taxation = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
 		if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -497,31 +407,16 @@ law_graduated_taxation = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
 		if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition

@@ -41,6 +41,19 @@ vtm_je_french_natural_borders_button_a = {
 	# TODO
 	ai_chance = {
 		base = 0
+
+		modifier = {
+			trigger = {
+				any_interest_group = {
+					is_powerful = yes
+					is_in_government = yes
+					leader = {
+							has_ideology = ideology:ideology_pacifist
+					}
+				}
+			}
+			add = 1
+		}
 	}
 }
 
@@ -123,6 +136,9 @@ vtm_je_french_natural_borders_button_b = {
 			}
 		}
 	}
+hidden_effect = {
+			set_strategy = ai_strategy_restore_natural_borders
+		}
 	}
 
 	ai_chance = {

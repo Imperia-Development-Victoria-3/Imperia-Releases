@@ -120,6 +120,11 @@ sell_savoy = {
 			}
 		}
 		c:FRA = { trigger_event = { id = natural_borders.3 popup = yes } }
+		show_as_tooltip = {
+			s:STATE_SAVOY = {
+				remove_homeland = cu:north_italian
+			}
+		}
 	}
 
 	ai_chance = {

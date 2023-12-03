@@ -6,6 +6,7 @@
 			last_name = "von_Wettin"
 			historical = yes
 			ruler = yes
+			culture = cu:north_german
 			religion = catholic
 			age = 81 # died June 6th, 1836
 			interest_group = ig_landowners
@@ -24,6 +25,7 @@
 			last_name = "von_Wettin"
 			historical = yes
 			heir = yes
+			culture = cu:north_german
 			religion = catholic
 			age = 29
 			interest_group = ig_petty_bourgeoisie

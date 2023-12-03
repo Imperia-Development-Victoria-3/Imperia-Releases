@@ -23,3 +23,6 @@
 
  ### OTTOMAN EMPIRE
  millet_system:0 "Millet System"
+ modifier_country_vtm_cannot_recruit_heathens:0 "Cannot Recruit Heathens"
+ modifier_country_vtm_cannot_recruit_heathens_desc:0 "#TODO modifier_country_vtm_cannot_recruit_heathens_desc#!"
+ VTM_QUALIFICATIONS_CANNOT_RECRUIT_HEATHENS:0 "From [Pop.GetState.GetOwner.GetModifier.GetFullEntryDescFor('country_vtm_cannot_recruit_heathens')]"

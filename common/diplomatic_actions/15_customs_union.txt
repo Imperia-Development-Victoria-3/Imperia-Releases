@@ -7,11 +7,7 @@
 	}
 
 	potential = {
-		custom_tooltip = {
-			text = tut_customs_union_block_txt
-			NOT = { has_variable = tut_customs_union_block }
-		}
-		NOR = {
+				NOR = {
 			is_country_type = decentralized 
 			has_law = law_type:law_isolationism
 		}
@@ -32,7 +28,7 @@
 		NOR = {
 			scope:target_country = { has_law = law_type:law_isolationism }
 			has_law = law_type:law_isolationism					
-		}					
+		}		
 		custom_tooltip = {
 			text = DIPLO_ACTION_RELATIONS_CORDIAL_OR_GREATER
 			scope:target_country.relations:root >= relations_threshold:cordial
@@ -40,8 +36,7 @@
 		is_revolutionary = no
 		scope:target_country = {
 			is_revolutionary = no
-			NOT = { has_variable = tut_customs_union_block }
-		}
+					}
 		custom_tooltip = {
 			text = DIPLO_ACTION_MARKET_CONNECTION_REQUIRED
 			OR = {	
@@ -399,13 +394,12 @@
 				limit = {
 					root.total_population > 5000000
 				}
-				add = {
+				subtract = {
 					desc = "VTM_SIGNIFICANT_POPULATION_SIZE"
 					value = root.total_population
 					divide = 100000
 					subtract = 50
-					multiply = -1
-					min = -200
+					max = 200
 				}
 			}
 
@@ -416,6 +410,21 @@
 				min = -20
 				max = 20
 			}
+					
+			if = {
+				limit = {
+					gdp >= 2000000
+				}
+				
+				subtract = {
+					desc = "DIPLOMATIC_ACCEPTANCE_HIGH_GDP"
+					value = gdp
+					subtract = 1000000
+					divide = 1000000
+					min = 1
+					max = 100
+				}
+			}			
 			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_MUTUAL_TRADE_ROUTES"

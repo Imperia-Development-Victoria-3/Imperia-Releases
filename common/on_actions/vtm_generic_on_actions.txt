@@ -17,7 +17,7 @@ italian_homelands_on_action = {
 				}
 			}
 			s:STATE_SAVOY = {
-				add_homeland = north_italian
+				add_homeland = cu:north_italian
 			}
 		}
 	}

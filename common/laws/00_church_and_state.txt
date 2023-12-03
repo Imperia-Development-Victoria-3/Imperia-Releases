@@ -32,9 +32,8 @@ law_state_religion = {
 	
 	modifier = {
 		interest_group_ig_devout_pol_str_mult = 0.3
-		interest_group_ig_devout_pop_attraction_mult = 0.5
 		state_radicals_from_sol_change_accepted_religion_mult = -0.1
-		state_loyalists_from_sol_change_accepted_religion_mult = 0.1
+		state_loyalists_from_sol_change_accepted_religion_mult = 0.1	
 		country_authority_add = 200
 	}
 	
@@ -56,11 +55,7 @@ law_state_religion = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-	
-	ai_will_do = {
+		ai_will_do = {
 		exists = ruler
 		ruler = {
 			has_ideology = ideology:ideology_theocrat
@@ -70,24 +65,13 @@ law_state_religion = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -136,8 +120,7 @@ law_freedom_of_conscience = {
 	
 	modifier = {
 		interest_group_ig_devout_pol_str_mult = 0.15
-		interest_group_ig_devout_pop_attraction_mult = 0.25
-		state_radicals_from_sol_change_accepted_religion_mult = -0.05
+				state_radicals_from_sol_change_accepted_religion_mult = -0.05
 		state_loyalists_from_sol_change_accepted_religion_mult = 0.05	
 		country_authority_add = 100
 	}
@@ -180,31 +163,16 @@ law_freedom_of_conscience = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -298,31 +266,16 @@ law_total_separation = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
-
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				has_journal_entry = je_government_petition
@@ -353,7 +306,6 @@ law_state_atheism = {
 
 	modifier = {
 		interest_group_ig_devout_pol_str_mult = -0.5
-		interest_group_ig_devout_pop_attraction_mult = -0.9
 		state_conversion_mult = 0.25
 		country_authority_add = 200
 	}
@@ -426,32 +378,17 @@ law_state_atheism = {
 		}
 	}
 
-	can_impose = { 
-		is_subject_of = scope:initiator	
-	} 
 	
-
 	ai_enact_weight_modifier = {
 		value = -75 # AI is less likely to pass State Atheism by default
 	
-		if = {
-			limit = {
-				law_is_essential = yes
-			}
-			add = 1500
-		}
-		if = {
+				if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
-		if = {
-			limit = {
-				law_is_desirable = yes
-			}
-			add = 250
-		}
+		
 		if = {
 			limit = { 
 				any_interest_group = {

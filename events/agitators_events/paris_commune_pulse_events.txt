@@ -23,6 +23,7 @@ paris_commune_pulse_events.1 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		c:PRC = {
 			any_interest_group = {
 				leader = {
@@ -188,6 +189,7 @@ paris_commune_pulse_events.2 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		any_scope_character = {
 			has_role = general
 			is_busy = no
@@ -307,6 +309,7 @@ paris_commune_pulse_events.2 = {
 							OR = {
 								has_ideology = ideology:ideology_moderate
 								has_ideology = ideology:ideology_humanitarian
+								has_ideology = ideology:ideology_humanitarian_royalist
 								has_ideology = ideology:ideology_reformer
 							}
 						}
@@ -324,6 +327,7 @@ paris_commune_pulse_events.2 = {
 							OR = {
 								has_ideology = ideology:ideology_moderate
 								has_ideology = ideology:ideology_humanitarian
+								has_ideology = ideology:ideology_humanitarian_royalist
 								has_ideology = ideology:ideology_reformer
 							}
 						}
@@ -419,6 +423,7 @@ paris_commune_pulse_events.3 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		NOT = {
 			has_variable = barricades_in_paris_var
 		}
@@ -598,6 +603,7 @@ paris_commune_pulse_events.4 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		c:PRC = {
 			any_interest_group = {
 				leader = {
@@ -881,6 +887,7 @@ paris_commune_pulse_events.5 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_fra_perspective
 		c:PRC = {
 			any_interest_group = {
 				leader = {
@@ -1091,6 +1098,7 @@ paris_commune_pulse_events.6 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		c:PRC = {
 			any_interest_group = {
 				leader = {
@@ -1239,6 +1247,7 @@ paris_commune_pulse_events.6 = {
 						has_law = law_type:law_state_atheism
 					}
 				}
+				activate_law = law_type:law_state_atheism
 				set_state_religion = rel:atheist
 				add_modifier = {
 					name = antireligious_policies
@@ -1335,6 +1344,7 @@ paris_commune_pulse_events.7 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_fra_perspective
 		c:PRC = {
 			any_interest_group = {
 				leader = {
@@ -1484,6 +1494,7 @@ paris_commune_pulse_events.8 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_fra_perspective
 		any_scope_character = {
 			has_role = general
 			is_busy = no
@@ -1524,20 +1535,28 @@ paris_commune_pulse_events.8 = {
 		random_list = {
 			60 = {
 				custom_tooltip = paris_commune_pulse_events.8.tt_1
+				custom_tooltip = {
+					text = commune_progress_subtract_5
+			        change_global_variable = {
+			            name = paris_commune_progress_var
+			            add = -5
+			        }
+				}
 				scope:cannon_seizing_general_scope = {
 					add_modifier = {
 						name = first_blood_modifier
 						months = short_modifier_time
 					}
 				}
+				post_notification = paris_commune_event_8_a1
 			}
 			40 = {
 				custom_tooltip = paris_commune_pulse_events.8.tt_2
 				custom_tooltip = {
-					text = commune_progress_subtract_10
+					text = commune_progress_add_10
 			        change_global_variable = {
 			            name = paris_commune_progress_var
-			            add = -10
+			            add = 10
 			        }
 				}
 				scope:cannon_seizing_general_scope = {
@@ -1567,16 +1586,17 @@ paris_commune_pulse_events.8 = {
 						}
 					}
 				}
+				post_notification = paris_commune_event_8_a2
 			}
 		}
 	}
 	option = { # There are too few men to seize them.
 		name = paris_commune_pulse_events.8.b
 		custom_tooltip = {
-			text = commune_progress_subtract_5
+			text = commune_progress_add_5
 	        change_global_variable = {
 	            name = paris_commune_progress_var
-	            add = -5
+	            add = 5
 	        }
 		}
 		c:PRC = {
@@ -1608,10 +1628,10 @@ paris_commune_pulse_events.8 = {
 			has_technology_researched = breech_loading_artillery
 		}
 		custom_tooltip = {
-			text = commune_progress_add_5
+			text = commune_progress_subtract_5
 	        change_global_variable = {
 	            name = paris_commune_progress_var
-	            add = 5
+	            add = -5
 	        }
 		}
 		c:PRC = {
@@ -1662,6 +1682,7 @@ paris_commune_pulse_events.9 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		c:PRC = {
 			any_interest_group = {
 				leader = {
@@ -1924,6 +1945,7 @@ paris_commune_pulse_events.10 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_fra_perspective
 		any_scope_character = {
 			has_role = general
 			is_busy = no
@@ -1992,6 +2014,7 @@ paris_commune_pulse_events.10 = {
 						}
 					}
 				}
+				post_notification = paris_commune_event_10_a1
 			}
 			40 = {
 				custom_tooltip = paris_commune_pulse_events.10.tt_2
@@ -2037,6 +2060,7 @@ paris_commune_pulse_events.10 = {
 						}
 					}
 				}
+				post_notification = paris_commune_event_10_a2
 			}
 		}
 	}
@@ -2090,6 +2114,7 @@ paris_commune_pulse_events.11 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		c:PRC = {
 			any_interest_group = {
 				leader = {
@@ -2235,6 +2260,7 @@ paris_commune_pulse_events.12 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		c:PRC = {
 			any_interest_group = {
 				law_stance = {
@@ -2443,6 +2469,7 @@ paris_commune_pulse_events.13 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		c:PRC = {
 			any_interest_group = {
 				leader = {
@@ -2623,6 +2650,7 @@ paris_commune_pulse_events.14 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		c:PRC = {
 			any_scope_character = {
 				has_role = general
@@ -2819,6 +2847,7 @@ paris_commune_pulse_events.15 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
+		has_variable = paris_commune_prc_perspective
 		c:PRC = {
 			any_scope_character = {
 				OR = {
@@ -3007,7 +3036,7 @@ paris_commune_pulse_events.16 = {
 	cooldown = { months = normal_modifier_time }
 
 	trigger = {
-		
+		has_variable = paris_commune_prc_perspective
 	}
 
 	immediate = {
