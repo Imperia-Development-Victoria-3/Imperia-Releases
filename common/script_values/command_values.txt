@@ -82,7 +82,7 @@ front_battle_state_weight = {
         limit = {
             scope:is_strategic_objective = yes
         }
-        add = 500
+        add = 1000
     }
 	else_if = {
 		limit = {

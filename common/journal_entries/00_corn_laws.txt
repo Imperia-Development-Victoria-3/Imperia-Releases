@@ -21,10 +21,13 @@
 				market_goods_pricier > 0.25 
 			}
 		}
-		has_export_priority_tariffs = g:grain
 		OR = {
 			has_law = law_type:law_protectionism
-			has_law = law_type:law_mercantilism
+			has_law = law_type:law_isolationism
+			AND = {
+				has_law = law_type:law_mercantilism
+				has_export_priority_tariffs = g:grain
+			}
 		}
 		ig:ig_landowners = {
 			is_powerful = yes
@@ -40,18 +43,7 @@
 	}
 
 	complete = {
-		custom_tooltip = {
-			text = "JE_CORN_LAWS_TIMER_TOOLTIP"
-			var:corn_laws_timer >= 60
-		}
-		NOT = {
-			has_export_priority_tariffs = g:grain
-			market_capital.market = {
-				mg:grain = { 
-					market_goods_pricier > 0.25 
-				}
-			}
-		}
+		has_law = law_type:law_free_trade
 	}
 
 	on_complete = {

@@ -103,10 +103,9 @@ sa_migration.1 = {
 						}
 					}
 				}
-				is_incorporated = yes
-				is_mass_migration_target = no
+				state_is_eligible_as_mass_migration_target = yes
 			}
-			order_by = average_sol
+			order_by = migration_pull
 			save_scope_as = migration_target_state
 		}
 	}

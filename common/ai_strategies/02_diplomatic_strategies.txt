@@ -1138,6 +1138,7 @@ ai_strategy_economic_imperialism = {
 			add = 5
 		}
 		
+		# Very aggressive about opening up Japan
 		if = {
 			limit = { 
 				country_rank = rank_value:great_power
@@ -1148,7 +1149,7 @@ ai_strategy_economic_imperialism = {
 					has_law = law_type:law_isolationism
 				} 
 			}
-			add = 10
+			add = 20
 		}
 		if = {
 			limit = {
