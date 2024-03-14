@@ -6,7 +6,7 @@
 entity = {
 	name =		 "military_arms_blunderbuss_entity"
 	pdxmesh =	 "military_arms_blunderbuss_mesh"
-
+	scale = 0.5
 
 	default_state = "idle"
 

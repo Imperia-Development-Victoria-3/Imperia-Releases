@@ -210,5 +210,5 @@ entity = {
 		start_event = { keep_sound = yes sound  = { soundeffect = "event:/SFX/Ambience/3D/Hub/War/battle_diorama" }
 		}
 	}
-	
+	scale = 0.5
 }

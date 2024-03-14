@@ -75,9 +75,9 @@ entity = {
 	name = "sail_transport_ship_01_entity"
 	pdxmesh = "sail_transport_ship_01_mesh"
 	locator = { name = "test" position = { 0 3 0 } }
-
-	cull_radius = 10
 	scale = 0.35
+	cull_radius = 10
+
 	default_state = "moving"
 	state = {
 		name = "moving"

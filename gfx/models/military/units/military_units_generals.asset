@@ -6,7 +6,7 @@
 entity = {
 	name =		 "military_infantry_european_general_entity"
 	pdxmesh =	 "military_infantry_european_general_mesh"
-	
+	scale = 0.5
 
 	attach = { name = weapon 		r_hand_attach = "military_arms_saber_entity" }
 

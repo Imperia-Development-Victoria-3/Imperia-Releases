@@ -10,7 +10,7 @@ entity = {
 	name =		 "military_tank_light_generic_entity"
 	pdxmesh =	 "military_tank_light_generic_mesh"
 
-	scale = 0.75
+	scale = 0.5
 	locator = { name = "impact_site" 	position = { 0.0 0.0 -10.0}	rotation = { 0 0 0} scale = 1.0}
 	get_state_from_parent = yes
 	default_state = "idle"
@@ -64,7 +64,7 @@ entity = {
 entity = {
 	name =		 "military_cavalry_european_hussar_rider_entity"
 	pdxmesh =	 "military_infantry_european_t2_mesh"
-
+	scale = 0.5
 	attach = { name = weapon 		r_hand_attach = "military_arms_saber_entity" }
 
 	get_state_from_parent = yes

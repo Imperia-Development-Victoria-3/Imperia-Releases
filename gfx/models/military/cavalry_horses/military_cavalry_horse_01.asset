@@ -1,7 +1,7 @@
 pdxmesh = {
 	name = "military_cavalry_horse_black_01_mesh"
 	file = "military_cavalry_horse_01.mesh"
-
+	scale = 0.5
 	meshsettings = {
 		name = "horseShape"
 		index = 0
@@ -44,7 +44,7 @@ pdxmesh = {
 pdxmesh = {
 	name = "military_cavalry_horse_beige_01_mesh"
 	file = "military_cavalry_horse_01.mesh"
-
+	scale = 0.5
 	meshsettings = {
 		name = "horseShape"
 		index = 0
@@ -87,7 +87,7 @@ pdxmesh = {
 pdxmesh = {
 	name = "military_cavalry_horse_brown_01_mesh"
 	file = "military_cavalry_horse_01.mesh"
-
+	scale = 0.5
 	meshsettings = {
 		name = "horseShape"
 		index = 0
@@ -130,7 +130,7 @@ pdxmesh = {
 pdxmesh = {
 	name = "military_cavalry_horse_white_01_mesh"
 	file = "military_cavalry_horse_01.mesh"
-
+	scale = 0.5
 	meshsettings = {
 		name = "horseShape"
 		index = 0

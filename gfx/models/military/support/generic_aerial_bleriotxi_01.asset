@@ -81,7 +81,7 @@ pdxmesh = {
 entity = {
 	name = "generic_aerial_bleriotxi_01_entity"
 	pdxmesh = "generic_aerial_bleriotxi_01_mesh"
-	
+	scale = 0.5
 	default_state = "moving"
 	state = { name = "moving"
 		animation = "moving_animation"

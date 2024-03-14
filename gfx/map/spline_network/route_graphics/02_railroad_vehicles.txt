@@ -15,14 +15,301 @@ passenger_train = {
 	max_path_length = 5
 
 	route_entities = {
+		
+		planet_locomotive_01 = {
+			entity = "train_locomotive_planet_01_entity"
+			position = 0
+			
+			entity_length = 0.88
+			
+			possible = {
+				
+gfx_has_british_trains_trigger = yes
+					gfx_experimental_locomotive_trigger = yes
+gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		saxonia_locomotive_01 = {
+			entity = "train_locomotive_saxonia_01_entity"
+			position = 0
+			
+			entity_length = 0.8
+			
+			possible = {
+				
+				gfx_has_german_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		crampton_locomotive_01 = {
+			entity = "train_locomotive_crampton_01_entity"
+			position = 0
+			
+			entity_length = 0.8
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		cramptontender_locomotive_01 = {
+			entity = "train_locomotive_cramptontender_01_entity"
+			position = 1
+			
+			entity_length = 0.4
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		cherepanov_locomotive_01 = {
+			entity = "train_locomotive_cherepanov_01_entity"
+			position = 0
+			
+			entity_length = 0.7
+			
+			possible = {
+				
+				gfx_has_russian_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		johnbull_locomotive_01 = {
+			entity = "train_locomotive_johnbull_01_entity"
+			position = 0
+			
+			entity_length = 0.65
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		johnbulltender_locomotive_01 = {
+			entity = "train_locomotive_johnbulltender_01_entity"
+			position = 1
+			
+			entity_length = 0.5
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		gnr_locomotive_01 = {
+			entity = "train_locomotive_gnrstirling_01_entity"
+			position = 0
+			
+			entity_length = 0.88
+			
+			possible = {
+				
+				gfx_has_british_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		gnrtender_locomotive_01 = {
+			entity = "train_locomotive_gnrstirlingtender_01_entity"
+			position = 1
+			
+			entity_length = 0.65
+			
+			possible = {
+				
+				gfx_has_british_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		sudbahn_locomotive_01 = {
+			entity = "train_locomotive_sudbahn_01_entity"
+			position = 0
+			
+			entity_length = 1.25
+			
+			possible = {
+				
+				gfx_has_german_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		ouest_locomotive_01 = {
+			entity = "train_locomotive_ouest_01_entity"
+			position = 0
+			
+			entity_length = 0.77
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		ouesttender_locomotive_01 = {
+			entity = "train_locomotive_ouesttender_01_entity"
+			position = 1
+			
+			entity_length = 0.5
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		g_locomotive_01 = {
+			entity = "train_locomotive_g_01_entity"
+			position = 0
+			
+			entity_length = 1.22
+			
+			possible = {
+				
+				gfx_has_russian_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		jupiter_locomotive_01 = {
+			entity = "train_locomotive_jupiter_01_entity"
+			position = 0
+			
+			entity_length = 0.8
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		jupitertender_locomotive_01 = {
+			entity = "train_locomotive_jupitertender_01_entity"
+			position = 1
+			
+			entity_length = 0.47
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_passanger_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
 		steam_locomotive_01 = {
 			entity = "european_train_locomotive_01_entity"
 			position = 0
 			
-			entity_length = 1.2
+			entity_length = 1.8
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_passanger_train_trigger = yes
 
@@ -41,6 +328,7 @@ passenger_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_passanger_train_trigger = yes
 				
@@ -59,6 +347,7 @@ passenger_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_passanger_train_trigger = yes
 				
@@ -77,6 +366,7 @@ passenger_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_passanger_train_trigger = yes
 				
@@ -95,6 +385,7 @@ passenger_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_passanger_train_trigger = yes
 				
@@ -145,7 +436,7 @@ passenger_train = {
 
 		passenger_wagon_1 = {
 			entity = "european_train_passenger_wagon_01_entity"
-			position = 1
+			position = 2
 			
 			entity_length = 1.044
 			
@@ -170,7 +461,7 @@ passenger_train = {
 		}
 		passenger_wagon_2 = {
 			entity = "european_train_passenger_wagon_02_entity"
-			position = 1
+			position = 2
 			
 			entity_length = 1.044
 			
@@ -195,7 +486,7 @@ passenger_train = {
 		}
 		passenger_wagon_3 = {
 			entity = "european_train_passenger_wagon_03_entity"
-			position = 1
+			position = 2
 			
 			entity_length = 1.044
 			
@@ -235,14 +526,301 @@ mining_train = {
 	max_path_length = 5
 
 	route_entities = {
+		
+		planet_locomotive_01 = {
+			entity = "train_locomotive_planet_01_entity"
+			position = 0
+			
+			entity_length = 0.91
+			
+			possible = {
+				
+					gfx_has_british_trains_trigger = yes
+					gfx_experimental_locomotive_trigger = yes
+					gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		saxonia_locomotive_01 = {
+			entity = "train_locomotive_saxonia_01_entity"
+			position = 0
+			
+			entity_length = 0.8
+			
+			possible = {
+				
+				gfx_has_german_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		crampton_locomotive_01 = {
+			entity = "train_locomotive_crampton_01_entity"
+			position = 0
+			
+			entity_length = 0.8
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		cramptontender_locomotive_01 = {
+			entity = "train_locomotive_cramptontender_01_entity"
+			position = 1
+			
+			entity_length = 0.47
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		cherepanov_locomotive_01 = {
+			entity = "train_locomotive_cherepanov_01_entity"
+			position = 0
+			
+			entity_length = 0.7
+			
+			possible = {
+				
+				gfx_has_russian_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		johnbull_locomotive_01 = {
+			entity = "train_locomotive_johnbull_01_entity"
+			position = 0
+			
+			entity_length = 0.65
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		johnbulltender_locomotive_01 = {
+			entity = "train_locomotive_johnbulltender_01_entity"
+			position = 1
+			
+			entity_length = 0.5
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		gnr_locomotive_01 = {
+			entity = "train_locomotive_gnrstirling_01_entity"
+			position = 0
+			
+			entity_length = 0.88
+			
+			possible = {
+				
+				gfx_has_british_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		gnrtender_locomotive_01 = {
+			entity = "train_locomotive_gnrstirlingtender_01_entity"
+			position = 1
+			
+			entity_length = 0.65
+			
+			possible = {
+				
+				gfx_has_british_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		sudbahn_locomotive_01 = {
+			entity = "train_locomotive_sudbahn_01_entity"
+			position = 0
+			
+			entity_length = 1.25
+			
+			possible = {
+				
+				gfx_has_german_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		ouest_locomotive_01 = {
+			entity = "train_locomotive_ouest_01_entity"
+			position = 0
+			
+			entity_length = 0.77
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		ouesttender_locomotive_01 = {
+			entity = "train_locomotive_ouesttender_01_entity"
+			position = 1
+			
+			entity_length = 0.5
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		g_locomotive_01 = {
+			entity = "train_locomotive_g_01_entity"
+			position = 0
+			
+			entity_length = 1.22
+			
+			possible = {
+				
+				gfx_has_russian_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		jupiter_locomotive_01 = {
+			entity = "train_locomotive_jupiter_01_entity"
+			position = 0
+			
+			entity_length = 0.8
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		jupitertender_locomotive_01 = {
+			entity = "train_locomotive_jupitertender_01_entity"
+			position = 1
+			
+			entity_length = 0.47
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_mining_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
 		steam_locomotive_01 = {
 			entity = "european_train_locomotive_01_entity"
 			position = 0
 			
-			entity_length = 1.2
+			entity_length = 2
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_mining_train_trigger = yes
 				
@@ -261,6 +839,7 @@ mining_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_mining_train_trigger = yes
 				
@@ -279,6 +858,7 @@ mining_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_mining_train_trigger = yes
 				
@@ -297,6 +877,7 @@ mining_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_mining_train_trigger = yes
 				
@@ -315,6 +896,7 @@ mining_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_mining_train_trigger = yes
 				
@@ -365,7 +947,7 @@ mining_train = {
 
 		cargo_coal_wagon_1 = {
 			entity = "train_cargo_coal_01_entity"
-			position = 1
+			position = 2
 			
 			entity_length = 0.63
 			
@@ -391,7 +973,7 @@ mining_train = {
 		}
 		cargo_coal_wagon_2 = {
 			entity = "train_cargo_coal_02_entity"
-			position = 1
+			position = 2
 			
 			entity_length = 0.63
 			
@@ -417,7 +999,7 @@ mining_train = {
 		}
 		cargo_coal_wagon_3 = {
 			entity = "train_cargo_coal_03_entity"
-			position = 1
+			position = 2
 			
 			entity_length = 0.63
 			
@@ -446,7 +1028,7 @@ mining_train = {
 		
 		cargo_iron_wagon_1 = {
 			entity = "train_cargo_iron_01_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.63
 			
@@ -472,7 +1054,7 @@ mining_train = {
 		}
 		cargo_iron_wagon_2 = {
 			entity = "train_cargo_iron_02_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.63
 			
@@ -498,7 +1080,7 @@ mining_train = {
 		}
 		cargo_iron_wagon_3 = {
 			entity = "train_cargo_iron_03_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.63
 			
@@ -527,7 +1109,7 @@ mining_train = {
 
 		cargo_steel_wagon_1 = {
 			entity = "train_cargo_steel_01_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.96
 			
@@ -553,7 +1135,7 @@ mining_train = {
 		}
 		cargo_steel_wagon_2 = {
 			entity = "train_cargo_steel_02_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.96
 			
@@ -579,7 +1161,7 @@ mining_train = {
 		}
 		cargo_steel_wagon_3 = {
 			entity = "train_cargo_steel_03_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.96
 			
@@ -605,7 +1187,7 @@ mining_train = {
 		}
 		cargo_steel_wagon_4 = {
 			entity = "train_cargo_steel_04_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.96
 			
@@ -634,7 +1216,7 @@ mining_train = {
 
 		cargo_sulfur_wagon_1 = {
 			entity = "train_cargo_sulfur_01_entity"
-			position = 3
+			position = 4
 			
 			entity_length = 0.63
 			
@@ -660,7 +1242,7 @@ mining_train = {
 		}
 		cargo_sulfur_wagon_2 = {
 			entity = "train_cargo_sulfur_02_entity"
-			position = 3
+			position = 4
 			
 			entity_length = 0.63
 			
@@ -686,7 +1268,7 @@ mining_train = {
 		}
 		cargo_sulfur_wagon_3 = {
 			entity = "train_cargo_sulfur_03_entity"
-			position = 3
+			position = 4
 			
 			entity_length = 0.63
 			
@@ -731,14 +1313,301 @@ forestry_train = {
 	max_path_length = 5
 
 	route_entities = {
-		steam_locomotive = {
-			entity = "european_train_locomotive_01_entity"
+		
+		planet_locomotive_01 = {
+			entity = "train_locomotive_planet_01_entity"
 			position = 0
 			
-			entity_length = 1.2
+			entity_length = 0.88
 			
 			possible = {
 				
+					gfx_has_british_trains_trigger = yes
+					gfx_experimental_locomotive_trigger = yes
+					gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		saxonia_locomotive_01 = {
+			entity = "train_locomotive_saxonia_01_entity"
+			position = 0
+			
+			entity_length = 0.76
+			
+			possible = {
+				
+				gfx_has_german_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		crampton_locomotive_01 = {
+			entity = "train_locomotive_crampton_01_entity"
+			position = 0
+			
+			entity_length = 0.8
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		cramptontender_locomotive_01 = {
+			entity = "train_locomotive_cramptontender_01_entity"
+			position = 1
+			
+			entity_length = 0.4
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		cherepanov_locomotive_01 = {
+			entity = "train_locomotive_cherepanov_01_entity"
+			position = 0
+			
+			entity_length = 0.7
+			
+			possible = {
+				
+				gfx_has_russian_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		johnbull_locomotive_01 = {
+			entity = "train_locomotive_johnbull_01_entity"
+			position = 0
+			
+			entity_length = 0.65
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		johnbulltender_locomotive_01 = {
+			entity = "train_locomotive_johnbulltender_01_entity"
+			position = 1
+			
+			entity_length = 0.5
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_experimental_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		gnr_locomotive_01 = {
+			entity = "train_locomotive_gnrstirling_01_entity"
+			position = 0
+			
+			entity_length = 0.88
+			
+			possible = {
+				
+				gfx_has_british_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		gnrtender_locomotive_01 = {
+			entity = "train_locomotive_gnrstirlingtender_01_entity"
+			position = 1
+			
+			entity_length = 0.65
+			
+			possible = {
+				
+				gfx_has_british_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		sudbahn_locomotive_01 = {
+			entity = "train_locomotive_sudbahn_01_entity"
+			position = 0
+			
+			entity_length = 1.25
+			
+			possible = {
+				
+				gfx_has_german_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		ouest_locomotive_01 = {
+			entity = "train_locomotive_ouest_01_entity"
+			position = 0
+			
+			entity_length = 0.77
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		ouesttender_locomotive_01 = {
+			entity = "train_locomotive_ouesttender_01_entity"
+			position = 1
+			
+			entity_length = 0.5
+			
+			possible = {
+				
+				gfx_has_french_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		g_locomotive_01 = {
+			entity = "train_locomotive_g_01_entity"
+			position = 0
+			
+			entity_length = 1.22
+			
+			possible = {
+				
+				gfx_has_russian_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		jupiter_locomotive_01 = {
+			entity = "train_locomotive_jupiter_01_entity"
+			position = 0
+			
+			entity_length = 0.8
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		jupitertender_locomotive_01 = {
+			entity = "train_locomotive_jupitertender_01_entity"
+			position = 1
+			
+			entity_length = 0.47
+			
+			possible = {
+				
+				gfx_has_american_trains_trigger = yes
+				gfx_steam_locomotive_trigger = yes
+				gfx_forestry_train_trigger = yes
+
+			}
+			
+			count = {
+				value = 1
+			}
+		}
+
+		steam_locomotive_01 = {
+			entity = "european_train_locomotive_01_entity"
+			position = 0
+			
+			entity_length = 2
+			
+			possible = {
+				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_forestry_train_trigger = yes
 
@@ -757,6 +1626,7 @@ forestry_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_forestry_train_trigger = yes
 
@@ -775,6 +1645,7 @@ forestry_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_forestry_train_trigger = yes
 
@@ -793,6 +1664,7 @@ forestry_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_forestry_train_trigger = yes
 
@@ -811,6 +1683,7 @@ forestry_train = {
 			
 			possible = {
 				
+				gfx_has_no_culture_trains_trigger = yes
 				gfx_steam_locomotive_trigger = yes
 				gfx_forestry_train_trigger = yes
 
@@ -861,7 +1734,7 @@ forestry_train = {
 
 		cargo_log_wagon_1 = {
 			entity = "train_cargo_log_01_entity"
-			position = 1
+			position = 2
 			
 			entity_length = 0.96
 			
@@ -870,12 +1743,6 @@ forestry_train = {
 					has_building = building_logging_camp
 					any_scope_building = {
 						has_active_production_method = pm_no_hardwood
-					}
-
-					market = {
-						mg:wood = {
-							market_goods_sell_orders > 100
-						}
 					}
 				}
 			}
@@ -896,7 +1763,7 @@ forestry_train = {
 		}
 		cargo_log_wagon_2 = {
 			entity = "train_cargo_log_02_entity"
-			position = 1
+			position = 2
 			
 			entity_length = 0.96
 			
@@ -925,7 +1792,7 @@ forestry_train = {
 		}
 		cargo_log_wagon_3 = {
 			entity = "train_cargo_log_03_entity"
-			position = 1
+			position = 2
 			
 			entity_length = 0.96
 			
@@ -954,7 +1821,7 @@ forestry_train = {
 		}
 		cargo_log_wagon_4 = {
 			entity = "train_cargo_log_04_entity"
-			position = 1
+			position = 2
 			
 			entity_length = 0.96
 			
@@ -986,15 +1853,17 @@ forestry_train = {
 
 		cargo_hardwood_wagon_1 = {
 			entity = "train_cargo_hardwood_01_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.96
 			
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					any_scope_building = {
-						has_active_production_method = pm_hardwood
+					NOT = {
+						any_scope_building = {
+							has_active_production_method = pm_no_hardwood
+						}
 					}
 				}
 			}
@@ -1015,15 +1884,17 @@ forestry_train = {
 		}
 		cargo_hardwood_wagon_2 = {
 			entity = "train_cargo_hardwood_02_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.96
 			
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					any_scope_building = {
-						has_active_production_method = pm_hardwood
+					NOT = {
+						any_scope_building = {
+							has_active_production_method = pm_no_hardwood
+						}
 					}
 				}
 			}
@@ -1044,15 +1915,17 @@ forestry_train = {
 		}
 		cargo_hardwood_wagon_3 = {
 			entity = "train_cargo_hardwood_03_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.96
 			
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					any_scope_building = {
-						has_active_production_method = pm_hardwood
+					NOT = {
+						any_scope_building = {
+							has_active_production_method = pm_no_hardwood
+						}
 					}
 				}
 			}
@@ -1073,15 +1946,17 @@ forestry_train = {
 		}
 		cargo_hardwood_wagon_4 = {
 			entity = "train_cargo_hardwood_04_entity"
-			position = 2
+			position = 3
 			
 			entity_length = 0.96
 			
 			possible = {
 				scope:state = {
 					has_building = building_logging_camp
-					any_scope_building = {
-						has_active_production_method = pm_hardwood
+					NOT = {
+						any_scope_building = {
+							has_active_production_method = pm_no_hardwood
+						}
 					}
 				}
 			}
@@ -1136,8 +2011,9 @@ military_mobilization_railroad = {
 			entity_length = 0.8
 			
 			possible = {
-				
-				is_at_war = yes
+				any_military_formation = {
+				is_mobilized = yes
+}
 
 				market = {
 					mg:artillery = {
@@ -1160,7 +2036,9 @@ military_mobilization_railroad = {
 			entity_length = 1
 			
 			possible = {
-				is_at_war = yes
+				any_military_formation = {
+					is_mobilized = yes
+}
 			}
 			
 			count = {
@@ -1175,7 +2053,9 @@ military_mobilization_railroad = {
 			entity_length = 0.7
 			
 			possible = {
-				is_at_war = yes
+				any_military_formation = {
+					is_mobilized = yes
+}
 			}
 			
 			count = {
@@ -1199,8 +2079,9 @@ military_mobilization_railroad = {
 			entity_length = 0.7
 			
 			possible = {
-				
-				is_at_war = yes
+				any_military_formation = {
+				is_mobilized = yes
+}
 
 				market = {
 					mg:artillery = {

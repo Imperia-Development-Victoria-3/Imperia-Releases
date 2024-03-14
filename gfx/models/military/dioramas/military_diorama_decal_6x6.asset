@@ -18,4 +18,5 @@ pdxmesh = {
 entity = {
 	name = "military_diorama_decal_6x6_entity"
 	pdxmesh = "military_diorama_decal_6x6_mesh"
+	scale = 0.5
 }

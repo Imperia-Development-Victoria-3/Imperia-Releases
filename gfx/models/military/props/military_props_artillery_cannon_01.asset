@@ -1,7 +1,7 @@
 pdxmesh = {
 	name = "military_props_artillery_cannon_01_mesh"
 	file = "military_props_artillery_cannon_01.mesh"
-
+	scale = 0.5
 	lod_percentages = {
 		lod = { index = 1 percent = 16.0 }
 		lod = { index = 2 percent = 8.0 }

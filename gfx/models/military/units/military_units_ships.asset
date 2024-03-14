@@ -10,7 +10,7 @@
 entity = {
 	name = "military_navy_frigate_generic_entity"
 	pdxmesh = "military_navy_frigate_generic_mesh"
-
+	scale = 0.5
 	cull_radius = 10
 
 	locator = { name = "locator_root" position = { 0.0 0.02 0.0 } scale = 1.0 }

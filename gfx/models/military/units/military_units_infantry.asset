@@ -6,7 +6,7 @@
 entity = {
 	name =		 "military_infantry_european_irregular_entity"
 	pdxmesh =	 "military_infantry_european_t1_mesh"
-
+	scale = 0.5
 	attach = { name = weapon 		r_hand_attach = "military_arms_blunderbuss_entity" }
 
 	get_state_from_parent = yes
@@ -83,7 +83,7 @@ entity = {
 	clone =		 "military_infantry_european_irregular_entity"
 	name =		 "military_infantry_european_line_entity"
 	pdxmesh =	 "military_infantry_european_t2_mesh"
-	
+
 	attach = { name = weapon 		r_hand_attach = "military_arms_brownbess_bayonet_entity" }
 
 	
@@ -114,7 +114,7 @@ entity = {
 entity = {
 	clone =		 "military_infantry_european_line_entity"
 	name =		 "military_infantry_european_skirmish_entity"
-	#scale = 0.5
+	
 	attach = { name = weapon 		r_hand_attach = "military_arms_dreyseneedle_entity" }
 
 

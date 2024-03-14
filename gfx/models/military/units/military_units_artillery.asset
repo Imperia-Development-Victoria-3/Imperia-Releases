@@ -6,7 +6,7 @@
 entity = {
 	name =		 "military_artillery_cannon_generic_entity"
 	pdxmesh =	 "military_artillery_cannon_generic_mesh"
-
+	scale = 0.5
 	locator = { name = "locator_decal" 
 		position = { 0 0 0 } 
 		rotation = { 0 0 0 } 

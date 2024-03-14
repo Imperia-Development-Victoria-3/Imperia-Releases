@@ -6,7 +6,7 @@
 entity = {
 	name = "military_basecamp_generic_entity"
 	pdxmesh = "military_basecamp_generic_mesh"
-
+	scale = 0.5
 	attach = { "loc_vfx_01" = "vfx_entity_campfire" }
 
 	locator = { name = "locator_decal_01" 

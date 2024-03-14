@@ -166,9 +166,9 @@ entity = {
 	name = "generic_ship_cargo_01_entity"
 	pdxmesh = "generic_ship_cargo_01_mesh"
 	default_state = "moving"
-
-	cull_radius = 10
 	scale = 0.35
+	cull_radius = 10
+
 	state = {
 		name = "moving"
 		animation = "moving_animation"
