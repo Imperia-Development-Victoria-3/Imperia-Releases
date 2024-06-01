@@ -26,7 +26,7 @@
 			}
 			multiply = 0.33
 		}
-			}
+	}
 	
 	max_progressiveness = {
 		value = 50
@@ -150,7 +150,7 @@ ai_strategy_reactionary_agenda = {
 			}
 			multiply = 0.5
 		}
-			}
+	}
 	
 	max_progressiveness = {
 		value = 25
@@ -330,7 +330,7 @@ ai_strategy_progressive_agenda = {
 			}
 			multiply = 0.5
 		}
-			}
+	}
 	
 	max_progressiveness = {
 		value = 100
@@ -512,7 +512,7 @@ ai_strategy_egalitarian_agenda = {
 			}
 			multiply = 0.5
 		}
-			}
+	}
 	
 	max_progressiveness = {
 		value = 1000
@@ -677,7 +677,7 @@ ai_strategy_nationalist_agenda = {
 			}
 			multiply = 0.5
 		}
-			}
+	}
 	
 	max_progressiveness = {
 		value = 50
@@ -839,7 +839,7 @@ ai_strategy_maintain_mandate_of_heaven = {
 			}
 			multiply = 0.25
 		}
-			}
+	}
 	
 	max_progressiveness = {
 		value = 25
@@ -855,7 +855,7 @@ ai_strategy_maintain_mandate_of_heaven = {
 		if = {
 			limit = { has_journal_entry = je_government_petition  }
 			add = 10
-		}	
+		}
 	}	
 
 	pro_interest_groups = {

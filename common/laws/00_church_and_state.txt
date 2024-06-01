@@ -120,7 +120,7 @@ law_freedom_of_conscience = {
 	
 	modifier = {
 		interest_group_ig_devout_pol_str_mult = 0.15
-				state_radicals_from_sol_change_accepted_religion_mult = -0.05
+		state_radicals_from_sol_change_accepted_religion_mult = -0.05
 		state_loyalists_from_sol_change_accepted_religion_mult = 0.05	
 		country_authority_add = 100
 	}
@@ -344,6 +344,7 @@ law_state_atheism = {
 				}
 			}
 		}
+		recalculate_pop_ig_support = yes
 	}
 	
 	religious_acceptance_rule = {

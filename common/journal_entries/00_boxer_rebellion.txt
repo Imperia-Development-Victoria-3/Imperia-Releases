@@ -24,8 +24,8 @@
         trigger_event = { id = boxer_rebellion_events.1 } # The Yihetuan Movement
     }
     complete = {
-custom_tooltip = {
-            text = qing_owns_all_han_states_tt
+	custom_tooltip = {
+        text = qing_owns_all_han_states_tt
         NOT = {
 	        any_state = {
 	        	state_region = { is_homeland = cu:han }
@@ -42,6 +42,6 @@ custom_tooltip = {
         trigger_event = { id = boxer_rebellion_events.3 } # The Qing and the Han
         set_global_variable = boxer_rebellion_failure
     }
-        weight = 1000
+       weight = 1000
     should_be_pinned_by_default = yes
 }

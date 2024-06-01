@@ -46,7 +46,7 @@ law_child_labor_allowed = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}
@@ -163,7 +163,7 @@ law_compulsory_primary_school = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}

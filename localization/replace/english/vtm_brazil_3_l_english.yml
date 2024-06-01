@@ -1,0 +1,2 @@
+﻿l_english:
+  je_brazilian_nation_building_ragamuffin_war_done: "The #bold Ragamuffin War#! has ended, [concept_devastation] of all states with [SCOPE.sCulture('amazonic_culture').GetName] homelands have reduced to below #bold 5#! and [SCOPE.sCulture('amazonic_culture').GetName] cultural turmoil in [SCOPE.sCulture('amazonic_culture').GetNameNoFormatting] homelands has been reduced below to #bold 10%#!."

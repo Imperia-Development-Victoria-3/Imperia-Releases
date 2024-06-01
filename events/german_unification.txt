@@ -185,7 +185,7 @@ german_unification.2 = {
 		}
 		scope:german_unification_candidate = { annex_with_incorporation = root }
 		ai_chance = {
-			base = 1000
+			base = 9
 		}
 	}
 	option = {

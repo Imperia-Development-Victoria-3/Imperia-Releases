@@ -494,7 +494,6 @@ communism.3 = {
 		}
 		create_character = {
 			#role = politician # Remove this line
-			culture = primary_culture
 			ig_leader = yes
 			interest_group = scope:new_vanguard_ig
 			ideology = ideology_vanguardist

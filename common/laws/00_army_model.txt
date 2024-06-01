@@ -61,7 +61,7 @@
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}
@@ -145,7 +145,7 @@ law_professional_army = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}
@@ -224,7 +224,7 @@ law_national_militia = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}
@@ -285,7 +285,7 @@ law_mass_conscription = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}

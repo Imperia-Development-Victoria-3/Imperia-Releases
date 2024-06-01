@@ -482,7 +482,13 @@ je_cement_the_rightful_dynasty = {
 					}
 					change_variable = {
 						name = french_dynastic_primary_progress_var
-						add = 1 #1.5
+						add = 1
+					}
+				}
+				else = {
+					change_variable = {
+						name = french_dynastic_primary_progress_var
+						add = 0.5
 					}
 				}
 				#else = {

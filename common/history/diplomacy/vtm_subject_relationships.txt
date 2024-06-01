@@ -1,0 +1,8 @@
+﻿DIPLOMACY = {
+	c:PRU ?= {
+		create_diplomatic_pact = {
+			country = c:HEK
+			type = protectorate
+		}
+	}		
+}

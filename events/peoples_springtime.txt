@@ -223,7 +223,6 @@ peoples_springtime.3 = {
 		custom_tooltip = {
 			text = peoples_springtime.3.a.tt
 			create_character = {
-				culture = primary_culture
 				ig_leader = yes
 				ideology = ideology_radical
 				interest_group = scope:radical_ig
@@ -251,7 +250,6 @@ peoples_springtime.3 = {
 			}
 		}
 		create_character = {
-			culture = primary_culture
 			is_agitator = yes
 			ideology = ideology_radical
 			interest_group = scope:radical_ig

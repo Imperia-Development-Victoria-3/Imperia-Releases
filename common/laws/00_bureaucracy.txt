@@ -199,7 +199,7 @@ law_elected_bureaucrats = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}

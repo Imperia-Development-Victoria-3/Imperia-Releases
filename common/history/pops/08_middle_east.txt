@@ -623,7 +623,7 @@
 				religion = sunni
 				size = 204608
 			}
-						create_pop = {
+			create_pop = {
 				culture = mashriqi
 				size = 116000
 			}
@@ -680,7 +680,7 @@
 				religion = oriental_orthodox
 				size = 52000
 			}
-create_pop = {
+			create_pop = {
 				culture = armenian
 				religion = catholic
 				size = 7000
@@ -698,7 +698,7 @@ create_pop = {
 				culture = bedouin
 				size = 16000
 			}
-create_pop = {
+			create_pop = {
 				culture = sephardic
 				size = 4200
 			}
@@ -776,7 +776,7 @@ create_pop = {
 				culture = lacustrine_bantu
 				size = 13000
 			}
-create_pop = {
+			create_pop = {
 				culture = sephardic
 				size = 1200
 			}

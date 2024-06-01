@@ -10,7 +10,6 @@
 		every_scope_state = {
 			limit = {
 				is_under_colonization = yes
-				#state_is_colony = yes
 			}
 			root = {
 				add_to_variable_list = {
