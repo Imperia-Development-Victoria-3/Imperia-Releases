@@ -5,6 +5,7 @@
 				NOT = {
 					has_variable = paris_commune_automation_pulse_1_fired
 				}
+				
 				c:PRC = {
 					any_interest_group = {
 						leader = {
@@ -16,23 +17,26 @@
 							}
 						}
 						is_marginal = no
-					}	
+					}
 				}
 			}
 			paris_commune_automation_pulse_1 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
 					has_variable = paris_commune_automation_pulse_2_fired
 				}
+				
 				any_scope_character = {
 					has_role = general
 					is_busy = no
 					is_heir = no
 					is_ruler = no
-				#	hq = region_france 
+					#	hq = region_france 
 				}
+				
 				c:PRC = {
 					any_interest_group = {
 						leader = {
@@ -41,11 +45,12 @@
 								has_ideology = ideology:ideology_social_democrat
 							}
 						}
-					}	
+					}
 				}
 			}
 			paris_commune_automation_pulse_2 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
@@ -54,11 +59,13 @@
 			}
 			paris_commune_automation_pulse_3 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
 					has_variable = paris_commune_automation_pulse_4_fired
 				}
+				
 				c:PRC = {
 					any_interest_group = {
 						leader = {
@@ -81,11 +88,13 @@
 			}
 			paris_commune_automation_pulse_4 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
 					has_variable = paris_commune_automation_pulse_6_fired
 				}
+				
 				c:PRC = {
 					any_interest_group = {
 						leader = {
@@ -102,11 +111,13 @@
 			}
 			paris_commune_automation_pulse_6 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
 					has_variable = paris_commune_automation_pulse_9_fired
 				}
+				
 				c:PRC = {
 					any_interest_group = {
 						leader = {
@@ -130,11 +141,13 @@
 			}
 			paris_commune_automation_pulse_9 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
 					has_variable = paris_commune_automation_pulse_11_fired
 				}
+				
 				c:PRC = {
 					any_interest_group = {
 						leader = {
@@ -150,11 +163,13 @@
 			}
 			paris_commune_automation_pulse_11 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
 					has_variable = paris_commune_automation_pulse_12_fired
 				}
+				
 				c:PRC = {
 					any_interest_group = {
 						law_stance = {
@@ -167,11 +182,13 @@
 			}
 			paris_commune_automation_pulse_12 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
 					has_variable = paris_commune_automation_pulse_13_fired
 				}
+				
 				c:PRC = {
 					any_interest_group = {
 						leader = {
@@ -186,11 +203,13 @@
 			}
 			paris_commune_automation_pulse_13 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
 					has_variable = paris_commune_automation_pulse_14_fired
 				}
+				
 				c:PRC = {
 					any_scope_character = {
 						has_role = general
@@ -199,11 +218,13 @@
 			}
 			paris_commune_automation_pulse_14 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
 					has_variable = paris_commune_automation_pulse_15_fired
 				}
+				
 				c:PRC = {
 					any_scope_character = {
 						OR = {
@@ -212,6 +233,7 @@
 							has_ideology = ideology:ideology_vanguardist
 						}
 					}
+					
 					NOT = {
 						has_law = law_type:law_council_republic
 					}
@@ -219,6 +241,7 @@
 			}
 			paris_commune_automation_pulse_15 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
@@ -240,6 +263,7 @@ paris_commune_automated_opposition_versailles = {
 			}
 			paris_commune_automation_pulse_5 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
@@ -248,6 +272,7 @@ paris_commune_automated_opposition_versailles = {
 			}
 			paris_commune_automation_pulse_7 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
@@ -256,6 +281,7 @@ paris_commune_automated_opposition_versailles = {
 			}
 			paris_commune_automation_pulse_8 = yes
 		}
+		
 		20 = {
 			trigger = {
 				NOT = {
@@ -269,7 +295,10 @@ paris_commune_automated_opposition_versailles = {
 
 # Simulates effect of paris_commune_pulse_events.1 - Commune PoV
 paris_commune_automation_pulse_1 = {
-	set_variable = { name = paris_commune_automation_pulse_1_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_1_fired
+		months = short_modifier_time
+	}
 	# Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -286,9 +315,11 @@ paris_commune_automation_pulse_1 = {
 			}
 			save_scope_as = seize_church_ig_scope
 		}
+		
 		capital = {
 			save_scope_as = paris_scope
 		}
+		
 		rel:atheist = {
 			save_scope_as = atheist_scope
 		}
@@ -297,9 +328,10 @@ paris_commune_automation_pulse_1 = {
 	random_list = {
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 10
-	        }
+				name = paris_commune_progress_var
+				add = 10
+			}
+			
 			c:PRC = {
 				scope:seize_church_ig_scope = {
 					add_modifier = {
@@ -307,7 +339,8 @@ paris_commune_automation_pulse_1 = {
 						months = short_modifier_time
 					}
 				}
-				random_scope_state = {	
+				
+				random_scope_state = {
 					convert_population = {
 						target = rel:atheist
 						value = 0.1
@@ -316,16 +349,19 @@ paris_commune_automation_pulse_1 = {
 			}
 			post_notification = paris_commune_automation_pulse_1_a
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 10
-	        }
+				name = paris_commune_progress_var
+				add = 10
+			}
+			
 			c:PRC = {
 				add_modifier = {
 					name = the_riches_of_the_church_modifier
 					months = short_modifier_time
 				}
+				
 				every_interest_group = {
 					limit = {
 						leader = {
@@ -338,6 +374,7 @@ paris_commune_automation_pulse_1 = {
 						}
 						is_marginal = no
 					}
+					
 					add_modifier = {
 						name = capital_gains_modifier
 						months = short_modifier_time
@@ -346,11 +383,13 @@ paris_commune_automation_pulse_1 = {
 			}
 			post_notification = paris_commune_automation_pulse_1_b
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			c:PRC = {
 				scope:seize_church_ig_scope = {
 					add_modifier = {
@@ -358,6 +397,7 @@ paris_commune_automation_pulse_1 = {
 						months = short_modifier_time
 					}
 				}
+				
 				create_character = {
 					is_agitator = yes
 					religion = rel:atheist
@@ -373,7 +413,10 @@ paris_commune_automation_pulse_1 = {
 
 # Simulates effect of paris_commune_pulse_events.2 - Commune PoV
 paris_commune_automation_pulse_2 = {
-	set_variable = { name = paris_commune_automation_pulse_2_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_2_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -381,16 +424,17 @@ paris_commune_automation_pulse_2 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
+	
 	random_scope_character = {
 		limit = {
 			has_role = general
 			is_busy = no
 			is_heir = no
 			is_ruler = no
-		#	hq = region_france
+			#	hq = region_france
 		}
 		save_scope_as = executed_general_scope
 	}
@@ -398,12 +442,14 @@ paris_commune_automation_pulse_2 = {
 	random_list = {
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 10
-	        }
+				name = paris_commune_progress_var
+				add = 10
+			}
+			
 			scope:executed_general_scope = {
 				kill_character = yes
 			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -417,6 +463,7 @@ paris_commune_automation_pulse_2 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -427,6 +474,7 @@ paris_commune_automation_pulse_2 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = one_hydra_head_claimed_modifier
 							months = short_modifier_time
@@ -436,11 +484,13 @@ paris_commune_automation_pulse_2 = {
 			}
 			post_notification = paris_commune_automation_pulse_2_a
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			scope:executed_general_scope = {
 				set_variable = imprisoned_general_var
 				add_modifier = {
@@ -448,6 +498,7 @@ paris_commune_automation_pulse_2 = {
 				}
 				place_character_in_void = 10000
 			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -463,6 +514,7 @@ paris_commune_automation_pulse_2 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -475,6 +527,7 @@ paris_commune_automation_pulse_2 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = airs_of_civility_modifier
 							months = short_modifier_time
@@ -484,14 +537,17 @@ paris_commune_automation_pulse_2 = {
 			}
 			post_notification = paris_commune_automation_pulse_2_b
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -5
-	        }
+				name = paris_commune_progress_var
+				add = -5
+			}
+			
 			scope:executed_general_scope = {
 				kill_character = yes
 			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -508,6 +564,7 @@ paris_commune_automation_pulse_2 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -521,6 +578,7 @@ paris_commune_automation_pulse_2 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = war_is_the_answer_modifier
 							months = short_modifier_time
@@ -535,7 +593,10 @@ paris_commune_automation_pulse_2 = {
 
 # Simulates effect of paris_commune_pulse_events.3 - Commune PoV
 paris_commune_automation_pulse_3 = {
-	set_variable = { name = paris_commune_automation_pulse_3_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_3_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -543,21 +604,23 @@ paris_commune_automation_pulse_3 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
 	#Variable Effects
 	random_list = {
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 10
-	        }
+				name = paris_commune_progress_var
+				add = 10
+			}
+			
 			c:PRC = {
 				add_modifier = {
 					name = modifier_popular_defense_commune
 					months = short_modifier_time
 				}
+				
 				every_interest_group = {
 					limit = {
 						NOR = {
@@ -567,6 +630,7 @@ paris_commune_automation_pulse_3 = {
 						}
 						is_marginal = no
 					}
+					
 					add_modifier = {
 						name = wishful_initiative_modifier
 						months = short_modifier_time
@@ -575,11 +639,13 @@ paris_commune_automation_pulse_3 = {
 			}
 			post_notification = paris_commune_automation_pulse_3_a
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -10
-	        }
+				name = paris_commune_progress_var
+				add = -10
+			}
+			
 			c:PRC = {
 				ig:ig_armed_forces = {
 					add_modifier = {
@@ -587,6 +653,7 @@ paris_commune_automation_pulse_3 = {
 						months = short_modifier_time
 					}
 				}
+				
 				if = {
 					limit = {
 						capital = {
@@ -596,16 +663,18 @@ paris_commune_automation_pulse_3 = {
 							}
 						}
 					}
+					
 					capital = {
-						create_building={
-							building="building_barracks"
-							level=15
-							reserves=1
+						create_building = {
+							building = "building_barracks"
+							level = 15
+							reserves = 1
 						}
 					}
 				}
 				activate_law = law_type:law_professional_army
 			}
+			
 			c:PRC = {
 				every_interest_group = {
 					limit = {
@@ -616,6 +685,7 @@ paris_commune_automation_pulse_3 = {
 						}
 						is_marginal = no
 					}
+					
 					add_modifier = {
 						name = wages_of_pragmatism_modifier
 						months = short_modifier_time
@@ -624,11 +694,13 @@ paris_commune_automation_pulse_3 = {
 			}
 			post_notification = paris_commune_automation_pulse_3_b
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -639,14 +711,16 @@ paris_commune_automation_pulse_3 = {
 							}
 						}
 					}
+					
 					capital = {
-						create_building={
-							building="building_barracks"
-							level=10
-							reserves=1
+						create_building = {
+							building = "building_barracks"
+							level = 10
+							reserves = 1
 						}
 					}
 				}
+				
 				every_interest_group = {
 					limit = {
 						NOR = {
@@ -656,6 +730,7 @@ paris_commune_automation_pulse_3 = {
 						}
 						is_marginal = no
 					}
+					
 					add_modifier = {
 						name = wages_of_pragmatism_modifier
 						months = short_modifier_time
@@ -669,7 +744,10 @@ paris_commune_automation_pulse_3 = {
 
 # Simulates effect of paris_commune_pulse_events.4 - Commune PoV
 paris_commune_automation_pulse_4 = {
-	set_variable = { name = paris_commune_automation_pulse_4_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_4_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -677,19 +755,21 @@ paris_commune_automation_pulse_4 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
 	#Variable Effects
 	random_list = {
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 10
-	        }
+				name = paris_commune_progress_var
+				add = 10
+			}
+			
 			s:STATE_ILE_DE_FRANCE = {
 				add_devastation = 5
 			}
+			
 			if = {
 				limit = {
 					any_interest_group = {
@@ -711,6 +791,7 @@ paris_commune_automation_pulse_4 = {
 						is_marginal = no
 					}
 				}
+				
 				every_interest_group = {
 					limit = {
 						leader = {
@@ -730,6 +811,7 @@ paris_commune_automation_pulse_4 = {
 						}
 						is_marginal = no
 					}
+					
 					leader = {
 						add_modifier = {
 							name = accusations_of_hysterical_mania_modifier
@@ -738,6 +820,7 @@ paris_commune_automation_pulse_4 = {
 					}
 				}
 			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -760,6 +843,7 @@ paris_commune_automation_pulse_4 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -779,23 +863,27 @@ paris_commune_automation_pulse_4 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = rallying_cries_ignored_modifier
 							months = short_modifier_time
 						}
 					}
-				}		
+				}
 			}
 			post_notification = paris_commune_automation_pulse_4_a
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -10
-	        }
+				name = paris_commune_progress_var
+				add = -10
+			}
+			
 			s:STATE_ILE_DE_FRANCE = {
 				add_devastation = 5
 			}
+			
 			if = {
 				limit = {
 					c:PRC = {
@@ -809,6 +897,7 @@ paris_commune_automation_pulse_4 = {
 						}
 					}
 				}
+				
 				c:PRC = {
 					every_interest_group = {
 						limit = {
@@ -820,6 +909,7 @@ paris_commune_automation_pulse_4 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = cries_of_havoc_modifier
 							months = short_modifier_time
@@ -829,14 +919,17 @@ paris_commune_automation_pulse_4 = {
 			}
 			post_notification = paris_commune_automation_pulse_4_b
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -5
-	        }
+				name = paris_commune_progress_var
+				add = -5
+			}
+			
 			s:STATE_ILE_DE_FRANCE = {
 				add_devastation = 10
 			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -859,6 +952,7 @@ paris_commune_automation_pulse_4 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -878,12 +972,13 @@ paris_commune_automation_pulse_4 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = cries_of_havoc_modifier
 							months = short_modifier_time
 						}
 					}
-				}		
+				}
 			}
 			post_notification = paris_commune_automation_pulse_4_c
 		}
@@ -892,33 +987,43 @@ paris_commune_automation_pulse_4 = {
 
 # Simulates effect of paris_commune_pulse_events.5 - Versailles PoV
 paris_commune_automation_pulse_5 = {
-	set_variable = { name = paris_commune_automation_pulse_5_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_5_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	ig:ig_armed_forces = {
 		save_scope_as = armed_forces_scope
 	}
+	
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
 		random_scope_state = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
 	#Variable Effects
 	random_list = {
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -5
-	        }
+				name = paris_commune_progress_var
+				add = -5
+			}
+			
 			every_state = {
 				limit = {
 					state_region = s:STATE_ILE_DE_FRANCE
 				}
-				add_modifier = { name = modifier_slaughter_with_decrees months = 12 }
+				
+				add_modifier = {
+					name = modifier_slaughter_with_decrees
+					months = 12
+				}
 			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -934,6 +1039,7 @@ paris_commune_automation_pulse_5 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -946,6 +1052,7 @@ paris_commune_automation_pulse_5 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = unacceptable_losses_modifier
 							months = short_modifier_time
@@ -955,17 +1062,25 @@ paris_commune_automation_pulse_5 = {
 			}
 			post_notification = paris_commune_automation_pulse_5_a
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -10
-	        }
+				name = paris_commune_progress_var
+				add = -10
+			}
+			
 			every_state = {
 				limit = {
 					state_region = s:STATE_ILE_DE_FRANCE
 				}
-				add_modifier = { name = modifier_slaughter_with_decrees months = 12 multiplier = 2 }
+				
+				add_modifier = {
+					name = modifier_slaughter_with_decrees
+					months = 12
+					multiplier = 2
+				}
 			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -981,6 +1096,7 @@ paris_commune_automation_pulse_5 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -993,6 +1109,7 @@ paris_commune_automation_pulse_5 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = moral_high_ground_modifier
 							months = short_modifier_time
@@ -1002,11 +1119,13 @@ paris_commune_automation_pulse_5 = {
 			}
 			post_notification = paris_commune_automation_pulse_5_b
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -1022,6 +1141,7 @@ paris_commune_automation_pulse_5 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -1034,6 +1154,7 @@ paris_commune_automation_pulse_5 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = divisive_instigation_modifier
 							months = short_modifier_time
@@ -1048,7 +1169,10 @@ paris_commune_automation_pulse_5 = {
 
 # Simulates effect of paris_commune_pulse_events.6 - Commune PoV
 paris_commune_automation_pulse_6 = {
-	set_variable = { name = paris_commune_automation_pulse_6_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_6_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -1056,16 +1180,17 @@ paris_commune_automation_pulse_6 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
 	#Variable Effects
 	random_list = {
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -1081,6 +1206,7 @@ paris_commune_automation_pulse_6 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -1093,13 +1219,15 @@ paris_commune_automation_pulse_6 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = to_strike_god_modifier
 							months = short_modifier_time
 						}
 					}
 				}
-				capital = {	
+				
+				capital = {
 					add_radicals_in_state = {
 						value = small_radicals
 						religion = rel:catholic
@@ -1108,11 +1236,13 @@ paris_commune_automation_pulse_6 = {
 			}
 			post_notification = paris_commune_automation_pulse_6_a
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -5
-	        }
+				name = paris_commune_progress_var
+				add = -5
+			}
+			
 			if = {
 				limit = {
 					c:PRC = {
@@ -1128,6 +1258,7 @@ paris_commune_automation_pulse_6 = {
 						}
 					}
 				}
+				
 				c:PRC = {
 					every_interest_group = {
 						limit = {
@@ -1140,6 +1271,7 @@ paris_commune_automation_pulse_6 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = virtue_of_mercy_modifier
 							months = short_modifier_time
@@ -1149,11 +1281,13 @@ paris_commune_automation_pulse_6 = {
 			}
 			post_notification = paris_commune_automation_pulse_6_b
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 10
-	        }
+				name = paris_commune_progress_var
+				add = 10
+			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -1164,6 +1298,7 @@ paris_commune_automation_pulse_6 = {
 					activate_law = law_type:law_state_atheism
 					set_state_religion = rel:atheist
 				}
+				
 				if = {
 					limit = {
 						any_interest_group = {
@@ -1178,6 +1313,7 @@ paris_commune_automation_pulse_6 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -1190,17 +1326,20 @@ paris_commune_automation_pulse_6 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = a_boldered_tomb_modifier
 							months = short_modifier_time
 						}
 					}
 				}
-				capital = {	
+				
+				capital = {
 					kill_population_percent_in_state = {
 						percent = 0.05
 						pop_type = clergymen
 					}
+					
 					add_radicals_in_state = {
 						value = medium_radicals
 						religion = rel:catholic
@@ -1214,7 +1353,10 @@ paris_commune_automation_pulse_6 = {
 
 # Simulates effect of paris_commune_pulse_events.7 - Versailles PoV
 paris_commune_automation_pulse_7 = {
-	set_variable = { name = paris_commune_automation_pulse_7_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_7_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -1222,16 +1364,17 @@ paris_commune_automation_pulse_7 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
 	#Variable Effects
 	random_list = {
 		50 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -5
-	        }
+				name = paris_commune_progress_var
+				add = -5
+			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -1246,6 +1389,7 @@ paris_commune_automation_pulse_7 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -1257,24 +1401,28 @@ paris_commune_automation_pulse_7 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = virtue_of_mercy_modifier
 							months = short_modifier_time
 						}
 					}
-				}	
+				}
 			}
 			post_notification = paris_commune_automation_pulse_7_a
 		}
+		
 		50 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 10
-	        }
+				name = paris_commune_progress_var
+				add = 10
+			}
+			
 			add_radicals = {
 				value = small_radicals
 				interest_group = ig:ig_trade_unions
 			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -1290,6 +1438,7 @@ paris_commune_automation_pulse_7 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -1302,6 +1451,7 @@ paris_commune_automation_pulse_7 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = unacceptable_losses_modifier
 							months = short_modifier_time
@@ -1316,7 +1466,10 @@ paris_commune_automation_pulse_7 = {
 
 # Simulates effect of paris_commune_pulse_events.8 - Versailles PoV
 paris_commune_automation_pulse_8 = {
-	set_variable = { name = paris_commune_automation_pulse_8_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_8_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -1324,15 +1477,15 @@ paris_commune_automation_pulse_8 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
-
+	
 	random_scope_character = {
 		limit = {
 			has_role = general
 			is_busy = no
-		#	hq = region_france 				
+			#	hq = region_france 				
 		}
 		save_scope_as = cannon_seizing_general_scope
 	}
@@ -1342,9 +1495,10 @@ paris_commune_automation_pulse_8 = {
 			random_list = {
 				60 = {
 					change_global_variable = {
-			            name = paris_commune_progress_var
-			            add = -5
-			        }
+						name = paris_commune_progress_var
+						add = -5
+					}
+					
 					scope:cannon_seizing_general_scope = {
 						add_modifier = {
 							name = first_blood_modifier
@@ -1353,32 +1507,37 @@ paris_commune_automation_pulse_8 = {
 					}
 					post_notification = paris_commune_automation_pulse_8_a1
 				}
+				
 				40 = {
 					change_global_variable = {
-			            name = paris_commune_progress_var
-			            add = 10
-			        }
+						name = paris_commune_progress_var
+						add = 10
+					}
+					
 					scope:cannon_seizing_general_scope = {
 						add_modifier = {
 							name = humiliation_upon_humiliation_modifier
 							months = short_modifier_time
 						}
 					}
+					
 					c:PRC = {
 						if = {
 							limit = {
 								any_scope_character = {
 									has_role = general
 								}
-							}	
+							}
+							
 							every_scope_character = {
 								limit = {
 									has_role = general
 								}
+								
 								add_modifier = {
 									name = military_defectors_modifier
 									months = short_modifier_time
-								}	
+								}
 							}
 						}
 					}
@@ -1386,52 +1545,60 @@ paris_commune_automation_pulse_8 = {
 				}
 			}
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			c:PRC = {
 				if = {
 					limit = {
 						any_scope_character = {
 							has_role = general
 						}
-					}	
+					}
+					
 					every_scope_character = {
 						limit = {
 							has_role = general
 						}
+						
 						add_modifier = {
 							name = first_blood_modifier
 							months = short_modifier_time
-						}	
+						}
 					}
 				}
 			}
 			post_notification = paris_commune_automation_pulse_8_b
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -5
-	        }
+				name = paris_commune_progress_var
+				add = -5
+			}
+			
 			c:PRC = {
 				if = {
 					limit = {
 						any_scope_character = {
 							has_role = general
 						}
-					}	
+					}
+					
 					every_scope_character = {
 						limit = {
 							has_role = general
 						}
+						
 						add_modifier = {
 							name = first_blood_modifier
 							months = short_modifier_time
 							multiplier = 0.5
-						}	
+						}
 					}
 				}
 			}
@@ -1442,7 +1609,10 @@ paris_commune_automation_pulse_8 = {
 
 # Simulates effect of paris_commune_pulse_events.9 - Commune PoV
 paris_commune_automation_pulse_9 = {
-	set_variable = { name = paris_commune_automation_pulse_9_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_9_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -1450,9 +1620,10 @@ paris_commune_automation_pulse_9 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
+	
 	c:PRC = {
 		random_interest_group = {
 			limit = {
@@ -1476,12 +1647,14 @@ paris_commune_automation_pulse_9 = {
 			save_scope_as = paris_feminist_ig_scope
 		}
 	}
+	
 	random_interest_group = {
 		limit = {
 			is_same_interest_group_type = scope:paris_feminist_ig_scope
 		}
 		save_scope_as = france_feminist_ig_scope
 	}
+	
 	c:FRA = {
 		save_scope_as = france_scope
 	}
@@ -1489,9 +1662,10 @@ paris_commune_automation_pulse_9 = {
 	random_list = {
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -1514,6 +1688,7 @@ paris_commune_automation_pulse_9 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -1533,13 +1708,15 @@ paris_commune_automation_pulse_9 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = assertion_of_rights_modifier
 							months = short_modifier_time
 						}
 					}
-				}	
+				}
 			}
+			
 			random_list = {
 				50 = {
 					trigger = {
@@ -1550,6 +1727,7 @@ paris_commune_automation_pulse_9 = {
 							}
 						}
 					}
+					
 					create_character = {
 						is_agitator = yes
 						interest_group = scope:france_feminist_ig_scope
@@ -1557,16 +1735,19 @@ paris_commune_automation_pulse_9 = {
 					}
 					post_notification = paris_commune_automation_pulse_9_a1
 				}
+				
 				50 = {
 					post_notification = paris_commune_automation_pulse_9_a2
 				}
 			}
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -5
-	        }
+				name = paris_commune_progress_var
+				add = -5
+			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -1589,6 +1770,7 @@ paris_commune_automation_pulse_9 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -1608,20 +1790,23 @@ paris_commune_automation_pulse_9 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = lingering_male_gaze_modifier
 							months = short_modifier_time
 						}
 					}
-				}	
+				}
 			}
 			post_notification = paris_commune_automation_pulse_9_b
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -5
-	        }
+				name = paris_commune_progress_var
+				add = -5
+			}
+			
 			c:PRC = {
 				ig:ig_devout = {
 					add_modifier = {
@@ -1637,7 +1822,10 @@ paris_commune_automation_pulse_9 = {
 
 # Simulates effect of paris_commune_pulse_events.10 - Versailles PoV
 paris_commune_automation_pulse_10 = {
-	set_variable = { name = paris_commune_automation_pulse_10_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_10_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -1645,14 +1833,15 @@ paris_commune_automation_pulse_10 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
+	
 	random_scope_character = {
 		limit = {
 			has_role = general
 			is_busy = no
-		#	hq = region_france 
+			#	hq = region_france 
 		}
 		save_scope_as = issy_general
 	}
@@ -1665,6 +1854,7 @@ paris_commune_automation_pulse_10 = {
 						name = paris_commune_progress_var
 						add = 10
 					}
+					
 					if = {
 						limit = {
 							c:PRC = {
@@ -1675,6 +1865,7 @@ paris_commune_automation_pulse_10 = {
 								}
 							}
 						}
+						
 						c:PRC = {
 							every_interest_group = {
 								limit = {
@@ -1683,6 +1874,7 @@ paris_commune_automation_pulse_10 = {
 									}
 									is_marginal = no
 								}
+								
 								add_modifier = {
 									name = unacceptable_losses_modifier
 									months = short_modifier_time
@@ -1692,11 +1884,13 @@ paris_commune_automation_pulse_10 = {
 					}
 					post_notification = paris_commune_automation_pulse_10_a1
 				}
+				
 				40 = {
 					change_global_variable = {
 						name = paris_commune_progress_var
 						add = 5
 					}
+					
 					if = {
 						limit = {
 							c:PRC = {
@@ -1711,6 +1905,7 @@ paris_commune_automation_pulse_10 = {
 								}
 							}
 						}
+						
 						c:PRC = {
 							every_interest_group = {
 								limit = {
@@ -1722,6 +1917,7 @@ paris_commune_automation_pulse_10 = {
 									}
 									is_marginal = no
 								}
+								
 								add_modifier = {
 									name = an_olive_branch_modifier
 									months = short_modifier_time
@@ -1733,15 +1929,18 @@ paris_commune_automation_pulse_10 = {
 				}
 			}
 		}
+		
 		50 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -10
-	        }
+				name = paris_commune_progress_var
+				add = -10
+			}
+			
 			add_modifier = {
 				name = guidelines_of_engagement_modifier
-				months = normal_modifier_time		
+				months = normal_modifier_time
 			}
+			
 			scope:issy_general = {
 				if = {
 					limit = {
@@ -1759,7 +1958,10 @@ paris_commune_automation_pulse_10 = {
 
 # Simulates effect of paris_commune_pulse_events.11 - Commune PoV
 paris_commune_automation_pulse_11 = {
-	set_variable = { name = paris_commune_automation_pulse_11_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_11_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -1767,16 +1969,17 @@ paris_commune_automation_pulse_11 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
 	#Variable Effects
 	random_list = {
 		50 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			c:PRC = {
 				every_interest_group = {
 					limit = {
@@ -1788,11 +1991,13 @@ paris_commune_automation_pulse_11 = {
 						}
 						is_marginal = no
 					}
+					
 					add_modifier = {
 						name = a_rapturous_promise_modifier
 						months = short_modifier_time
 					}
 				}
+				
 				if = {
 					limit = {
 						has_law = law_type:law_council_republic
@@ -1805,11 +2010,13 @@ paris_commune_automation_pulse_11 = {
 			}
 			post_notification = paris_commune_automation_pulse_11_a
 		}
+		
 		50 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -5
-	        }
+				name = paris_commune_progress_var
+				add = -5
+			}
+			
 			c:PRC = {
 				every_interest_group = {
 					limit = {
@@ -1822,11 +2029,13 @@ paris_commune_automation_pulse_11 = {
 						}
 						is_marginal = no
 					}
+					
 					add_modifier = {
 						name = dominating_narratives_modifier
 						months = short_modifier_time
 					}
 				}
+				
 				if = {
 					limit = {
 						has_law = law_type:law_council_republic
@@ -1844,7 +2053,10 @@ paris_commune_automation_pulse_11 = {
 
 # Simulates effect of paris_commune_pulse_events.12 - Commune PoV
 paris_commune_automation_pulse_12 = {
-	set_variable = { name = paris_commune_automation_pulse_12_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_12_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -1852,24 +2064,27 @@ paris_commune_automation_pulse_12 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
+		
 		random_interest_group = {
 			limit = {
 				law_stance = {
 					law = law_type:law_compulsory_primary_school
 					value > neutral
-				}	
+				}
 			}
 			save_scope_as = paris_radical_ig_scope
 		}
 	}
+	
 	random_interest_group = {
 		limit = {
 			is_same_interest_group_type = scope:paris_radical_ig_scope
 		}
 		save_scope_as = france_radical_ig_scope
 	}
+	
 	c:FRA = {
 		save_scope_as = france_scope
 	}
@@ -1885,10 +2100,12 @@ paris_commune_automation_pulse_12 = {
 						}
 						is_marginal = no
 					}
+					
 					add_modifier = {
 						name = to_inherit_the_earth_modifier
 						months = short_modifier_time
 					}
+					
 					leader = {
 						add_modifier = {
 							name = to_inherit_the_earth_char_modifier
@@ -1896,20 +2113,23 @@ paris_commune_automation_pulse_12 = {
 						}
 					}
 				}
-			}	
+			}
 			post_notification = paris_commune_automation_pulse_12_a
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			ig:ig_armed_forces = {
 				add_modifier = {
 					name = child_soldiery_modifier
-					months = short_modifier_time				
+					months = short_modifier_time
 				}
 			}
+			
 			if = {
 				limit = {
 					c:PRC = {
@@ -1924,6 +2144,7 @@ paris_commune_automation_pulse_12 = {
 						}
 					}
 				}
+				
 				c:PRC = {
 					every_interest_group = {
 						limit = {
@@ -1935,6 +2156,7 @@ paris_commune_automation_pulse_12 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = strong_borders_modifier
 							months = short_modifier_time
@@ -1944,6 +2166,7 @@ paris_commune_automation_pulse_12 = {
 			}
 			post_notification = paris_commune_automation_pulse_12_b
 		}
+		
 		30 = {
 			c:PRC = {
 				if = {
@@ -1955,6 +2178,7 @@ paris_commune_automation_pulse_12 = {
 							}
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							law_stance = {
@@ -1963,12 +2187,14 @@ paris_commune_automation_pulse_12 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = a_learning_future_modifier
 							months = short_modifier_time
 						}
 					}
 				}
+				
 				if = {
 					limit = {
 						NOT = {
@@ -1978,6 +2204,7 @@ paris_commune_automation_pulse_12 = {
 					activate_law = law_type:law_compulsory_primary_school
 				}
 			}
+			
 			random_list = {
 				50 = {
 					trigger = {
@@ -1988,6 +2215,7 @@ paris_commune_automation_pulse_12 = {
 							}
 						}
 					}
+					
 					create_character = {
 						is_agitator = yes
 						interest_group = scope:france_radical_ig_scope
@@ -1995,6 +2223,7 @@ paris_commune_automation_pulse_12 = {
 					}
 					post_notification = paris_commune_automation_pulse_12_c1
 				}
+				
 				50 = {
 					post_notification = paris_commune_automation_pulse_12_c2
 				}
@@ -2005,7 +2234,10 @@ paris_commune_automation_pulse_12 = {
 
 # Simulates effect of paris_commune_pulse_events.13 - Commune PoV
 paris_commune_automation_pulse_13 = {
-	set_variable = { name = paris_commune_automation_pulse_13_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_13_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -2013,7 +2245,7 @@ paris_commune_automation_pulse_13 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
 	#Variable Effects
@@ -2031,7 +2263,8 @@ paris_commune_automation_pulse_13 = {
 							}
 							is_marginal = no
 						}
-					}		
+					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -2042,6 +2275,7 @@ paris_commune_automation_pulse_13 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = holy_meat_shields_modifier
 							months = short_modifier_time
@@ -2051,6 +2285,7 @@ paris_commune_automation_pulse_13 = {
 			}
 			post_notification = paris_commune_automation_pulse_13_a
 		}
+		
 		30 = {
 			if = {
 				limit = {
@@ -2066,6 +2301,7 @@ paris_commune_automation_pulse_13 = {
 						}
 					}
 				}
+				
 				c:PRC = {
 					every_interest_group = {
 						limit = {
@@ -2077,6 +2313,7 @@ paris_commune_automation_pulse_13 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = virtue_of_mercy_modifier
 							months = short_modifier_time
@@ -2084,6 +2321,7 @@ paris_commune_automation_pulse_13 = {
 					}
 				}
 			}
+			
 			scope:paris_scope = {
 				add_loyalists_in_state = {
 					pop_type = clergymen
@@ -2092,6 +2330,7 @@ paris_commune_automation_pulse_13 = {
 			}
 			post_notification = paris_commune_automation_pulse_13_b
 		}
+		
 		30 = {
 			if = {
 				limit = {
@@ -2109,6 +2348,7 @@ paris_commune_automation_pulse_13 = {
 						}
 					}
 				}
+				
 				c:PRC = {
 					every_interest_group = {
 						limit = {
@@ -2122,6 +2362,7 @@ paris_commune_automation_pulse_13 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = to_strike_god_modifier
 							months = short_modifier_time
@@ -2129,6 +2370,7 @@ paris_commune_automation_pulse_13 = {
 					}
 				}
 			}
+			
 			scope:paris_scope = {
 				add_radicals_in_state = {
 					pop_type = clergymen
@@ -2142,7 +2384,10 @@ paris_commune_automation_pulse_13 = {
 
 # Simulates effect of paris_commune_pulse_events.14 - Commune PoV
 paris_commune_automation_pulse_14 = {
-	set_variable = { name = paris_commune_automation_pulse_14_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_14_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -2150,7 +2395,7 @@ paris_commune_automation_pulse_14 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
 	#Variable Effects
@@ -2171,6 +2416,7 @@ paris_commune_automation_pulse_14 = {
 						}
 					}
 				}
+				
 				c:PRC = {
 					every_interest_group = {
 						limit = {
@@ -2183,6 +2429,7 @@ paris_commune_automation_pulse_14 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = winning_minds_modifier
 							months = short_modifier_time
@@ -2190,11 +2437,13 @@ paris_commune_automation_pulse_14 = {
 					}
 				}
 			}
+			
 			c:PRC = {
 				every_scope_character = {
 					limit = {
 						has_role = general
 					}
+					
 					add_modifier = {
 						name = all_that_which_opposes_us_modifier
 						months = short_modifier_time
@@ -2203,6 +2452,7 @@ paris_commune_automation_pulse_14 = {
 			}
 			post_notification = paris_commune_automation_pulse_14_a
 		}
+		
 		30 = {
 			if = {
 				limit = {
@@ -2219,6 +2469,7 @@ paris_commune_automation_pulse_14 = {
 						}
 					}
 				}
+				
 				c:PRC = {
 					every_interest_group = {
 						limit = {
@@ -2231,6 +2482,7 @@ paris_commune_automation_pulse_14 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = winning_minds_modifier
 							months = short_modifier_time
@@ -2238,11 +2490,13 @@ paris_commune_automation_pulse_14 = {
 					}
 				}
 			}
+			
 			c:PRC = {
 				every_scope_character = {
 					limit = {
 						has_role = general
 					}
+					
 					add_modifier = {
 						name = the_peoples_champions_modifier
 						months = short_modifier_time
@@ -2251,6 +2505,7 @@ paris_commune_automation_pulse_14 = {
 			}
 			post_notification = paris_commune_automation_pulse_14_b
 		}
+		
 		30 = {
 			if = {
 				limit = {
@@ -2266,6 +2521,7 @@ paris_commune_automation_pulse_14 = {
 						}
 					}
 				}
+				
 				c:PRC = {
 					every_interest_group = {
 						limit = {
@@ -2277,6 +2533,7 @@ paris_commune_automation_pulse_14 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = winning_minds_modifier
 							months = short_modifier_time
@@ -2284,11 +2541,13 @@ paris_commune_automation_pulse_14 = {
 					}
 				}
 			}
+			
 			c:PRC = {
 				every_scope_character = {
 					limit = {
 						has_role = general
 					}
+					
 					add_modifier = {
 						name = for_homes_and_lives_modifier
 						months = short_modifier_time
@@ -2302,7 +2561,10 @@ paris_commune_automation_pulse_14 = {
 
 # Simulates effect of paris_commune_pulse_events.15 - Commune PoV
 paris_commune_automation_pulse_15 = {
-	set_variable = { name = paris_commune_automation_pulse_15_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_15_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -2310,8 +2572,9 @@ paris_commune_automation_pulse_15 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
+		
 		random_scope_character = {
 			limit = {
 				OR = {
@@ -2327,22 +2590,26 @@ paris_commune_automation_pulse_15 = {
 	random_list = {
 		50 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = -5
-	        }
+				name = paris_commune_progress_var
+				add = -5
+			}
+			
 			if = {
 				limit = {
 					has_law = law_type:law_monarchy
 				}
+				
 				add_loyalists = {
 					value = small_radicals
 				}
 			}
+			
 			else_if = {
 				add_radicals = {
 					value = small_radicals
 				}
 			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -2352,6 +2619,7 @@ paris_commune_automation_pulse_15 = {
 					}
 					activate_law = law_type:law_council_republic
 				}
+				
 				if = {
 					limit = {
 						any_interest_group = {
@@ -2365,6 +2633,7 @@ paris_commune_automation_pulse_15 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -2376,6 +2645,7 @@ paris_commune_automation_pulse_15 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = a_glorious_dictatorship_modifier
 							months = short_modifier_time
@@ -2385,28 +2655,33 @@ paris_commune_automation_pulse_15 = {
 			}
 			post_notification = paris_commune_automation_pulse_15_a
 		}
+		
 		50 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			if = {
 				limit = {
 					has_law = law_type:law_monarchy
 				}
+				
 				ruler = {
 					add_modifier = {
 						name = an_enemy_of_the_republic
-						months = normal_modifier_time					
+						months = normal_modifier_time
 					}
 				}
 			}
+			
 			else_if = {
 				add_radicals = {
 					strata = poor
 					value = small_radicals
 				}
 			}
+			
 			c:PRC = {
 				if = {
 					limit = {
@@ -2420,9 +2695,11 @@ paris_commune_automation_pulse_15 = {
 							is_marginal = no
 						}
 					}
+					
 					custom_tooltip = {
 						text = communard_effects_header_tt
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -2433,6 +2710,7 @@ paris_commune_automation_pulse_15 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = democracy_stands_modifier
 							months = short_modifier_time
@@ -2447,7 +2725,10 @@ paris_commune_automation_pulse_15 = {
 
 # Simulates effect of paris_commune_pulse_events.16 - Commune PoV
 paris_commune_automation_pulse_16 = {
-	set_variable = { name = paris_commune_automation_pulse_16_fired months = short_modifier_time }
+	set_variable = {
+		name = paris_commune_automation_pulse_16_fired
+		months = short_modifier_time
+	}
 	#Shared Effects
 	c:PRC = {
 		save_scope_as = paris_commune_nation_scope
@@ -2455,9 +2736,10 @@ paris_commune_automation_pulse_16 = {
 			limit = {
 				state_region = s:STATE_ILE_DE_FRANCE
 			}
-			save_scope_as = paris_scope		
+			save_scope_as = paris_scope
 		}
 	}
+	
 	if = {
 		limit = {
 			c:PRC = {
@@ -2474,6 +2756,7 @@ paris_commune_automation_pulse_16 = {
 				}
 			}
 		}
+		
 		c:PRC = {
 			random_interest_group = {
 				limit = {
@@ -2495,15 +2778,17 @@ paris_commune_automation_pulse_16 = {
 	random_list = {
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 5
-	        }
+				name = paris_commune_progress_var
+				add = 5
+			}
+			
 			c:PRC = {
 				add_modifier = {
 					name = modifier_woman_soldiers
 					months = short_modifier_time
 					multiplier = 0.5
 				}
+				
 				c:PRC = {
 					add_loyalists = {
 						value = medium_radicals
@@ -2513,6 +2798,7 @@ paris_commune_automation_pulse_16 = {
 			}
 			post_notification = paris_commune_automation_pulse_16_a
 		}
+		
 		30 = {
 			c:PRC = {
 				every_interest_group = {
@@ -2523,11 +2809,13 @@ paris_commune_automation_pulse_16 = {
 						}
 						is_marginal = no
 					}
+					
 					add_modifier = {
 						name = modifier_progressives_stalled
 						months = short_modifier_time
 					}
 				}
+				
 				if = {
 					limit = {
 						any_interest_group = {
@@ -2543,6 +2831,7 @@ paris_commune_automation_pulse_16 = {
 							is_marginal = no
 						}
 					}
+					
 					every_interest_group = {
 						limit = {
 							leader = {
@@ -2556,29 +2845,34 @@ paris_commune_automation_pulse_16 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = rallying_cries_ignored_modifier
 							months = short_modifier_time
 						}
 					}
 				}
-			}	
+			}
 			post_notification = paris_commune_automation_pulse_16_b
 		}
+		
 		30 = {
 			change_global_variable = {
-	            name = paris_commune_progress_var
-	            add = 10
-	        }
+				name = paris_commune_progress_var
+				add = 10
+			}
+			
 			c:PRC = {
 				add_modifier = {
 					name = modifier_woman_soldiers
 					months = short_modifier_time
 				}
+				
 				add_radicals = {
 					value = medium_radicals
 				}
 			}
+			
 			if = {
 				limit = {
 					c:PRC = {
@@ -2596,6 +2890,7 @@ paris_commune_automation_pulse_16 = {
 						}
 					}
 				}
+				
 				c:PRC = {
 					every_interest_group = {
 						limit = {
@@ -2610,6 +2905,7 @@ paris_commune_automation_pulse_16 = {
 							}
 							is_marginal = no
 						}
+						
 						add_modifier = {
 							name = cries_of_havoc_modifier
 							months = short_modifier_time

@@ -1,28 +1,22 @@
 ﻿namespace = vtm_denmark
 #JE_schleswig_holstein_question_denmark startup
-vtm_denmark.1 = { #startup event that informs player about the Danish desire to annex Schleswig
+vtm_denmark.1 = {	#startup event that informs player about the Danish desire to annex Schleswig
 	type = country_event
 	placement = ROOT
-
 	title = vtm_denmark.1.t
 	desc = vtm_denmark.1.d
 	flavor = vtm_denmark.1.f
-
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
-
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
 	duration = 3
-
 	trigger = {
 		#triggered by JE appearing
 	}
-
+	
 	immediate = {
 		random_subject_or_below = {
 			limit = {
@@ -34,7 +28,7 @@ vtm_denmark.1 = { #startup event that informs player about the Danish desire to 
 			save_scope_as = Schleswig_vassal
 		}
 	}
-
+	
 	option = {
 		name = vtm_denmark.1.a
 	}
@@ -43,30 +37,24 @@ vtm_denmark.1 = { #startup event that informs player about the Danish desire to 
 vtm_denmark.2 = {
 	type = country_event
 	placement = ROOT
-
 	title = vtm_denmark.2.t
 	desc = vtm_denmark.2.d
 	flavor = vtm_denmark.2.f
-
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
-
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
 	duration = 3
-
 	trigger = {
 		#triggered by JE failure
 	}
-
+	
 	immediate = {
 		set_global_variable = scandis_unsuccessful
 	}
-
+	
 	option = {
 		name = vtm_denmark.2.a
 		add_modifier = {
@@ -79,30 +67,24 @@ vtm_denmark.2 = {
 vtm_denmark.3 = {
 	type = country_event
 	placement = ROOT
-
 	title = vtm_denmark.3.t
 	desc = vtm_denmark.3.d
 	flavor = vtm_denmark.3.f
-
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
-
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
 	duration = 3
-
 	trigger = {
 		#triggered by JE completion
 	}
-
+	
 	immediate = {
 		set_global_variable = scandis_successful
 	}
-
+	
 	option = {
 		name = vtm_denmark.3.a
 		add_modifier = {
@@ -111,25 +93,19 @@ vtm_denmark.3 = {
 	}
 }
 #Danish agitator agitates to unify, other countries get annoyed
-vtm_denmark.4 = { 
+vtm_denmark.4 = {
 	type = country_event
 	placement = s:STATE_SCHLESWIG_HOLSTEIN.region_state:SCH
-
 	title = vtm_denmark.4.t
 	desc = vtm_denmark.4.d
 	flavor = vtm_denmark.4.f
-
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
-
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
 	duration = 3
-
 	trigger = {
 		AND = {
 			random_scope_character = {
@@ -144,6 +120,7 @@ vtm_denmark.4 = {
 					has_role = agitator
 				}
 			}
+			
 			NOT = {
 				any_scope_character = {
 					OR = {
@@ -154,7 +131,7 @@ vtm_denmark.4 = {
 			}
 		}
 	}
-
+	
 	immediate = {
 		random_scope_character = {
 			limit = {
@@ -173,7 +150,7 @@ vtm_denmark.4 = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = vtm_denmark.4.a
 		scope:agitator_ig_scope = {
@@ -182,26 +159,31 @@ vtm_denmark.4 = {
 				months = normal_modifier_time
 			}
 		}
+		
 		scope:pro_schleswig_agitator = {
 			add_modifier = {
 				name = imperious_leader_good_modifier
 				months = normal_modifier_time
 			}
 		}
+		
 		every_country = {
 			limit = {
 				is_subject_of = root
 			}
+			
 			change_relations = {
 				country = root
 				value = -20
 			}
 		}
+		
 		every_country = {
 			limit = {
 				has_journal_entry = je_schleswig_holstein_question
 				country_rank > rank_value:minor_power
 			}
+			
 			change_relations = {
 				country = root
 				value = -10
@@ -210,7 +192,7 @@ vtm_denmark.4 = {
 		default_option = yes
 		ai_chance = 100
 	}
-
+	
 	option = {
 		name = vtm_denmark.4.b
 		scope:agitator_ig_scope = {
@@ -219,26 +201,31 @@ vtm_denmark.4 = {
 				months = normal_modifier_time
 			}
 		}
+		
 		scope:pro_schleswig_agitator = {
 			add_modifier = {
 				name = public_shame_modifier
 				months = normal_modifier_time
 			}
 		}
+		
 		every_country = {
 			limit = {
 				is_subject_of = root
 			}
+			
 			change_relations = {
 				country = root
 				value = 20
 			}
 		}
+		
 		every_country = {
 			limit = {
 				has_journal_entry = je_schleswig_holstein_question
 				country_rank > rank_value:minor_power
 			}
+			
 			change_relations = {
 				country = root
 				value = 10
@@ -248,28 +235,21 @@ vtm_denmark.4 = {
 	}
 }
 # Danes in Schleswig stir agitation / DENMARK TO THE EIDER! / Pan-Scandis
-vtm_denmark.5 = { 
+vtm_denmark.5 = {
 	type = country_event
 	placement = ROOT
-
 	title = vtm_denmark.5.t
 	desc = vtm_denmark.5.d
 	flavor = vtm_denmark.5.f
-
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
-
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
 	duration = 3
-
 	trigger = {
 	}
-
 	immediate = {
 		random_interest_group = {
 			limit = {
@@ -282,7 +262,7 @@ vtm_denmark.5 = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = vtm_denmark.5.a
 		scope:appeal_leader = {
@@ -291,31 +271,35 @@ vtm_denmark.5 = {
 				months = normal_modifier_time
 			}
 		}
+		
 		every_country = {
 			limit = {
 				has_journal_entry = je_schleswig_holstein_question
 				country_rank > rank_value:minor_power
 			}
+			
 			change_relations = {
 				country = root
 				value = -10
 			}
 		}
+		
 		hidden_effect = {
 			if = {
 				limit = {
 					is_ai = yes
 				}
+				
 				set_secret_goal = {
 					country = c:SCH
-					secret_goal = dominate 
+					secret_goal = dominate
 				}
 			}
 		}
 		default_option = yes
 		ai_chance = 100
 	}
-
+	
 	option = {
 		name = vtm_denmark.5.b
 		scope:appeal_leader = {
@@ -324,11 +308,13 @@ vtm_denmark.5 = {
 				months = normal_modifier_time
 			}
 		}
+		
 		every_country = {
 			limit = {
 				has_journal_entry = je_schleswig_holstein_question
 				country_rank > rank_value:minor_power
 			}
+			
 			change_relations = {
 				country = root
 				value = 10
@@ -338,35 +324,28 @@ vtm_denmark.5 = {
 	}
 }
 # Plans to fully integrate Schleswig are being prepped (puppet Schleswig)
-vtm_denmark.6 = { 
+vtm_denmark.6 = {
 	type = country_event
 	placement = ROOT
-
 	title = vtm_denmark.6.t
 	desc = vtm_denmark.6.d
 	flavor = vtm_denmark.6.f
-
 	event_image = {
 		video = "gfx/event_pictures/unspecific_signed_contract.bk2"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/signed_contract"
-
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
 	duration = 3
-
 	trigger = {
 		has_diplomatic_pact = {
 			who = c:SCH
 			type = puppet
-		}	
+		}
 	}
-
+	
 	immediate = {
 	}
-
 	option = {
 		name = vtm_denmark.6.a
 		every_country = {
@@ -374,6 +353,7 @@ vtm_denmark.6 = {
 				has_journal_entry = je_schleswig_holstein_question
 				country_rank > rank_value:minor_power
 			}
+			
 			change_relations = {
 				country = root
 				value = -30
@@ -382,7 +362,7 @@ vtm_denmark.6 = {
 		default_option = yes
 		ai_chance = 100
 	}
-
+	
 	option = {
 		name = vtm_denmark.6.b
 		every_country = {
@@ -390,11 +370,13 @@ vtm_denmark.6 = {
 				has_journal_entry = je_schleswig_holstein_question
 				country_rank > rank_value:minor_power
 			}
+			
 			change_relations = {
 				country = root
 				value = 30
 			}
 		}
+		
 		create_truce = {
 			country = c:SCH
 			months = 36

@@ -2,14 +2,10 @@
 # icon = graphical icon shown in-game
 # modifier = {} modifier on country for having adopted this law
 # cultural_acceptance_rule and religious_acceptance_rule are triggers in the pop scope used to check if a pop should be accepted or discriminated against
-
 law_state_religion = {
 	group = lawgroup_church_and_state
-	
 	icon = "gfx/interface/icons/law_icons/state_religion.dds"
-	
 	progressiveness = -50
-	
 	on_enact = {
 		recalculate_pop_ig_support = yes
 		if = {
@@ -18,6 +14,7 @@ law_state_religion = {
 			}
 			set_state_religion = root.country_definition.religion
 		}
+		
 		if = {
 			limit = {
 				has_modifier = antireligious_policies
@@ -33,14 +30,14 @@ law_state_religion = {
 	modifier = {
 		interest_group_ig_devout_pol_str_mult = 0.3
 		state_radicals_from_sol_change_accepted_religion_mult = -0.1
-		state_loyalists_from_sol_change_accepted_religion_mult = 0.1	
+		state_loyalists_from_sol_change_accepted_religion_mult = 0.1
 		country_authority_add = 200
 	}
 	
 	possible_political_movements = {
 		law_freedom_of_conscience
 	}
-
+	
 	pop_support = {
 		value = 0
 		# Clergy like theocracy
@@ -54,18 +51,17 @@ law_state_religion = {
 			value = 0.25
 		}
 	}
-
-		ai_will_do = {
+	
+	ai_will_do = {
 		exists = ruler
 		ruler = {
 			has_ideology = ideology:ideology_theocrat
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
-		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}
@@ -73,10 +69,10 @@ law_state_religion = {
 		}
 		
 		if = {
-			limit = { 
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
-                scope:law = var:desired_law_var
+				scope:law = var:desired_law_var
 			}
 			add = 750
 		}
@@ -85,15 +81,12 @@ law_state_religion = {
 
 law_freedom_of_conscience = {
 	group = lawgroup_church_and_state
-	
 	icon = "gfx/interface/icons/law_icons/freedom_of_conscience.dds"
-	
 	progressiveness = 0
-
 	unlocking_technologies = {
 		rationalism
 	}
-
+	
 	disallowing_laws = {
 		law_theocracy
 	}
@@ -106,6 +99,7 @@ law_freedom_of_conscience = {
 			}
 			set_state_religion = root.country_definition.religion
 		}
+		
 		if = {
 			limit = {
 				has_modifier = antireligious_policies
@@ -121,7 +115,7 @@ law_freedom_of_conscience = {
 	modifier = {
 		interest_group_ig_devout_pol_str_mult = 0.15
 		state_radicals_from_sol_change_accepted_religion_mult = -0.05
-		state_loyalists_from_sol_change_accepted_religion_mult = 0.05	
+		state_loyalists_from_sol_change_accepted_religion_mult = 0.05
 		country_authority_add = 100
 	}
 	
@@ -137,36 +131,41 @@ law_freedom_of_conscience = {
 			if = {
 				limit = {
 					owner = {
-						NOT = { has_law = law_type:law_total_separation }
+						NOT = {
+							has_law = law_type:law_total_separation
+						}
 					}
 					is_pop_type = academics
 				}
 				value = 0.25
 			}
 		}
+		
 		add = {
 			desc = "POP_DISCRIMINATED"
 			if = {
-				limit = { 
+				limit = {
 					religion_accepted = no
-					owner = { NOT = { has_law = law_type:law_total_separation } }
+					owner = {
+						NOT = {
+							has_law = law_type:law_total_separation
+						}
+					}
 				}
 				add = 0.5
-				
 				if = {
-					limit = { 
+					limit = {
 						standard_of_living <= 10
 					}
 					add = 0.5
 				}
-			}		
+			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
-		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}
@@ -174,10 +173,10 @@ law_freedom_of_conscience = {
 		}
 		
 		if = {
-			limit = { 
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
-                scope:law = var:desired_law_var
+				scope:law = var:desired_law_var
 			}
 			add = 750
 		}
@@ -186,15 +185,12 @@ law_freedom_of_conscience = {
 
 law_total_separation = {
 	group = lawgroup_church_and_state
-	
 	icon = "gfx/interface/icons/law_icons/total_separation.dds"
-	
 	progressiveness = 50
-
 	unlocking_technologies = {
 		empiricism
 	}
-
+	
 	disallowing_laws = {
 		law_theocracy
 	}
@@ -207,6 +203,7 @@ law_total_separation = {
 			}
 			set_state_religion = root.country_definition.religion
 		}
+		
 		if = {
 			limit = {
 				has_modifier = antireligious_policies
@@ -225,7 +222,6 @@ law_total_separation = {
 	
 	pop_support = {
 		value = 0
-
 		add = {
 			desc = "POP_ACADEMICS"
 			# Academics generally against religious perseecution
@@ -236,29 +232,27 @@ law_total_separation = {
 				value = 0.25
 			}
 		}
-
+		
 		add = {
 			desc = "POP_DISCRIMINATED"
 			if = {
-				limit = { 
+				limit = {
 					religion_accepted = no
 				}
 				add = 0.5
-
 				if = {
-					limit = { 
+					limit = {
 						standard_of_living <= 10
 					}
 					add = 0.5
 				}
-			}			
+			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
-		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}
@@ -266,10 +260,10 @@ law_total_separation = {
 		}
 		
 		if = {
-			limit = { 
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
-                scope:law = var:desired_law_var
+				scope:law = var:desired_law_var
 			}
 			add = 750
 		}
@@ -278,21 +272,18 @@ law_total_separation = {
 
 law_state_atheism = {
 	group = lawgroup_church_and_state
-	
 	icon = "gfx/interface/icons/law_icons/state_atheism.dds"
-
 	progressiveness = 0
-
 	unlocking_technologies = {
 		empiricism
 	}
-
+	
 	disallowing_laws = {
 		law_theocracy
 		law_monarchy
 		law_religious_schools
 	}
-
+	
 	modifier = {
 		interest_group_ig_devout_pol_str_mult = -0.5
 		state_conversion_mult = 0.25
@@ -310,16 +301,18 @@ law_state_atheism = {
 		add_modifier = {
 			name = antireligious_policies
 			months = long_modifier_time
-			is_decaying = yes # VTM
+			is_decaying = yes	# VTM
 		}
+		
 		custom_tooltip = {
 			text = state_atheism_conversion_tt
 			if = {
 				limit = {
 					NOT = {
-						has_variable = did_state_atheism_already # no fun allowed
-					}				
+						has_variable = did_state_atheism_already	# no fun allowed
+					}
 				}
+				
 				convert_population = {
 					target = rel:atheist
 					value = 0.10
@@ -336,7 +329,7 @@ law_state_atheism = {
 	possible_political_movements = {
 		law_freedom_of_conscience
 	}
-
+	
 	pop_support = {
 		value = 0
 		# Some euphoric academics will support this
@@ -360,12 +353,10 @@ law_state_atheism = {
 			}
 		}
 	}
-
 	
 	ai_enact_weight_modifier = {
-		value = -75 # AI is less likely to pass State Atheism by default
-	
-				if = {
+		value = -75	# AI is less likely to pass State Atheism by default
+		if = {
 			limit = {
 				law_is_important = yes
 			}
@@ -373,7 +364,7 @@ law_state_atheism = {
 		}
 		
 		if = {
-			limit = { 
+			limit = {
 				any_interest_group = {
 					is_in_government = yes
 					is_powerful = yes
@@ -387,11 +378,12 @@ law_state_atheism = {
 			}
 			add = 75
 		}
+		
 		if = {
-			limit = { 
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
-                scope:law = var:desired_law_var
+				scope:law = var:desired_law_var
 			}
 			add = 750
 		}

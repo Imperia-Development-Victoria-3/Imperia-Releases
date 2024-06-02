@@ -16,8 +16,8 @@
 				#reckless
 			}
 		}
-
-		create_character = { # BIC, general
+		
+		create_character = {	# BIC, general
 			is_general = yes
 			first_name = Sir_Henry
 			last_name = Havelock
@@ -33,8 +33,8 @@
 				basic_offensive_planner
 			}
 		}
-
-		create_character = { # BIC, general
+		
+		create_character = {	# BIC, general
 			is_general = yes
 			first_name = Sir_Henry
 			last_name = Godwin
@@ -50,8 +50,8 @@
 				forest_commander
 			}
 		}
-
-		create_character = { # BIC, admiral
+		
+		create_character = {	# BIC, admiral
 			is_admiral = yes
 			first_name = John
 			last_name = Wood
@@ -59,15 +59,15 @@
 			culture = cu:scottish
 			interest_group = ig_armed_forces
 			ideology = ideology_moderate
-			birth_date = 1812.1.2 # exact date unknown
+			birth_date = 1812.1.2	# exact date unknown
 			hq = region_north_india
 			traits = {
 				explorer
 				surveyor
 			}
 		}
-
-		create_character = { # BIC, admiral
+		
+		create_character = {	# BIC, admiral
 			is_admiral = yes
 			first_name = Sir_Charles
 			last_name = Malcolm
@@ -75,12 +75,12 @@
 			culture = cu:scottish
 			interest_group = ig_armed_forces
 			ideology = ideology_moderate
-			birth_date = 1782.12.13 # exact date unknown
+			birth_date = 1782.12.13	# exact date unknown
 			hq = region_south_india
 			traits = {
 				basic_naval_commander
 				meticulous
 			}
-		}	
+		}
 	}
 }

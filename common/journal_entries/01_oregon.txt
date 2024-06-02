@@ -1,8 +1,6 @@
 ﻿je_oregon = {
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
 	group = je_group_historical_content
-
 	is_shown_when_inactive = {
 		exists = c:USA
 		exists = c:GBR
@@ -17,6 +15,7 @@
 				}
 			}
 		}
+		
 		s:STATE_OREGON = {
 			any_scope_state = {
 				owner = {
@@ -27,6 +26,7 @@
 				}
 			}
 		}
+		
 		s:STATE_IDAHO = {
 			any_scope_state = {
 				owner = {
@@ -38,8 +38,8 @@
 			}
 		}
 	}
-
-	possible = { 
+	
+	possible = {
 		OR = {
 			has_interest_marker_in_region = region_pacific_coast
 			custom_tooltip = {
@@ -50,7 +50,7 @@
 			owns_entire_state_region = STATE_WYOMING
 		}
 	}
-
+	
 	complete = {
 		OR = {
 			AND = {
@@ -65,6 +65,7 @@
 					relations:ROOT >= relations_threshold:cordial
 				}
 			}
+			
 			AND = {
 				owns_entire_state_region = STATE_WASHINGTON
 				owns_entire_state_region = STATE_IDAHO
@@ -72,7 +73,7 @@
 			}
 		}
 	}
-
+	
 	on_complete = {
 		if = {
 			limit = {
@@ -86,6 +87,7 @@
 						}
 					}
 				}
+				
 				s:STATE_OREGON = {
 					any_scope_state = {
 						owner = {
@@ -96,6 +98,7 @@
 						}
 					}
 				}
+				
 				s:STATE_IDAHO = {
 					any_scope_state = {
 						owner = {
@@ -107,55 +110,64 @@
 					}
 				}
 			}
-			c:GBR = { trigger_event = { id = oregon.2 } }
+			
+			c:GBR = {
+				trigger_event = {
+					id = oregon.2
+				}
+			}
 		}
+		
 		else = {
 			s:STATE_IDAHO = {
 				add_homeland = cu:yankee
 			}
+			
 			s:STATE_WASHINGTON = {
 				add_homeland = cu:yankee
 			}
+			
 			s:STATE_OREGON = {
 				add_homeland = cu:yankee
 			}
+			
 			add_modifier = {
 				name = oregon_resolved
 				months = normal_modifier_time
 			}
 		}
 	}
-
+	
 	fail = {
 		c:GBR = {
 			relations:ROOT <= relations_threshold:poor
-   	 	}
+		}
 	}
 	
 	on_fail = {
-			add_journal_entry = {
-				type = je_conquer_oregon
-			}
-			s:STATE_OREGON = {
-				add_claim = ROOT
-			}
-			s:STATE_IDAHO = {
-				add_claim = ROOT
-			}
-			s:STATE_WASHINGTON = {
-				add_claim = ROOT
-			}
+		add_journal_entry = {
+			type = je_conquer_oregon
+		}
+		
+		s:STATE_OREGON = {
+			add_claim = ROOT
+		}
+		
+		s:STATE_IDAHO = {
+			add_claim = ROOT
+		}
+		
+		s:STATE_WASHINGTON = {
+			add_claim = ROOT
+		}
 	}
-
 	should_be_pinned_by_default = yes
 	weight = 100
 }
 
 je_conquer_oregon = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-
 	group = je_group_historical_content
-
 	complete = {
 		c:USA = {
 			owns_entire_state_region = STATE_WASHINGTON
@@ -163,21 +175,21 @@ je_conquer_oregon = {
 			owns_entire_state_region = STATE_OREGON
 		}
 	}
-
+	
 	on_complete = {
 		s:STATE_OREGON = {
 			add_homeland = cu:yankee
 		}
+		
 		s:STATE_IDAHO = {
 			add_homeland = cu:yankee
 		}
+		
 		s:STATE_WASHINGTON = {
 			add_homeland = cu:yankee
 		}
 	}
-
 	weight = 100
-
 	transferable = no
 	should_be_pinned_by_default = yes
 }

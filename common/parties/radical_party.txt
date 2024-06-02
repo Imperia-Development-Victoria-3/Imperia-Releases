@@ -1,8 +1,12 @@
 ﻿# Radicals and Republicans extremely attracted to this ideology
 # Attracts weak leftists and liberals
-
 radical_party = {
-	color = { 255 102 0 }
+	color = {
+		255
+		102
+		0
+	}
+	
 	name = {
 		first_valid = {
 			triggered_desc = {
@@ -12,6 +16,7 @@ radical_party = {
 					THIS = c:ARG
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_democratic_progressive_party
 				trigger = {
@@ -19,6 +24,7 @@ radical_party = {
 					THIS = c:SPA
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_free_democratic_party
 				trigger = {
@@ -26,6 +32,7 @@ radical_party = {
 					THIS = c:SWI
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_national_progressive_party
 				trigger = {
@@ -33,6 +40,7 @@ radical_party = {
 					THIS = c:FIN
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_free_thinking_democratic_league
 				trigger = {
@@ -40,6 +48,7 @@ radical_party = {
 					THIS = c:NET
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_radical_liberal_party
 				trigger = {
@@ -47,6 +56,7 @@ radical_party = {
 					THIS = c:LUX
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_progressive_club
 				trigger = {
@@ -54,6 +64,7 @@ radical_party = {
 					THIS = c:AUS
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_radical_peoples_party
 				trigger = {
@@ -61,6 +72,7 @@ radical_party = {
 					THIS = c:SER
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_revival_party
 				trigger = {
@@ -68,6 +80,7 @@ radical_party = {
 					THIS = c:PER
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_mexican_liberal_party
 				trigger = {
@@ -75,6 +88,7 @@ radical_party = {
 					THIS = c:MEX
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_democratic_progressive_party
 				trigger = {
@@ -83,6 +97,7 @@ radical_party = {
 					has_law = law_type:law_universal_suffrage
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_committee_of_union_and_progress
 				trigger = {
@@ -91,14 +106,18 @@ radical_party = {
 					has_law = law_type:law_monarchy
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_freedom_and_accord_party
 				trigger = {
 					exists = c:TUR
 					THIS = c:TUR
-					NOT = { has_law = law_type:law_monarchy }
+					NOT = {
+						has_law = law_type:law_monarchy
+					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_trudovik_group
 				trigger = {
@@ -106,6 +125,7 @@ radical_party = {
 					THIS = c:RUS
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_revive_china_society
 				trigger = {
@@ -114,6 +134,7 @@ radical_party = {
 					has_law = law_type:law_monarchy
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_french_party
 				trigger = {
@@ -121,6 +142,7 @@ radical_party = {
 					THIS = c:GRE
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_republican_party
 				trigger = {
@@ -130,6 +152,7 @@ radical_party = {
 					var:fra_republic_counter ?= 1
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_republican_union
 				trigger = {
@@ -137,6 +160,7 @@ radical_party = {
 					THIS = c:FRA
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_the_far_left
 				trigger = {
@@ -146,6 +170,7 @@ radical_party = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_tongmenghui
 				trigger = {
@@ -159,10 +184,14 @@ radical_party = {
 							country_has_primary_culture = cu:yi
 							country_has_primary_culture = cu:yue
 						}
-						NOT = { has_law = law_type:law_monarchy }
+						
+						NOT = {
+							has_law = law_type:law_monarchy
+						}
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_progressive_party
 				trigger = {
@@ -171,6 +200,7 @@ radical_party = {
 							exists = c:JAP
 							THIS = c:JAP
 						}
+						
 						AND = {
 							exists = c:USA
 							THIS = c:USA
@@ -178,6 +208,7 @@ radical_party = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_radical_liberal_party
 				trigger = {
@@ -185,6 +216,7 @@ radical_party = {
 					THIS = c:ECU
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_national_union
 				trigger = {
@@ -192,18 +224,21 @@ radical_party = {
 					THIS = c:PEU
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_radical_liberal_party
 				trigger = {
 					country_has_primary_culture = cu:dixie
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_progressive_dissidence
 				trigger = {
 					country_has_primary_culture = cu:portuguese
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_farroupilha
 				trigger = {
@@ -211,18 +246,21 @@ radical_party = {
 					has_law = law_type:law_monarchy
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_radical_peoples_party
 				trigger = {
 					country_has_primary_culture = cu:norwegian
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_social_liberal_party
 				trigger = {
 					country_has_primary_culture = cu:danish
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_free_minded_peoples_party
 				trigger = {
@@ -232,14 +270,18 @@ radical_party = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_chartists
 				trigger = {
 					exists = c:GBR
 					THIS = c:GBR
-					NOT = { has_law = law_type:law_universal_suffrage }
+					NOT = {
+						has_law = law_type:law_universal_suffrage
+					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_radicals
 				trigger = {
@@ -248,9 +290,11 @@ radical_party = {
 			}
 		}
 	}
+	
 	icon = {
 		default = "/gfx/interface/icons/political_parties/radical.dds"
 	}
+	
 	unlocking_technologies = {
 		egalitarianism
 	}
@@ -258,6 +302,7 @@ radical_party = {
 	valid_for_country = {
 		always = yes
 	}
+	
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
@@ -268,21 +313,25 @@ radical_party = {
 				}
 			}
 		}
+		
 		OR = {
-	     	NOT = {
-	         	owner = {
-	         		has_variable = only_valid_party
-	         	}
-	        }
-	        owner.var:only_valid_party = {
-	        	is_party_type = radical_party
-	        }
-	    }
+			NOT = {
+				owner = {
+					has_variable = only_valid_party
+				}
+			}
+			
+			owner.var:only_valid_party = {
+				is_party_type = radical_party
+			}
+		}
+		
 		NOR = {
 			is_interest_group_type = ig_landowners
 			is_interest_group_type = ig_devout
 		}
-		leader = { # fascists and conservatives hate radicals
+		
+		leader = {	# fascists and conservatives hate radicals
 			NOT = {
 				has_ideology = ideology:ideology_fascist
 				has_ideology = ideology:ideology_integralist
@@ -297,7 +346,7 @@ radical_party = {
 			}
 		}
 	}
-	
+
 	# Root - IG considering joining
 	# scope:number - the number of IGs that would join this party before the root IG
 	join_weight = {
@@ -305,6 +354,7 @@ radical_party = {
 			value = -5
 			desc = "base_value"
 		}
+		
 		if = {
 			limit = {
 				owner = {
@@ -314,11 +364,13 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = -10
 				desc = "south_america_two_party_system"
 			}
 		}
+		
 		if = {
 			limit = {
 				owner = {
@@ -330,22 +382,26 @@ radical_party = {
 					has_law = law_type:law_presidential_republic
 				}
 			}
+			
 			add = {
 				value = -10
 				desc = "usa_two_party_system"
 			}
 		}
-		if = { # radicals love radicalism
+		
+		if = {	# radicals love radicalism
 			limit = {
 				leader = {
 					has_ideology = ideology:ideology_radical
 				}
 			}
+			
 			add = {
 				value = 5
 				desc = "from_radical"
 			}
 		}
+		
 		if = {
 			limit = {
 				is_powerful = yes
@@ -353,12 +409,14 @@ radical_party = {
 					has_ideology = ideology:ideology_radical
 				}
 			}
+			
 			add = {
 				value = 10
 				desc = "from_powerful_radical"
 			}
 		}
-		if = { # radicals will fall in line behind stronger liberals
+		
+		if = {	# radicals will fall in line behind stronger liberals
 			limit = {
 				leader = {
 					has_ideology = ideology:ideology_radical
@@ -374,18 +432,21 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = -5
 				desc = "from_weak_radicals"
 			}
 		}
-		if = { # weak liberals will fall in line behind strong radicals
+		
+		if = {	# weak liberals will fall in line behind strong radicals
 			limit = {
 				is_powerful = no
 				OR = {
 					has_ideology = ideology:ideology_liberal
 					has_ideology = ideology:ideology_liberal_modern
 				}
+				
 				owner = {
 					any_interest_group = {
 						is_powerful = yes
@@ -395,12 +456,14 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 10
 				desc = "from_weak_liberals_radical"
 			}
 		}
-		if = { # weak leftists will fall in line behind radicals pre-revolution
+		
+		if = {	# weak leftists will fall in line behind radicals pre-revolution
 			limit = {
 				is_powerful = no
 				leader = {
@@ -410,8 +473,12 @@ radical_party = {
 						has_ideology = ideology:ideology_anarchist
 					}
 				}
+				
 				owner = {
-					NOT = { has_law = law_type:law_council_republic }
+					NOT = {
+						has_law = law_type:law_council_republic
+					}
+					
 					any_interest_group = {
 						is_powerful = yes
 						leader = {
@@ -420,12 +487,14 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 10
 				desc = "from_weak_leftists_radical"
 			}
 		}
-		if = { # various progressives are inclined towards radicalism
+		
+		if = {	# various progressives are inclined towards radicalism
 			limit = {
 				leader = {
 					OR = {
@@ -440,12 +509,14 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 10
 				desc = "from_progressives_radical"
 			}
 		}
-		if = { # republican
+		
+		if = {	# republican
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_republican
@@ -458,6 +529,7 @@ radical_party = {
 						}
 					}
 				}
+				
 				owner = {
 					OR = {
 						has_law = law_type:law_monarchy
@@ -465,13 +537,15 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 10
 				desc = "from_republican"
 			}
 		}
+		
 		if = {
-			limit = { # particularists will join in when their issues are relevant
+			limit = {	# particularists will join in when their issues are relevant
 				has_ideology = ideology:ideology_particularist
 				owner = {
 					OR = {
@@ -480,27 +554,34 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_particularism_cares_about_laws"
 			}
 		}
-		if = { # moderates are scared of radical politics
+		
+		if = {	# moderates are scared of radical politics
 			limit = {
 				leader = {
 					has_ideology = ideology:ideology_moderate
 				}
 			}
+			
 			add = {
 				value = -3
 				desc = "from_moderate"
 			}
 		}
-		if = { # from lack of democracy
+		
+		if = {	# from lack of democracy
 			limit = {
 				owner = {
-					NOT = { has_law = law_type:law_universal_suffrage }
+					NOT = {
+						has_law = law_type:law_universal_suffrage
+					}
 				}
+				
 				OR = {
 					has_ideology = ideology:ideology_republican
 					has_ideology = ideology:ideology_populist
@@ -513,12 +594,14 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 10
 				desc = "from_no_universal_suffrage"
 			}
 		}
-		if = { # radical anti-censorship
+		
+		if = {	# radical anti-censorship
 			limit = {
 				leader = {
 					OR = {
@@ -527,6 +610,7 @@ radical_party = {
 						has_ideology = ideology:ideology_humanitarian
 					}
 				}
+				
 				owner = {
 					OR = {
 						has_law = law_type:law_outlawed_dissent
@@ -534,12 +618,14 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = from_censorship
 			}
 		}
-		if = { # anti-censorship
+		
+		if = {	# anti-censorship
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_liberal
@@ -549,27 +635,31 @@ radical_party = {
 						has_ideology = ideology:ideology_humanitarian
 					}
 				}
+				
 				owner = {
 					has_law = law_type:law_outlawed_dissent
 				}
 			}
+			
 			add = {
 				value = 6
 				desc = from_outlawed_dissent
 			}
 		}
-		if = { # opposition to secret police or national guard
+		
+		if = {	# opposition to secret police or national guard
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_liberal
 					has_ideology = ideology:ideology_liberal_modern
 					leader = {
-						OR = {	
+						OR = {
 							has_ideology = ideology:ideology_humanitarian
 							has_ideology = ideology:ideology_radical
 						}
 					}
 				}
+				
 				owner = {
 					OR = {
 						has_law = law_type:law_national_guard
@@ -577,12 +667,14 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 6
 				desc = from_bad_home_affairs
 			}
 		}
-		if = { # general anti-slavery
+		
+		if = {	# general anti-slavery
 			limit = {
 				owner = {
 					OR = {
@@ -590,6 +682,7 @@ radical_party = {
 						has_law = law_type:law_slave_trade
 					}
 				}
+				
 				OR = {
 					has_ideology = ideology:ideology_anti_slavery
 					leader = {
@@ -597,16 +690,19 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_slavery"
 			}
 		}
-		if = { # anti-serfdom
+		
+		if = {	# anti-serfdom
 			limit = {
 				owner = {
 					has_law = law_type:law_serfdom
 				}
+				
 				OR = {
 					has_ideology = ideology:ideology_egalitarian
 					has_ideology = ideology:ideology_egalitarian_modern
@@ -620,90 +716,109 @@ radical_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_serfdom"
 			}
 		}
+		
 		if = {
 			limit = {
 				scope:number = 1
 				is_powerful = no
 				is_marginal = no
 			}
+			
 			multiply = {
 				value = 2
 				desc = "from_influential_supporting_member"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				scope:number = 2
 			}
+			
 			multiply = {
 				value = 0.5
 				desc = "from_two_prior_members"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				scope:number = 3
 			}
+			
 			multiply = {
 				value = 0.25
 				desc = "from_three_prior_members"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				scope:number > 3
 			}
+			
 			multiply = {
 				value = 0.1
 				desc = "from_more_than_three_prior_members"
 			}
 		}
+		
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	NOT = {
-			        owner.var:only_valid_party = {
-			        	is_party_type = radical_party
-			        }
-			    }
+					has_variable = only_valid_party
+				}
+				
+				NOT = {
+					owner.var:only_valid_party = {
+						is_party_type = radical_party
+					}
+				}
 			}
+			
 			multiply = {
 				value = 0
 			}
 		}
+		
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-				 owner.var:only_valid_party = {
-					 is_party_type = radical_party
-				 }
-	         	owner.ruler = {
+					has_variable = only_valid_party
+				}
+				
+				owner.var:only_valid_party = {
+					is_party_type = radical_party
+				}
+				
+				owner.ruler = {
 					this.interest_group = prev
 				}
 			}
+			
 			add = {
 				value = 1000
 				desc = "from_only_legal_party"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	 owner.var:only_valid_party = {
-		        	is_party_type = radical_party
-		        }
+					has_variable = only_valid_party
+				}
+				
+				owner.var:only_valid_party = {
+					is_party_type = radical_party
+				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_only_legal_party"

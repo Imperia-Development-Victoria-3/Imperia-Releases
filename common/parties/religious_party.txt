@@ -1,11 +1,14 @@
 ﻿# Fallback party for Devout
 # When devout are powerful, other religious IG's might join
-
 religious_party = {
-	color = { 100 100 100 }
+	color = {
+		100
+		100
+		100
+	}
+	
 	name = {
 		first_valid = {
-
 			triggered_desc = {
 				desc = party_catholic_peoples_party
 				trigger = {
@@ -13,6 +16,7 @@ religious_party = {
 					THIS = c:AUS
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_portuguese_catholic_centre
 				trigger = {
@@ -20,6 +24,7 @@ religious_party = {
 					THIS = c:POR
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_catholic_right
 				trigger = {
@@ -27,6 +32,7 @@ religious_party = {
 					THIS = c:SWI
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_anti_revolutionary_party
 				trigger = {
@@ -34,6 +40,7 @@ religious_party = {
 					THIS = c:NET
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_learned_council
 				trigger = {
@@ -41,6 +48,7 @@ religious_party = {
 					THIS = c:PER
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_traditionalist_communion
 				trigger = {
@@ -48,6 +56,7 @@ religious_party = {
 					THIS = c:SPA
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_christian_peoples_party
 				trigger = {
@@ -55,6 +64,7 @@ religious_party = {
 					THIS = c:BEL
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_legitimist_party
 				trigger = {
@@ -67,10 +77,11 @@ religious_party = {
 									has_ideology = ideology:ideology_legitimist
 								}
 							}
-						}						
+						}
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_clerical_party
 				trigger = {
@@ -78,6 +89,7 @@ religious_party = {
 					THIS = c:FRA
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_union_of_the_russian_people
 				trigger = {
@@ -85,6 +97,7 @@ religious_party = {
 					THIS = c:RUS
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_know_nothing_party
 				trigger = {
@@ -94,6 +107,7 @@ religious_party = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_zentrum
 				trigger = {
@@ -106,6 +120,7 @@ religious_party = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_conservative_catholics
 				trigger = {
@@ -115,18 +130,21 @@ religious_party = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_moderate_venstre
 				trigger = {
 					country_has_primary_culture = cu:norwegian
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_shinto
 				trigger = {
 					country_has_state_religion = rel:shinto
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_buddhist
 				trigger = {
@@ -135,24 +153,28 @@ religious_party = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_sikh
 				trigger = {
 					country_has_state_religion = rel:sikh
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_hindu
 				trigger = {
 					country_has_state_religion = rel:hindu
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_jewish
 				trigger = {
 					country_has_state_religion = rel:jewish
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_muslim
 				trigger = {
@@ -161,12 +183,14 @@ religious_party = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_catholic
 				trigger = {
 					country_has_state_religion = rel:catholic
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_christian
 				trigger = {
@@ -175,6 +199,7 @@ religious_party = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_religious
 				trigger = {
@@ -183,6 +208,7 @@ religious_party = {
 			}
 		}
 	}
+	
 	icon = {
 		default = "/gfx/interface/icons/political_parties/religious.dds"
 	}
@@ -190,22 +216,25 @@ religious_party = {
 	valid_for_country = {
 		always = yes
 	}
+	
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
 		}
+		
 		OR = {
-	     	NOT = {
-	         	owner = {
-	         		has_variable = only_valid_party
-	         	}
-	        }
-	        owner.var:only_valid_party = {
-	        	is_party_type = religious_party
-	        }
-	    }
+			NOT = {
+				owner = {
+					has_variable = only_valid_party
+				}
+			}
+			
+			owner.var:only_valid_party = {
+				is_party_type = religious_party
+			}
+		}
 	}
-	
+
 	# Root - IG considering joining
 	# scope:number - the number of IGs that would join this party before the root IG
 	join_weight = {
@@ -213,6 +242,7 @@ religious_party = {
 			value = -5
 			desc = "base_value"
 		}
+		
 		if = {
 			limit = {
 				owner = {
@@ -222,11 +252,13 @@ religious_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = -10
 				desc = "south_america_two_party_system"
 			}
 		}
+		
 		if = {
 			limit = {
 				owner = {
@@ -238,11 +270,13 @@ religious_party = {
 					has_law = law_type:law_presidential_republic
 				}
 			}
+			
 			add = {
 				value = -10
 				desc = "usa_two_party_system"
 			}
 		}
+		
 		if = {
 			limit = {
 				owner = {
@@ -250,16 +284,19 @@ religious_party = {
 						is_interest_group_type = ig_landowners
 						is_marginal = no
 					}
+					
 					NOT = {
 						has_technology_researched = corporatism
 					}
 				}
 			}
+			
 			add = {
 				value = -5
 				desc = "from_relevant_landowners"
 			}
 		}
+		
 		if = {
 			limit = {
 				is_interest_group_type = ig_devout
@@ -267,42 +304,56 @@ religious_party = {
 					has_law = law_type:law_theocracy
 				}
 			}
+			
 			add = {
 				value = 5
 				desc = "from_theocracy"
 			}
 		}
-		if = { # nobody will join if the devout don't join
+		
+		if = {	# nobody will join if the devout don't join
 			limit = {
-				NOT = { is_interest_group_type = ig_devout }
+				NOT = {
+					is_interest_group_type = ig_devout
+				}
+				
 				OR = {
-					NOT = { exists = owner.py:religious_party }
+					NOT = {
+						exists = owner.py:religious_party
+					}
+					
 					AND = {
 						exists = owner.py:religious_party
 						owner = {
 							ig:ig_devout = {
-								NOT = { is_member_of_party = owner.py:religious_party }
+								NOT = {
+									is_member_of_party = owner.py:religious_party
+								}
 							}
 						}
 					}
 				}
 			}
+			
 			add = {
 				value = -20
-				desc = "from_no_devout_in_party" # this should probably never actually display in game because the party won't exist
+				desc = "from_no_devout_in_party"	# this should probably never actually display in game because the party won't exist
 			}
 		}
-		if = { # a party for powerful religious people
+		
+		if = {	# a party for powerful religious people
 			limit = {
 				is_interest_group_type = ig_devout
 				is_powerful = yes
 			}
+			
 			add = {
 				value = 10
 				desc = "from_powerful_devout"
 			}
 		}
-		if = { # religiously inclined people might join if devout are powerful
+		
+		if = {	# religiously inclined people might join if devout are powerful
 			limit = {
 				is_powerful = no
 				owner = {
@@ -310,6 +361,7 @@ religious_party = {
 						is_powerful = yes
 					}
 				}
+				
 				leader = {
 					OR = {
 						has_ideology = ideology:ideology_traditionalist
@@ -318,12 +370,14 @@ religious_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 10
 				desc = "from_powerful_devout_other"
 			}
 		}
-		if = { # antireligious characters and IG's will never join
+		
+		if = {	# antireligious characters and IG's will never join
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_anti_clerical
@@ -332,12 +386,14 @@ religious_party = {
 					}
 				}
 			}
-			add = {	
+			
+			add = {
 				value = -15
 				desc = "from_antireligious"
 			}
 		}
-		if = { # Corporatism
+		
+		if = {	# Corporatism
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_corporatist
@@ -346,66 +402,79 @@ religious_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 10
 				desc = "from_corporatism"
 			}
 		}
-		if = { # patriarchs more likely to join conservatives with women's suffrage
+		
+		if = {	# patriarchs more likely to join conservatives with women's suffrage
 			limit = {
 				has_ideology = ideology:ideology_patriarchal
 				owner = {
 					has_law = law_type:law_womens_suffrage
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_patriarchy"
 			}
 		}
+		
 		if = {
 			limit = {
 				is_interest_group_type = ig_devout
 				is_powerful = yes
 			}
+			
 			multiply = {
 				value = 2
 				desc = "from_archetype_party"
 			}
 		}
+		
 		if = {
 			limit = {
 				scope:number = 1
 				is_powerful = no
 				is_marginal = no
 			}
+			
 			multiply = {
 				value = 2
 				desc = "from_influential_supporting_member"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				scope:number = 2
 			}
+			
 			multiply = {
 				value = 0.5
 				desc = "from_two_prior_members"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				scope:number = 3
 			}
+			
 			multiply = {
 				value = 0.25
 				desc = "from_three_prior_members"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				scope:number > 3
 			}
+			
 			multiply = {
 				value = 0.1
 				desc = "from_more_than_three_prior_members"
@@ -414,7 +483,7 @@ religious_party = {
 
 		### FRANCE ###
 		### VTM ###
-		if = { # The Legitimists were fringe hardliners, we hijack the religious party for them since Orleanists have the Conservatives and Fascism hasnt been invented yet
+		if = {	# The Legitimists were fringe hardliners, we hijack the religious party for them since Orleanists have the Conservatives and Fascism hasnt been invented yet
 			limit = {
 				OR = {
 					is_powerful = yes
@@ -422,41 +491,48 @@ religious_party = {
 						has_law = law_type:law_monarchy
 					}
 				}
+				
 				leader = {
 					has_ideology = ideology:ideology_legitimist
 				}
 			}
+			
 			add = {
 				value = 50
 				desc = "from_traditional_legitimist_party"
 			}
 		}
-
-		if = { # If not explicitly Legimitist but the King is a member of the IG 
+		
+		if = {	# If not explicitly Legimitist but the King is a member of the IG 
 			limit = {
 				owner = {
 					has_law = law_type:law_monarchy
 				}
+				
 				owner.ruler = {
 					interest_group = prev
 					has_ideology = ideology:ideology_legitimist
 				}
+				
 				NOT = {
 					leader = {
 						has_ideology = ideology:ideology_legitimist
 					}
-				}			
+				}
 			}
+			
 			add = {
 				value = 5
 				desc = "from_kings_party"
 			}
 		}
-
-		if = { # Weak Monarchists in Republic may fall in line
+		
+		if = {	# Weak Monarchists in Republic may fall in line
 			limit = {
 				owner = {
-					NOT = { has_law = law_type:law_monarchy }
+					NOT = {
+						has_law = law_type:law_monarchy
+					}
 					exists = py:religious_party
 					any_interest_group = {
 						is_member_of_party = owner.py:religious_party
@@ -471,17 +547,17 @@ religious_party = {
 					OR = {
 						has_ideology = ideology:ideology_bonapartist
 						has_ideology = ideology:ideology_orleanist
-					}					
+					}
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_weak_monarchists_in_republic"
 			}
 		}
 		### VTM END ###
-
-		if = { # anti-orleanist
+		if = {	# anti-orleanist
 			limit = {
 				leader = {
 					OR = {
@@ -489,6 +565,7 @@ religious_party = {
 						has_ideology = ideology:ideology_legitimist
 					}
 				}
+				
 				owner = {
 					any_interest_group = {
 						has_party = yes
@@ -502,12 +579,14 @@ religious_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = -5
 				desc = "from_french_monarchist_rival"
 			}
 		}
-		if = { # anti-legitimist
+		
+		if = {	# anti-legitimist
 			limit = {
 				leader = {
 					OR = {
@@ -515,6 +594,7 @@ religious_party = {
 						has_ideology = ideology:ideology_orleanist
 					}
 				}
+				
 				owner = {
 					any_interest_group = {
 						has_party = yes
@@ -528,12 +608,14 @@ religious_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = -5
 				desc = "from_french_monarchist_rival"
 			}
 		}
-		if = { # anti-bonapartist
+		
+		if = {	# anti-bonapartist
 			limit = {
 				leader = {
 					OR = {
@@ -541,6 +623,7 @@ religious_party = {
 						has_ideology = ideology:ideology_orleanist
 					}
 				}
+				
 				owner = {
 					any_interest_group = {
 						has_party = yes
@@ -554,52 +637,63 @@ religious_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = -5
 				desc = "from_french_monarchist_rival"
 			}
 		}
+		
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	NOT = {
-			        owner.var:only_valid_party = {
-			        	is_party_type = religious_party
-			        }
-			    }
+					has_variable = only_valid_party
+				}
+				
+				NOT = {
+					owner.var:only_valid_party = {
+						is_party_type = religious_party
+					}
+				}
 			}
+			
 			multiply = {
 				value = 0
 			}
 		}
+		
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
+					has_variable = only_valid_party
+				}
+				
 				owner.var:only_valid_party = {
-		        	is_party_type = religious_party
-		        }
-	         	owner.ruler = {
+					is_party_type = religious_party
+				}
+				
+				owner.ruler = {
 					this.interest_group = prev
 				}
 			}
+			
 			add = {
 				value = 1000
 				desc = "from_only_legal_party"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	 owner.var:only_valid_party = {
-		        	is_party_type = religious_party
-		        }
+					has_variable = only_valid_party
+				}
+				
+				owner.var:only_valid_party = {
+					is_party_type = religious_party
+				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_only_legal_party"

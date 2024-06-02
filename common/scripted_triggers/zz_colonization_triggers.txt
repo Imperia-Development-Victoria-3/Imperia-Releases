@@ -2,7 +2,7 @@
 	modifier:country_colonial_capacity_cap_add < num_active_colonies
 }
 
-state_is_colony = {	
+state_is_colony = {
 	state_region = {
 		any_scope_state = {
 			owner = {
@@ -21,7 +21,7 @@ state_is_claimed_state = {
 		region = sr:region_niger
 		region = sr:region_congo
 		region = sr:region_southern_africa
-		region = sr:region_zanj		
+		region = sr:region_zanj
 		region = sr:region_indonesia
 		region = sr:region_oceania
 	}

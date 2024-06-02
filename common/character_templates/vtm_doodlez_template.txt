@@ -1,23 +1,22 @@
 ﻿agitator_vtm_doodlez_template = {
-    first_name = culture
-    last_name = culture
-    culture = cu:north_german
+	first_name = culture
+	last_name = culture
+	culture = cu:north_german
 	age = default
 	is_agitator = yes
 	historical = yes
-    female = no
-    religion = rel:atheist
+	female = no
+	religion = rel:atheist
 	interest_group = ig_rural_folk
-    ideology = ideology_luddite
-
-    traits = {
+	ideology = ideology_luddite
+	traits = {
 		fugitive_miner
 		hedonist
 		alcoholic
 		cocaine_addiction
 		opium_addiction
-    }
-
+	}
+	
 	agitator_usage = {
 		country_trigger = {
 			NOT = {
@@ -31,17 +30,19 @@
 				}
 			}
 		}
-        interest_group_trigger = {
-            OR = {
-                is_interest_group_type = ig_rural_folk
-                is_interest_group_type = ig_trade_unions
-            } 
-        }   
+		
+		interest_group_trigger = {
+			OR = {
+				is_interest_group_type = ig_rural_folk
+				is_interest_group_type = ig_trade_unions
+			}
+		}
 		earliest_usage_date = 1873.3.1
 		latest_usage_date = 1913.3.7
 		chance = 1
 	}
+	
 	on_created = {
 		set_global_variable = spawned_doodlez
-	} 
+	}
 }

@@ -1,16 +1,16 @@
 ﻿update_colonies_sgui = {
 	scope = country
-
 	is_valid = {
 		num_active_colonies >= 1
 	}
-
+	
 	effect = {
 		clear_variable_list = my_colonies_list
 		every_scope_state = {
 			limit = {
 				is_under_colonization = yes
 			}
+			
 			root = {
 				add_to_variable_list = {
 					name = my_colonies_list
@@ -23,7 +23,6 @@
 
 is_major_colony_sgui = {
 	scope = state
-
 	is_shown = {
 		owner.country_rank >= rank_value:great_power
 		state_is_in_africa = yes
@@ -34,7 +33,6 @@ is_major_colony_sgui = {
 
 is_minor_colony_sgui = {
 	scope = state
-	
 	is_shown = {
 		owner.country_rank >= rank_value:great_power
 		state_is_in_africa = yes

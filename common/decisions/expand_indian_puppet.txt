@@ -10,11 +10,15 @@
 			}
 		}
 	}
+	
 	possible = {
 		custom_tooltip = {
 			text = expand_bic_cooldown_tt
-			NOT = { has_variable = expand_bic_cooldown }
+			NOT = {
+				has_variable = expand_bic_cooldown
+			}
 		}
+		
 		any_state = {
 			owner = ROOT
 			OR = {
@@ -33,14 +37,16 @@
 			}
 		}
 	}
+	
 	when_taken = {
 		custom_tooltip = expand_indian_rule_tt
 		set_variable = {
 			name = expand_bic_cooldown
 			years = 2
 		}
+		
 		if = {
-			limit= {
+			limit = {
 				any_state = {
 					owner = ROOT
 					OR = {
@@ -52,13 +58,14 @@
 						state_region = s:STATE_KASHMIR
 						state_region = s:STATE_PASHTUNISTAN
 						state_region = s:STATE_BALUCHISTAN
-						state_region = s:STATE_HIMALAYAS	
-						state_region = s:STATE_PEGU		
+						state_region = s:STATE_HIMALAYAS
+						state_region = s:STATE_PEGU
 						region = sr:region_north_india
-						region = sr:region_south_india	
+						region = sr:region_south_india
 					}
 				}
 			}
+			
 			every_scope_state = {
 				limit = {
 					owner = ROOT
@@ -71,8 +78,8 @@
 						state_region = s:STATE_KASHMIR
 						state_region = s:STATE_PASHTUNISTAN
 						state_region = s:STATE_BALUCHISTAN
-						state_region = s:STATE_HIMALAYAS	
-						state_region = s:STATE_PEGU			
+						state_region = s:STATE_HIMALAYAS
+						state_region = s:STATE_PEGU
 						region = sr:region_north_india
 						region = sr:region_south_india
 					}
@@ -82,6 +89,7 @@
 			}
 		}
 	}
+	
 	ai_chance = {
 		base = 100
 	}
@@ -97,6 +105,7 @@ net_give_canada_back = {
 			exists = c:CAN
 		}
 	}
+	
 	possible = {
 		any_state = {
 			owner = ROOT
@@ -106,9 +115,10 @@ net_give_canada_back = {
 			}
 		}
 	}
+	
 	when_taken = {
 		if = {
-			limit= {
+			limit = {
 				any_state = {
 					owner = ROOT
 					OR = {
@@ -118,6 +128,7 @@ net_give_canada_back = {
 				}
 				exists = c:HBC
 			}
+			
 			every_scope_state = {
 				limit = {
 					owner = ROOT
@@ -130,6 +141,7 @@ net_give_canada_back = {
 				set_state_type = unincorporated
 			}
 		}
+		
 		else_if = {
 			limit = {
 				any_state = {
@@ -140,8 +152,9 @@ net_give_canada_back = {
 					}
 				}
 				exists = c:CAN
-			 }
-			 every_scope_state = {
+			}
+			
+			every_scope_state = {
 				limit = {
 					owner = ROOT
 					OR = {
@@ -154,11 +167,8 @@ net_give_canada_back = {
 			}
 		}
 	}
+	
 	ai_chance = {
 		base = 100
 	}
 }
-
-
-
-

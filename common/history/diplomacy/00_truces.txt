@@ -4,41 +4,41 @@
 			country = c:BEL
 			months = 7
 		}
-	}	
+	}
 }
 
 DIPLOMACY = {
-	c:EGY= {
+	c:EGY = {
 		create_truce = {
 			country = c:TUR
 			months = 24
 		}
-	}	
+	}
 }
 
 DIPLOMACY = {
-	c:ASH= {
+	c:ASH = {
 		create_truce = {
 			country = c:GBR
 			months = 6
 		}
-	}	
+	}
 }
 
 DIPLOMACY = {
-	c:GRE= {
+	c:GRE = {
 		create_truce = {
 			country = c:TUR
 			months = 12
 		}
-	}	
+	}
 }
 
 DIPLOMACY = {
-	c:SIA= {
+	c:SIA = {
 		create_truce = {
 			country = c:DAI
 			months = 36
 		}
-	}	
+	}
 }

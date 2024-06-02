@@ -14,11 +14,12 @@
 			traits = {
 				meticulous
 			}
+			
 			on_created = {
 				set_variable = is_married
 			}
-		}	
-
+		}
+		
 		create_character = {
 			# Charles I of Wurttemberg
 			first_name = Karl
@@ -36,23 +37,23 @@
 		}
 
 		# create_character = {
-			# name = "Fredrich Wilhelm I"
-			# age = 55
-			# traits = {
-				# impetuous
-				# cavalry_school
-			# }
+		# name = "Fredrich Wilhelm I"
+		# age = 55
+		# traits = {
+		# impetuous
+		# cavalry_school
 		# }
-		
+		# }
+
 		# create_character = {
-			# name = "Ferdinand Gottleb"
-			# age = 54
-			# traits = {
-				# indifferent
-				# powerful_friends
-			# }
+		# name = "Ferdinand Gottleb"
+		# age = 54
+		# traits = {
+		# indifferent
+		# powerful_friends
 		# }
-		
+		# }
+
 		#create_character = {
 		#	first_name = Wilhelm_I
 		#	last_name = Wurttemberg
@@ -61,9 +62,8 @@
 		#		able
 		#		aristocrat
 		#	}
-#
+		#
 		#}
-		
 		create_character = {
 			is_general = yes
 			first_name = Prince_Friedrich
@@ -78,6 +78,7 @@
 				expensive_tastes
 			}
 		}
+		
 		create_character = {
 			# Moriz von Miller, infantry general, and later minister of war
 			is_general = yes

@@ -4,7 +4,6 @@
 @hazardous_terrain_factor = 0.03
 @forested_terrain_factor = 0.02
 @elevated_terrain_factor = 0.01
-
 concentration_of_defensive_mobilized_battalions = {
 	add = num_mobilized_units_in_theater
 	divide = num_provinces_in_theater
@@ -12,8 +11,10 @@ concentration_of_defensive_mobilized_battalions = {
 
 provinces_with_hazardous_terrain = {
 	every_province = {
-		if = { 
-			limit = { has_label = label_hazardous }
+		if = {
+			limit = {
+				has_label = label_hazardous
+			}
 			add = 1
 		}
 	}
@@ -21,8 +22,10 @@ provinces_with_hazardous_terrain = {
 
 provinces_with_forested_terrain = {
 	every_province = {
-		if = { 
-			limit = { has_label = label_forested }
+		if = {
+			limit = {
+				has_label = label_forested
+			}
 			add = 1
 		}
 	}
@@ -30,8 +33,10 @@ provinces_with_forested_terrain = {
 
 provinces_with_elevated_terrain = {
 	every_province = {
-		if = { 
-			limit = { has_label = label_elevated }
+		if = {
+			limit = {
+				has_label = label_elevated
+			}
 			add = 1
 		}
 	}
@@ -48,11 +53,13 @@ occupation_cost = {
 		max = 1000
 		desc = "OCCUPATION_COST_FROM_POPULATION"
 	}
-	
 	save_temporary_value_as = base_cost
 	# cost increases for every province with difficult terrain, up to a limit set by infrastructure used in the state
 	if = {
-		limit = { provinces_with_hazardous_terrain > 0 }
+		limit = {
+			provinces_with_hazardous_terrain > 0
+		}
+		
 		add = {
 			add = scope:base_cost
 			multiply = {
@@ -66,7 +73,10 @@ occupation_cost = {
 	}
 	
 	if = {
-		limit = { provinces_with_forested_terrain > 0 }
+		limit = {
+			provinces_with_forested_terrain > 0
+		}
+		
 		add = {
 			add = scope:base_cost
 			multiply = {
@@ -76,8 +86,12 @@ occupation_cost = {
 			desc = "OCCUPATION_COST_FROM_NUM_FORESTED_PROVINCES"
 		}
 	}
+	
 	if = {
-		limit = { provinces_with_elevated_terrain > 0 }
+		limit = {
+			provinces_with_elevated_terrain > 0
+		}
+		
 		add = {
 			add = scope:base_cost
 			multiply = {
@@ -89,7 +103,10 @@ occupation_cost = {
 	}
 	# for every 20 points of infrastructure usage in the state, 1x multiple of difficult terrain bonus is negated
 	if = {
-		limit = { infrastructure_usage > 1 }
+		limit = {
+			infrastructure_usage > 1
+		}
+		
 		divide = {
 			add = 1
 			add = {
@@ -97,16 +114,17 @@ occupation_cost = {
 					add = provinces_with_hazardous_terrain
 					multiply = @[hazardous_terrain_factor]
 				}
+				
 				add = {
 					add = provinces_with_forested_terrain
 					multiply = @[forested_terrain_factor]
 				}
+				
 				add = {
 					add = provinces_with_elevated_terrain
 					multiply = @[elevated_terrain_factor]
 				}
 				save_temporary_value_as = total_difficult_terrain_malus
-				
 				max = {
 					add = infrastructure_usage
 					divide = 20
@@ -116,14 +134,15 @@ occupation_cost = {
 			desc = "OCCUPATION_COST_FROM_INFRASTRUCTURE_USAGE"
 		}
 	}
-	
+
 	# cost increases for the occupier if there are more mobilized enemy battalions in the theater than there are provinces
 	theater = {
 		if = {
-			limit = { 
+			limit = {
 				scope:is_advancing_side = yes
 				concentration_of_defensive_mobilized_battalions > 1
 			}
+			
 			multiply = {
 				add = concentration_of_defensive_mobilized_battalions
 				max = 10
@@ -131,10 +150,11 @@ occupation_cost = {
 			desc = "OCCUPATION_COST_FROM_CONCENTRATION_OF_BATTALIONS"
 		}
 	}
-	
 	save_temporary_value_as = pre_max_cost
 	if = {
-		limit = { scope:pre_max_cost > @[min_victory_score*max_battles_to_win_state] }
+		limit = {
+			scope:pre_max_cost > @[min_victory_score*max_battles_to_win_state]
+		}
 		max = @[min_victory_score*max_battles_to_win_state]
 		desc = "OCCUPATION_COST_MAX_VALUE_REACHED"
 	}
@@ -146,21 +166,22 @@ battle_victory_score = {
 		add = 100
 		desc = "BATTLE_VICTORY_BASE"
 	}
-
-	multiply = {
-			add = 1
-			add = modifier:unit_occupation_mult
-			min = 0
-			desc = "BATTLE_VICTORY_UNIT_OCCUPATION_MULT"
-		}
 	
+	multiply = {
+		add = 1
+		add = modifier:unit_occupation_mult
+		min = 0
+		desc = "BATTLE_VICTORY_UNIT_OCCUPATION_MULT"
+	}
 	save_temporary_value_as = pre_min_amount_cap
 	if = {
-		limit = { scope:pre_min_amount_cap < @[min_victory_score] }
+		limit = {
+			scope:pre_min_amount_cap < @[min_victory_score]
+		}
 		min = @[min_victory_score]
 		desc = "BATTLE_VICTORY_MIN_VALUE_REACHED"
 	}
-	
+
 	# Starting / Final Battalions on winning / losing side
 	# Starting / Final Morale on winning / losing side
 	# General scope of winning / losing side (for modifier access)

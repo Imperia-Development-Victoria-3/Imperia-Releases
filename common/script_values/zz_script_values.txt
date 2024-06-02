@@ -5,15 +5,15 @@
 			LIMIT = {
 				has_colonial_growth = yes
 			}
+			
 			every_scope_state = {
-				limit = { 
+				limit = {
 					is_under_colonization = yes
-					
 				}
 				add = 1
 			}
 		}
-    }
+	}
 }
 
 num_active_law = {
@@ -21,7 +21,7 @@ num_active_law = {
 		value = 1
 		if = {
 			limit = {
-					has_law = law_type:law_no_colonial_affairs
+				has_law = law_type:law_no_colonial_affairs
 			}
 			add = -1
 		}

@@ -16,6 +16,7 @@ italian_homelands_on_action = {
 					}
 				}
 			}
+			
 			s:STATE_SAVOY = {
 				add_homeland = cu:north_italian
 			}
@@ -33,19 +34,20 @@ on_civil_war_won = {
 
 fra_birth_modifier_on_action = {
 	effect = {
-		if = { # URGENT
+		if = {	# URGENT
 			limit = {
 				c:FRA ?= this
 				NOT = {
 					has_modifier = fra_secular_legacy
 				}
+				
 				NOT = {
 					has_game_rule = leave_france_alone
 				}
 			}
 			add_modifier = fra_secular_legacy
 		}
-	}	
+	}
 }
 
 # Root = Country
@@ -63,32 +65,46 @@ secession_homelands_claims_on_action = {
 				ROOT = {
 					any_scope_state = {
 						is_homeland_of_country_cultures = scope:target
-						NOT = { has_claim_by = scope:target }
+						NOT = {
+							has_claim_by = scope:target
+						}
 					}
 				}
 			}
+			
 			ROOT = {
 				every_scope_state = {
 					limit = {
 						is_homeland_of_country_cultures = scope:target
-						NOT = { has_claim_by = scope:target }
+						NOT = {
+							has_claim_by = scope:target
+						}
 					}
+					
 					state_region = {
 						add_claim = scope:target
 					}
 				}
 			}
+			
 			random_diplomatic_play = {
 				limit = {
-					any_scope_play_involved = { this = ROOT }
-					any_scope_play_involved = { this = scope:target }
+					any_scope_play_involved = {
+						this = ROOT
+					}
+					
+					any_scope_play_involved = {
+						this = scope:target
+					}
 					is_diplomatic_play_type = dp_secession
 				}
+				
 				every_state = {
 					limit = {
 						owner = ROOT
 						is_homeland_of_country_cultures = scope:target
 					}
+					
 					prev = {
 						add_war_goal = {
 							holder = scope:target
@@ -113,11 +129,14 @@ revolution_safety_check_on_action = {
 		if = {
 			limit = {
 				total_population <= 100000
-				NOT = { has_variable = revolution_safety_check_var }
+				NOT = {
+					has_variable = revolution_safety_check_var
+				}
 			}
 			set_variable = revolution_safety_check_var
 			set_immune_to_revolutions = yes
 		}
+		
 		else_if = {
 			limit = {
 				total_population >= 150000

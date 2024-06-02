@@ -7,23 +7,17 @@ natural_borders.1 = {
 	title = natural_borders.1.t
 	desc = natural_borders.1.d
 	flavor = natural_borders.1.f
-
 	duration = 3
-
 	dlc = dlc004
-
 	event_image = {
 		video = "unspecific_signed_contract"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
 	trigger = {
 		# triggered by je_french_natural_borders
 	}
-
+	
 	immediate = {
 		random_interest_group = {
 			limit = {
@@ -42,80 +36,114 @@ natural_borders.1 = {
 					}
 				}
 			}
-			leader = { save_scope_as = borders_leader }
+			
+			leader = {
+				save_scope_as = borders_leader
+			}
 		}
+		
 		s:STATE_SAVOY = {
 			random_scope_state = {
 				save_scope_as = savoy_state
 			}
 		}
+		
 		s:STATE_NORTH_RHINE = {
 			random_scope_state = {
 				save_scope_as = rhineland_state
 			}
 		}
+		
 		s:STATE_FLANDERS = {
 			random_scope_state = {
 				save_scope_as = flanders_state
 			}
 		}
-		c:FRA = { save_scope_as = france_scope }
+		
+		c:FRA = {
+			save_scope_as = france_scope
+		}
 	}
-
+	
 	option = {
 		name = natural_borders.1.a
 		default_option = yes
 		ai_chance = {
 			base = 1
 		}
+		
 		if = {
 			limit = {
-				NOT = { owns_entire_state_region = STATE_WALLONIA }
+				NOT = {
+					owns_entire_state_region = STATE_WALLONIA
+				}
 			}
+			
 			s:STATE_WALLONIA = {
 				add_claim = ROOT
 			}
 		}
+		
 		if = {
 			limit = {
-				NOT = { owns_entire_state_region = STATE_FLANDERS }
+				NOT = {
+					owns_entire_state_region = STATE_FLANDERS
+				}
 			}
+			
 			s:STATE_FLANDERS = {
 				add_claim = ROOT
 			}
 		}
+		
 		if = {
 			limit = {
-				NOT = { owns_entire_state_region = STATE_RHINELAND }
+				NOT = {
+					owns_entire_state_region = STATE_RHINELAND
+				}
 			}
+			
 			s:STATE_RHINELAND = {
 				add_claim = ROOT
 			}
 		}
+		
 		if = {
 			limit = {
-				NOT = { owns_entire_state_region = STATE_NORTH_RHINE }
+				NOT = {
+					owns_entire_state_region = STATE_NORTH_RHINE
+				}
 			}
+			
 			s:STATE_NORTH_RHINE = {
 				add_claim = ROOT
 			}
 		}
+		
 		if = {
 			limit = {
-				NOT = { owns_entire_state_region = STATE_SAVOY }
+				NOT = {
+					owns_entire_state_region = STATE_SAVOY
+				}
 			}
+			
 			s:STATE_SAVOY = {
 				add_claim = ROOT
 			}
 		}
+		
 		add_modifier = {
 			name = france_natural_borders_pursuit
 			months = very_long_modifier_time
 			# country_infamy_decay_mult
 		}
+		
 		every_country = {
 			limit = {
-				NOT = { THIS = ROOT }
+				NOT = {
+					THIS = ROOT
+				}
+				
 				any_scope_state = {
 					OR = {
 						state_region = s:STATE_WALLONIA
@@ -126,13 +154,19 @@ natural_borders.1 = {
 					}
 				}
 			}
-			trigger_event = { id = natural_borders.4 }
+			
+			trigger_event = {
+				id = natural_borders.4
+			}
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {
 					has_diplomatic_relevance = c:FRA
-					NOT = { THIS = ROOT }
+					NOT = {
+						THIS = ROOT
+					}
 				}
 				post_notification = fra_natural_borders_notification
 			}
@@ -181,24 +215,18 @@ natural_borders.2 = {
 	title = natural_borders.2.t
 	desc = natural_borders.2.d
 	flavor = natural_borders.2.f
-
 	duration = 3
-
 	dlc = dlc004
-
 	event_image = {
 		video = "unspecific_signed_contract"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
-
 	trigger = {
 		# triggered by je_french_natural_borders
 	}
-
-	option = { # assimilate the new states
+	
+	option = {	# assimilate the new states
 		name = natural_borders.2.a
 		default_option = yes
 		add_modifier = {
@@ -207,8 +235,8 @@ natural_borders.2 = {
 			# state_assimilation_mult
 		}
 	}
-
-	option = { # empower imperialist IG's
+	
+	option = {	# empower imperialist IG's
 		name = natural_borders.2.b
 		trigger = {
 			any_interest_group = {
@@ -227,6 +255,7 @@ natural_borders.2 = {
 				}
 			}
 		}
+		
 		every_interest_group = {
 			limit = {
 				is_marginal = no
@@ -243,6 +272,7 @@ natural_borders.2 = {
 					}
 				}
 			}
+			
 			add_modifier = {
 				name = natural_borders_achieved
 				months = long_modifier_time
@@ -251,8 +281,8 @@ natural_borders.2 = {
 			}
 		}
 	}
-
-	option = { # get French cultures as primary
+	
+	option = {	# get French cultures as primary
 		name = natural_borders.2.c
 		add_primary_culture = cu:wallonian
 		add_primary_culture = cu:breton
@@ -274,6 +304,7 @@ natural_borders.3 = {
 					exists = scope:nice_state
 				}
 			}
+			
 			triggered_desc = {
 				desc = natural_borders.3.d2
 				trigger = {
@@ -283,23 +314,17 @@ natural_borders.3 = {
 		}
 	}
 	flavor = natural_borders.3.f
-
 	duration = 3
-
 	dlc = dlc004
-
 	event_image = {
 		video = "unspecific_signed_contract"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-
 	trigger = {
 		# triggered by france_annex_savoy
 	}
-
+	
 	immediate = {
 		random_country = {
 			limit = {
@@ -314,6 +339,7 @@ natural_borders.3 = {
 			ruler = {
 				save_scope_as = savoy_ruler
 			}
+			
 			random_scope_state = {
 				limit = {
 					state_region = s:STATE_SAVOY
@@ -322,12 +348,14 @@ natural_borders.3 = {
 				}
 				save_scope_as = savoy_state
 			}
+			
 			if = {
 				limit = {
 					any_scope_state = {
 						state_region = s:STATE_PROVENCE
 					}
 				}
+				
 				random_scope_state = {
 					limit = {
 						state_region = s:STATE_PROVENCE
@@ -337,14 +365,15 @@ natural_borders.3 = {
 			}
 		}
 	}
-
-	option = { # incorporate Savoy into France
+	
+	option = {	# incorporate Savoy into France
 		name = natural_borders.3.a
 		default_option = yes
 		if = {
 			limit = {
 				is_owed_obligation_by = scope:savoy_country
 			}
+			
 			scope:savoy_country = {
 				set_owes_obligation_to = {
 					country = ROOT
@@ -352,13 +381,17 @@ natural_borders.3 = {
 				}
 			}
 		}
+		
 		change_relations = {
-			country = scope:savoy_country value = 30
+			country = scope:savoy_country
+			value = 30
 		}
+		
 		if = {
 			limit = {
 				has_global_variable = fra_savoy_sardinia
 			}
+			
 			show_as_tooltip = {
 				set_owes_obligation_to = {
 					country = scope:savoy_country
@@ -366,30 +399,35 @@ natural_borders.3 = {
 				}
 			}
 		}
+		
 		scope:savoy_state = {
 			set_state_owner = ROOT
 			set_state_type = incorporated
 		}
+		
 		if = {
 			limit = {
 				exists = scope:nice_state
 			}
+			
 			scope:nice_state = {
 				set_state_owner = ROOT
 			}
 		}
+		
 		s:STATE_SAVOY = {
 			remove_homeland = cu:north_italian
 		}
 	}
-
-	option = { # conduct a plebiscite
+	
+	option = {	# conduct a plebiscite
 		name = natural_borders.3.b
 		default_option = yes
 		if = {
 			limit = {
 				is_owed_obligation_by = scope:savoy_country
 			}
+			
 			scope:savoy_country = {
 				set_owes_obligation_to = {
 					country = ROOT
@@ -397,13 +435,17 @@ natural_borders.3 = {
 				}
 			}
 		}
+		
 		change_relations = {
-			country = scope:savoy_country value = 30
+			country = scope:savoy_country
+			value = 30
 		}
+		
 		if = {
 			limit = {
 				has_global_variable = fra_savoy_sardinia
 			}
+			
 			show_as_tooltip = {
 				set_owes_obligation_to = {
 					country = scope:savoy_country
@@ -411,6 +453,7 @@ natural_borders.3 = {
 				}
 			}
 		}
+		
 		scope:savoy_state = {
 			set_state_owner = ROOT
 			set_state_type = unincorporated
@@ -418,19 +461,23 @@ natural_borders.3 = {
 				culture = cu:french
 				value = very_large_radicals
 			}
+			
 			add_loyalists_in_state = {
 				culture = cu:francoprovencal
 				value = very_large_radicals
 			}
 		}
+		
 		if = {
 			limit = {
 				exists = scope:nice_state
 			}
+			
 			scope:nice_state = {
 				set_state_owner = ROOT
 			}
 		}
+		
 		s:STATE_SAVOY = {
 			remove_homeland = cu:north_italian
 		}
@@ -458,6 +505,7 @@ natural_borders.4 = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = natural_borders.4.f2
 				trigger = {
@@ -469,29 +517,24 @@ natural_borders.4 = {
 					}
 				}
 			}
-		}		
+		}
 	}
-
 	duration = 3
-
 	dlc = dlc004
-
 	event_image = {
 		video = "europenorthamerica_before_the_battle"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
-
 	trigger = {
 		# triggered by je_french_natural_borders
 	}
-
+	
 	immediate = {
 		c:FRA = {
 			save_scope_as = france_scope
 		}
+		
 		random_scope_state = {
 			limit = {
 				OR = {
@@ -505,8 +548,8 @@ natural_borders.4 = {
 			save_scope_as = french_claim_state
 		}
 	}
-
-	option = { # Prepare for war
+	
+	option = {	# Prepare for war
 		name = natural_borders.4.a
 		default_option = yes
 		every_scope_state = {
@@ -519,23 +562,26 @@ natural_borders.4 = {
 					state_region = s:STATE_SAVOY
 				}
 			}
+			
 			add_modifier = {
 				name = rally_against_france
 				months = long_modifier_time
 				# state_conscription_rate_mult
 			}
 		}
+		
 		ai_chance = {
 			base = 19
 		}
 	}
-
-	option = { # Try to appease France
+	
+	option = {	# Try to appease France
 		name = natural_borders.4.b
 		change_relations = {
 			country = c:FRA
 			value = 20
 		}
+		
 		ai_chance = {
 			base = 1
 		}
@@ -548,23 +594,17 @@ natural_borders.5 = {
 	title = natural_borders.5.t
 	desc = natural_borders.5.d
 	flavor = natural_borders.5.f
-
 	duration = 3
-
 	dlc = dlc004
-
 	event_image = {
 		video = "unspecific_signed_contract"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
-
 	trigger = {
 		# triggered by je_french_natural_borders
 	}
-
+	
 	immediate = {
 		c:LUX = {
 			save_scope_as = lux_scope
@@ -576,7 +616,7 @@ natural_borders.5 = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = natural_borders.5.a
 		default_option = yes
@@ -586,6 +626,7 @@ natural_borders.5 = {
 			months = 12
 			multiplier = 20000
 		}
+		
 		scope:lux_overlord = {
 			add_modifier = {
 				name = luxembourg_payment_received
@@ -595,32 +636,22 @@ natural_borders.5 = {
 		}
 	}
 }
-
 namespace = rhine_confederation
-
 rhine_confederation.1 = {
 	type = country_event
 	placement = root
 	title = rhine_confederation.1.t
 	desc = rhine_confederation.1.d
 	flavor = rhine_confederation.1.f
-
 	duration = 3
-
 	dlc = dlc004
-
 	event_image = {
 		video = "unspecific_signed_contract"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
-
 	trigger = {
-
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -633,6 +664,7 @@ rhine_confederation.1 = {
 							region = sr:region_south_germany
 						}
 					}
+					
 					NOT = {
 						has_diplomatic_pact = {
 							who = ROOT
@@ -643,6 +675,7 @@ rhine_confederation.1 = {
 					is_player = yes
 				}
 			}
+			
 			random_country = {
 				limit = {
 					is_subject_of = ROOT
@@ -653,6 +686,7 @@ rhine_confederation.1 = {
 							region = sr:region_south_germany
 						}
 					}
+					
 					NOT = {
 						has_diplomatic_pact = {
 							who = ROOT
@@ -665,6 +699,7 @@ rhine_confederation.1 = {
 				change_tag = RHN
 			}
 		}
+		
 		else = {
 			ordered_country = {
 				limit = {
@@ -676,6 +711,7 @@ rhine_confederation.1 = {
 							region = sr:region_south_germany
 						}
 					}
+					
 					NOT = {
 						has_diplomatic_pact = {
 							who = ROOT
@@ -688,11 +724,12 @@ rhine_confederation.1 = {
 				change_tag = RHN
 			}
 		}
+		
 		c:RHN = {
 			save_scope_as = rhine_scope
 		}
 	}
-
+	
 	option = {
 		name = rhine_confederation.1.a
 		trigger = {
@@ -704,11 +741,13 @@ rhine_confederation.1 = {
 					state_region = s:STATE_WALLONIA
 					state_region = s:STATE_FLANDERS
 				}
+				
 				NOT = {
 					ROOT = owner
 				}
 			}
 		}
+		
 		every_country = {
 			limit = {
 				NOT = {
@@ -722,6 +761,7 @@ rhine_confederation.1 = {
 						region = sr:region_south_germany
 					}
 				}
+				
 				NOT = {
 					has_diplomatic_pact = {
 						who = ROOT
@@ -730,10 +770,12 @@ rhine_confederation.1 = {
 					}
 				}
 			}
+			
 			c:RHN = {
 				annex_with_incorporation = prev
 			}
 		}
+		
 		every_scope_state = {
 			limit = {
 				state_region = {
@@ -742,11 +784,13 @@ rhine_confederation.1 = {
 						is_homeland = cu:north_german
 					}
 				}
+				
 				OR = {
 					region = sr:region_rhine
 					region = sr:region_north_germany
 					region = sr:region_south_germany
 				}
+				
 				NOR = {
 					state_region = s:STATE_RHINELAND
 					state_region = s:STATE_NORTH_RHINE
@@ -758,6 +802,7 @@ rhine_confederation.1 = {
 			set_state_owner = c:RHN
 			set_state_type = incorporated
 		}
+		
 		every_state = {
 			limit = {
 				OR = {
@@ -771,7 +816,7 @@ rhine_confederation.1 = {
 			set_state_owner = root
 		}
 	}
-
+	
 	option = {
 		name = rhine_confederation.1.b
 		default_option = yes
@@ -788,6 +833,7 @@ rhine_confederation.1 = {
 						region = sr:region_south_germany
 					}
 				}
+				
 				NOT = {
 					has_diplomatic_pact = {
 						who = ROOT
@@ -796,10 +842,12 @@ rhine_confederation.1 = {
 					}
 				}
 			}
+			
 			c:RHN = {
 				annex_with_incorporation = prev
 			}
 		}
+		
 		every_scope_state = {
 			limit = {
 				state_region = {
@@ -808,6 +856,7 @@ rhine_confederation.1 = {
 						is_homeland = cu:north_german
 					}
 				}
+				
 				OR = {
 					region = sr:region_rhine
 					region = sr:region_north_germany

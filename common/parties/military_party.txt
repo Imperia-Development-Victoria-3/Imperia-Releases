@@ -1,10 +1,13 @@
 ﻿# Fallback party for Armed Forces
-
 military_party = {
-	color = { 132 100 53 }
+	color = {
+		132
+		100
+		53
+	}
+	
 	name = {
 		first_valid = {
-
 			triggered_desc = {
 				desc = party_true_peoples_party
 				trigger = {
@@ -12,6 +15,7 @@ military_party = {
 					THIS = c:MON
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_national_party
 				trigger = {
@@ -19,6 +23,7 @@ military_party = {
 					THIS = c:SER
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_bonapartist_party
 				trigger = {
@@ -31,10 +36,11 @@ military_party = {
 									has_ideology = ideology:ideology_bonapartist
 								}
 							}
-						}						
+						}
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_union_of_rights
 				trigger = {
@@ -42,6 +48,7 @@ military_party = {
 					THIS = c:FRA
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_imperial_clan_party
 				trigger = {
@@ -50,6 +57,7 @@ military_party = {
 					has_law = law_type:law_monarchy
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_russian_assembly
 				trigger = {
@@ -58,14 +66,18 @@ military_party = {
 					has_law = law_type:law_monarchy
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_russian_all_military_union
 				trigger = {
 					exists = c:RUS
 					THIS = c:RUS
-					NOT = { has_law = law_type:law_monarchy }
+					NOT = {
+						has_law = law_type:law_monarchy
+					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_imperial_way_party
 				trigger = {
@@ -74,18 +86,21 @@ military_party = {
 					has_law = law_type:law_monarchy
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_patriotic_union
 				trigger = {
 					country_has_primary_culture = cu:spanish
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_regressivist_party
 				trigger = {
 					country_has_primary_culture = cu:brazilian
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_national_peoples_party
 				trigger = {
@@ -95,6 +110,7 @@ military_party = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = party_military
 				trigger = {
@@ -103,6 +119,7 @@ military_party = {
 			}
 		}
 	}
+	
 	icon = {
 		default = "/gfx/interface/icons/political_parties/military.dds"
 	}
@@ -110,6 +127,7 @@ military_party = {
 	valid_for_country = {
 		always = yes
 	}
+	
 	available_for_interest_group = {
 		owner = {
 			country_has_voting_franchise = yes
@@ -117,18 +135,20 @@ military_party = {
 				is_marginal = no
 			}
 		}
+		
 		OR = {
-	     	NOT = {
-	         	owner = {
-	         		has_variable = only_valid_party
-	         	}
-	        }
-	        owner.var:only_valid_party = {
-	        	is_party_type = military_party
-	        }
-	    }
+			NOT = {
+				owner = {
+					has_variable = only_valid_party
+				}
+			}
+			
+			owner.var:only_valid_party = {
+				is_party_type = military_party
+			}
+		}
 	}
-	
+
 	# Root - IG considering joining
 	# scope:number - the number of IGs that would join this party before the root IG
 	join_weight = {
@@ -136,6 +156,7 @@ military_party = {
 			value = -5
 			desc = "base_value"
 		}
+		
 		if = {
 			limit = {
 				owner = {
@@ -145,6 +166,7 @@ military_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = -10
 				desc = "south_america_two_party_system"
@@ -162,67 +184,88 @@ military_party = {
 					has_law = law_type:law_presidential_republic
 				}
 			}
+			
 			add = {
 				value = -10
 				desc = "usa_two_party_system"
 			}
 		}
-		if = { # nobody will join if the armed forces don't join
+		
+		if = {	# nobody will join if the armed forces don't join
 			limit = {
-				NOT = { is_interest_group_type = ig_armed_forces }
+				NOT = {
+					is_interest_group_type = ig_armed_forces
+				}
+				
 				OR = {
-					NOT = { exists = owner.py:military_party }
+					NOT = {
+						exists = owner.py:military_party
+					}
+					
 					AND = {
 						exists = owner.py:military_party
 						owner = {
 							ig:ig_armed_forces = {
-								NOT = { is_member_of_party = owner.py:military_party }
+								NOT = {
+									is_member_of_party = owner.py:military_party
+								}
 							}
 						}
 					}
 				}
 			}
+			
 			add = {
 				value = -20
-				desc = "from_no_army_in_party" # this should probably never actually display in game because the party won't exist
+				desc = "from_no_army_in_party"	# this should probably never actually display in game because the party won't exist
 			}
 		}
-		if = { # a party for powerful soldiers
+		
+		if = {	# a party for powerful soldiers
 			limit = {
 				is_interest_group_type = ig_armed_forces
 				is_powerful = yes
 			}
+			
 			add = {
 				value = 10
 				desc = "from_strong_military"
 			}
 		}
-		if = { # jingoists like the military party
+		
+		if = {	# jingoists like the military party
 			limit = {
-				leader = { has_ideology = ideology:ideology_jingoist_leader }
+				leader = {
+					has_ideology = ideology:ideology_jingoist_leader
+				}
 			}
+			
 			add = {
 				value = 10
 				desc = "from_jingoist"
 			}
 		}
-		if = { # conservatives like police
+		
+		if = {	# conservatives like police
 			limit = {
 				OR = {
 					has_paternalist_ideology = yes
 					has_ideology = ideology:ideology_patriotic
 				}
+				
 				owner = {
 					has_technology_researched = law_enforcement
 					has_law = law_type:law_no_police
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_no_police"
 			}
 		}
-		if = { # opposition to peasant levies
+		
+		if = {	# opposition to peasant levies
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_jingoist
@@ -237,16 +280,19 @@ military_party = {
 						}
 					}
 				}
+				
 				owner = {
 					has_law = law_type:law_peasant_levies
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_peasant_levies"
 			}
 		}
-		if = { # loyalist-proletarian alliance for tax reform
+		
+		if = {	# loyalist-proletarian alliance for tax reform
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_proletarian
@@ -255,6 +301,7 @@ military_party = {
 					}
 					has_ideology = ideology:ideology_loyalist
 				}
+				
 				owner = {
 					NOR = {
 						has_law = law_type:law_proportional_taxation
@@ -263,22 +310,27 @@ military_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_no_graduated_taxation"
 			}
 		}
-		if = { # loyalist-meritocratic alliance for tax reform
+		
+		if = {	# loyalist-meritocratic alliance for tax reform
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_meritocratic
 					AND = {
 						has_ideology = ideology:ideology_loyalist
 						owner = {
-							NOT = { has_law = law_type:law_graduated_taxation }
+							NOT = {
+								has_law = law_type:law_graduated_taxation
+							}
 						}
 					}
 				}
+				
 				owner = {
 					NOR = {
 						has_law = law_type:law_proportional_taxation
@@ -286,54 +338,65 @@ military_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_no_proportional_or_per_capita_tax"
 			}
 		}
+		
 		if = {
 			limit = {
 				is_interest_group_type = ig_armed_forces
 				is_powerful = yes
 			}
+			
 			multiply = {
 				value = 2
 				desc = "from_archetype_party"
 			}
 		}
+		
 		if = {
 			limit = {
 				scope:number = 1
 				is_powerful = no
 				is_marginal = no
 			}
+			
 			multiply = {
 				value = 2
 				desc = "from_influential_supporting_member"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				scope:number = 2
 			}
+			
 			multiply = {
 				value = 0.5
 				desc = "from_two_prior_members"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				scope:number = 3
 			}
+			
 			multiply = {
 				value = 0.25
 				desc = "from_three_prior_members"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				scope:number > 3
 			}
+			
 			multiply = {
 				value = 0.1
 				desc = "from_more_than_three_prior_members"
@@ -344,8 +407,11 @@ military_party = {
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_patriotic
-					leader = { has_ideology = ideology:ideology_authoritarian }
+					leader = {
+						has_ideology = ideology:ideology_authoritarian
+					}
 				}
+				
 				owner = {
 					NOR = {
 						has_law = law_type:law_no_home_affairs
@@ -353,37 +419,45 @@ military_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_liberty"
 			}
 		}
-		if = { # conservatives like censorship
+		
+		if = {	# conservatives like censorship
 			limit = {
 				owner = {
 					has_technology_researched = law_enforcement
-					OR = { 
+					OR = {
 						has_law = law_type:law_right_of_assembly
 						has_law = law_type:law_protected_speech
 					}
 				}
+				
 				OR = {
 					has_ideology = ideology:ideology_patriarchal
 					has_ideology = ideology:ideology_patriotic
-					leader = { has_ideology = ideology:ideology_authoritarian }
+					leader = {
+						has_ideology = ideology:ideology_authoritarian
+					}
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_no_censorship"
 			}
 		}
-		if = { # authoritarians like militarism
+		
+		if = {	# authoritarians like militarism
 			limit = {
 				leader = {
 					has_ideology = ideology:ideology_authoritarian
 				}
 			}
+			
 			add = {
 				value = 5
 				desc = from_authoritarian
@@ -392,7 +466,7 @@ military_party = {
 
 		### FRANCE ###
 		### VTM ###
-		if = { # The Bonapartists were a expansionist militarist and statist faction
+		if = {	# The Bonapartists were a expansionist militarist and statist faction
 			limit = {
 				OR = {
 					is_powerful = yes
@@ -400,41 +474,48 @@ military_party = {
 						has_law = law_type:law_monarchy
 					}
 				}
+				
 				leader = {
 					has_ideology = ideology:ideology_bonapartist
 				}
 			}
+			
 			add = {
 				value = 50
 				desc = "from_traditional_bonapartist_party"
 			}
 		}
-
-		if = { # If not explicitly Bonapartist but the King is a member of the IG 
+		
+		if = {	# If not explicitly Bonapartist but the King is a member of the IG 
 			limit = {
 				owner = {
 					has_law = law_type:law_monarchy
 				}
+				
 				owner.ruler = {
 					interest_group = prev
 					has_ideology = ideology:ideology_bonapartist
 				}
+				
 				NOT = {
 					leader = {
 						has_ideology = ideology:ideology_bonapartist
 					}
-				}			
+				}
 			}
+			
 			add = {
 				value = 5
 				desc = "from_kings_party"
 			}
 		}
-
-		if = { # Weak Monarchists in Republic may fall in line
+		
+		if = {	# Weak Monarchists in Republic may fall in line
 			limit = {
 				owner = {
-					NOT = { has_law = law_type:law_monarchy }
+					NOT = {
+						has_law = law_type:law_monarchy
+					}
 					exists = py:military_party
 					any_interest_group = {
 						is_member_of_party = owner.py:military_party
@@ -449,16 +530,17 @@ military_party = {
 					OR = {
 						has_ideology = ideology:ideology_orleanist
 						has_ideology = ideology:ideology_legitimist
-					}					
+					}
 				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_weak_monarchists_in_republic"
 			}
 		}
 		### VTM END ###
-		if = { # anti-orleanist
+		if = {	# anti-orleanist
 			limit = {
 				leader = {
 					OR = {
@@ -466,6 +548,7 @@ military_party = {
 						has_ideology = ideology:ideology_legitimist
 					}
 				}
+				
 				owner = {
 					any_interest_group = {
 						has_party = yes
@@ -479,12 +562,14 @@ military_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = -5
 				desc = "from_french_monarchist_rival"
 			}
 		}
-		if = { # anti-legitimist
+		
+		if = {	# anti-legitimist
 			limit = {
 				leader = {
 					OR = {
@@ -492,6 +577,7 @@ military_party = {
 						has_ideology = ideology:ideology_orleanist
 					}
 				}
+				
 				owner = {
 					any_interest_group = {
 						has_party = yes
@@ -505,12 +591,14 @@ military_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = -5
 				desc = "from_french_monarchist_rival"
 			}
 		}
-		if = { # anti-bonapartist
+		
+		if = {	# anti-bonapartist
 			limit = {
 				leader = {
 					OR = {
@@ -518,6 +606,7 @@ military_party = {
 						has_ideology = ideology:ideology_orleanist
 					}
 				}
+				
 				owner = {
 					any_interest_group = {
 						has_party = yes
@@ -531,52 +620,63 @@ military_party = {
 					}
 				}
 			}
+			
 			add = {
 				value = -5
 				desc = "from_french_monarchist_rival"
 			}
 		}
+		
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	NOT = {
-			        owner.var:only_valid_party = {
-			        	is_party_type = military_party
-			        }
-			    }
+					has_variable = only_valid_party
+				}
+				
+				NOT = {
+					owner.var:only_valid_party = {
+						is_party_type = military_party
+					}
+				}
 			}
+			
 			multiply = {
 				value = 0
 			}
 		}
+		
 		if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
+					has_variable = only_valid_party
+				}
+				
 				owner.var:only_valid_party = {
-		        	is_party_type = military_party
-		        }
-	         	owner.ruler = {
+					is_party_type = military_party
+				}
+				
+				owner.ruler = {
 					this.interest_group = prev
 				}
 			}
+			
 			add = {
 				value = 1000
 				desc = "from_only_legal_party"
 			}
 		}
+		
 		else_if = {
 			limit = {
 				owner = {
-	         		has_variable = only_valid_party
-	         	}
-	         	 owner.var:only_valid_party = {
-		        	is_party_type = military_party
-		        }
+					has_variable = only_valid_party
+				}
+				
+				owner.var:only_valid_party = {
+					is_party_type = military_party
+				}
 			}
+			
 			add = {
 				value = 3
 				desc = "from_only_legal_party"

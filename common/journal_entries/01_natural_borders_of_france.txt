@@ -1,18 +1,15 @@
 ﻿je_french_natural_borders = {
 	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
-
 	group = je_group_historical_content
-
 	scripted_button = vtm_je_french_natural_borders_button_a
 	scripted_button = vtm_je_french_natural_borders_button_b
 	scripted_button = vtm_je_french_natural_borders_button_c
-
 	is_shown_when_inactive = {
 		exists = c:FRA
 		this = c:FRA
 		has_dlc_feature = voice_of_the_people_content
 	}
-
+	
 	on_monthly_pulse = {
 		effect = {
 			if = {
@@ -28,7 +25,7 @@
 			}
 		}
 	}
-
+	
 	possible = {
 		has_technology_researched = nationalism
 		any_interest_group = {
@@ -49,7 +46,7 @@
 			}
 		}
 	}
-
+	
 	complete = {
 		is_at_war = no
 		custom_tooltip = {
@@ -59,54 +56,60 @@
 					state_region = {
 						is_homeland = cu:french
 					}
-					NOT = { owner = ROOT }
+					
+					NOT = {
+						owner = ROOT
+					}
 				}
 			}
 		}
+		
 		any_scope_state = {
 			state_region = s:STATE_WALLONIA
 			is_incorporated = yes
 			is_split_state = no
 		}
+		
 		any_scope_state = {
 			state_region = s:STATE_FLANDERS
 			is_incorporated = yes
 			is_split_state = no
 		}
+		
 		any_scope_state = {
 			state_region = s:STATE_RHINELAND
 			is_incorporated = yes
 			is_split_state = no
 		}
+		
 		any_scope_state = {
 			state_region = s:STATE_NORTH_RHINE
 			is_incorporated = yes
 			is_split_state = no
 		}
 	}
-
+	
 	on_complete = {
 		set_variable = completed_natural_borders_je
-		trigger_event = { id = natural_borders.2 popup = yes }
+		trigger_event = {
+			id = natural_borders.2
+			popup = yes
+		}
 	}
-
+	
 	invalid = {
 		custom_tooltip = {
 			text = vtm_reject_natural_borders_tt
 			has_variable = reject_natural_borders
 		}
 	}
-
 	should_be_pinned_by_default = yes
-
 	weight = 100
 }
 
 je_confederation_of_the_rhine = {
 	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
-
 	group = je_group_foreign_affairs
-
 	is_shown_when_inactive = {
 		OR = {
 			any_country = {
@@ -119,6 +122,7 @@ je_confederation_of_the_rhine = {
 					}
 				}
 			}
+			
 			any_scope_state = {
 				state_region = {
 					OR = {
@@ -126,6 +130,7 @@ je_confederation_of_the_rhine = {
 						is_homeland = cu:north_german
 					}
 				}
+				
 				OR = {
 					region = sr:region_rhine
 					region = sr:region_north_germany
@@ -139,12 +144,13 @@ je_confederation_of_the_rhine = {
 				}
 			}
 		}
+		
 		NOR = {
 			country_has_primary_culture = cu:north_german
 			country_has_primary_culture = cu:south_german
 		}
 	}
-
+	
 	possible = {
 		country_rank >= rank_value:great_power
 		any_country = {
@@ -156,6 +162,7 @@ je_confederation_of_the_rhine = {
 					region = sr:region_south_germany
 				}
 			}
+			
 			NOT = {
 				has_diplomatic_pact = {
 					who = ROOT
@@ -166,20 +173,19 @@ je_confederation_of_the_rhine = {
 			count >= 3
 		}
 	}
-
+	
 	immediate = {
 		save_scope_as = rhine_overlord
 		cu:north_german = {
 			save_scope_as = north_german_scope
 		}
+		
 		cu:south_german = {
 			save_scope_as = south_german_scope
 		}
 	}
-
 	scripted_button = je_confederation_of_the_rhine_confederate_button
 	scripted_button = je_confederation_of_the_rhine_expand_button
-
 	invalid = {
 		NOR = {
 			any_country = {
@@ -192,6 +198,7 @@ je_confederation_of_the_rhine = {
 					}
 				}
 			}
+			
 			any_scope_state = {
 				state_region = {
 					OR = {
@@ -199,6 +206,7 @@ je_confederation_of_the_rhine = {
 						is_homeland = cu:north_german
 					}
 				}
+				
 				OR = {
 					region = sr:region_rhine
 					region = sr:region_north_germany
@@ -208,7 +216,7 @@ je_confederation_of_the_rhine = {
 			}
 		}
 	}
-
+	
 	complete = {
 		custom_tooltip = {
 			text = no_german_great_powers_tt
@@ -223,7 +231,7 @@ je_confederation_of_the_rhine = {
 			}
 		}
 	}
-
+	
 	fail = {
 		exists = c:RHN
 		c:RHN ?= {
@@ -232,7 +240,7 @@ je_confederation_of_the_rhine = {
 			}
 		}
 	}
-
+	
 	on_fail = {
 		add_modifier = {
 			name = modifier_fall_of_germany
@@ -240,8 +248,6 @@ je_confederation_of_the_rhine = {
 			is_decaying = yes
 		}
 	}
-
 	should_be_pinned_by_default = yes
-
 	weight = 100
 }

@@ -7,21 +7,16 @@ communism.1 = {
 	title = communism.1.t
 	desc = communism.1.desc
 	flavor = communism.1.f
-
 	duration = 3
-
 	event_image = {
 		video = "europenorthamerica_political_extremism"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
-
 	trigger = {
 		# triggered by communsim JE 1
 	}
-
+	
 	immediate = {
 		random_interest_group = {
 			limit = {
@@ -36,23 +31,31 @@ communism.1 = {
 				save_scope_as = union_leader
 			}
 		}
+		
 		ig:ig_trade_unions = {
 			add_ideology = ideology_socialist
 		}
+		
 		set_variable = {
 			name = je_communism_2_var
 			value = 0
 		}
+		
 		add_journal_entry = {
 			type = je_communism_2
 		}
 	}
-
-	option = { # wage controls
+	
+	option = {	# wage controls
 		name = communism.1.a
 		trigger = {
-			NOT = { has_law = law_type:law_wage_subsidies }
-			NOT = { has_law = law_type:law_old_age_pension }
+			NOT = {
+				has_law = law_type:law_wage_subsidies
+			}
+			
+			NOT = {
+				has_law = law_type:law_old_age_pension
+			}
 		}
 		activate_law = law_type:law_wage_subsidies
 		if = {
@@ -63,25 +66,31 @@ communism.1 = {
 			}
 			custom_tooltip = communist_unions.tt
 		}
+		
 		if = {
 			limit = {
 				AND = {
 					exists = ig:ig_trade_unions
-					ig:ig_trade_unions = { is_marginal = yes }		
+					ig:ig_trade_unions = {
+						is_marginal = yes
+					}
 				}
 			}
+			
 			add_modifier = {
 				name = communist_pressure_modifier
 				months = normal_modifier_time
 				is_decaying = yes
 			}
 		}
-		
 	}
-	option = { # ban slavery
+	
+	option = {	# ban slavery
 		name = communism.1.b
 		trigger = {
-			NOT = { has_law = law_type:law_slavery_banned }
+			NOT = {
+				has_law = law_type:law_slavery_banned
+			}
 		}
 		activate_law = law_type:law_slavery_banned
 		if = {
@@ -92,13 +101,17 @@ communism.1 = {
 			}
 			custom_tooltip = communist_unions.tt
 		}
+		
 		if = {
 			limit = {
 				AND = {
 					exists = ig:ig_trade_unions
-					ig:ig_trade_unions = { is_marginal = yes }		
+					ig:ig_trade_unions = {
+						is_marginal = yes
+					}
 				}
 			}
+			
 			add_modifier = {
 				name = communist_pressure_modifier
 				months = normal_modifier_time
@@ -106,11 +119,17 @@ communism.1 = {
 			}
 		}
 	}
-	option = { # Regulatory bodies
+	
+	option = {	# Regulatory bodies
 		name = communism.1.c
 		trigger = {
-			NOT = { has_law = law_type:law_regulatory_bodies }
-			NOT = { has_law = law_type:law_worker_protections }
+			NOT = {
+				has_law = law_type:law_regulatory_bodies
+			}
+			
+			NOT = {
+				has_law = law_type:law_worker_protections
+			}
 		}
 		activate_law = law_type:law_regulatory_bodies
 		if = {
@@ -121,13 +140,17 @@ communism.1 = {
 			}
 			custom_tooltip = communist_unions.tt
 		}
+		
 		if = {
 			limit = {
 				AND = {
 					exists = ig:ig_trade_unions
-					ig:ig_trade_unions = { is_marginal = yes }		
+					ig:ig_trade_unions = {
+						is_marginal = yes
+					}
 				}
 			}
+			
 			add_modifier = {
 				name = communist_pressure_modifier
 				months = normal_modifier_time
@@ -135,6 +158,7 @@ communism.1 = {
 			}
 		}
 	}
+	
 	option = {
 		name = communism.1.d
 		default_option = yes
@@ -146,6 +170,7 @@ communism.1 = {
 			}
 			custom_tooltip = communist_unions.tt
 		}
+		
 		every_interest_group = {
 			limit = {
 				leader = {
@@ -156,24 +181,30 @@ communism.1 = {
 					}
 				}
 			}
+			
 			add_modifier = {
 				name = communist_government_modifier
 				months = normal_modifier_time
 			}
 		}
+		
 		if = {
 			limit = {
 				AND = {
 					exists = ig:ig_trade_unions
-					ig:ig_trade_unions = { is_marginal = yes }		
+					ig:ig_trade_unions = {
+						is_marginal = yes
+					}
 				}
 			}
+			
 			add_modifier = {
 				name = communist_pressure_modifier
 				months = normal_modifier_time
 				is_decaying = yes
 			}
 		}
+		
 		add_loyalists = {
 			value = medium_radicals
 			strata = rich
@@ -188,21 +219,16 @@ communism.2 = {
 	title = communism.2.t
 	desc = communism.2.d
 	flavor = communism.2.f
-
 	duration = 3
-
 	event_image = {
 		video = "votp_agitator_speaking"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-
 	trigger = {
 		# triggered by communsim JE 2
 	}
-
+	
 	immediate = {
 		ig:ig_trade_unions = {
 			save_scope_as = unions
@@ -211,7 +237,8 @@ communism.2 = {
 			}
 		}
 	}
-	option = { # vanguardism
+	
+	option = {	# vanguardism
 		name = communism.2.a
 		default_option = yes
 		ig:ig_trade_unions = {
@@ -221,17 +248,22 @@ communism.2 = {
 		if = {
 			limit = {
 				scope:union_leader = {
-					NOT = { has_ideology = ideology:ideology_vanguardist }
+					NOT = {
+						has_ideology = ideology:ideology_vanguardist
+					}
 				}
 			}
+			
 			scope:union_leader = {
 				set_ideology = ideology:ideology_vanguardist
 			}
 		}
+		
 		add_modifier = {
 			name = path_to_vanguardism
 			months = normal_modifier_time
 		}
+		
 		if = {
 			limit = {
 				any_interest_group = {
@@ -244,6 +276,7 @@ communism.2 = {
 					}
 					count >= 3
 				}
+				
 				custom_tooltip = {
 					text = vanguard_custom_tooltip
 					NOT = {
@@ -260,25 +293,37 @@ communism.2 = {
 					}
 				}
 			}
-			trigger_event = { id = communism.5 }
+			
+			trigger_event = {
+				id = communism.5
+			}
 		}
+		
 		else = {
 			add_journal_entry = {
 				type = je_vanguard
 			}
 		}
+		
 		add_journal_entry = {
 			type = je_5_year_plan
 		}
 	}
-	option = { # communism
+	
+	option = {	# communism
 		name = communism.2.b
 		trigger = {
 			OR = {
-				NOT = { exists = c:RUS }
-				NOT = { c:RUS = ROOT }
+				NOT = {
+					exists = c:RUS
+				}
+				
+				NOT = {
+					c:RUS = ROOT
+				}
 			}
 		}
+		
 		ig:ig_trade_unions = {
 			set_variable = chose_communism
 		}
@@ -286,17 +331,22 @@ communism.2 = {
 		if = {
 			limit = {
 				scope:union_leader = {
-					NOT = { has_ideology = ideology:ideology_communist }
+					NOT = {
+						has_ideology = ideology:ideology_communist
+					}
 				}
 			}
+			
 			scope:union_leader = {
 				set_ideology = ideology:ideology_communist
 			}
 		}
+		
 		add_modifier = {
 			name = path_to_communism
 			months = normal_modifier_time
 		}
+		
 		if = {
 			limit = {
 				root.bureaucracy > 0
@@ -322,25 +372,30 @@ communism.2 = {
 					value = 5
 				}
 			}
+			
 			trigger_event = {
 				id = communism.6
 			}
 		}
+		
 		else = {
 			add_journal_entry = {
 				type = je_communist_welfare
 			}
 		}
+		
 		add_journal_entry = {
 			type = je_5_year_plan
 		}
 	}
-	option = { # russian communism
+	
+	option = {	# russian communism
 		name = communism.2.b2
 		trigger = {
 			exists = c:RUS
 			c:RUS = ROOT
 		}
+		
 		ig:ig_trade_unions = {
 			set_variable = chose_communism
 		}
@@ -348,17 +403,22 @@ communism.2 = {
 		if = {
 			limit = {
 				scope:union_leader = {
-					NOT = { has_ideology = ideology:ideology_communist }
+					NOT = {
+						has_ideology = ideology:ideology_communist
+					}
 				}
 			}
+			
 			scope:union_leader = {
 				set_ideology = ideology:ideology_communist
 			}
 		}
+		
 		add_modifier = {
 			name = path_to_communism
 			months = normal_modifier_time
 		}
+		
 		if = {
 			limit = {
 				approaching_bureaucracy_shortage = no
@@ -383,20 +443,24 @@ communism.2 = {
 					value = 5
 				}
 			}
+			
 			trigger_event = {
 				id = communism.6
 			}
 		}
+		
 		else = {
 			add_journal_entry = {
 				type = je_communist_welfare
 			}
 		}
+		
 		add_journal_entry = {
 			type = je_5_year_plan
 		}
 	}
-	option = { # anarchism
+	
+	option = {	# anarchism
 		name = communism.2.c
 		ig:ig_trade_unions = {
 			set_variable = chose_anarchism
@@ -405,31 +469,39 @@ communism.2 = {
 		if = {
 			limit = {
 				scope:union_leader = {
-					NOT = { has_ideology = ideology:ideology_anarchist }
+					NOT = {
+						has_ideology = ideology:ideology_anarchist
+					}
 				}
 			}
+			
 			scope:union_leader = {
 				set_ideology = ideology:ideology_anarchist
 			}
 		}
+		
 		add_modifier = {
 			name = path_to_anarchy
 			months = normal_modifier_time
 		}
+		
 		if = {
 			limit = {
 				has_law = law_type:law_anarchy
 				average_sol >= 15
 			}
+			
 			trigger_event = {
 				id = communism.4
 			}
 		}
+		
 		else = {
 			add_journal_entry = {
 				type = je_anarchy
 			}
 		}
+		
 		add_journal_entry = {
 			type = je_5_year_plan
 		}
@@ -443,17 +515,12 @@ communism.3 = {
 	title = communism.3.t
 	desc = communism.3.d
 	flavor = communism.3.f
-
 	duration = 3
-
 	event_image = {
 		video = "europenorthamerica_capitalists_meeting"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-
 	trigger = {
 		any_interest_group = {
 			is_marginal = yes
@@ -462,6 +529,7 @@ communism.3 = {
 				is_interest_group_type = ig_intelligentsia
 				is_interest_group_type = ig_armed_forces
 			}
+			
 			leader = {
 				NOR = {
 					has_ideology = ideology:ideology_vanguardist
@@ -471,7 +539,7 @@ communism.3 = {
 			}
 		}
 	}
-
+	
 	immediate = {
 		random_interest_group = {
 			limit = {
@@ -481,6 +549,7 @@ communism.3 = {
 					is_interest_group_type = ig_intelligentsia
 					is_interest_group_type = ig_armed_forces
 				}
+				
 				leader = {
 					NOR = {
 						has_ideology = ideology:ideology_vanguardist
@@ -492,19 +561,21 @@ communism.3 = {
 			save_scope_as = new_vanguard_ig
 			set_variable = chose_vanguardism
 		}
+		
 		create_character = {
 			#role = politician # Remove this line
 			ig_leader = yes
 			interest_group = scope:new_vanguard_ig
 			ideology = ideology_vanguardist
 		}
+		
 		scope:new_vanguard_ig = {
 			leader = {
 				save_scope_as = new_vanguard_leader
 			}
 		}
 	}
-
+	
 	option = {
 		name = communism.3.a
 		default_option = yes
@@ -516,6 +587,7 @@ communism.3 = {
 			}
 		}
 	}
+	
 	option = {
 		name = communism.3.b
 		custom_tooltip = new_vanguard.tt
@@ -535,20 +607,14 @@ communism.4 = {
 	title = communism.4.t
 	desc = communism.4.d
 	flavor = communism.4.f
-
 	duration = 3
-
 	event_image = {
 		video = "europenorthamerica_political_extremism"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-
 	trigger = {
 	}
-
 	option = {
 		name = communism.4.a
 		add_modifier = {
@@ -565,20 +631,14 @@ communism.5 = {
 	title = communism.5.t
 	desc = communism.5.d
 	flavor = communism.5.f
-
 	duration = 3
-
 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
-
 	event_image = {
 		video = "africa_soldiers_breaking_protest"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	
 	trigger = {
 	}
-
 	option = {
 		name = communism.5.a
 		add_modifier = {
@@ -595,20 +655,14 @@ communism.6 = {
 	title = communism.6.t
 	desc = communism.6.d
 	flavor = communism.6.f
-
 	duration = 3
-
 	icon = "gfx/interface/icons/event_icons/event_scales.dds"
-
 	event_image = {
 		video = "unspecific_ruler_speaking_to_people"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	
 	trigger = {
 	}
-
 	option = {
 		name = communism.6.a
 		add_modifier = {
@@ -625,21 +679,20 @@ communism.7 = {
 	title = communism.7.t
 	desc = communism.7.d
 	flavor = communism.7.f
-
 	duration = 3
-
-	cooldown = { months = normal_modifier_time }
-
+	cooldown = {
+		months = normal_modifier_time
+	}
 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
-
 	event_image = {
 		video = "votp_agitator_speaking"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	
 	trigger = {
-		NOT = { has_law = law_type:law_council_republic }
+		NOT = {
+			has_law = law_type:law_council_republic
+		}
+		
 		any_interest_group = {
 			is_marginal = no
 			any_scope_character = {
@@ -647,7 +700,11 @@ communism.7 = {
 					has_role = politician
 					has_role = agitator
 				}
-				NOT = { has_modifier = popular_socialist_leader }
+				
+				NOT = {
+					has_modifier = popular_socialist_leader
+				}
+				
 				OR = {
 					has_ideology = ideology:ideology_communist
 					has_ideology = ideology:ideology_anarchist
@@ -656,7 +713,7 @@ communism.7 = {
 			}
 		}
 	}
-
+	
 	immediate = {
 		random_interest_group = {
 			limit = {
@@ -666,7 +723,11 @@ communism.7 = {
 						has_role = politician
 						has_role = agitator
 					}
-					NOT = { has_modifier = popular_socialist_leader }
+					
+					NOT = {
+						has_modifier = popular_socialist_leader
+					}
+					
 					OR = {
 						has_ideology = ideology:ideology_communist
 						has_ideology = ideology:ideology_anarchist
@@ -681,18 +742,22 @@ communism.7 = {
 						has_role = politician
 						has_role = agitator
 					}
-					NOT = { has_modifier = popular_socialist_leader }
+					
+					NOT = {
+						has_modifier = popular_socialist_leader
+					}
+					
 					OR = {
 						has_ideology = ideology:ideology_communist
 						has_ideology = ideology:ideology_anarchist
 						has_ideology = ideology:ideology_vanguardist
 					}
-				}			
+				}
 				save_scope_as = popular_socialist_leader
 			}
 		}
 	}
-
+	
 	option = {
 		name = communism.7.a
 		trigger = {
@@ -708,7 +773,7 @@ communism.7 = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = communism.7.b
 		trigger = {
@@ -723,10 +788,12 @@ communism.7 = {
 				months = short_modifier_time
 			}
 		}
+		
 		random_scope_state = {
 			limit = {
 				is_incorporated = yes
 			}
+			
 			add_radicals_in_state = {
 				value = large_radicals
 				strata = poor
@@ -742,20 +809,18 @@ communism.8 = {
 	title = communism.8.t
 	desc = communism.8.d
 	flavor = communism.8.f
-
 	duration = 3
-
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-
 	event_image = {
 		video = "unspecific_military_parade"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	
 	trigger = {
 		has_law = law_type:law_council_republic
-		NOT = {	has_variable = red_army_var }
+		NOT = {
+			has_variable = red_army_var
+		}
+		
 		ig:ig_armed_forces = {
 			leader = {
 				OR = {
@@ -765,7 +830,7 @@ communism.8 = {
 			}
 		}
 	}
-
+	
 	immediate = {
 		ig:ig_armed_forces = {
 			save_scope_as = red_army_ig
@@ -775,7 +840,7 @@ communism.8 = {
 		}
 		set_variable = red_army_var
 	}
-
+	
 	option = {
 		name = communism.8.a
 		ig:ig_armed_forces = {
@@ -796,47 +861,48 @@ communism.9 = {
 	title = communism.9.t
 	desc = communism.9.d
 	flavor = communism.9.f
-
 	duration = 3
-
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
-
 	event_image = {
 		video = "africa_prosperous_farm"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	trigger = {
 		has_law = law_type:law_council_republic
 		any_scope_state = {
 			is_incorporated = yes
-			NOT = { has_modifier = coop_loyalty_modifier }
-			NOT = { has_modifier = coop_migration_modifier }
+			NOT = {
+				has_modifier = coop_loyalty_modifier
+			}
+			
+			NOT = {
+				has_modifier = coop_migration_modifier
+			}
+			
 			any_scope_pop = {
 				pop_is_discriminated = no
 				standard_of_living > 15
 				workplace ?= {
 					OR = {
-					    has_active_production_method = pm_worker_cooperative_building_food_industry
-					    has_active_production_method = pm_worker_cooperative_building_textile_mills
-					    has_active_production_method = pm_worker_cooperative_building_furniture_manufacturies
-					    has_active_production_method = pm_worker_cooperative_building_glassworks
-					    has_active_production_method = pm_worker_cooperative_building_tooling_workshops
-					    has_active_production_method = pm_worker_cooperative_building_paper_mills
-					    has_active_production_method = pm_worker_cooperative_building_shipyards
-					    has_active_production_method = pm_worker_cooperative_building_arms_industry
-					    has_active_production_method = pm_worker_cooperative_farm
-					    has_active_production_method = pm_worker_cooperative_building_logging_camp
-					    has_active_production_method = pm_worker_cooperative_building_fishing_wharf
-					    has_active_production_method = pm_worker_cooperative_building_whaling_station
-					    has_active_production_method = pm_worker_cooperative_plantation
-					    has_active_production_method = pm_worker_cooperative_industry
-					    has_active_production_method = pm_worker_cooperative_building_coal_mine
-					    has_active_production_method = pm_worker_cooperative_building_iron_mine
-					    has_active_production_method = pm_worker_cooperative_building_lead_mine
-					    has_active_production_method = pm_worker_cooperative_building_sulfur_mine
-                    }
+						has_active_production_method = pm_worker_cooperative_building_food_industry
+						has_active_production_method = pm_worker_cooperative_building_textile_mills
+						has_active_production_method = pm_worker_cooperative_building_furniture_manufacturies
+						has_active_production_method = pm_worker_cooperative_building_glassworks
+						has_active_production_method = pm_worker_cooperative_building_tooling_workshops
+						has_active_production_method = pm_worker_cooperative_building_paper_mills
+						has_active_production_method = pm_worker_cooperative_building_shipyards
+						has_active_production_method = pm_worker_cooperative_building_arms_industry
+						has_active_production_method = pm_worker_cooperative_farm
+						has_active_production_method = pm_worker_cooperative_building_logging_camp
+						has_active_production_method = pm_worker_cooperative_building_fishing_wharf
+						has_active_production_method = pm_worker_cooperative_building_whaling_station
+						has_active_production_method = pm_worker_cooperative_plantation
+						has_active_production_method = pm_worker_cooperative_industry
+						has_active_production_method = pm_worker_cooperative_building_coal_mine
+						has_active_production_method = pm_worker_cooperative_building_iron_mine
+						has_active_production_method = pm_worker_cooperative_building_lead_mine
+						has_active_production_method = pm_worker_cooperative_building_sulfur_mine
+					}
 					cash_reserves_ratio > 0.25
 					weekly_profit > 5
 					occupancy >= 0.95
@@ -845,37 +911,43 @@ communism.9 = {
 			}
 		}
 	}
-
+	
 	immediate = {
 		random_scope_state = {
 			limit = {
 				is_incorporated = yes
-				NOT = { has_modifier = coop_loyalty_modifier }
-				NOT = { has_modifier = coop_migration_modifier }
+				NOT = {
+					has_modifier = coop_loyalty_modifier
+				}
+				
+				NOT = {
+					has_modifier = coop_migration_modifier
+				}
+				
 				any_scope_pop = {
 					pop_is_discriminated = no
 					standard_of_living > 15
 					workplace ?= {
 						OR = {
-                            has_active_production_method = pm_worker_cooperative_building_food_industry
-                            has_active_production_method = pm_worker_cooperative_building_textile_mills
-                            has_active_production_method = pm_worker_cooperative_building_furniture_manufacturies
-                            has_active_production_method = pm_worker_cooperative_building_glassworks
-                            has_active_production_method = pm_worker_cooperative_building_tooling_workshops
-                            has_active_production_method = pm_worker_cooperative_building_paper_mills
-                            has_active_production_method = pm_worker_cooperative_building_shipyards
-                            has_active_production_method = pm_worker_cooperative_building_arms_industry
-                            has_active_production_method = pm_worker_cooperative_farm
-                            has_active_production_method = pm_worker_cooperative_building_logging_camp
-                            has_active_production_method = pm_worker_cooperative_building_fishing_wharf
-                            has_active_production_method = pm_worker_cooperative_building_whaling_station
-                            has_active_production_method = pm_worker_cooperative_plantation
-                            has_active_production_method = pm_worker_cooperative_industry
-                            has_active_production_method = pm_worker_cooperative_building_coal_mine
-                            has_active_production_method = pm_worker_cooperative_building_iron_mine
-                            has_active_production_method = pm_worker_cooperative_building_lead_mine
-                            has_active_production_method = pm_worker_cooperative_building_sulfur_mine
-                        }
+							has_active_production_method = pm_worker_cooperative_building_food_industry
+							has_active_production_method = pm_worker_cooperative_building_textile_mills
+							has_active_production_method = pm_worker_cooperative_building_furniture_manufacturies
+							has_active_production_method = pm_worker_cooperative_building_glassworks
+							has_active_production_method = pm_worker_cooperative_building_tooling_workshops
+							has_active_production_method = pm_worker_cooperative_building_paper_mills
+							has_active_production_method = pm_worker_cooperative_building_shipyards
+							has_active_production_method = pm_worker_cooperative_building_arms_industry
+							has_active_production_method = pm_worker_cooperative_farm
+							has_active_production_method = pm_worker_cooperative_building_logging_camp
+							has_active_production_method = pm_worker_cooperative_building_fishing_wharf
+							has_active_production_method = pm_worker_cooperative_building_whaling_station
+							has_active_production_method = pm_worker_cooperative_plantation
+							has_active_production_method = pm_worker_cooperative_industry
+							has_active_production_method = pm_worker_cooperative_building_coal_mine
+							has_active_production_method = pm_worker_cooperative_building_iron_mine
+							has_active_production_method = pm_worker_cooperative_building_lead_mine
+							has_active_production_method = pm_worker_cooperative_building_sulfur_mine
+						}
 						cash_reserves_ratio > 0.25
 						weekly_profit > 5
 						occupancy >= 0.95
@@ -890,25 +962,25 @@ communism.9 = {
 					standard_of_living > 15
 					workplace ?= {
 						OR = {
-                            has_active_production_method = pm_worker_cooperative_building_food_industry
-                            has_active_production_method = pm_worker_cooperative_building_textile_mills
-                            has_active_production_method = pm_worker_cooperative_building_furniture_manufacturies
-                            has_active_production_method = pm_worker_cooperative_building_glassworks
-                            has_active_production_method = pm_worker_cooperative_building_tooling_workshops
-                            has_active_production_method = pm_worker_cooperative_building_paper_mills
-                            has_active_production_method = pm_worker_cooperative_building_shipyards
-                            has_active_production_method = pm_worker_cooperative_building_arms_industry
-                            has_active_production_method = pm_worker_cooperative_farm
-                            has_active_production_method = pm_worker_cooperative_building_logging_camp
-                            has_active_production_method = pm_worker_cooperative_building_fishing_wharf
-                            has_active_production_method = pm_worker_cooperative_building_whaling_station
-                            has_active_production_method = pm_worker_cooperative_plantation
-                            has_active_production_method = pm_worker_cooperative_industry
-                            has_active_production_method = pm_worker_cooperative_building_coal_mine
-                            has_active_production_method = pm_worker_cooperative_building_iron_mine
-                            has_active_production_method = pm_worker_cooperative_building_lead_mine
-                            has_active_production_method = pm_worker_cooperative_building_sulfur_mine
-                        }
+							has_active_production_method = pm_worker_cooperative_building_food_industry
+							has_active_production_method = pm_worker_cooperative_building_textile_mills
+							has_active_production_method = pm_worker_cooperative_building_furniture_manufacturies
+							has_active_production_method = pm_worker_cooperative_building_glassworks
+							has_active_production_method = pm_worker_cooperative_building_tooling_workshops
+							has_active_production_method = pm_worker_cooperative_building_paper_mills
+							has_active_production_method = pm_worker_cooperative_building_shipyards
+							has_active_production_method = pm_worker_cooperative_building_arms_industry
+							has_active_production_method = pm_worker_cooperative_farm
+							has_active_production_method = pm_worker_cooperative_building_logging_camp
+							has_active_production_method = pm_worker_cooperative_building_fishing_wharf
+							has_active_production_method = pm_worker_cooperative_building_whaling_station
+							has_active_production_method = pm_worker_cooperative_plantation
+							has_active_production_method = pm_worker_cooperative_industry
+							has_active_production_method = pm_worker_cooperative_building_coal_mine
+							has_active_production_method = pm_worker_cooperative_building_iron_mine
+							has_active_production_method = pm_worker_cooperative_building_lead_mine
+							has_active_production_method = pm_worker_cooperative_building_sulfur_mine
+						}
 						cash_reserves_ratio > 0.25
 						weekly_profit > 5
 						occupancy >= 0.95
@@ -922,7 +994,7 @@ communism.9 = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = communism.9.a
 		default_option = yes
@@ -933,7 +1005,7 @@ communism.9 = {
 			}
 		}
 	}
-
+	
 	option = {
 		name = communism.9.b
 		scope:coop_state = {
@@ -952,25 +1024,23 @@ communism.10 = {
 	title = communism.10.t
 	desc = communism.10.d
 	flavor = communism.10.f
-
 	duration = 3
-
 	event_image = {
 		video = "europenorthamerica_political_extremism"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
-
 	trigger = {
 		# triggered by communsim JE 1
 	}
-
+	
 	immediate = {
-		set_variable = { name = communism_je_1_var value = 25 }
+		set_variable = {
+			name = communism_je_1_var
+			value = 25
+		}
 	}
-
+	
 	option = {
 		name = communism.10.a
 		default_option = yes
@@ -981,6 +1051,7 @@ communism.10 = {
 			}
 		}
 	}
+	
 	option = {
 		name = communism.10.b
 		trigger = {
@@ -994,15 +1065,20 @@ communism.10 = {
 				}
 			}
 		}
+		
 		capital = {
 			add_radicals_in_state = {
 				value = small_radicals
 				pop_type = laborers
 			}
 		}
+		
 		custom_tooltip = {
 			text = communism_var_tick_05_tt
-			set_variable = { name = communism_progress_var_add value = 0.5 }
+			set_variable = {
+				name = communism_progress_var_add
+				value = 0.5
+			}
 		}
 	}
 }
@@ -1014,25 +1090,18 @@ communism.11 = {
 	title = communism.11.t
 	desc = communism.11.d
 	flavor = communism.11.f
-
 	duration = 3
-
 	event_image = {
 		video = "votp_realist_household"
 	}
-
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
 	icon = "gfx/interface/icons/event_icons/event_election.dds"
-
 	trigger = {
 		# triggered by communism JE 1
 	}
-
+	
 	immediate = {
-
 	}
-
 	option = {
 		name = communism.11.a
 		default_option = yes
@@ -1040,25 +1109,30 @@ communism.11 = {
 			name = modifier_defeated_initial_socialist_movement
 			months = normal_modifier_time
 		}
+		
 		add_loyalists = {
 			value = small_radicals
 			strata = rich
 		}
+		
 		add_loyalists = {
 			value = small_radicals
 			strata = middle
 		}
 	}
+	
 	option = {
 		name = communism.11.b
 		add_modifier = {
 			name = modifier_defeated_initial_socialist_movement_worries
 			months = normal_modifier_time
 		}
+		
 		add_loyalists = {
 			value = medium_radicals
 			strata = rich
 		}
+		
 		add_loyalists = {
 			value = medium_radicals
 			strata = middle

@@ -11,22 +11,28 @@ prussia_form_ngf = {
 				exists = c:SGF
 				exists = c:PRU
 				THIS = c:PRU
-				NOT = { exists = c:NGF }
-				NOT = { exists = c:GER }
+				NOT = {
+					exists = c:NGF
+				}
+				
+				NOT = {
+					exists = c:GER
+				}
 			}
+			
 			AND = {
-			exists = c:PRU
-			THIS = c:PRU
-			has_global_variable = aggressive_austria_var
+				exists = c:PRU
+				THIS = c:PRU
+				has_global_variable = aggressive_austria_var
 			}
 		}
+		
 		NOT = {
 			any_country = {
 				country_has_primary_culture = cu:north_german
 				is_ai = no
 			}
 		}
-		
 		country_has_primary_culture = cu:north_german
 		country_rank >= rank_value:great_power
 		# has_dlc_feature = voice_of_the_people_content
@@ -45,7 +51,7 @@ prussia_form_ngf = {
 		# 	is_player = no
 		# }
 	}
-
+	
 	possible = {
 		any_country = {
 			filter = {
@@ -57,7 +63,6 @@ prussia_form_ngf = {
 					}
 					is_subject_of = c:PRU
 				}
-
 			}
 			percent >= 0.90
 		}
@@ -90,19 +95,23 @@ prussia_form_ngf = {
 		# 	}
 		# }
 	}
-
+	
 	when_taken = {
 		every_country = {
 			limit = {
 				is_ai = yes
-				country_rank < rank_value:great_power	
+				country_rank < rank_value:great_power
 				NOT = {
 					THIS = c:PRU
 				}
+				
 				AND = {
-					root = { country_has_primary_culture = cu:north_german }
+					root = {
+						country_has_primary_culture = cu:north_german
+					}
 					country_has_primary_culture = cu:north_german
-				}		
+				}
+				
 				OR = {
 					has_diplomatic_pact = {
 						who = c:PRU
@@ -113,18 +122,20 @@ prussia_form_ngf = {
 						relations:root > relations_threshold:neutral
 						is_subject = no
 					}
-				}			
+				}
 			}
-			root = { 
-				annex = prev 
+			
+			root = {
+				annex = prev
 			}
 		}
+		
 		root = {
 			change_tag = NGF
-		}		
+		}
 		remove_global_variable = aggressive_austria_var
 	}
-
+	
 	ai_chance = {
 		base = 10
 	}

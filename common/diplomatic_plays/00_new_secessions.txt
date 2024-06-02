@@ -4,25 +4,23 @@
 	target_can_add_war_goals = yes
 	backing_down_always_ends_play = no
 	add_infamy_for_starting_initiator_wargoals = no
-	
 	war_goal = secession
-	
 	texture = "gfx/interface/icons/war_goals/secession.dds"
-	
 	selectable_in_lens = {
 		always = no
-	}		
+	}
 	
 	possible = {
 		scope:target_country = {
 			is_secessionist = yes
 		}
 	}
-
-	additional_involvement_trigger = {
-		NOT = { is_country_type = decentralized }
-		aggressive_diplomatic_plays_permitted = yes
 	
+	additional_involvement_trigger = {
+		NOT = {
+			is_country_type = decentralized
+		}
+		aggressive_diplomatic_plays_permitted = yes
 		scope:target_country = {
 			capital = {
 				region = {
@@ -37,9 +35,9 @@
 		}
 	}
 	
-	on_weekly_pulse = {}
-
-	on_war_begins = {}
-
-	on_war_end = {}
+	on_weekly_pulse = { }
+	
+	on_war_begins = { }
+	
+	on_war_end = { }
 }
