@@ -1054,6 +1054,8 @@ ai_strategy_colonial_expansion = {
 				}
 			}
 			add = -50
+		}
+		
 		if = {
 			limit = {
 				has_law = law_type:law_council_republic
@@ -1724,11 +1726,11 @@ ai_strategy_economic_imperialism = {
 			}
 			multiply = imperia_ai_foreign_law_country_wargoal_weight
 		}
-
+		
 		make_tributary = {
 			multiply = imperia_ai_foreign_law_country_wargoal_weight
 		}
-
+		
 		conquer_state = {
 			if = {	#Do Not Take Chinese States In Full, unless another power has already done so
 				limit = {
@@ -2242,7 +2244,7 @@ ai_strategy_unify_germany = {
 	building_group_weights = {
 		bg_army = 1.5
 	}
-
+	
 	wargoal_scores = {
 		conquer_state = {
 			multiply = 0.0
@@ -2460,6 +2462,7 @@ ai_strategy_unify_germany = {
 				multiply = 100.0
 			}
 		}
+		
 		take_treaty_port = {
 			multiply = imperia_ai_foreign_law_state_wargoal_weight
 		}

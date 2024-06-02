@@ -249,6 +249,7 @@ law_secret_police = {
 			}
 			add = 750
 		}
+		
 		if = {
 			limit = {
 				law_is_important = yes

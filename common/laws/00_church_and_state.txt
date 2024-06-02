@@ -319,11 +319,12 @@ law_state_atheism = {
 						has_variable = did_state_atheism_already	# no fun allowed
 					}
 				}
+				
 				every_scope_state = {
 					limit = {
 						is_incorporated = yes
 					}
-				
+					
 					convert_population = {
 						target = rel:atheist
 						value = 0.25
