@@ -6,20 +6,24 @@
 			is_goal_complete = yes
 		}
 	}
+	
 	on_complete = {
 		remove_modifier ?= sick_man_of_europe
 		if = {
 			limit = {
 				has_variable = liberal_tanzimat
 			}
+			
 			trigger_event = {
 				id = sick_man.2
 			}
 		}
+		
 		if = {
 			limit = {
 				has_variable = absolute_tanzimat
 			}
+			
 			trigger_event = {
 				id = sick_man.5
 			}
@@ -32,14 +36,17 @@
 			id = sick_man.3
 		}
 	}
+	
 	current_value = {
 		value = var:sick_man_var
 	}
+	
 	on_monthly_pulse = {
 		events = {
 			sick_man.4
 		}
 	}
+	
 	goal_add_value = {
 		add = 8
 	}
@@ -61,12 +68,14 @@ je_sick_man_bureaucracy = {
 		bureaucracy >= 0
 		approaching_bureaucracy_shortage = no
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		add_modifier = {
 			name = sick_man_tanzimat_bureaucracy
 			years = 10
@@ -74,12 +83,14 @@ je_sick_man_bureaucracy = {
 		}
 		remove_modifier ?= outmoded_bureaucracy
 	}
+	
 	on_monthly_pulse = {
 		random_events = {
 			100 = 0
-			10 = tanzimat_events.9			# Land registration resisted
+			10 = tanzimat_events.9	# Land registration resisted
 		}
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -100,19 +111,22 @@ je_sick_man_economy = {
 			filter = {
 				is_incorporated = yes
 			}
-			state_has_building_type_levels = {  
+			
+			state_has_building_type_levels = {
 				target = bt:building_urban_center
 				value >= 3
 			}
 			percent >= 0.25
 		}
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		add_modifier = {
 			name = sick_man_tanzimat_economy
 			years = 10
@@ -120,6 +134,7 @@ je_sick_man_economy = {
 		}
 		remove_modifier ?= stagnant_economy
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -143,16 +158,18 @@ je_sick_man_army = {
 		has_technology_researched = napoleonic_warfare
 		NOR = {
 			any_scope_building = {
-				is_building_type = building_barracks				
+				is_building_type = building_barracks
 				OR = {
 					building_has_goods_shortage = yes
 					has_active_production_method = pm_no_organization
 				}
 			}
+			
 			any_military_formation = {
 				filter = {
 					is_army = yes
 				}
+				
 				any_combat_unit = {
 					has_unit_type = unit_type:combat_unit_type_irregular_infantry
 				}
@@ -160,12 +177,14 @@ je_sick_man_army = {
 			}
 		}
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		add_modifier = {
 			name = sick_man_tanzimat_army
 			years = 10
@@ -173,11 +192,13 @@ je_sick_man_army = {
 		}
 		remove_modifier ?= janissary_legacy
 	}
+	
 	on_monthly_pulse = {
 		events = {
-			tanzimat_events.10			# Tanzimat Draft Question
+			tanzimat_events.10	# Tanzimat Draft Question
 		}
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -201,7 +222,7 @@ je_sick_man_navy = {
 		has_technology_researched = power_of_the_purse
 		NOR = {
 			any_scope_building = {
-				is_building_type = building_naval_base				
+				is_building_type = building_naval_base
 				OR = {
 					building_has_goods_shortage = yes
 					has_active_production_method = pm_no_naval_theory
@@ -209,12 +230,14 @@ je_sick_man_navy = {
 			}
 		}
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		add_modifier = {
 			name = sick_man_tanzimat_navy
 			years = 10
@@ -222,6 +245,7 @@ je_sick_man_navy = {
 		}
 		remove_modifier ?= rampant_piracy
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -242,39 +266,47 @@ je_sick_man_liberal_kurdish = {
 			value = 0
 		}
 	}
+	
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
+		
 		has_diplomatic_pact = {
 			who = c:KUR
 			type = protectorate
 		}
 		is_at_war = no
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		add_loyalists = {
 			value = 0.2
 			culture = cu:kurdish
 		}
+		
 		add_radicals = {
 			value = 0.05
 			culture = cu:turkish
 		}
+		
 		add_modifier = {
 			name = ottoman_kurdish_liberal_reward
 			years = 5
 		}
+		
 		c:KUR = {
 			add_loyalists = {
 				value = 0.3
 				culture = cu:kurdish
 			}
+			
 			add_modifier = {
 				name = kurdish_liberal_reward
 				years = 5
@@ -282,18 +314,22 @@ je_sick_man_liberal_kurdish = {
 		}
 		remove_modifier ?= kurdish_question
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
 			has_variable = sick_man_complete
 		}
 	}
+	
 	current_value = {
 		value = var:sick_man_kurdish_liberal_var
 	}
+	
 	goal_add_value = {
 		add = 180
 	}
+	
 	on_monthly_pulse = {
 		effect = {
 			if = {
@@ -302,10 +338,12 @@ je_sick_man_liberal_kurdish = {
 						who = c:KUR
 						type = protectorate
 					}
+					
 					NOT = {
 						has_war_with = c:KUR
 					}
 				}
+				
 				change_variable = {
 					name = sick_man_kurdish_liberal_var
 					add = 1
@@ -327,44 +365,53 @@ je_sick_man_absolute_kurdish = {
 			value = 0
 		}
 	}
+	
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
+		
 		has_diplomatic_pact = {
 			who = c:KUR
 			type = puppet
 		}
 		is_at_war = no
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		add_loyalists = {
 			value = 0.05
 			culture = cu:kurdish
 		}
+		
 		add_modifier = {
 			name = ottoman_kurdish_absolute_reward
 			years = 5
 		}
 		remove_modifier ?= kurdish_question
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
 			has_variable = sick_man_complete
 		}
 	}
+	
 	current_value = {
 		value = var:sick_man_kurdish_absolute_var
 	}
+	
 	goal_add_value = {
 		add = 180
 	}
+	
 	on_monthly_pulse = {
 		effect = {
 			if = {
@@ -373,10 +420,12 @@ je_sick_man_absolute_kurdish = {
 						who = c:KUR
 						type = puppet
 					}
+					
 					NOT = {
 						has_war_with = c:KUR
 					}
 				}
+				
 				change_variable = {
 					name = sick_man_kurdish_absolute_var
 					add = 1
@@ -404,17 +453,21 @@ je_sick_man_liberal_separatism = {
 		has_law = law_type:law_no_migration_controls
 		has_law = law_type:law_cultural_exclusion
 	}
+	
 	immediate = {
 		rel:catholic = {
 			save_scope_as = christian_religion
 		}
+		
 		rel:jewish = {
 			save_scope_as = jewish_religion
 		}
+		
 		rel:sunni = {
 			save_scope_as = sunni_religion
 		}
 	}
+	
 	on_complete = {
 		custom_tooltip = {
 			text = christian_and_jews_5_percent_more_loyal_tt
@@ -422,58 +475,71 @@ je_sick_man_liberal_separatism = {
 				value = 0.05
 				culture = cu:greek
 			}
+			
 			add_loyalists = {
 				value = 0.05
 				culture = cu:bulgarian
 			}
+			
 			add_loyalists = {
 				value = 0.05
 				culture = cu:serb
 			}
+			
 			add_loyalists = {
 				value = 0.05
 				culture = cu:armenian
 			}
+			
 			add_loyalists = {
 				value = 0.05
 				culture = cu:croat
 			}
+			
 			add_loyalists = {
 				value = 0.05
 				culture = cu:sephardic
 			}
+			
 			add_loyalists = {
 				value = 0.05
 				culture = cu:georgian
 			}
 		}
+		
 		custom_tooltip = {
 			text = sunnis_5_percent_more_radical_tt
 			add_radicals = {
 				value = 0.05
 				culture = cu:turkish
 			}
+			
 			add_radicals = {
 				value = 0.05
 				culture = cu:albanian
 			}
+			
 			add_radicals = {
 				value = 0.05
 				culture = cu:kurdish
 			}
+			
 			add_radicals = {
 				value = 0.05
 				culture = cu:bosniak
 			}
+			
 			add_radicals = {
 				value = 0.05
 				culture = cu:bedouin
 			}
+			
 			add_radicals = {
 				culture = cu:mashriqi
 				value = 0.05
 			}
 		}
+		
 		add_modifier = {
 			name = balkan_liberal_peace
 			years = 7
@@ -486,6 +552,7 @@ je_sick_man_liberal_separatism = {
 		}
 		remove_modifier ?= balkan_disarray
 	}
+	
 	on_monthly_pulse = {
 		effect = {
 			if = {
@@ -497,23 +564,28 @@ je_sick_man_liberal_separatism = {
 					has_law = law_type:law_no_migration_controls
 					has_law = law_type:law_cultural_exclusion
 				}
+				
 				change_variable = {
 					name = sick_man_separatist_var
 					add = 1
 				}
 			}
 		}
+		
 		random_events = {
 			100 = 0
-			10 = tanzimat_events.5			# Paranoia Event
+			10 = tanzimat_events.5	# Paranoia Event
 		}
 	}
+	
 	current_value = {
 		value = var:sick_man_separatist_var
 	}
+	
 	goal_add_value = {
 		add = 120
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -533,40 +605,49 @@ je_sick_man_absolute_separatism = {
 		NOT = {
 			has_law = law_type:law_no_migration_controls
 		}
+		
 		institution_investment_level = {
 			institution = institution_police
 			value >= 2
 		}
+		
 		has_diplomatic_pact = {
 			who = c:SER
 			type = dominion
 		}
+		
 		OR = {
 			has_diplomatic_pact = {
 				who = c:WAL
 				type = dominion
 			}
+			
 			has_diplomatic_pact = {
 				who = c:MOL
 				type = dominion
 			}
 		}
 	}
+	
 	on_complete = {
 		add_modifier = {
 			name = balkan_absolute_peace
 			years = 10
 			is_decaying = yes
 		}
+		
 		s:STATE_PELOPONNESE = {
 			add_claim = ROOT
 		}
+		
 		s:STATE_ATTICA = {
 			add_claim = ROOT
 		}
+		
 		s:STATE_WEST_AEGEAN_ISLANDS = {
 			add_claim = ROOT
 		}
+		
 		s:STATE_IONIAN_ISLANDS = {
 			add_claim = ROOT
 		}
@@ -577,12 +658,14 @@ je_sick_man_absolute_separatism = {
 		}
 		remove_modifier ?= balkan_disarray
 	}
+	
 	on_monthly_pulse = {
 		random_events = {
 			100 = 0
-			10 = tanzimat_events.5			# Paranoia Event
+			10 = tanzimat_events.5	# Paranoia Event
 		}
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -603,14 +686,17 @@ je_sick_man_liberal_education = {
 			occupancy > 0.9
 			level >= 5
 		}
+		
 		OR = {
 			has_law = law_type:law_private_schools
 			has_law = law_type:law_public_schools
 		}
+		
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
 	}
+	
 	on_complete = {
 		add_modifier = {
 			name = sick_man_liberal_education
@@ -624,12 +710,15 @@ je_sick_man_liberal_education = {
 		}
 		remove_modifier ?= imbalanced_education
 	}
+	
 	current_value = {
 		value = root.literacy_rate
 	}
+	
 	goal_add_value = {
 		add = 0.15
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -650,14 +739,17 @@ je_sick_man_absolute_education = {
 			occupancy > 0.9
 			level >= 5
 		}
+		
 		OR = {
 			has_law = law_type:law_patriot_schools
 			has_law = law_type:law_religious_schools
 		}
+		
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
 	}
+	
 	on_complete = {
 		add_modifier = {
 			name = sick_man_absolute_education
@@ -671,12 +763,15 @@ je_sick_man_absolute_education = {
 		}
 		remove_modifier ?= imbalanced_education
 	}
+	
 	current_value = {
 		value = root.literacy_rate
 	}
+	
 	goal_add_value = {
 		add = 0.15
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -698,52 +793,63 @@ je_sick_man_liberal_voting = {
 			value = 0
 		}
 	}
+	
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
+		
 		OR = {
 			has_law = law_type:law_right_of_assembly
 			has_law = law_type:law_protected_speech
 		}
+		
 		OR = {
 			has_law = law_type:law_wealth_voting
 			has_law = law_type:law_census_voting
 			has_law = law_type:law_universal_suffrage
 		}
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		add_loyalists = {
 			value = 0.1
 			strata = poor
 		}
+		
 		add_radicals = {
 			value = 0.15
 			strata = rich
 		}
+		
 		add_modifier = {
 			name = sick_man_liberal_voting
 			years = 10
 			is_decaying = yes
 		}
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
 			has_variable = sick_man_complete
 		}
 	}
+	
 	current_value = {
 		value = var:sick_man_voting_liberal_var
 	}
+	
 	goal_add_value = {
 		add = 120
 	}
+	
 	on_monthly_pulse = {
 		effect = {
 			if = {
@@ -752,12 +858,14 @@ je_sick_man_liberal_voting = {
 						has_law = law_type:law_right_of_assembly
 						has_law = law_type:law_protected_speech
 					}
+					
 					OR = {
 						has_law = law_type:law_wealth_voting
 						has_law = law_type:law_census_voting
 						has_law = law_type:law_universal_suffrage
 					}
 				}
+				
 				change_variable = {
 					name = sick_man_voting_liberal_var
 					add = 1
@@ -785,6 +893,7 @@ je_sick_man_liberal_secularism = {
 			has_law = law_type:law_inquisition
 			has_law = law_type:law_religious_schools
 		}
+		
 		calc_true_if = {
 			amount >= 8
 			country_or_subject_owns_entire_state_region = STATE_BOSNIA
@@ -796,24 +905,28 @@ je_sick_man_liberal_secularism = {
 			country_or_subject_owns_entire_state_region = STATE_NORTHERN_SERBIA
 			country_or_subject_owns_entire_state_region = STATE_WALLACHIA
 			country_or_subject_owns_entire_state_region = STATE_BULGARIA
-
 			any_scope_state = {
 				state_region = s:STATE_MONTENEGRO
 			}
+			
 			any_scope_state = {
 				state_region = s:STATE_EASTERN_THRACE
 			}
+			
 			any_scope_state = {
 				state_region = s:STATE_WESTERN_THRACE
 			}
+			
 			any_scope_state = {
 				state_region = s:STATE_NORTHERN_THRACE
 			}
+			
 			any_subject_or_below = {
 				any_scope_state = {
 					state_region = s:STATE_MOLDAVIA
 				}
 			}
+			
 			any_subject_or_below = {
 				any_scope_state = {
 					state_region = s:STATE_DOBRUDJA
@@ -821,81 +934,99 @@ je_sick_man_liberal_secularism = {
 			}
 		}
 	}
+	
 	immediate = {
 		rel:catholic = {
 			save_scope_as = christian_religion
 		}
+		
 		rel:jewish = {
 			save_scope_as = jewish_religion
 		}
+		
 		rel:sunni = {
 			save_scope_as = sunni_religion
 		}
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		custom_tooltip = {
 			text = christian_and_jews_15_percent_more_loyal_tt
 			add_loyalists = {
 				culture = cu:greek
 				value = 0.15
 			}
+			
 			add_loyalists = {
 				culture = cu:bulgarian
 				value = 0.15
 			}
+			
 			add_loyalists = {
 				culture = cu:serb
 				value = 0.15
 			}
+			
 			add_loyalists = {
 				culture = cu:armenian
 				value = 0.15
 			}
+			
 			add_loyalists = {
 				culture = cu:croat
 				value = 0.15
 			}
+			
 			add_loyalists = {
 				culture = cu:sephardic
 				value = 0.15
 			}
+			
 			add_loyalists = {
 				culture = cu:georgian
 				value = 0.15
 			}
 		}
+		
 		custom_tooltip = {
 			text = sunnis_15_percent_more_radical_tt
 			add_radicals = {
 				culture = cu:turkish
 				value = 0.15
 			}
+			
 			add_radicals = {
 				culture = cu:albanian
 				value = 0.15
 			}
+			
 			add_radicals = {
 				culture = cu:mashriqi
 				value = 0.15
 			}
+			
 			add_radicals = {
 				culture = cu:kurdish
 				value = 0.15
 			}
+			
 			add_radicals = {
 				culture = cu:bosniak
 				value = 0.15
 			}
+			
 			add_radicals = {
 				culture = cu:bedouin
 				value = 0.15
 			}
 		}
+		
 		add_modifier = {
 			name = sick_man_liberal_secularism
 			years = 10
@@ -903,6 +1034,7 @@ je_sick_man_liberal_secularism = {
 		}
 		remove_modifier ?= internal_strife
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -921,16 +1053,19 @@ je_sick_man_liberal_labor = {
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
+		
 		NOR = {
 			has_law = law_type:law_serfdom
 			has_law = law_type:law_tenant_farmers
 		}
+		
 		OR = {
 			has_law = law_type:law_interventionism
 			has_law = law_type:law_laissez_faire
 		}
 		has_law = law_type:law_slavery_banned
 	}
+	
 	on_complete = {
 		set_variable = completed_sick_man_bureaucracy_je
 		custom_tooltip = je_sick_man_advance
@@ -938,12 +1073,14 @@ je_sick_man_liberal_labor = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		add_modifier = {
 			name = sick_man_liberal_labor
 			years = 10
 			is_decaying = yes
 		}
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -969,6 +1106,7 @@ je_sick_man_syria = {
 			has_law = law_type:law_agrarianism
 			has_law = law_type:law_interventionism
 		}
+		
 		any_scope_state = {
 			count = all
 			custom_tooltip = {
@@ -977,24 +1115,30 @@ je_sick_man_syria = {
 			}
 		}
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		s:STATE_SINAI = {
 			add_claim = ROOT
 		}
+		
 		s:STATE_UPPER_EGYPT = {
 			add_claim = ROOT
 		}
+		
 		s:STATE_MIDDLE_EGYPT = {
 			add_claim = ROOT
 		}
+		
 		s:STATE_LOWER_EGYPT = {
 			add_claim = ROOT
 		}
+		
 		if = {
 			limit = {
 				OR = {
@@ -1004,6 +1148,7 @@ je_sick_man_syria = {
 							is_subject_of = ROOT
 						}
 					}
+					
 					AND = {
 						owns_entire_state_region = STATE_SINAI
 						owns_entire_state_region = STATE_UPPER_EGYPT
@@ -1013,6 +1158,7 @@ je_sick_man_syria = {
 				}
 			}
 		}
+		
 		add_modifier = {
 			name = sick_man_absolute_syria
 			years = 10
@@ -1020,12 +1166,14 @@ je_sick_man_syria = {
 		}
 		custom_tooltip = sickman_syria_egypt
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
 			has_variable = sick_man_complete
 		}
 	}
+	
 	on_weekly_pulse = {
 		events = {
 			egyptian_crisis_events.1
@@ -1046,6 +1194,7 @@ je_sick_man_egypt = {
 					is_subject_of = ROOT
 				}
 			}
+			
 			AND = {
 				owns_entire_state_region = STATE_SINAI
 				owns_entire_state_region = STATE_UPPER_EGYPT
@@ -1054,16 +1203,19 @@ je_sick_man_egypt = {
 			}
 		}
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		add_loyalists = {
 			value = 0.1
 			culture = cu:turkish
 		}
+		
 		add_modifier = {
 			name = sick_man_absolute_egypt
 			years = 15
@@ -1071,6 +1223,7 @@ je_sick_man_egypt = {
 		}
 		remove_modifier ?= internal_strife
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
@@ -1091,16 +1244,19 @@ je_sick_man_absolute_islam = {
 			value = 0
 		}
 	}
+	
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
+		
 		AND = {
 			has_law = law_type:law_state_religion
 			has_law = law_type:law_inquisition
 			has_law = law_type:law_no_womens_rights
 			has_law = law_type:law_tenant_farmers
 		}
+		
 		OR = {
 			has_law = law_type:law_autocracy
 			has_law = law_type:law_technocracy
@@ -1108,34 +1264,41 @@ je_sick_man_absolute_islam = {
 			has_law = law_type:law_landed_voting
 		}
 	}
+	
 	on_complete = {
 		custom_tooltip = je_sick_man_advance
 		change_variable = {
 			name = sick_man_var
 			add = 1
 		}
+		
 		add_loyalists = {
 			value = 0.05
 			culture = cu:turkish
 		}
+		
 		add_modifier = {
 			name = sick_man_absolute_islamism
 			years = 7
 			is_decaying = yes
 		}
 	}
+	
 	invalid = {
 		custom_tooltip = {
 			text = finished_sick_man_tt
 			has_variable = sick_man_complete
 		}
 	}
+	
 	current_value = {
 		value = var:sick_man_absolute_tradition_var
 	}
+	
 	goal_add_value = {
 		add = 180
 	}
+	
 	on_monthly_pulse = {
 		effect = {
 			if = {
@@ -1146,6 +1309,7 @@ je_sick_man_absolute_islam = {
 						has_law = law_type:law_legal_guardianship
 						has_law = law_type:law_tenant_farmers
 					}
+					
 					OR = {
 						has_law = law_type:law_autocracy
 						has_law = law_type:law_technocracy
@@ -1153,6 +1317,7 @@ je_sick_man_absolute_islam = {
 						has_law = law_type:law_landed_voting
 					}
 				}
+				
 				change_variable = {
 					name = sick_man_absolute_tradition_var
 					add = 1

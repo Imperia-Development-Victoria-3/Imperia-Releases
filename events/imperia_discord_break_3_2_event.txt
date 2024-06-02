@@ -30,11 +30,13 @@ ideology_break_3_2_event.1 = {
 						name = imperia_discord_stopped_coup
 						months = 12
 					}
+					
 					change_discord = {
 						VALUE = -50
 					}
 				}
 			}
+			
 			66 = {
 				trigger_event = {
 					# Bad
@@ -47,10 +49,12 @@ ideology_break_3_2_event.1 = {
 					ruler = {
 						kill_character = yes
 					}
+					
 					add_modifier = {
 						name = imperia_discord_revolutionary_government
 						months = 12
 					}
+					
 					change_discord = {
 						VALUE = -100
 					}
@@ -58,6 +62,7 @@ ideology_break_3_2_event.1 = {
 			}
 		}
 	}
+	
 	option = {
 		name = ideology_break_3_2_event.1.b
 		# flee the city
@@ -67,6 +72,7 @@ ideology_break_3_2_event.1 = {
 				count >= 2
 			}
 		}
+		
 		random_list = {
 			33 = {
 				trigger_event = {
@@ -79,6 +85,7 @@ ideology_break_3_2_event.1 = {
 					custom_tooltip = civil_war_starts_tt
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					id = ideology_break_3_2_event.5
@@ -91,11 +98,13 @@ ideology_break_3_2_event.1 = {
 						name = imperia_discord_stopped_coup
 						months = 12
 					}
+					
 					change_discord = {
 						VALUE = -50
 					}
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					id = ideology_break_3_2_event.6
@@ -107,10 +116,12 @@ ideology_break_3_2_event.1 = {
 					ruler = {
 						kill_character = yes
 					}
+					
 					add_modifier = {
 						name = imperia_discord_revolutionary_government
 						months = 12
 					}
+					
 					change_discord = {
 						VALUE = -100
 					}
@@ -118,15 +129,18 @@ ideology_break_3_2_event.1 = {
 			}
 		}
 	}
+	
 	option = {
 		name = ideology_break_3_2_event.1.c
 		ruler = {
 			kill_character = yes
 		}
+		
 		add_modifier = {
 			name = imperia_discord_revolutionary_government
 			months = 12
 		}
+		
 		change_discord = {
 			VALUE = -200
 		}
@@ -151,6 +165,7 @@ ideology_break_3_2_event.2 = {
 			name = imperia_discord_stopped_coup
 			months = 12
 		}
+		
 		change_discord = {
 			VALUE = -50
 		}
@@ -174,10 +189,12 @@ ideology_break_3_2_event.3 = {
 		ruler = {
 			kill_character = yes
 		}
+		
 		add_modifier = {
 			name = imperia_discord_revolutionary_government
 			months = 12
 		}
+		
 		change_discord = {
 			VALUE = -100
 		}
@@ -202,6 +219,7 @@ ideology_break_3_2_event.4 = {
 			STRENGTH = 50
 		}
 	}
+	
 	option = {
 		name = ideology_break_3_2_event.4.a
 		default_option = yes
@@ -230,6 +248,7 @@ ideology_break_3_2_event.5 = {
 			name = imperia_discord_stopped_coup
 			months = 12
 		}
+		
 		change_discord = {
 			VALUE = -50
 		}
@@ -254,10 +273,12 @@ ideology_break_3_2_event.6 = {
 		ruler = {
 			kill_character = yes
 		}
+		
 		add_modifier = {
 			name = imperia_discord_revolutionary_government
 			months = 12
 		}
+		
 		change_discord = {
 			VALUE = -100
 		}

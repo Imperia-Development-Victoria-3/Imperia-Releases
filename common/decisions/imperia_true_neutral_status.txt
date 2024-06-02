@@ -5,6 +5,7 @@
 			has_journal_entry = je_imperia_true_neutral_status
 		}
 	}
+	
 	possible = {
 		#Cant have any infamy
 		infamy = 0
@@ -24,10 +25,12 @@
 		any_overlord_or_above = {
 			count = 0
 		}
+		
 		any_subject_or_below = {
 			count = 0
 		}
 	}
+	
 	when_taken = {
 		#Initialise the (amount of) current signers var
 		set_variable = {
@@ -39,6 +42,7 @@
 			name = true_neutral_required_signers_var
 			value = 0
 		}
+		
 		every_country = {
 			limit = {
 				#fetch great powers and neighbours
@@ -46,6 +50,7 @@
 					country_rank >= rank_value:great_power
 					is_adjacent_to_country = root
 				}
+				
 				NOR = {
 					is_country_type = unrecognized
 					is_country_type = decentralized
@@ -62,6 +67,7 @@
 					name = true_neutral_required_signers_var
 					add = 1
 				}
+				
 				add_to_variable_list = {
 					name = true_neutral_applicant_signee_list
 					target = prev
@@ -69,6 +75,7 @@
 			}
 			imperia_update_unsigned = yes
 		}
+		
 		custom_tooltip = {
 			text = add_journal_neutrality_treaty_tt
 			add_journal_entry = {
@@ -76,6 +83,7 @@
 			}
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
@@ -86,6 +94,7 @@ consider_true_neutral_status = {
 		#Show this decision if theres any applicants for true neutral status
 		has_variable_list = true_neutral_applicants_consideration
 	}
+	
 	possible = {
 		hidden_trigger = {
 			variable_list_size = {
@@ -95,12 +104,14 @@ consider_true_neutral_status = {
 		}
 		is_at_war = no
 	}
+	
 	when_taken = {
 		trigger_event = {
 			id = imperia_true_neutral_status.2
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 1
 	}

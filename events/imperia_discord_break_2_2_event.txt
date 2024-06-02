@@ -32,15 +32,18 @@ ideology_break_2_2_event.1 = {
 							months = 12
 						}
 					}
+					
 					add_modifier = {
 						name = imperia_discord_promises_of_change
 						months = 12
 					}
+					
 					change_discord = {
 						VALUE = -15
 					}
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					# Neutral
@@ -49,6 +52,7 @@ ideology_break_2_2_event.1 = {
 					popup = yes
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					# Bad
@@ -62,6 +66,7 @@ ideology_break_2_2_event.1 = {
 						name = imperia_discord_tyrant_government
 						months = 12
 					}
+					
 					change_discord = {
 						VALUE = 35
 					}
@@ -69,6 +74,7 @@ ideology_break_2_2_event.1 = {
 			}
 		}
 	}
+	
 	option = {
 		name = ideology_break_2_2_event.1.b
 		# Ban the march
@@ -77,6 +83,7 @@ ideology_break_2_2_event.1 = {
 				has_law = law_type:law_protected_speech
 			}
 		}
+		
 		random_list = {
 			33 = {
 				trigger_event = {
@@ -85,6 +92,7 @@ ideology_break_2_2_event.1 = {
 					popup = yes
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					id = ideology_break_2_2_event.6
@@ -98,6 +106,7 @@ ideology_break_2_2_event.1 = {
 					}
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					id = ideology_break_2_2_event.7
@@ -110,6 +119,7 @@ ideology_break_2_2_event.1 = {
 						name = imperia_discord_capital_slaughter
 						months = 12
 					}
+					
 					change_discord = {
 						VALUE = 50
 					}
@@ -117,12 +127,14 @@ ideology_break_2_2_event.1 = {
 			}
 		}
 	}
+	
 	option = {
 		name = ideology_break_2_2_event.1.c
 		# imprison those organising the event
 		trigger = {
 			has_law = law_type:law_outlawed_dissent
 		}
+		
 		change_discord = {
 			VALUE = 40
 		}
@@ -148,10 +160,12 @@ ideology_break_2_2_event.2 = {
 				months = 12
 			}
 		}
+		
 		add_modifier = {
 			name = imperia_discord_promises_of_change
 			months = 12
 		}
+		
 		change_discord = {
 			VALUE = -15
 		}
@@ -193,6 +207,7 @@ ideology_break_2_2_event.4 = {
 			name = imperia_discord_tyrant_government
 			months = 12
 		}
+		
 		change_discord = {
 			VALUE = 35
 		}
@@ -254,6 +269,7 @@ ideology_break_2_2_event.7 = {
 			name = imperia_discord_capital_slaughter
 			months = 12
 		}
+		
 		change_discord = {
 			VALUE = 50
 		}

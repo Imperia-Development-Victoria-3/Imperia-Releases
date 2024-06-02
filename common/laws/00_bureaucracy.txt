@@ -6,7 +6,7 @@
 		state_bureaucracy_population_base_cost_factor_mult = -0.3
 		country_aristocrats_pol_str_mult = 0.25
 	}
-
+	
 	on_enact = {
 		custom_tooltip = urban_aristocrats_int_ig_shift_effect_tt
 		if = {
@@ -16,13 +16,16 @@
 			custom_tooltip = bureaucrats_pb_ig_shift_effect_negative_tt
 		}
 	}
+	
 	disallowing_laws = {
 		law_council_republic
 	}
+	
 	possible_political_movements = {
 		law_appointed_bureaucrats
 		law_elected_bureaucrats
 	}
+	
 	pop_support = {
 		value = 0
 		# Aristocrats like nepotism
@@ -36,13 +39,14 @@
 			}
 		}
 	}
-
+	
 	ai_will_do = {
 		exists = ruler
 		ruler = {
 			has_ideology = ideology:ideology_traditionalist
 		}
 	}
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -69,10 +73,11 @@ law_appointed_bureaucrats = {
 		state_loyalists_from_sol_change_mult = 0.05
 		state_radicals_from_sol_change_mult = -0.05
 	}
+	
 	possible_political_movements = {
 		law_appointed_bureaucrats
 	}
-
+	
 	on_enact = {
 		if = {
 			limit = {
@@ -80,6 +85,7 @@ law_appointed_bureaucrats = {
 			}
 			custom_tooltip = bureaucrats_pb_ig_shift_effect_negative_tt
 		}
+		
 		if = {
 			limit = {
 				has_law = law_type:law_hereditary_bureaucrats
@@ -87,7 +93,7 @@ law_appointed_bureaucrats = {
 			custom_tooltip = urban_aristocrats_int_ig_shift_effect_negative_tt
 		}
 	}
-
+	
 	pop_support = {
 		value = 0
 		# Academics like technocracy
@@ -116,6 +122,7 @@ law_appointed_bureaucrats = {
 				value = 0.1
 			}
 		}
+		
 		add = {
 			desc = "POP_CLERGYMEN"
 			if = {
@@ -128,6 +135,7 @@ law_appointed_bureaucrats = {
 				value = 0.15
 			}
 		}
+		
 		add = {
 			desc = "POP_FARMERS"
 			if = {
@@ -140,6 +148,7 @@ law_appointed_bureaucrats = {
 				value = 0.2
 			}
 		}
+		
 		add = {
 			desc = "POP_CAPITALISTS"
 			if = {
@@ -152,6 +161,7 @@ law_appointed_bureaucrats = {
 				value = 0.25
 			}
 		}
+		
 		add = {
 			desc = "POP_BUREAUCRATS"
 			if = {
@@ -164,6 +174,7 @@ law_appointed_bureaucrats = {
 				value = 0.1
 			}
 		}
+		
 		add = {
 			desc = "POP_SHOPKEEPERS"
 			if = {
@@ -176,6 +187,7 @@ law_appointed_bureaucrats = {
 				value = 0.25
 			}
 		}
+		
 		add = {
 			desc = "POP_LABORERS"
 			if = {
@@ -189,6 +201,7 @@ law_appointed_bureaucrats = {
 			}
 		}
 	}
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -216,9 +229,11 @@ law_meritocratic_bureaucracy = {
 		country_academics_pol_str_mult = 0.05
 		state_radicals_from_sol_change_mult = 0.05
 	}
+	
 	possible_political_movements = {
 		law_meritocratic_bureaucracy
 	}
+	
 	on_enact = {
 		if = {
 			limit = {
@@ -226,6 +241,7 @@ law_meritocratic_bureaucracy = {
 			}
 			custom_tooltip = bureaucrats_pb_ig_shift_effect_negative_tt
 		}
+		
 		if = {
 			limit = {
 				has_law = law_type:law_hereditary_bureaucrats
@@ -233,6 +249,7 @@ law_meritocratic_bureaucracy = {
 			custom_tooltip = urban_aristocrats_int_ig_shift_effect_negative_tt
 		}
 	}
+	
 	pop_support = {
 		value = 0
 		# Academics like technocracy
@@ -259,8 +276,8 @@ law_meritocratic_bureaucracy = {
 			value = 0.25
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -283,6 +300,7 @@ law_elected_bureaucrats = {
 		law_technocracy
 		law_elder_council
 	}
+	
 	modifier = {
 		country_bureaucracy_investment_cost_factor_mult = -0.15
 		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.15
@@ -290,7 +308,7 @@ law_elected_bureaucrats = {
 		state_loyalists_from_sol_change_mult = 0.1
 		state_radicals_from_sol_change_mult = 0.1
 	}
-
+	
 	on_enact = {
 		custom_tooltip = bureaucrats_pb_ig_shift_effect_tt
 		if = {
@@ -304,6 +322,7 @@ law_elected_bureaucrats = {
 	possible_political_movements = {
 		law_appointed_bureaucrats
 	}
+	
 	pop_support = {
 		value = 0
 		# Bureuacrats like non-hereditary
@@ -320,8 +339,8 @@ law_elected_bureaucrats = {
 			value = 0.25
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {

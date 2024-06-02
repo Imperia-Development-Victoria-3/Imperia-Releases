@@ -5,11 +5,13 @@
 		c:TUR = {
 			has_journal_entry = je_sick_man_liberal_kurdish
 		}
+		
 		NOT = {
 			is_subject_type = subject_type_protectorate
 		}
 		is_subject_of = c:TUR
 	}
+	
 	possible = {
 		custom_tooltip = {
 			text = kurdish_autonomy_asked_recently_tt
@@ -20,6 +22,7 @@
 			}
 		}
 	}
+	
 	when_taken = {
 		c:TUR = {
 			trigger_event = {
@@ -29,6 +32,7 @@
 			}
 		}
 	}
+	
 	ai_chance = {
 		base = 15
 	}

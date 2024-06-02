@@ -4,6 +4,7 @@
 		limit = {
 			exists = scope:target_country
 		}
+		
 		if = {
 			limit = {
 				root = {
@@ -11,6 +12,7 @@
 					has_law = law_type:law_state_religion
 				}
 			}
+			
 			scope:target_country = {
 				if = {
 					limit = {
@@ -18,6 +20,7 @@
 					}
 					add = 0
 				}
+				
 				else_if = {
 					limit = {
 						religion = {
@@ -26,6 +29,7 @@
 					}
 					add = political_discord_change_miniscule
 				}
+				
 				else_if = {
 					limit = {
 						religion = {
@@ -34,17 +38,20 @@
 					}
 					add = political_discord_change_small
 				}
+				
 				else_if = {
 					limit = {
 						country_has_state_religion = rel:atheist
 					}
 					add = political_discord_change_huge
 				}
+				
 				else = {
 					add = political_discord_change_xl
 				}
 			}
 		}
+		
 		if = {
 			limit = {
 				root = {
@@ -53,6 +60,7 @@
 					has_law = law_type:law_freedom_of_conscience
 				}
 			}
+			
 			scope:target_country = {
 				if = {
 					limit = {
@@ -60,6 +68,7 @@
 					}
 					add = 0
 				}
+				
 				else_if = {
 					limit = {
 						religion = {
@@ -68,6 +77,7 @@
 					}
 					add = 0
 				}
+				
 				else_if = {
 					limit = {
 						religion = {
@@ -76,17 +86,20 @@
 					}
 					add = 0
 				}
+				
 				else_if = {
 					limit = {
 						country_has_state_religion = rel:atheist
 					}
 					add = political_discord_change_small
 				}
+				
 				else = {
 					add = political_discord_change_small
 				}
 			}
 		}
+		
 		if = {
 			limit = {
 				root = {
@@ -94,6 +107,7 @@
 					has_law = law_type:law_total_separation
 				}
 			}
+			
 			scope:target_country = {
 				if = {
 					limit = {
@@ -101,6 +115,7 @@
 					}
 					add = 0
 				}
+				
 				else_if = {
 					limit = {
 						religion = {
@@ -109,6 +124,7 @@
 					}
 					add = 0
 				}
+				
 				else_if = {
 					limit = {
 						religion = {
@@ -117,6 +133,7 @@
 					}
 					add = 0
 				}
+				
 				else_if = {
 					limit = {
 						# Miniscule dislike for atheism, since atheists are against religion.
@@ -124,9 +141,11 @@
 					}
 					add = political_discord_change_miniscule
 				}
+				
 				else = {
 					add = 0
 				}
+				
 				if = {
 					limit = {
 						# Slight dislike for theocracies. You shouldn't mix state and religion, duh!
@@ -136,6 +155,7 @@
 				}
 			}
 		}
+		
 		if = {
 			limit = {
 				root = {
@@ -143,6 +163,7 @@
 					has_law = law_type:law_state_atheism
 				}
 			}
+			
 			scope:target_country = {
 				if = {
 					limit = {
@@ -150,15 +171,18 @@
 					}
 					add = 0
 				}
+				
 				else_if = {
 					limit = {
 						has_law = law_type:law_total_separation
 					}
 					add = political_discord_change_medium
 				}
+				
 				else = {
 					add = political_discord_change_huge
 				}
+				
 				if = {
 					limit = {
 						# Atheists *really* hate theocracies!
@@ -168,6 +192,7 @@
 				}
 			}
 		}
+		
 		if = {
 			limit = {
 				root = {

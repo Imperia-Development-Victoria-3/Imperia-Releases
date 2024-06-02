@@ -2,7 +2,6 @@
 	base_enactment_days = 30
 	law_group_category = human_rights
 	enactment_approval_mult = 0.4
-	
 	progressive_movement_chance = 0
 	regressive_movement_chance = 0
 }

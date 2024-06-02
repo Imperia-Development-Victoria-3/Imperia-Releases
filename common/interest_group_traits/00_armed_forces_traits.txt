@@ -30,7 +30,6 @@ ig_trait_materiel_waste = {
 ig_trait_elan_vital = {
 	icon = "gfx/interface/icons/ig_trait_icons/patriotic_fervor.dds"
 	min_approval = loyal
-	
 	modifier = {
 		unit_morale_recovery_mult = 0.15
 		military_formation_movement_speed_mult = 0.1	#0
@@ -40,7 +39,6 @@ ig_trait_elan_vital = {
 ig_trait_newly_created_army = {
 	icon = "gfx/interface/icons/ig_trait_icons/veteran_consultation.dds"
 	min_approval = happy
-	
 	modifier = {
 		country_military_goods_cost_mult = -0.05	#0.15
 	}
@@ -49,7 +47,6 @@ ig_trait_newly_created_army = {
 ig_trait_self_strengthening = {
 	icon = "gfx/interface/icons/ig_trait_icons/patriotic_fervor.dds"
 	min_approval = loyal
-	
 	modifier = {
 		country_military_tech_research_speed_mult = 0.1
 	}
@@ -58,7 +55,6 @@ ig_trait_self_strengthening = {
 ig_trait_parochial_leadership = {
 	icon = "gfx/interface/icons/ig_trait_icons/materiel_waste.dds"
 	max_approval = unhappy
-	
 	modifier = {
 		unit_morale_recovery_mult = -0.15	#0.1
 		unit_morale_loss_mult = 0.15	#0.1
@@ -68,7 +64,6 @@ ig_trait_parochial_leadership = {
 ig_trait_el_buen_jefe = {
 	icon = "gfx/interface/icons/ig_trait_icons/patriotic_fervor.dds"
 	min_approval = loyal
-	
 	modifier = {
 		country_authority_mult = 0.1
 		country_authority_add = 100	#0
@@ -79,7 +74,6 @@ ig_trait_el_buen_jefe = {
 ig_trait_clube_militar = {
 	icon = "gfx/interface/icons/ig_trait_icons/veteran_consultation.dds"
 	min_approval = happy
-	
 	modifier = {
 		country_authority_mult = 0.05
 		country_military_tech_research_speed_mult = 0.05
@@ -89,7 +83,6 @@ ig_trait_clube_militar = {
 ig_trait_coronelismo = {
 	icon = "gfx/interface/icons/ig_trait_icons/materiel_waste.dds"
 	max_approval = unhappy
-	
 	modifier = {
 		state_radicals_from_sol_change_mult = 0.1
 		country_military_goods_cost_mult = 0.2

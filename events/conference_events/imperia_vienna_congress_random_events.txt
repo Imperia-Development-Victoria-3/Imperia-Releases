@@ -25,10 +25,12 @@ congress_random_event.1 = {
 			relations:root <= relations_threshold:poor
 		}
 	}
+	
 	immediate = {
 		root = {
 			save_scope_as = shoe_thrower
 		}
+		
 		random_country = {
 			limit = {
 				# Should only throw shoes at attendees they have bad relations with
@@ -41,6 +43,7 @@ congress_random_event.1 = {
 			save_scope_as = shoe_target
 		}
 	}
+	
 	option = {
 		# Throw the shoe
 		name = congress_random_event.1.a
@@ -57,6 +60,7 @@ congress_random_event.1 = {
 					post_notification = shoe_miss_for_target
 				}
 			}
+			
 			50 = {
 				# Hit!
 				custom_tooltip = shoe_hit_tt
@@ -64,11 +68,13 @@ congress_random_event.1 = {
 					country = scope:shoe_target
 					value = -10
 				}
+				
 				scope:shoe_target = {
 					trigger_event = {
 						id = congress_random_event.2
 						popup = yes
 					}
+					
 					show_as_tooltip = {
 						add_modifier = {
 							name = imperia_vienna_congress_scaling_negative_prestige_modifier
@@ -86,6 +92,7 @@ congress_random_event.1 = {
 							is_congress_observer = no
 						}
 					}
+					
 					custom_tooltip = {
 						text = everyone_notices_your_hijinks_tt
 						every_country = {
@@ -94,12 +101,14 @@ congress_random_event.1 = {
 								this != scope:shoe_target
 								this != scope:shoe_thrower
 							}
+							
 							trigger_event = {
 								id = congress_random_event.3
 							}
 						}
 					}
 				}
+				
 				else = {
 					# Else theres a 15% chance that people notices
 					custom_tooltip = {
@@ -110,6 +119,7 @@ congress_random_event.1 = {
 								this != scope:shoe_target
 								this != scope:shoe_thrower
 							}
+							
 							random = {
 								chance = 15
 								trigger_event = {
@@ -121,12 +131,14 @@ congress_random_event.1 = {
 				}
 			}
 		}
+		
 		add_modifier = {
 			name = imperia_vienna_congress_scaling_negative_prestige_modifier
 			years = 1
 			is_decaying = yes
 			multiplier = 5
 		}
+		
 		scope:shoe_target = {
 			# A 2 month cooldown to being thrown shoes at
 			set_variable = {
@@ -134,10 +146,12 @@ congress_random_event.1 = {
 				days = 60
 			}
 		}
+		
 		ai_chance = {
 			base = 20
 		}
 	}
+	
 	option = {
 		# Behave
 		default_option = yes
@@ -165,6 +179,7 @@ congress_random_event.2 = {
 		is_congress_attendee = yes
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	immediate = {
 		add_modifier = {
 			name = imperia_vienna_congress_scaling_negative_prestige_modifier
@@ -173,6 +188,7 @@ congress_random_event.2 = {
 			multiplier = 5
 		}
 	}
+	
 	option = {
 		# Someone just threw a shoe at us!
 		name = congress_random_event.2.a
@@ -204,6 +220,7 @@ congress_random_event.3 = {
 		is_congress_attendee = yes
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	option = {
 		# Someone just threw a shoe! Awesome!
 		name = congress_random_event.3.a
@@ -211,14 +228,17 @@ congress_random_event.3 = {
 			country = scope:shoe_target
 			value = -10
 		}
+		
 		change_relations = {
 			country = scope:shoe_thrower
 			value = 10
 		}
+		
 		ai_chance = {
 			base = 10
 		}
 	}
+	
 	option = {
 		# Someone just threw a shoe!
 		name = congress_random_event.3.b
@@ -227,6 +247,7 @@ congress_random_event.3 = {
 			base = 80
 		}
 	}
+	
 	option = {
 		# Someone just threw a shoe! Awful
 		name = congress_random_event.3.c
@@ -234,10 +255,12 @@ congress_random_event.3 = {
 			country = scope:shoe_target
 			value = 10
 		}
+		
 		change_relations = {
 			country = scope:shoe_thrower
 			value = -10
 		}
+		
 		ai_chance = {
 			base = 10
 		}
@@ -263,6 +286,7 @@ congress_random_event.4 = {
 		is_congress_observer = yes
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	immediate = {
 		enable_random_congress_random_event_4_option = yes
 		enable_random_congress_random_event_4_option = yes
@@ -282,6 +306,7 @@ congress_random_event.4 = {
 				}
 			}
 		}
+		
 		random_country = {
 			limit = {
 				is_congress_observer = yes
@@ -297,6 +322,7 @@ congress_random_event.4 = {
 				}
 			}
 		}
+		
 		random_country = {
 			limit = {
 				is_congress_observer = yes
@@ -314,24 +340,29 @@ congress_random_event.4 = {
 			}
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.a
 		trigger = {
 			has_variable = event_option_a_enabled
 		}
+		
 		change_relations = {
 			country = global_var:imperia_vienna_congress_session_initiator
 			value = 10
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.b
 		trigger = {
 			has_variable = event_option_b_enabled
 		}
+		
 		global_var:imperia_vienna_congress_session_initiator = {
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_positive_prestige_modifier
@@ -340,36 +371,43 @@ congress_random_event.4 = {
 				is_decaying = yes
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.c
 		trigger = {
 			has_variable = event_option_c_enabled
 		}
+		
 		add_modifier = {
 			name = imperia_vienna_congress_scaling_positive_prestige_modifier
 			multiplier = 2
 			years = 1
 			is_decaying = yes
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.d
 		trigger = {
 			has_variable = event_option_d_enabled
 		}
+		
 		random_country = {
 			limit = {
 				this != root
 				is_congress_attendee = yes
 				is_congress_observer = no
 			}
+			
 			ruler = {
 				add_modifier = {
 					name = imperia_ruler_popularity
@@ -379,15 +417,18 @@ congress_random_event.4 = {
 				}
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.e
 		trigger = {
 			has_variable = event_option_e_enabled
 		}
+		
 		global_var:imperia_vienna_congress_session_initiator = {
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_positive_prestige_modifier
@@ -396,15 +437,18 @@ congress_random_event.4 = {
 				is_decaying = yes
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.f
 		trigger = {
 			has_variable = event_option_f_enabled
 		}
+		
 		var:notable_attendee_scope_var = {
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_positive_prestige_modifier
@@ -412,6 +456,7 @@ congress_random_event.4 = {
 				years = 1
 				is_decaying = yes
 			}
+			
 			ruler = {
 				add_modifier = {
 					name = imperia_ruler_popularity
@@ -421,92 +466,112 @@ congress_random_event.4 = {
 				}
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.g
 		trigger = {
 			has_variable = event_option_g_enabled
 		}
+		
 		every_country = {
 			limit = {
 				is_congress_target = yes
 			}
+			
 			if = {
 				limit = {
 					can_research = analytical_philosophy
 				}
+				
 				add_technology_progress = {
 					progress = 1000
 					technology = analytical_philosophy
 				}
 			}
+			
 			else_if = {
 				limit = {
 					can_research = psychoanalysis
 				}
+				
 				add_technology_progress = {
 					progress = 825
 					technology = psychoanalysis
 				}
 			}
+			
 			else_if = {
 				limit = {
 					can_research = philosophical_pragmatism
 				}
+				
 				add_technology_progress = {
 					progress = 650
 					technology = philosophical_pragmatism
 				}
 			}
+			
 			else_if = {
 				limit = {
 					can_research = psychiatry
 				}
+				
 				add_technology_progress = {
 					progress = 500
 					technology = psychiatry
 				}
 			}
+			
 			else_if = {
 				limit = {
 					can_research = empiricism
 				}
+				
 				add_technology_progress = {
 					progress = 375
 					technology = empiricism
 				}
 			}
+			
 			else_if = {
 				limit = {
 					can_research = academia
 				}
+				
 				add_technology_progress = {
 					progress = 375
 					technology = academia
 				}
 			}
+			
 			else_if = {
 				limit = {
 					can_research = rationalism
 				}
+				
 				add_technology_progress = {
 					progress = 375
 					technology = rationalism
 				}
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.h
 		trigger = {
 			has_variable = event_option_h_enabled
 		}
+		
 		scope:observer_1_scope = {
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_positive_prestige_modifier
@@ -515,6 +580,7 @@ congress_random_event.4 = {
 				is_decaying = yes
 			}
 		}
+		
 		scope:observer_2_scope = {
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_positive_prestige_modifier
@@ -523,87 +589,106 @@ congress_random_event.4 = {
 				is_decaying = yes
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.i
 		trigger = {
 			has_variable = event_option_i_enabled
 		}
+		
 		if = {
 			limit = {
 				can_research = analytical_philosophy
 			}
+			
 			add_technology_progress = {
 				progress = 1000
 				technology = analytical_philosophy
 			}
 		}
+		
 		else_if = {
 			limit = {
 				can_research = psychoanalysis
 			}
+			
 			add_technology_progress = {
 				progress = 825
 				technology = psychoanalysis
 			}
 		}
+		
 		else_if = {
 			limit = {
 				can_research = philosophical_pragmatism
 			}
+			
 			add_technology_progress = {
 				progress = 650
 				technology = philosophical_pragmatism
 			}
 		}
+		
 		else_if = {
 			limit = {
 				can_research = psychiatry
 			}
+			
 			add_technology_progress = {
 				progress = 500
 				technology = psychiatry
 			}
 		}
+		
 		else_if = {
 			limit = {
 				can_research = empiricism
 			}
+			
 			add_technology_progress = {
 				progress = 375
 				technology = empiricism
 			}
 		}
+		
 		else_if = {
 			limit = {
 				can_research = academia
 			}
+			
 			add_technology_progress = {
 				progress = 375
 				technology = academia
 			}
 		}
+		
 		else_if = {
 			limit = {
 				can_research = rationalism
 			}
+			
 			add_technology_progress = {
 				progress = 375
 				technology = rationalism
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.j
 		trigger = {
 			has_variable = event_option_j_enabled
 		}
+		
 		global_var:imperia_vienna_congress_session_initiator = {
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_positive_prestige_modifier
@@ -612,40 +697,48 @@ congress_random_event.4 = {
 				is_decaying = yes
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.k
 		trigger = {
 			has_variable = event_option_k_enabled
 		}
+		
 		random_country = {
 			limit = {
 				is_congress_attendee = yes
 				this != root
 			}
+			
 			change_relations = {
 				country = root
 				value = 10
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = congress_random_event.4.l
 		trigger = {
 			has_variable = event_option_l_enabled
 		}
+		
 		every_country = {
 			limit = {
 				capital.region = global_var:imperia_vienna_congress_session_target.capital.region
 				this != root
 				is_congress_target = no
 			}
+			
 			root = {
 				change_relations = {
 					country = prev
@@ -653,10 +746,12 @@ congress_random_event.4 = {
 				}
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	after = {
 		clear_congress_random_event_4_option_variables = yes
 	}
@@ -677,16 +772,19 @@ congress_random_event.5 = {
 			is_in_game_of_whist = no
 		}
 	}
+	
 	immediate = {
 		save_scope_as = player_1
 		set_variable = {
 			name = players_selected_playstyle
 			value = 0
 		}
+		
 		set_variable = {
 			name = points_team_1
 			value = 0
 		}
+		
 		set_variable = {
 			name = points_team_2
 			value = 0
@@ -701,6 +799,7 @@ congress_random_event.5 = {
 			save_scope_as = player_2
 			set_variable = whist_player
 		}
+		
 		random_country = {
 			limit = {
 				is_congress_observer = yes
@@ -711,6 +810,7 @@ congress_random_event.5 = {
 			save_scope_as = player_3
 			set_variable = whist_player
 		}
+		
 		random_country = {
 			limit = {
 				is_congress_observer = yes
@@ -722,24 +822,28 @@ congress_random_event.5 = {
 			save_scope_as = player_4
 			set_variable = whist_player
 		}
+		
 		scope:player_1 = {
 			trigger_event = {
 				id = congress_random_event.6
 				popup = yes
 			}
 		}
+		
 		scope:player_2 = {
 			trigger_event = {
 				id = congress_random_event.6
 				popup = yes
 			}
 		}
+		
 		scope:player_3 = {
 			trigger_event = {
 				id = congress_random_event.6
 				popup = yes
 			}
 		}
+		
 		scope:player_4 = {
 			trigger_event = {
 				id = congress_random_event.6
@@ -774,6 +878,7 @@ congress_random_event.6 = {
 			base = 45
 		}
 	}
+	
 	option = {
 		# Play smart
 		# Higher chance of winning points
@@ -784,6 +889,7 @@ congress_random_event.6 = {
 			base = 45
 		}
 	}
+	
 	option = {
 		# try to communicate
 		# Even higher chance of winning; less points with your partner
@@ -794,6 +900,7 @@ congress_random_event.6 = {
 			base = 10
 		}
 	}
+	
 	option = {
 		# Cheat
 		# Highest chance of winning, risk of getting caught costing you relations with everyone involved
@@ -805,16 +912,19 @@ congress_random_event.6 = {
 			custom_tooltip = whist_gets_caught_tt
 			set_variable = caught_cheating_in_whist
 		}
+		
 		ai_chance = {
 			base = 0
 		}
 	}
+	
 	after = {
 		scope:player_1 = {
 			change_variable = {
 				name = players_selected_playstyle
 				add = 1
 			}
+			
 			trigger_event = {
 				id = congress_random_event.7
 			}
@@ -829,6 +939,7 @@ congress_random_event.7 = {
 	trigger = {
 		var:players_selected_playstyle >= 4
 	}
+	
 	immediate = {
 		play_whist_round = yes
 		play_whist_round = yes
@@ -850,6 +961,7 @@ congress_random_event.7 = {
 				days = 7
 			}
 		}
+		
 		scope:player_2 = {
 			trigger_event = {
 				id = congress_random_event.8
@@ -857,6 +969,7 @@ congress_random_event.7 = {
 				days = 7
 			}
 		}
+		
 		scope:player_3 = {
 			trigger_event = {
 				id = congress_random_event.8
@@ -864,6 +977,7 @@ congress_random_event.7 = {
 				days = 7
 			}
 		}
+		
 		scope:player_4 = {
 			trigger_event = {
 				id = congress_random_event.8
@@ -893,6 +1007,7 @@ congress_random_event.8 = {
 					whist_we_got_caught_cheating = yes
 				}
 			}
+			
 			triggered_desc = {
 				# Someone cheated!
 				desc = congress_random_event.8.desc
@@ -900,6 +1015,7 @@ congress_random_event.8 = {
 					whist_someone_got_caught_cheating = yes
 				}
 			}
+			
 			triggered_desc = {
 				# grand slam: 13 points
 				desc = congress_random_event.8.d2
@@ -907,6 +1023,7 @@ congress_random_event.8 = {
 					whist_ended_in_grand_slam_for_us = yes
 				}
 			}
+			
 			triggered_desc = {
 				# small slam: 13 points
 				desc = congress_random_event.8.d3
@@ -914,6 +1031,7 @@ congress_random_event.8 = {
 					whist_ended_in_small_slam_for_us = yes
 				}
 			}
+			
 			triggered_desc = {
 				# won!
 				desc = congress_random_event.8.d4
@@ -921,6 +1039,7 @@ congress_random_event.8 = {
 					whist_ended_in_win_for_us = yes
 				}
 			}
+			
 			triggered_desc = {
 				# lost!
 				desc = congress_random_event.8.d5
@@ -941,20 +1060,24 @@ congress_random_event.8 = {
 						this != root
 						has_variable = caught_cheating_in_whist
 					}
+					
 					scope:player_2 = {
 						this != root
 						has_variable = caught_cheating_in_whist
 					}
+					
 					scope:player_3 = {
 						this != root
 						has_variable = caught_cheating_in_whist
 					}
+					
 					scope:player_4 = {
 						this != root
 						has_variable = caught_cheating_in_whist
 					}
 				}
 			}
+			
 			random_country = {
 				limit = {
 					has_variable = caught_cheating_in_whist
@@ -969,71 +1092,90 @@ congress_random_event.8 = {
 				save_scope_as = cheating_country_other
 			}
 		}
+		
 		if = {
 			limit = {
 				this = scope:player_1
 			}
+			
 			scope:player_3 = {
 				save_scope_as = whist_teammate
 			}
+			
 			scope:player_2 = {
 				save_scope_as = whist_opponent_1
 			}
+			
 			scope:player_4 = {
 				save_scope_as = whist_opponent_2
 			}
 		}
+		
 		else_if = {
 			limit = {
 				this = scope:player_2
 			}
+			
 			scope:player_4 = {
 				save_scope_as = whist_teammate
 			}
+			
 			scope:player_1 = {
 				save_scope_as = whist_opponent_1
 			}
+			
 			scope:player_3 = {
 				save_scope_as = whist_opponent_2
 			}
 		}
+		
 		else_if = {
 			limit = {
 				this = scope:player_3
 			}
+			
 			scope:player_1 = {
 				save_scope_as = whist_teammate
 			}
+			
 			scope:player_2 = {
 				save_scope_as = whist_opponent_1
 			}
+			
 			scope:player_4 = {
 				save_scope_as = whist_opponent_2
 			}
 		}
+		
 		else_if = {
 			limit = {
 				this = scope:player_4
 			}
+			
 			scope:player_2 = {
 				save_scope_as = whist_teammate
 			}
+			
 			scope:player_1 = {
 				save_scope_as = whist_opponent_1
 			}
+			
 			scope:player_3 = {
 				save_scope_as = whist_opponent_2
 			}
 		}
+		
 		set_variable = {
 			name = team_1_points
 			value = scope:player_1.var:points_team_1
 		}
+		
 		set_variable = {
 			name = team_2_points
 			value = scope:player_1.var:points_team_2
 		}
 	}
+	
 	option = {
 		# grand slam
 		name = congress_random_event.8.a
@@ -1043,6 +1185,7 @@ congress_random_event.8 = {
 		}
 		end_whist_game = yes
 	}
+	
 	option = {
 		# small slam
 		name = congress_random_event.8.b
@@ -1052,6 +1195,7 @@ congress_random_event.8 = {
 		}
 		end_whist_game = yes
 	}
+	
 	option = {
 		# won
 		name = congress_random_event.8.c
@@ -1061,6 +1205,7 @@ congress_random_event.8 = {
 		}
 		end_whist_game = yes
 	}
+	
 	option = {
 		# loss
 		name = congress_random_event.8.d
@@ -1070,6 +1215,7 @@ congress_random_event.8 = {
 		}
 		end_whist_game = yes
 	}
+	
 	option = {
 		# Someone cheated!
 		name = congress_random_event.8.e
@@ -1079,6 +1225,7 @@ congress_random_event.8 = {
 		}
 		end_whist_game_cheater = yes
 	}
+	
 	option = {
 		# You cheated and got caught
 		name = congress_random_event.8.f
@@ -1087,6 +1234,7 @@ congress_random_event.8 = {
 		}
 		end_whist_game_cheater = yes
 	}
+	
 	after = {
 		whist_variable_cleanup = yes
 	}
@@ -1104,24 +1252,29 @@ congress_random_event.9 = {
 			has_global_variable = masked_ball_held
 		}
 	}
+	
 	immediate = {
 		set_global_variable = masked_ball_held
 		set_global_variable = {
 			name = ready_for_masked_ball
 			value = 0
 		}
+		
 		set_global_variable = {
 			name = masked_ball_went_home
 			value = 0
 		}
+		
 		set_global_variable = {
 			name = masked_ball_over
 			value = 0
 		}
+		
 		every_country = {
 			limit = {
 				is_congress_attendee = yes
 			}
+			
 			trigger_event = {
 				id = congress_random_event.10
 				popup = yes
@@ -1146,24 +1299,29 @@ congress_random_event.10 = {
 	trigger = {
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	immediate = {
 		# Choose 5 costumes randomly
 		save_scope_value_as = {
 			name = costume_choice_1
 			value = random_costume_choice
 		}
+		
 		save_scope_value_as = {
 			name = costume_choice_2
 			value = random_costume_choice
 		}
+		
 		save_scope_value_as = {
 			name = costume_choice_3
 			value = random_costume_choice
 		}
+		
 		save_scope_value_as = {
 			name = costume_choice_4
 			value = random_costume_choice
 		}
+		
 		save_scope_value_as = {
 			name = costume_choice_5
 			value = random_costume_choice
@@ -1179,10 +1337,12 @@ congress_random_event.10 = {
 			}
 			random_congress_random_event_10_OPTION_enabled = yes
 		}
+		
 		set_variable = {
 			name = masked_ball_costume_direction
 			value = 1
 		}
+		
 		ai_chance = {
 			base = 10
 		}
@@ -1197,10 +1357,12 @@ congress_random_event.10 = {
 			}
 			random_congress_random_event_10_OPTION_enabled = yes
 		}
+		
 		set_variable = {
 			name = masked_ball_costume_direction
 			value = 2
 		}
+		
 		ai_chance = {
 			base = 10
 		}
@@ -1215,10 +1377,12 @@ congress_random_event.10 = {
 			}
 			random_congress_random_event_10_OPTION_enabled = yes
 		}
+		
 		set_variable = {
 			name = masked_ball_costume_direction
 			value = 3
 		}
+		
 		ai_chance = {
 			base = 10
 		}
@@ -1233,10 +1397,12 @@ congress_random_event.10 = {
 			}
 			random_congress_random_event_10_OPTION_enabled = yes
 		}
+		
 		set_variable = {
 			name = masked_ball_costume_direction
 			value = 4
 		}
+		
 		ai_chance = {
 			base = 10
 		}
@@ -1251,6 +1417,7 @@ congress_random_event.10 = {
 			}
 			random_congress_random_event_10_OPTION_enabled = yes
 		}
+		
 		set_variable = {
 			name = masked_ball_costume_direction
 			value = 5
@@ -1266,10 +1433,12 @@ congress_random_event.10 = {
 			}
 			random_congress_random_event_10_OPTION_enabled = yes
 		}
+		
 		set_variable = {
 			name = masked_ball_costume_direction
 			value = 6
 		}
+		
 		ai_chance = {
 			base = 10
 		}
@@ -1284,10 +1453,12 @@ congress_random_event.10 = {
 			}
 			random_congress_random_event_10_OPTION_enabled = yes
 		}
+		
 		set_variable = {
 			name = masked_ball_costume_direction
 			value = 7
 		}
+		
 		ai_chance = {
 			base = 10
 		}
@@ -1302,10 +1473,12 @@ congress_random_event.10 = {
 			}
 			random_congress_random_event_10_OPTION_enabled = yes
 		}
+		
 		set_variable = {
 			name = masked_ball_costume_direction
 			value = 8
 		}
+		
 		ai_chance = {
 			base = 10
 		}
@@ -1320,14 +1493,17 @@ congress_random_event.10 = {
 			}
 			random_congress_random_event_10_OPTION_enabled = yes
 		}
+		
 		set_variable = {
 			name = masked_ball_costume_direction
 			value = 9
 		}
+		
 		ai_chance = {
 			base = 10
 		}
 	}
+	
 	after = {
 		trigger_event = {
 			id = congress_random_event.11
@@ -1356,7 +1532,7 @@ congress_random_event.11 = {
 		trigger = {
 			masked_ball_max_afford < 555
 		}
-
+		
 		set_variable = {
 			name = masked_ball_budget
 			value = 1
@@ -1370,6 +1546,7 @@ congress_random_event.11 = {
 			masked_ball_max_afford > 156
 			masked_ball_max_afford < 1110
 		}
+		
 		set_variable = {
 			name = masked_ball_budget
 			value = 2
@@ -1383,6 +1560,7 @@ congress_random_event.11 = {
 			masked_ball_max_afford > 312
 			masked_ball_max_afford < 2222
 		}
+		
 		set_variable = {
 			name = masked_ball_budget
 			value = 3
@@ -1396,6 +1574,7 @@ congress_random_event.11 = {
 			masked_ball_max_afford > 625
 			masked_ball_max_afford < 4444
 		}
+		
 		set_variable = {
 			name = masked_ball_budget
 			value = 4
@@ -1409,6 +1588,7 @@ congress_random_event.11 = {
 			masked_ball_max_afford > 1250
 			masked_ball_max_afford < 8888
 		}
+		
 		set_variable = {
 			name = masked_ball_budget
 			value = 5
@@ -1421,25 +1601,30 @@ congress_random_event.11 = {
 		trigger = {
 			masked_ball_max_afford > 2500
 		}
+		
 		set_variable = {
 			name = masked_ball_budget
 			value = 6
 		}
 		custom_tooltip = masked_ball_very_high_budget_tt
 	}
+	
 	after = {
 		change_global_variable = {
 			name = ready_for_masked_ball
 			add = 1
 		}
+		
 		if = {
 			limit = {
 				global_var:ready_for_masked_ball >= imperia_num_of_congress_attendees
 			}
+			
 			every_country = {
 				limit = {
 					is_congress_attendee = yes
 				}
+				
 				trigger_event = {
 					id = congress_random_event.12
 					popup = yes
@@ -1466,12 +1651,14 @@ congress_random_event.12 = {
 	trigger = {
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	immediate = {
 		random_country = {
 			limit = {
 				is_congress_attendee = yes
 				this != root
 			}
+			
 			root = {
 				set_variable = {
 					name = mysterious_person
@@ -1481,22 +1668,27 @@ congress_random_event.12 = {
 			save_scope_as = mysterious_person
 		}
 	}
+	
 	option = {
 		name = congress_random_event.12.a
 	}
+	
 	after = {
 		change_global_variable = {
 			name = masked_ball_went_home
 			add = 1
 		}
+		
 		if = {
 			limit = {
 				global_var:masked_ball_went_home = imperia_num_of_congress_attendees
 			}
+			
 			every_country = {
 				limit = {
 					is_congress_attendee = yes
 				}
+				
 				trigger_event = {
 					id = congress_random_event.13
 					popup = yes
@@ -1523,6 +1715,7 @@ congress_random_event.13 = {
 	trigger = {
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	immediate = {
 		random_country = {
 			limit = {
@@ -1530,6 +1723,7 @@ congress_random_event.13 = {
 				this != root
 				this != root.var:mysterious_person
 			}
+			
 			root = {
 				add_to_variable_list = {
 					name = masked_ball_possible_mysterio
@@ -1537,6 +1731,7 @@ congress_random_event.13 = {
 				}
 			}
 		}
+		
 		random_country = {
 			limit = {
 				is_congress_attendee = yes
@@ -1551,6 +1746,7 @@ congress_random_event.13 = {
 					}
 				}
 			}
+			
 			root = {
 				add_to_variable_list = {
 					name = masked_ball_possible_mysterio
@@ -1558,6 +1754,7 @@ congress_random_event.13 = {
 				}
 			}
 		}
+		
 		random_country = {
 			limit = {
 				is_congress_attendee = yes
@@ -1572,6 +1769,7 @@ congress_random_event.13 = {
 					}
 				}
 			}
+			
 			root = {
 				add_to_variable_list = {
 					name = masked_ball_possible_mysterio
@@ -1579,6 +1777,7 @@ congress_random_event.13 = {
 				}
 			}
 		}
+		
 		random_country = {
 			limit = {
 				is_congress_attendee = yes
@@ -1593,6 +1792,7 @@ congress_random_event.13 = {
 					}
 				}
 			}
+			
 			root = {
 				add_to_variable_list = {
 					name = masked_ball_possible_mysterio
@@ -1600,10 +1800,12 @@ congress_random_event.13 = {
 				}
 			}
 		}
+		
 		add_to_variable_list = {
 			name = masked_ball_possible_mysterio
 			target = root.var:mysterious_person
 		}
+		
 		random_in_list = {
 			variable = masked_ball_possible_mysterio
 			save_scope_as = mysterio_1
@@ -1614,6 +1816,7 @@ congress_random_event.13 = {
 				}
 			}
 		}
+		
 		random_in_list = {
 			variable = masked_ball_possible_mysterio
 			save_scope_as = mysterio_2
@@ -1624,6 +1827,7 @@ congress_random_event.13 = {
 				}
 			}
 		}
+		
 		random_in_list = {
 			variable = masked_ball_possible_mysterio
 			save_scope_as = mysterio_3
@@ -1634,6 +1838,7 @@ congress_random_event.13 = {
 				}
 			}
 		}
+		
 		random_in_list = {
 			variable = masked_ball_possible_mysterio
 			save_scope_as = mysterio_4
@@ -1644,6 +1849,7 @@ congress_random_event.13 = {
 				}
 			}
 		}
+		
 		random_in_list = {
 			variable = masked_ball_possible_mysterio
 			save_scope_as = mysterio_5
@@ -1666,6 +1872,7 @@ congress_random_event.13 = {
 				limit = {
 					scope:mysterio_1 = var:mysterious_person
 				}
+				
 				change_relations = {
 					country = var:mysterious_person
 					value = {
@@ -1675,6 +1882,7 @@ congress_random_event.13 = {
 				}
 				post_notification = found_mysterio
 			}
+			
 			else = {
 				add_modifier = {
 					name = imperia_vienna_congress_scaling_negative_prestige_modifier
@@ -1695,6 +1903,7 @@ congress_random_event.13 = {
 				limit = {
 					scope:mysterio_2 = var:mysterious_person
 				}
+				
 				change_relations = {
 					country = var:mysterious_person
 					value = {
@@ -1704,6 +1913,7 @@ congress_random_event.13 = {
 				}
 				post_notification = found_mysterio
 			}
+			
 			else = {
 				add_modifier = {
 					name = imperia_vienna_congress_scaling_negative_prestige_modifier
@@ -1724,6 +1934,7 @@ congress_random_event.13 = {
 				limit = {
 					scope:mysterio_3 = var:mysterious_person
 				}
+				
 				change_relations = {
 					country = var:mysterious_person
 					value = {
@@ -1733,6 +1944,7 @@ congress_random_event.13 = {
 				}
 				post_notification = found_mysterio
 			}
+			
 			else = {
 				add_modifier = {
 					name = imperia_vienna_congress_scaling_negative_prestige_modifier
@@ -1753,6 +1965,7 @@ congress_random_event.13 = {
 				limit = {
 					scope:mysterio_4 = var:mysterious_person
 				}
+				
 				change_relations = {
 					country = var:mysterious_person
 					value = {
@@ -1762,6 +1975,7 @@ congress_random_event.13 = {
 				}
 				post_notification = found_mysterio
 			}
+			
 			else = {
 				add_modifier = {
 					name = imperia_vienna_congress_scaling_negative_prestige_modifier
@@ -1782,6 +1996,7 @@ congress_random_event.13 = {
 				limit = {
 					scope:mysterio_5 = var:mysterious_person
 				}
+				
 				change_relations = {
 					country = var:mysterious_person
 					value = {
@@ -1791,6 +2006,7 @@ congress_random_event.13 = {
 				}
 				post_notification = found_mysterio
 			}
+			
 			else = {
 				add_modifier = {
 					name = imperia_vienna_congress_scaling_negative_prestige_modifier
@@ -1802,63 +2018,76 @@ congress_random_event.13 = {
 			}
 		}
 	}
+	
 	after = {
 		change_global_variable = {
 			name = masked_ball_over
 			add = 1
 		}
+		
 		if = {
 			limit = {
 				global_var:masked_ball_over = imperia_num_of_congress_attendees
 			}
+			
 			every_country = {
 				limit = {
 					is_congress_attendee = yes
 				}
+				
 				if = {
 					limit = {
 						var:masked_ball_budget = 2
 					}
+					
 					add_modifier = {
 						name = masked_ball_budget_modifier
 						multiplier = 500
 						months = 6
 					}
 				}
+				
 				else_if = {
 					limit = {
 						var:masked_ball_budget = 3
 					}
+					
 					add_modifier = {
 						name = masked_ball_budget_modifier
 						multiplier = 1000
 						months = 6
 					}
 				}
+				
 				else_if = {
 					limit = {
 						var:masked_ball_budget = 4
 					}
+					
 					add_modifier = {
 						name = masked_ball_budget_modifier
 						multiplier = 2000
 						months = 6
 					}
 				}
+				
 				else_if = {
 					limit = {
 						var:masked_ball_budget = 5
 					}
+					
 					add_modifier = {
 						name = masked_ball_budget_modifier
 						multiplier = 4000
 						months = 6
 					}
 				}
+				
 				else_if = {
 					limit = {
 						var:masked_ball_budget = 6
 					}
+					
 					add_modifier = {
 						name = masked_ball_budget_modifier
 						multiplier = 8000
@@ -1900,6 +2129,7 @@ congress_random_event.14 = {
 			has_variable = chosen_budget_amount
 		}
 	}
+	
 	immediate = {
 		set_variable = {
 			name = very_low_budget_amount
@@ -1908,6 +2138,7 @@ congress_random_event.14 = {
 				multiply = 0.15
 			}
 		}
+		
 		set_variable = {
 			name = low_budget_amount
 			value = {
@@ -1915,6 +2146,7 @@ congress_random_event.14 = {
 				multiply = 0.3
 			}
 		}
+		
 		set_variable = {
 			name = medium_budget_amount
 			value = {
@@ -1922,6 +2154,7 @@ congress_random_event.14 = {
 				multiply = 0.45
 			}
 		}
+		
 		set_variable = {
 			name = high_budget_amount
 			value = {
@@ -1929,6 +2162,7 @@ congress_random_event.14 = {
 				multiply = 0.6
 			}
 		}
+		
 		set_variable = {
 			name = very_high_budget_amount
 			value = {
@@ -1947,6 +2181,7 @@ congress_random_event.14 = {
 			name = chosen_budget_level
 			value = 1
 		}
+		
 		set_variable = {
 			name = chosen_budget_amount
 			value = var:very_low_budget_amount
@@ -1959,6 +2194,7 @@ congress_random_event.14 = {
 				years = 1
 			}
 		}
+		
 		ai_chance = {
 			base = 10
 		}
@@ -1970,6 +2206,7 @@ congress_random_event.14 = {
 			name = chosen_budget_level
 			value = 2
 		}
+		
 		set_variable = {
 			name = chosen_budget_amount
 			value = var:low_budget_amount
@@ -1982,6 +2219,7 @@ congress_random_event.14 = {
 				years = 1
 			}
 		}
+		
 		ai_chance = {
 			base = 20
 		}
@@ -1994,6 +2232,7 @@ congress_random_event.14 = {
 			name = chosen_budget_level
 			value = 3
 		}
+		
 		set_variable = {
 			name = chosen_budget_amount
 			value = var:medium_budget_amount
@@ -2006,6 +2245,7 @@ congress_random_event.14 = {
 				years = 1
 			}
 		}
+		
 		ai_chance = {
 			base = 40
 		}
@@ -2017,6 +2257,7 @@ congress_random_event.14 = {
 			name = chosen_budget_level
 			value = 4
 		}
+		
 		set_variable = {
 			name = chosen_budget_amount
 			value = var:high_budget_amount
@@ -2029,6 +2270,7 @@ congress_random_event.14 = {
 				years = 1
 			}
 		}
+		
 		ai_chance = {
 			base = 20
 		}
@@ -2040,6 +2282,7 @@ congress_random_event.14 = {
 			name = chosen_budget_level
 			value = 5
 		}
+		
 		set_variable = {
 			name = chosen_budget_amount
 			value = var:very_high_budget_amount
@@ -2052,10 +2295,12 @@ congress_random_event.14 = {
 				years = 1
 			}
 		}
+		
 		ai_chance = {
 			base = 10
 		}
 	}
+	
 	after = {
 		remove_variable = very_low_budget_amount
 		remove_variable = low_budget_amount
@@ -2087,9 +2332,11 @@ congress_random_event.15 = {
 	trigger = {
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	immediate = {
 		set_variable = congress_lead_invitee
 	}
+	
 	option = {
 		# Accept the lead invite
 		default_option = yes
@@ -2100,10 +2347,12 @@ congress_random_event.15 = {
 			id = congress_random_event.16
 			popup = yes
 		}
+		
 		ai_chance = {
 			base = 100
 		}
 	}
+	
 	option = {
 		# Decline the lead invite
 		name = congress_random_event.15.b
@@ -2114,6 +2363,7 @@ congress_random_event.15 = {
 			base = 0
 		}
 	}
+	
 	after = {
 		if = {
 			limit = {
@@ -2130,6 +2380,7 @@ congress_random_event.15 = {
 					}
 				}
 			}
+			
 			every_country = {
 				limit = {
 					is_congress_attendee = yes
@@ -2164,6 +2415,7 @@ congress_random_event.16 = {
 		}
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	immediate = {
 		set_variable = {
 			name = very_low_budget_amount
@@ -2172,6 +2424,7 @@ congress_random_event.16 = {
 				multiply = 0.15
 			}
 		}
+		
 		set_variable = {
 			name = low_budget_amount
 			value = {
@@ -2179,6 +2432,7 @@ congress_random_event.16 = {
 				multiply = 0.3
 			}
 		}
+		
 		set_variable = {
 			name = medium_budget_amount
 			value = {
@@ -2186,6 +2440,7 @@ congress_random_event.16 = {
 				multiply = 0.45
 			}
 		}
+		
 		set_variable = {
 			name = high_budget_amount
 			value = {
@@ -2193,6 +2448,7 @@ congress_random_event.16 = {
 				multiply = 0.6
 			}
 		}
+		
 		set_variable = {
 			name = very_high_budget_amount
 			value = {
@@ -2208,6 +2464,7 @@ congress_random_event.16 = {
 			name = chosen_budget_level
 			value = 1
 		}
+		
 		set_variable = {
 			name = chosen_budget_amount
 			value = var:very_low_budget_amount
@@ -2220,6 +2477,7 @@ congress_random_event.16 = {
 				years = 1
 			}
 		}
+		
 		ai_chance = {
 			base = 10
 		}
@@ -2231,6 +2489,7 @@ congress_random_event.16 = {
 			name = chosen_budget_level
 			value = 2
 		}
+		
 		set_variable = {
 			name = chosen_budget_amount
 			value = var:low_budget_amount
@@ -2243,6 +2502,7 @@ congress_random_event.16 = {
 				years = 1
 			}
 		}
+		
 		ai_chance = {
 			base = 20
 		}
@@ -2255,6 +2515,7 @@ congress_random_event.16 = {
 			name = chosen_budget_level
 			value = 3
 		}
+		
 		set_variable = {
 			name = chosen_budget_amount
 			value = var:medium_budget_amount
@@ -2267,6 +2528,7 @@ congress_random_event.16 = {
 				years = 1
 			}
 		}
+		
 		ai_chance = {
 			base = 40
 		}
@@ -2278,6 +2540,7 @@ congress_random_event.16 = {
 			name = chosen_budget_level
 			value = 4
 		}
+		
 		set_variable = {
 			name = chosen_budget_amount
 			value = var:high_budget_amount
@@ -2290,6 +2553,7 @@ congress_random_event.16 = {
 				years = 1
 			}
 		}
+		
 		ai_chance = {
 			base = 20
 		}
@@ -2301,6 +2565,7 @@ congress_random_event.16 = {
 			name = chosen_budget_level
 			value = 5
 		}
+		
 		set_variable = {
 			name = chosen_budget_amount
 			value = var:very_high_budget_amount
@@ -2313,10 +2578,12 @@ congress_random_event.16 = {
 				years = 1
 			}
 		}
+		
 		ai_chance = {
 			base = 10
 		}
 	}
+	
 	after = {
 		remove_variable = very_low_budget_amount
 		remove_variable = low_budget_amount
@@ -2341,12 +2608,14 @@ congress_random_event.17 = {
 		}
 		texture = "gfx/event_pictures/congress_parade_poor.dds"
 	}
+	
 	event_image = {
 		trigger = {
 			congress_parade_is_normal = yes
 		}
 		texture = "gfx/event_pictures/congress_parade_normal.dds"
 	}
+	
 	event_image = {
 		trigger = {
 			congress_parade_is_rich = yes
@@ -2367,14 +2636,17 @@ congress_random_event.17 = {
 		}
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	immediate = {
 		set_variable = parade_seen
 		global_var:congress_lead_1 = {
 			save_scope_as = congress_lead_1_scope
 		}
+		
 		global_var:congress_lead_2 = {
 			save_scope_as = congress_lead_2_scope
 		}
+		
 		global_var:congress_lead_3 = {
 			save_scope_as = congress_lead_3_scope
 		}
@@ -2400,12 +2672,14 @@ congress_random_event.18 = {
 		}
 		texture = "gfx/event_pictures/congress_parade_poor.dds"
 	}
+	
 	event_image = {
 		trigger = {
 			congress_parade_is_normal = yes
 		}
 		texture = "gfx/event_pictures/congress_parade_normal.dds"
 	}
+	
 	event_image = {
 		trigger = {
 			congress_parade_is_rich = yes
@@ -2430,10 +2704,12 @@ congress_random_event.18 = {
 		trigger = {
 			global_var:imperia_vienna_congress_session_initiator.var:chosen_budget_amount >= average_congress_parade_lead_budget
 		}
+		
 		if = {
 			limit = {
 				this = global_var:imperia_vienna_congress_session_initiator
 			}
+			
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_positive_prestige_modifier
 				multiplier = {
@@ -2443,6 +2719,7 @@ congress_random_event.18 = {
 				years = 3
 				is_decaying = yes
 			}
+			
 			custom_tooltip = {
 				text = increases_relations_with_attendees_tt
 				every_country = {
@@ -2450,6 +2727,7 @@ congress_random_event.18 = {
 						is_congress_attendee = yes
 						this != root
 					}
+					
 					change_relations = {
 						country = global_var:imperia_vienna_congress_session_initiator
 						value = {
@@ -2460,10 +2738,12 @@ congress_random_event.18 = {
 				}
 			}
 		}
+		
 		else_if = {
 			limit = {
 				has_variable = congress_lead_accepted
 			}
+			
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_negative_prestige_modifier
 				multiplier = {
@@ -2473,6 +2753,7 @@ congress_random_event.18 = {
 				years = 3
 				is_decaying = yes
 			}
+			
 			custom_tooltip = {
 				text = decreases_relations_with_attendees_tt
 				every_country = {
@@ -2480,6 +2761,7 @@ congress_random_event.18 = {
 						is_congress_attendee = yes
 						this != root
 					}
+					
 					change_relations = {
 						country = global_var:imperia_vienna_congress_session_initiator
 						value = {
@@ -2490,6 +2772,7 @@ congress_random_event.18 = {
 				}
 			}
 		}
+		
 		else = {
 			show_as_tooltip = {
 				global_var:imperia_vienna_congress_session_initiator = {
@@ -2503,6 +2786,7 @@ congress_random_event.18 = {
 						is_decaying = yes
 					}
 				}
+				
 				change_relations = {
 					country = global_var:imperia_vienna_congress_session_initiator
 					value = {
@@ -2510,10 +2794,12 @@ congress_random_event.18 = {
 						multiply = congress_parade_multiplier
 					}
 				}
+				
 				every_country = {
 					limit = {
 						has_variable = congress_lead_accepted
 					}
+					
 					add_modifier = {
 						name = imperia_vienna_congress_scaling_negative_prestige_modifier
 						multiplier = {
@@ -2523,6 +2809,7 @@ congress_random_event.18 = {
 						years = 3
 						is_decaying = yes
 					}
+					
 					root = {
 						change_relations = {
 							country = prev
@@ -2543,10 +2830,12 @@ congress_random_event.18 = {
 		trigger = {
 			global_var:imperia_vienna_congress_session_initiator.var:chosen_budget_amount < average_congress_parade_lead_budget
 		}
+		
 		if = {
 			limit = {
 				this = global_var:imperia_vienna_congress_session_initiator
 			}
+			
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_negative_prestige_modifier
 				multiplier = {
@@ -2556,6 +2845,7 @@ congress_random_event.18 = {
 				years = 3
 				is_decaying = yes
 			}
+			
 			custom_tooltip = {
 				text = decreases_relations_with_attendees_tt
 				every_country = {
@@ -2563,6 +2853,7 @@ congress_random_event.18 = {
 						is_congress_attendee = yes
 						this != root
 					}
+					
 					change_relations = {
 						country = global_var:imperia_vienna_congress_session_initiator
 						value = {
@@ -2573,10 +2864,12 @@ congress_random_event.18 = {
 				}
 			}
 		}
+		
 		else_if = {
 			limit = {
 				has_variable = congress_lead_accepted
 			}
+			
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_positive_prestige_modifier
 				multiplier = {
@@ -2586,6 +2879,7 @@ congress_random_event.18 = {
 				years = 3
 				is_decaying = yes
 			}
+			
 			custom_tooltip = {
 				text = increases_relations_with_attendees_tt
 				every_country = {
@@ -2593,6 +2887,7 @@ congress_random_event.18 = {
 						is_congress_attendee = yes
 						this != root
 					}
+					
 					change_relations = {
 						country = global_var:imperia_vienna_congress_session_initiator
 						value = {
@@ -2603,6 +2898,7 @@ congress_random_event.18 = {
 				}
 			}
 		}
+		
 		else = {
 			show_as_tooltip = {
 				global_var:imperia_vienna_congress_session_initiator = {
@@ -2616,6 +2912,7 @@ congress_random_event.18 = {
 						is_decaying = yes
 					}
 				}
+				
 				change_relations = {
 					country = global_var:imperia_vienna_congress_session_initiator
 					value = {
@@ -2623,10 +2920,12 @@ congress_random_event.18 = {
 						multiply = congress_parade_multiplier
 					}
 				}
+				
 				every_country = {
 					limit = {
 						has_variable = congress_lead_accepted
 					}
+					
 					add_modifier = {
 						name = imperia_vienna_congress_scaling_positive_prestige_modifier
 						multiplier = {
@@ -2636,6 +2935,7 @@ congress_random_event.18 = {
 						years = 3
 						is_decaying = yes
 					}
+					
 					root = {
 						change_relations = {
 							country = prev
@@ -2649,31 +2949,37 @@ congress_random_event.18 = {
 			}
 		}
 	}
+	
 	after = {
 		change_global_variable = {
 			name = parade_over_num
 			add = 1
 		}
+		
 		if = {
 			limit = {
 				this = global_var:imperia_vienna_congress_session_initiator
 			}
+			
 			add_modifier = {
 				name = parade_budget_modifier
 				multiplier = var:chosen_budget_amount
 				years = 1
 			}
 		}
+		
 		if = {
 			limit = {
 				has_variable = congress_lead_accepted
 			}
+			
 			add_modifier = {
 				name = parade_budget_modifier
 				multiplier = var:chosen_budget_amount
 				years = 1
 			}
 		}
+		
 		if = {
 			limit = {
 				global_var:parade_over_num >= imperia_num_of_congress_attendees
@@ -2692,6 +2998,7 @@ congress_random_event.18 = {
 				remove_variable ?= chosen_budget_amount
 				remove_variable ?= chosen_budget_level
 			}
+			
 			global_var:imperia_vienna_congress_session_initiator = {
 				random = {
 					chance = 5
@@ -2725,6 +3032,7 @@ congress_random_event.19 = {
 		religion = {
 			has_discrimination_trait = christian
 		}
+		
 		OR = {
 			global_var:imperia_vienna_congress_session_initiator = {
 				any_scope_pop = {
@@ -2734,11 +3042,13 @@ congress_random_event.19 = {
 					}
 				}
 			}
+			
 			global_var:imperia_vienna_congress_session_initiator.religion = {
 				has_discrimination_trait = christian
 			}
 		}
 	}
+	
 	immediate = {
 		random_country = {
 			limit = {
@@ -2769,6 +3079,7 @@ congress_random_event.19 = {
 					}
 				}
 			}
+			
 			25 = {
 				custom_tooltip = {
 					text = someone_is_there_tt
@@ -2780,6 +3091,7 @@ congress_random_event.19 = {
 				}
 			}
 		}
+		
 		ai_chance = {
 			base = 33
 		}
@@ -2803,11 +3115,13 @@ congress_random_event.19 = {
 						}
 					}
 				}
+				
 				global_var:imperia_vienna_congress_session_initiator.religion = {
 					has_discrimination_trait = christian
 				}
 			}
 		}
+		
 		random_list = {
 			# 2 countries
 			1 = {
@@ -2820,11 +3134,13 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 3
 						}
 					}
+					
 					random_country = {
 						limit = {
 							is_congress_attendee = yes
@@ -2832,6 +3148,7 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 3
@@ -2850,11 +3167,13 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 3
 						}
 					}
+					
 					random_country = {
 						limit = {
 							is_congress_attendee = yes
@@ -2862,11 +3181,13 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 3
 						}
 					}
+					
 					random_country = {
 						limit = {
 							is_congress_attendee = yes
@@ -2874,6 +3195,7 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 3
@@ -2892,11 +3214,13 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 2
 						}
 					}
+					
 					random_country = {
 						limit = {
 							is_congress_attendee = yes
@@ -2904,11 +3228,13 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 2
 						}
 					}
+					
 					random_country = {
 						limit = {
 							is_congress_attendee = yes
@@ -2916,11 +3242,13 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 2
 						}
 					}
+					
 					random_country = {
 						limit = {
 							is_congress_attendee = yes
@@ -2928,6 +3256,7 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 2
@@ -2946,11 +3275,13 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 2
 						}
 					}
+					
 					random_country = {
 						limit = {
 							is_congress_attendee = yes
@@ -2958,11 +3289,13 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 2
 						}
 					}
+					
 					random_country = {
 						limit = {
 							is_congress_attendee = yes
@@ -2970,11 +3303,13 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 2
 						}
 					}
+					
 					random_country = {
 						limit = {
 							is_congress_attendee = yes
@@ -2982,11 +3317,13 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 2
 						}
 					}
+					
 					random_country = {
 						limit = {
 							is_congress_attendee = yes
@@ -2994,6 +3331,7 @@ congress_random_event.19 = {
 								has_discrimination_trait = christian
 							}
 						}
+						
 						change_relations = {
 							country = root
 							value = 2
@@ -3002,6 +3340,7 @@ congress_random_event.19 = {
 				}
 			}
 		}
+		
 		ai_chance = {
 			base = 33
 		}
@@ -3025,17 +3364,20 @@ congress_random_event.19 = {
 						}
 					}
 				}
+				
 				global_var:imperia_vienna_congress_session_initiator.religion = {
 					has_discrimination_trait = christian
 				}
 			}
 		}
+		
 		add_modifier = {
 			name = imperia_vienna_congress_scaling_positive_prestige_modifier
 			multiplier = 5
 			years = 5
 			is_decaying = yes
 		}
+		
 		ai_chance = {
 			base = 33
 		}
@@ -3060,6 +3402,7 @@ congress_random_event.20 = {
 		global_var:imperia_vienna_congress_session_initiator = root
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	immediate = {
 		random_country = {
 			limit = {
@@ -3069,6 +3412,7 @@ congress_random_event.20 = {
 			save_scope_as = congress_crasher
 		}
 	}
+	
 	option = {
 		# Forgive the congress crasher
 		name = congress_random_event.20.a
@@ -3080,27 +3424,33 @@ congress_random_event.20 = {
 				multiplier = 5
 			}
 		}
+		
 		add_modifier = {
 			name = imperia_vienna_congress_scaling_negative_prestige_modifier
 			years = 1
 			is_decaying = yes
 			multiplier = 5
 		}
+		
 		change_relations = {
 			country = scope:congress_crasher
 			value = 20
 		}
+		
 		save_scope_value_as = {
 			name = forgave_congress_crasher
 			value = yes
 		}
+		
 		scope:congress_crasher = {
 			trigger_event = congress_random_event.21
 		}
+		
 		ai_chance = {
 			base = 30
 		}
 	}
+	
 	option = {
 		# Punish the congress crasher
 		default_option = yes
@@ -3113,21 +3463,26 @@ congress_random_event.20 = {
 				multiplier = 20
 			}
 		}
+		
 		change_relations = {
 			country = scope:congress_crasher
 			value = -20
 		}
+		
 		save_scope_value_as = {
 			name = forgave_congress_crasher
 			value = no
 		}
+		
 		scope:congress_crasher = {
 			trigger_event = congress_random_event.21
 		}
+		
 		ai_chance = {
 			base = 70
 		}
 	}
+	
 	after = {
 		every_country = {
 			limit = {
@@ -3135,6 +3490,7 @@ congress_random_event.20 = {
 				this != root
 				this != scope:congress_crasher
 			}
+			
 			trigger_event = {
 				id = congress_random_event.22
 			}
@@ -3164,6 +3520,7 @@ congress_random_event.21 = {
 			limit = {
 				scope:forgave_congress_crasher = no
 			}
+			
 			show_as_tooltip = {
 				add_modifier = {
 					name = imperia_vienna_congress_scaling_negative_prestige_modifier
@@ -3171,12 +3528,14 @@ congress_random_event.21 = {
 					is_decaying = yes
 					multiplier = 20
 				}
+				
 				change_relations = {
 					country = global_var:imperia_vienna_congress_session_initiator
 					value = -20
 				}
 			}
 		}
+		
 		else = {
 			show_as_tooltip = {
 				scope:congress_crasher = {
@@ -3187,12 +3546,14 @@ congress_random_event.21 = {
 						multiplier = 5
 					}
 				}
+				
 				add_modifier = {
 					name = imperia_vienna_congress_scaling_negative_prestige_modifier
 					years = 1
 					is_decaying = yes
 					multiplier = 5
 				}
+				
 				change_relations = {
 					country = global_var:imperia_vienna_congress_session_initiator
 					value = 20
@@ -3246,6 +3607,7 @@ congress_random_event.23 = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = congress_random_event.23.desc2
 				trigger = {
@@ -3267,6 +3629,7 @@ congress_random_event.23 = {
 		has_global_variable = imperia_vienna_congress_in_session
 		global_var:imperia_vienna_congress_session_initiator = root
 	}
+	
 	immediate = {
 		if = {
 			limit = {
@@ -3278,6 +3641,7 @@ congress_random_event.23 = {
 					}
 				}
 			}
+			
 			random_primary_culture = {
 				save_scope_as = third_language_option
 			}
@@ -3291,6 +3655,7 @@ congress_random_event.23 = {
 			name = congress_language_spoken
 			value = cu:british
 		}
+		
 		ai_chance = {
 			base = 10
 			modifier = {
@@ -3312,6 +3677,7 @@ congress_random_event.23 = {
 			name = congress_language_spoken
 			value = cu:french
 		}
+		
 		ai_chance = {
 			base = 20
 			modifier = {
@@ -3322,6 +3688,7 @@ congress_random_event.23 = {
 				}
 				add = 50
 			}
+			
 			modifier = {
 				trigger = {
 					any_primary_culture = {
@@ -3351,10 +3718,12 @@ congress_random_event.23 = {
 			name = congress_language_spoken
 			value = scope:third_language_option
 		}
+		
 		ai_chance = {
 			base = 10
 		}
 	}
+	
 	after = {
 		set_global_variable = {
 			name = num_countries_that_have_responded_to_official_language
@@ -3366,6 +3735,7 @@ congress_random_event.23 = {
 				is_congress_attendee = yes
 				this != global_var:imperia_vienna_congress_session_initiator
 			}
+			
 			trigger_event = {
 				id = congress_random_event.24
 			}
@@ -3393,6 +3763,7 @@ congress_random_event.24 = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = congress_random_event.24.desc2
 				trigger = {
@@ -3401,6 +3772,7 @@ congress_random_event.24 = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = congress_random_event.24.desc3
 				trigger = {
@@ -3425,6 +3797,7 @@ congress_random_event.24 = {
 			country = global_var:imperia_vienna_congress_session_initiator
 			value = 10
 		}
+		
 		ai_chance = {
 			base = 19
 			modifier = {
@@ -3451,10 +3824,12 @@ congress_random_event.24 = {
 				}
 			}
 		}
+		
 		change_relations = {
 			country = global_var:imperia_vienna_congress_session_initiator
 			value = -10
 		}
+		
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -3463,6 +3838,7 @@ congress_random_event.24 = {
 						any_primary_culture = {
 							has_discrimination_trait = francophone
 						}
+						
 						any_primary_culture = {
 							has_discrimination_trait = anglophone
 						}
@@ -3473,15 +3849,18 @@ congress_random_event.24 = {
 			}
 		}
 	}
+	
 	after = {
 		change_global_variable = {
 			name = num_countries_that_have_responded_to_official_language
 			add = 1
 		}
+		
 		if = {
 			limit = {
 				global_var:num_countries_that_have_responded_to_official_language >= imperia_num_of_congress_attendees
 			}
+			
 			global_var:imperia_vienna_congress_session_initiator = {
 				trigger_event = {
 					id = congress_random_event.25
@@ -3511,24 +3890,28 @@ congress_random_event.25 = {
 					congress_fraction_of_prestige_who_accepted_language > 0.9
 				}
 			}
+			
 			triggered_desc = {
 				desc = congress_random_event.25.desc2
 				trigger = {
 					congress_fraction_of_prestige_who_accepted_language > 0.8
 				}
 			}
+			
 			triggered_desc = {
 				desc = congress_random_event.25.desc3
 				trigger = {
 					congress_fraction_of_prestige_who_accepted_language > 0.7
 				}
 			}
+			
 			triggered_desc = {
 				desc = congress_random_event.25.desc4
 				trigger = {
 					congress_fraction_of_prestige_who_accepted_language > 0.6
 				}
 			}
+			
 			triggered_desc = {
 				desc = congress_random_event.25.desc5
 				trigger = {
@@ -3543,6 +3926,7 @@ congress_random_event.25 = {
 	trigger = {
 		has_global_variable = imperia_vienna_congress_in_session
 	}
+	
 	option = {
 		name = congress_random_event.25.a
 		default_option = yes
@@ -3555,6 +3939,7 @@ congress_random_event.25 = {
 					}
 				}
 			}
+			
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_positive_prestige_modifier
 				multiplier = {
@@ -3565,6 +3950,7 @@ congress_random_event.25 = {
 				is_decaying = yes
 			}
 		}
+		
 		else = {
 			add_modifier = {
 				name = imperia_vienna_congress_scaling_positive_prestige_modifier
@@ -3576,6 +3962,7 @@ congress_random_event.25 = {
 				is_decaying = yes
 			}
 		}
+		
 		ai_chance = {
 			base = 10
 		}

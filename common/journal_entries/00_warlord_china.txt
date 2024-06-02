@@ -12,36 +12,44 @@ je_warlord_china = {
 			save_scope_as = monarchy_scope
 		}
 	}
+	
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
+		
 		custom_tooltip = {
 			text = warlord_china_criteria
 		}
 	}
+	
 	fail = {
 		custom_tooltip = {
 			text = won_boxer_tt
 			has_variable = won_boxer_rebellion
 		}
+		
 		custom_tooltip = {
 			text = china_recognized_tt
 			has_variable = china_warlord_explosion_recognized
 		}
+		
 		custom_tooltip = {
 			text = china_abolished_monarchy_tt
 			has_variable = china_warlord_abolished_monarchy
 		}
 	}
+	
 	on_complete = {
 		trigger_event = {
 			id = warlord_china_events.100
 		}
 	}
+	
 	current_value = {
 		value = var:china_warlord_explosion
 	}
+	
 	goal_add_value = {
 		add = 100
 	}
@@ -53,20 +61,24 @@ je_warlord_china = {
 				name = china_warlord_explosion
 				value = imperia_qing_fragile_unity_value
 			}
+			
 			if = {
 				limit = {
 					NOT = {
 						has_law = law_type:law_monarchy
 					}
+					
 					NOT = {
 						has_variable = china_han_empire
 					}
 				}
+				
 				trigger_event = {
 					id = boxer_rebellion_events.4
 					popup = yes
 				}
 			}
+			
 			if = {
 				limit = {
 					NOT = {

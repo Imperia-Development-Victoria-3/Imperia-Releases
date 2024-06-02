@@ -6,6 +6,7 @@
 			save_scope_as = target_loc
 		}
 	}
+	
 	complete = {
 		scope:target = {
 			is_subject_of = root
@@ -14,16 +15,19 @@
 			}
 		}
 	}
+	
 	fail = {
 		scope:target = {
 			NOT = {
 				is_subject_of = root
 			}
+			
 			NOT = {
 				has_war_with = root
 			}
 		}
 	}
+	
 	on_fail = {
 		custom_tooltip = je_imperia_return_subject_to_fold_TT
 		hidden_effect = {
@@ -44,14 +48,17 @@ je_imperia_return_subject_to_fold = {
 			save_scope_as = target_loc
 		}
 	}
+	
 	complete = {
 		scope:target = {
 			is_subject_of = root
 		}
 	}
+	
 	on_complete = {
 		change_infamy = scope:target.get_total_released_COUNTRY_infamy_worth_vassal
 	}
+	
 	fail = {
 		custom_tooltip = {
 			text = target_no_longer_exists_TT

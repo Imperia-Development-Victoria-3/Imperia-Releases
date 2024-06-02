@@ -4,22 +4,26 @@
 	is_shown_when_inactive = {
 		is_autocratic = yes
 	}
+	
 	possible = {
 		OR = {
 			ig:ig_landowners = {
 				is_powerful = yes
 			}
+			
 			ig:ig_devout = {
 				is_powerful = yes
 			}
 		}
 	}
+	
 	immediate = {
 		set_variable = {
 			name = autocracy_var
 			value = 1
 		}
 	}
+	
 	on_monthly_pulse = {
 		effect = {
 			if = {
@@ -31,18 +35,21 @@
 						}
 					}
 				}
+				
 				change_variable = {
 					name = autocracy_var
 					add = 1
 				}
 			}
 		}
+		
 		random_events = {
 			10 = 0
-			1 = autocracy.2			#Secret Societies event. Punish or let be an IG against authoritarianism - Intelligentsia only?
-			1 = autocracy.3			#Blessed are the Meek. Extra loyalists/less radicals from SoL changes
+			1 = autocracy.2	#Secret Societies event. Punish or let be an IG against authoritarianism - Intelligentsia only?
+			1 = autocracy.3	#Blessed are the Meek. Extra loyalists/less radicals from SoL changes
 		}
 	}
+	
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
@@ -54,17 +61,21 @@
 			}
 		}
 	}
+	
 	on_complete = {
 		trigger_event = {
 			id = autocracy.1
 		}
+		
 		set_variable = {
 			name = chose_autocracy
 		}
 	}
+	
 	fail = {
 		is_autocratic = no
 	}
+	
 	current_value = {
 		value = {
 			value = 0
@@ -77,6 +88,7 @@
 			}
 		}
 	}
+	
 	goal_add_value = {
 		add = 360
 	}

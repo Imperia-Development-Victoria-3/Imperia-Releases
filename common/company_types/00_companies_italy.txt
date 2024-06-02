@@ -2,10 +2,8 @@
 company_ilva = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/ilva.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
-	
 	flavored_company = yes
-	
-	building_types = {  
+	building_types = {
 		building_steel_mills
 		building_iron_mine
 	}
@@ -15,14 +13,14 @@ company_ilva = {
 	}
 	
 	attainable = {
-		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+		hidden_trigger = {	# Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
 				state_region = s:STATE_PIEDMONT
 			}
 		}
-	}	
+	}
 	
-	possible = { 
+	possible = {
 		any_scope_state = {
 			state_region = s:STATE_PIEDMONT
 			is_incorporated = yes
@@ -40,7 +38,7 @@ company_ilva = {
 	}
 	
 	ai_weight = {
-		value = 3 # Higher base value for flavored companies
+		value = 3	# Higher base value for flavored companies
 	}
 }
 
@@ -48,9 +46,7 @@ company_ilva = {
 company_ansaldo = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/ansaldo.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
-	
 	flavored_company = yes
-	
 	building_types = {
 		building_artillery_foundries
 		building_steel_mills
@@ -62,14 +58,14 @@ company_ansaldo = {
 	}
 	
 	attainable = {
-		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+		hidden_trigger = {	# Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
 				state_region = s:STATE_PIEDMONT
 			}
 		}
-	}		
+	}
 	
-	possible = { 
+	possible = {
 		any_scope_state = {
 			state_region = s:STATE_PIEDMONT
 			is_incorporated = yes
@@ -91,7 +87,7 @@ company_ansaldo = {
 	}
 	
 	ai_weight = {
-		value = 3 # Higher base value for flavored companies
+		value = 3	# Higher base value for flavored companies
 	}
 }
 
@@ -99,9 +95,7 @@ company_ansaldo = {
 company_ricordi = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/ricordi.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_farm_corn.dds"
-	
 	flavored_company = yes
-	
 	building_types = {
 		building_arts_academy
 	}
@@ -111,14 +105,14 @@ company_ricordi = {
 	}
 	
 	attainable = {
-		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+		hidden_trigger = {	# Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
 				state_region = s:STATE_LOMBARDY
 			}
 		}
-	}		
+	}
 	
-	possible = { 
+	possible = {
 		any_scope_state = {
 			state_region = s:STATE_LOMBARDY
 			is_incorporated = yes
@@ -135,7 +129,7 @@ company_ricordi = {
 	}
 	
 	ai_weight = {
-		value = 3 # Higher base value for flavored companies
+		value = 3	# Higher base value for flavored companies
 	}
 }
 
@@ -143,9 +137,7 @@ company_ricordi = {
 company_fiat = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/fiat.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_manufacturing_heavy.dds"
-	
 	flavored_company = yes
-	
 	building_types = {
 		building_motor_industry
 		building_war_machine_industry
@@ -156,14 +148,14 @@ company_fiat = {
 	}
 	
 	attainable = {
-		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+		hidden_trigger = {	# Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
 				state_region = s:STATE_PIEDMONT
 			}
 		}
-	}		
+	}
 	
-	possible = { 
+	possible = {
 		any_scope_state = {
 			state_region = s:STATE_PIEDMONT
 			is_incorporated = yes
@@ -184,7 +176,7 @@ company_fiat = {
 	}
 	
 	ai_weight = {
-		value = 3 # Higher base value for flavored companies
+		value = 3	# Higher base value for flavored companies
 	}
 }
 
@@ -192,9 +184,7 @@ company_fiat = {
 company_stt = {
 	icon = "gfx/interface/icons/company_icons/historical_company_icons/stt.dds"
 	background = "gfx/interface/icons/company_icons/company_backgrounds/comp_illu_harbor_shipbuilding.dds"
-	
 	flavored_company = yes
-	
 	building_types = {
 		building_shipyards
 		building_military_shipyards
@@ -205,14 +195,14 @@ company_stt = {
 	}
 	
 	attainable = {
-		hidden_trigger = { # Hide attainable if it's always fulfilled by possible
+		hidden_trigger = {	# Hide attainable if it's always fulfilled by possible
 			any_scope_state = {
 				state_region = s:STATE_ISTRIA
 			}
 		}
-	}		
+	}
 	
-	possible = { 
+	possible = {
 		any_scope_state = {
 			state_region = s:STATE_ISTRIA
 			is_incorporated = yes
@@ -233,6 +223,6 @@ company_stt = {
 	}
 	
 	ai_weight = {
-		value = 3 # Higher base value for flavored companies
+		value = 3	# Higher base value for flavored companies
 	}
 }

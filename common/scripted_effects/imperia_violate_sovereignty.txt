@@ -4,11 +4,13 @@
 			limit = {
 				is_warleader = prev
 			}
+			
 			diplomatic_play = {
 				save_scope_as = diplomatic_play_scope
 			}
 		}
 	}
+	
 	if = {
 		limit = {
 			OR = {
@@ -18,6 +20,7 @@
 					}
 					$JOIN_VIOLATOR$ = yes
 				}
+				
 				AND = {
 					scope:diplomatic_play_scope = {
 						target_is = $VIOLATOR$
@@ -26,12 +29,14 @@
 				}
 			}
 		}
+		
 		scope:diplomatic_play_scope = {
 			add_initiator_backers = {
 				$TARGET$
 			}
 		}
 	}
+	
 	if = {
 		limit = {
 			OR = {
@@ -41,6 +46,7 @@
 					}
 					$JOIN_VIOLATOR$ = no
 				}
+				
 				AND = {
 					scope:diplomatic_play_scope = {
 						target_is = $VIOLATOR$
@@ -49,6 +55,7 @@
 				}
 			}
 		}
+		
 		scope:diplomatic_play_scope = {
 			add_target_backers = {
 				$TARGET$

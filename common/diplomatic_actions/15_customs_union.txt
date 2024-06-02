@@ -4,14 +4,17 @@
 	unlocking_technologies = {
 		international_trade
 	}
+	
 	potential = {
 		NOT = {
 			has_law = law_type:law_true_neutrality
 		}
+		
 		NOR = {
 			is_country_type = decentralized
 			has_law = law_type:law_isolationism
 		}
+		
 		scope:target_country = {
 			NOR = {
 				is_country_type = decentralized
@@ -24,6 +27,7 @@
 			is_revolutionary = no
 		}
 	}
+	
 	possible = {
 		custom_tooltip = {
 			text = DIPLO_ACTION_MARKET_CONNECTION_REQUIRED
@@ -32,10 +36,12 @@
 					market = {
 						has_port = yes
 					}
+					
 					scope:target_country.market = {
 						has_port = yes
 					}
 				}
+				
 				market = {
 					any_scope_country = {
 						is_adjacent_to_country = scope:target_country
@@ -51,6 +57,7 @@
 					is_country_type = recognized
 					is_country_type = colonial
 				}
+				
 				scope:target_country = {
 					OR = {
 						is_country_type = recognized
@@ -67,9 +74,11 @@
 				}
 			}
 		}
+		
 		NOT = {
 			has_war_with = scope:target_country
 		}
+		
 		NOT = {
 			is_subject_of = scope:target_country
 		}
@@ -81,13 +90,16 @@
 			}
 			has_law = law_type:law_isolationism
 		}
+		
 		custom_tooltip = {
 			text = DIPLO_ACTION_RELATIONS_CORDIAL_OR_GREATER
 			scope:target_country.relations:root >= relations_threshold:cordial
 		}
+		
 		NOT = {
 			is_country_type = decentralized
 		}
+		
 		scope:target_country = {
 			NOT = {
 				is_country_type = decentralized
@@ -98,6 +110,7 @@
 			is_revolutionary = no
 		}
 	}
+	
 	accept_effect = {
 		if = {
 			limit = {
@@ -106,12 +119,14 @@
 					type = trade_agreement
 				}
 			}
+			
 			remove_diplomatic_pact = {
 				country = scope:target_country
 				type = trade_agreement
 			}
 		}
 	}
+	
 	pact = {
 		cost = 25
 		has_junior_participant = yes
@@ -119,9 +134,9 @@
 		is_customs_union = yes
 		can_be_used_in_sway_offers = yes
 		sway_maneuvers_cost = 10
-		relations_progress_per_day = 1		# At 100, +1 relations
+		relations_progress_per_day = 1	# At 100, +1 relations
 		relations_improvement_max = 80
-		subject_type = subject_type_customs_union		# A customs union is technically a type of subject, though it isn't presented this way in-game
+		subject_type = subject_type_customs_union	# A customs union is technically a type of subject, though it isn't presented this way in-game
 		weekly_effect = {
 			scope:target_country = {
 				remove_modifier ?= modifier_customs_union_payments_negative
@@ -130,16 +145,19 @@
 					multiplier = scope:target_country.imperia_weekly_customs_union_minting_cost
 				}
 			}
+			
 			if = {
 				limit = {
 					has_variable = total_customs_union_payment_positive
 				}
+				
 				if = {
 					limit = {
 						scope:target_country = {
 							has_variable = previous_minting_cost
 						}
 					}
+					
 					change_variable = {
 						name = total_customs_union_payment_positive
 						add = {
@@ -148,6 +166,7 @@
 						}
 					}
 				}
+				
 				else = {
 					change_variable = {
 						name = total_customs_union_payment_positive
@@ -155,6 +174,7 @@
 					}
 				}
 			}
+			
 			else = {
 				if = {
 					limit = {
@@ -162,6 +182,7 @@
 							has_variable = previous_minting_cost
 						}
 					}
+					
 					set_variable = {
 						name = total_customs_union_payment_positive
 						value = {
@@ -172,6 +193,7 @@
 						}
 					}
 				}
+				
 				else = {
 					set_variable = {
 						name = total_customs_union_payment_positive
@@ -179,6 +201,7 @@
 					}
 				}
 			}
+			
 			scope:target_country = {
 				set_variable = {
 					name = previous_minting_cost
@@ -193,6 +216,7 @@
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				OR = {
@@ -201,6 +225,7 @@
 							is_country_type = recognized
 							is_country_type = colonial
 						}
+						
 						scope:target_country = {
 							OR = {
 								is_country_type = recognized
@@ -208,6 +233,7 @@
 							}
 						}
 					}
+					
 					AND = {
 						is_country_type = unrecognized
 						scope:target_country = {
@@ -217,11 +243,13 @@
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				has_diplomatic_relevance = scope:target_country
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -229,6 +257,7 @@
 					NOT = {
 						is_country_type = decentralized
 					}
+					
 					scope:target_country = {
 						NOT = {
 							is_country_type = decentralized
@@ -237,11 +266,13 @@
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				is_subject = no
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -249,6 +280,7 @@
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -256,11 +288,13 @@
 					scope:target_country.relations:root >= relations_threshold:cordial
 				}
 			}
+			
 			show_about_to_break_warning = {
-				scope:target_country.relations:root <= 23				# this is: cordial + 3
+				scope:target_country.relations:root <= 23	# this is: cordial + 3
 				scope:target_country.relations_change_rate:root < 0
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -271,6 +305,7 @@
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				NOT = {
@@ -278,6 +313,7 @@
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				NOT = {
@@ -287,11 +323,13 @@
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				is_junior_in_customs_union = no
 			}
 		}
+		
 		manual_break_effect = {
 			change_relations = {
 				country = scope:target_country
@@ -309,6 +347,7 @@
 					limit = {
 						var:total_customs_union_payment_positive > 100
 					}
+					
 					add_modifier = {
 						name = modifier_customs_union_payments_positive
 						multiplier = {
@@ -316,6 +355,7 @@
 						}
 					}
 				}
+				
 				scope:target_country = {
 					remove_modifier ?= modifier_customs_union_payments_negative
 					remove_variable = previous_minting_cost
@@ -326,6 +366,7 @@
 						scope:target_country.country_rank > root.country_rank
 						"relations(scope:target_country)" < relations_threshold:cordial
 					}
+					
 					random_list = {
 						75 = {
 							scope:target_country = {
@@ -335,15 +376,18 @@
 								}
 							}
 						}
+						
 						25 = {
 						}
 					}
 				}
+				
 				else_if = {
 					limit = {
 						scope:target_country.country_rank > root.country_rank
 						"relations(scope:target_country)" < relations_threshold:friendly
 					}
+					
 					random_list = {
 						50 = {
 							scope:target_country = {
@@ -353,15 +397,18 @@
 								}
 							}
 						}
+						
 						50 = {
 						}
 					}
 				}
 			}
 		}
+		
 		auto_break_effect = {
 		}
 	}
+	
 	ai = {
 		check_acceptance_for_will_break = yes
 		check_acceptance_for_will_propose = yes
@@ -372,6 +419,7 @@
 				desc = "DIPLOMATIC_ACCEPTANCE_BASE"
 				value = -100
 			}
+			
 			if = {
 				limit = {
 					NOR = {
@@ -380,6 +428,7 @@
 								is_adjacent_to_country = root
 							}
 						}
+						
 						scope:actor = {
 							has_diplomatic_pact = {
 								who = root
@@ -388,34 +437,41 @@
 						}
 					}
 				}
+				
 				add = {
 					desc = "DIPLOMATIC_ACCEPTANCE_NOT_ADJACENT_MARKETS"
 					value = -20
 				}
 			}
+			
 			if = {
 				limit = {
 					has_strategy = ai_strategy_economic_imperialism
 				}
+				
 				add = {
 					desc = "DIPLOMATIC_ACCEPTANCE_ECONOMIC_IMPERIALISM"
 					add = 50
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_SENIOR_PART"
 				value = 20
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_GDP"
 				value = "scope:actor.ai_gdp_comparison(root)"
 				min = -10
 				max = 10
 			}
+			
 			if = {
 				limit = {
 					"scope:actor.ai_ideological_opinion(root)" > 0
 				}
+				
 				add = {
 					desc = "DIPLOMATIC_ACCEPTANCE_IDEOLOGICAL_OPINION"
 					value = "scope:actor.ai_ideological_opinion(root)"
@@ -423,10 +479,12 @@
 					max = 20
 				}
 			}
+			
 			else_if = {
 				limit = {
 					"scope:actor.ai_ideological_opinion(root)" < 0
 				}
+				
 				add = {
 					desc = "DIPLOMATIC_ACCEPTANCE_IDEOLOGICAL_OPINION_NEGATIVE"
 					value = "scope:actor.ai_ideological_opinion(root)"
@@ -434,6 +492,7 @@
 					min = -20
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_ATTITUDE"
 				if = {
@@ -443,6 +502,7 @@
 								who = scope:actor
 								attitude = protective
 							}
+							
 							has_attitude = {
 								who = scope:actor
 								attitude = domineering
@@ -451,6 +511,7 @@
 					}
 					value = 40
 				}
+				
 				if = {
 					limit = {
 						has_attitude = {
@@ -460,6 +521,7 @@
 					}
 					value = 30
 				}
+				
 				if = {
 					limit = {
 						OR = {
@@ -467,6 +529,7 @@
 								who = scope:actor
 								attitude = conciliatory
 							}
+							
 							has_attitude = {
 								who = scope:actor
 								attitude = cooperative
@@ -475,6 +538,7 @@
 					}
 					value = 20
 				}
+				
 				if = {
 					limit = {
 						has_attitude = {
@@ -484,6 +548,7 @@
 					}
 					value = -50
 				}
+				
 				if = {
 					limit = {
 						OR = {
@@ -491,10 +556,12 @@
 								who = scope:actor
 								attitude = antagonistic
 							}
+							
 							has_attitude = {
 								who = scope:actor
 								attitude = belligerent
 							}
+							
 							has_attitude = {
 								who = scope:actor
 								attitude = rebellious
@@ -504,6 +571,7 @@
 					value = -1000
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_RELATIONS"
 				if = {
@@ -513,6 +581,7 @@
 					}
 					value = 20
 				}
+				
 				if = {
 					limit = {
 						"relations(scope:actor)" >= relations_threshold:friendly
@@ -520,6 +589,7 @@
 					value = 50
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_INFAMY"
 				if = {
@@ -529,6 +599,7 @@
 					}
 					value = -10
 				}
+				
 				if = {
 					limit = {
 						"scope:actor.infamy" >= infamy_threshold:notorious
@@ -536,6 +607,7 @@
 					}
 					value = -25
 				}
+				
 				if = {
 					limit = {
 						"scope:actor.infamy" >= infamy_threshold:pariah
@@ -551,6 +623,7 @@
 				desc = "DIPLOMATIC_ACCEPTANCE_BASE"
 				value = -100
 			}
+			
 			if = {
 				limit = {
 					NOR = {
@@ -559,6 +632,7 @@
 								is_adjacent_to_country = root
 							}
 						}
+						
 						scope:actor = {
 							has_diplomatic_pact = {
 								who = root
@@ -567,11 +641,13 @@
 						}
 					}
 				}
+				
 				add = {
 					desc = "DIPLOMATIC_ACCEPTANCE_NOT_ADJACENT_MARKETS"
 					value = -20
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_GDP"
 				value = "scope:actor.ai_gdp_comparison(root)"
@@ -579,10 +655,12 @@
 				min = -20
 				max = 20
 			}
+			
 			if = {
 				limit = {
 					gdp >= 2000000
 				}
+				
 				subtract = {
 					desc = "DIPLOMATIC_ACCEPTANCE_HIGH_GDP"
 					value = gdp
@@ -592,16 +670,19 @@
 					max = 100
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_MUTUAL_TRADE_ROUTES"
 				value = "scope:actor.num_mutual_trade_route_levels_with_country(root)"
 				multiply = 0.5
 				max = 25
 			}
+			
 			if = {
 				limit = {
 					"scope:actor.ai_ideological_opinion(root)" > 0
 				}
+				
 				add = {
 					desc = "DIPLOMATIC_ACCEPTANCE_IDEOLOGICAL_OPINION"
 					value = "scope:actor.ai_ideological_opinion(root)"
@@ -609,10 +690,12 @@
 					max = 20
 				}
 			}
+			
 			else_if = {
 				limit = {
 					"scope:actor.ai_ideological_opinion(root)" < 0
 				}
+				
 				add = {
 					desc = "DIPLOMATIC_ACCEPTANCE_IDEOLOGICAL_OPINION_NEGATIVE"
 					value = "scope:actor.ai_ideological_opinion(root)"
@@ -620,6 +703,7 @@
 					min = -20
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_ATTITUDE"
 				if = {
@@ -631,6 +715,7 @@
 					}
 					value = 40
 				}
+				
 				if = {
 					limit = {
 						has_attitude = {
@@ -640,6 +725,7 @@
 					}
 					value = 30
 				}
+				
 				if = {
 					limit = {
 						OR = {
@@ -647,6 +733,7 @@
 								who = scope:actor
 								attitude = conciliatory
 							}
+							
 							has_attitude = {
 								who = scope:actor
 								attitude = cooperative
@@ -655,6 +742,7 @@
 					}
 					value = 20
 				}
+				
 				if = {
 					limit = {
 						has_attitude = {
@@ -664,6 +752,7 @@
 					}
 					value = -50
 				}
+				
 				if = {
 					limit = {
 						OR = {
@@ -671,18 +760,22 @@
 								who = scope:actor
 								attitude = protective
 							}
+							
 							has_attitude = {
 								who = scope:actor
 								attitude = antagonistic
 							}
+							
 							has_attitude = {
 								who = scope:actor
 								attitude = domineering
 							}
+							
 							has_attitude = {
 								who = scope:actor
 								attitude = belligerent
 							}
+							
 							has_attitude = {
 								who = scope:actor
 								attitude = rebellious
@@ -692,6 +785,7 @@
 					value = -1000
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_RELATIONS"
 				if = {
@@ -701,6 +795,7 @@
 					}
 					value = 20
 				}
+				
 				if = {
 					limit = {
 						"relations(scope:actor)" >= relations_threshold:friendly
@@ -708,6 +803,7 @@
 					value = 50
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_INFAMY"
 				if = {
@@ -717,6 +813,7 @@
 					}
 					value = -10
 				}
+				
 				if = {
 					limit = {
 						"scope:actor.infamy" >= infamy_threshold:notorious
@@ -724,6 +821,7 @@
 					}
 					value = -25
 				}
+				
 				if = {
 					limit = {
 						"scope:actor.infamy" >= infamy_threshold:pariah
@@ -731,6 +829,7 @@
 					value = -50
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_RANK"
 				if = {
@@ -741,6 +840,7 @@
 					}
 					value = -20
 				}
+				
 				if = {
 					limit = {
 						scope:actor = {
@@ -750,6 +850,7 @@
 					value = -50
 				}
 			}
+			
 			add = {
 				desc = "DIPLOMATIC_ACCEPTANCE_INCOMPATIBLE_ECONOMIC_SYSTEMS"
 				if = {
@@ -759,14 +860,17 @@
 								scope:actor = {
 									has_radical_leftist_economy = no
 								}
+								
 								scope:target_country = {
 									has_radical_leftist_economy = yes
 								}
 							}
+							
 							AND = {
 								scope:actor = {
 									has_radical_leftist_economy = yes
 								}
+								
 								scope:target_country = {
 									has_radical_leftist_economy = no
 								}
@@ -776,6 +880,7 @@
 					value = -50
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -786,12 +891,14 @@
 						}
 					}
 				}
+				
 				add = {
 					desc = "DIPLOMATIC_ACCEPTANCE_IS_CHINA"
 					value = -1000
 				}
 			}
 		}
+		
 		will_break = {
 			is_junior_in_customs_union = yes
 			OR = {
@@ -799,37 +906,46 @@
 					who = scope:target_country
 					attitude = antagonistic
 				}
+				
 				has_attitude = {
 					who = scope:target_country
 					attitude = domineering
 				}
+				
 				has_attitude = {
 					who = scope:target_country
 					attitude = belligerent
 				}
+				
 				has_attitude = {
 					who = scope:target_country
 					attitude = rebellious
 				}
+				
 				AND = {
 					NOT = {
 						has_law = law_type:law_council_republic
 					}
+					
 					scope:target_country = {
 						has_law = law_type:law_council_republic
 					}
 				}
 			}
 		}
+		
 		propose_score = {
 			value = 10
 		}
+		
 		propose_break_score = {
 			value = 10
 		}
+		
 		use_obligation_chance = {
 			value = 25
 		}
+		
 		owe_obligation_chance = {
 			value = 0
 		}
@@ -843,9 +959,11 @@ join_customs_union = {
 		NOT = {
 			has_law = law_type:law_true_neutrality
 		}
+		
 		NOT = {
 			is_country_type = decentralized
 		}
+		
 		scope:target_country = {
 			NOR = {
 				has_law = law_type:law_isolationism
@@ -854,6 +972,7 @@ join_customs_union = {
 			}
 		}
 	}
+	
 	possible = {
 		OR = {
 			AND = {
@@ -862,6 +981,7 @@ join_customs_union = {
 					is_country_type = recognized
 					is_country_type = colonial
 				}
+				
 				scope:target_country = {
 					OR = {
 						is_country_type = recognized
@@ -878,6 +998,7 @@ join_customs_union = {
 				}
 			}
 		}
+		
 		NOT = {
 			has_war_with = scope:target_country
 		}
@@ -890,6 +1011,7 @@ join_customs_union = {
 		NOT = {
 			has_law = law_type:law_isolationism
 		}
+		
 		custom_tooltip = {
 			text = DIPLO_ACTION_RELATIONS_CORDIAL_OR_GREATER
 			scope:target_country.relations:root >= relations_threshold:cordial
@@ -899,6 +1021,7 @@ join_customs_union = {
 			is_revolutionary = no
 			is_junior_in_customs_union = no
 		}
+		
 		custom_tooltip = {
 			text = DIPLO_ACTION_MARKET_CONNECTION_REQUIRED
 			OR = {
@@ -906,10 +1029,12 @@ join_customs_union = {
 					market = {
 						has_port = yes
 					}
+					
 					scope:target_country.market = {
 						has_port = yes
 					}
 				}
+				
 				market = {
 					any_scope_country = {
 						is_adjacent_to_country = scope:target_country
@@ -927,23 +1052,28 @@ join_customs_union = {
 					type = trade_agreement
 				}
 			}
+			
 			remove_diplomatic_pact = {
 				country = scope:target_country
 				type = trade_agreement
 			}
 		}
 	}
+	
 	ai = {
 		check_acceptance_for_will_propose = yes
 		propose_score = {
 			value = 10
 		}
+		
 		propose_break_score = {
 			value = 10
 		}
+		
 		use_obligation_chance = {
 			value = 10
 		}
+		
 		owe_obligation_chance = {
 			value = 10
 		}
@@ -957,6 +1087,7 @@ change_customs_union = {
 		NOT = {
 			has_law = law_type:law_true_neutrality
 		}
+		
 		NOT = {
 			is_country_type = decentralized
 		}
@@ -969,6 +1100,7 @@ change_customs_union = {
 			is_junior_in_customs_union = yes
 		}
 	}
+	
 	possible = {
 		OR = {
 			AND = {
@@ -977,6 +1109,7 @@ change_customs_union = {
 					is_country_type = recognized
 					is_country_type = colonial
 				}
+				
 				scope:target_country = {
 					OR = {
 						is_country_type = recognized
@@ -993,6 +1126,7 @@ change_customs_union = {
 				}
 			}
 		}
+		
 		NOT = {
 			has_war_with = scope:target_country
 		}
@@ -1003,6 +1137,7 @@ change_customs_union = {
 			}
 			has_law = law_type:law_isolationism
 		}
+		
 		custom_tooltip = {
 			text = DIPLO_ACTION_RELATIONS_CORDIAL_OR_GREATER
 			scope:target_country.relations:root >= relations_threshold:cordial
@@ -1011,6 +1146,7 @@ change_customs_union = {
 		scope:target_country = {
 			is_revolutionary = no
 		}
+		
 		custom_tooltip = {
 			text = DIPLO_ACTION_MARKET_CONNECTION_REQUIRED_CHANGE
 			OR = {
@@ -1018,10 +1154,12 @@ change_customs_union = {
 					market = {
 						has_port = yes
 					}
+					
 					scope:target_country = {
 						has_port = yes
 					}
 				}
+				
 				market = {
 					any_scope_country = {
 						is_adjacent_to_country = scope:target_country
@@ -1039,23 +1177,28 @@ change_customs_union = {
 					type = trade_agreement
 				}
 			}
+			
 			remove_diplomatic_pact = {
 				country = scope:target_country
 				type = trade_agreement
 			}
 		}
 	}
+	
 	ai = {
 		check_acceptance_for_will_propose = yes
 		propose_score = {
 			value = 10
 		}
+		
 		propose_break_score = {
 			value = 10
 		}
+		
 		use_obligation_chance = {
 			value = 50
 		}
+		
 		owe_obligation_chance = {
 			value = 10
 		}

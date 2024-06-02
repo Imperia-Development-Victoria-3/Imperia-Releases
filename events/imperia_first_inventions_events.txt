@@ -20,6 +20,7 @@ first_inventions_events.1 = {
 			save_scope_as = inventor_scope
 		}
 	}
+	
 	option = {
 		trigger = {
 			can_research = military_aviation
@@ -27,6 +28,7 @@ first_inventions_events.1 = {
 		name = first_inventions_events.1.close
 		default_option = yes
 	}
+	
 	option = {
 		trigger = {
 			NOT = {
@@ -58,6 +60,7 @@ first_inventions_events.2 = {
 			save_scope_as = inventor_scope
 		}
 	}
+	
 	option = {
 		trigger = {
 			can_research = combustion_engine
@@ -65,6 +68,7 @@ first_inventions_events.2 = {
 		name = first_inventions_events.2.close
 		default_option = yes
 	}
+	
 	option = {
 		trigger = {
 			NOT = {
@@ -93,14 +97,17 @@ first_inventions_events.3 = {
 			has_global_variable = combustion_engine_invented_global
 		}
 	}
+	
 	immediate = {
 		set_global_variable = combustion_engine_invented_global
 	}
+	
 	option = {
 		name = first_inventions_events.3.a
 		add_modifier = {
 			name = combustion_engine_invented_country
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -138,6 +145,7 @@ first_inventions_events.4 = {
 			save_scope_as = inventor_scope
 		}
 	}
+	
 	option = {
 		trigger = {
 			can_research = telephone
@@ -145,6 +153,7 @@ first_inventions_events.4 = {
 		name = first_inventions_events.4.close
 		default_option = yes
 	}
+	
 	option = {
 		trigger = {
 			NOT = {
@@ -173,14 +182,17 @@ first_inventions_events.5 = {
 			has_global_variable = telephone_invented_global
 		}
 	}
+	
 	immediate = {
 		set_global_variable = telephone_invented_global
 	}
+	
 	option = {
 		name = first_inventions_events.5.a
 		add_modifier = {
 			name = telephone_invented_country
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -219,6 +231,7 @@ first_inventions_events.6 = {
 			save_scope_as = inventor_scope
 		}
 	}
+	
 	option = {
 		trigger = {
 			can_research = electrical_generation
@@ -226,6 +239,7 @@ first_inventions_events.6 = {
 		name = first_inventions_events.6.close
 		default_option = yes
 	}
+	
 	option = {
 		trigger = {
 			NOT = {
@@ -254,14 +268,17 @@ first_inventions_events.7 = {
 			has_global_variable = electrical_generation_invented_global
 		}
 	}
+	
 	immediate = {
 		set_global_variable = electrical_generation_invented_global
 	}
+	
 	option = {
 		name = first_inventions_events.7.a
 		add_modifier = {
 			name = electrical_generation_invented_country
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -300,6 +317,7 @@ first_inventions_events.8 = {
 			save_scope_as = inventor_scope
 		}
 	}
+	
 	option = {
 		trigger = {
 			can_research = radio
@@ -307,6 +325,7 @@ first_inventions_events.8 = {
 		name = first_inventions_events.8.close
 		default_option = yes
 	}
+	
 	option = {
 		trigger = {
 			NOT = {
@@ -335,14 +354,17 @@ first_inventions_events.9 = {
 			has_global_variable = radio_invented_global
 		}
 	}
+	
 	immediate = {
 		set_global_variable = radio_invented_global
 	}
+	
 	option = {
 		name = first_inventions_events.9.a
 		add_modifier = {
 			name = radio_invented_country
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -381,6 +403,7 @@ first_inventions_events.10 = {
 			save_scope_as = inventor_scope
 		}
 	}
+	
 	option = {
 		trigger = {
 			can_research = dreadnought
@@ -388,6 +411,7 @@ first_inventions_events.10 = {
 		name = first_inventions_events.10.close
 		default_option = yes
 	}
+	
 	option = {
 		trigger = {
 			NOT = {
@@ -416,14 +440,17 @@ first_inventions_events.11 = {
 			has_global_variable = dreadnought_invented_global
 		}
 	}
+	
 	immediate = {
 		set_global_variable = dreadnought_invented_global
 	}
+	
 	option = {
 		name = first_inventions_events.11.a
 		add_modifier = {
 			name = dreadnought_invented_country
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -462,6 +489,7 @@ first_inventions_events.12 = {
 			save_scope_as = inventor_scope
 		}
 	}
+	
 	option = {
 		trigger = {
 			can_research = pumpjacks
@@ -469,6 +497,7 @@ first_inventions_events.12 = {
 		name = first_inventions_events.12.close
 		default_option = yes
 	}
+	
 	option = {
 		trigger = {
 			NOT = {
@@ -497,14 +526,17 @@ first_inventions_events.13 = {
 			has_global_variable = pumpjacks_invented_global
 		}
 	}
+	
 	immediate = {
 		set_global_variable = pumpjacks_invented_global
 	}
+	
 	option = {
 		name = first_inventions_events.13.a
 		add_modifier = {
 			name = pumpjacks_invented_country
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -544,6 +576,7 @@ first_inventions_events.14 = {
 			save_scope_as = inventor_scope
 		}
 	}
+	
 	option = {
 		trigger = {
 			NOT = {
@@ -553,11 +586,12 @@ first_inventions_events.14 = {
 		}
 		name = first_inventions_events.14.far_off
 	}
+	
 	option = {
 		trigger = {
-			OR = { 
-				has_technology_researched = reinforced_concrete 
-				has_technology_researched = steel_frame_buildings 
+			OR = {
+				has_technology_researched = reinforced_concrete
+				has_technology_researched = steel_frame_buildings
 			}
 		}
 		name = first_inventions_events.14.close
@@ -586,6 +620,7 @@ first_inventions_events.15 = {
 			save_scope_as = inventor_scope
 		}
 	}
+	
 	option = {
 		trigger = {
 			can_research = mobile_armor
@@ -593,6 +628,7 @@ first_inventions_events.15 = {
 		name = first_inventions_events.15.close
 		default_option = yes
 	}
+	
 	option = {
 		trigger = {
 			NOT = {
@@ -621,14 +657,17 @@ first_inventions_events.16 = {
 			has_global_variable = mobile_armor_invented_global
 		}
 	}
+	
 	immediate = {
 		set_global_variable = mobile_armor_invented_global
 	}
+	
 	option = {
 		name = first_inventions_events.16.a
 		add_modifier = {
 			name = mobile_armor_invented_country
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -645,7 +684,6 @@ first_inventions_events.16 = {
 		}
 	}
 }
-
 
 first_inventions_events.17 = {
 	type = country_event
@@ -665,14 +703,17 @@ first_inventions_events.17 = {
 			has_global_variable = trench_works_invented_global
 		}
 	}
+	
 	immediate = {
 		set_global_variable = trench_works_invented_global
 	}
+	
 	option = {
 		name = first_inventions_events.17.a
 		add_modifier = {
 			name = trench_works_invented_country
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -689,6 +730,7 @@ first_inventions_events.17 = {
 		}
 	}
 }
+
 first_inventions_events.18 = {
 	#trench_works invented by X
 	type = country_event
@@ -710,6 +752,7 @@ first_inventions_events.18 = {
 			save_scope_as = inventor_scope
 		}
 	}
+	
 	option = {
 		trigger = {
 			can_research = trench_works
@@ -717,6 +760,7 @@ first_inventions_events.18 = {
 		name = first_inventions_events.18.close
 		default_option = yes
 	}
+	
 	option = {
 		trigger = {
 			NOT = {

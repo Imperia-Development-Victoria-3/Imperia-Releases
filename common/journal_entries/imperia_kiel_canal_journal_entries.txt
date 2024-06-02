@@ -9,11 +9,13 @@
 			}
 		}
 	}
+	
 	complete = {
 		scope:journal_entry = {
 			is_goal_complete = yes
 		}
 	}
+	
 	on_complete = {
 		remove_modifier = modifier_surveying_kiel
 		set_variable = kiel_survey_complete
@@ -21,12 +23,15 @@
 			id = imperia_canal_events.1
 		}
 	}
+	
 	current_value = {
 		value = root.var:survey_kiel_taken
 	}
+	
 	goal_add_value = {
 		value = 12
 	}
+	
 	invalid = {
 		OR = {
 			hidden_trigger = {
@@ -34,17 +39,20 @@
 					has_variable = survey_kiel_taken
 				}
 			}
+			
 			any_state = {
 				state_region = s:STATE_SCHLESWIG_HOLSTEIN
 				NOT = {
 					owner = ROOT
 				}
+				
 				any_scope_building = {
 					is_building_type = building_kiel_canal
 				}
 			}
 		}
 	}
+	
 	on_invalid = {
 		remove_variable = survey_kiel_taken
 		remove_modifier = modifier_surveying_kiel
@@ -66,6 +74,7 @@ je_kiel_canal_construction = {
 			}
 		}
 	}
+	
 	on_complete = {
 		set_global_variable = kiel_canal_complete
 	}

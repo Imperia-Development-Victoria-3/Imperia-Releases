@@ -3,14 +3,21 @@
 	group = je_group_historical_content
 	complete = {
 		OR = {
-			NOT = { exists = c:TUR }
-			NOT = { is_subject_of = c:TUR }
+			NOT = {
+				exists = c:TUR
+			}
+			
+			NOT = {
+				is_subject_of = c:TUR
+			}
 		}
 	}
+	
 	immediate = {
 		add_primary_culture = cu:turkish
 		set_state_religion = rel:sunni
 	}
+	
 	on_complete = {
 		trigger_event = {
 			id = imperia_bulgarian_independence.1

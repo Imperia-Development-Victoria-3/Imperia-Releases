@@ -10,6 +10,7 @@
 					has_law = law_type:law_expansionism
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -18,6 +19,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -26,6 +28,7 @@
 				}
 				value = political_discord_change_miniscule
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -37,6 +40,7 @@
 				}
 				value = political_discord_change_small
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -57,6 +61,7 @@
 					has_law = law_type:law_imperialism
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -65,6 +70,7 @@
 				}
 				value = political_discord_change_miniscule
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -73,6 +79,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -81,6 +88,7 @@
 				}
 				value = political_discord_change_small
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -89,6 +97,7 @@
 				}
 				value = political_discord_change_medium
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -109,6 +118,7 @@
 					has_law = law_type:law_armed_neutrality
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -120,6 +130,7 @@
 				}
 				value = political_discord_change_large
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -128,6 +139,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -139,6 +151,7 @@
 				}
 				value = political_discord_change_miniscule
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -156,6 +169,7 @@
 					has_law = law_type:law_anti_imperialist
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -168,6 +182,7 @@
 				}
 				value = political_discord_change_xl
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -179,6 +194,7 @@
 				}
 				value = political_discord_change_small
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -196,6 +212,7 @@
 					has_law = law_type:law_pacifist
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -208,6 +225,7 @@
 				}
 				value = political_discord_change_huge
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -216,6 +234,7 @@
 				}
 				value = political_discord_change_small
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -224,6 +243,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -241,6 +261,7 @@
 					has_law = law_type:law_true_neutrality
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -253,6 +274,7 @@
 				}
 				value = political_discord_change_massive
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -261,6 +283,7 @@
 				}
 				value = political_discord_change_xl
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -269,6 +292,7 @@
 				}
 				value = political_discord_change_medium
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -278,8 +302,9 @@
 				value = 0
 			}
 		}
-        # Exit true neutral
+		# Exit true neutral
 	}
+	
 	else = {
 		value = 0
 	}

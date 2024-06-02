@@ -5,6 +5,7 @@
 			teleport_to_front = p:x3CBF9E.front
 		}
 	}
+	
 	c:SPA = {
 		every_military_formation = {
 			fully_mobilize_army = yes

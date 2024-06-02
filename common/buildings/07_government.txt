@@ -9,6 +9,7 @@ building_port = {
 	unlocking_technologies = {
 		navigation
 	}
+	
 	production_method_groups = {
 		pmg_base_building_port
 		pmg_military_port
@@ -30,7 +31,7 @@ building_government_administration = {
 	unlocking_technologies = {
 		tech_bureaucracy
 	}
-
+	
 	should_auto_expand = {
 		occupancy >= 0.8
 		OR = {
@@ -40,7 +41,7 @@ building_government_administration = {
 			}
 		}
 	}
-
+	
 	production_method_groups = {
 		pmg_base_building_government_administration
 		pmg_government_administration_bureaucrat_professionalism
@@ -57,6 +58,7 @@ building_university = {
 	unlocking_technologies = {
 		academia
 	}
+	
 	production_method_groups = {
 		pmg_base_building_university
 		pmg_university_academia
@@ -90,6 +92,7 @@ building_skyscraper = {
 			}
 		}
 	}
+	
 	can_build_private = {
 		error_check = {
 			severity = potential

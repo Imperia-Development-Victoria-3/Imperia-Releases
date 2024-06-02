@@ -3,13 +3,12 @@
 	texture = "gfx/interface/icons/ig_icons/petty_bourgeoisie.dds"
 	layer = "revolution_dynamic_petty_bourgeoisie"
 	index = 5
-
 	ideologies = {
 		ideology_reactionary
 		ideology_meritocratic
 		ideology_patriotic
 	}
-
+	
 	enable = {
 		always = yes
 	}
@@ -25,45 +24,60 @@
 		ig:ig_petty_bourgeoisie = {
 			if = {
 				limit = {
-					owner = { c:SWE ?= this}
+					owner = {
+						c:SWE ?= this
+					}
 				}
 				set_ig_trait = ig_trait:ig_trait_xenophobia
 				set_ig_trait = ig_trait:ig_trait_bergsbrukens_valdistrikten
 				set_ig_trait = ig_trait:ig_trait_treasury_bonds
 			}
+			
 			else_if = {
 				limit = {
-					owner = { c:TUR ?= this }
+					owner = {
+						c:TUR ?= this
+					}
 				}
-						set_ig_trait = ig_trait:ig_trait_xenophobia
-						set_ig_trait = ig_trait:ig_trait_effendi
-						set_ig_trait = ig_trait:ig_trait_reorganization
+				set_ig_trait = ig_trait:ig_trait_xenophobia
+				set_ig_trait = ig_trait:ig_trait_effendi
+				set_ig_trait = ig_trait:ig_trait_reorganization
 			}
+			
 			else_if = {
 				limit = {
-					owner = { c:EGY ?= this }
+					owner = {
+						c:EGY ?= this
+					}
 				}
 				set_ig_trait = ig_trait:ig_trait_xenophobia
 				set_ig_trait = ig_trait:ig_trait_effendi
 				set_ig_trait = ig_trait:ig_trait_treasury_bonds
 			}
+			
 			else_if = {
 				limit = {
 					has_dlc_feature = voice_of_the_people_content
-					owner = { c:FRA ?= this }
+					owner = {
+						c:FRA ?= this
+					}
 				}
 				set_ig_trait = ig_trait:ig_trait_xenophobia
 				set_ig_trait = ig_trait:ig_trait_haute_finance
 				set_ig_trait = ig_trait:ig_trait_master_of_the_house
 			}
+			
 			else_if = {
 				limit = {
-					owner = { c:GBR ?= this }
+					owner = {
+						c:GBR ?= this
+					}
 				}
 				set_ig_trait = ig_trait:ig_trait_bah_humbug
 				set_ig_trait = ig_trait:ig_trait_civil_service
 				set_ig_trait = ig_trait:ig_trait_old_lady_of_threadneedle_street
 			}
+			
 			else = {
 				set_ig_trait = ig_trait:ig_trait_xenophobia
 				set_ig_trait = ig_trait:ig_trait_middle_managers
@@ -71,10 +85,11 @@
 			}
 		}
 	}
-
-	on_disable = {}
-	on_character_ig_membership = {}
-
+	
+	on_disable = { }
+	
+	on_character_ig_membership = { }
+	
 	pop_potential = {
 		custom_tooltip = {
 			text = would_be_accepted_under_national_supremacy_tt
@@ -85,10 +100,12 @@
 				}
 			}
 		}
+		
 		NOR = {
 			is_pop_type = aristocrats
 			is_pop_type = capitalists
 		}
+		
 		OR = {
 			pop_employment_building_group = bg_manufacturing
 			pop_employment_building_group = bg_service
@@ -109,6 +126,7 @@
 						}
 					}
 				}
+				
 				OR = {
 					pop_employment_building_group = bg_agriculture
 					pop_employment_building_group = bg_ranching
@@ -118,10 +136,9 @@
 			}
 		}
 	}
-
+	
 	pop_weight = {
 		value = 50
-
 		add = {
 			desc = "POP_SHOPKEEPERS"
 			if = {
@@ -131,7 +148,7 @@
 				value = 250
 			}
 		}
-
+		
 		add = {
 			desc = "POP_CLERKS"
 			if = {
@@ -141,7 +158,7 @@
 				value = 100
 			}
 		}
-
+		
 		add = {
 			desc = "POP_ENGINEERS"
 			if = {
@@ -151,13 +168,14 @@
 				value = 50
 			}
 		}
-
+		
 		if = {
 			limit = {
 				owner = {
 					has_law = law_type:law_elected_bureaucrats
 				}
 			}
+			
 			add = {
 				desc = "POP_BUREAUCRATS_ELECTED"
 				if = {
@@ -168,7 +186,7 @@
 				}
 			}
 		}
-
+		
 		add = {
 			desc = "HOMESTEADING_LAW"
 			if = {
@@ -179,7 +197,6 @@
 					}
 				}
 				value = 25
-
 				if = {
 					limit = {
 						state = {
@@ -190,7 +207,7 @@
 				}
 			}
 		}
-
+		
 		add = {
 			desc = "URBAN_POP"
 			if = {
@@ -205,7 +222,7 @@
 				add = this.standard_of_living
 			}
 		}
-
+		
 		multiply = {
 			desc = "LEADER_POPULARITY"
 			scope:interest_group = {
@@ -218,11 +235,10 @@
 				}
 			}
 		}
-
+		
 		multiply = {
 			desc = "decentralized_power"
 			value = 1.0
-
 			if = {
 				limit = {
 					owner = {
@@ -232,12 +248,14 @@
 				value = 0.0
 			}
 		}
+		
 		if = {
 			limit = {
 				scope:interest_group = {
 					is_in_government = yes
 				}
 			}
+			
 			multiply = {
 				desc = "IN_GOVERNMENT_ATTRACTION"
 				value = 1
@@ -252,20 +270,23 @@
 					is_in_government = yes
 				}
 			}
-			multiply = { # Multiplied by 1.25x max
+			
+			multiply = {	# Multiplied by 1.25x max
 				desc = "POP_LOYALISTS"
 				value = pop_loyalist_fraction
 				divide = 4
 				add = 1
 			}
 		}
+		
 		if = {
 			limit = {
 				scope:interest_group = {
 					is_in_government = no
 				}
 			}
-			multiply = { # Multiplied by 1.25x max
+			
+			multiply = {	# Multiplied by 1.25x max
 				desc = "POP_RADICALS"
 				value = pop_radical_fraction
 				divide = 4
@@ -273,7 +294,7 @@
 			}
 		}
 	}
-
+	
 	monarch_weight = {
 		value = 1
 		# Monarch is not likely to adopt a marginal IG
@@ -281,6 +302,7 @@
 			limit = {
 				is_marginal = yes
 			}
+			
 			multiply = {
 				value = 0.1
 			}
@@ -290,6 +312,7 @@
 			limit = {
 				is_powerful = yes
 			}
+			
 			multiply = {
 				value = 2
 			}
@@ -301,6 +324,7 @@
 					has_law = law_type:law_elected_bureaucrats
 				}
 			}
+			
 			multiply = {
 				value = 1.5
 			}
@@ -312,12 +336,13 @@
 					has_law = law_type:law_ethnostate
 				}
 			}
+			
 			multiply = {
 				value = 2
 			}
 		}
 	}
-
+	
 	agitator_weight = {
 		# Agitators more likely to come from populist IG's rather than elitist
 		value = 1.0
@@ -328,20 +353,21 @@
 					is_marginal = yes
 				}
 			}
+			
 			multiply = {
 				value = 0
 			}
 		}
 	}
-
+	
 	commander_weight = {
 		value = 1.0
 	}
-
+	
 	noble_chance = {
 		value = 0.1
 	}
-
+	
 	female_commander_chance = {
 		value = 0.0
 		if = {
@@ -353,67 +379,65 @@
 					}
 				}
 			}
+			
 			add = {
 				value = 0.30
 			}
-
 		}
 	}
-
+	
 	female_politician_chance = {
 		value = 0.0
-
 		if = {
 			limit = {
 				owner = {
 					has_law = law_type:law_womens_suffrage
 				}
-
 			}
+			
 			add = {
 				value = 0.025
 			}
 		}
 	}
-
+	
 	female_agitator_chance = {
 		value = 0.025
-		
 		if = {
 			limit = {
 				owner = {
 					has_law = law_type:law_women_own_property
 				}
-
 			}
+			
 			add = {
 				value = 0.025
 			}
-		}	
+		}
 		
 		if = {
 			limit = {
 				owner = {
 					has_law = law_type:law_women_in_the_workplace
 				}
-
 			}
+			
 			add = {
 				value = 0.025
 			}
 		}
-
+		
 		if = {
 			limit = {
 				owner = {
 					has_law = law_type:law_womens_suffrage
 				}
-
 			}
+			
 			add = {
 				value = 0.025
 			}
-		}		
+		}
 	}
 
 	# The chance that a commander belonging to this IG takes over leadership when it changes
@@ -424,6 +448,7 @@
 			limit = {
 				exists = scope:character
 			}
+			
 			multiply = {
 				value = 1
 				add = scope:character.popularity

@@ -4,22 +4,26 @@
 		name = discord_change
 		value = $VALUE$
 	}
+	
 	if = {
 		limit = {
 			$VALUE$ > 0
 		}
 		custom_tooltip = increase_discord_tt
 	}
+	
 	else_if = {
 		limit = {
 			$VALUE$ < 0
 		}
 		custom_tooltip = decrease_discord_tt
 	}
+	
 	change_variable = {
 		name = political_discord
 		add = $VALUE$
 	}
+	
 	clamp_variable = {
 		name = political_discord
 		max = 450

@@ -14,10 +14,12 @@ victoria.1 = {
 	trigger = {
 		# triggered by je_victoria
 	}
+	
 	immediate = {
 		ruler = {
 			save_scope_as = queen_victoria
 		}
+		
 		c:HAN = {
 			create_character = {
 				first_name = Ernest_Augustus
@@ -33,6 +35,7 @@ victoria.1 = {
 					arrogant
 				}
 			}
+			
 			create_character = {
 				first_name = George
 				last_name = Hannover
@@ -49,12 +52,14 @@ victoria.1 = {
 			}
 			save_scope_as = hannover_victoria_scope
 		}
+		
 		c:GBR = {
 			save_scope_as = britain_victoria_country_scope
 		}
 	}
+	
 	option = {
-		name = victoria.1.a		# God save the Queen!
+		name = victoria.1.a	# God save the Queen!
 		ai_chance = {
 			base = 1
 		}
@@ -64,10 +69,12 @@ victoria.1 = {
 				name = queen_victoria_mod
 			}
 		}
+		
 		remove_diplomatic_pact = {
 			country = c:HAN
 			type = personal_union
 		}
+		
 		custom_tooltip = {
 			text = victoria.1.tt
 			if = {
@@ -79,16 +86,19 @@ victoria.1 = {
 						}
 					}
 				}
+				
 				c:GBR = {
 					remove_diplomatic_pact = {
 						country = c:HAM
 						type = customs_union
 					}
 				}
+				
 				c:HAM = {
 					set_variable = victoria_customs_ham
 				}
 			}
+			
 			if = {
 				limit = {
 					c:GBR = {
@@ -98,16 +108,19 @@ victoria.1 = {
 						}
 					}
 				}
+				
 				c:GBR = {
 					remove_diplomatic_pact = {
 						country = c:BRE
 						type = customs_union
 					}
 				}
+				
 				c:BRE = {
 					set_variable = victoria_customs_bre
 				}
 			}
+			
 			if = {
 				limit = {
 					c:GBR = {
@@ -117,16 +130,19 @@ victoria.1 = {
 						}
 					}
 				}
+				
 				c:GBR = {
 					remove_diplomatic_pact = {
 						country = c:OLD
 						type = customs_union
 					}
 				}
+				
 				c:OLD = {
 					set_variable = victoria_customs_old
 				}
 			}
+			
 			if = {
 				limit = {
 					c:GBR = {
@@ -136,17 +152,20 @@ victoria.1 = {
 						}
 					}
 				}
+				
 				c:GBR = {
 					remove_diplomatic_pact = {
 						country = c:BRA
 						type = customs_union
 					}
 				}
+				
 				c:BRA = {
 					set_variable = victoria_customs_bra
 				}
 			}
 		}
+		
 		hidden_effect = {
 			c:HAN = {
 				trigger_event = {
@@ -154,6 +173,7 @@ victoria.1 = {
 				}
 			}
 		}
+		
 		every_country = {
 			limit = {
 				has_interest_marker_in_region = region_north_germany
@@ -161,19 +181,23 @@ victoria.1 = {
 			post_notification = victoria_notification
 		}
 	}
+	
 	option = {
 		name = victoria.1.b
 		ai_chance = {
 			base = 0
 		}
+		
 		create_incident = {
 			country = c:HAN
 			value = 30
 		}
+		
 		create_diplomatic_pact = {
 			country = c:HAN
 			type = personal_union
 		}
+		
 		hidden_effect = {
 			c:HAN = {
 				trigger_event = {
@@ -181,6 +205,7 @@ victoria.1 = {
 				}
 			}
 		}
+		
 		every_country = {
 			limit = {
 				has_interest_marker_in_region = region_north_germany
@@ -205,10 +230,12 @@ victoria.2 = {
 	trigger = {
 		# triggered by je_victoria
 	}
+	
 	immediate = {
 		ruler = {
 			save_scope_as = ernest_augustus
 		}
+		
 		if = {
 			limit = {
 				exists = c:HAM
@@ -222,11 +249,13 @@ victoria.2 = {
 					}
 				}
 			}
+			
 			create_diplomatic_pact = {
 				country = c:HAM
 				type = customs_union
 			}
 		}
+		
 		if = {
 			limit = {
 				exists = c:BRE
@@ -240,11 +269,13 @@ victoria.2 = {
 					}
 				}
 			}
+			
 			create_diplomatic_pact = {
 				country = c:BRE
 				type = customs_union
 			}
 		}
+		
 		if = {
 			limit = {
 				exists = c:OLD
@@ -258,11 +289,13 @@ victoria.2 = {
 					}
 				}
 			}
+			
 			create_diplomatic_pact = {
 				country = c:OLD
 				type = customs_union
 			}
 		}
+		
 		if = {
 			limit = {
 				exists = c:BRA
@@ -276,12 +309,14 @@ victoria.2 = {
 					}
 				}
 			}
+			
 			create_diplomatic_pact = {
 				country = c:BRA
 				type = customs_union
 			}
 		}
 	}
+	
 	option = {
 		name = victoria.2.a
 		show_as_tooltip = {
@@ -311,11 +346,13 @@ victoria.3 = {
 	trigger = {
 		# triggered by je_victoria
 	}
+	
 	immediate = {
 		ruler = {
 			save_scope_as = ernest_augustus
 		}
 	}
+	
 	option = {
 		name = victoria.3.a
 		ai_chance = {
@@ -332,6 +369,7 @@ victoria.3 = {
 					type = war_reparations
 					target_country = c:HAN
 				}
+				
 				add_war_goal = {
 					holder = c:HAN
 					type = independence
@@ -339,6 +377,7 @@ victoria.3 = {
 				}
 			}
 		}
+		
 		hidden_effect = {
 			if = {
 				limit = {
@@ -353,11 +392,13 @@ victoria.3 = {
 						}
 					}
 				}
+				
 				create_diplomatic_pact = {
 					country = c:HAM
 					type = customs_union
 				}
 			}
+			
 			if = {
 				limit = {
 					exists = c:BRE
@@ -371,11 +412,13 @@ victoria.3 = {
 						}
 					}
 				}
+				
 				create_diplomatic_pact = {
 					country = c:BRE
 					type = customs_union
 				}
 			}
+			
 			if = {
 				limit = {
 					exists = c:OLD
@@ -389,11 +432,13 @@ victoria.3 = {
 						}
 					}
 				}
+				
 				create_diplomatic_pact = {
 					country = c:OLD
 					type = customs_union
 				}
 			}
+			
 			if = {
 				limit = {
 					exists = c:BRA
@@ -407,6 +452,7 @@ victoria.3 = {
 						}
 					}
 				}
+				
 				create_diplomatic_pact = {
 					country = c:BRA
 					type = customs_union
@@ -415,6 +461,7 @@ victoria.3 = {
 		}
 		custom_tooltip = victoria.3.nopu
 	}
+	
 	option = {
 		name = victoria.3.b
 		ai_chance = {

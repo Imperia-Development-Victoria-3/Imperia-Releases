@@ -6,16 +6,18 @@ law_ethnostate = {
 	group = lawgroup_citizenship
 	icon = "gfx/interface/icons/law_icons/ethnostate.dds"
 	progressiveness = -100
-
 	on_enact = {
 		recalculate_pop_ig_support = yes
 	}
+	
 	cultural_acceptance_rule = {
 		is_primary_culture_of = scope:country
 	}
+	
 	unlocking_technologies = {
 		nationalism
 	}
+	
 	modifier = {
 		country_authority_add = 350
 		country_institution_citizenship_max_investment_add = 2
@@ -31,15 +33,17 @@ law_ethnostate = {
 		state_radicals_from_discrimination_mult = 0.2
 		country_infamy_generation_mult = 0.03
 	}
+	
 	possible_political_movements = {
 		law_racial_segregation
 		law_cultural_exclusion
 	}
+	
 	pop_support = {
 		value = 0
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -56,16 +60,17 @@ law_national_supremacy = {
 	group = lawgroup_citizenship
 	icon = "gfx/interface/icons/law_icons/national_supremacy.dds"
 	progressiveness = -50
-
 	on_enact = {
 		recalculate_pop_ig_support = yes
 	}
+	
 	cultural_acceptance_rule = {
 		AND = {
 			shares_heritage_trait_with_any_primary_culture = scope:country
 			shares_non_heritage_trait_with_any_primary_culture = scope:country
 		}
 	}
+	
 	modifier = {
 		country_authority_add = 250
 		country_institution_citizenship_max_investment_add = 2
@@ -83,15 +88,17 @@ law_national_supremacy = {
 		state_radicals_from_discrimination_mult = 0.05
 		country_infamy_generation_mult = 0.01
 	}
+	
 	possible_political_movements = {
 		law_racial_segregation
 		law_cultural_exclusion
 	}
+	
 	pop_support = {
 		value = 0
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -111,9 +118,11 @@ law_racial_segregation = {
 	on_enact = {
 		recalculate_pop_ig_support = yes
 	}
+	
 	cultural_acceptance_rule = {
 		shares_heritage_trait_with_any_primary_culture = scope:country
 	}
+	
 	modifier = {
 		country_authority_add = 150
 		country_institution_citizenship_max_investment_add = 1
@@ -129,10 +138,12 @@ law_racial_segregation = {
 		state_assimilation_mult = 0.10
 		state_radicals_from_discrimination_mult = 0.1
 	}
+	
 	possible_political_movements = {
 		law_national_supremacy
 		law_cultural_exclusion
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -154,8 +165,8 @@ law_racial_segregation = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -172,17 +183,19 @@ law_cultural_exclusion = {
 	group = lawgroup_citizenship
 	icon = "gfx/interface/icons/law_icons/cultural_exclusion.dds"
 	progressiveness = 50
-
 	unlocking_laws = {
 		law_slavery_banned
 		law_debt_slavery
 	}
+	
 	on_enact = {
 		recalculate_pop_ig_support = yes
 	}
+	
 	cultural_acceptance_rule = {
 		shares_trait_with_any_primary_culture = scope:country
 	}
+	
 	modifier = {
 		country_authority_add = 75
 		country_institution_citizenship_max_investment_add = 1
@@ -197,10 +210,12 @@ law_cultural_exclusion = {
 		state_radicals_from_sol_change_accepted_culture_mult = -0.025
 		state_assimilation_mult = 0.025
 	}
+	
 	possible_political_movements = {
 		law_racial_segregation
 		law_multicultural
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -208,15 +223,15 @@ law_cultural_exclusion = {
 			if = {
 				limit = {
 					culture_accepted = no
-					owner = { 
-						OR = { 
+					owner = {
+						OR = {
 							has_law = law_type:law_ethnostate
 							is_enacting_law = law_type:law_ethnostate
 							has_law = law_type:law_national_supremacy
 							is_enacting_law = law_type:law_national_supremacy
 							has_law = law_type:law_racial_segregation
 							is_enacting_law = law_type:law_racial_segregation
-						} 
+						}
 					}
 				}
 				add = 0.5
@@ -229,8 +244,8 @@ law_cultural_exclusion = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -247,23 +262,26 @@ law_multicultural = {
 	group = lawgroup_citizenship
 	icon = "gfx/interface/icons/law_icons/multicultural.dds"
 	progressiveness = 100
-
 	unlocking_laws = {
 		law_slavery_banned
 		law_debt_slavery
 	}
+	
 	unlocking_technologies = {
 		human_rights
 	}
+	
 	on_enact = {
 		recalculate_pop_ig_support = yes
 		add_journal_entry = {
 			type = je_imperia_enact_true_multiculturalism
 		}
 	}
+	
 	cultural_acceptance_rule = {
 		shares_trait_with_any_primary_culture = scope:country
 	}
+	
 	modifier = {
 		country_authority_add = 50
 		country_bureaucracy_investment_cost_factor_mult = 0.15
@@ -272,6 +290,7 @@ law_multicultural = {
 	possible_political_movements = {
 		law_cultural_exclusion
 	}
+	
 	on_impose = {
 	}
 	pop_support = {
@@ -301,6 +320,7 @@ law_true_multicultural = {
 	unlocking_laws = {
 		law_slavery_banned
 	}
+	
 	disallowing_laws = {
 		law_ethnostate
 		law_national_supremacy
@@ -308,12 +328,15 @@ law_true_multicultural = {
 		law_cultural_exclusion
 		law_multicultural
 	}
+	
 	unlocking_technologies = {
 		tech_multiculturalism
 	}
+	
 	on_enact = {
 		recalculate_pop_ig_support = yes
 	}
+	
 	modifier = {
 		state_radicals_from_sol_change_accepted_culture_mult = 0.40
 		state_loyalists_from_sol_change_accepted_culture_mult = -0.20
@@ -322,12 +345,15 @@ law_true_multicultural = {
 		country_bureaucracy_investment_cost_factor_mult = 0.25
 		state_assimilation_mult = 0.25
 	}
+	
 	cultural_acceptance_rule = {
 		always = yes
 	}
+	
 	possible_political_movements = {
 		law_cultural_exclusion
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -346,8 +372,8 @@ law_true_multicultural = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {

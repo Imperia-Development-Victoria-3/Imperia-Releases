@@ -3,13 +3,12 @@
 	texture = "gfx/interface/icons/ig_icons/rural_folk.dds"
 	layer = "revolution_dynamic_rural_folk"
 	index = 6
-
 	ideologies = {
 		ideology_agrarian
 		ideology_particularist
 		ideology_isolationist
 	}
-
+	
 	enable = {
 		always = yes
 	}
@@ -20,42 +19,51 @@
 		ig_trait_honest_work
 		ig_trait_old_ways
 	}
-
+	
 	on_enable = {
 		ig:ig_rural_folk = {
 			if = {
 				limit = {
 					has_dlc_feature = rp1_content
-					owner = { c:BRZ ?= this }
+					owner = {
+						c:BRZ ?= this
+					}
 				}
 				set_ig_trait = ig_trait:ig_trait_old_ways
 				set_ig_trait = ig_trait:ig_trait_plantation_work
 				set_ig_trait = ig_trait:ig_trait_nucleos_coloniais
 			}
+			
 			else_if = {
 				limit = {
-					owner = { c:RUS ?= this }
+					owner = {
+						c:RUS ?= this
+					}
 				}
 				set_ig_trait = ig_trait:ig_trait_old_ways
 				set_ig_trait = ig_trait:ig_trait_honest_work
 				set_ig_trait = ig_trait:ig_trait_obshchina
 			}
+			
 			else_if = {
 				limit = {
-					owner = { c:EGY ?= this }
+					owner = {
+						c:EGY ?= this
+					}
 				}
 				set_interest_group_name = ig_fellahin
 				set_ig_trait = ig_trait:ig_trait_old_ways
 				set_ig_trait = ig_trait:ig_trait_fellahin
 				set_ig_trait = ig_trait:ig_trait_farmers_markets
 			}
+			
 			else = {
 				set_ig_trait = ig_trait:ig_trait_old_ways
 				set_ig_trait = ig_trait:ig_trait_honest_work
 				set_ig_trait = ig_trait:ig_trait_farmers_markets
 			}
 		}
-	
+
 		# Jeffersonian Ideology
 		if = {
 			limit = {
@@ -64,6 +72,7 @@
 					country_has_primary_culture = cu:dixie
 				}
 			}
+			
 			ig:ig_rural_folk = {
 				remove_ideology = ideology_agrarian
 				add_ideology = ideology_agrarian_jeffersonian
@@ -76,6 +85,7 @@
 			limit = {
 				country_has_primary_culture = cu:japanese
 			}
+			
 			ig:ig_rural_folk = {
 				set_interest_group_name = ig_peasants
 			}
@@ -85,29 +95,32 @@
 			limit = {
 				country_has_primary_culture = cu:hawaiian
 			}
+			
 			ig:ig_rural_folk = {
 				set_interest_group_name = ig_maka_ainana
 			}
 		}
 	}
-	on_disable = {}
-	on_character_ig_membership = {}
-
+	
+	on_disable = { }
+	
+	on_character_ig_membership = { }
+	
 	pop_potential = {
 		NOR = {
 			is_pop_type = aristocrats
 			is_pop_type = capitalists
 		}
+		
 		OR = {
 			pop_employment_building_group = bg_agriculture
 			pop_employment_building_group = bg_ranching
 			pop_employment_building_group = bg_plantations
 		}
 	}
-
+	
 	pop_weight = {
 		value = 0
-
 		add = {
 			desc = "RURAL_POP"
 			if = {
@@ -121,7 +134,7 @@
 				value = 100
 			}
 		}
-
+		
 		add = {
 			desc = "POP_FARMERS"
 			if = {
@@ -131,7 +144,7 @@
 				value = 200
 			}
 		}
-
+		
 		add = {
 			desc = "POP_PEASANTS"
 			if = {
@@ -141,7 +154,7 @@
 				value = 200
 			}
 		}
-
+		
 		add = {
 			desc = "POP_CLERGYMEN"
 			if = {
@@ -151,7 +164,7 @@
 				value = 100
 			}
 		}
-
+		
 		multiply = {
 			desc = "LEADER_POPULARITY"
 			scope:interest_group = {
@@ -164,12 +177,14 @@
 				}
 			}
 		}
+		
 		if = {
 			limit = {
 				scope:interest_group = {
 					is_in_government = yes
 				}
 			}
+			
 			multiply = {
 				desc = "IN_GOVERNMENT_ATTRACTION"
 				value = 1
@@ -184,20 +199,23 @@
 					is_in_government = yes
 				}
 			}
-			multiply = { # Multiplied by 1.25x max
+			
+			multiply = {	# Multiplied by 1.25x max
 				desc = "POP_LOYALISTS"
 				value = pop_loyalist_fraction
 				divide = 4
 				add = 1
 			}
 		}
+		
 		if = {
 			limit = {
 				scope:interest_group = {
 					is_in_government = no
 				}
 			}
-			multiply = { # Multiplied by 1.25x max
+			
+			multiply = {	# Multiplied by 1.25x max
 				desc = "POP_RADICALS"
 				value = pop_radical_fraction
 				divide = 4
@@ -205,14 +223,15 @@
 			}
 		}
 	}
-
+	
 	monarch_weight = {
-		value = 0.25 # this is just inherently unlikely
+		value = 0.25	# this is just inherently unlikely
 		# Monarch is not likely to adopt a marginal IG
 		if = {
 			limit = {
 				is_marginal = yes
 			}
+			
 			multiply = {
 				value = 0.1
 			}
@@ -222,6 +241,7 @@
 			limit = {
 				is_powerful = yes
 			}
+			
 			multiply = {
 				value = 2
 			}
@@ -233,6 +253,7 @@
 					has_law = law_type:law_homesteading
 				}
 			}
+			
 			multiply = {
 				value = 2
 			}
@@ -244,12 +265,13 @@
 					has_law = law_type:law_serfdom
 				}
 			}
+			
 			multiply = {
 				value = 0
 			}
 		}
 	}
-
+	
 	agitator_weight = {
 		# Agitators more likely to come from populist IG's rather than elitist
 		value = 1.0
@@ -260,20 +282,21 @@
 					is_marginal = yes
 				}
 			}
+			
 			multiply = {
 				value = 0
 			}
 		}
 	}
-
+	
 	commander_weight = {
 		value = 1.0
 	}
-
+	
 	noble_chance = {
 		value = 0.2
 	}
-
+	
 	female_commander_chance = {
 		value = 0.0
 		if = {
@@ -285,68 +308,65 @@
 					}
 				}
 			}
+			
 			add = {
 				value = 0.30
 			}
-
 		}
 	}
-
-
+	
 	female_politician_chance = {
 		value = 0.0
-
 		if = {
 			limit = {
 				owner = {
 					has_law = law_type:law_womens_suffrage
 				}
-
 			}
+			
 			add = {
 				value = 0.025
 			}
 		}
 	}
-
+	
 	female_agitator_chance = {
 		value = 0.025
-		
 		if = {
 			limit = {
 				owner = {
 					has_law = law_type:law_women_own_property
 				}
-
 			}
+			
 			add = {
 				value = 0.025
 			}
-		}	
+		}
 		
 		if = {
 			limit = {
 				owner = {
 					has_law = law_type:law_women_in_the_workplace
 				}
-
 			}
+			
 			add = {
 				value = 0.025
 			}
 		}
-
+		
 		if = {
 			limit = {
 				owner = {
 					has_law = law_type:law_womens_suffrage
 				}
-
 			}
+			
 			add = {
 				value = 0.025
 			}
-		}		
+		}
 	}
 
 	# The chance that a commander belonging to this IG takes over leadership when it changes
@@ -357,6 +377,7 @@
 			limit = {
 				exists = scope:character
 			}
+			
 			multiply = {
 				value = 1
 				add = scope:character.popularity

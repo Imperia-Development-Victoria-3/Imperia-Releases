@@ -3,7 +3,7 @@
 	saved_scopes = {
 		country
 	}
-
+	
 	effect = {
 		scope:country = {
 			if = {
@@ -12,18 +12,20 @@
 						has_law = prev.type
 					}
 				}
+				
 				custom_tooltip = {
 					text = EXECUTIVE_ORDER_DESC
 					activate_law = prev.type
 				}
+				
 				add_modifier = {
 					name = modifier_imperia_foreign_policy_cooldown
 					months = 6
-				} 
+				}
 			}
 		}
 	}
-
+	
 	is_valid = {
 		scope:country = {
 			NOT = {
@@ -32,25 +34,27 @@
 			}
 			aggressive_diplomatic_plays_permitted = yes
 		}
-
+		
 		trigger_if = {
 			limit = {
 				type = law_type:law_anti_imperialist
 			}
+			
 			scope:country = {
 				NOT = {
 					OR = {
 						has_law = law_type:law_colonial_exploitation
-						has_law = law_type:law_colonial_resettlement	
+						has_law = law_type:law_colonial_resettlement
 					}
 				}
 			}
 		}
-
+		
 		trigger_if = {
 			limit = {
 				type = law_type:law_pacifist
 			}
+			
 			scope:country = {
 				NOT = {
 					OR = {
@@ -62,7 +66,7 @@
 			}
 		}
 	}
-
+	
 	is_shown = {
 		type != law_type:law_true_neutrality
 	}

@@ -9,6 +9,7 @@
 		NOT = {
 			is_country_type = decentralized
 		}
+		
 		scope:target_country = {
 			NOT = {
 				is_country_type = decentralized
@@ -17,6 +18,7 @@
 		}
 		has_diplomatic_relevance = scope:target_country
 	}
+	
 	possible = {
 		always = yes
 		custom_tooltip = {
@@ -24,6 +26,7 @@
 			scope:target_country.relations:root > relations_threshold:cold
 		}
 	}
+	
 	accept_effect = {
 		change_relations = {
 			country = scope:target_country
@@ -33,10 +36,12 @@
 			}
 		}
 	}
+	
 	ai = {
 		will_propose = {
 			always = no
 		}
+		
 		accept_score = {
 			value = -1000
 		}
@@ -54,6 +59,7 @@ player_diplomatic_support = {
 		NOT = {
 			is_country_type = decentralized
 		}
+		
 		scope:target_country = {
 			NOT = {
 				is_country_type = decentralized
@@ -62,6 +68,7 @@ player_diplomatic_support = {
 		}
 		has_diplomatic_relevance = scope:target_country
 	}
+	
 	possible = {
 		always = yes
 		custom_tooltip = {
@@ -69,6 +76,7 @@ player_diplomatic_support = {
 			scope:target_country.relations:root < relations_threshold:amicable
 		}
 	}
+	
 	accept_effect = {
 		change_relations = {
 			country = scope:target_country
@@ -78,10 +86,12 @@ player_diplomatic_support = {
 			}
 		}
 	}
+	
 	ai = {
 		will_propose = {
 			always = no
 		}
+		
 		accept_score = {
 			value = -1000
 		}
@@ -96,6 +106,7 @@ minor_war_reparations = {
 	potential = {
 		always = no
 	}
+	
 	pact = {
 		is_two_sided_pact = no
 		income_transfer = 0.025
@@ -106,6 +117,7 @@ minor_war_reparations = {
 				has_truce_with = scope:target_country
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				NOT = {
@@ -124,11 +136,12 @@ forced_embargo_pact = {
 	potential = {
 		always = no
 	}
+	
 	pact = {
 		cost = 0
 		is_embargo = yes
 		is_two_sided_pact = no
-		relations_progress_per_day = -1		# At -100, -1 relations
+		relations_progress_per_day = -1	# At -100, -1 relations
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -146,6 +159,7 @@ overlord_bankroll_protectorate = {
 		NOT = {
 			is_country_type = decentralized
 		}
+		
 		scope:target_country = {
 			NOT = {
 				is_country_type = decentralized
@@ -154,6 +168,7 @@ overlord_bankroll_protectorate = {
 			is_subject_type = subject_type_protectorate
 		}
 	}
+	
 	possible = {
 	}
 	pact = {
@@ -161,9 +176,9 @@ overlord_bankroll_protectorate = {
 		is_two_sided_pact = no
 		show_in_outliner = yes
 		can_be_used_in_sway_offers = no
-		relations_progress_per_day = 1		# At 100, +1 relations
+		relations_progress_per_day = 1	# At 100, +1 relations
 		relations_improvement_max = 80
-		income_transfer = 0.025		# Half of protectorates 0.05
+		income_transfer = 0.025	# Half of protectorates 0.05
 		recipient_gets_income_transfer = yes
 		income_transfer_based_on_recipient = yes
 		requirement_to_maintain = {
@@ -171,6 +186,7 @@ overlord_bankroll_protectorate = {
 				has_diplomatic_relevance = scope:target_country
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -178,11 +194,13 @@ overlord_bankroll_protectorate = {
 					scope:target_country.relations:root > relations_threshold:poor
 				}
 			}
+			
 			show_about_to_break_warning = {
-				scope:target_country.relations:root <= -17				# this is: poor + 3
+				scope:target_country.relations:root <= -17	# this is: poor + 3
 				scope:target_country.relations_change_rate:root < 0
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -190,6 +208,7 @@ overlord_bankroll_protectorate = {
 					NOT = {
 						is_country_type = decentralized
 					}
+					
 					scope:target_country = {
 						NOT = {
 							is_country_type = decentralized
@@ -198,6 +217,7 @@ overlord_bankroll_protectorate = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -208,16 +228,19 @@ overlord_bankroll_protectorate = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				country_rank >= scope:target_country.country_rank
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				in_default = no
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -225,6 +248,7 @@ overlord_bankroll_protectorate = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -233,12 +257,14 @@ overlord_bankroll_protectorate = {
 			}
 		}
 	}
+	
 	ai = {
 		max_influence_spending_fraction = 0.2
 		check_acceptance_for_will_break = no
 		propose_score = {
 			value = 10
 		}
+		
 		will_propose = {
 			always = no
 			scaled_debt <= 0
@@ -248,11 +274,13 @@ overlord_bankroll_protectorate = {
 					weekly_net_fixed_income < 0
 					scaled_debt > 0.15
 				}
+				
 				NOT = {
 					scaled_gold_reserves > 0.15
 				}
 			}
 		}
+		
 		will_break = {
 			OR = {
 				AND = {
@@ -264,6 +292,7 @@ overlord_bankroll_protectorate = {
 					weekly_net_fixed_income > 0
 					scaled_debt < 0.1
 				}
+				
 				AND = {
 					scaled_debt > 0
 					OR = {
@@ -283,6 +312,7 @@ overlord_bankroll_puppet = {
 		NOT = {
 			is_country_type = decentralized
 		}
+		
 		scope:target_country = {
 			NOT = {
 				is_country_type = decentralized
@@ -291,6 +321,7 @@ overlord_bankroll_puppet = {
 			is_subject_type = subject_type_puppet
 		}
 	}
+	
 	possible = {
 	}
 	pact = {
@@ -298,9 +329,9 @@ overlord_bankroll_puppet = {
 		is_two_sided_pact = no
 		show_in_outliner = yes
 		can_be_used_in_sway_offers = no
-		relations_progress_per_day = 1		# At 100, +1 relations
+		relations_progress_per_day = 1	# At 100, +1 relations
 		relations_improvement_max = 80
-		income_transfer = 0.15		# Half of puppets 0.3
+		income_transfer = 0.15	# Half of puppets 0.3
 		recipient_gets_income_transfer = yes
 		income_transfer_based_on_recipient = yes
 		requirement_to_maintain = {
@@ -308,6 +339,7 @@ overlord_bankroll_puppet = {
 				has_diplomatic_relevance = scope:target_country
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -315,11 +347,13 @@ overlord_bankroll_puppet = {
 					scope:target_country.relations:root > relations_threshold:poor
 				}
 			}
+			
 			show_about_to_break_warning = {
-				scope:target_country.relations:root <= -17				# this is: poor + 3
+				scope:target_country.relations:root <= -17	# this is: poor + 3
 				scope:target_country.relations_change_rate:root < 0
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -327,6 +361,7 @@ overlord_bankroll_puppet = {
 					NOT = {
 						is_country_type = decentralized
 					}
+					
 					scope:target_country = {
 						NOT = {
 							is_country_type = decentralized
@@ -335,6 +370,7 @@ overlord_bankroll_puppet = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -345,16 +381,19 @@ overlord_bankroll_puppet = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				country_rank >= scope:target_country.country_rank
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				in_default = no
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -362,6 +401,7 @@ overlord_bankroll_puppet = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -370,12 +410,14 @@ overlord_bankroll_puppet = {
 			}
 		}
 	}
+	
 	ai = {
 		max_influence_spending_fraction = 0.2
 		check_acceptance_for_will_break = no
 		propose_score = {
 			value = 10
 		}
+		
 		will_propose = {
 			always = no
 			scaled_debt <= 0
@@ -385,11 +427,13 @@ overlord_bankroll_puppet = {
 					weekly_net_fixed_income < 0
 					scaled_debt > 0.15
 				}
+				
 				NOT = {
 					scaled_gold_reserves > 0.15
 				}
 			}
 		}
+		
 		will_break = {
 			OR = {
 				AND = {
@@ -401,6 +445,7 @@ overlord_bankroll_puppet = {
 					weekly_net_fixed_income > 0
 					scaled_debt < 0.1
 				}
+				
 				AND = {
 					scaled_debt > 0
 					OR = {
@@ -420,6 +465,7 @@ overlord_bankroll_dominion = {
 		NOT = {
 			is_country_type = decentralized
 		}
+		
 		scope:target_country = {
 			NOT = {
 				is_country_type = decentralized
@@ -428,6 +474,7 @@ overlord_bankroll_dominion = {
 			is_subject_type = subject_type_dominion
 		}
 	}
+	
 	possible = {
 	}
 	pact = {
@@ -435,9 +482,9 @@ overlord_bankroll_dominion = {
 		is_two_sided_pact = no
 		show_in_outliner = yes
 		can_be_used_in_sway_offers = no
-		relations_progress_per_day = 1		# At 100, +1 relations
+		relations_progress_per_day = 1	# At 100, +1 relations
 		relations_improvement_max = 80
-		income_transfer = 0.125		# Half of dominions 0.25
+		income_transfer = 0.125	# Half of dominions 0.25
 		recipient_gets_income_transfer = yes
 		income_transfer_based_on_recipient = yes
 		requirement_to_maintain = {
@@ -445,6 +492,7 @@ overlord_bankroll_dominion = {
 				has_diplomatic_relevance = scope:target_country
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -452,11 +500,13 @@ overlord_bankroll_dominion = {
 					scope:target_country.relations:root > relations_threshold:poor
 				}
 			}
+			
 			show_about_to_break_warning = {
-				scope:target_country.relations:root <= -17				# this is: poor + 3
+				scope:target_country.relations:root <= -17	# this is: poor + 3
 				scope:target_country.relations_change_rate:root < 0
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -464,6 +514,7 @@ overlord_bankroll_dominion = {
 					NOT = {
 						is_country_type = decentralized
 					}
+					
 					scope:target_country = {
 						NOT = {
 							is_country_type = decentralized
@@ -472,6 +523,7 @@ overlord_bankroll_dominion = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -482,16 +534,19 @@ overlord_bankroll_dominion = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				country_rank >= scope:target_country.country_rank
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				in_default = no
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -499,6 +554,7 @@ overlord_bankroll_dominion = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -507,12 +563,14 @@ overlord_bankroll_dominion = {
 			}
 		}
 	}
+	
 	ai = {
 		max_influence_spending_fraction = 0.2
 		check_acceptance_for_will_break = no
 		propose_score = {
 			value = 10
 		}
+		
 		will_propose = {
 			always = no
 			scaled_debt <= 0
@@ -522,11 +580,13 @@ overlord_bankroll_dominion = {
 					weekly_net_fixed_income < 0
 					scaled_debt > 0.15
 				}
+				
 				NOT = {
 					scaled_gold_reserves > 0.15
 				}
 			}
 		}
+		
 		will_break = {
 			OR = {
 				AND = {
@@ -538,6 +598,7 @@ overlord_bankroll_dominion = {
 					weekly_net_fixed_income > 0
 					scaled_debt < 0.1
 				}
+				
 				AND = {
 					scaled_debt > 0
 					OR = {
@@ -557,6 +618,7 @@ overlord_bankroll_vassal = {
 		NOT = {
 			is_country_type = decentralized
 		}
+		
 		scope:target_country = {
 			NOT = {
 				is_country_type = decentralized
@@ -565,6 +627,7 @@ overlord_bankroll_vassal = {
 			is_subject_type = subject_type_vassal
 		}
 	}
+	
 	possible = {
 	}
 	pact = {
@@ -572,9 +635,9 @@ overlord_bankroll_vassal = {
 		is_two_sided_pact = no
 		show_in_outliner = yes
 		can_be_used_in_sway_offers = no
-		relations_progress_per_day = 1		# At 100, +1 relations
+		relations_progress_per_day = 1	# At 100, +1 relations
 		relations_improvement_max = 80
-		income_transfer = 0.15		# Half of vassals 0.3
+		income_transfer = 0.15	# Half of vassals 0.3
 		recipient_gets_income_transfer = yes
 		income_transfer_based_on_recipient = yes
 		requirement_to_maintain = {
@@ -582,6 +645,7 @@ overlord_bankroll_vassal = {
 				has_diplomatic_relevance = scope:target_country
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -589,11 +653,13 @@ overlord_bankroll_vassal = {
 					scope:target_country.relations:root > relations_threshold:poor
 				}
 			}
+			
 			show_about_to_break_warning = {
-				scope:target_country.relations:root <= -17				# this is: poor + 3
+				scope:target_country.relations:root <= -17	# this is: poor + 3
 				scope:target_country.relations_change_rate:root < 0
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -601,6 +667,7 @@ overlord_bankroll_vassal = {
 					NOT = {
 						is_country_type = decentralized
 					}
+					
 					scope:target_country = {
 						NOT = {
 							is_country_type = decentralized
@@ -609,6 +676,7 @@ overlord_bankroll_vassal = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -619,16 +687,19 @@ overlord_bankroll_vassal = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				country_rank >= scope:target_country.country_rank
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				in_default = no
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -636,6 +707,7 @@ overlord_bankroll_vassal = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -644,12 +716,14 @@ overlord_bankroll_vassal = {
 			}
 		}
 	}
+	
 	ai = {
 		max_influence_spending_fraction = 0.2
 		check_acceptance_for_will_break = no
 		propose_score = {
 			value = 10
 		}
+		
 		will_propose = {
 			always = no
 			scaled_debt <= 0
@@ -659,11 +733,13 @@ overlord_bankroll_vassal = {
 					weekly_net_fixed_income < 0
 					scaled_debt > 0.15
 				}
+				
 				NOT = {
 					scaled_gold_reserves > 0.15
 				}
 			}
 		}
+		
 		will_break = {
 			OR = {
 				AND = {
@@ -675,6 +751,7 @@ overlord_bankroll_vassal = {
 					weekly_net_fixed_income > 0
 					scaled_debt < 0.1
 				}
+				
 				AND = {
 					scaled_debt > 0
 					OR = {
@@ -694,6 +771,7 @@ overlord_bankroll_tributary = {
 		NOT = {
 			is_country_type = decentralized
 		}
+		
 		scope:target_country = {
 			NOT = {
 				is_country_type = decentralized
@@ -702,6 +780,7 @@ overlord_bankroll_tributary = {
 			is_subject_type = subject_type_tributary
 		}
 	}
+	
 	possible = {
 	}
 	pact = {
@@ -709,9 +788,9 @@ overlord_bankroll_tributary = {
 		is_two_sided_pact = no
 		show_in_outliner = yes
 		can_be_used_in_sway_offers = no
-		relations_progress_per_day = 1		# At 100, +1 relations
+		relations_progress_per_day = 1	# At 100, +1 relations
 		relations_improvement_max = 80
-		income_transfer = 0.1		# Half of tributary 0.2
+		income_transfer = 0.1	# Half of tributary 0.2
 		recipient_gets_income_transfer = yes
 		income_transfer_based_on_recipient = yes
 		requirement_to_maintain = {
@@ -719,6 +798,7 @@ overlord_bankroll_tributary = {
 				has_diplomatic_relevance = scope:target_country
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -726,11 +806,13 @@ overlord_bankroll_tributary = {
 					scope:target_country.relations:root > relations_threshold:poor
 				}
 			}
+			
 			show_about_to_break_warning = {
-				scope:target_country.relations:root <= -17				# this is: poor + 3
+				scope:target_country.relations:root <= -17	# this is: poor + 3
 				scope:target_country.relations_change_rate:root < 0
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -738,6 +820,7 @@ overlord_bankroll_tributary = {
 					NOT = {
 						is_country_type = decentralized
 					}
+					
 					scope:target_country = {
 						NOT = {
 							is_country_type = decentralized
@@ -746,6 +829,7 @@ overlord_bankroll_tributary = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				custom_tooltip = {
@@ -756,16 +840,19 @@ overlord_bankroll_tributary = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				country_rank >= scope:target_country.country_rank
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				in_default = no
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -773,6 +860,7 @@ overlord_bankroll_tributary = {
 				}
 			}
 		}
+		
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
@@ -781,12 +869,14 @@ overlord_bankroll_tributary = {
 			}
 		}
 	}
+	
 	ai = {
 		max_influence_spending_fraction = 0.2
 		check_acceptance_for_will_break = no
 		propose_score = {
 			value = 10
 		}
+		
 		will_propose = {
 			always = no
 			scaled_debt <= 0
@@ -796,11 +886,13 @@ overlord_bankroll_tributary = {
 					weekly_net_fixed_income < 0
 					scaled_debt > 0.15
 				}
+				
 				NOT = {
 					scaled_gold_reserves > 0.15
 				}
 			}
 		}
+		
 		will_break = {
 			OR = {
 				AND = {
@@ -812,6 +904,7 @@ overlord_bankroll_tributary = {
 					weekly_net_fixed_income > 0
 					scaled_debt < 0.1
 				}
+				
 				AND = {
 					scaled_debt > 0
 					OR = {

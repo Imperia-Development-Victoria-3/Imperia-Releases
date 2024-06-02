@@ -5,6 +5,7 @@
 		# This variable is set globally once the tech is researched
 		has_global_variable = labor_movement_researched
 	}
+	
 	possible = {
 		custom_tooltip = {
 			text = red_scare_unlock_tt
@@ -15,10 +16,12 @@
 				has_law = law_type:law_council_republic
 			}
 		}
+		
 		NOT = {
 			has_law = law_type:law_council_republic
 		}
 	}
+	
 	immediate = {
 		ordered_country = {
 			limit = {
@@ -28,10 +31,12 @@
 			order_by = country_rank
 			save_scope_as = red_scare_target_nation
 		}
+		
 		trigger_event = {
 			id = red_scare.1
 		}
 	}
+	
 	on_weekly_pulse = {
 		effect = {
 			if = {
@@ -40,18 +45,21 @@
 						NOT = {
 							exists = scope:red_scare_target_nation
 						}
+						
 						scope:red_scare_target_nation ?= {
 							NOT = {
 								has_law = law_type:law_council_republic
 							}
 						}
 					}
+					
 					any_in_global_list = {
 						variable = council_republics_list
 						has_diplomatic_relevance = root
 						has_law = law_type:law_council_republic
 					}
 				}
+				
 				ordered_country = {
 					limit = {
 						has_diplomatic_relevance = root
@@ -63,6 +71,7 @@
 			}
 		}
 	}
+	
 	on_monthly_pulse = {
 		random_events = {
 			300 = 0
@@ -81,6 +90,7 @@
 			10 = red_scare.15
 		}
 	}
+	
 	fail = {
 		OR = {
 			has_law = law_type:law_council_republic
@@ -98,6 +108,7 @@
 			}
 		}
 	}
+	
 	invalid = {
 		NOT = {
 			any_in_global_list = {

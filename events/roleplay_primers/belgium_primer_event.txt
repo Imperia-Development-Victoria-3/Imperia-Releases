@@ -15,6 +15,7 @@ belgium_primer_event.1 = {
 	trigger = {
 		# triggered by Eternal State Primer
 	}
+	
 	option = {
 		name = belgium_primer_event.1.a
 		trigger_event = {
@@ -24,6 +25,7 @@ belgium_primer_event.1 = {
 		}
 		default_option = yes
 	}
+	
 	option = {
 		name = belgium_primer_event.2.a
 		default_option = yes
@@ -45,6 +47,7 @@ belgium_primer_event.2 = {
 	trigger = {
 		# triggered by dual monarchy JE
 	}
+	
 	immediate = {
 	}
 	option = {
@@ -56,6 +59,7 @@ belgium_primer_event.2 = {
 		}
 		default_option = yes
 	}
+	
 	option = {
 		name = belgium_primer_event.2.a
 		default_option = yes
@@ -77,6 +81,7 @@ belgium_primer_event.3 = {
 	trigger = {
 		# triggered by dual monarchy JE
 	}
+	
 	immediate = {
 	}
 	option = {
@@ -88,6 +93,7 @@ belgium_primer_event.3 = {
 		}
 		default_option = yes
 	}
+	
 	option = {
 		name = belgium_primer_event.2.a
 		default_option = yes
@@ -109,6 +115,7 @@ belgium_primer_event.4 = {
 	trigger = {
 		# triggered by dual monarchy JE
 	}
+	
 	immediate = {
 	}
 	option = {

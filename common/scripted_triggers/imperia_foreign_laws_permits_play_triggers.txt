@@ -4,6 +4,7 @@
 		limit = {
 			has_law = law_type:law_expansionism
 		}
+		
 		scope:target_country = {
 			#Checks if the targeted country has states in tha same or neighbouring strategic region as an incorporated state
 			any_scope_state = {
@@ -11,15 +12,18 @@
 				region = {
 					add_to_temporary_list = regions
 				}
+				
 				trigger_if = {
 					limit = {
 						has_variable = sea_region
 					}
+					
 					var:sea_region = {
 						add_to_temporary_list = sea_regions
-					}	
+					}
 				}
 			}
+			
 			OR = {
 				# Land connection
 				custom_tooltip = {
@@ -33,28 +37,29 @@
 										owner = root
 										is_incorporated = yes
 									}
+									
 									owner = {
 										imperia_target_is_puppet = yes
 									}
 								}
-
-								
 							}
-
+							
 							any_neighbouring_state = {
 								OR = {
 									AND = {
 										owner = root
 										is_incorporated = yes
 									}
+									
 									owner = {
 										imperia_target_is_puppet = yes
 									}
-								}						
-							}	
+								}
+							}
 						}
 					}
 				}
+				
 				custom_tooltip = {
 					text = CUSTOM_TOOLTIP_EXPANSIONISM_SEA_ADJACENCY
 					# Sea connection
@@ -66,20 +71,23 @@
 									owner = root
 									is_incorporated = yes
 								}
+								
 								owner = {
 									imperia_target_is_puppet = yes
 								}
-							}					
+							}
 						}
 					}
 				}
 			}
 		}
 	}
+	
 	trigger_if = {
 		limit = {
 			has_law = law_type:law_imperialism
 		}
+		
 		scope:target_country = {
 			OR = {
 				is_country_type = unrecognized
@@ -87,36 +95,43 @@
 			}
 		}
 	}
+	
 	trigger_if = {
 		limit = {
 			has_law = law_type:law_armed_neutrality
 		}
+		
 		scope:target_country = {
 			OR = {
 				any_primary_culture = {
 					shares_non_heritage_trait_with_any_primary_culture = root
 				}
+				
 				any_scope_state = {
 					is_homeland_of_country_cultures = root
 				}
 			}
 		}
 	}
+	
 	trigger_if = {
 		limit = {
 			has_law = law_type:law_anti_imperialist
 		}
+		
 		OR = {
 			scope:target_country = {
 				NOT = {
 					has_law = law_type:law_no_colonial_affairs
 				}
 			}
+			
 			scope:target_country = {
 				OR = {
 					any_primary_culture = {
 						shares_non_heritage_trait_with_any_primary_culture = root
 					}
+					
 					any_scope_state = {
 						is_homeland_of_country_cultures = root
 					}
@@ -124,6 +139,7 @@
 			}
 		}
 	}
+	
 	trigger_if = {
 		limit = {
 			has_law = law_type:law_pacifist
@@ -132,8 +148,6 @@
 	}
 	# True neutral cannot do any diplo plays; this feature is located in the 'imperia_aggressive_diplomatic_plays_permitted_custom.txt' file
 }
-
-
 
 imperia_conquer_or_subjugation = {
 	OR = {
@@ -144,7 +158,6 @@ imperia_conquer_or_subjugation = {
 	}
 }
 
-
 imperia_target_is_puppet = {
 	AND = {
 		is_subject_of = root
@@ -152,10 +165,12 @@ imperia_target_is_puppet = {
 			who = scope:target_country
 			type = puppet
 		}
+		
 		has_diplomatic_pact = {
 			who = scope:target_country
 			type = personal_union
 		}
+		
 		has_diplomatic_pact = {
 			who = scope:target_country
 			type = vassal
@@ -163,21 +178,21 @@ imperia_target_is_puppet = {
 	}
 }
 
-
 imperia_violate_sovereignty_war_check = {
 	OR = {
 		attacker_warleader = {
 			OR = {
 				has_strategic_land_adjacency = scope:target_country
-				any_scope_ally = {				
+				any_scope_ally = {
 					has_strategic_land_adjacency = scope:target_country
 				}
 			}
 		}
+		
 		defender_warleader = {
 			OR = {
 				has_strategic_land_adjacency = scope:target_country
-				any_scope_ally = {				
+				any_scope_ally = {
 					has_strategic_land_adjacency = scope:target_country
 				}
 			}

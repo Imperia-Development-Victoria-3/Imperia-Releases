@@ -22,21 +22,25 @@ imperia_vienna_congress.2 = {
 			limit = {
 				is_congress_target = yes
 			}
+			
 			set_congress_stance_effect = {
 				COUNTRY = this
 				STANCE = 3
 			}
 		}
+		
 		else = {
 			set_congress_stance_effect = {
 				COUNTRY = this
 				STANCE = 2
 			}
 		}
+		
 		ai_chance = {
 			base = 100
 		}
 	}
+	
 	option = {
 		# Observe
 		name = imperia_vienna_congress.2.b
@@ -45,10 +49,12 @@ imperia_vienna_congress.2 = {
 			COUNTRY = this
 			STANCE = 2
 		}
+		
 		ai_chance = {
 			base = 0
 		}
 	}
+	
 	option = {
 		# Decline
 		name = imperia_vienna_congress.2.c
@@ -81,10 +87,12 @@ imperia_vienna_congress.3 = {
 			COUNTRY = this
 			STANCE = 4
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		# Decline
 		name = imperia_vienna_congress.3.b

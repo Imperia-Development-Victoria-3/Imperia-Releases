@@ -14,26 +14,33 @@ autocracy.1 = {
 	trigger = {
 		# triggered by je_autocracy completion
 	}
+	
 	immediate = {
 		ig:ig_landowners = {
 			save_scope_as = landowners_ig
 		}
+		
 		ig:ig_industrialists = {
 			save_scope_as = industrialist_ig
 		}
+		
 		ig:ig_armed_forces = {
 			save_scope_as = military_ig
 		}
+		
 		ig:ig_intelligentsia = {
 			save_scope_as = intelligentsia_ig
 		}
+		
 		ig:ig_trade_unions = {
 			save_scope_as = trade_unions_ig
 		}
+		
 		ig:ig_devout = {
 			save_scope_as = church_scope
 		}
 	}
+	
 	option = {
 		name = autocracy.1.a
 		default_option = yes
@@ -41,10 +48,12 @@ autocracy.1 = {
 			pop_type = soldiers
 			value = 0.1
 		}
+		
 		add_loyalists = {
 			pop_type = officers
 			value = 0.15
 		}
+		
 		ig:ig_trade_unions = {
 			remove_ideology = ideology_populist
 			add_ideology = ideology_militant_populism
@@ -56,16 +65,19 @@ autocracy.1 = {
 		}
 		#Traditionalist & Jingoist characters are more likely to appear, Pacifists significantly less likely to appear
 	}
+	
 	option = {
 		name = autocracy.1.b
 		add_loyalists = {
 			pop_type = aristocrats
 			value = 0.2
 		}
+		
 		add_loyalists = {
 			pop_type = capitalists
 			value = 0.2
 		}
+		
 		ig:ig_industrialists = {
 			remove_ideology = ideology_plutocratic
 			add_ideology = ideology_neo_feudalistic
@@ -76,28 +88,33 @@ autocracy.1 = {
 			months = long_modifier_time
 		}
 	}
+	
 	option = {
 		name = autocracy.1.c
 		add_loyalists = {
 			pop_type = clergymen
 			religion = root.religion
-			value = 0.15			#originally was 0.6 (!) The doc wanted it to be 0.05, but that feels too low... Especially for the designated religious option and after waiting 30 years.
+			value = 0.15	#originally was 0.6 (!) The doc wanted it to be 0.05, but that feels too low... Especially for the designated religious option and after waiting 30 years.
 		}
+		
 		add_loyalists = {
 			pop_type = farmers
-			religion = root.religion			#I am doing something fun here. Only the RELIGIOUS (following the only correct and true religion) farmers will become loyalists.
+			religion = root.religion	#I am doing something fun here. Only the RELIGIOUS (following the only correct and true religion) farmers will become loyalists.
 			value = 0.05
 		}
+		
 		add_loyalists = {
 			pop_type = laborers
 			religion = root.religion
 			value = 0.05
 		}
+		
 		add_loyalists = {
 			pop_type = aristocrats
 			religion = root.religion
 			value = 0.05
 		}
+		
 		ig:ig_intelligentsia = {
 			remove_ideology = ideology_anti_clerical
 			remove_ideology = ideology_republican
@@ -128,6 +145,7 @@ autocracy.2 = {
 		NOT = {
 			has_variable = secret_societies_timer
 		}
+		
 		OR = {
 			has_law = law_type:law_monarchy
 			has_law = law_type:law_theocracy
@@ -138,6 +156,7 @@ autocracy.2 = {
 			is_marginal = no
 			is_in_government = no
 		}
+		
 		OR = {
 			has_law = law_type:law_censorship
 			has_law = law_type:law_outlawed_dissent
@@ -145,6 +164,7 @@ autocracy.2 = {
 				is_being_suppressed = yes
 			}
 		}
+		
 		any_scope_state = {
 			is_incorporated = yes
 			any_scope_pop = {
@@ -152,14 +172,17 @@ autocracy.2 = {
 			}
 		}
 	}
+	
 	immediate = {
 		set_variable = {
 			name = secret_societies_timer
 			months = normal_modifier_time
 		}
+		
 		ig:ig_intelligentsia = {
 			save_scope_as = secret_society_ig
 		}
+		
 		random_scope_state = {
 			limit = {
 				is_incorporated = yes
@@ -176,6 +199,7 @@ autocracy.2 = {
 			}
 		}
 	}
+	
 	cancellation_trigger = {
 		scope:secret_societies_state = {
 			is_incorporated = yes
@@ -186,6 +210,7 @@ autocracy.2 = {
 			}
 		}
 	}
+	
 	option = {
 		# tolerate them
 		name = autocracy.2.a
@@ -197,6 +222,7 @@ autocracy.2 = {
 			}
 		}
 	}
+	
 	option = {
 		# crack down on secret societies
 		name = autocracy.2.b
@@ -206,6 +232,7 @@ autocracy.2 = {
 				months = normal_modifier_time
 			}
 		}
+		
 		scope:secret_societies_state = {
 			add_radicals_in_state = {
 				pop_type = academics
@@ -232,6 +259,7 @@ autocracy.3 = {
 		NOT = {
 			has_variable = religious_serfs_timer
 		}
+		
 		ig:ig_devout = {
 			is_powerful = yes
 			is_in_government = yes
@@ -245,21 +273,25 @@ autocracy.3 = {
 				is_pop_type = peasants
 				religion = root.religion
 			}
+			
 			any_scope_pop = {
 				is_pop_type = clergymen
 				religion = root.religion
 			}
+			
 			NOR = {
 				has_modifier = loyal_religious_serfs
 				has_modifier = less_radical_religious_serfs
 			}
 		}
 	}
+	
 	immediate = {
 		set_variable = {
 			name = religious_serfs_timer
 			months = normal_modifier_time
 		}
+		
 		random_scope_state = {
 			limit = {
 				is_incorporated = yes
@@ -268,6 +300,7 @@ autocracy.3 = {
 					religion = root.religion
 					pop_is_discriminated = no
 				}
+				
 				any_scope_pop = {
 					is_pop_type = clergymen
 					religion = root.religion
@@ -283,10 +316,12 @@ autocracy.3 = {
 				save_scope_as = religious_serf_pop
 			}
 		}
+		
 		ig:ig_devout = {
 			save_scope_as = church_scope
 		}
 	}
+	
 	option = {
 		# increase loyalty
 		name = autocracy.3.a
@@ -298,6 +333,7 @@ autocracy.3 = {
 			}
 		}
 	}
+	
 	option = {
 		# reduce radicals
 		name = autocracy.3.b

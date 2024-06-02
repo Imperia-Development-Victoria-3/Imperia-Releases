@@ -9,14 +9,16 @@
 		law_provincial_courts
 		law_inquisition
 	}
+	
 	pop_support = {
 		value = 0
 	}
-	
+
 	# AI shouldn't try to abolish institutions
 	ai_will_do = {
 		always = no
 	}
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -38,16 +40,19 @@ law_provincial_courts = {
 	unlocking_technologies = {
 		centralization
 	}
+	
 	unlocking_laws = {
 		law_monarchy
 		law_autocracy
 		law_oligarchy
 		law_technocracy
 	}
+	
 	disallowing_laws = {
 		law_protected_speech
 		law_no_police
 	}
+	
 	modifier = {
 		country_institution_home_affairs_max_investment_add = 1
 	}
@@ -62,12 +67,14 @@ law_provincial_courts = {
 		country_revolution_progress_mult = -0.05
 		country_secession_progress_mult = -0.05
 	}
+	
 	possible_political_movements = {
 		law_secret_police
 		law_guaranteed_liberties
 		law_empowered_gendarmerie
 		law_inquisition
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -78,7 +85,7 @@ law_provincial_courts = {
 				}
 				value = 0.33
 			}
-		}	
+		}
 	}
 	
 	ai_enact_weight_modifier = {
@@ -102,17 +109,20 @@ law_inquisition = {
 	unlocking_technologies = {
 		centralization
 	}
+	
 	unlocking_laws = {
 		law_monarchy
 		law_theocracy
 		law_religious_schools
 		law_state_religion
 	}
+	
 	disallowing_laws = {
 		law_protected_speech
 		law_total_separation
 		law_state_atheism
 	}
+	
 	modifier = {
 		country_institution_home_affairs_max_investment_add = 1
 	}
@@ -128,12 +138,14 @@ law_inquisition = {
 		country_revolution_progress_mult = 0.1
 		country_secession_progress_mult = 0.1
 	}
+	
 	possible_political_movements = {
 		law_secret_police
 		law_guaranteed_liberties
 		law_empowered_gendarmerie
 		law_provincial_courts
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -146,8 +158,8 @@ law_inquisition = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -167,6 +179,7 @@ law_secret_police = {
 	unlocking_technologies = {
 		central_archives
 	}
+	
 	unlocking_laws = {
 		law_autocracy
 		law_oligarchy
@@ -174,13 +187,14 @@ law_secret_police = {
 		law_single_party_state
 		law_patriot_schools
 	}
-
+	
 	disallowing_laws = {
 		law_right_of_assembly
 		law_protected_speech
 		law_no_police
 		law_local_police
 	}
+	
 	modifier = {
 		country_institution_multiculturalism_max_investment_add = 1
 	}
@@ -194,23 +208,23 @@ law_secret_police = {
 		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.04
 		interest_group_ig_trade_unions_pol_str_mult = 0.02
 		country_secession_progress_mult = 0.1
-
 	}
+	
 	possible_political_movements = {
 		law_guaranteed_liberties
 		law_empowered_gendarmerie
 		law_provincial_courts
 		law_inquisition
 	}
-
+	
 	on_enact = {
 		custom_tooltip = unlock_arrange_accident_tt
 	}
-
+	
 	pop_support = {
 		value = 0
 	}
-
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -232,18 +246,21 @@ law_empowered_gendarmerie = {
 	unlocking_technologies = {
 		pan-nationalism
 	}
+	
 	unlocking_laws = {
 		law_ethnostate
 		law_national_supremacy
 		law_patriot_schools
 		law_national_guard
 	}
+	
 	disallowing_laws = {
 		law_protected_speech
 		law_no_police
 		law_local_police
 		law_disarmed_police
 	}
+	
 	modifier = {
 		country_institution_multiculturalism_max_investment_add = 1
 	}
@@ -259,12 +276,14 @@ law_empowered_gendarmerie = {
 		country_revolution_progress_mult = 0.1
 		country_secession_progress_mult = 0.1
 	}
+	
 	possible_political_movements = {
 		law_secret_police
 		law_guaranteed_liberties
 		law_provincial_courts
 		law_inquisition
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -277,6 +296,7 @@ law_empowered_gendarmerie = {
 			}
 		}
 	}
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -298,10 +318,12 @@ law_guaranteed_liberties = {
 	unlocking_technologies = {
 		human_rights
 	}
+	
 	unlocking_laws = {
 		law_right_of_assembly
 		law_protected_speech
 	}
+	
 	disallowing_laws = {
 		law_faith_orders
 		law_theocracy
@@ -309,6 +331,7 @@ law_guaranteed_liberties = {
 		law_legacy_slavery
 		law_religious_schools
 	}
+	
 	modifier = {
 		country_institution_multiculturalism_max_investment_add = 1
 	}
@@ -318,12 +341,14 @@ law_guaranteed_liberties = {
 		state_loyalists_from_sol_change_mult = 0.05
 		state_turmoil_effects_mult = -0.02
 	}
+	
 	possible_political_movements = {
 		law_secret_police
 		law_empowered_gendarmerie
 		law_provincial_courts
 		law_inquisition
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -331,8 +356,8 @@ law_guaranteed_liberties = {
 			value = 0.01
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {

@@ -10,18 +10,21 @@ imperia_vienna_congress_current_type_severity_requirement = {
 		}
 		value = imperia_vienna_congress_denounce_severity_requirement
 	}
+	
 	else_if = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 2
 		}
 		value = imperia_vienna_congress_state_claim_severity_requirement
 	}
+	
 	else_if = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 3
 		}
 		value = imperia_vienna_congress_embargo_severity_requirement
 	}
+	
 	else_if = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 4
@@ -52,6 +55,7 @@ imperia_ai_foreign_law_state_wargoal_weight = {
 							owner = root
 							is_incorporated = yes
 						}
+						
 						any_neighbouring_state = {
 							owner = root
 							is_incorporated = yes
@@ -62,6 +66,7 @@ imperia_ai_foreign_law_state_wargoal_weight = {
 		}
 		multiply = 0
 	}
+	
 	if = {
 		limit = {
 			has_law = law_type:law_imperialism
@@ -73,6 +78,7 @@ imperia_ai_foreign_law_state_wargoal_weight = {
 		}
 		multiply = 0
 	}
+	
 	if = {
 		limit = {
 			has_law = law_type:law_armed_neutrality
@@ -86,6 +92,7 @@ imperia_ai_foreign_law_state_wargoal_weight = {
 		}
 		multiply = 0
 	}
+	
 	if = {
 		limit = {
 			has_law = law_type:law_anti_imperialist
@@ -102,12 +109,14 @@ imperia_ai_foreign_law_state_wargoal_weight = {
 		}
 		multiply = 0
 	}
+	
 	if = {
 		limit = {
 			has_law = law_type:law_pacifist
 		}
 		multiply = 0
 	}
+	
 	if = {
 		limit = {
 			has_law = law_type:law_true_neutrality
@@ -132,6 +141,7 @@ imperia_ai_foreign_law_country_wargoal_weight = {
 		}
 		multiply = 0
 	}
+	
 	if = {
 		limit = {
 			has_law = law_type:law_imperialism
@@ -143,6 +153,7 @@ imperia_ai_foreign_law_country_wargoal_weight = {
 		}
 		multiply = 0
 	}
+	
 	if = {
 		limit = {
 			has_law = law_type:law_armed_neutrality
@@ -156,6 +167,7 @@ imperia_ai_foreign_law_country_wargoal_weight = {
 		}
 		multiply = 0
 	}
+	
 	if = {
 		limit = {
 			has_law = law_type:law_anti_imperialist
@@ -172,12 +184,14 @@ imperia_ai_foreign_law_country_wargoal_weight = {
 		}
 		multiply = 0
 	}
+	
 	if = {
 		limit = {
 			has_law = law_type:law_pacifist
 		}
 		multiply = 0
 	}
+	
 	if = {
 		limit = {
 			has_law = law_type:law_true_neutrality
@@ -192,6 +206,7 @@ imperia_get_primary_culture_fraction_rough = {
 		limit = {
 			is_primary_culture_of = root
 		}
+		
 		root = {
 			if = {
 				limit = {
@@ -202,6 +217,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 1
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -211,6 +227,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.95
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -220,6 +237,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.9
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -229,6 +247,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.85
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -238,6 +257,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.8
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -247,6 +267,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.75
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -256,6 +277,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.7
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -265,6 +287,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.65
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -274,6 +297,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.6
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -283,6 +307,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.55
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -292,6 +317,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.5
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -301,6 +327,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.45
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -310,6 +337,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.4
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -319,6 +347,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.35
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -328,6 +357,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.3
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -337,6 +367,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.25
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -346,6 +377,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.2
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -355,6 +387,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.15
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -364,6 +397,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.1
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -373,6 +407,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.075
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -382,6 +417,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.05
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -391,6 +427,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.04
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -400,6 +437,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.03
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -409,6 +447,7 @@ imperia_get_primary_culture_fraction_rough = {
 				}
 				add = 0.02
 			}
+			
 			else_if = {
 				limit = {
 					culture_percent_country = {
@@ -438,6 +477,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 1
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -447,6 +487,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.95
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -456,6 +497,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.9
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -465,6 +507,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.85
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -474,6 +517,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.8
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -483,6 +527,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.75
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -492,6 +537,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.7
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -501,6 +547,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.65
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -510,6 +557,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.6
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -519,6 +567,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.55
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -528,6 +577,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.5
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -537,6 +587,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.45
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -546,6 +597,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.4
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -555,6 +607,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.35
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -564,6 +617,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.3
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -573,6 +627,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.25
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -582,6 +637,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.2
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -591,6 +647,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.15
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -600,6 +657,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.1
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -609,6 +667,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.075
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -618,6 +677,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.05
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -627,6 +687,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.04
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -636,6 +697,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.03
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -645,6 +707,7 @@ imperia_get_state_religion_fraction_rough = {
 		}
 		add = 0.02
 	}
+	
 	else_if = {
 		limit = {
 			religion_percent_country = {
@@ -667,9 +730,10 @@ imperia_infamy_multiplier = {
 			infamy > 20
 		}
 		add = root.infamy
-		subtract = 20		# Remove 'excess' infamy from calculations
-		divide = 80		# Since there's only 80 steps now, on the flipside going above 100 infamy becomes even more dangerous
+		subtract = 20	# Remove 'excess' infamy from calculations
+		divide = 80	# Since there's only 80 steps now, on the flipside going above 100 infamy becomes even more dangerous
 	}
+	
 	else = {
 		value = 0
 	}
@@ -707,22 +771,26 @@ imperia_player_construction_bonus_multiplier = {
 		}
 		value = 0
 	}
+	
 	else_if = {
 		limit = {
 			has_game_rule = enable_player_construction_bonus_15
 		}
 		value = 15
 	}
+	
 	else_if = {
 		limit = {
 			has_game_rule = enable_player_construction_bonus_0_5_10_15
 		}
+		
 		if = {
 			limit = {
 				country_rank = rank_value:great_power
 			}
 			value = 0
 		}
+		
 		else_if = {
 			limit = {
 				OR = {
@@ -732,6 +800,7 @@ imperia_player_construction_bonus_multiplier = {
 			}
 			value = 5
 		}
+		
 		else_if = {
 			limit = {
 				OR = {
@@ -741,6 +810,7 @@ imperia_player_construction_bonus_multiplier = {
 			}
 			value = 10
 		}
+		
 		else_if = {
 			limit = {
 				OR = {
@@ -751,16 +821,19 @@ imperia_player_construction_bonus_multiplier = {
 			value = 15
 		}
 	}
+	
 	else_if = {
 		limit = {
 			has_game_rule = enable_player_construction_bonus_0_2_4_7
 		}
+		
 		if = {
 			limit = {
 				country_rank = rank_value:great_power
 			}
 			value = 0
 		}
+		
 		else_if = {
 			limit = {
 				OR = {
@@ -770,6 +843,7 @@ imperia_player_construction_bonus_multiplier = {
 			}
 			value = 2
 		}
+		
 		else_if = {
 			limit = {
 				OR = {
@@ -779,6 +853,7 @@ imperia_player_construction_bonus_multiplier = {
 			}
 			value = 4
 		}
+		
 		else_if = {
 			limit = {
 				OR = {
@@ -800,6 +875,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 20
 	}
+	
 	if = {
 		limit = {
 			# Taking loans adds 5
@@ -807,6 +883,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 5
 	}
+	
 	if = {
 		limit = {
 			# Being in default adds 10
@@ -814,6 +891,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 10
 	}
+	
 	if = {
 		limit = {
 			# Not being unrecognised, meaning you're recognised or.. Decentralised, technically, subtracts 20
@@ -823,6 +901,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		subtract = 20
 	}
+	
 	if = {
 		limit = {
 			# Not being a monarchy adds 20
@@ -851,6 +930,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 5
 	}
+	
 	if = {
 		limit = {
 			# If Qing does NOT have a presence in Mongolia (Urga)
@@ -869,6 +949,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 5
 	}
+	
 	if = {
 		limit = {
 			# If Qing does NOT have a presence in Eastern provinces (Southern Manchuria)
@@ -887,6 +968,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 10
 	}
+	
 	if = {
 		limit = {
 			# If Qing does NOT have a presence in Gansu (Xibei, Ningxia)
@@ -905,6 +987,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 10
 	}
+	
 	if = {
 		limit = {
 			# If Qing does NOT have a presence in Tibet (Lhasa)
@@ -923,6 +1006,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 5
 	}
+	
 	if = {
 		limit = {
 			# If Qing does NOT have a presence in Sichuan
@@ -941,6 +1025,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 10
 	}
+	
 	if = {
 		limit = {
 			# If Qing does NOT have a presence in Huguang (Hunan)
@@ -959,6 +1044,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 10
 	}
+	
 	if = {
 		limit = {
 			# If Qing does NOT have a presence in Liangguang (Guangdong)
@@ -977,6 +1063,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 10
 	}
+	
 	if = {
 		limit = {
 			# If Qing does NOT have a presence in Formosa
@@ -995,6 +1082,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 5
 	}
+	
 	if = {
 		limit = {
 			# If Qing does NOT have a presence in Korea (Gyeonggi)
@@ -1013,6 +1101,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		add = 5
 	}
+	
 	if = {
 		limit = {
 			# All state regions that are manchu homelands must be owned by c:CHI or one of their subjects
@@ -1033,6 +1122,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		subtract = 10
 	}
+	
 	else_if = {
 		limit = {
 			has_variable = je_end_han_discrimination_failed
@@ -1046,6 +1136,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		subtract = 5
 	}
+	
 	else_if = {
 		limit = {
 			has_variable = je_qing_administrative_reform_failed
@@ -1059,6 +1150,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		subtract = 10
 	}
+	
 	else_if = {
 		limit = {
 			has_variable = je_rural_poverty_qing_failed
@@ -1115,12 +1207,14 @@ imperia_qing_fragile_unity_value = {
 		}
 		subtract = 10
 	}
+	
 	if = {
 		limit = {
 			has_variable = banner_system_yong_ying
 		}
 		add = 5
 	}
+	
 	if = {
 		limit = {
 			has_variable = eight_banners_martial_tradition
@@ -1134,30 +1228,35 @@ imperia_qing_fragile_unity_value = {
 		}
 		subtract = 20
 	}
+	
 	if = {
 		limit = {
 			has_variable = qing_language_conference_sichuan_victorious
 		}
 		subtract = 10
 	}
+	
 	if = {
 		limit = {
 			has_variable = qing_language_conference_liangguang_victorious
 		}
 		subtract = 5
 	}
+	
 	if = {
 		limit = {
 			has_variable = qing_language_conference_huguang_victorious
 		}
 		add = 5
 	}
+	
 	if = {
 		limit = {
 			has_variable = qing_language_conference_formosa_victorious
 		}
 		add = 10
 	}
+	
 	if = {
 		limit = {
 			has_variable = qing_language_conference_no_winner
@@ -1171,6 +1270,7 @@ imperia_qing_fragile_unity_value = {
 		}
 		subtract = 20
 	}
+	
 	if = {
 		limit = {
 			has_variable = opium_wars_china_lost
@@ -1224,6 +1324,7 @@ imperia_qing_fragile_unity_value = {
 				region = sr:region_south_china
 				region = sr:region_manchuria
 			}
+			
 			any_scope_state = {
 				is_treaty_port = yes
 			}
@@ -1282,10 +1383,12 @@ total_prestige_of_voting_conference_members = {
 					name = current_congress_members_on_stance_1
 					target = this
 				}
+				
 				is_target_in_global_variable_list = {
 					name = current_congress_members_on_stance_2
 					target = this
 				}
+				
 				is_target_in_global_variable_list = {
 					name = current_congress_members_on_stance_3
 					target = this
@@ -1363,6 +1466,7 @@ conference_sanctions_severity = {
 		}
 		value = 0
 	}
+	
 	else_if = {
 		limit = {
 			conference_power_balance_percentage_value > imperia_vienna_congress_current_type_severity_requirement_negative
@@ -1370,18 +1474,21 @@ conference_sanctions_severity = {
 		}
 		value = 0
 	}
+	
 	else_if = {
 		limit = {
 			conference_power_balance_percentage_value > imperia_vienna_congress_severity_max
 		}
 		value = 1
 	}
+	
 	else_if = {
 		limit = {
 			conference_power_balance_percentage_value < imperia_vienna_congress_severity_max_negative
 		}
 		value = -1
 	}
+	
 	else = {
 		value = {
 			value = conference_power_balance_percentage_value
@@ -1400,6 +1507,7 @@ abs_conference_sanctions_severity = {
 		}
 		add = conference_sanctions_severity
 	}
+	
 	else = {
 		subtract = conference_sanctions_severity
 	}
@@ -1415,6 +1523,7 @@ imperia_vienna_congress_session_target_region_strategic_fraction = {
 			add = 1
 		}
 	}
+	
 	divide = {
 		every_in_global_list = {
 			variable = imperia_vienna_congress_session_target_states
@@ -1435,6 +1544,7 @@ imperia_vienna_congress_session_target_region_culture_fraction = {
 			add = 1
 		}
 	}
+	
 	divide = {
 		every_in_global_list = {
 			variable = imperia_vienna_congress_session_target_states
@@ -1458,6 +1568,7 @@ whist_opinion_value = {
 				scope:player_3 = this
 			}
 		}
+		
 		add = {
 			value = var:team_1_points
 			if = {
@@ -1468,6 +1579,7 @@ whist_opinion_value = {
 				}
 				multiply = 1.3
 			}
+			
 			if = {
 				limit = {
 					scope:player_2 = {
@@ -1476,6 +1588,7 @@ whist_opinion_value = {
 				}
 				multiply = 1.3
 			}
+			
 			if = {
 				limit = {
 					scope:player_1 = {
@@ -1484,6 +1597,7 @@ whist_opinion_value = {
 				}
 				multiply = 0.7
 			}
+			
 			if = {
 				limit = {
 					scope:player_2 = {
@@ -1494,6 +1608,7 @@ whist_opinion_value = {
 			}
 		}
 	}
+	
 	if = {
 		# Team 2
 		limit = {
@@ -1502,6 +1617,7 @@ whist_opinion_value = {
 				scope:player_4 = this
 			}
 		}
+		
 		add = {
 			value = var:team_2_points
 			if = {
@@ -1512,6 +1628,7 @@ whist_opinion_value = {
 				}
 				multiply = 1.3
 			}
+			
 			if = {
 				limit = {
 					scope:player_4 = {
@@ -1520,6 +1637,7 @@ whist_opinion_value = {
 				}
 				multiply = 1.3
 			}
+			
 			if = {
 				limit = {
 					scope:player_2 = {
@@ -1528,6 +1646,7 @@ whist_opinion_value = {
 				}
 				multiply = 0.7
 			}
+			
 			if = {
 				limit = {
 					scope:player_4 = {
@@ -1563,6 +1682,7 @@ congress_parade_highest_spent = {
 		}
 		value = global_var:imperia_vienna_congress_session_initiator.var:chosen_budget_amount
 	}
+	
 	else = {
 		value = average_congress_parade_lead_budget
 	}
@@ -1575,6 +1695,7 @@ congress_parade_lowest_spent = {
 		}
 		value = global_var:imperia_vienna_congress_session_initiator.var:chosen_budget_amount
 	}
+	
 	else = {
 		value = average_congress_parade_lead_budget
 	}
@@ -1654,6 +1775,7 @@ masked_ball_max_afford = {
 		# percentage of reserves to spend at max
 		divide = 10
 	}
+	
 	divide = {
 		# ticks in a month
 		value = 4
@@ -1672,6 +1794,7 @@ imperia_discord_ai_voting_weight = {
 		limit = {
 			is_congress_target = yes
 		}
+		
 		if = {
 			limit = {
 				global_var:imperia_vienna_congress_session_type != 4
@@ -1680,10 +1803,12 @@ imperia_discord_ai_voting_weight = {
 			# Only if the motion is not recognition (a positive congress)
 			subtract = relations:root
 		}
+		
 		else = {
 			add = relations:root
 		}
 	}
+	
 	global_var:imperia_vienna_congress_session_initiator = {
 		# For the initiator a simple add is made; AI will support the initiator if they like them, oppose if they dislike
 		add = relations:root
@@ -1695,27 +1820,33 @@ imperia_weekly_customs_union_minting_cost = {
 		limit = {
 			has_variable = previous_minting_cost
 		}
+		
 		value = {
 			add = modifier:country_minting_add
 			subtract = var:previous_minting_cost
 		}
 	}
+	
 	else = {
 		value = modifier:country_minting_add
 	}
+	
 	divide = {
 		add = 1
-		divide = 0.6		# old $DIVISOR$ 
+		divide = 0.6	# old $DIVISOR$ 
 	}
+	
 	if = {
 		limit = {
 			has_variable = previous_minting_cost
 		}
+		
 		subtract = {
 			add = modifier:country_minting_add
 			subtract = var:previous_minting_cost
 		}
 	}
+	
 	else = {
 		subtract = modifier:country_minting_add
 	}
@@ -1734,6 +1865,7 @@ imperia_china_infamy_penalty_value = {
 				}
 			}
 		}
+		
 		every_scope_state = {
 			limit = {
 				is_treaty_port = no
@@ -1746,6 +1878,7 @@ imperia_china_infamy_penalty_value = {
 			}
 			add = 6
 		}
+		
 		every_subject_or_below = {
 			limit = {
 				any_scope_state = {
@@ -1758,6 +1891,7 @@ imperia_china_infamy_penalty_value = {
 					}
 				}
 			}
+			
 			every_scope_state = {
 				limit = {
 					is_treaty_port = no

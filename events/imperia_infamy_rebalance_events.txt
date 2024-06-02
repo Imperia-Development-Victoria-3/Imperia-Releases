@@ -6,6 +6,7 @@ infamy_rebalance.1 = {
 	trigger = {
 		infamy >= infamy_threshold:pariah
 	}
+	
 	immediate = {
 		save_scope_as = pariah_scope
 		every_country = {
@@ -15,11 +16,13 @@ infamy_rebalance.1 = {
 					NOT = {
 						this = scope:pariah_scope
 					}
+					
 					NOT = {
 						is_country_type = decentralized
 					}
 				}
 			}
+			
 			add_journal_entry = {
 				type = je_pariah_neighbour
 				target = scope:pariah_scope
@@ -70,6 +73,7 @@ infamy_rebalance.4 = {
 			}
 		}
 	}
+	
 	immediate = {
 		random_scope_state = {
 			limit = {
@@ -81,6 +85,7 @@ infamy_rebalance.4 = {
 			}
 			save_scope_as = border_state
 		}
+		
 		random_country = {
 			limit = {
 				infamy >= infamy_threshold:pariah
@@ -94,6 +99,7 @@ infamy_rebalance.4 = {
 			save_scope_as = pariah_neighbour
 		}
 	}
+	
 	option = {
 		name = infamy_rebalance.4.a
 		scope:border_state = {
@@ -103,6 +109,7 @@ infamy_rebalance.4 = {
 				is_decaying = yes
 			}
 		}
+		
 		custom_tooltip = {
 			text = everyCountrySharingCulturalTraitRelationsTT
 			every_country = {
@@ -110,13 +117,16 @@ infamy_rebalance.4 = {
 					any_primary_culture = {
 						shares_non_heritage_trait_with_any_primary_culture = root
 					}
+					
 					NOT = {
 						this = root
 					}
+					
 					NOT = {
 						this = scope:pariah_neighbour
 					}
 				}
+				
 				change_relations = {
 					country = root
 					value = 30
@@ -128,6 +138,7 @@ infamy_rebalance.4 = {
 			base = 50
 		}
 	}
+	
 	option = {
 		name = infamy_rebalance.4.b
 		scope:border_state = {
@@ -136,10 +147,12 @@ infamy_rebalance.4 = {
 				months = short_modifier_time
 				is_decaying = yes
 			}
+			
 			add_radicals_in_state = {
 				value = 0.15
 			}
 		}
+		
 		ai_chance = {
 			base = 50
 		}
@@ -165,10 +178,12 @@ infamy_rebalance.5 = {
 		NOT = {
 			has_modifier = modifier_international_pariah
 		}
+		
 		save_temporary_scope_value_as = {
 			name = mult_var
 			value = 1.8
 		}
+		
 		any_country = {
 			infamy >= root.pariah_infamy_SCOPE_VALUE_MULT_VAR_trigger
 			has_modifier = modifier_international_pariah
@@ -178,10 +193,12 @@ infamy_rebalance.5 = {
 					type = alliance
 				}
 			}
+			
 			NOT = {
 				has_truce_with = root
 			}
 		}
+		
 		OR = {
 			country_rank = rank_value:great_power
 			AND = {
@@ -198,12 +215,14 @@ infamy_rebalance.5 = {
 		}
 		imperia_aggressive_diplomatic_plays_permitted = yes
 	}
+	
 	immediate = {
-		save_scope_as = root_scope		#For tooltip down the line... stupid, yes.
+		save_scope_as = root_scope	#For tooltip down the line... stupid, yes.
 		save_temporary_scope_value_as = {
 			name = mult_var
 			value = 1.8
 		}
+		
 		random_country = {
 			limit = {
 				infamy >= root.pariah_infamy_SCOPE_VALUE_MULT_VAR_trigger
@@ -214,6 +233,7 @@ infamy_rebalance.5 = {
 						type = alliance
 					}
 				}
+				
 				NOT = {
 					has_truce_with = root
 				}
@@ -221,6 +241,7 @@ infamy_rebalance.5 = {
 			save_scope_as = pariah
 		}
 	}
+	
 	option = {
 		name = infamy_rebalance.5.a
 		add_modifier = {
@@ -233,12 +254,14 @@ infamy_rebalance.5 = {
 			base = 50
 		}
 	}
+	
 	option = {
 		name = infamy_rebalance.5.b
 		create_diplomatic_play = {
 			target_country = scope:pariah
 			type = dp_contain_threat
 		}
+		
 		custom_tooltip = {
 			text = send_pariah_ultimatum_TT
 			scope:pariah = {
@@ -248,6 +271,7 @@ infamy_rebalance.5 = {
 				}
 			}
 		}
+		
 		ai_chance = {
 			base = 50
 		}
@@ -276,6 +300,7 @@ infamy_rebalance.6 = {
 			save_scope_as = pariah
 		}
 	}
+	
 	option = {
 		name = infamy_rebalance.5.a
 		add_modifier = {
@@ -288,6 +313,7 @@ infamy_rebalance.6 = {
 			base = 25
 		}
 	}
+	
 	option = {
 		name = infamy_rebalance.5.b
 		random_diplomatic_play = {
@@ -295,6 +321,7 @@ infamy_rebalance.6 = {
 				target_is = scope:pariah
 				is_diplomatic_play_type = dp_contain_threat
 			}
+			
 			add_initiator_backers = {
 				ROOT
 			}
@@ -308,6 +335,7 @@ infamy_rebalance.6 = {
 				id = infamy_rebalance.7
 			}
 		}
+		
 		ai_chance = {
 			base = 75
 		}
@@ -349,6 +377,7 @@ infamy_rebalance.8 = {
 				}
 			}
 		}
+		
 		any_country = {
 			#scopes to pariah
 			infamy >= infamy_threshold:pariah
@@ -360,6 +389,7 @@ infamy_rebalance.8 = {
 			}
 		}
 	}
+	
 	immediate = {
 		random_country = {
 			limit = {
@@ -375,6 +405,7 @@ infamy_rebalance.8 = {
 			save_scope_as = pariah
 		}
 	}
+	
 	option = {
 		#domestic bonus
 		name = infamy_rebalance.8.a
@@ -384,17 +415,20 @@ infamy_rebalance.8 = {
 					has_ideology = ideology:ideology_pacifist
 				}
 			}
+			
 			leader = {
 				set_ideology = ideology:ideology_jingoist_leader
 			}
 		}
+		
 		every_scope_state = {
 			limit = {
 				owner = root
 				is_incorporated = yes
 			}
+			
 			add_loyalists_in_state = {
-				value = medium_radicals				#5%
+				value = medium_radicals	#5%
 			}
 		}
 		default_option = yes
@@ -402,6 +436,7 @@ infamy_rebalance.8 = {
 			base = 50
 		}
 	}
+	
 	option = {
 		#external bonus
 		name = infamy_rebalance.8.b
@@ -415,11 +450,13 @@ infamy_rebalance.8 = {
 					this = root
 				}
 			}
+			
 			change_relations = {
 				country = root
 				value = 25
 			}
 		}
+		
 		every_diplomatic_play = {
 			#Gives relations with the rest
 			limit = {
@@ -427,18 +464,21 @@ infamy_rebalance.8 = {
 				is_war = yes
 				target_is = scope:pariah
 			}
+			
 			every_scope_initiator_ally = {
 				limit = {
 					NOT = {
 						this = root
 					}
 				}
+				
 				change_relations = {
 					country = root
 					value = 25
 				}
 			}
 		}
+		
 		ai_chance = {
 			base = 50
 		}
@@ -468,6 +508,7 @@ infamy_rebalance.9 = {
 			target_is = root
 		}
 	}
+	
 	immediate = {
 	}
 	option = {
@@ -478,21 +519,25 @@ infamy_rebalance.9 = {
 				NOT = {
 					is_interest_group_type = ig_armed_forces
 				}
+				
 				leader = {
 					has_ideology = ideology:ideology_jingoist_leader
 				}
 			}
+			
 			leader = {
 				set_ideology = ideology:ideology_pacifist
 			}
 		}
+		
 		random_scope_state = {
 			limit = {
 				owner = root
 				is_incorporated = yes
 			}
+			
 			add_loyalists_in_state = {
-				value = very_large_radicals				#20%
+				value = very_large_radicals	#20%
 			}
 		}
 		default_option = yes
@@ -500,6 +545,7 @@ infamy_rebalance.9 = {
 			base = 50
 		}
 	}
+	
 	option = {
 		#external penalty
 		name = infamy_rebalance.9.b
@@ -508,17 +554,20 @@ infamy_rebalance.9 = {
 				is_diplomatic_play_initiator = yes
 				is_diplomatic_play_enemy_of = root
 			}
+			
 			change_relations = {
 				country = root
 				value = -100
 			}
 		}
+		
 		every_diplomatic_play = {
 			limit = {
 				has_play_goal = contain_threat
 				is_war = yes
 				target_is = root
 			}
+			
 			every_scope_initiator_ally = {
 				change_relations = {
 					country = root
@@ -526,6 +575,7 @@ infamy_rebalance.9 = {
 				}
 			}
 		}
+		
 		add_modifier = {
 			name = modifier_pariah_influence_loss
 			months = normal_modifier_time
@@ -558,12 +608,14 @@ infamy_rebalance.10 = {
 			has_modifier = modifier_pariah_international_isolation
 		}
 	}
+	
 	option = {
 		name = infamy_rebalance.10.a
 		add_modifier = {
 			name = modifier_pariah_economic_sanctions
 			years = 5
 		}
+		
 		every_country = {
 			limit = {
 				country_rank >= rank_value:great_power
@@ -571,6 +623,7 @@ infamy_rebalance.10 = {
 					this = root
 				}
 			}
+			
 			change_relations = {
 				country = root
 				value = -100
@@ -602,11 +655,13 @@ infamy_rebalance.11 = {
 			has_modifier = modifier_international_pariah
 		}
 	}
+	
 	option = {
 		name = infamy_rebalance.11.a
 		add_modifier = {
 			name = modifier_international_pariah
 		}
+		
 		every_country = {
 			limit = {
 				country_rank >= rank_value:major_power
@@ -614,6 +669,7 @@ infamy_rebalance.11 = {
 					this = root
 				}
 			}
+			
 			change_relations = {
 				country = root
 				value = -100
@@ -645,19 +701,23 @@ infamy_rebalance.12 = {
 		NOT = {
 			is_country_type = unrecognized
 		}
+		
 		NOT = {
 			has_law = law_type:law_isolationism
 		}
+		
 		NOT = {
 			has_modifier = modifier_pariah_international_isolation
 		}
 	}
+	
 	option = {
 		name = infamy_rebalance.12.a
 		add_modifier = {
 			name = modifier_pariah_international_isolation
 			years = 20
 		}
+		
 		custom_tooltip = {
 			text = minus_relations_every_country_tt
 			every_country = {
@@ -667,6 +727,7 @@ infamy_rebalance.12 = {
 					NOT = {
 						is_country_type = decentralized
 					}
+					
 					NOT = {
 						has_diplomatic_pact = {
 							who = root
@@ -674,6 +735,7 @@ infamy_rebalance.12 = {
 						}
 					}
 				}
+				
 				trigger_event = {
 					id = infamy_rebalance.16
 				}
@@ -703,6 +765,7 @@ infamy_rebalance.13 = {
 		}
 		change_infamy = var:infamy_reduction
 	}
+	
 	option = {
 		name = infamy_rebalance.13.a
 		show_as_tooltip = {
@@ -732,6 +795,7 @@ infamy_rebalance.14 = {
 		}
 		change_infamy = var:infamy_reduction
 	}
+	
 	option = {
 		name = infamy_rebalance.14.a
 		show_as_tooltip = {
@@ -759,15 +823,17 @@ infamy_rebalance.15 = {
 				target_is = root
 				has_play_goal = contain_threat
 			}
+			
 			initiator = {
 				save_scope_as = initiator_scope
 			}
 			save_scope_as = diplo_play_scope
 		}
-		save_scope_as = root_scope		#used in tooltip... yes I know
+		save_scope_as = root_scope	#used in tooltip... yes I know
 	}
+	
 	option = {
-		name = infamy_rebalance.15.a		#Refuse
+		name = infamy_rebalance.15.a	#Refuse
 		default_option = yes
 		hidden_effect = {
 			every_country = {
@@ -782,33 +848,39 @@ infamy_rebalance.15 = {
 						is_subject_of = root
 					}
 				}
+				
 				change_relations = {
 					country = root
 					value = -200
 				}
+				
 				change_relations = {
 					country = scope:initiator_scope
 					value = 200
 				}
 			}
 		}
+		
 		every_country = {
 			limit = {
 				imperia_aggressive_diplomatic_plays_permitted = yes
 				NOT = {
 					this = root
 				}
+				
 				NOT = {
 					this = scope:initiator_scope
 				}
 				country_rank >= rank_value:great_power
 			}
+			
 			trigger_event = {
 				id = infamy_rebalance.6
 				days = 0
 				popup = yes
 			}
 		}
+		
 		custom_tooltip = {
 			text = pariah_coalition_minor_powers_invitation_TT
 			every_country = {
@@ -820,6 +892,7 @@ infamy_rebalance.15 = {
 					}
 					country_rank < rank_value:great_power
 				}
+				
 				trigger_event = {
 					id = infamy_rebalance.6
 					days = 0
@@ -827,16 +900,19 @@ infamy_rebalance.15 = {
 				}
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
-		name = infamy_rebalance.15.b		#Agree
+		name = infamy_rebalance.15.b	#Agree
 		scope:diplo_play_scope = {
 			resolve_play_for = scope:initiator_scope
 			end_play = yes
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {
@@ -845,33 +921,39 @@ infamy_rebalance.15 = {
 						is_country_type = unrecognized
 					}
 				}
+				
 				create_truce = {
 					country = root
 					months = 120
 				}
 			}
+			
 			every_country = {
 				limit = {
 					has_strategic_adjacency = root
 					NOT = {
 						is_country_type = unrecognized
 					}
+					
 					NOT = {
 						is_country_type = decentralized
 					}
 					is_subject = no
 					is_revolutionary = no
 				}
+				
 				create_diplomatic_pact = {
 					country = root
 					type = minor_war_reparations
 				}
 			}
+			
 			add_modifier = {
 				name = no_more_war
 				years = 10
 			}
 		}
+		
 		ai_chance = {
 			base = 1
 		}
@@ -907,15 +989,18 @@ infamy_rebalance.16 = {
 			}
 			save_scope_as = pariah_scope
 		}
+		
 		set_variable = {
 			value = scope:pariah_scope.infamy
 			name = infamy_increase
 		}
+		
 		change_variable = {
 			name = infamy_increase
 			multiply = 0.333
 		}
 	}
+	
 	option = {
 		# Cut relations and start embargo
 		name = infamy_rebalance.16.a
@@ -924,6 +1009,7 @@ infamy_rebalance.16 = {
 			country = scope:pariah_scope
 			value = -400
 		}
+		
 		if = {
 			limit = {
 				has_diplomatic_pact = {
@@ -931,11 +1017,13 @@ infamy_rebalance.16 = {
 					type = alliance
 				}
 			}
+			
 			remove_diplomatic_pact = {
 				country = scope:pariah_scope
 				type = alliance
 			}
 		}
+		
 		if = {
 			limit = {
 				has_diplomatic_pact = {
@@ -943,11 +1031,13 @@ infamy_rebalance.16 = {
 					type = defensive_pact
 				}
 			}
+			
 			remove_diplomatic_pact = {
 				country = scope:pariah_scope
 				type = defensive_pact
 			}
 		}
+		
 		if = {
 			limit = {
 				NOT = {
@@ -957,12 +1047,14 @@ infamy_rebalance.16 = {
 					}
 				}
 			}
+			
 			create_diplomatic_pact = {
 				country = scope:pariah_scope
 				type = embargo
 			}
 		}
 	}
+	
 	option = {
 		# Double down
 		name = infamy_rebalance.16.b

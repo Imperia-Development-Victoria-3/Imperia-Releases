@@ -6,6 +6,7 @@ on_imperia_country_released_as_independent = {
 			limit = {
 				is_diplomatic_play_committed_participant = no
 			}
+			
 			trigger_event = {
 				id = infamy_rebalance.13
 				popup = yes
@@ -22,6 +23,7 @@ on_imperia_country_released_as_own_subject = {
 			limit = {
 				is_diplomatic_play_committed_participant = no
 			}
+			
 			trigger_event = {
 				id = infamy_rebalance.14
 				popup = yes

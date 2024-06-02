@@ -13,6 +13,7 @@
 					has_law = law_type:law_council_republic
 					country_rank > rank_value:minor_power
 				}
+				
 				add_to_global_variable_list = {
 					name = council_republics_list
 					target = THIS

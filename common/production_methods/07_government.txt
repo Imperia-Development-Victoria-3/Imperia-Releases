@@ -8,9 +8,10 @@
 			building_employment_bureaucrats_add = 150
 		}
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 50			#20
+			country_convoys_capacity_add = 50	#20
 		}
 	}
 }
@@ -21,17 +22,20 @@ pm_basic_port = {
 		workforce_scaled = {
 			goods_input_clippers_add = 5
 		}
+		
 		level_scaled = {
 			building_employment_laborers_add = 3000
 			building_employment_clerks_add = 1500
 			building_employment_bureaucrats_add = 500
 		}
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 200			#150
+			country_convoys_capacity_add = 200	#150
 		}
 	}
+	
 	state_modifiers = {
 		workforce_scaled = {
 			state_infrastructure_add = 5
@@ -44,11 +48,13 @@ pm_industrial_port = {
 	unlocking_technologies = {
 		gantry_cranes
 	}
+	
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_steamers_add = 5
 			goods_input_coal_add = 5
 		}
+		
 		level_scaled = {
 			building_employment_laborers_add = 2000
 			building_employment_machinists_add = 500
@@ -56,11 +62,13 @@ pm_industrial_port = {
 			building_employment_bureaucrats_add = 500
 		}
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 250			#175
+			country_convoys_capacity_add = 250	#175
 		}
 	}
+	
 	state_modifiers = {
 		workforce_scaled = {
 			state_infrastructure_add = 7.5
@@ -73,11 +81,13 @@ pm_modern_port = {
 	unlocking_technologies = {
 		concrete_dockyards
 	}
+	
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_steamers_add = 5
 			goods_input_oil_add = 5
 		}
+		
 		level_scaled = {
 			building_employment_laborers_add = 750
 			building_employment_machinists_add = 250
@@ -85,11 +95,13 @@ pm_modern_port = {
 			building_employment_bureaucrats_add = 500
 		}
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 325			#225
+			country_convoys_capacity_add = 325	#225
 		}
 	}
+	
 	state_modifiers = {
 		workforce_scaled = {
 			state_infrastructure_add = 10
@@ -104,11 +116,13 @@ pm_simple_organization = {
 			country_bureaucracy_add = 35
 		}
 	}
+	
 	state_modifiers = {
 		workforce_scaled = {
 			state_tax_capacity_add = 5
 		}
 	}
+	
 	building_modifiers = {
 		level_scaled = {
 			building_employment_clerks_add = 4000
@@ -121,20 +135,24 @@ pm_horizontal_drawer_cabinets = {
 	unlocking_technologies = {
 		centralization
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
 			country_bureaucracy_add = 50
 		}
 	}
+	
 	state_modifiers = {
 		workforce_scaled = {
 			state_tax_capacity_add = 10
 		}
 	}
+	
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 10
 		}
+		
 		level_scaled = {
 			building_employment_clerks_add = 4000
 		}
@@ -146,20 +164,24 @@ pm_vertical_filing_cabinets = {
 	unlocking_technologies = {
 		central_archives
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
 			country_bureaucracy_add = 65
 		}
 	}
+	
 	state_modifiers = {
 		workforce_scaled = {
 			state_tax_capacity_add = 15
 		}
 	}
+	
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 20
 		}
+		
 		level_scaled = {
 			building_employment_clerks_add = 4000
 		}
@@ -171,21 +193,25 @@ pm_switch_boards = {
 	unlocking_technologies = {
 		central_planning
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
 			country_bureaucracy_add = 100
 		}
 	}
+	
 	state_modifiers = {
 		workforce_scaled = {
 			state_tax_capacity_add = 30
 		}
 	}
+	
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 20
 			goods_input_telephones_add = 5
 		}
+		
 		level_scaled = {
 			building_employment_clerks_add = 2500
 			building_employment_bureaucrats_add = 2500
@@ -198,6 +224,7 @@ pm_hereditary_bureaucrats = {
 	unlocking_laws = {
 		law_hereditary_bureaucrats
 	}
+	
 	building_modifiers = {
 		level_scaled = {
 			building_employment_aristocrats_add = 250
@@ -211,6 +238,7 @@ pm_professional_bureaucrats = {
 	disallowing_laws = {
 		law_hereditary_bureaucrats
 	}
+	
 	building_modifiers = {
 		level_scaled = {
 			building_employment_bureaucrats_add = 500
@@ -223,6 +251,7 @@ pm_secular_bureaucrats = {
 	disallowing_laws = {
 		law_state_religion
 	}
+	
 	building_modifiers = {
 		level_scaled = {
 			building_employment_bureaucrats_add = 500
@@ -236,6 +265,7 @@ pm_religious_bureaucrats = {
 		law_total_separation
 		law_state_atheism
 	}
+	
 	building_modifiers = {
 		level_scaled = {
 			building_employment_clergymen_add = 250
@@ -252,15 +282,18 @@ pm_scholastic_education = {
 			country_prestige_add = 1.5
 		}
 	}
+	
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 5
 		}
+		
 		level_scaled = {
 			building_employment_clerks_add = 750
 			building_employment_laborers_add = 750
 		}
 	}
+	
 	state_modifiers = {
 		workforce_scaled = {
 			state_pop_qualifications_mult = 0.055
@@ -273,21 +306,25 @@ pm_philosophy_department = {
 	unlocking_technologies = {
 		dialectics
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
 			country_weekly_innovation_add = 1.25
 			country_prestige_add = 3
 		}
 	}
+	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 15 # was 10 along with 10 services
+			goods_input_paper_add = 15	# was 10 along with 10 services
 		}
+		
 		level_scaled = {
 			building_employment_clerks_add = 875
 			building_employment_laborers_add = 625
 		}
 	}
+	
 	state_modifiers = {
 		workforce_scaled = {
 			state_pop_qualifications_mult = 0.085
@@ -300,21 +337,25 @@ pm_analytical_philosophy_department = {
 	unlocking_technologies = {
 		analytical_philosophy
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
 			country_weekly_innovation_add = 1.5
 			country_prestige_add = 6
 		}
 	}
+	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 25 # Was 15 along with 25 services
+			goods_input_paper_add = 25	# Was 15 along with 25 services
 		}
+		
 		level_scaled = {
 			building_employment_clerks_add = 1000
 			building_employment_laborers_add = 500
 		}
 	}
+	
 	state_modifiers = {
 		workforce_scaled = {
 			state_pop_qualifications_mult = 0.12
@@ -328,6 +369,7 @@ pm_secular_academia = {
 		law_state_religion
 		law_patriot_schools
 	}
+	
 	building_modifiers = {
 		level_scaled = {
 			building_employment_academics_add = 1000
@@ -341,6 +383,7 @@ pm_religious_academia = {
 		law_total_separation
 		law_state_atheism
 	}
+	
 	building_modifiers = {
 		level_scaled = {
 			building_employment_clergymen_add = 500
@@ -356,10 +399,12 @@ pm_skyscraper_bureaucratic_nexus = {
 			building_government_administration_throughput_add = 0.25
 		}
 	}
+	
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 25
 		}
+		
 		level_scaled = {
 			building_employment_laborers_add = 1000
 			building_employment_clerks_add = 2500
@@ -373,16 +418,19 @@ pm_skyscraper_trade_nexus = {
 	unlocking_technologies = {
 		elevator
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
 			country_trade_route_quantity_mult = 0.25
 			building_government_administration_throughput_add = 0.25
 		}
 	}
+	
 	building_modifiers = {
 		workforce_scaled = {
 			goods_input_paper_add = 50
 		}
+		
 		level_scaled = {
 			building_employment_laborers_add = 2000
 			building_employment_clerks_add = 5000
@@ -400,6 +448,7 @@ pm_airship_mooring_post = {
 	unlocking_technologies = {
 		zeppelins
 	}
+	
 	country_modifiers = {
 		workforce_scaled = {
 			country_prestige_add = 10

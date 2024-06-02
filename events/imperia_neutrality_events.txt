@@ -23,15 +23,18 @@ imperia_neutrality_events.1 = {
 				}
 				is_war = no
 			}
+			
 			target = {
 				save_scope_as = neutral_country
 			}
 		}
+		
 		create_incident = {
 			country = scope:neutral_country
 			value = 50
 		}
 	}
+	
 	option = {
 		name = imperia_neutrality_events.1.a
 		custom_tooltip = following_has_happened_tt

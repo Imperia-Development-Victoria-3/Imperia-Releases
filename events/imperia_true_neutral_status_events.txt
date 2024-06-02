@@ -40,16 +40,19 @@ imperia_true_neutral_status.1 = {
 			save_scope_as = true_neutral_applicant
 		}
 	}
+	
 	option = {
 		#Sign immediately
 		name = imperia_true_neutral_status.1.a
 		imperia_true_neutral_sign_APPLICANT = {
 			APPLICANT = scope:true_neutral_applicant
 		}
+		
 		ai_chance = {
 			base = 25
 		}
 	}
+	
 	option = {
 		#Hold off
 		name = imperia_true_neutral_status.1.b
@@ -58,6 +61,7 @@ imperia_true_neutral_status.1 = {
 			name = true_neutral_applicants_consideration
 			target = scope:true_neutral_applicant
 		}
+		
 		ai_chance = {
 			base = 75
 		}
@@ -85,6 +89,7 @@ imperia_true_neutral_status.2 = {
 					}
 				}
 			}
+			
 			triggered_desc = {
 				desc = imperia_true_neutral_status.2.d.single
 				trigger = {
@@ -105,6 +110,7 @@ imperia_true_neutral_status.2 = {
 			variable = true_neutral_applicants_consideration
 			save_scope_as = true_neutral_applicant_a
 		}
+		
 		if = {
 			limit = {
 				variable_list_size = {
@@ -112,6 +118,7 @@ imperia_true_neutral_status.2 = {
 					value >= 2
 				}
 			}
+			
 			random_in_list = {
 				variable = true_neutral_applicants_consideration
 				limit = {
@@ -122,6 +129,7 @@ imperia_true_neutral_status.2 = {
 				save_scope_as = true_neutral_applicant_b
 			}
 		}
+		
 		if = {
 			limit = {
 				variable_list_size = {
@@ -129,6 +137,7 @@ imperia_true_neutral_status.2 = {
 					value >= 3
 				}
 			}
+			
 			random_in_list = {
 				variable = true_neutral_applicants_consideration
 				limit = {
@@ -140,6 +149,7 @@ imperia_true_neutral_status.2 = {
 				save_scope_as = true_neutral_applicant_c
 			}
 		}
+		
 		if = {
 			limit = {
 				variable_list_size = {
@@ -147,6 +157,7 @@ imperia_true_neutral_status.2 = {
 					value >= 4
 				}
 			}
+			
 			random_in_list = {
 				variable = true_neutral_applicants_consideration
 				limit = {
@@ -160,15 +171,18 @@ imperia_true_neutral_status.2 = {
 			}
 		}
 	}
+	
 	option = {
 		name = imperia_true_neutral_status.2.a
 		imperia_true_neutral_sign_APPLICANT = {
 			APPLICANT = scope:true_neutral_applicant_a
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = imperia_true_neutral_status.2.b
 		trigger = {
@@ -177,13 +191,16 @@ imperia_true_neutral_status.2 = {
 				value >= 2
 			}
 		}
+		
 		imperia_true_neutral_sign_APPLICANT = {
 			APPLICANT = scope:true_neutral_applicant_b
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = imperia_true_neutral_status.2.c
 		trigger = {
@@ -192,13 +209,16 @@ imperia_true_neutral_status.2 = {
 				value >= 3
 			}
 		}
+		
 		imperia_true_neutral_sign_APPLICANT = {
 			APPLICANT = scope:true_neutral_applicant_c
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		name = imperia_true_neutral_status.2.d
 		trigger = {
@@ -207,13 +227,16 @@ imperia_true_neutral_status.2 = {
 				value >= 4
 			}
 		}
+		
 		imperia_true_neutral_sign_APPLICANT = {
 			APPLICANT = scope:true_neutral_applicant_d
 		}
+		
 		ai_chance = {
 			base = 1
 		}
 	}
+	
 	option = {
 		#Nevermind
 		name = imperia_true_neutral_status.2.nvm

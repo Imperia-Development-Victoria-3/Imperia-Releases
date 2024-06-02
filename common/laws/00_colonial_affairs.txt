@@ -5,33 +5,33 @@
 	pop_support = {
 		value = 0
 	}
-
+	
 	disallowing_laws = {
 		law_imperialism
 	}
-
+	
 	ai_will_do = {
 		has_law = law_type:law_council_republic
-	}	
-
-	ai_enact_weight_modifier = { #Petitions
+	}
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
-		
 		if = {
-			limit = { 
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
-                scope:law = var:desired_law_var
+				scope:law = var:desired_law_var
 			}
 			add = 750
 		}
-
+		
 		if = {
 			limit = {
 				has_law = law_type:law_council_republic
 			}
 			add = 100
 		}
+		
 		if = {
 			limit = {
 				has_strategy = ai_strategy_anti_imperialism
@@ -48,6 +48,7 @@ law_frontier_colonization = {
 		law_pacifist
 		law_true_neutrality
 	}
+	
 	can_enact = {
 		any_scope_state = {
 			is_homeland_of_country_cultures = ROOT
@@ -58,30 +59,23 @@ law_frontier_colonization = {
 			}
 		}
 	}
-	
 	icon = "gfx/interface/icons/law_icons/frontier_colonization.dds"
-	
 	progressiveness = 25
-
 	unlocking_technologies = {
 		colonization
 	}
-
 	limited_to_frontier_colonization = yes
-	
 	modifier = {
 		state_migration_pull_unincorporated_mult = 0.5
 		interest_group_ig_rural_folk_pol_str_mult = 0.1
 		country_farmers_pol_str_mult = 0.1
 	}
-	
 	institution = institution_colonial_affairs
-
 	pop_support = {
 		value = 0
 		# Farmers like frontiers
 		add = {
-			desc = "POP_FARMERS"			
+			desc = "POP_FARMERS"
 			if = {
 				limit = {
 					is_pop_type = farmers
@@ -106,10 +100,12 @@ law_colonial_resettlement = {
 	unlocking_technologies = {
 		colonization
 	}
+	
 	disallowing_laws = {
 		law_pacifist
 		law_true_neutrality
 	}
+	
 	modifier = {
 		state_migration_pull_unincorporated_mult = 0.5
 		building_unincorporated_subsistence_output_mult = 0.10
@@ -117,7 +113,6 @@ law_colonial_resettlement = {
 		state_radicals_from_discrimination_mult = 0.1
 	}
 	institution = institution_colonial_affairs
-
 	pop_support = {
 		value = 0
 		# Officers like colonialism
@@ -134,17 +129,17 @@ law_colonial_resettlement = {
 			}
 		}
 	}
-
+	
 	pop_support = {
 		value = 0
 		# Officers like colonialism
 		add = {
-			desc = "POP_OFFICERS"			
+			desc = "POP_OFFICERS"
 			if = {
 				limit = {
-					owner = { 
-						has_law = law_type:law_no_colonial_affairs 
-					} 
+					owner = {
+						has_law = law_type:law_no_colonial_affairs
+					}
 					is_pop_type = officers
 				}
 				value = 0.25
@@ -158,15 +153,14 @@ law_colonial_resettlement = {
 			navy_size >= 50
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
-		
 		if = {
-			limit = { 
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
-                scope:law = var:desired_law_var
+				scope:law = var:desired_law_var
 			}
 			add = 750
 		}
@@ -178,14 +172,16 @@ law_colonial_exploitation = {
 	icon = "gfx/interface/icons/law_icons/colonial_exploitation.dds"
 	progressiveness = -25
 	disallowing_laws = {
-		law_armed_neutrality	
+		law_armed_neutrality
 		law_anti_imperialist
 		law_pacifist
 		law_true_neutrality
 	}
+	
 	unlocking_technologies = {
 		colonization
 	}
+	
 	modifier = {
 		building_group_bg_manufacturing_unincorporated_throughput_add = -0.1
 		building_group_bg_plantations_unincorporated_throughput_add = 0.2
@@ -213,22 +209,21 @@ law_colonial_exploitation = {
 			}
 		}
 	}
-
+	
 	ai_will_do = {
 		OR = {
 			has_law = law_type:law_colonial_resettlement
 			navy_size >= 50
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
-		
 		if = {
-			limit = { 
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
-                scope:law = var:desired_law_var
+				scope:law = var:desired_law_var
 			}
 			add = 750
 		}

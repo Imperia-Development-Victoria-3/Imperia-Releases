@@ -7,6 +7,7 @@
 				name = true_neutral_applicant_signee_list_counter
 				value = 0
 			}
+			
 			every_in_list = {
 				variable = true_neutral_applicant_signee_list
 				imperia_update_unsigned = yes
@@ -32,6 +33,7 @@
 			}
 		}
 	}
+	
 	complete = {
 		#Complete when everyone has signed the treaty
 		OR = {
@@ -44,40 +46,52 @@
 				var:true_neutral_current_signers_var >= var:true_neutral_required_signers_var
 			}
 		}
+		
 		show_unsigned_trigger_NUM = {
 			NUM = 1
 		}
+		
 		show_unsigned_trigger_NUM = {
 			NUM = 2
 		}
+		
 		show_unsigned_trigger_NUM = {
 			NUM = 3
 		}
+		
 		show_unsigned_trigger_NUM = {
 			NUM = 4
 		}
+		
 		show_unsigned_trigger_NUM = {
 			NUM = 5
 		}
+		
 		show_unsigned_trigger_NUM = {
 			NUM = 6
 		}
+		
 		show_unsigned_trigger_NUM = {
 			NUM = 7
 		}
+		
 		show_unsigned_trigger_NUM = {
 			NUM = 8
 		}
+		
 		show_unsigned_trigger_NUM = {
 			NUM = 9
 		}
+		
 		show_unsigned_trigger_NUM = {
 			NUM = 10
 		}
 	}
+	
 	current_value = {
 		value = var:true_neutral_current_signers_var
 	}
+	
 	goal_add_value = {
 		value = var:true_neutral_required_signers_var
 	}
@@ -86,6 +100,7 @@
 		activate_law = law_type:law_true_neutrality
 		imperia_clean_true_neutrality_treaty_je_variables = yes
 	}
+	
 	fail = {
 		OR = {
 			is_at_war = yes
@@ -94,14 +109,17 @@
 			}
 		}
 	}
+	
 	on_fail = {
 		imperia_clean_true_neutrality_treaty_je_variables = yes
 	}
+	
 	invalid = {
 		NOT = {
 			has_law = law_type:law_armed_neutrality
 		}
 	}
+	
 	on_invalid = {
 		imperia_clean_true_neutrality_treaty_je_variables = yes
 	}

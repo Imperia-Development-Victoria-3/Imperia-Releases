@@ -28,7 +28,6 @@ ig_trait_work_to_rule = {
 ig_trait_bourse_du_travail = {
 	icon = "gfx/interface/icons/ig_trait_icons/solidarity.dds"
 	min_approval = loyal
-	
 	modifier = {
 		state_working_adult_ratio_add = 0.025	#0.05
 		building_economy_of_scale_level_cap_add = 2	#0

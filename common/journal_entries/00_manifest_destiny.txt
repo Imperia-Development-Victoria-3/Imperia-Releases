@@ -1,8 +1,7 @@
 ﻿je_manifest_destiny_mexico = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
-	
 	group = je_group_historical_content
-	
+
 	# note that if you change this, also update the decision
 	complete = {
 		owns_entire_state_region = STATE_CALIFORNIA
@@ -18,6 +17,7 @@
 			}
 		}
 	}
+	
 	on_complete = {
 		trigger_event = {
 			id = manifest_destiny.1
@@ -29,9 +29,8 @@
 
 je_manifest_destiny_frontier_wars = {
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
-	
 	group = je_group_historical_content
-	
+
 	# note that if you change this, also update the decision
 	complete = {
 		owns_entire_state_region = STATE_MONTANA
@@ -42,11 +41,13 @@ je_manifest_destiny_frontier_wars = {
 		owns_entire_state_region = STATE_NEBRASKA
 		owns_entire_state_region = STATE_KANSAS
 	}
+	
 	on_complete = {
 		trigger_event = {
 			id = manifest_destiny.2
 		}
 	}
+	
 	on_monthly_pulse = {
 		random_events = {
 			10 = 0

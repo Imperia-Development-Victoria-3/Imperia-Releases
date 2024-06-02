@@ -10,11 +10,12 @@
 	possible_political_movements = {
 		law_migration_controls
 	}
+	
 	pop_support = {
 		value = 0
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -40,6 +41,7 @@ law_migration_controls = {
 		law_no_migration_controls
 		law_closed_borders
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -51,12 +53,14 @@ law_migration_controls = {
 							has_law = law_type:law_closed_borders
 						}
 					}
+					
 					state = {
 						state_unemployment_rate >= 0.1
 					}
 				}
 				value = 0.1
 			}
+			
 			if = {
 				limit = {
 					owner = {
@@ -64,12 +68,14 @@ law_migration_controls = {
 							has_law = law_type:law_closed_borders
 						}
 					}
+					
 					state = {
 						state_unemployment_rate >= 0.2
 					}
 				}
 				value = 0.1
 			}
+			
 			if = {
 				limit = {
 					owner = {
@@ -77,12 +83,14 @@ law_migration_controls = {
 							has_law = law_type:law_closed_borders
 						}
 					}
+					
 					state = {
 						state_unemployment_rate >= 0.3
 					}
 				}
 				value = 0.1
 			}
+			
 			if = {
 				limit = {
 					owner = {
@@ -90,34 +98,38 @@ law_migration_controls = {
 							has_law = law_type:law_closed_borders
 						}
 					}
+					
 					state = {
 						state_unemployment_rate >= 0.4
 					}
 				}
 				value = 0.1
 			}
+			
 			if = {
 				limit = {
 					owner = {
 						NOT = {
 							has_law = law_type:law_closed_borders
-						} 
+						}
 					}
+					
 					state = {
 						state_unemployment_rate >= 0.5
 					}
 				}
 				value = 0.1
 			}
-		}	
+		}
 	}
-
+	
 	on_enact = {
 		if = {
 			limit = {
 				c:CHI ?= this
 				has_journal_entry = je_chinese_missions
 			}
+			
 			every_scope_state = {
 				limit = {
 					NOT = {
@@ -136,8 +148,8 @@ law_migration_controls = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -161,11 +173,12 @@ law_closed_borders = {
 		state_tax_capacity_mult = 0.10
 		country_tech_spread_mult = -0.20
 		state_loyalists_from_sol_change_mult = 0.05
-}
+	}
 	progressiveness = -50
 	possible_political_movements = {
 		law_closed_borders
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -178,6 +191,7 @@ law_closed_borders = {
 				}
 				value = 0.1
 			}
+			
 			if = {
 				limit = {
 					state = {
@@ -186,6 +200,7 @@ law_closed_borders = {
 				}
 				value = 0.1
 			}
+			
 			if = {
 				limit = {
 					state = {
@@ -194,6 +209,7 @@ law_closed_borders = {
 				}
 				value = 0.1
 			}
+			
 			if = {
 				limit = {
 					state = {
@@ -202,6 +218,7 @@ law_closed_borders = {
 				}
 				value = 0.1
 			}
+			
 			if = {
 				limit = {
 					state = {
@@ -212,13 +229,14 @@ law_closed_borders = {
 			}
 		}
 	}
-
+	
 	on_enact = {
 		if = {
 			limit = {
 				c:CHI ?= this
 				has_journal_entry = je_chinese_missions
 			}
+			
 			every_scope_state = {
 				limit = {
 					NOT = {
@@ -237,8 +255,8 @@ law_closed_borders = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {

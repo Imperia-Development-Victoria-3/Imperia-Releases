@@ -6,6 +6,7 @@
 		}
 		set_variable = dynamic_country_cede
 	}
+	
 	every_scope_state = {
 		limit = {
 			is_capital = no
@@ -13,16 +14,19 @@
 			NOT = {
 				has_variable = dynamic_country_cede
 			}
+			
 			any_neighbouring_state = {
 				is_incorporated = yes
 				has_variable = dynamic_country_cede
 			}
 		}
+		
 		random = {
 			chance = $STRENGTH$
 			set_variable = dynamic_country_cede
 		}
 	}
+	
 	every_scope_state = {
 		limit = {
 			is_capital = no
@@ -30,16 +34,19 @@
 			NOT = {
 				has_variable = dynamic_country_cede
 			}
+			
 			any_neighbouring_state = {
 				is_incorporated = yes
 				has_variable = dynamic_country_cede
 			}
 		}
+		
 		random = {
 			chance = $STRENGTH$
 			set_variable = dynamic_country_cede
 		}
 	}
+	
 	every_scope_state = {
 		limit = {
 			is_capital = no
@@ -47,11 +54,13 @@
 			NOT = {
 				has_variable = dynamic_country_cede
 			}
+			
 			any_neighbouring_state = {
 				is_incorporated = yes
 				has_variable = dynamic_country_cede
 			}
 		}
+		
 		random = {
 			chance = $STRENGTH$
 			set_variable = dynamic_country_cede
@@ -81,6 +90,7 @@
 		}
 		save_scope_as = civil_war_country
 	}
+	
 	scope:civil_war_country = {
 		create_diplomatic_play = {
 			type = dp_revolution
@@ -109,6 +119,7 @@ implode_country = {
 					prev.state_region = {
 						is_homeland = prev.culture
 					}
+					
 					prev = {
 						religion_percent_state = {
 							target = prev.religion
@@ -117,11 +128,13 @@ implode_country = {
 					}
 				}
 			}
+			
 			random_scope_pop = {
 				limit = {
 					prev.state_region = {
 						is_homeland = prev.culture
 					}
+					
 					prev = {
 						religion_percent_state = {
 							target = prev.religion
@@ -129,20 +142,24 @@ implode_country = {
 						}
 					}
 				}
+				
 				religion = {
 					save_scope_as = new_religion_scope
 				}
+				
 				culture = {
 					save_scope_as = new_culture_scope
 				}
 			}
 		}
+		
 		else_if = {
 			limit = {
 				any_scope_pop = {
 					prev.state_region = {
 						is_homeland = prev.culture
 					}
+					
 					prev = {
 						religion_percent_state = {
 							target = prev.religion
@@ -151,11 +168,13 @@ implode_country = {
 					}
 				}
 			}
+			
 			random_scope_pop = {
 				limit = {
 					prev.state_region = {
 						is_homeland = prev.culture
 					}
+					
 					prev = {
 						religion_percent_state = {
 							target = prev.religion
@@ -163,20 +182,24 @@ implode_country = {
 						}
 					}
 				}
+				
 				religion = {
 					save_scope_as = new_religion_scope
 				}
+				
 				culture = {
 					save_scope_as = new_culture_scope
 				}
 			}
 		}
+		
 		else_if = {
 			limit = {
 				any_scope_pop = {
 					prev.state_region = {
 						is_homeland = prev.culture
 					}
+					
 					prev = {
 						religion_percent_state = {
 							target = prev.religion
@@ -185,11 +208,13 @@ implode_country = {
 					}
 				}
 			}
+			
 			random_scope_pop = {
 				limit = {
 					prev.state_region = {
 						is_homeland = prev.culture
 					}
+					
 					prev = {
 						religion_percent_state = {
 							target = prev.religion
@@ -197,14 +222,17 @@ implode_country = {
 						}
 					}
 				}
+				
 				religion = {
 					save_scope_as = new_religion_scope
 				}
+				
 				culture = {
 					save_scope_as = new_culture_scope
 				}
 			}
 		}
+		
 		else = {
 			random_scope_pop = {
 				limit = {
@@ -212,9 +240,11 @@ implode_country = {
 						is_homeland = prev.culture
 					}
 				}
+				
 				religion = {
 					save_scope_as = new_religion_scope
 				}
+				
 				culture = {
 					save_scope_as = new_culture_scope
 				}

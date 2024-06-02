@@ -17,6 +17,7 @@
 			}
 		}
 	}
+	
 	possible = {
 		is_at_war = no
 		any_diplomatic_play = {
@@ -36,6 +37,7 @@
 			}
 			save_temporary_scope_as = diplo_play_scope
 		}
+		
 		any_subject_or_below = {
 			NOR = {
 				is_subject_type = subject_type_customs_union
@@ -46,6 +48,7 @@
 			relations:root > relations_threshold:neutral
 		}
 	}
+	
 	when_taken = {
 		random_diplomatic_play = {
 			limit = {
@@ -68,15 +71,18 @@
 				limit = {
 					exists = initiator
 				}
+				
 				initiator = {
 					save_scope_as = initiator_scope
 				}
 			}
 		}
+		
 		if = {
 			limit = {
 				exists = scope:initiator_scope
 			}
+			
 			every_subject_or_below = {
 				limit = {
 					NOR = {
@@ -87,11 +93,13 @@
 					has_strategic_adjacency = scope:initiator_scope
 					relations:root > relations_threshold:neutral
 				}
+				
 				random_diplomatic_play = {
 					limit = {
 						initiator_is = scope:initiator_scope
 						has_play_goal = annex_country
 					}
+					
 					add_target_backers = {
 						prev
 					}
@@ -99,6 +107,7 @@
 			}
 		}
 	}
+	
 	ai_chance = {
 		base = 100
 	}

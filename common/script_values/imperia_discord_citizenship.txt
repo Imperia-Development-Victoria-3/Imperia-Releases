@@ -3,12 +3,14 @@
 		limit = {
 			exists = scope:target_country
 		}
+		
 		if = {
 			limit = {
 				root = {
 					has_law = law_type:law_ethnostate
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -19,6 +21,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -29,6 +32,7 @@
 				}
 				value = political_discord_change_small
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -39,6 +43,7 @@
 				}
 				value = political_discord_change_large
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -49,6 +54,7 @@
 				}
 				value = political_discord_change_huge
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -69,6 +75,7 @@
 					has_law = law_type:law_national_supremacy
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -79,6 +86,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -89,6 +97,7 @@
 				}
 				value = political_discord_change_miniscule
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -99,6 +108,7 @@
 				}
 				value = political_discord_change_small
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -109,6 +119,7 @@
 				}
 				value = political_discord_change_large
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -129,6 +140,7 @@
 					has_law = law_type:law_racial_segregation
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -139,6 +151,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -149,6 +162,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -159,6 +173,7 @@
 				}
 				value = political_discord_change_miniscule
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -169,6 +184,7 @@
 				}
 				value = political_discord_change_small
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -189,6 +205,7 @@
 					has_law = law_type:law_cultural_exclusion
 				}
 			}
+			
 			if = {
 				limit = {
 					scope:target_country = {
@@ -199,6 +216,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -209,6 +227,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -219,6 +238,7 @@
 				}
 				value = 0
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -229,6 +249,7 @@
 				}
 				value = political_discord_change_miniscule
 			}
+			
 			else_if = {
 				limit = {
 					scope:target_country = {
@@ -244,6 +265,7 @@
 		}
 		# Exit cultural exclusion
 	}
+	
 	else = {
 		value = 0
 	}

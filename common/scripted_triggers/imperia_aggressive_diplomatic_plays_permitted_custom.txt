@@ -5,11 +5,13 @@
 	NOT = {
 		has_modifier = no_more_war
 	}
+	
 	trigger_if = {
-		limit = { 
+		limit = {
 			exists = scope:target_country
 			has_law = law_type:law_true_neutrality
 		}
+		
 		scope:target_country = {
 			is_country_type = colonial
 			custom_tooltip = {

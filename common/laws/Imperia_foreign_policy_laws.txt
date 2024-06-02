@@ -8,13 +8,13 @@
 		country_influence_add = -150
 		country_radicals_from_conquest_mult = 0.3
 	}
-
+	
 	on_activate = {
 		custom_tooltip = {
 			text = custom_imperia_law_expansionism_tip
-		}		
+		}
 	}
-
+	
 	unlocking_technologies = {
 	}
 	disallowing_laws = {
@@ -24,19 +24,23 @@
 		law_pacifist
 		law_true_neutrality
 	}
+	
 	possible_political_movements = {
 	}
 	pop_support = {
 		value = 0
 	}
+	
 	ai_will_do = {
 		exists = ruler
 		ruler = {
 			has_trait = imperious
 		}
+		
 		NOT = {
 			has_law = law_type:law_true_neutrality
 		}
+		
 		ruler = {
 			OR = {
 				has_ideology = ideology:ideology_royalist
@@ -58,15 +62,17 @@ law_imperialism = {
 		country_max_declared_interests_mult = 0.1
 		country_influence_add = -100
 	}
-
+	
 	on_activate = {
 		custom_tooltip = {
 			text = custom_imperia_law_imperialism_tip
 		}
+		
 		custom_tooltip = {
 			text = custom_imperia_law_imperialism_incorporation_tip
 		}
 	}
+	
 	disallowing_laws = {
 		law_anti_imperialist
 		law_armed_neutrality
@@ -74,6 +80,7 @@ law_imperialism = {
 		law_pacifist
 		law_true_neutrality
 	}
+	
 	unlocking_technologies = {
 	}
 	possible_political_movements = {
@@ -81,6 +88,7 @@ law_imperialism = {
 	pop_support = {
 		value = 0
 	}
+	
 	ai_will_do = {
 		exists = ruler
 		ruler = {
@@ -90,9 +98,11 @@ law_imperialism = {
 				has_trait = expert_colonial_administrator
 			}
 		}
+		
 		NOT = {
 			has_law = law_type:law_true_neutrality
 		}
+		
 		ruler = {
 			OR = {
 				has_ideology = ideology:ideology_slaver
@@ -111,11 +121,13 @@ law_armed_neutrality = {
 		country_military_goods_cost_mult = -0.1
 		country_legitimacy_base_add = 2
 	}
+	
 	on_activate = {
 		custom_tooltip = {
 			text = custom_imperia_law_armed_neutrality_tip
-		}		
+		}
 	}
+	
 	unlocking_technologies = {
 	}
 	disallowing_laws = {
@@ -125,15 +137,18 @@ law_armed_neutrality = {
 		law_pacifist
 		law_true_neutrality
 	}
+	
 	possible_political_movements = {
 	}
 	pop_support = {
 		value = 0
 	}
+	
 	ai_will_do = {
 		NOT = {
 			has_law = law_type:law_true_neutrality
 		}
+		
 		ruler = {
 			OR = {
 				has_ideology = ideology:ideology_communist
@@ -153,11 +168,13 @@ law_anti_imperialist = {
 		country_infamy_generation_mult = 0.2
 		country_loyalists_from_legitimacy_mult = 0.1
 	}
+	
 	on_activate = {
 		custom_tooltip = {
 			text = custom_imperia_law_anti_imperialist_tip
-		}		
+		}
 	}
+	
 	unlocking_technologies = {
 	}
 	disallowing_laws = {
@@ -167,15 +184,18 @@ law_anti_imperialist = {
 		law_pacifist
 		law_true_neutrality
 	}
+	
 	possible_political_movements = {
 	}
 	pop_support = {
 		value = 0
 	}
+	
 	ai_will_do = {
 		NOT = {
 			has_law = law_type:law_true_neutrality
 		}
+		
 		ruler = {
 			OR = {
 				has_ideology = ideology:ideology_abolitionist
@@ -200,11 +220,13 @@ law_pacifist = {
 		country_legitimacy_base_add = 5
 		country_max_declared_interests_add = 1
 	}
+	
 	on_activate = {
 		custom_tooltip = {
 			text = custom_imperia_law_pacifist_tip
-		}		
+		}
 	}
+	
 	unlocking_technologies = {
 	}
 	disallowing_laws = {
@@ -214,15 +236,18 @@ law_pacifist = {
 		law_imperialism
 		law_true_neutrality
 	}
+	
 	possible_political_movements = {
 	}
 	pop_support = {
 		value = 0
 	}
+	
 	ai_will_do = {
 		NOT = {
 			has_law = law_type:law_true_neutrality
 		}
+		
 		ruler = {
 			has_ideology = ideology:ideology_pacifist
 		}
@@ -240,12 +265,14 @@ law_true_neutrality = {
 		country_legitimacy_base_add = 10
 		building_throughput_add = 0.05
 	}
+	
 	on_activate = {
 		custom_tooltip = {
 			text = custom_imperia_law_true_neutrality_tip
 			liberate_slaves = yes
-		}		
+		}
 	}
+	
 	unlocking_technologies = {
 	}
 	disallowing_laws = {
@@ -255,9 +282,11 @@ law_true_neutrality = {
 		law_imperialism
 		law_pacifist
 	}
+	
 	pop_support = {
 		value = 0
 	}
+	
 	possible_political_movements = {
 	}
 	ai_will_do = {

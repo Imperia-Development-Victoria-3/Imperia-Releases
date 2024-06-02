@@ -15,6 +15,7 @@
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
@@ -32,11 +33,12 @@ iranian_empire_roleplay_primer = {
 	
 	when_taken = {
 		trigger_event = {
-			id = iranian_primer_event.1 
+			id = iranian_primer_event.1
 			days = 0
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
@@ -59,6 +61,7 @@ spain_empire_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
@@ -81,6 +84,7 @@ france_empire_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
@@ -103,6 +107,7 @@ portugal_empire_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
@@ -125,6 +130,7 @@ russian_empire_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
@@ -147,10 +153,12 @@ belgium_empire_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
 }
+
 prussia_empire_roleplay_primer = {
 	is_shown = {
 		exists = c:PRU
@@ -168,6 +176,7 @@ prussia_empire_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
@@ -190,10 +199,12 @@ egypt_empire_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
 }
+
 qing_roleplay_primer = {
 	is_shown = {
 		exists = c:CHI
@@ -211,10 +222,12 @@ qing_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
 }
+
 eic_roleplay_primer = {
 	is_shown = {
 		exists = c:BIC
@@ -232,10 +245,12 @@ eic_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
 }
+
 japan_roleplay_primer = {
 	is_shown = {
 		exists = c:JAP
@@ -253,10 +268,12 @@ japan_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
 }
+
 sokoto_roleplay_primer = {
 	is_shown = {
 		exists = c:SOK
@@ -274,10 +291,12 @@ sokoto_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
 }
+
 usa_roleplay_primer = {
 	is_shown = {
 		exists = c:USA
@@ -295,10 +314,12 @@ usa_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
 }
+
 sikh_empire_roleplay_primer = {
 	is_shown = {
 		exists = c:PAN
@@ -316,10 +337,12 @@ sikh_empire_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
 }
+
 joseon_roleplay_primer = {
 	is_shown = {
 		exists = c:KOR
@@ -337,10 +360,12 @@ joseon_roleplay_primer = {
 			popup = yes
 		}
 	}
+	
 	ai_chance = {
 		base = 0
 	}
 }
+
 canada_roleplay_primer = {
 	is_shown = {
 		OR = {
@@ -348,6 +373,7 @@ canada_roleplay_primer = {
 				exists = c:QUE
 				c:QUE = ROOT
 			}
+			
 			AND = {
 				exists = c:ONT
 				c:ONT = ROOT
@@ -364,7 +390,7 @@ canada_roleplay_primer = {
 	
 	when_taken = {
 		trigger_event = {
-			id = canada_primer_event.1 
+			id = canada_primer_event.1
 			days = 0
 			popup = yes
 		}

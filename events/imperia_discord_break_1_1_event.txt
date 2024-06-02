@@ -26,6 +26,7 @@ ideology_break_1_1_event.1 = {
 						}
 						add = -7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -34,6 +35,7 @@ ideology_break_1_1_event.1 = {
 						}
 						add = -7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -43,6 +45,7 @@ ideology_break_1_1_event.1 = {
 						add = -7
 					}
 				}
+				
 				trigger_event = {
 					id = ideology_break_1_1_event.2
 					days = 0
@@ -55,6 +58,7 @@ ideology_break_1_1_event.1 = {
 					}
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					id = ideology_break_1_1_event.3
@@ -62,6 +66,7 @@ ideology_break_1_1_event.1 = {
 					popup = yes
 				}
 			}
+			
 			33 = {
 				modifier = {
 					if = {
@@ -72,6 +77,7 @@ ideology_break_1_1_event.1 = {
 						}
 						add = 7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -80,6 +86,7 @@ ideology_break_1_1_event.1 = {
 						}
 						add = 7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -89,6 +96,7 @@ ideology_break_1_1_event.1 = {
 						add = 7
 					}
 				}
+				
 				trigger_event = {
 					id = ideology_break_1_1_event.4
 					days = 0
@@ -103,6 +111,7 @@ ideology_break_1_1_event.1 = {
 			}
 		}
 	}
+	
 	option = {
 		name = ideology_break_1_1_event.2.a
 		random_list = {
@@ -116,6 +125,7 @@ ideology_break_1_1_event.1 = {
 						}
 						add = -7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -125,6 +135,7 @@ ideology_break_1_1_event.1 = {
 						add = -7
 					}
 				}
+				
 				trigger_event = {
 					id = ideology_break_1_1_event.5
 					days = 0
@@ -137,6 +148,7 @@ ideology_break_1_1_event.1 = {
 					}
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					id = ideology_break_1_1_event.6
@@ -151,6 +163,7 @@ ideology_break_1_1_event.1 = {
 					}
 				}
 			}
+			
 			33 = {
 				modifier = {
 					if = {
@@ -161,6 +174,7 @@ ideology_break_1_1_event.1 = {
 						}
 						add = 7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -170,6 +184,7 @@ ideology_break_1_1_event.1 = {
 						add = 7
 					}
 				}
+				
 				trigger_event = {
 					id = ideology_break_1_1_event.7
 					days = 0
@@ -181,6 +196,7 @@ ideology_break_1_1_event.1 = {
 						name = smear_campaign_costs
 						months = 12
 					}
+					
 					change_discord = {
 						VALUE = 30
 					}
@@ -188,6 +204,7 @@ ideology_break_1_1_event.1 = {
 			}
 		}
 	}
+	
 	option = {
 		name = ideology_break_1_1_event.3.a
 		trigger = {
@@ -209,6 +226,7 @@ ideology_break_1_1_event.1 = {
 				}
 			}
 		}
+		
 		trigger_event = {
 			id = ideology_break_1_1_event.8
 			days = 0
@@ -222,6 +240,7 @@ ideology_break_1_1_event.1 = {
 					months = 12
 				}
 			}
+			
 			change_discord = {
 				VALUE = 40
 			}
@@ -351,6 +370,7 @@ ideology_break_1_1_event.7 = {
 			name = smear_campaign_costs
 			months = 12
 		}
+		
 		change_discord = {
 			VALUE = 30
 		}
@@ -378,6 +398,7 @@ ideology_break_1_1_event.8 = {
 				months = 12
 			}
 		}
+		
 		change_discord = {
 			VALUE = 40
 		}

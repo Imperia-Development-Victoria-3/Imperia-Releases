@@ -7,7 +7,6 @@ historical_events.1 = {
 		video = "unspecific_airplane"
 	}
 	on_opened_soundeffect = "event:/SFX/Events/unspecific/airplane"
-
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	title = historical_events.1.t
 	desc = historical_events.1.d
@@ -19,6 +18,7 @@ historical_events.1 = {
 			has_global_variable = flight_discovered
 		}
 	}
+	
 	immediate = {
 		set_global_variable = flight_discovered
 		set_variable = {
@@ -30,6 +30,7 @@ historical_events.1 = {
 			save_scope_as = first_flight_country
 		}
 	}
+	
 	option = {
 		name = historical_events.1.a
 		default_option = yes
@@ -37,9 +38,11 @@ historical_events.1 = {
 			name = first_flight_prestige
 			months = normal_modifier_time
 		}
+		
 		add_modifier = {
 			name = military_aviation_invented_country
 		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = {

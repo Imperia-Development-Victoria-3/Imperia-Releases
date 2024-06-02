@@ -1,9 +1,13 @@
 ﻿state_trait_malaria = {
-    icon = "gfx/interface/icons/state_trait_icons/malaria.dds"
+	icon = "gfx/interface/icons/state_trait_icons/malaria.dds"
+	required_techs_for_colonization = {
+		"quinine"
+	}
 	
-	required_techs_for_colonization = { "quinine" }
-	disabling_technologies = { "malaria_prevention" }
-
+	disabling_technologies = {
+		"malaria_prevention"
+	}
+	
 	modifier = {
 		state_non_homeland_colony_growth_speed_mult = -0.95
 		state_non_homeland_mortality_mult = 0.15
@@ -11,10 +15,14 @@
 }
 
 state_trait_severe_malaria = {
-    icon = "gfx/interface/icons/state_trait_icons/severe_malaria.dds"
+	icon = "gfx/interface/icons/state_trait_icons/severe_malaria.dds"
+	required_techs_for_colonization = {
+		"quinine"
+	}
 	
-	required_techs_for_colonization = { "quinine" }
-	disabling_technologies = { "malaria_prevention" }
+	disabling_technologies = {
+		"malaria_prevention"
+	}
 	
 	modifier = {
 		state_non_homeland_colony_growth_speed_mult = -0.975
@@ -24,7 +32,6 @@ state_trait_severe_malaria = {
 
 state_trait_natural_harbors = {
 	icon = "gfx/interface/icons/state_trait_icons/natural_harbors.dds"
-	
 	modifier = {
 		building_shipyards_throughput_add = 0.1
 		building_military_shipyards_throughput_add = 0.1
@@ -35,7 +42,6 @@ state_trait_natural_harbors = {
 
 state_trait_good_soils = {
 	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
-	
 	modifier = {
 		building_group_bg_agriculture_throughput_add = 0.1
 		building_group_bg_plantations_throughput_add = 0.1
@@ -43,8 +49,7 @@ state_trait_good_soils = {
 }
 
 state_trait_north_sea_fishing = {
-    icon = "gfx/interface/icons/state_trait_icons/resources_fish.dds"
-	
+	icon = "gfx/interface/icons/state_trait_icons/resources_fish.dds"
 	modifier = {
 		building_group_bg_fishing_throughput_add = 0.2
 	}
@@ -52,7 +57,6 @@ state_trait_north_sea_fishing = {
 
 state_trait_arctic_whaling = {
 	icon = "gfx/interface/icons/state_trait_icons/resources_whales.dds"
-	
 	modifier = {
 		building_group_bg_whaling_throughput_add = 0.2
 	}
@@ -60,7 +64,6 @@ state_trait_arctic_whaling = {
 
 state_trait_antarctic_whaling = {
 	icon = "gfx/interface/icons/state_trait_icons/resources_whales.dds"
-	
 	modifier = {
 		building_group_bg_whaling_throughput_add = 0.2
 	}
@@ -68,7 +71,6 @@ state_trait_antarctic_whaling = {
 
 state_trait_terra_rossa = {
 	icon = "gfx/interface/icons/state_trait_icons/good_soils.dds"
-	
 	modifier = {
 		building_group_bg_agriculture_throughput_add = 0.15
 		building_group_bg_plantations_throughput_add = 0.15

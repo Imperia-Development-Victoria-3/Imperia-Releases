@@ -11,18 +11,21 @@
 			}
 			custom_tooltip = discord_diplomacy_contribution_tt
 		}
+		
 		if = {
 			limit = {
 				is_discord_cultural_internal_calc_active = yes
 			}
 			custom_tooltip = discord_cultural_contribution_tt
 		}
+		
 		if = {
 			limit = {
 				is_discord_religious_internal_calc_active = yes
 			}
 			custom_tooltip = discord_religious_contribution_tt
 		}
+		
 		if = {
 			limit = {
 				NOT = {
@@ -31,6 +34,7 @@
 			}
 			custom_tooltip = discord_slave_contribution_tt
 		}
+		
 		if = {
 			limit = {
 				OR = {
@@ -40,14 +44,17 @@
 			}
 			custom_tooltip = discord_serf_contribution_tt
 		}
+		
 		ruler = {
 			save_temporary_scope_as = character_scope
 			custom_tooltip = discord_character_contribution_tt
 		}
+		
 		if = {
 			limit = {
 				country_has_voting_franchise = yes
 			}
+			
 			every_active_party = {
 				limit = {
 					any_member = {
@@ -60,6 +67,7 @@
 					limit = {
 						is_in_government = yes
 					}
+					
 					if = {
 						limit = {
 							leader = {
@@ -68,6 +76,7 @@
 								}
 							}
 						}
+						
 						leader = {
 							save_temporary_scope_as = character_scope
 						}
@@ -77,6 +86,7 @@
 					custom_tooltip = discord_ig_contribution_tt
 				}
 			}
+			
 			every_active_party = {
 				limit = {
 					NOT = {
@@ -100,6 +110,7 @@
 							}
 						}
 					}
+					
 					if = {
 						limit = {
 							leader = {
@@ -108,6 +119,7 @@
 								}
 							}
 						}
+						
 						leader = {
 							save_temporary_scope_as = character_scope
 						}
@@ -118,12 +130,14 @@
 				}
 			}
 		}
+		
 		else = {
 			# If country is autocratic
 			every_interest_group = {
 				limit = {
 					is_in_government = yes
 				}
+				
 				if = {
 					limit = {
 						leader = {
@@ -132,6 +146,7 @@
 							}
 						}
 					}
+					
 					leader = {
 						save_temporary_scope_as = character_scope
 					}

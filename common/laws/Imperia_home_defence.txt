@@ -9,6 +9,7 @@
 		law_private_paramilitaries
 		law_emergency_relief_services
 	}
+	
 	pop_support = {
 		value = 0
 	}
@@ -16,6 +17,7 @@
 	ai_will_do = {
 		always = no
 	}
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -46,12 +48,14 @@ law_national_guard = {
 		interest_group_ig_armed_forces_pop_attraction_mult = 0.04
 		building_group_bg_army_soldiers_standard_of_living_add = 0.1
 	}
+	
 	possible_political_movements = {
 		law_localized_garrisons
 		law_faith_orders
 		law_private_paramilitaries
 		law_emergency_relief_services
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -64,6 +68,7 @@ law_national_guard = {
 			}
 		}
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -76,6 +81,7 @@ law_national_guard = {
 			}
 		}
 	}
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -97,6 +103,7 @@ law_localized_garrisons = {
 	unlocking_technologies = {
 		tech_bureaucracy
 	}
+	
 	unlocking_laws = {
 		law_local_police
 		law_provincial_courts
@@ -105,9 +112,10 @@ law_localized_garrisons = {
 		law_serfdom
 		law_tenant_farmers
 	}
+	
 	modifier = {
 		country_institution_home_defence_max_investment_add = 1
-	}	
+	}
 	institution = institution_home_defence
 	institution_modifier = {
 		state_conscription_rate_add = 0.003
@@ -121,14 +129,15 @@ law_localized_garrisons = {
 		political_movement_radicalism_mult = 0.05
 		tax_land_add = 0.03
 		tax_per_capita_add = 0.01
-
 	}
+	
 	possible_political_movements = {
 		law_national_guard
 		law_faith_orders
 		law_private_paramilitaries
 		law_emergency_relief_services
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -141,6 +150,7 @@ law_localized_garrisons = {
 			}
 		}
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -152,7 +162,8 @@ law_localized_garrisons = {
 				value = 0.20
 			}
 		}
-	} 
+	}
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -174,12 +185,14 @@ law_faith_orders = {
 	unlocking_technologies = {
 		romanticism
 	}
+	
 	unlocking_laws = {
 		law_inquisition
 		law_religious_schools
 		law_theocracy
 		law_charitable_health_system
 	}
+	
 	disallowing_laws = {
 		law_total_separation
 		law_state_atheism
@@ -194,12 +207,14 @@ law_faith_orders = {
 		state_radicals_from_discrimination_mult = 0.02
 		unit_morale_recovery_mult = 0.02
 	}
+	
 	possible_political_movements = {
 		law_national_guard
 		law_localized_garrisons
 		law_private_paramilitaries
 		law_emergency_relief_services
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -212,6 +227,7 @@ law_faith_orders = {
 			}
 		}
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -224,6 +240,7 @@ law_faith_orders = {
 			}
 		}
 	}
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -245,12 +262,14 @@ law_private_paramilitaries = {
 	unlocking_technologies = {
 		reactionism
 	}
+	
 	disallowing_laws = {
 		law_theocracy
 		law_council_republic
 		law_command_economy
 		law_worker_protections
 	}
+	
 	modifier = {
 		country_bureaucracy_investment_cost_factor_mult = -0.05
 	}
@@ -263,12 +282,14 @@ law_private_paramilitaries = {
 		country_company_throughput_bonus_add = 0.02
 		tax_per_capita_add = 0.02
 	}
+	
 	possible_political_movements = {
 		law_national_guard
 		law_localized_garrisons
 		law_faith_orders
 		law_emergency_relief_services
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -281,6 +302,7 @@ law_private_paramilitaries = {
 			}
 		}
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -293,6 +315,7 @@ law_private_paramilitaries = {
 			}
 		}
 	}
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -314,6 +337,7 @@ law_emergency_relief_services = {
 	unlocking_technologies = {
 		egalitarianism
 	}
+	
 	modifier = {
 		country_bureaucracy_investment_cost_factor_mult = 0.05
 	}
@@ -326,12 +350,14 @@ law_emergency_relief_services = {
 		state_dependent_political_participation_add = 0.05
 		state_dependent_wage_mult = 0.05
 	}
+	
 	possible_political_movements = {
 		law_national_guard
 		law_localized_garrisons
 		law_faith_orders
 		law_private_paramilitaries
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -344,6 +370,7 @@ law_emergency_relief_services = {
 			}
 		}
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -356,6 +383,7 @@ law_emergency_relief_services = {
 			}
 		}
 	}
+	
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0

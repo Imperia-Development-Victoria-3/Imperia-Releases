@@ -23,8 +23,9 @@ conference_aftermath_denouncement.1 = {
 		default_option = yes
 		trigger = {
 			is_congress_supporter = yes
-            conference_sanctions_severity != 0
+			conference_sanctions_severity != 0
 		}
+		
 		if = {
 			# lost the power struggle
 			limit = {
@@ -41,6 +42,7 @@ conference_aftermath_denouncement.1 = {
 				}
 			}
 		}
+		
 		else_if = {
 			# won the power struggle
 			limit = {
@@ -48,6 +50,7 @@ conference_aftermath_denouncement.1 = {
 			}
 			denounce_target = yes
 		}
+		
 		else = {
 			# stalemate
 			# ADD -4% prestige modifer
@@ -58,6 +61,7 @@ conference_aftermath_denouncement.1 = {
 				multiplier = 4
 			}
 		}
+		
 		ai_chance = {
 			base = 1000
 		}
@@ -81,6 +85,7 @@ conference_aftermath_denouncement.1 = {
 			is_decaying = yes
 			multiplier = 20
 		}
+		
 		change_infamy = {
 			add = 50
 			multiply = abs_conference_sanctions_severity
@@ -105,7 +110,7 @@ conference_aftermath_denouncement.1 = {
 		default_option = yes
 		trigger = {
 			is_congress_abstainer = yes
-            conference_sanctions_severity != 0
+			conference_sanctions_severity != 0
 		}
 		name = conference_aftermath_denouncement.1.c
 		if = {
@@ -115,6 +120,7 @@ conference_aftermath_denouncement.1 = {
 			}
 			denounce_target = yes
 		}
+		
 		ai_chance = {
 			base = 1000
 		}
@@ -123,7 +129,7 @@ conference_aftermath_denouncement.1 = {
 	option = {
 		trigger = {
 			is_congress_abstainer = yes
-            conference_sanctions_severity != 0
+			conference_sanctions_severity != 0
 		}
 		name = conference_aftermath_denouncement.1.d
 		# Do the opposite of the resolution
@@ -140,6 +146,7 @@ conference_aftermath_denouncement.1 = {
 			is_decaying = yes
 			multiplier = 10
 		}
+		
 		change_infamy = {
 			add = 25
 			multiply = abs_conference_sanctions_severity
@@ -165,8 +172,9 @@ conference_aftermath_denouncement.1 = {
 		default_option = yes
 		trigger = {
 			is_congress_opposer = yes
-            conference_sanctions_severity != 0
+			conference_sanctions_severity != 0
 		}
+		
 		if = {
 			# won the power struggle
 			limit = {
@@ -183,6 +191,7 @@ conference_aftermath_denouncement.1 = {
 				}
 			}
 		}
+		
 		else_if = {
 			# lost the power struggle
 			limit = {
@@ -200,6 +209,7 @@ conference_aftermath_denouncement.1 = {
 			}
 			denounce_target = yes
 		}
+		
 		else = {
 			# stalemate
 			# ADD 4% prestige modifer
@@ -210,6 +220,7 @@ conference_aftermath_denouncement.1 = {
 				multiplier = 4
 			}
 		}
+		
 		ai_chance = {
 			base = 1000
 		}
@@ -228,6 +239,7 @@ conference_aftermath_denouncement.1 = {
 			is_decaying = yes
 			multiplier = 20
 		}
+		
 		change_infamy = {
 			add = 50
 			multiply = abs_conference_sanctions_severity
@@ -252,7 +264,7 @@ conference_aftermath_denouncement.1 = {
 		default_option = yes
 		trigger = {
 			is_congress_observer = yes
-            conference_sanctions_severity != 0
+			conference_sanctions_severity != 0
 		}
 		name = conference_aftermath_denouncement.1.g
 		if = {
@@ -262,6 +274,7 @@ conference_aftermath_denouncement.1 = {
 			}
 			denounce_target = yes
 		}
+		
 		ai_chance = {
 			base = 1000
 		}
@@ -270,7 +283,7 @@ conference_aftermath_denouncement.1 = {
 	option = {
 		trigger = {
 			is_congress_observer = yes
-            conference_sanctions_severity != 0
+			conference_sanctions_severity != 0
 		}
 		name = conference_aftermath_denouncement.1.h
 		if = {
@@ -286,6 +299,7 @@ conference_aftermath_denouncement.1 = {
 			is_decaying = yes
 			multiplier = 75
 		}
+		
 		change_infamy = {
 			add = 10
 			multiply = abs_conference_sanctions_severity
@@ -310,7 +324,7 @@ conference_aftermath_denouncement.1 = {
 		default_option = yes
 		trigger = {
 			is_congress_attendee = no
-            conference_sanctions_severity != 0
+			conference_sanctions_severity != 0
 		}
 		name = conference_aftermath_denouncement.1.i
 		if = {
@@ -320,6 +334,7 @@ conference_aftermath_denouncement.1 = {
 			}
 			denounce_target = yes
 		}
+		
 		ai_chance = {
 			base = 1000
 		}
@@ -328,7 +343,7 @@ conference_aftermath_denouncement.1 = {
 	option = {
 		trigger = {
 			is_congress_attendee = no
-            conference_sanctions_severity != 0
+			conference_sanctions_severity != 0
 		}
 		name = conference_aftermath_denouncement.1.j
 		if = {
@@ -358,15 +373,15 @@ conference_aftermath_denouncement.1 = {
 				add = 9000
 			}
 		}
-    }
+	}
 	# Option for no verdicts
-    option = {
-        trigger = {
-            conference_sanctions_severity = 0
-        }
-        default_option = yes
+	option = {
+		trigger = {
+			conference_sanctions_severity = 0
+		}
+		default_option = yes
 		name = conference_aftermath_denouncement.1.k
-    }
+	}
 }
 
 conference_aftermath_denouncement.2 = {
@@ -392,9 +407,11 @@ conference_aftermath_denouncement.2 = {
 		trigger = {
 			conference_sanctions_severity > 0
 		}
+		
 		show_as_tooltip = {
 			denouncement_effect = yes
 		}
+		
 		ai_chance = {
 			base = 80
 		}
@@ -405,6 +422,7 @@ conference_aftermath_denouncement.2 = {
 		trigger = {
 			conference_sanctions_severity > 0
 		}
+		
 		show_as_tooltip = {
 			denouncement_effect = yes
 		}
@@ -429,6 +447,7 @@ conference_aftermath_denouncement.2 = {
 		trigger = {
 			conference_sanctions_severity <= 0
 		}
+		
 		ai_chance = {
 			base = 100
 		}

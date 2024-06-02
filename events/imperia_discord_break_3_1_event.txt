@@ -26,6 +26,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = -7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -35,6 +36,7 @@ ideology_break_3_1_event.1 = {
 						add = -7
 					}
 				}
+				
 				trigger_event = {
 					# Bad
 					id = ideology_break_3_1_event.2
@@ -47,6 +49,7 @@ ideology_break_3_1_event.1 = {
 						name = culture_of_disapproval_bad
 						months = 12
 					}
+					
 					capital = {
 						add_radicals_in_state = {
 							pop_type = laborers
@@ -55,6 +58,7 @@ ideology_break_3_1_event.1 = {
 					}
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					# Neutral
@@ -68,6 +72,7 @@ ideology_break_3_1_event.1 = {
 						name = culture_of_disapproval_neutral
 						months = 12
 					}
+					
 					capital = {
 						add_radicals_in_state = {
 							pop_type = laborers
@@ -76,6 +81,7 @@ ideology_break_3_1_event.1 = {
 					}
 				}
 			}
+			
 			33 = {
 				modifier = {
 					if = {
@@ -86,6 +92,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = 7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -95,6 +102,7 @@ ideology_break_3_1_event.1 = {
 						add = 7
 					}
 				}
+				
 				trigger_event = {
 					# Good
 					id = ideology_break_3_1_event.4
@@ -107,6 +115,7 @@ ideology_break_3_1_event.1 = {
 						name = culture_of_disapproval_good
 						months = 12
 					}
+					
 					change_discord = {
 						VALUE = -20
 					}
@@ -114,6 +123,7 @@ ideology_break_3_1_event.1 = {
 			}
 		}
 	}
+	
 	option = {
 		name = ideology_break_3_1_event.1.b
 		# Spare no expense
@@ -128,6 +138,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = -7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -136,6 +147,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = -7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -144,6 +156,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = -7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -153,6 +166,7 @@ ideology_break_3_1_event.1 = {
 						add = -14
 					}
 				}
+				
 				trigger_event = {
 					id = ideology_break_3_1_event.5
 					days = 0
@@ -164,17 +178,20 @@ ideology_break_3_1_event.1 = {
 						name = no_expense_spared_bad
 						months = 12
 					}
+					
 					capital = {
 						add_radicals_in_state = {
 							pop_type = bureaucrats
 							value = 0.1
 						}
 					}
+					
 					change_discord = {
 						VALUE = 20
 					}
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					id = ideology_break_3_1_event.6
@@ -187,17 +204,20 @@ ideology_break_3_1_event.1 = {
 						name = no_expense_spared_neutral
 						months = 12
 					}
+					
 					capital = {
 						add_radicals_in_state = {
 							pop_type = bureaucrats
 							value = 0.1
 						}
 					}
+					
 					change_discord = {
 						VALUE = -5
 					}
 				}
 			}
+			
 			33 = {
 				modifier = {
 					if = {
@@ -208,6 +228,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = 7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -216,6 +237,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = 7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -224,6 +246,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = 7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -233,6 +256,7 @@ ideology_break_3_1_event.1 = {
 						add = 14
 					}
 				}
+				
 				trigger_event = {
 					id = ideology_break_3_1_event.7
 					days = 0
@@ -244,12 +268,14 @@ ideology_break_3_1_event.1 = {
 						name = no_expense_spared_good
 						months = 12
 					}
+					
 					ruler = {
 						add_modifier = {
 							name = no_expense_spared_good_char
 							months = 12
 						}
 					}
+					
 					change_discord = {
 						VALUE = -25
 					}
@@ -257,6 +283,7 @@ ideology_break_3_1_event.1 = {
 			}
 		}
 	}
+	
 	option = {
 		name = ideology_break_3_1_event.1.c
 		random_list = {
@@ -270,6 +297,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = -7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -278,6 +306,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = -7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -286,6 +315,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = -7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -295,6 +325,7 @@ ideology_break_3_1_event.1 = {
 						add = -7
 					}
 				}
+				
 				trigger_event = {
 					id = ideology_break_3_1_event.8
 					days = 0
@@ -306,16 +337,19 @@ ideology_break_3_1_event.1 = {
 						name = grand_treason_charge_bad
 						months = 12
 					}
+					
 					capital = {
 						add_radicals_in_state = {
 							value = 0.05
 						}
 					}
+					
 					change_discord = {
 						VALUE = 30
 					}
 				}
 			}
+			
 			33 = {
 				trigger_event = {
 					id = ideology_break_3_1_event.9
@@ -328,16 +362,19 @@ ideology_break_3_1_event.1 = {
 						name = grand_treason_charge_neutral
 						months = 12
 					}
+					
 					capital = {
 						add_radicals_in_state = {
 							value = 0.01
 						}
 					}
+					
 					change_discord = {
 						VALUE = -5
 					}
 				}
 			}
+			
 			33 = {
 				modifier = {
 					if = {
@@ -348,6 +385,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = 7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -356,6 +394,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = 7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -364,6 +403,7 @@ ideology_break_3_1_event.1 = {
 						}
 						add = 7
 					}
+					
 					if = {
 						limit = {
 							ruler = {
@@ -373,6 +413,7 @@ ideology_break_3_1_event.1 = {
 						add = 7
 					}
 				}
+				
 				trigger_event = {
 					id = ideology_break_3_1_event.10
 					days = 0
@@ -384,11 +425,13 @@ ideology_break_3_1_event.1 = {
 						name = grand_treason_charge_good
 						months = 12
 					}
+					
 					capital = {
 						add_radicals_in_state = {
 							value = 0.01
 						}
 					}
+					
 					change_discord = {
 						VALUE = -30
 					}
@@ -416,6 +459,7 @@ ideology_break_3_1_event.2 = {
 			name = culture_of_disapproval_bad
 			months = 12
 		}
+		
 		capital = {
 			add_radicals_in_state = {
 				pop_type = laborers
@@ -443,6 +487,7 @@ ideology_break_3_1_event.3 = {
 			name = culture_of_disapproval_neutral
 			months = 12
 		}
+		
 		capital = {
 			add_radicals_in_state = {
 				pop_type = laborers
@@ -472,6 +517,7 @@ ideology_break_3_1_event.4 = {
 			name = culture_of_disapproval_good
 			months = 12
 		}
+		
 		change_discord = {
 			VALUE = -20
 		}
@@ -497,12 +543,14 @@ ideology_break_3_1_event.5 = {
 			name = no_expense_spared_bad
 			months = 12
 		}
+		
 		capital = {
 			add_radicals_in_state = {
 				pop_type = bureaucrats
 				value = 0.1
 			}
 		}
+		
 		change_discord = {
 			VALUE = 20
 		}
@@ -528,12 +576,14 @@ ideology_break_3_1_event.6 = {
 			name = no_expense_spared_neutral
 			months = 12
 		}
+		
 		capital = {
 			add_radicals_in_state = {
 				pop_type = bureaucrats
 				value = 0.1
 			}
 		}
+		
 		change_discord = {
 			VALUE = -5
 		}
@@ -559,12 +609,14 @@ ideology_break_3_1_event.7 = {
 			name = no_expense_spared_good
 			months = 12
 		}
+		
 		ruler = {
 			add_modifier = {
 				name = no_expense_spared_good_char
 				months = 12
 			}
 		}
+		
 		change_discord = {
 			VALUE = -25
 		}
@@ -589,11 +641,13 @@ ideology_break_3_1_event.8 = {
 			name = grand_treason_charge_bad
 			months = 12
 		}
+		
 		capital = {
 			add_radicals_in_state = {
 				value = 0.05
 			}
 		}
+		
 		change_discord = {
 			VALUE = 30
 		}
@@ -618,11 +672,13 @@ ideology_break_3_1_event.9 = {
 			name = grand_treason_charge_neutral
 			months = 12
 		}
+		
 		capital = {
 			add_radicals_in_state = {
 				value = 0.01
 			}
 		}
+		
 		change_discord = {
 			VALUE = -5
 		}
@@ -647,11 +703,13 @@ ideology_break_3_1_event.10 = {
 			name = grand_treason_charge_good
 			months = 12
 		}
+		
 		capital = {
 			add_radicals_in_state = {
 				value = 0.01
 			}
 		}
+		
 		change_discord = {
 			VALUE = -30
 		}

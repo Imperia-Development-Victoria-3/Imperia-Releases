@@ -15,6 +15,7 @@
 			target = this
 		}
 	}
+	
 	ordered_country = {
 		limit = {
 			country_rank = rank_value:major_power
@@ -27,6 +28,7 @@
 			target = this
 		}
 	}
+	
 	every_country = {
 		clear_variable_list ?= current_states
 		every_scope_state = {
@@ -77,32 +79,38 @@ congress_start_conference = {
 		set_global_variable = {
 			name = imperia_vienna_congress_in_session
 		}
+		
 		set_global_variable = {
 			name = imperia_vienna_congress_minimum_time
 			days = 30
 		}
+		
 		if = {
 			limit = {
 				NOT = {
 					has_global_variable = imperia_vienna_congress_current_session
 				}
 			}
+			
 			set_global_variable = {
 				name = imperia_vienna_congress_current_session
 				value = 1
 			}
 		}
+		
 		else = {
 			change_global_variable = {
 				name = imperia_vienna_congress_current_session
 				add = 1
 			}
 		}
+		
 		congress_initialise_conference_global_vars = {
 			TYPE = $TYPE$
 			TARGET = $TARGET$
 			INITIATOR = $INITIATOR$
 		}
+		
 		every_country = {
 			limit = {
 				NOT = {
@@ -121,33 +129,40 @@ aftermath_event_choice = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 1
 		}
+		
 		trigger_event = {
 			id = conference_aftermath_denouncement.1
 			popup = yes
 		}
 	}
+	
 	if = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 2
 		}
+		
 		trigger_event = {
 			id = conference_aftermath_state_claim.1
 			popup = yes
 		}
 	}
+	
 	if = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 3
 		}
+		
 		trigger_event = {
 			id = conference_aftermath_embargo.1
 			popup = yes
 		}
 	}
+	
 	if = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 4
 		}
+		
 		trigger_event = {
 			id = conference_aftermath_recognition.1
 			popup = yes
@@ -161,33 +176,40 @@ aftermath_event_consequence = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 1
 		}
+		
 		trigger_event = {
 			id = conference_aftermath_denouncement.2
 			popup = yes
 		}
 	}
+	
 	if = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 2
 		}
+		
 		trigger_event = {
 			id = conference_aftermath_state_claim.2
 			popup = yes
 		}
 	}
+	
 	if = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 3
 		}
+		
 		trigger_event = {
 			id = conference_aftermath_embargo.2
 			popup = yes
 		}
 	}
+	
 	if = {
 		limit = {
 			global_var:imperia_vienna_congress_session_type = 4
 		}
+		
 		trigger_event = {
 			id = conference_aftermath_recognition.2
 			popup = yes
@@ -200,25 +222,30 @@ congress_initialise_conference_global_vars = {
 		name = imperia_vienna_congress_session_type
 		value = $TYPE$
 	}
+	
 	set_global_variable = {
 		name = imperia_vienna_congress_session_target
 		value = $TARGET$
 	}
+	
 	set_global_variable = {
 		name = imperia_vienna_congress_session_initiator
 		value = $INITIATOR$
 	}
+	
 	if = {
 		limit = {
 			$TYPE$ = 2
 			# State Claim
 		}
+		
 		every_in_list = {
 			variable = congress_target_state_basket
 			add_to_global_variable_list = {
 				name = imperia_vienna_congress_session_target_states
 				target = this
 			}
+			
 			state_region = {
 				every_scope_state = {
 					owner = {
@@ -232,6 +259,7 @@ congress_initialise_conference_global_vars = {
 								}
 							}
 						}
+						
 						add_to_global_variable_list = {
 							name = imperia_vienna_congress_session_target_state_owners
 							target = this
@@ -240,6 +268,7 @@ congress_initialise_conference_global_vars = {
 				}
 			}
 		}
+		
 		if = {
 			limit = {
 				variable_list_size = {
@@ -247,6 +276,7 @@ congress_initialise_conference_global_vars = {
 					value = 1
 				}
 			}
+			
 			every_in_list = {
 				variable = congress_target_state_basket
 				set_global_variable = {
@@ -255,6 +285,7 @@ congress_initialise_conference_global_vars = {
 				}
 			}
 		}
+		
 		else = {
 			every_in_list = {
 				variable = congress_target_state_basket
@@ -268,16 +299,19 @@ congress_initialise_conference_global_vars = {
 								}
 							}
 						}
+						
 						add_to_local_variable_list = {
 							name = strategic_regions_in_congress_target
 							target = this
 						}
 					}
 				}
+				
 				every_scope_culture = {
 					limit = {
 						has_homeland = prev
 					}
+					
 					if = {
 						limit = {
 							NOT = {
@@ -287,6 +321,7 @@ congress_initialise_conference_global_vars = {
 								}
 							}
 						}
+						
 						add_to_local_variable_list = {
 							name = homeland_cultures_in_congress_target
 							target = this
@@ -294,52 +329,63 @@ congress_initialise_conference_global_vars = {
 					}
 				}
 			}
+			
 			save_temporary_scope_value_as = {
 				name = highest_congress_target_fraction
 				value = 0
 			}
+			
 			every_in_local_list = {
 				variable = strategic_regions_in_congress_target
 				set_local_variable = {
 					name = strategic_region
 					value = this
 				}
+				
 				if = {
 					limit = {
 						imperia_vienna_congress_session_target_region_strategic_fraction >= scope:highest_congress_target_fraction
 					}
+					
 					save_temporary_scope_value_as = {
 						name = highest_congress_target_fraction
 						value = imperia_vienna_congress_session_target_region_strategic_fraction
 					}
+					
 					set_global_variable = {
 						name = chosen_vienna_congress_target_region_or_culture_var
 						value = this
 					}
+					
 					set_global_variable = {
 						name = chosen_vienna_congress_target_region_or_culture_type
 						value = 1
 					}
 				}
 			}
+			
 			every_in_local_list = {
 				variable = homeland_cultures_in_congress_target
 				set_local_variable = {
 					name = culture_var
 					value = this
 				}
+				
 				if = {
 					limit = {
 						imperia_vienna_congress_session_target_region_culture_fraction >= scope:highest_congress_target_fraction
 					}
+					
 					save_temporary_scope_value_as = {
 						name = highest_congress_target_fraction
 						value = imperia_vienna_congress_session_target_region_culture_fraction
 					}
+					
 					set_global_variable = {
 						name = chosen_vienna_congress_target_region_or_culture_var
 						value = this
 					}
+					
 					set_global_variable = {
 						name = chosen_vienna_congress_target_region_or_culture_type
 						value = 2
@@ -358,11 +404,13 @@ set_congress_stance_effect = {
 				target = $COUNTRY$
 			}
 		}
+		
 		remove_list_global_variable = {
 			name = current_congress_members_on_stance_1
 			target = $COUNTRY$
 		}
 	}
+	
 	if = {
 		limit = {
 			is_target_in_global_variable_list = {
@@ -370,11 +418,13 @@ set_congress_stance_effect = {
 				target = $COUNTRY$
 			}
 		}
+		
 		remove_list_global_variable = {
 			name = current_congress_members_on_stance_2
 			target = $COUNTRY$
 		}
 	}
+	
 	if = {
 		limit = {
 			is_target_in_global_variable_list = {
@@ -382,11 +432,13 @@ set_congress_stance_effect = {
 				target = $COUNTRY$
 			}
 		}
+		
 		remove_list_global_variable = {
 			name = current_congress_members_on_stance_3
 			target = $COUNTRY$
 		}
 	}
+	
 	if = {
 		limit = {
 			is_target_in_global_variable_list = {
@@ -394,21 +446,25 @@ set_congress_stance_effect = {
 				target = $COUNTRY$
 			}
 		}
+		
 		remove_list_global_variable = {
 			name = current_congress_members_on_stance_4
 			target = $COUNTRY$
 		}
 	}
+	
 	add_to_global_variable_list = {
 		name = current_congress_members_on_stance_$STANCE$
 		target = $COUNTRY$
 	}
+	
 	if = {
 		limit = {
 			$STANCE$ = 4
 		}
 		update_observer_bench = yes
 	}
+	
 	else = {
 		every_subject_or_below = {
 			update_observer_bench = yes
@@ -425,6 +481,7 @@ update_observer_bench = {
 				target = this
 			}
 		}
+		
 		if = {
 			limit = {
 				top_overlord = {
@@ -434,19 +491,23 @@ update_observer_bench = {
 					}
 				}
 			}
+			
 			add_to_global_variable_list = {
 				name = current_congress_members_on_observer_bench_stance_1
 				target = this
 			}
+			
 			remove_list_global_variable = {
 				name = current_congress_members_on_observer_bench_stance_2
 				target = this
 			}
+			
 			remove_list_global_variable = {
 				name = current_congress_members_on_observer_bench_stance_3
 				target = this
 			}
 		}
+		
 		else_if = {
 			limit = {
 				top_overlord = {
@@ -456,28 +517,34 @@ update_observer_bench = {
 					}
 				}
 			}
+			
 			remove_list_global_variable = {
 				name = current_congress_members_on_observer_bench_stance_1
 				target = this
 			}
+			
 			remove_list_global_variable = {
 				name = current_congress_members_on_observer_bench_stance_2
 				target = this
 			}
+			
 			add_to_global_variable_list = {
 				name = current_congress_members_on_observer_bench_stance_3
 				target = this
 			}
 		}
+		
 		else = {
 			remove_list_global_variable = {
 				name = current_congress_members_on_observer_bench_stance_1
 				target = this
 			}
+			
 			add_to_global_variable_list = {
 				name = current_congress_members_on_observer_bench_stance_2
 				target = this
 			}
+			
 			remove_list_global_variable = {
 				name = current_congress_members_on_observer_bench_stance_3
 				target = this
@@ -495,6 +562,7 @@ adjust_opinions_conference_voters_reject = {
 			is_congress_target = no
 			this != global_var:imperia_vienna_congress_session_initiator
 		}
+		
 		prev = {
 			change_relations = {
 				country = prev
@@ -505,6 +573,7 @@ adjust_opinions_conference_voters_reject = {
 			}
 		}
 	}
+	
 	every_in_global_list = {
 		variable = current_congress_members_on_stance_3
 		limit = {
@@ -512,6 +581,7 @@ adjust_opinions_conference_voters_reject = {
 			is_congress_target = no
 			this != global_var:imperia_vienna_congress_session_initiator
 		}
+		
 		prev = {
 			change_relations = {
 				country = prev
@@ -542,11 +612,13 @@ denouncement_effect = {
 		limit = {
 			conference_sanctions_severity != 0
 		}
+		
 		add_modifier = {
 			name = imperia_congress_denouncement_modifier
 			years = 3
 			multiplier = conference_sanctions_severity
 		}
+		
 		save_temporary_scope_value_as = {
 			name = infamy_addition
 			value = {
@@ -563,16 +635,19 @@ state_claim_effect_for_claimer = {
 		limit = {
 			conference_sanctions_severity > 0
 		}
+		
 		every_in_global_list = {
 			variable = imperia_vienna_congress_session_target_states
 			state_region = {
 				add_claim = global_var:imperia_vienna_congress_session_initiator
 			}
 		}
+		
 		every_country = {
 			limit = {
 				is_congress_target = yes
 			}
+			
 			change_relations = {
 				country = global_var:imperia_vienna_congress_session_initiator
 				value = -50
@@ -587,10 +662,12 @@ denounce_state_claimer = {
 		limit = {
 			root != global_var:imperia_vienna_congress_session_initiator
 		}
+		
 		every_country = {
 			limit = {
 				is_congress_target = yes
 			}
+			
 			root = {
 				change_relations = {
 					country = prev
@@ -601,6 +678,7 @@ denounce_state_claimer = {
 				}
 			}
 		}
+		
 		change_relations = {
 			country = global_var:imperia_vienna_congress_session_initiator
 			value = {
@@ -617,6 +695,7 @@ embargo_target = {
 		limit = {
 			conference_sanctions_severity > 0
 		}
+		
 		change_relations = {
 			country = $TARGET$
 			value = {
@@ -624,6 +703,7 @@ embargo_target = {
 				multiply = conference_sanctions_severity
 			}
 		}
+		
 		create_diplomatic_pact = {
 			country = $TARGET$
 			type = forced_embargo_pact
@@ -637,22 +717,25 @@ embargo_effect = {
 		limit = {
 			conference_sanctions_severity > 0
 		}
+		
 		add_modifier = {
 			name = forced_embargo
 			years = 3
 			multiplier = conference_sanctions_severity
 		}
 	}
+	
 	else_if = {
 		limit = {
 			conference_sanctions_severity < 0
 		}
+		
 		add_modifier = {
 			name = survived_embargo_congress
 			years = 3
 			multiplier = {
 				# Should be negated here, since surviving a congress would GIVE prestige, but the multiplier here is negative in this scenario
-				value = conference_sanctions_severity 
+				value = conference_sanctions_severity
 				multiply = -1
 			}
 		}
@@ -675,6 +758,7 @@ make_strategic_region_list = {
 		limit = {
 			is_state_region_land = yes
 		}
+		
 		if = {
 			limit = {
 				region = {
@@ -687,6 +771,7 @@ make_strategic_region_list = {
 				}
 			}
 		}
+		
 		region = {
 			add_to_global_variable_list = {
 				name = strategic_region_list
@@ -704,15 +789,18 @@ congress_send_out_invitation = {
 				is_country_type = colonial
 			}
 		}
+		
 		if = {
 			limit = {
 				is_congress_target = yes
 			}
+			
 			trigger_event = {
 				id = imperia_vienna_congress.2
 				popup = yes
 			}
 		}
+		
 		else_if = {
 			limit = {
 				global_var:imperia_vienna_congress_session_initiator = this
@@ -722,6 +810,7 @@ congress_send_out_invitation = {
 				COUNTRY = this
 				STANCE = 1
 			}
+			
 			random_list = {
 				10 = {
 					trigger_event = {
@@ -731,6 +820,7 @@ congress_send_out_invitation = {
 						days = 35
 					}
 				}
+				
 				10 = {
 					trigger_event = {
 						# Start masked ball
@@ -739,6 +829,7 @@ congress_send_out_invitation = {
 						days = 35
 					}
 				}
+				
 				10 = {
 					trigger_event = {
 						# Start Language vote
@@ -749,6 +840,7 @@ congress_send_out_invitation = {
 				}
 			}
 		}
+		
 		else_if = {
 			limit = {
 				global_var:imperia_vienna_congress_session_initiator != this
@@ -758,17 +850,20 @@ congress_send_out_invitation = {
 						name = imperia_congress_great_powers
 						target = this
 					}
+					
 					is_target_in_global_variable_list = {
 						name = imperia_congress_major_powers
 						target = this
 					}
 				}
 			}
+			
 			trigger_event = {
 				id = imperia_vienna_congress.2
 				popup = yes
 			}
 		}
+		
 		else = {
 			trigger_event = {
 				id = imperia_vienna_congress.3
@@ -787,6 +882,7 @@ congress_random_events = {
 		limit = {
 			has_global_variable = congress_random_events_enabled
 		}
+		
 		random_list = {
 			1 = {
 				trigger_event = {
@@ -794,18 +890,21 @@ congress_random_events = {
 					id = congress_random_event.1
 				}
 			}
+			
 			1 = {
 				trigger_event = {
 					# Dinner party
 					id = congress_random_event.4
 				}
 			}
+			
 			1 = {
 				trigger_event = {
 					# Game of whist
 					id = congress_random_event.5
 				}
 			}
+			
 			1 = {
 				trigger_event = {
 					# Church Mass
@@ -826,6 +925,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_a_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -834,6 +934,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_b_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -842,6 +943,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_c_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -850,6 +952,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_d_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -858,6 +961,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_e_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -866,6 +970,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_f_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -874,6 +979,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_g_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -882,6 +988,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_h_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -890,6 +997,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_i_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -898,6 +1006,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_j_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -906,6 +1015,7 @@ enable_random_congress_random_event_4_option = {
 			}
 			set_variable = event_option_k_enabled
 		}
+		
 		1 = {
 			trigger = {
 				NOT = {
@@ -947,6 +1057,7 @@ play_whist_round = {
 					}
 					add = 20
 				}
+				
 				if = {
 					limit = {
 						scope:player_1 = {
@@ -955,6 +1066,7 @@ play_whist_round = {
 					}
 					add = 30
 				}
+				
 				if = {
 					limit = {
 						scope:player_1 = {
@@ -964,6 +1076,7 @@ play_whist_round = {
 					add = 45
 				}
 			}
+			
 			scope:player_1 = {
 				change_variable = {
 					name = points_team_1
@@ -971,6 +1084,7 @@ play_whist_round = {
 				}
 			}
 		}
+		
 		100 = {
 			modifier = {
 				if = {
@@ -981,6 +1095,7 @@ play_whist_round = {
 					}
 					add = 20
 				}
+				
 				if = {
 					limit = {
 						scope:player_2 = {
@@ -989,6 +1104,7 @@ play_whist_round = {
 					}
 					add = 30
 				}
+				
 				if = {
 					limit = {
 						scope:player_2 = {
@@ -998,6 +1114,7 @@ play_whist_round = {
 					add = 45
 				}
 			}
+			
 			scope:player_1 = {
 				change_variable = {
 					name = points_team_2
@@ -1005,6 +1122,7 @@ play_whist_round = {
 				}
 			}
 		}
+		
 		100 = {
 			modifier = {
 				if = {
@@ -1015,6 +1133,7 @@ play_whist_round = {
 					}
 					add = 20
 				}
+				
 				if = {
 					limit = {
 						scope:player_3 = {
@@ -1023,6 +1142,7 @@ play_whist_round = {
 					}
 					add = 30
 				}
+				
 				if = {
 					limit = {
 						scope:player_3 = {
@@ -1032,6 +1152,7 @@ play_whist_round = {
 					add = 45
 				}
 			}
+			
 			scope:player_1 = {
 				change_variable = {
 					name = points_team_1
@@ -1039,6 +1160,7 @@ play_whist_round = {
 				}
 			}
 		}
+		
 		100 = {
 			modifier = {
 				if = {
@@ -1049,6 +1171,7 @@ play_whist_round = {
 					}
 					add = 20
 				}
+				
 				if = {
 					limit = {
 						scope:player_4 = {
@@ -1057,6 +1180,7 @@ play_whist_round = {
 					}
 					add = 30
 				}
+				
 				if = {
 					limit = {
 						scope:player_4 = {
@@ -1066,6 +1190,7 @@ play_whist_round = {
 					add = 45
 				}
 			}
+			
 			scope:player_1 = {
 				change_variable = {
 					name = points_team_2
@@ -1084,11 +1209,13 @@ end_whist_game = {
 				scope:player_2 = this
 			}
 		}
+		
 		change_relations = {
 			country = scope:whist_teammate
 			value = whist_opinion_value
 		}
 	}
+	
 	else = {
 		show_as_tooltip = {
 			change_relations = {
@@ -1097,24 +1224,29 @@ end_whist_game = {
 			}
 		}
 	}
+	
 	if = {
 		limit = {
 			has_variable = plays_whist_honorably
 		}
+		
 		change_relations = {
 			country = scope:whist_opponent_1
 			value = 10
 		}
+		
 		change_relations = {
 			country = scope:whist_opponent_2
 			value = 10
 		}
 	}
+	
 	else = {
 		change_relations = {
 			country = scope:whist_opponent_1
 			value = 5
 		}
+		
 		change_relations = {
 			country = scope:whist_opponent_2
 			value = 5
@@ -1127,6 +1259,7 @@ end_whist_game_cheater = {
 		limit = {
 			has_variable = caught_cheating_in_whist
 		}
+		
 		show_as_tooltip = {
 			every_country = {
 				limit = {
@@ -1138,6 +1271,7 @@ end_whist_game_cheater = {
 					}
 					this != root
 				}
+				
 				change_relations = {
 					country = root
 					value = -15
@@ -1145,6 +1279,7 @@ end_whist_game_cheater = {
 			}
 		}
 	}
+	
 	else = {
 		change_relations = {
 			country = scope:cheating_country_other
@@ -1177,6 +1312,7 @@ congress_parade_start = {
 			}
 		}
 	}
+	
 	set_global_variable = {
 		name = allied_synonym
 		value = {
@@ -1186,6 +1322,7 @@ congress_parade_start = {
 			}
 		}
 	}
+	
 	set_global_variable = {
 		name = ruler_synonym
 		value = {
@@ -1195,44 +1332,53 @@ congress_parade_start = {
 			}
 		}
 	}
+	
 	set_global_variable = {
 		name = parade_over_num
 		value = 0
 	}
+	
 	random_country = {
 		limit = {
 			has_variable = congress_lead_accepted
 		}
+		
 		set_global_variable = {
 			name = congress_lead_1
 			value = this
 		}
 	}
+	
 	random_country = {
 		limit = {
 			has_variable = congress_lead_accepted
 			global_var:congress_lead_1 != this
 		}
+		
 		set_global_variable = {
 			name = congress_lead_2
 			value = this
 		}
 	}
+	
 	random_country = {
 		limit = {
 			has_variable = congress_lead_accepted
 			global_var:congress_lead_1 != this
 			global_var:congress_lead_2 != this
 		}
+		
 		set_global_variable = {
 			name = congress_lead_3
 			value = this
 		}
 	}
+	
 	every_country = {
 		limit = {
 			is_congress_attendee = yes
 		}
+		
 		trigger_event = {
 			id = congress_random_event.17
 			popup = yes
@@ -1258,6 +1404,7 @@ congress_parade_invite_lead = {
 				}
 			}
 		}
+		
 		random_country = {
 			limit = {
 				country_rank >= rank_value:great_power
@@ -1271,12 +1418,14 @@ congress_parade_invite_lead = {
 					has_variable = congress_lead_declined
 				}
 			}
+			
 			trigger_event = {
 				id = congress_random_event.15
 				popup = yes
 			}
 		}
 	}
+	
 	else = {
 		random_country = {
 			limit = {
@@ -1290,6 +1439,7 @@ congress_parade_invite_lead = {
 					has_variable = congress_lead_declined
 				}
 			}
+			
 			trigger_event = {
 				id = congress_random_event.15
 				popup = yes
@@ -1315,6 +1465,7 @@ end_congress_scripted_effect = {
 			}
 			aftermath_event_choice = yes
 		}
+		
 		else_if = {
 			limit = {
 				is_congress_target = yes

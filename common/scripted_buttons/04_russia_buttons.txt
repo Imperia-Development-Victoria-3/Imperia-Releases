@@ -1,46 +1,51 @@
 ﻿je_the_eastern_border_treaty_of_beijing = {
 	name = "je_the_eastern_border_treaty_of_beijing"
 	desc = "je_the_eastern_border_treaty_of_beijing_desc"
-
-	visible = { 
+	visible = {
 		exists = c:RUS
 		c:RUS = ROOT
 		is_subject = no
 		has_technology_researched = nationalism
-		NOR = { 
-			owns_entire_state_region = STATE_OUTER_MANCHURIA 
+		NOR = {
+			owns_entire_state_region = STATE_OUTER_MANCHURIA
 			has_global_variable = rus_bought_outer_manchuria
 		}
+		
 		AND = {
 			any_scope_state = {
 				state_region = s:STATE_TRANS_BAIKAL
 			}
+			
 			any_scope_state = {
 				state_region = s:STATE_OKHOTSK
 			}
 		}
+		
 		c:CHI ?= {
 			country_or_subject_owns_entire_state_region = STATE_OUTER_MANCHURIA
 		}
 	}
-
+	
 	ai_chance = {
 		base = 10
 	}
-
+	
 	possible = {
 		c:CHI = {
 			custom_tooltip = {
 				text = china_explosion_point_2_tt
-				var:china_warlord_explosion >= 40 # was 2
+				var:china_warlord_explosion >= 40	# was 2
 			}
+			
 			NOT = {
 				has_truce_with = c:RUS
 			}
+			
 			OR = {
 				is_subject = no
 				is_subject_of = ROOT
 			}
+			
 			OR = {
 				custom_tooltip = {
 					text = war_with_china_not_russia_tt
@@ -51,16 +56,18 @@
 						has_war_with = c:CHI
 					}
 				}
+				
 				c:RUS = {
 					is_owed_obligation_by = c:CHI
 				}
-			}	
+			}
 		}
+		
 		c:RUS = {
 			country_rank >= rank_value:great_power
 		}
 	}
-
+	
 	effect = {
 		if = {
 			limit = {
@@ -70,6 +77,7 @@
 			}
 			custom_tooltip = obligation_for_outer_manchuria_tt
 		}
+		
 		else_if = {
 			limit = {
 				c:CHI = {
@@ -78,48 +86,55 @@
 			}
 			custom_tooltip = transfer_of_outer_manchuria_tt
 		}
+		
 		else = {
 			c:RUS = {
 				create_incident = {
 					country = c:CHI
 					value = 10
 				}
-			}		
+			}
 		}
 		custom_tooltip = transfer_of_outer_manchuria_tt
 		set_global_variable = rus_bought_outer_manchuria
-		trigger_event = { id = russo_chinese.1 popup = yes }
+		trigger_event = {
+			id = russo_chinese.1
+			popup = yes
+		}
 	}
 }
 
 je_the_eastern_border_russia_chuguchak_protocol = {
 	name = "je_the_eastern_border_russia_chuguchak_protocol"
 	desc = "je_the_eastern_border_russia_chuguchak_protocol_desc"
-
-	visible = { 
-		exists = c:RUS 
+	visible = {
+		exists = c:RUS
 		c:RUS = ROOT
 		is_subject = no
 		has_technology_researched = nationalism
-		NOT = { 
+		NOT = {
 			owns_entire_state_region = STATE_TOMSK
-			owns_entire_state_region = STATE_JETISY 
-			owns_entire_state_region = STATE_KIRGHIZIA  
+			owns_entire_state_region = STATE_JETISY
+			owns_entire_state_region = STATE_KIRGHIZIA
 		}
-		NOT = {	
+		
+		NOT = {
 			has_global_variable = rus_chuguchak_protocol
 		}
+		
 		OR = {
 			AND = {
 				owns_entire_state_region = STATE_SEMIRECHE
-				owns_entire_state_region = STATE_AKMOLINSK	
+				owns_entire_state_region = STATE_AKMOLINSK
 			}
+			
 			any_country = {
 				is_subject_of = c:RUS
-				owns_entire_state_region = STATE_SEMIRECHE	
-				owns_entire_state_region = STATE_AKMOLINSK	
+				owns_entire_state_region = STATE_SEMIRECHE
+				owns_entire_state_region = STATE_AKMOLINSK
 			}
-		}	
+		}
+		
 		c:CHI ?= {
 			AND = {
 				country_or_subject_owns_entire_state_region = STATE_JETISY
@@ -128,24 +143,27 @@ je_the_eastern_border_russia_chuguchak_protocol = {
 			}
 		}
 	}
-
+	
 	ai_chance = {
 		base = 10
 	}
-
+	
 	possible = {
 		c:CHI = {
 			custom_tooltip = {
 				text = china_explosion_point_2_tt
-				var:china_warlord_explosion >= 40 # was 2
+				var:china_warlord_explosion >= 40	# was 2
 			}
+			
 			NOT = {
 				has_truce_with = c:RUS
 			}
+			
 			OR = {
 				is_subject = no
 				is_subject_of = ROOT
 			}
+			
 			OR = {
 				custom_tooltip = {
 					text = war_with_china_not_russia_tt
@@ -156,32 +174,36 @@ je_the_eastern_border_russia_chuguchak_protocol = {
 						has_war_with = c:CHI
 					}
 				}
+				
 				c:RUS = {
 					is_owed_obligation_by = c:CHI
 				}
-			}	
+			}
 		}
+		
 		c:RUS = {
 			country_rank >= rank_value:great_power
 		}
+		
 		custom_tooltip = {
 			text = russia_chuguchak_protocol_req_tt
 			c:RUS = {
 				OR = {
 					AND = {
 						owns_entire_state_region = STATE_SEMIRECHE
-						owns_entire_state_region = STATE_AKMOLINSK	
+						owns_entire_state_region = STATE_AKMOLINSK
 					}
+					
 					any_country = {
 						is_subject_of = c:RUS
-						owns_entire_state_region = STATE_SEMIRECHE	
-						owns_entire_state_region = STATE_AKMOLINSK	
+						owns_entire_state_region = STATE_SEMIRECHE
+						owns_entire_state_region = STATE_AKMOLINSK
 					}
 				}
-			}	
+			}
 		}
 	}
-
+	
 	effect = {
 		if = {
 			limit = {
@@ -191,6 +213,7 @@ je_the_eastern_border_russia_chuguchak_protocol = {
 			}
 			custom_tooltip = obligation_for_central_asia_tt
 		}
+		
 		else_if = {
 			limit = {
 				c:CHI = {
@@ -199,16 +222,20 @@ je_the_eastern_border_russia_chuguchak_protocol = {
 			}
 			custom_tooltip = transfer_of_central_asia_tt
 		}
+		
 		else = {
 			c:RUS = {
 				create_incident = {
 					country = c:CHI
 					value = 15
 				}
-			}		
+			}
 		}
 		custom_tooltip = transfer_of_central_asia_tt
 		set_global_variable = rus_chuguchak_protocol
-		trigger_event = { id = russo_chinese.2 popup = yes }
+		trigger_event = {
+			id = russo_chinese.2
+			popup = yes
+		}
 	}
 }

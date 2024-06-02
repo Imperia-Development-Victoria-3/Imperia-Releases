@@ -1,12 +1,10 @@
 ﻿### ERA 1
-
 sericulture = {
 	# Unlocks Mulberry Groves PM on Rice Farms
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/sericulture.dds"
 	category = production
 	can_research = no
-	
 	modifier = {
 		building_silk_plantation_throughput_add = 0.25
 	}
@@ -21,9 +19,8 @@ enclosure = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/enclosure.dds"
 	category = production
-	
 	ai_weight = {
-		value = 3 # Very important tech in general
+		value = 3	# Very important tech in general
 	}
 }
 
@@ -33,9 +30,8 @@ manufacturies = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/manufacturies.dds"
 	category = production
-	
 	ai_weight = {
-		value = 3 # Very important tech in general
+		value = 3	# Very important tech in general
 	}
 }
 
@@ -44,14 +40,13 @@ shaft_mining = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/shaft_mining.dds"
 	category = production
-	
 	unlocking_technologies = {
 		enclosure
 		manufacturies
 	}
 	
 	ai_weight = {
-		value = 2 # Important tech in general
+		value = 2	# Important tech in general
 	}
 }
 
@@ -59,7 +54,6 @@ cotton_gin = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/cotton_gin.dds"
 	category = production
-
 	modifier = {
 		building_cotton_plantation_throughput_add = 0.25
 		state_poor_standard_of_living_add = 0.25
@@ -79,23 +73,21 @@ lathe = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/lathe.dds"
 	category = production
-	
 	unlocking_technologies = {
 		cotton_gin
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 1
-		}		
+		}
 	}
 }
 
@@ -106,7 +98,6 @@ distillation = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/distillation.dds"
 	category = production
-	
 	unlocking_technologies = {
 		manufacturies
 	}
@@ -121,23 +112,21 @@ steelworking = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/steelworking.dds"
 	category = production
-	
 	unlocking_technologies = {
 		shaft_mining
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 1
-		}		
+		}
 	}
 }
 
@@ -146,7 +135,6 @@ prospecting = {
 	era = era_1
 	texture = "gfx/interface/icons/invention_icons/prospecting_tech.dds"
 	category = production
-	
 	modifier = {
 		building_iron_mine_throughput_add = 0.025
 		building_sulfur_mine_throughput_add = 0.025
@@ -154,24 +142,22 @@ prospecting = {
 		building_gold_mine_throughput_add = 0.025
 		building_coal_mine_throughput_add = 0.025
 	}
-
+	
 	unlocking_technologies = {
 		shaft_mining
 	}
-
+	
 	ai_weight = {
 		value = 1
 	}
 }
 
 ### ERA 2
-
 crystal_glass = {
 	# Unlocks Leaded Glass PM in Glassworks
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/crystal_glass.dds"
 	category = production
-	
 	unlocking_technologies = {
 		lathe
 	}
@@ -188,20 +174,18 @@ intensive_agriculture = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/intensive_agriculture.dds"
 	category = production
-	
 	unlocking_technologies = {
 		enclosure
 	}
 	
 	ai_weight = {
-		value = 2 # Important tech for everyone
-		
+		value = 2	# Important tech for everyone
 		if = {
 			limit = {
 				OR = {
-					has_strategy = ai_strategy_agricultural_expansion 
+					has_strategy = ai_strategy_agricultural_expansion
 					has_strategy = ai_strategy_plantation_economy
-				}		
+				}
 			}
 			add = 2
 		}
@@ -214,7 +198,6 @@ fractional_distillation = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/fractional_distillation.dds"
 	category = production
-	
 	unlocking_technologies = {
 		distillation
 	}
@@ -229,12 +212,11 @@ canneries = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/canneries.dds"
 	category = production
-
 	modifier = {
 		state_middle_standard_of_living_add = 0.25
 		state_poor_standard_of_living_add = 0.5
 	}
-
+	
 	unlocking_technologies = {
 		lathe
 	}
@@ -250,7 +232,6 @@ watertube_boiler = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/watertube_boiler.dds"
 	category = production
-	
 	unlocking_technologies = {
 		atmospheric_engine
 	}
@@ -266,23 +247,21 @@ atmospheric_engine = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/atmospheric_engine.dds"
 	category = production
-	
 	unlocking_technologies = {
 		shaft_mining
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 2
-		}	
+		}
 	}
 }
 
@@ -297,24 +276,22 @@ railways = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/railways.dds"
 	category = production
-	
 	unlocking_technologies = {
 		mechanical_tools
 		atmospheric_engine
 	}
 	
 	ai_weight = {
-		value = 2 # Important tech for everyone
-		
+		value = 2	# Important tech for everyone
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 2
-		}		
+		}
 	}
 }
 
@@ -324,12 +301,11 @@ chemical_bleaching = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/chemical_bleaching.dds"
 	category = production
-
 	modifier = {
 		building_textile_mills_throughput_add = 0.05
 	}
-
-	unlocking_technologies = {	
+	
+	unlocking_technologies = {
 		crystal_glass
 	}
 	
@@ -342,16 +318,14 @@ nitroglycerin = {
 	# Unlocks Nitroglycerin PM in Coal, Iron, Lead, Sulfur Mines
 	# Unlocks Ammonia-Soda Process PM in Chemical Industries
 	# Countries get a +25% chance of discovering new resources
-	
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/nitroglycerin.dds"
 	category = production
-	
 	modifier = {
 		country_resource_discovery_chance_mult = 0.25
 	}
 	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		intensive_agriculture
 		prospecting
 	}
@@ -367,24 +341,22 @@ bessemer_process = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/bessemer_process.dds"
 	category = production
-
 	modifier = {
 		building_iron_mine_throughput_add = 0.05
 	}
-
-	unlocking_technologies = {	
+	
+	unlocking_technologies = {
 		steelworking
 	}
-
+	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
-				 has_strategy = ai_strategy_industrial_expansion
+			limit = {
+				has_strategy = ai_strategy_industrial_expansion
 			}
 			add = 1
-		}		
+		}
 	}
 }
 
@@ -393,16 +365,14 @@ baking_powder = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/baking_powder.dds"
 	category = production
-	
 	modifier = {
 		building_wheat_farm_throughput_add = 0.05
 		building_millet_farm_throughput_add = 0.05
 		building_maize_farm_throughput_add = 0.05
 		building_rye_farm_throughput_add = 0.05
 		building_rice_farm_throughput_add = 0.025
-
 	}
-
+	
 	unlocking_technologies = {
 		fractional_distillation
 	}
@@ -418,7 +388,6 @@ mechanized_workshops = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/mechanized_workshops.dds"
 	category = production
-	
 	modifier = {
 		building_economy_of_scale_level_cap_add = 10
 	}
@@ -430,13 +399,12 @@ mechanized_workshops = {
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
-				 has_strategy = ai_strategy_industrial_expansion
+			limit = {
+				has_strategy = ai_strategy_industrial_expansion
 			}
 			add = 1
-		}		
+		}
 	}
 }
 
@@ -445,27 +413,24 @@ mechanical_tools = {
 	era = era_2
 	texture = "gfx/interface/icons/invention_icons/mechanical_tools.dds"
 	category = production
-	
 	unlocking_technologies = {
 		lathe
 		steelworking
 	}
 	
 	ai_weight = {
-		value = 1		
+		value = 1
 	}
 }
 
 ### ERA 3
-
 improved_fertilizer = {
 	# Unlocks Improved Fertilizer PM in Chemical Plants
 	# Unlocks Fertilization PM in Rye, Wheat, Rice, Maize, Millet Farms
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/improved_fertilizer.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		intensive_agriculture
 	}
 	
@@ -480,24 +445,22 @@ steam_donkey = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/steam_donkey.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		intensive_agriculture
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 2
-		}	
-	}	
+		}
+	}
 }
 
 dynamite = {
@@ -508,12 +471,11 @@ dynamite = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/dynamite.dds"
 	category = production
-	
 	modifier = {
 		country_resource_discovery_chance_mult = 0.25
 	}
 	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		nitroglycerin
 	}
 	
@@ -527,38 +489,35 @@ rubber_mastication = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/rubber.dds"
 	category = production
-	
 	modifier = {
 		state_construction_mult = 0.01
 	}
-
-	unlocking_technologies = {	
+	
+	unlocking_technologies = {
 		fractional_distillation
 		chemical_bleaching
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 3
-		}	
+		}
 	}
-}	
+}
 
 rotary_valve_engine = {
 	# Unlocks Rotary Valve Engine PM in Furniture Manufacturies, Tooling Workshops, Paper Mills, Steel Mills, Motor Industry
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/rotary_valve_engine.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		watertube_boiler
 	}
 	
@@ -572,12 +531,11 @@ reinforced_concrete = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/reinforced_concrete.dds"
 	category = production
-	
 	modifier = {
 		building_construction_sector_throughput_add = 0.15
 	}
 	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		bessemer_process
 	}
 	
@@ -591,23 +549,21 @@ threshing_machine = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/threshing_machine.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		steam_donkey
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					has_strategy = ai_strategy_agricultural_expansion 
+					has_strategy = ai_strategy_agricultural_expansion
 					has_strategy = ai_strategy_plantation_economy
 				}
 			}
 			add = 1
-		}	
+		}
 	}
 }
 
@@ -617,24 +573,22 @@ pumpjacks = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/pumpjacks.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		steam_donkey
 		dynamite
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 2
-		}	
+		}
 	}
 }
 
@@ -643,8 +597,7 @@ aniline = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/aniline.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		chemical_bleaching
 	}
 	
@@ -658,12 +611,11 @@ open_hearth_process = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/open_hearth_process.dds"
 	category = production
-	
 	modifier = {
 		building_iron_mine_throughput_add = 0.05
 	}
-
-	unlocking_technologies = {	
+	
+	unlocking_technologies = {
 		bessemer_process
 	}
 	
@@ -677,13 +629,12 @@ vulcanization = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/vulcanization.dds"
 	category = production
-
 	modifier = {
 		building_group_bg_manufacturing_throughput_add = 0.05
 		state_construction_mult = 0.01
 	}
-
-	unlocking_technologies = {	
+	
+	unlocking_technologies = {
 		rubber_mastication
 	}
 	
@@ -697,13 +648,12 @@ vacuum_canning = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/vacuum_canning.dds"
 	category = production
-	
 	modifier = {
 		state_middle_standard_of_living_add = 0.25
 		state_poor_standard_of_living_add = 0.5
 	}
-
-	unlocking_technologies = {	
+	
+	unlocking_technologies = {
 		mechanized_workshops
 	}
 	
@@ -716,12 +666,11 @@ shift_work = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/shift_work.dds"
 	category = production
-	
 	modifier = {
 		building_economy_of_scale_level_cap_add = 15
 	}
 	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		mechanized_workshops
 	}
 	
@@ -736,9 +685,8 @@ steel_railway_cars = {
 	# Increases Railway max level by 1
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/steel_railway_cars.dds"
-	category = production	
-	
-	unlocking_technologies = {	
+	category = production
+	unlocking_technologies = {
 		railways
 	}
 	
@@ -758,50 +706,45 @@ electrical_generation = {
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/electrical_generation.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		rotary_valve_engine
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 2
-		}	
+		}
 	}
 }
 
 ### ERA 4
-
 mechanized_farming = {
 	# Unlocks Tractors PM in Rye Farms, Wheat Farms, Millet Farms
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/mechanized_farming.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		threshing_machine
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					has_strategy = ai_strategy_agricultural_expansion 
+					has_strategy = ai_strategy_agricultural_expansion
 					has_strategy = ai_strategy_plantation_economy
 				}
 			}
 			add = 1
-		}	
+		}
 	}
 }
 
@@ -811,14 +754,13 @@ art_silk = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/art_silk.dds"
 	category = production
-	
 	modifier = {
 		building_textile_mills_throughput_add = 0.05
 		state_middle_standard_of_living_add = 0.1
 		state_poor_standard_of_living_add = 0.25
 	}
-
-	unlocking_technologies = {	
+	
+	unlocking_technologies = {
 		aniline
 	}
 	
@@ -832,12 +774,11 @@ conveyors = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/conveyers.dds"
 	category = production
-	
 	modifier = {
-		building_economy_of_scale_level_cap_add = 15	
+		building_economy_of_scale_level_cap_add = 15
 	}
-
-	unlocking_technologies = {	
+	
+	unlocking_technologies = {
 		vulcanization
 		shift_work
 		electrical_generation
@@ -852,8 +793,7 @@ pasteurization = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/pasteurization.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		vacuum_canning
 		electrical_capacitors
 	}
@@ -870,25 +810,23 @@ electric_railway = {
 	# Increases Railway max level by 1
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/electric_railway.dds"
-	category = production		
-	
+	category = production
 	unlocking_technologies = {
 		electrical_capacitors
 		steel_railway_cars
-	}	
+	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 1
-		}	
+		}
 	}
 }
 
@@ -901,23 +839,21 @@ combustion_engine = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/combustion_engine.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		rotary_valve_engine
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 1
-		}	
+		}
 	}
 }
 
@@ -927,14 +863,13 @@ pneumatic_tools = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/pneumatic_tools.dds"
 	category = production
-	
 	modifier = {
 		building_construction_sector_throughput_add = 0.1
 		goods_output_hardwood_mult = 0.25
 		country_resource_discovery_chance_mult = 0.25
 	}
 	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		rotary_valve_engine
 		reinforced_concrete
 	}
@@ -950,7 +885,6 @@ nitrogen_fixation = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/nitrogen_fixation.dds"
 	category = production
-	
 	unlocking_technologies = {
 		improved_fertilizer
 	}
@@ -965,8 +899,7 @@ electric_arc_process = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/electric_arc_process.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		open_hearth_process
 	}
 	
@@ -980,8 +913,7 @@ steam_turbine = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/steam_turbines.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		electrical_generation
 	}
 	
@@ -989,7 +921,7 @@ steam_turbine = {
 		unit_navy_offense_mult = 0.10
 		unit_navy_defense_mult = 0.10
 	}
-
+	
 	ai_weight = {
 		value = 1
 	}
@@ -1000,8 +932,7 @@ plastics = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/plastics.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		reinforced_concrete
 	}
 	
@@ -1017,23 +948,21 @@ electrical_capacitors = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/electrical_capacitors.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		electrical_generation
 	}
 	
 	ai_weight = {
 		value = 1
-		
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					 has_strategy = ai_strategy_industrial_expansion
-					 has_strategy = ai_strategy_resource_expansion
+					has_strategy = ai_strategy_industrial_expansion
+					has_strategy = ai_strategy_resource_expansion
 				}
 			}
 			add = 1
-		}	
+		}
 	}
 }
 
@@ -1042,15 +971,14 @@ radio = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/radio.dds"
 	category = production
-	
 	modifier = {
 		country_influence_add = 50
 	}
-
+	
 	unlocking_technologies = {
 		telephone
 	}
-
+	
 	modifier = {
 		country_max_declared_interests_add = 1
 	}
@@ -1065,7 +993,6 @@ telephone = {
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/telephone.dds"
 	category = production
-
 	modifier = {
 		country_influence_add = 50
 	}
@@ -1074,7 +1001,7 @@ telephone = {
 		shift_work
 		electrical_generation
 	}
-
+	
 	modifier = {
 		country_max_declared_interests_add = 1
 	}
@@ -1085,13 +1012,11 @@ telephone = {
 }
 
 ### ERA 5
-
 dough_rollers = {
 	# Unlocks the Automated Bakery PM in Food Industries
 	era = era_5
 	texture = "gfx/interface/icons/invention_icons/rollers.dds"
 	category = production
-	
 	unlocking_technologies = {
 		conveyors
 	}
@@ -1107,7 +1032,6 @@ flash_freezing = {
 	era = era_5
 	texture = "gfx/interface/icons/invention_icons/flash_freezing.dds"
 	category = production
-	
 	unlocking_technologies = {
 		pasteurization
 	}
@@ -1122,11 +1046,10 @@ oil_turbine = {
 	era = era_5
 	texture = "gfx/interface/icons/invention_icons/oil_turbines.dds"
 	category = production
-	
-	unlocking_technologies = {	
+	unlocking_technologies = {
 		steam_turbine
 	}
-
+	
 	modifier = {
 		unit_navy_offense_mult = 0.10
 		unit_navy_defense_mult = 0.10
@@ -1143,11 +1066,10 @@ arc_welding = {
 	era = era_5
 	texture = "gfx/interface/icons/invention_icons/arc_welding.dds"
 	category = production
-
 	modifier = {
 		building_construction_sector_throughput_add = 0.15
 	}
-
+	
 	unlocking_technologies = {
 		electric_arc_process
 		pneumatic_tools
@@ -1164,7 +1086,6 @@ compression_ignition = {
 	era = era_5
 	texture = "gfx/interface/icons/invention_icons/compression_ignition.dds"
 	category = production
-	
 	unlocking_technologies = {
 		combustion_engine
 	}

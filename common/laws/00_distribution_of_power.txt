@@ -9,6 +9,7 @@ law_autocracy = {
 	disallowing_laws = {
 		law_parliamentary_republic
 	}
+	
 	on_activate = {
 		if = {
 			limit = {
@@ -18,6 +19,7 @@ law_autocracy = {
 			deactivate_law = law_type:law_elected_bureaucrats
 			activate_law = law_type:law_appointed_bureaucrats
 		}
+		
 		else_if = {
 			limit = {
 				has_law = law_type:law_elected_bureaucrats
@@ -37,6 +39,7 @@ law_autocracy = {
 			remove_modifier = missouri_compromise
 		}
 	}
+	
 	modifier = {
 		country_legitimacy_headofstate_add = 40
 		country_legitimacy_govt_total_clout_add = 110
@@ -46,6 +49,7 @@ law_autocracy = {
 		country_officers_pol_str_mult = 0.5
 		country_authority_add = 400
 	}
+	
 	possible_political_movements = {
 		law_oligarchy
 		law_landed_voting
@@ -53,6 +57,7 @@ law_autocracy = {
 		law_technocracy
 		law_single_party_state
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -69,6 +74,7 @@ law_autocracy = {
 				value = 0.25
 			}
 		}
+		
 		add = {
 			desc = "POP_OFFICIERS"
 			if = {
@@ -79,8 +85,8 @@ law_autocracy = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -114,6 +120,7 @@ law_technocracy = {
 			remove_modifier = missouri_compromise
 		}
 	}
+	
 	modifier = {
 		country_legitimacy_headofstate_add = 10
 		country_legitimacy_govt_total_clout_add = 120
@@ -125,15 +132,18 @@ law_technocracy = {
 		country_bureaucrats_pol_str_mult = 0.20
 		country_authority_add = 300
 	}
+	
 	unlocking_technologies = {
 		central_archives
 	}
+	
 	possible_political_movements = {
 		law_autocracy
 		law_census_voting
 		law_universal_suffrage
 		law_single_party_state
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -145,6 +155,7 @@ law_technocracy = {
 				value = 0.25
 			}
 		}
+		
 		add = {
 			desc = "POP_CAPITALISTS"
 			if = {
@@ -160,8 +171,8 @@ law_technocracy = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -187,6 +198,7 @@ law_oligarchy = {
 			deactivate_law = law_type:law_elected_bureaucrats
 			activate_law = law_type:law_appointed_bureaucrats
 		}
+		
 		else_if = {
 			limit = {
 				has_law = law_type:law_elected_bureaucrats
@@ -206,6 +218,7 @@ law_oligarchy = {
 			remove_modifier = missouri_compromise
 		}
 	}
+	
 	modifier = {
 		country_legitimacy_headofstate_add = 15
 		country_legitimacy_govt_total_clout_add = 130
@@ -217,6 +230,7 @@ law_oligarchy = {
 		country_authority_add = 300
 		state_political_strength_from_wealth_mult = 0.15
 	}
+	
 	possible_political_movements = {
 		law_autocracy
 		law_landed_voting
@@ -224,6 +238,7 @@ law_oligarchy = {
 		law_technocracy
 		law_single_party_state
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -240,6 +255,7 @@ law_oligarchy = {
 				value = 0.25
 			}
 		}
+		
 		add = {
 			desc = "POP_CAPITALISTS"
 			if = {
@@ -255,8 +271,8 @@ law_oligarchy = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -276,9 +292,11 @@ law_elder_council = {
 	unlocking_laws = {
 		law_chiefdom
 	}
+	
 	is_visible = {
 		is_country_type = decentralized
 	}
+	
 	on_activate = {
 		if = {
 			limit = {
@@ -288,6 +306,7 @@ law_elder_council = {
 			deactivate_law = law_type:law_elected_bureaucrats
 			activate_law = law_type:law_appointed_bureaucrats
 		}
+		
 		else_if = {
 			limit = {
 				has_law = law_type:law_elected_bureaucrats
@@ -307,6 +326,7 @@ law_elder_council = {
 			remove_modifier = missouri_compromise
 		}
 	}
+	
 	modifier = {
 		country_legitimacy_base_add = 20
 		country_legitimacy_govt_total_clout_add = 100
@@ -317,16 +337,18 @@ law_elder_council = {
 		country_clergymen_pol_str_mult = 0.5
 		country_authority_add = 200
 	}
+	
 	possible_political_movements = {
 		law_autocracy
 		law_oligarchy
 		law_landed_voting
 	}
+	
 	pop_support = {
 		value = 0
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -346,10 +368,12 @@ law_landed_voting = {
 	unlocking_technologies = {
 		democracy
 	}
+	
 	disallowing_laws = {
 		law_chiefdom
 		law_command_economy
 	}
+	
 	modifier = {
 		country_legitimacy_govt_total_votes_add = 40
 		country_legitimacy_govt_total_clout_add = 100
@@ -361,6 +385,7 @@ law_landed_voting = {
 		country_capitalists_voting_power_add = 30
 		country_authority_add = 200
 	}
+	
 	possible_political_movements = {
 		law_oligarchy
 		law_autocracy
@@ -369,10 +394,12 @@ law_landed_voting = {
 		law_technocracy
 		law_single_party_state
 	}
+	
 	on_activate = {
 		scripted_effect_parties_emergence = yes
 		clear_legal_single_party = yes
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -385,6 +412,7 @@ law_landed_voting = {
 						}
 						wealth < 30
 					}
+					
 					owner = {
 						NOR = {
 							has_law = law_type:law_wealth_voting
@@ -394,6 +422,7 @@ law_landed_voting = {
 						}
 					}
 				}
+				
 				add = {
 					value = literacy_rate
 					divide = 2
@@ -401,8 +430,8 @@ law_landed_voting = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -422,10 +451,12 @@ law_wealth_voting = {
 	unlocking_technologies = {
 		democracy
 	}
+	
 	disallowing_laws = {
 		law_chiefdom
 		law_command_economy
 	}
+	
 	modifier = {
 		country_legitimacy_govt_total_votes_add = 65
 		country_legitimacy_govt_total_clout_add = 75
@@ -441,6 +472,7 @@ law_wealth_voting = {
 		country_voting_power_wealth_threshold_add = 27
 		country_authority_add = 150
 	}
+	
 	possible_political_movements = {
 		law_landed_voting
 		law_census_voting
@@ -448,10 +480,12 @@ law_wealth_voting = {
 		law_technocracy
 		law_single_party_state
 	}
+	
 	on_activate = {
 		scripted_effect_parties_emergence = yes
 		clear_legal_single_party = yes
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -461,6 +495,7 @@ law_wealth_voting = {
 					NOT = {
 						strata = rich
 					}
+					
 					owner = {
 						NOR = {
 							has_law = law_type:law_census_voting
@@ -469,6 +504,7 @@ law_wealth_voting = {
 						}
 					}
 				}
+				
 				add = {
 					value = literacy_rate
 					divide = 2
@@ -476,8 +512,8 @@ law_wealth_voting = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -497,10 +533,12 @@ law_census_voting = {
 	unlocking_technologies = {
 		democracy
 	}
+	
 	disallowing_laws = {
 		law_chiefdom
 		law_command_economy
 	}
+	
 	modifier = {
 		country_legitimacy_govt_total_votes_add = 85
 		country_legitimacy_govt_total_clout_add = 55
@@ -509,6 +547,7 @@ law_census_voting = {
 		country_voting_power_from_literacy_add = 30
 		country_authority_add = 100
 	}
+	
 	possible_political_movements = {
 		law_landed_voting
 		law_wealth_voting
@@ -516,10 +555,12 @@ law_census_voting = {
 		law_technocracy
 		law_single_party_state
 	}
+	
 	on_activate = {
 		scripted_effect_parties_emergence = yes
 		clear_legal_single_party = yes
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -534,6 +575,7 @@ law_census_voting = {
 						}
 					}
 				}
+				
 				add = {
 					value = literacy_rate
 					divide = 2
@@ -542,7 +584,7 @@ law_census_voting = {
 		}
 	}
 	
-	ai_enact_weight_modifier = { #Petitions
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -562,10 +604,12 @@ law_universal_suffrage = {
 	unlocking_technologies = {
 		egalitarianism
 	}
+	
 	disallowing_laws = {
 		law_chiefdom
 		law_command_economy
 	}
+	
 	modifier = {
 		country_legitimacy_govt_total_votes_add = 110
 		country_legitimacy_govt_total_clout_add = 25
@@ -574,16 +618,19 @@ law_universal_suffrage = {
 		country_legitimacy_ideological_incoherence_mult = -0.05
 		country_authority_add = 50
 	}
+	
 	possible_political_movements = {
 		law_census_voting
 		law_wealth_voting
 		law_anarchy
 		law_single_party_state
 	}
+	
 	on_activate = {
 		scripted_effect_parties_emergence = yes
 		clear_legal_single_party = yes
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -596,19 +643,23 @@ law_universal_suffrage = {
 						}
 					}
 				}
+				
 				if = {
 					limit = {
 						wealth < 15
 					}
+					
 					add = {
 						value = literacy_rate
 						divide = 2
 					}
 				}
+				
 				if = {
 					limit = {
 						wealth < 10
 					}
+					
 					add = {
 						value = literacy_rate
 						divide = 2
@@ -617,8 +668,8 @@ law_universal_suffrage = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -638,9 +689,11 @@ law_anarchy = {
 	unlocking_technologies = {
 		anarchism
 	}
+	
 	unlocking_laws = {
 		law_cooperative_ownership
 	}
+	
 	modifier = {
 		state_pop_pol_str_add = 1
 		country_legitimacy_govt_total_clout_add = 140
@@ -649,9 +702,11 @@ law_anarchy = {
 		country_legitimacy_govt_size_add = 2
 		country_legitimacy_ideological_incoherence_mult = 0.10
 	}
+	
 	possible_political_movements = {
 		law_universal_suffrage
 	}
+	
 	on_activate = {
 		scripted_effect_parties_disappearence = yes
 		clear_legal_single_party = yes
@@ -662,12 +717,14 @@ law_anarchy = {
 			remove_modifier = missouri_compromise
 		}
 	}
+	
 	ai_will_do = {
 		exists = ruler
 		ruler = {
 			has_ideology = ideology:ideology_anarchist
 		}
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -680,8 +737,8 @@ law_anarchy = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {
@@ -711,15 +768,18 @@ law_single_party_state = {
 					}
 				}
 			}
+			
 			custom_tooltip = {
 				text = sps_no_party_tt
 				country_has_voting_franchise = no
 			}
 		}
 	}
+	
 	unlocking_technologies = {
 		political_agitation
 	}
+	
 	modifier = {
 		country_legitimacy_govt_total_votes_add = 100
 		country_legitimacy_ideological_incoherence_mult = -0.25
@@ -727,10 +787,12 @@ law_single_party_state = {
 		country_voting_power_base_add = 20
 		interest_group_in_government_attraction_mult = 0.25
 	}
+	
 	possible_political_movements = {
 		law_universal_suffrage
 		law_anarchy
 	}
+	
 	on_activate = {
 		hidden_effect = {
 			if = {
@@ -741,10 +803,15 @@ law_single_party_state = {
 						}
 					}
 				}
+				
 				ROOT = {
-					set_variable = { name = only_valid_party value = ruler.interest_group.party }
+					set_variable = {
+						name = only_valid_party
+						value = ruler.interest_group.party
+					}
 				}
 			}
+			
 			else_if = {
 				limit = {
 					NOT = {
@@ -753,14 +820,18 @@ law_single_party_state = {
 						}
 					}
 				}
-				root = { gen_ruler_party = yes }
+				
+				root = {
+					gen_ruler_party = yes
+				}
 			}
 		}
+		
 		hidden_effect = {
 			#Clears all currently active parties
 			deactivate_parties = yes
 		}
-		update_party_support = yes		#Reactivates precisely one legal party
+		update_party_support = yes	#Reactivates precisely one legal party
 		custom_tooltip = {
 			text = sps_government_reshuffle_tt
 			every_interest_group = {
@@ -773,6 +844,7 @@ law_single_party_state = {
 				}
 				remove_ruling_interest_group = yes
 			}
+			
 			every_interest_group = {
 				limit = {
 					#Adds all IGs that are in your party to the government
@@ -783,18 +855,21 @@ law_single_party_state = {
 			}
 		}
 	}
+	
 	ai_will_do = {
 		exists = ruler
 		ruler = {
 			interest_group = {
 				has_party = yes
 			}
+			
 			law_stance = {
 				law = law_type:law_single_party_state
 				value > neutral
 			}
 		}
 	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -811,6 +886,7 @@ law_single_party_state = {
 				value = 0.25
 			}
 		}
+		
 		add = {
 			desc = "POP_CAPITALISTS"
 			if = {
@@ -825,6 +901,7 @@ law_single_party_state = {
 				value = 0.25
 			}
 		}
+		
 		add = {
 			desc = "POP_BUREAUCRATS"
 			if = {
@@ -835,8 +912,8 @@ law_single_party_state = {
 			}
 		}
 	}
-
-	ai_enact_weight_modifier = { #Petitions
+	
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
 		if = {
 			limit = {

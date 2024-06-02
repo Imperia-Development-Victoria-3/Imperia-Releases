@@ -10,6 +10,7 @@
 		}
 		remove_ruling_interest_group = yes
 	}
+	
 	ordered_interest_group = {
 		order_by = interest_group_population
 		position = 1
@@ -17,16 +18,19 @@
 		save_scope_as = dominant_ig_scope
 		add_ruling_interest_group = yes
 	}
+	
 	every_interest_group = {
 		leader = {
 			kill_character = yes
 		}
 	}
+	
 	scope:dominant_ig_scope = {
 		leader = {
 			set_character_as_ruler = yes
 		}
 	}
+	
 	scope:dominant_ig_scope = {
 		switch = {
 			trigger = is_interest_group_type
@@ -39,36 +43,44 @@
 						1 = {
 							activate_law = law_type:law_oligarchy
 						}
+						
 						1 = {
 							activate_law = law_type:law_autocracy
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_expansionism
 						}
+						
 						1 = {
 							activate_law = law_type:law_imperialism
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_colonial_exploitation
 						}
+						
 						1 = {
 							activate_law = law_type:law_colonial_resettlement
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_per_capita_based_taxation
 						}
+						
 						1 = {
 							trigger = {
 								has_technology_researched = egalitarianism
 							}
 							activate_law = law_type:law_proportional_taxation
 						}
+						
 						1 = {
 							trigger = {
 								has_technology_researched = socialism
@@ -76,25 +88,30 @@
 							activate_law = law_type:law_graduated_taxation
 						}
 					}
+					
 					if = {
 						limit = {
 							has_technology_researched = mass_surveillance
 						}
 						activate_law = law_type:law_militarized_police
 					}
+					
 					else = {
 						activate_law = law_type:law_dedicated_police
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_secret_police
 						}
+						
 						1 = {
 							activate_law = law_type:law_national_guard
 						}
 					}
 				}
 			}
+			
 			ig_devout = {
 				root = {
 					activate_law = law_type:law_theocracy
@@ -107,30 +124,37 @@
 						1 = {
 							activate_law = law_type:law_oligarchy
 						}
+						
 						1 = {
 							activate_law = law_type:law_autocracy
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_expansionism
 						}
+						
 						1 = {
 							activate_law = law_type:law_imperialism
 						}
+						
 						1 = {
 							activate_law = law_type:law_anti_imperialist
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_outlawed_dissent
 						}
+						
 						1 = {
 							activate_law = law_type:law_censorship
 						}
 					}
 				}
+				
 				ig:ig_industrialists = {
 					root = {
 						activate_law = law_type:law_per_capita_based_taxation
@@ -148,22 +172,27 @@
 							1 = {
 								activate_law = law_type:law_presidential_republic
 							}
+							
 							1 = {
 								activate_law = law_type:law_parliamentary_republic
 							}
 						}
+						
 						random_list = {
 							1 = {
 								activate_law = law_type:law_oligarchy
 							}
+							
 							1 = {
 								activate_law = law_type:law_wealth_voting
 							}
 						}
+						
 						random_list = {
 							1 = {
 								activate_law = law_type:law_expansionism
 							}
+							
 							1 = {
 								activate_law = law_type:law_imperialism
 							}
@@ -171,6 +200,7 @@
 					}
 				}
 			}
+			
 			ig_intelligentsia = {
 				root = {
 					activate_law = law_type:law_presidential_republic
@@ -186,40 +216,50 @@
 						1 = {
 							activate_law = law_type:law_universal_suffrage
 						}
+						
 						1 = {
 							activate_law = law_type:law_census_voting
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_no_police
 						}
+						
 						1 = {
 							activate_law = law_type:law_dedicated_police
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_public_schools
 						}
+						
 						1 = {
 							activate_law = law_type:law_private_schools
 						}
 					}
+					
 					if = {
 						limit = {
 							has_law = law_type:law_serfdom
 						}
+						
 						random_list = {
 							1 = {
 								activate_law = law_type:law_tenant_farmers
 							}
+							
 							1 = {
 								activate_law = law_type:law_collectivized_agriculture
 							}
+							
 							1 = {
 								activate_law = law_type:law_homesteading
 							}
+							
 							1 = {
 								activate_law = law_type:law_commercialized_agriculture
 							}
@@ -227,6 +267,7 @@
 					}
 				}
 			}
+			
 			ig_landowners = {
 				root = {
 					activate_law = law_type:law_monarchy
@@ -242,36 +283,44 @@
 						1 = {
 							activate_law = law_type:law_landed_voting
 						}
+						
 						1 = {
 							activate_law = law_type:law_autocracy
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_isolationism
 						}
+						
 						1 = {
 							activate_law = law_type:law_mercantilism
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_consumption_based_taxation
 						}
+						
 						1 = {
 							activate_law = law_type:law_land_based_taxation
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_outlawed_dissent
 						}
+						
 						1 = {
 							activate_law = law_type:law_censorship
 						}
 					}
 				}
 			}
+			
 			ig_petty_bourgeoisie = {
 				root = {
 					activate_law = law_type:law_monarchy
@@ -281,22 +330,27 @@
 						1 = {
 							activate_law = law_type:law_expansionism
 						}
+						
 						1 = {
 							activate_law = law_type:law_imperialism
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_expansionism
 						}
+						
 						1 = {
 							activate_law = law_type:law_imperialism
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_per_capita_based_taxation
 						}
+						
 						1 = {
 							trigger = {
 								has_technology_researched = egalitarianism
@@ -304,33 +358,40 @@
 							activate_law = law_type:law_proportional_taxation
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_secret_police
 						}
+						
 						1 = {
 							activate_law = law_type:law_national_guard
 						}
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_outlawed_dissent
 						}
+						
 						1 = {
 							activate_law = law_type:law_censorship
 						}
 					}
+					
 					if = {
 						limit = {
 							has_technology_researched = mass_surveillance
 						}
 						activate_law = law_type:law_militarized_police
 					}
+					
 					else = {
 						activate_law = law_type:law_dedicated_police
 					}
 				}
 			}
+			
 			ig_rural_folk = {
 				root = {
 					activate_law = law_type:law_parliamentary_republic
@@ -347,16 +408,19 @@
 						1 = {
 							activate_law = law_type:law_isolationism
 						}
+						
 						1 = {
 							activate_law = law_type:law_protectionism
 						}
 					}
+					
 					if = {
 						limit = {
 							has_law = law_type:law_debt_slavery
 						}
 						activate_law = law_type:law_slavery_banned
 					}
+					
 					if = {
 						limit = {
 							OR = {
@@ -364,16 +428,20 @@
 								has_law = law_type:law_true_multicultural
 							}
 						}
+						
 						random_list = {
 							1 = {
 								activate_law = law_type:law_ethnostate
 							}
+							
 							1 = {
 								activate_law = law_type:law_national_supremacy
 							}
+							
 							1 = {
 								activate_law = law_type:law_racial_segregation
 							}
+							
 							1 = {
 								activate_law = law_type:law_cultural_exclusion
 							}
@@ -381,6 +449,7 @@
 					}
 				}
 			}
+			
 			ig_trade_unions = {
 				root = {
 					activate_law = law_type:law_old_age_pension
@@ -400,22 +469,26 @@
 						activate_law = law_type:law_workers_protections
 						activate_law = law_type:law_multicultural
 					}
+					
 					else = {
 						activate_law = law_type:law_right_of_assembly
 						activate_law = law_type:law_restricted_child_labor
 						activate_law = law_type:law_regulatory_bodies
 						activate_law = law_type:law_cultural_exclusion
 					}
+					
 					random_list = {
 						1 = {
 							activate_law = law_type:law_consumption_based_taxation
 						}
+						
 						2 = {
 							trigger = {
 								has_technology_researched = egalitarianism
 							}
 							activate_law = law_type:law_proportional_taxation
 						}
+						
 						6 = {
 							trigger = {
 								has_technology_researched = socialism
@@ -423,6 +496,7 @@
 							activate_law = law_type:law_graduated_taxation
 						}
 					}
+					
 					random_list = {
 						2 = {
 							trigger = {
@@ -433,6 +507,7 @@
 							activate_law = law_type:law_cooperative_ownership
 							activate_law = law_type:law_collectivized_agriculture
 						}
+						
 						1 = {
 							activate_law = law_type:law_parliamentary_republic
 							activate_law = law_type:law_universal_suffrage
@@ -451,10 +526,12 @@ imperia_country_implosion_follow_up = {
 		limit = {
 			has_variable = is_discord_implosion_country
 		}
+		
 		every_scope_state = {
 			limit = {
 				is_homeland_of_country_cultures = root
 			}
+			
 			state_region = {
 				add_claim = root
 			}
@@ -468,6 +545,7 @@ imperia_spawn_country_in_implosion = {
 		name = random_color
 		value = random_rgb_color_decider
 	}
+	
 	imperia_spawn_country_with_color = {
 		CHOSEN_COLOR_NUMBER = scope:random_color
 	}
@@ -478,34 +556,45 @@ imperia_spawn_country_with_color = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 1
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
 			capital = scope:dynamic_country_capital
-			color = { 0 0 5 }
-
+			color = {
+				0
+				0
+				5
+			}
+			
 			on_created = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
 				}
-			} 
+			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 2
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 20 0 90 }
-
+			color = {
+				20
+				0
+				90
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -513,6 +602,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -520,15 +610,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 3
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 230 80 30 }
-
+			color = {
+				230
+				80
+				30
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -536,6 +631,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -543,15 +639,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 4
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 154 90 35 }
-
+			color = {
+				154
+				90
+				35
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -559,6 +660,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -566,15 +668,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 5
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 1 95 55 }
-
+			color = {
+				1
+				95
+				55
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -582,6 +689,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -589,15 +697,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 6
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 23 100 70 }
-
+			color = {
+				23
+				100
+				70
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -605,6 +718,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -612,15 +726,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 7
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 44 83 85 }
-
+			color = {
+				44
+				83
+				85
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -628,6 +747,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -635,15 +755,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 8
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 308 89 39 }
-
+			color = {
+				308
+				89
+				39
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -651,6 +776,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -658,15 +784,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 9
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 30 0 20 }
-
+			color = {
+				30
+				0
+				20
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -674,6 +805,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -681,15 +813,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 10
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 30 40 90 }
-
+			color = {
+				30
+				40
+				90
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -697,6 +834,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -704,15 +842,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 11
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 26 70 25 }
-
+			color = {
+				26
+				70
+				25
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -720,6 +863,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -727,15 +871,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 12
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 187 83 146 }
-
+			color = {
+				187
+				83
+				146
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -743,6 +892,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -750,15 +900,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 13
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 34 95 80 }
-
+			color = {
+				34
+				95
+				80
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -766,6 +921,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -773,15 +929,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 14
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 0 0 45 }
-
+			color = {
+				0
+				0
+				45
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -789,6 +950,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -796,15 +958,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 15
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 20 65 45 }
-
+			color = {
+				20
+				65
+				45
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -812,6 +979,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -819,15 +987,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 16
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 215 80 45 }
-
+			color = {
+				215
+				80
+				45
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -835,6 +1008,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -842,15 +1016,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 17
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 160 2 80 }
-
+			color = {
+				160
+				2
+				80
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -858,6 +1037,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -865,15 +1045,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 18
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 177 97 41 }
-
+			color = {
+				177
+				97
+				41
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -881,6 +1066,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -888,15 +1074,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 19
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 200 50 60 }
-
+			color = {
+				200
+				50
+				60
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -904,6 +1095,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -911,15 +1103,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 20
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 154 90 50 }
-
+			color = {
+				154
+				90
+				50
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -927,6 +1124,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -934,15 +1132,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 21
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 1 90 65 }
-
+			color = {
+				1
+				90
+				65
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -950,6 +1153,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -957,15 +1161,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 22
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 26 65 50 }
-
+			color = {
+				26
+				65
+				50
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -973,6 +1182,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -980,15 +1190,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 23
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 0 0 15 }
-
+			color = {
+				0
+				0
+				15
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -996,6 +1211,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -1003,15 +1219,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 24
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 44 75 95 }
-
+			color = {
+				44
+				75
+				95
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -1019,6 +1240,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -1026,15 +1248,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 25
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 40 85 75 }
-
+			color = {
+				40
+				85
+				75
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -1042,6 +1269,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -1049,15 +1277,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 26
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 1 95 35 }
-
+			color = {
+				1
+				95
+				35
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -1065,6 +1298,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -1072,15 +1306,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 27
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 154 90 25 }
-
+			color = {
+				154
+				90
+				25
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -1088,6 +1327,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -1095,15 +1335,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 28
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 0 45 90 }
-
+			color = {
+				0
+				45
+				90
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -1111,6 +1356,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -1118,15 +1364,20 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else_if = {
 		limit = {
 			$CHOSEN_COLOR_NUMBER$ = 29
 		}
+		
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 180 5 70 }
-
+			color = {
+				180
+				5
+				70
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -1134,6 +1385,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3
@@ -1141,12 +1393,16 @@ imperia_spawn_country_with_color = {
 			}
 		}
 	}
+	
 	else = {
 		create_dynamic_country = {
 			origin = root
 			capital = scope:dynamic_country_capital
-			color = { 0 0 5 }
-
+			color = {
+				0
+				0
+				5
+			}
 			tier = principality
 			culture = scope:new_culture_scope
 			religion = scope:new_religion_scope
@@ -1154,6 +1410,7 @@ imperia_spawn_country_with_color = {
 				trigger_event = {
 					id = imperia_political_discord.2
 				}
+				
 				trigger_event = {
 					id = imperia_political_discord.4
 					days = 3

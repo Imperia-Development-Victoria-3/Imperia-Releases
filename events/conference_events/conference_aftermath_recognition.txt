@@ -24,6 +24,7 @@ conference_aftermath_recognition.1 = {
 			conference_sanctions_severity > 0
 			is_congress_supporter = yes
 		}
+		
 		change_relations = {
 			country = scope:target_scope
 			value = 20
@@ -37,6 +38,7 @@ conference_aftermath_recognition.1 = {
 			conference_sanctions_severity > 0
 			is_congress_opposer = yes
 		}
+		
 		change_relations = {
 			country = scope:target_scope
 			value = -20
@@ -62,6 +64,7 @@ conference_aftermath_recognition.1 = {
 			conference_sanctions_severity <= 0
 			is_congress_supporter = yes
 		}
+		
 		change_relations = {
 			country = scope:target_scope
 			value = 20
@@ -75,6 +78,7 @@ conference_aftermath_recognition.1 = {
 			conference_sanctions_severity <= 0
 			is_congress_opposer = yes
 		}
+		
 		change_relations = {
 			country = scope:target_scope
 			value = -20
@@ -122,9 +126,11 @@ conference_aftermath_recognition.2 = {
 		trigger = {
 			conference_sanctions_severity > 0
 		}
+		
 		show_as_tooltip = {
 			recognise_effect = yes
 		}
+		
 		ai_chance = {
 			base = 100
 		}
@@ -136,6 +142,7 @@ conference_aftermath_recognition.2 = {
 		trigger = {
 			conference_sanctions_severity <= 0
 		}
+		
 		ai_chance = {
 			base = 100
 		}

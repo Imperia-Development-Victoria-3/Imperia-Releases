@@ -3,10 +3,8 @@
 	texture = "gfx/interface/icons/building_icons/charcoal.dds"
 	city_type = city
 	required_construction = construction_cost_medium
-
 	production_method_groups = {
 		pmg_charcoal_kiln
 		pmg_ownership_capital_building_charcoal_kiln
 	}
 }
- 

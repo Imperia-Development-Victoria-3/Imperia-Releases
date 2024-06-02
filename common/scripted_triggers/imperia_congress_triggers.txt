@@ -55,6 +55,7 @@ whist_ended_in_grand_slam_for_us = {
 			}
 			var:team_1_points = 13
 		}
+		
 		AND = {
 			OR = {
 				this = scope:player_2
@@ -74,6 +75,7 @@ whist_ended_in_small_slam_for_us = {
 			}
 			var:team_1_points = 12
 		}
+		
 		AND = {
 			OR = {
 				this = scope:player_2
@@ -93,6 +95,7 @@ whist_ended_in_win_for_us = {
 			}
 			var:team_1_points >= 7
 		}
+		
 		AND = {
 			OR = {
 				this = scope:player_2
@@ -112,6 +115,7 @@ whist_ended_in_loss_for_us = {
 			}
 			var:team_1_points < 7
 		}
+		
 		AND = {
 			OR = {
 				this = scope:player_2
@@ -128,14 +132,17 @@ whist_we_got_caught_cheating = {
 			this = root
 			has_variable = caught_cheating_in_whist
 		}
+		
 		scope:player_2 = {
 			this = root
 			has_variable = caught_cheating_in_whist
 		}
+		
 		scope:player_3 = {
 			this = root
 			has_variable = caught_cheating_in_whist
 		}
+		
 		scope:player_4 = {
 			this = root
 			has_variable = caught_cheating_in_whist
@@ -148,12 +155,15 @@ whist_someone_got_caught_cheating = {
 		scope:player_1 = {
 			has_variable = caught_cheating_in_whist
 		}
+		
 		scope:player_2 = {
 			has_variable = caught_cheating_in_whist
 		}
+		
 		scope:player_3 = {
 			has_variable = caught_cheating_in_whist
 		}
+		
 		scope:player_4 = {
 			has_variable = caught_cheating_in_whist
 		}
@@ -179,6 +189,7 @@ is_congress_parade_ready = {
 		has_variable = chosen_budget_level
 		has_variable = chosen_budget_amount
 	}
+	
 	any_country = {
 		count >= 3
 		has_variable = congress_lead_accepted

@@ -4,6 +4,7 @@
 		name = theoretical_discord_add
 		value = 0
 	}
+	
 	set_variable = {
 		name = theoretical_discord_subtract
 		value = 0
@@ -18,6 +19,7 @@
 		name = diplomatic_discord_add_total
 		value = 0
 	}
+	
 	every_country = {
 		limit = {
 			OR = {
@@ -25,18 +27,22 @@
 					who = root
 					type = defensive_pact
 				}
+				
 				has_diplomatic_pact = {
 					who = root
 					type = alliance
 				}
+				
 				has_diplomatic_pact = {
 					who = root
 					type = trade_agreement
 				}
+				
 				has_diplomatic_pact = {
 					who = root
 					type = customs_union
 				}
+				
 				has_diplomatic_pact = {
 					who = root
 					type = rivalry
@@ -49,15 +55,18 @@
 				name = var_imperia_discord_fetch_value
 				value = imperia_discord_fetch_value
 			}
+			
 			if = {
 				limit = {
 					local_var:var_imperia_discord_fetch_value > 0
 				}
+				
 				change_variable = {
 					name = theoretical_discord_add
 					add = local_var:var_imperia_discord_fetch_value
 				}
 			}
+			
 			else = {
 				change_variable = {
 					name = theoretical_discord_subtract
@@ -79,15 +88,18 @@
 		name = var_ruler_imperia_discord_character_law_calculation
 		value = ruler.imperia_discord_character_law_calculation
 	}
+	
 	if = {
 		limit = {
 			local_var:var_ruler_imperia_discord_character_law_calculation > 0
 		}
+		
 		change_variable = {
 			name = theoretical_discord_add
 			add = local_var:var_ruler_imperia_discord_character_law_calculation
 		}
 	}
+	
 	else = {
 		change_variable = {
 			name = theoretical_discord_subtract
@@ -99,20 +111,24 @@
 		limit = {
 			is_in_government = yes
 		}
+		
 		set_local_variable = {
 			name = var_gov_ig_imperia_discord_interest_group_law_calculation
 			value = imperia_discord_interest_group_law_calculation
 		}
+		
 		root = {
 			if = {
 				limit = {
 					local_var:var_gov_ig_imperia_discord_interest_group_law_calculation > 0
 				}
+				
 				change_variable = {
 					name = theoretical_discord_add
 					add = local_var:var_gov_ig_imperia_discord_interest_group_law_calculation
 				}
 			}
+			
 			else = {
 				change_variable = {
 					name = theoretical_discord_subtract
@@ -120,25 +136,30 @@
 				}
 			}
 		}
+		
 		leader = {
 			if = {
 				limit = {
 					is_ruler = no
 				}
+				
 				set_local_variable = {
 					name = var_gov_ig_leader_imperia_discord_character_law_calculation
 					value = imperia_discord_character_law_calculation
 				}
+				
 				root = {
 					if = {
 						limit = {
 							local_var:var_gov_ig_leader_imperia_discord_character_law_calculation > 0
 						}
+						
 						change_variable = {
 							name = theoretical_discord_add
 							add = local_var:var_gov_ig_leader_imperia_discord_character_law_calculation
 						}
 					}
+					
 					else = {
 						change_variable = {
 							name = theoretical_discord_subtract
@@ -154,6 +175,7 @@
 		limit = {
 			country_has_voting_franchise = yes
 		}
+		
 		every_interest_group = {
 			limit = {
 				is_in_government = no
@@ -167,20 +189,24 @@
 					}
 				}
 			}
+			
 			set_local_variable = {
 				name = var_opp_ig_imperia_discord_democratic_opposition_law_calculation
 				value = imperia_discord_democratic_opposition_law_calculation
 			}
+			
 			root = {
 				if = {
 					limit = {
 						local_var:var_opp_ig_imperia_discord_democratic_opposition_law_calculation > 0
 					}
+					
 					change_variable = {
 						name = theoretical_discord_add
 						add = local_var:var_opp_ig_imperia_discord_democratic_opposition_law_calculation
 					}
 				}
+				
 				else = {
 					change_variable = {
 						name = theoretical_discord_subtract
@@ -188,21 +214,25 @@
 					}
 				}
 			}
+			
 			leader = {
 				set_local_variable = {
 					name = var_opp_leader_imperia_discord_democratic_opposition_character_law_calculation
 					value = imperia_discord_democratic_opposition_character_law_calculation
 				}
+				
 				root = {
 					if = {
 						limit = {
 							local_var:var_opp_leader_imperia_discord_democratic_opposition_character_law_calculation > 0
 						}
+						
 						change_variable = {
 							name = theoretical_discord_add
 							add = local_var:var_opp_leader_imperia_discord_democratic_opposition_character_law_calculation
 						}
 					}
+					
 					else = {
 						change_variable = {
 							name = theoretical_discord_subtract
@@ -218,15 +248,18 @@
 		name = var_imperia_discord_legitimacy_offset_value
 		value = imperia_discord_legitimacy_offset_value
 	}
+	
 	if = {
 		limit = {
 			local_var:var_imperia_discord_legitimacy_offset_value > 0
 		}
+		
 		change_variable = {
 			name = theoretical_discord_add
 			add = local_var:var_imperia_discord_legitimacy_offset_value
 		}
 	}
+	
 	else = {
 		change_variable = {
 			name = theoretical_discord_subtract
@@ -238,19 +271,23 @@
 		limit = {
 			is_discord_cultural_internal_calc_active = yes
 		}
+		
 		set_local_variable = {
 			name = var_imperia_discord_cultural_majority_value
 			value = imperia_discord_cultural_majority_value
 		}
+		
 		if = {
 			limit = {
 				local_var:var_imperia_discord_cultural_majority_value > 0
 			}
+			
 			change_variable = {
 				name = theoretical_discord_add
 				add = local_var:var_imperia_discord_cultural_majority_value
 			}
 		}
+		
 		else = {
 			change_variable = {
 				name = theoretical_discord_subtract
@@ -263,19 +300,23 @@
 		limit = {
 			is_discord_religious_internal_calc_active = yes
 		}
+		
 		set_local_variable = {
 			name = var_imperia_discord_religious_majority_value
 			value = imperia_discord_religious_majority_value
 		}
+		
 		if = {
 			limit = {
 				local_var:var_imperia_discord_religious_majority_value > 0
 			}
+			
 			change_variable = {
 				name = theoretical_discord_add
 				add = local_var:var_imperia_discord_religious_majority_value
 			}
 		}
+		
 		else = {
 			change_variable = {
 				name = theoretical_discord_subtract
@@ -290,6 +331,7 @@
 				has_law = law_type:law_slavery_banned
 			}
 		}
+		
 		change_variable = {
 			name = theoretical_discord_add
 			add = imperia_discord_slave_contribution_value
@@ -308,6 +350,7 @@
 				has_law = law_type:law_tenant_farmers
 			}
 		}
+		
 		change_variable = {
 			name = theoretical_discord_add
 			add = imperia_discord_serf_contribution_value
@@ -324,20 +367,24 @@
 			add = var:theoretical_discord_subtract
 		}
 	}
+	
 	set_variable = {
 		# Do a side trip and set an equilibrium variable, just for the journal entry UI
 		name = equilibrium_discord
 		value = var:theoretical_discord
 	}
+	
 	clamp_variable = {
 		name = equilibrium_discord
 		max = 9999
 		min = 0
 	}
+	
 	change_variable = {
 		name = theoretical_discord
 		subtract = var:political_discord
 	}
+	
 	change_variable = {
 		name = theoretical_discord
 		divide = 10

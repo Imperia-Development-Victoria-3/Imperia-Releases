@@ -4,16 +4,19 @@
 		up
 		amount
 	}
+	
 	effect = {
 		if = {
 			limit = {
 				scope:up = 1
 			}
+			
 			change_variable = {
 				name = imperia_money_transfer_amount
 				add = scope:amount
 			}
 		}
+		
 		else = {
 			change_variable = {
 				name = imperia_money_transfer_amount
@@ -29,6 +32,7 @@ can_press_money_transfer_down_button = {
 		up
 		amount
 	}
+	
 	is_valid = {
 		trigger_if = {
 			limit = {
@@ -37,6 +41,7 @@ can_press_money_transfer_down_button = {
 			}
 			var:imperia_money_transfer_amount >= 10000000
 		}
+		
 		trigger_if = {
 			limit = {
 				scope:amount = 1000000
@@ -44,6 +49,7 @@ can_press_money_transfer_down_button = {
 			}
 			var:imperia_money_transfer_amount >= 1000000
 		}
+		
 		trigger_if = {
 			limit = {
 				scope:amount = 100000
@@ -51,6 +57,7 @@ can_press_money_transfer_down_button = {
 			}
 			var:imperia_money_transfer_amount >= 100000
 		}
+		
 		trigger_if = {
 			limit = {
 				scope:amount = 10000
@@ -58,6 +65,7 @@ can_press_money_transfer_down_button = {
 			}
 			var:imperia_money_transfer_amount >= 10000
 		}
+		
 		trigger_if = {
 			limit = {
 				scope:amount = 1000
@@ -73,6 +81,7 @@ can_send_money_to_recipient = {
 	saved_scopes = {
 		target
 	}
+	
 	is_valid = {
 		can_send_money_to_recipient_trigger = yes
 	}
@@ -83,6 +92,7 @@ set_strategic_region_transfer_money_target = {
 	saved_scopes = {
 		strategic_region
 	}
+	
 	effect = {
 		clear_variable_list ?= countries_in_selected_strategic_region_money_transfer
 		scope:strategic_region = {
@@ -91,12 +101,14 @@ set_strategic_region_transfer_money_target = {
 					NOT = {
 						owner = root
 					}
+					
 					NOT = {
 						owner = {
 							is_country_type = decentralized
 						}
 					}
 				}
+				
 				owner = {
 					root = {
 						add_to_variable_list = {
@@ -115,6 +127,7 @@ any_valid_money_transfer_country_in_strategic_region = {
 	saved_scopes = {
 		strategic_region
 	}
+	
 	is_valid = {
 		scope:strategic_region = {
 			any_scope_state = {
@@ -122,6 +135,7 @@ any_valid_money_transfer_country_in_strategic_region = {
 				NOT = {
 					owner = root
 				}
+				
 				NOT = {
 					owner = {
 						is_country_type = decentralized
@@ -144,6 +158,7 @@ set_money_transfer_target_country = {
 	saved_scopes = {
 		target
 	}
+	
 	effect = {
 		set_variable = {
 			name = money_transfer_target_country
@@ -158,6 +173,7 @@ send_money_to_target = {
 		var:money_transfer_target_country = {
 			save_scope_as = target
 		}
+		
 		add_treasury = {
 			value = var:imperia_money_transfer_amount
 			multiply = -1
@@ -173,6 +189,7 @@ send_money_to_target = {
 			post_notification = imperia_received_money
 		}
 	}
+	
 	is_valid = {
 		can_send_money_to_recipient_trigger = yes
 	}
