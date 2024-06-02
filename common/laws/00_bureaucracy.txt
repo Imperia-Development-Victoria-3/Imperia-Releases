@@ -3,7 +3,7 @@
 	icon = "gfx/interface/icons/law_icons/hereditary_bureaucrats.dds"
 	progressiveness = -50
 	modifier = {
-		state_bureaucracy_population_base_cost_factor_mult = -0.25
+		state_bureaucracy_population_base_cost_factor_mult = -0.3
 		country_aristocrats_pol_str_mult = 0.25
 	}
 	
@@ -72,12 +72,172 @@ law_appointed_bureaucrats = {
 	icon = "gfx/interface/icons/law_icons/appointed_bureaucrats.dds"
 	progressiveness = 0
 	modifier = {
-		country_bureaucrats_pol_str_mult = 0.25
-		state_tax_capacity_mult = 0.25
+		interest_group_in_government_approval_add = 3
+		interest_group_in_opposition_approval_add = -2
+		country_government_wages_mult = -0.15
+		country_bureaucrats_pol_str_mult = -0.1
+		state_loyalists_from_sol_change_mult = 0.05
+		state_radicals_from_sol_change_mult = -0.05
 	}
 	
 	possible_political_movements = {
-		law_elected_bureaucrats
+		law_appointed_bureaucrats
+	}
+	
+	on_enact = {
+		if = {
+			limit = {
+				has_law = law_type:law_elected_bureaucrats
+			}
+			custom_tooltip = bureaucrats_pb_ig_shift_effect_negative_tt
+		}
+		
+		if = {
+			limit = {
+				has_law = law_type:law_hereditary_bureaucrats
+			}
+			custom_tooltip = urban_aristocrats_int_ig_shift_effect_negative_tt
+		}
+	}
+	
+	pop_support = {
+		value = 0
+		# Academics like technocracy
+		add = {
+			desc = "POP_OFFICERS"
+			if = {
+				limit = {
+					owner = {
+						has_ruling_interest_group = ig_armed_forces
+					}
+					is_pop_type = officers
+				}
+				value = 0.2
+			}
+		}
+		# Bureuacrats like non-hereditary
+		add = {
+			desc = "POP_ARISTOCRATS"
+			if = {
+				limit = {
+					owner = {
+						has_ruling_interest_group = ig_landowners
+					}
+					is_pop_type = aristocrats
+				}
+				value = 0.1
+			}
+		}
+		
+		add = {
+			desc = "POP_CLERGYMEN"
+			if = {
+				limit = {
+					owner = {
+						has_ruling_interest_group = ig_devout
+					}
+					is_pop_type = clergymen
+				}
+				value = 0.15
+			}
+		}
+		
+		add = {
+			desc = "POP_FARMERS"
+			if = {
+				limit = {
+					owner = {
+						has_ruling_interest_group = ig_rural_folk
+					}
+					is_pop_type = farmers
+				}
+				value = 0.2
+			}
+		}
+		
+		add = {
+			desc = "POP_CAPITALISTS"
+			if = {
+				limit = {
+					owner = {
+						has_ruling_interest_group = ig_industrialists
+					}
+					is_pop_type = capitalists
+				}
+				value = 0.25
+			}
+		}
+		
+		add = {
+			desc = "POP_BUREAUCRATS"
+			if = {
+				limit = {
+					owner = {
+						has_ruling_interest_group = ig_intelligentsia
+					}
+					is_pop_type = bureaucrats
+				}
+				value = 0.1
+			}
+		}
+		
+		add = {
+			desc = "POP_SHOPKEEPERS"
+			if = {
+				limit = {
+					owner = {
+						has_ruling_interest_group = ig_petty_bourgeoisie
+					}
+					is_pop_type = shopkeepers
+				}
+				value = 0.25
+			}
+		}
+		
+		add = {
+			desc = "POP_LABORERS"
+			if = {
+				limit = {
+					owner = {
+						has_ruling_interest_group = ig_trade_unions
+					}
+					is_pop_type = laborers
+				}
+				value = 0.25
+			}
+		}
+	}
+	
+	ai_enact_weight_modifier = {
+		#Petitions
+		value = 0
+		if = {
+			limit = {
+				has_journal_entry = je_government_petition
+				has_variable = desired_law_var
+				scope:law = var:desired_law_var
+			}
+			add = 750
+		}
+	}
+}
+
+law_meritocratic_bureaucracy = {
+	group = lawgroup_bureaucracy
+	icon = "gfx/interface/icons/law_icons/meritocratic_bureaucracy.dds"
+	progressiveness = 0
+	modifier = {
+		interest_group_ig_intelligentsia_pop_attraction_mult = 0.15
+		country_bureaucracy_investment_cost_factor_mult = 0.05
+		state_tax_capacity_mult = 0.25
+		country_government_wages_mult = 0.15
+		country_bureaucrats_pol_str_mult = 0.2
+		country_academics_pol_str_mult = 0.05
+		state_radicals_from_sol_change_mult = 0.05
+	}
+	
+	possible_political_movements = {
+		law_meritocratic_bureaucracy
 	}
 	
 	on_enact = {
@@ -154,6 +314,14 @@ law_elected_bureaucrats = {
 		law_elder_council
 	}
 	
+	modifier = {
+		country_bureaucracy_investment_cost_factor_mult = -0.15
+		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.15
+		interest_group_ig_petty_bourgeoisie_pop_attraction_mult = 0.10
+		state_loyalists_from_sol_change_mult = 0.1
+		state_radicals_from_sol_change_mult = 0.1
+	}
+	
 	on_enact = {
 		custom_tooltip = bureaucrats_pb_ig_shift_effect_tt
 		if = {
@@ -162,11 +330,6 @@ law_elected_bureaucrats = {
 			}
 			custom_tooltip = urban_aristocrats_int_ig_shift_effect_negative_tt
 		}
-	}
-	
-	modifier = {
-		country_bureaucracy_investment_cost_factor_mult = -0.15
-		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.1
 	}
 	
 	possible_political_movements = {

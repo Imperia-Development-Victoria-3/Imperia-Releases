@@ -67,8 +67,8 @@ law_slavery_banned = {
 			}
 		}
 	}
-
-		revolution_state_weight = {
+	
+	revolution_state_weight = {
 		value = 1
 		if = {
 		   limit = { 
@@ -113,18 +113,19 @@ law_slavery_banned = {
 						}
 					}
 					ruler = { has_ideology = ideology:ideology_abolitionist }
-					heir = { has_ideology = ideology:ideology_abolitionist }
+					heir ?= { has_ideology = ideology:ideology_abolitionist }
 				}
-				scope:law = law_type:law_slavery_banned
+				scope:law.type = law_type:law_slavery_banned
 			}
 			add = -100
-		}		
-				if = {
+		}
+		if = {
 			limit = {
 				law_is_important = yes
 			}
 			add = 750
 		}
+
 		#Petitions
 		if = {
 			limit = { 
@@ -165,9 +166,19 @@ law_debt_slavery = {
 				add_ideology = ideology_pro_slavery 
 			}
 		}
+		ig:ig_industrialists ?= { 
+			if = {
+				limit = {
+					NOT = { has_ideology = ideology:ideology_pro_slavery }
+				}			
+				add_ideology = ideology_pro_slavery 
+			}
+		}
 	}
 	
 	modifier = {
+		interest_group_ig_industrialists_pol_str_mult = 0.10
+
 	}
 	
 	pop_support = {
@@ -201,8 +212,8 @@ law_debt_slavery = {
 			}
 		}
 	}
-
-		possible_political_movements = {
+	
+	possible_political_movements = {
 		law_slavery_banned
 		law_legacy_slavery
 	}
@@ -324,8 +335,8 @@ law_slave_trade = {
 			}
 		}
 	}
-
-		ai_will_do = {
+	
+	ai_will_do = {
 		exists = ruler
 		ruler = {
 			has_ideology = ideology:ideology_slaver
@@ -366,7 +377,7 @@ law_slave_trade = {
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}
@@ -431,7 +442,7 @@ law_legacy_slavery = {
 		law_slavery_banned
 	}
 
-		pop_support = {
+	pop_support = {
 		value = 0
 		add = {
 			desc = "POP_ACADEMICS"
@@ -526,7 +537,7 @@ law_legacy_slavery = {
 			}
 			add = 50
 		}
-				if = {
+		if = {
 			limit = {
 				law_is_important = yes
 			}

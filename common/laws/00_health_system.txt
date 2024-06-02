@@ -40,12 +40,20 @@ law_charitable_health_system = {
 	unlocking_technologies = {
 		medical_degrees
 	}
+	
+	modifier = {
+		country_bureaucracy_investment_cost_factor_mult = 0.1
+	}
 	institution = institution_health_system
 	institution_modifier = {
-		state_mortality_mult = -0.035
 		interest_group_ig_devout_pol_str_mult = 0.1
+		interest_group_ig_devout_pop_attraction_mult = 0.05
+		state_mortality_mult = -0.025
+		state_conversion_mult = 0.05
 		state_pollution_reduction_health_mult = -0.1
-		#state_standard_of_living_add = 0.5
+		state_poor_standard_of_living_add = 0.3
+		state_middle_standard_of_living_add = 0.15
+		state_capitalists_investment_pool_efficiency_mult = -0.02
 	}
 
 	# Don't return to charity if we have something more advanced
@@ -108,13 +116,17 @@ law_private_health_insurance = {
 	}
 	
 	modifier = {
-		country_institution_health_system_max_investment_add = 2
+		country_bureaucracy_investment_cost_factor_mult = -0.1
+		country_max_companies_add = 1
 	}
 	institution = institution_health_system
 	institution_modifier = {
-		state_mortality_wealth_mult = -0.003
+		interest_group_ig_industrialists_pol_str_mult = 0.05
+		interest_group_ig_petty_bourgeoisie_pop_attraction_mult = 0.04
+		state_mortality_wealth_mult = -0.0025
 		state_pollution_reduction_health_mult = -0.1
-		#state_standard_of_living_add = 1
+		state_rich_standard_of_living_add = 2
+		state_middle_standard_of_living_add = 0.3
 	}
 	
 	pop_support = {
@@ -160,13 +172,17 @@ law_public_health_insurance = {
 	}
 	
 	modifier = {
-		country_institution_health_system_max_investment_add = 2
+		country_bureaucracy_investment_cost_factor_mult = 0.20
 	}
 	institution = institution_health_system
 	institution_modifier = {
-		state_mortality_mult = -0.05
+		interest_group_ig_rural_folk_pop_attraction_mult = 0.03
+		interest_group_ig_trade_unions_pop_attraction_mult = 0.04
+		state_dependent_political_participation_add = 0.04
+		state_dependent_wage_mult = 0.05
+		state_mortality_mult = -0.04
 		state_pollution_reduction_health_mult = -0.15
-		#state_standard_of_living_add = 1
+		state_standard_of_living_add = 0.5
 	}
 	
 	pop_support = {

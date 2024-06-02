@@ -157,7 +157,10 @@ boxer_rebellion_events.2 = {
 			name = revere_the_emperor
 			months = long_modifier_time
 		}
-		chi_add_1_fragile_unity = yes
+		
+		hidden_effect = {
+			post_notification = warlord_china_explosion_point_remove
+		}
 		set_variable = won_boxer_rebellion
 	}
 	
@@ -172,7 +175,10 @@ boxer_rebellion_events.2 = {
 			name = united_in_righteousness
 			months = long_modifier_time
 		}
-		chi_add_1_fragile_unity = yes
+		
+		hidden_effect = {
+			post_notification = warlord_china_explosion_point_remove
+		}
 		set_variable = won_boxer_rebellion
 	}
 }
@@ -201,12 +207,17 @@ boxer_rebellion_events.3 = {
 		cu:han = {
 			save_scope_as = han_culture
 		}
+		# Imperia addition
+		set_variable = je_boxer_rebellion_timed_out
 	}
 	
 	option = {
 		name = boxer_rebellion_events.3.a
 		default_option = yes
-		chi_remove_1_fragile_unity = yes
+		hidden_effect = {
+			post_notification = warlord_china_explosion_point_add
+		}
+		remove_primary_culture = cu:han
 		add_radicals = {
 			value = very_large_radicals
 			culture = cu:han
@@ -237,6 +248,7 @@ boxer_rebellion_events.3 = {
 					kill_character = yes
 				}
 			}
+			post_notification = warlord_china_explosion_point_add
 		}
 		
 		if = {
@@ -348,7 +360,7 @@ boxer_rebellion_events.3 = {
 				}
 			}
 		}
-		chi_remove_1_fragile_unity = yes
+		
 		if = {
 			limit = {
 				has_law = law_type:law_national_supremacy
@@ -402,7 +414,11 @@ boxer_rebellion_events.4 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_protest.dds"
 	trigger = {
+		NOT = {
+			has_variable = china_han_empire
+		}
 	}
+	
 	immediate = {
 		cu:manchu = {
 			save_scope_as = manchu_culture
@@ -412,7 +428,15 @@ boxer_rebellion_events.4 = {
 	option = {
 		name = boxer_rebellion_events.4.a
 		default_option = yes
-		chi_remove_1_fragile_unity = yes
+		hidden_effect = {
+			post_notification = warlord_china_explosion_point_add
+		}
+		
+		change_variable = {
+			name = china_warlord_explosion
+			add = 1
+		}
+		
 		if = {
 			limit = {
 				NOT = {
@@ -422,6 +446,7 @@ boxer_rebellion_events.4 = {
 			add_primary_culture = cu:han
 		}
 		remove_primary_culture = cu:manchu
+		set_variable = china_han_empire
 		add_radicals = {
 			value = very_large_radicals
 			culture = cu:manchu

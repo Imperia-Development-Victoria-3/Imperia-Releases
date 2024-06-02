@@ -102,6 +102,24 @@
 		liberate_country = 1.5
 	}
 	
+	wargoal_scores = {
+		conquer_state = {
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
+		}
+		
+		take_treaty_port = {
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
+		}
+		
+		make_tributary = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
+		}
+		
+		make_protectorate = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
+		}
+	}
+	
 	possible = {
 		always = yes
 	}
@@ -117,7 +135,8 @@
 		
 		if = {
 			limit = {
-				c:FRA ?= this
+				exists = c:FRA
+				c:FRA = this
 				ruler = {
 					has_variable = legitimist_leader	# strict adherence to the Congress of Vienna
 				}
@@ -308,6 +327,7 @@ ai_strategy_territorial_expansion = {
 				}
 				multiply = 0.1
 			}
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
 		}
 		
 		return_state = {
@@ -365,6 +385,7 @@ ai_strategy_territorial_expansion = {
 				}
 				multiply = 0.1
 			}
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
 		}
 	}
 	
@@ -807,6 +828,7 @@ ai_strategy_colonial_expansion = {
 				}
 				add = 5
 			}
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
 		}
 		
 		conquer_state = {
@@ -957,6 +979,7 @@ ai_strategy_colonial_expansion = {
 				}
 				multiply = 0.1
 			}
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
 		}
 	}
 	
@@ -1031,6 +1054,11 @@ ai_strategy_colonial_expansion = {
 				}
 			}
 			add = -50
+		if = {
+			limit = {
+				has_law = law_type:law_council_republic
+			}
+			multiply = 0.01
 		}
 	}
 }
@@ -1085,6 +1113,24 @@ ai_strategy_armed_isolationism = {
 		make_protectorate = 0.0
 		reduce_autonomy = 0.0
 		make_tributary = 0.0
+	}
+	
+	wargoal_scores = {
+		conquer_state = {
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
+		}
+		
+		take_treaty_port = {
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
+		}
+		
+		make_tributary = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
+		}
+		
+		make_protectorate = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
+		}
 	}
 	
 	possible = {
@@ -1372,6 +1418,22 @@ ai_strategy_economic_imperialism = {
 		}
 	}
 	
+	strategic_region_scores = {
+		region_japan = {	# Great Powers with significant navies should pay attention to Japan
+			if = {
+				limit = {
+					exists = c:JAP
+					c:JAP = {
+						has_law = law_type:law_isolationism
+					}
+					country_rank = rank_value:great_power
+					navy_size >= 25
+				}
+				add = 1000
+			}
+		}
+	}
+	
 	secret_goal_scores = {
 		dominate = {
 			if = {
@@ -1527,10 +1589,37 @@ ai_strategy_economic_imperialism = {
 	}
 	
 	wargoal_weights = {
-		take_treaty_port = 1.5
 		make_protectorate = 1.5
 		reduce_autonomy = 1.5
 		make_tributary = 1.5
+	}
+	
+	treaty_port_value = {
+		if = {
+			limit = {
+				can_reach_target_state = yes
+				scope:target_country = {
+					has_law = law_type:law_isolationism
+					gdp >= 2000000	# Not worth doing against very small markets
+				}
+				
+				scope:target_state = {
+					is_incorporated = yes
+				}
+			}
+			
+			add = {
+				value = 50
+
+				# More likely to grab a treaty port if we're already enemies in a play, ie they attacked us first
+				if = {
+					limit = {
+						is_diplomatic_play_enemy_of = scope:target_country
+					}
+					multiply = 2.0
+				}
+			}
+		}
 	}
 	
 	wargoal_scores = {
@@ -1633,8 +1722,13 @@ ai_strategy_economic_imperialism = {
 				}
 				add = 20
 			}
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
 		}
-		
+
+		make_tributary = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
+		}
+
 		conquer_state = {
 			if = {	#Do Not Take Chinese States In Full, unless another power has already done so
 				limit = {
@@ -1698,6 +1792,7 @@ ai_strategy_economic_imperialism = {
 				}
 				multiply = 0
 			}
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
 		}
 	}
 	
@@ -2147,7 +2242,7 @@ ai_strategy_unify_germany = {
 	building_group_weights = {
 		bg_army = 1.5
 	}
-	
+
 	wargoal_scores = {
 		conquer_state = {
 			multiply = 0.0
@@ -2251,6 +2346,7 @@ ai_strategy_unify_germany = {
 				}
 				add = -5000
 			}
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
 		}
 		
 		return_state = {
@@ -2363,6 +2459,17 @@ ai_strategy_unify_germany = {
 				}
 				multiply = 100.0
 			}
+		}
+		take_treaty_port = {
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
+		}
+		
+		make_tributary = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
+		}
+		
+		make_protectorate = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
 		}
 	}
 	
@@ -2895,6 +3002,7 @@ ai_strategy_unify_italy = {
 				}
 				multiply = 0.0
 			}
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
 		}
 		
 		make_protectorate = {
@@ -2932,6 +3040,7 @@ ai_strategy_unify_italy = {
 				}
 				add = 100
 			}
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
 		}
 		
 		return_state = {
@@ -3241,6 +3350,22 @@ ai_strategy_unify_ethiopia = {
 				}
 				add = 300
 			}
+		}
+		
+		conquer_state = {
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
+		}
+		
+		take_treaty_port = {
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
+		}
+		
+		make_tributary = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
+		}
+		
+		make_protectorate = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
 		}
 	}
 	
@@ -4115,6 +4240,23 @@ ai_strategy_unify_china = {
 		bg_army = 1.5
 	}
 	
+	state_value = {
+		if = {
+			limit = {
+				scope:target_state = {
+					state_region = {
+						OR = {
+							is_homeland = cu:manchu
+							is_homeland = cu:han
+						}
+					}
+				}
+				can_reach_target_state = yes
+			}
+			add = 100
+		}
+	}
+	
 	wargoal_scores = {
 		annex_country = {
 			if = {
@@ -4143,6 +4285,7 @@ ai_strategy_unify_china = {
 				}
 				add = 100
 			}
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
 		}
 		
 		return_state = {
@@ -4163,6 +4306,22 @@ ai_strategy_unify_china = {
 		}
 		
 		make_protectorate = {
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
+		}
+		
+		take_treaty_port = {
+			multiply = imperia_ai_foreign_law_state_wargoal_weight
+		}
+		
+		make_tributary = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
+		}
+		
+		make_protectorate = {
+			multiply = imperia_ai_foreign_law_country_wargoal_weight
+		}
+		
+		return_state = {
 			if = {
 				limit = {
 					scope:target_state = {

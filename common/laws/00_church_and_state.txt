@@ -29,9 +29,11 @@ law_state_religion = {
 	
 	modifier = {
 		interest_group_ig_devout_pol_str_mult = 0.3
-		state_radicals_from_sol_change_accepted_religion_mult = -0.1
-		state_loyalists_from_sol_change_accepted_religion_mult = 0.1
-		country_authority_add = 200
+		state_radicals_from_sol_change_accepted_religion_mult = -0.25
+		state_loyalists_from_sol_change_accepted_religion_mult = 0.25
+		country_authority_add = 400
+		state_conversion_mult = 0.75
+		state_radicals_from_discrimination_mult = 0.05
 	}
 	
 	possible_political_movements = {
@@ -114,9 +116,9 @@ law_freedom_of_conscience = {
 	
 	modifier = {
 		interest_group_ig_devout_pol_str_mult = 0.15
-		state_radicals_from_sol_change_accepted_religion_mult = -0.05
-		state_loyalists_from_sol_change_accepted_religion_mult = 0.05
-		country_authority_add = 100
+		state_radicals_from_sol_change_accepted_religion_mult = -0.15
+		state_loyalists_from_sol_change_accepted_religion_mult = 0.15
+		country_authority_add = 200
 	}
 	
 	possible_political_movements = {
@@ -216,6 +218,10 @@ law_total_separation = {
 		always = yes
 	}
 	
+	modifier = {
+		state_radicals_from_discrimination_mult = 0.1
+	}
+	
 	possible_political_movements = {
 		law_freedom_of_conscience
 	}
@@ -281,13 +287,14 @@ law_state_atheism = {
 	disallowing_laws = {
 		law_theocracy
 		law_monarchy
-		law_religious_schools
 	}
 	
 	modifier = {
 		interest_group_ig_devout_pol_str_mult = -0.5
-		state_conversion_mult = 0.25
-		country_authority_add = 200
+		interest_group_ig_devout_approval_add = -10
+		state_conversion_mult = 1.75
+		country_authority_add = 300
+		state_radicals_from_discrimination_mult = 0.15
 	}
 	
 	can_enact = {
@@ -312,10 +319,15 @@ law_state_atheism = {
 						has_variable = did_state_atheism_already	# no fun allowed
 					}
 				}
+				every_scope_state = {
+					limit = {
+						is_incorporated = yes
+					}
 				
-				convert_population = {
-					target = rel:atheist
-					value = 0.10
+					convert_population = {
+						target = rel:atheist
+						value = 0.25
+					}
 				}
 			}
 		}

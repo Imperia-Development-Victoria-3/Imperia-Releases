@@ -38,7 +38,7 @@
 law_religious_schools = {
 	group = lawgroup_education_system
 	icon = "gfx/interface/icons/law_icons/religious_schools.dds"
-	progressiveness = 0
+	progressiveness = 25
 	unlocking_technologies = {
 		rationalism
 	}
@@ -46,15 +46,28 @@ law_religious_schools = {
 	disallowing_laws = {
 		law_total_separation
 		law_state_atheism
+		law_serfdom
+	}
+	
+	modifier = {
+		country_bureaucracy_investment_cost_factor_mult = 0.05
 	}
 	institution = institution_schools
 	institution_modifier = {
-		state_conversion_mult = 0.2
-		state_education_access_add = 0.075	# 0.1
-		interest_group_ig_devout_pol_str_mult = 0.1
+		state_conversion_mult = 0.25
+		state_assimilation_mult = 0.05
+		state_education_access_add = 0.055
+		state_education_access_wealth_add = 0.002
+		country_clergymen_pol_str_mult = 0.05
+		interest_group_ig_landowners_pol_str_mult = 0.03
+		interest_group_ig_devout_pop_attraction_mult = 0.05
+		country_loyalists_from_legitimacy_mult = 0.03
+		country_radicals_from_legitimacy_mult = -0.02
+		state_accepted_birth_rate_mult = 0.012
 	}
 	
 	possible_political_movements = {
+		law_patriot_schools
 		law_private_schools
 		law_public_schools
 	}
@@ -81,7 +94,6 @@ law_religious_schools = {
 						}
 					}
 				}
-
 				# SoL 14 gives 0.1 pop support, 13 -> 0.2, 12 -> 0.3, ... 5 -> 1.0
 				value = 15
 				subtract = standard_of_living
@@ -96,11 +108,91 @@ law_religious_schools = {
 		value = 0
 		if = {
 			limit = {
-				law_is_important = yes
+				has_journal_entry = je_government_petition
+				has_variable = desired_law_var
+				scope:law = var:desired_law_var
 			}
 			add = 750
 		}
+	}
+}
+
+law_patriot_schools = {
+	group = lawgroup_education_system
+	icon = "gfx/interface/icons/law_icons/patriot_schools.dds"
+	progressiveness = 25
+	unlocking_technologies = {
+		mass_communication
+	}
+	
+	modifier = {
+		country_institution_schools_max_investment_add = 1
+		country_bureaucracy_investment_cost_factor_mult = 0.05
+	}
+	institution = institution_schools
+	institution_modifier = {
+		state_conversion_mult = 0.05
+		state_assimilation_mult = 0.15
+		state_education_access_add = 0.025
+		state_education_access_wealth_add = 0.004
+		interest_group_ig_armed_forces_pol_str_mult = 0.05
+		interest_group_ig_petty_bourgeoisie_pop_attraction_mult = 0.03
+		interest_group_ig_armed_forces_pop_attraction_mult = 0.05
+		state_loyalists_from_sol_change_mult = 0.075
+		country_radicals_from_legitimacy_mult = -0.05
+	}
+	
+	possible_political_movements = {
+		law_religious_schools
+		law_private_schools
+		law_public_schools
+	}
+	
+	pop_support = {
+		value = 0
+		add = {
+			desc = "POP_SOLDIERS"
+			if = {
+				limit = {
+					is_pop_type = soldiers
+				}
+				value = 0.15
+			}
+		}
 		
+		add = {
+			desc = "POP_OFFICERS"
+			if = {
+				limit = {
+					is_pop_type = officers
+				}
+				value = 0.33
+			}
+		}
+		
+		add = {
+			desc = "POP_POVERTY"
+			if = {
+				limit = {
+					owner = {
+						NOT = {
+							has_law = law_type:law_public_schools
+						}
+					}
+				}
+				# SoL 14 gives 0.1 pop support, 13 -> 0.2, 12 -> 0.3, ... 5 -> 1.0
+				value = 15
+				subtract = standard_of_living
+				multiply = 0.1
+				min = 0
+				max = 1
+			}
+		}
+	}
+	
+	ai_enact_weight_modifier = {
+		#Petitions
+		value = 0
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -115,7 +207,7 @@ law_religious_schools = {
 law_private_schools = {
 	group = lawgroup_education_system
 	icon = "gfx/interface/icons/law_icons/private_schools.dds"
-	progressiveness = 25
+	progressiveness = 50
 	unlocking_technologies = {
 		academia
 	}
@@ -123,14 +215,23 @@ law_private_schools = {
 	disallowing_laws = {
 		law_state_religion
 	}
+	
+	modifier = {
+		country_institution_schools_max_investment_add = 1
+		country_bureaucracy_investment_cost_factor_mult = -0.15
+	}
 	institution = institution_schools
 	institution_modifier = {
-		state_education_access_wealth_add = 0.0075	#0.005
-		interest_group_ig_intelligentsia_pol_str_mult = 0.1
+		state_education_access_add = 0.01
+		state_education_access_wealth_add = 0.007
+		interest_group_ig_intelligentsia_pol_str_mult = 0.05
+		interest_group_ig_industrialists_pop_attraction_mult = 0.03
+		country_company_throughput_bonus_add = 0.03
 	}
 	
 	possible_political_movements = {
 		law_religious_schools
+		law_patriot_schools
 		law_public_schools
 	}
 	
@@ -171,7 +272,7 @@ law_private_schools = {
 law_public_schools = {
 	group = lawgroup_education_system
 	icon = "gfx/interface/icons/law_icons/public_schools.dds"
-	progressiveness = 50
+	progressiveness = 75
 	unlocking_technologies = {
 		empiricism
 	}
@@ -180,15 +281,24 @@ law_public_schools = {
 		law_state_religion
 		law_serfdom
 	}
+	
+	modifier = {
+		country_bureaucracy_investment_cost_factor_mult = 0.10
+	}
 	institution = institution_schools
 	institution_modifier = {
-		state_assimilation_mult = 0.1
-		state_education_access_add = 0.15
+		state_assimilation_mult = 0.125
+		state_education_access_add = 0.11
+		state_education_access_wealth_add = 0.00075
+		interest_group_ig_intelligentsia_pol_str_mult = 0.02
+		interest_group_ig_rural_folk_pol_str_mult = 0.02
+		interest_group_ig_trade_unions_pol_str_mult = 0.03
 	}
 	
 	possible_political_movements = {
 		law_private_schools
 		law_religious_schools
+		law_patriot_schools
 	}
 	
 	pop_support = {
@@ -205,7 +315,6 @@ law_public_schools = {
 		
 		add = {
 			desc = "POP_POVERTY"
-
 			# SoL 14 gives 0.1 pop support, 13 -> 0.2, 12 -> 0.3, ... 5 -> 1.0
 			value = 15
 			subtract = standard_of_living

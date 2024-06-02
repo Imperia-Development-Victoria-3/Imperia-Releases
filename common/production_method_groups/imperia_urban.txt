@@ -1,0 +1,10 @@
+﻿pmg_road_transport = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_railway_prioritization
+		pm_hand_carts
+		pm_wagons
+		pm_steam_trucks
+		pm_diesel_trucks
+	}
+}

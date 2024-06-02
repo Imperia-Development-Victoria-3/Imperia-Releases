@@ -6,7 +6,7 @@
 			goods_input_coal_add = 2	# 60
 			goods_output_transportation_add = 20	# 600
 		}
-		
+		#(20*30)-((5*60)+(2*30)) = 240*52= 12,480
 		level_scaled = {
 			building_employment_laborers_add = 3000
 			building_employment_machinists_add = 1000
@@ -22,6 +22,12 @@
 		workforce_scaled = {
 			state_infrastructure_add = 20
 			state_pollution_generation_add = 25
+		}
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			market_land_trade_capacity_add = 0.3
 		}
 	}
 }
@@ -87,6 +93,12 @@ pm_electric_trains = {
 			state_infrastructure_add = 30
 		}
 	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			market_land_trade_capacity_add = 0.45
+		}
+	}
 	required_input_goods = electricity
 }
 
@@ -118,6 +130,12 @@ pm_diesel_trains = {
 		workforce_scaled = {
 			state_infrastructure_add = 40
 			state_pollution_generation_add = 15
+		}
+	}
+	
+	country_modifiers = {
+		workforce_scaled = {
+			market_land_trade_capacity_add = 0.6
 		}
 	}
 }

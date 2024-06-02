@@ -13,6 +13,8 @@
 		set_tariffs_import_priority = g:wood
 		set_tariffs_import_priority = g:hardwood
 		effect_starting_technology_tier_1_tech = yes
+		add_technology_researched = skirmisher_cavalry
+		add_technology_researched = signal_lamps
 		set_tax_level = medium
 		add_taxed_goods = g:liquor
 		add_taxed_goods = g:luxury_clothes
@@ -37,6 +39,7 @@
 		activate_law = law_type:law_charitable_health_system
 		activate_law = law_type:law_dedicated_police
 		activate_law = law_type:law_professional_army
+		activate_law = law_type:law_imperialism
 		activate_law = law_type:law_tenant_farmers	# enclosure acts
 		set_institution_investment_level = {
 			institution = institution_colonial_affairs
@@ -60,7 +63,12 @@
 		add_journal_entry = {
 			type = je_corn_laws
 		}
-		
+
+		set_institution_investment_level = {
+			institution = institution_citizenship
+			level = 3
+		}
+			
 		if = {
 			limit = {
 				has_dlc_feature = rp1_content

@@ -12,7 +12,7 @@
 			goods_input_fabric_add = 25
 			goods_input_wood_add = 75
 		}
-		
+		#(25x20)+(75x20) = 2000;1/1000 Construction per Pound of Cost
 		level_scaled = {
 			building_employment_bureaucrats_add = 500
 			building_employment_clerks_add = 500
@@ -39,7 +39,7 @@ pm_iron_frame_buildings = {
 	
 	country_modifiers = {
 		workforce_scaled = {
-			country_construction_add = 5
+			country_construction_add = 4
 		}
 	}
 	
@@ -50,7 +50,7 @@ pm_iron_frame_buildings = {
 			goods_input_iron_add = 50
 			goods_input_tools_add = 10
 		}
-		
+		#(40x20)+(20x20)+(50x40)+(10x40) = 3600;1/900 Construction per Pound of Cost
 		level_scaled = {
 			building_employment_bureaucrats_add = 500
 			building_employment_clerks_add = 500
@@ -78,7 +78,7 @@ pm_steel_frame_buildings = {
 	
 	country_modifiers = {
 		workforce_scaled = {
-			country_construction_add = 10
+			country_construction_add = 8
 		}
 	}
 	
@@ -89,7 +89,7 @@ pm_steel_frame_buildings = {
 			goods_input_explosives_add = 10
 			goods_input_tools_add = 20
 		}
-		
+		#(50x50)+(40x40)+(10x50)+(20x40) = 5400;1/675 Construction per Pound of Cost
 		level_scaled = {
 			building_employment_bureaucrats_add = 500
 			building_employment_clerks_add = 500
@@ -112,24 +112,24 @@ pm_steel_frame_buildings = {
 pm_arc_welded_buildings = {
 	texture = "gfx/interface/icons/production_method_icons/arc_welded_buildings.dds"
 	unlocking_technologies = {
-		arc_welding
+		electric_arc_process
 	}
 	
 	country_modifiers = {
 		workforce_scaled = {
-			country_construction_add = 15
+			country_construction_add = 16
 		}
 	}
 	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_steel_add = 50
+			goods_input_steel_add = 60
 			goods_input_glass_add = 40
-			goods_input_explosives_add = 20
-			goods_input_tools_add = 40
+			goods_input_explosives_add = 15
+			goods_input_tools_add = 30
 			goods_input_electricity_add = 40
 		}
-		
+		#(50x60)+(40x40)+(15x50)+(30x40)+(40x30) = 7750;1/484.375 Construction per Pound of Cost
 		level_scaled = {
 			building_employment_bureaucrats_add = 500
 			building_employment_clerks_add = 500
@@ -139,7 +139,7 @@ pm_arc_welded_buildings = {
 		}
 		
 		unscaled = {
-			building_laborers_mortality_mult = 0.1
+			building_laborers_mortality_mult = 0.05
 		}
 	}
 	

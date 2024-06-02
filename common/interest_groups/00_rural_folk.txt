@@ -299,6 +299,20 @@
 	
 	female_commander_chance = {
 		value = 0.0
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						country_has_primary_culture = cu:ibo
+						country_has_primary_culture = cu:akan
+					}
+				}
+			}
+			
+			add = {
+				value = 0.30
+			}
+		}
 	}
 	
 	female_politician_chance = {

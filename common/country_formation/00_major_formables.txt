@@ -3,25 +3,14 @@
 	is_major_formation = yes
 	unification_play = dp_unify_germany
 	leadership_play = dp_leadership_germany
-	required_states_fraction = 0.73	#0.75
+	required_states_fraction = 0.75
 	ai_will_do = {
-		has_technology_researched = nationalism
+		has_technology_researched = pan-nationalism
 	}
 	
 	possible = {
-		OR = {
-			any_country = {
-				filter = {
-					country_rank >= rank_value:major_power
-					OR = {
-						country_has_primary_culture = cu:north_german
-						country_has_primary_culture = cu:south_german
-					}
-				}
-				has_technology_researched = pan-nationalism
-				percent >= 1.00
-			}
-			
+		AND = {
+			has_technology_researched = pan-nationalism
 			custom_tooltip = {
 				text = je_german_unification_idea_trigger_desc
 				has_variable = je_german_unification_idea
@@ -49,25 +38,25 @@ ITA = {
 	leadership_play = dp_leadership_italy
 	required_states_fraction = 0.7
 	ai_will_do = {
-		has_technology_researched = nationalism
+		has_technology_researched = pan-nationalism
 	}
 	
 	possible = {
+		has_technology_researched = pan-nationalism
 		OR = {
 			country_has_primary_culture = cu:north_italian
 			country_has_primary_culture = cu:south_italian
 		}
 		
 		any_country = {
-			filter = {
-				OR = {
-					country_has_primary_culture = cu:north_italian
-					country_has_primary_culture = cu:south_italian
-				}
+			OR = {
+				country_has_primary_culture = cu:north_italian
+				country_has_primary_culture = cu:south_italian
 			}
-			has_technology_researched = nationalism
-			percent >= 0.50
+			has_technology_researched = pan-nationalism
+			percent = 0.5
 		}
+		has_technology_researched = pan-nationalism
 	}
 }
 

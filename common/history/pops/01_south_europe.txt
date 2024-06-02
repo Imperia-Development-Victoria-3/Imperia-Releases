@@ -286,7 +286,7 @@
 	}
 	
 	s:STATE_NAVARRA = {
-		region_state:SPA = {
+		region_state:CAR = {
 			create_pop = {
 				culture = spanish
 				size = 579200
@@ -305,7 +305,7 @@
 	}
 	
 	s:STATE_ARAGON = {
-		region_state:SPA = {
+		region_state:CAR = {
 			create_pop = {
 				culture = spanish
 				size = 401200
@@ -324,7 +324,7 @@
 	}
 	
 	s:STATE_CATALONIA = {
-		region_state:SPA = {
+		region_state:CAR = {
 			create_pop = {
 				culture = catalan
 				size = 704308
@@ -570,7 +570,7 @@
 	}
 	
 	s:STATE_DOBRUDJA = {
-		region_state:TUR = {
+		region_state:BUL = {
 			create_pop = {
 				culture = turkish
 				size = 59044
@@ -706,7 +706,7 @@
 	}
 	
 	s:STATE_BULGARIA = {
-		region_state:TUR = {
+		region_state:BUL = {
 			create_pop = {
 				culture = turkish
 				size = 210404

@@ -11,7 +11,7 @@
 	
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 20
+			country_convoys_capacity_add = 50	#20
 		}
 	}
 	ai_value = 500
@@ -33,7 +33,7 @@ pm_basic_port = {
 	
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 150
+			country_convoys_capacity_add = 200	#150
 		}
 	}
 	
@@ -71,7 +71,7 @@ pm_industrial_port = {
 	
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 175
+			country_convoys_capacity_add = 250	#175
 		}
 	}
 	
@@ -109,7 +109,7 @@ pm_modern_port = {
 	
 	country_modifiers = {
 		workforce_scaled = {
-			country_convoys_capacity_add = 200
+			country_convoys_capacity_add = 325	#225
 		}
 	}
 	
@@ -294,7 +294,8 @@ pm_scholastic_education = {
 	texture = "gfx/interface/icons/production_method_icons/scholastic_education.dds"
 	country_modifiers = {
 		workforce_scaled = {
-			country_weekly_innovation_add = 2
+			country_weekly_innovation_add = 1
+			country_prestige_add = 1.5
 		}
 	}
 	
@@ -304,14 +305,14 @@ pm_scholastic_education = {
 		}
 		
 		level_scaled = {
-			building_employment_clerks_add = 1500
-			building_employment_laborers_add = 1500
+			building_employment_clerks_add = 750
+			building_employment_laborers_add = 750
 		}
 	}
 	
 	state_modifiers = {
 		workforce_scaled = {
-			state_pop_qualifications_mult = 0.1
+			state_pop_qualifications_mult = 0.055
 		}
 	}
 }
@@ -324,24 +325,25 @@ pm_philosophy_department = {
 	
 	country_modifiers = {
 		workforce_scaled = {
-			country_weekly_innovation_add = 3
+			country_weekly_innovation_add = 1.25
+			country_prestige_add = 3
 		}
 	}
 	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 10
+			goods_input_paper_add = 15	# was 10 along with 10 services
 		}
 		
 		level_scaled = {
-			building_employment_clerks_add = 1750
-			building_employment_laborers_add = 1250
+			building_employment_clerks_add = 875
+			building_employment_laborers_add = 625
 		}
 	}
 	
 	state_modifiers = {
 		workforce_scaled = {
-			state_pop_qualifications_mult = 0.15
+			state_pop_qualifications_mult = 0.085
 		}
 	}
 }
@@ -354,24 +356,25 @@ pm_analytical_philosophy_department = {
 	
 	country_modifiers = {
 		workforce_scaled = {
-			country_weekly_innovation_add = 4
+			country_weekly_innovation_add = 1.5
+			country_prestige_add = 6
 		}
 	}
 	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 15
+			goods_input_paper_add = 25	# Was 15 along with 25 services
 		}
 		
 		level_scaled = {
-			building_employment_clerks_add = 2000
-			building_employment_laborers_add = 1000
+			building_employment_clerks_add = 1000
+			building_employment_laborers_add = 500
 		}
 	}
 	
 	state_modifiers = {
 		workforce_scaled = {
-			state_pop_qualifications_mult = 0.2
+			state_pop_qualifications_mult = 0.12
 		}
 	}
 }
@@ -380,11 +383,12 @@ pm_secular_academia = {
 	texture = "gfx/interface/icons/production_method_icons/ownership_academics.dds"
 	disallowing_laws = {
 		law_state_religion
+		law_patriot_schools
 	}
 	
 	building_modifiers = {
 		level_scaled = {
-			building_employment_academics_add = 2000
+			building_employment_academics_add = 1000
 		}
 	}
 }
@@ -398,8 +402,8 @@ pm_religious_academia = {
 	
 	building_modifiers = {
 		level_scaled = {
-			building_employment_clergymen_add = 1000
-			building_employment_academics_add = 1000
+			building_employment_clergymen_add = 500
+			building_employment_academics_add = 500
 		}
 	}
 }
@@ -427,21 +431,26 @@ pm_skyscraper_bureaucratic_nexus = {
 
 pm_skyscraper_trade_nexus = {
 	texture = "gfx/interface/icons/production_method_icons/skyscraper_trade_nexus.dds"
+	unlocking_technologies = {
+		elevator
+	}
+	
 	country_modifiers = {
 		workforce_scaled = {
 			country_trade_route_quantity_mult = 0.25
+			building_government_administration_throughput_add = 0.25
 		}
 	}
 	
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_paper_add = 25
+			goods_input_paper_add = 50
 		}
 		
 		level_scaled = {
-			building_employment_laborers_add = 1000
-			building_employment_clerks_add = 2500
-			building_employment_bureaucrats_add = 1500
+			building_employment_laborers_add = 2000
+			building_employment_clerks_add = 5000
+			building_employment_bureaucrats_add = 3000
 		}
 	}
 }
