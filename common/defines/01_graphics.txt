@@ -3,9 +3,9 @@ NGraphics = {
 }
 
 NCamera = {
-    FOV	= 60 	# Field-of-View
-    ZNEAR = 1
-    ZFAR = 10000
+	FOV	= 55 	# Field-of-View
+	ZNEAR = 1
+	ZFAR = 50000
 
 	EDGE_SCROLLING_PIXELS = 10 # how many pixels from window edge that will trigger edge scrolling
 
@@ -30,15 +30,38 @@ NCities = {
 	GRID_SCALE = 0.6					# was 1.1
 	MESH_SCALE = 0.5					# was 1.0
 
-	CITY_RIVER_DISTANCE_BIAS = 0.3		# Higher values = more river avoidance
+	CITY_RIVER_DISTANCE_BIAS = 0.75		# Higher values = more river avoidance
 	FARM_RIVER_DISTANCE_BIAS = 0.75
 	MINE_RIVER_DISTANCE_BIAS = 0.75
-	PORT_RIVER_DISTANCE_BIAS = 0.3
+	PORT_RIVER_DISTANCE_BIAS = 0.75
 	WOOD_RIVER_DISTANCE_BIAS = 0.75
 
-	CITY_ROAD_DISTANCE_BIAS = 0.3
+	CITY_ROAD_DISTANCE_BIAS = -1.00
 	FARM_ROAD_DISTANCE_BIAS = 0.25
 	MINE_ROAD_DISTANCE_BIAS = 0.25
-	PORT_ROAD_DISTANCE_BIAS = 0.3
-	WOOD_ROAD_DISTANCE_BIAS = 0.25
+	PORT_ROAD_DISTANCE_BIAS = -1.00
+	WOOD_ROAD_DISTANCE_BIAS = 0.25	
+
+	RICH_SOL = 20.0							# Buildings above this average SoL use the rich model
+	MID_SOL = 10.0							# Buildings above this average SoL use the middleclass model
+
+	RESIDENTIAL_CHANGE_DELAY = 5.0			# Time between updating the residential buildings of a city ( + 0-1 second for some random variance )
+
+	RESIDENTIAL_PROMOTE_ENTITY = "residential_promotion_entity" # Entity that is spawned on a residential building that is promoted due to demographics changes
+	RESIDENTIAL_DEMOTE_ENTITY = "residential_demotion_entity"	# Entity that is spawned on a residential building that is demoted due to demographics changes
+
+	CITY_VFX_ZOOM_CUTOFF = 250				# zoom at which we hide all city VFXes
+	CITY_PARTICLES_ZOOM_CUTOFF = 200		# zoom at which we hide all city particle effects (for example chimney smoke)
+
+	# For each camera distance to the city there is a cut-off factor for the amount of visible buildings in the city
+	# if the distance is lower than the first step, then the factor is 0, i.e. all buildings are visible
+	# if the distance is higher than the last step, then the factor from the last step is taken
+	# if the distance is between steps, then the factor is calculated linearly
+	CITY_BUILDINGS_CUTOFF_DISTANCES = 	{ 300 	400 	600 }	# steps of distances from camera to city to which apply corresponding cut-off factors, must be sorted from low to high
+	CITY_BUILDINGS_CUTOFF_FACTORS = 	{ 0 	0.7 	0.95 }	# which share of buildings to cut off at a certain distance step, must be sorted from low to high
+
+	NIGHT_LIGHT_COLOR_DEFAULT = { 1.0 0.16 0.035 6.5 }	# Lights color, Alpha is max intensity
+	NIGHT_LIGHT_FADE_TIME = 0.35			# Time for indiviual lights to fade in/out from when they activate
+	NIGHT_LIGHT_ACTIVATE_BEGIN = 0.3		# Time at which lights start to activate, on a 0.0 - 1.0 cycle where day is at 0.0 and 0.5 is the midpoint between day and night
+	NIGHT_LIGHT_ACTIVATE_END = 0.75			# Time at which lights finish activating
 }
