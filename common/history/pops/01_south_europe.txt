@@ -496,7 +496,13 @@
 			
 			create_pop = {
 				culture = greek
-				size = 281992
+				size = 261992
+			}
+			
+			create_pop = {
+				pop_type = shopkeepers
+				culture = greek
+				size = 20000
 			}
 			
 			create_pop = {
@@ -511,12 +517,42 @@
 			
 			create_pop = {
 				culture = armenian
-				size = 67996
+				size = 57996
+			}
+			
+			create_pop = {
+				pop_type = shopkeepers
+				culture = armenian
+				size = 10000
 			}
 			
 			create_pop = {
 				culture = sephardic
-				size = 50004
+				size = 15004
+			}
+			
+			create_pop = {
+				pop_type = clerks
+				culture = sephardic
+				size = 20000
+			}
+			
+			create_pop = {
+				pop_type = shopkeepers
+				culture = sephardic
+				size = 10000
+			}
+			
+			create_pop = {
+				pop_type = machinists
+				culture = sephardic
+				size = 3000
+			}
+			
+			create_pop = {
+				pop_type = engineers
+				culture = sephardic
+				size = 2000
 			}
 			
 			create_pop = {
@@ -736,7 +772,13 @@
 			
 			create_pop = {
 				culture = hungarian
-				size = 28000
+				size = 8700
+			}
+			
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 19300
 			}
 			
 			create_pop = {
@@ -765,7 +807,13 @@
 			
 			create_pop = {
 				culture = hungarian
-				size = 16000
+				size = 5600
+			}
+			
+			create_pop = {
+				pop_type = aristocrats
+				culture = hungarian
+				size = 10400
 			}
 			
 			create_pop = {
@@ -969,6 +1017,13 @@
 			}
 			
 			create_pop = {
+				pop_type = shopkeepers
+				culture = greek
+				size = 5000
+			}
+			
+			create_pop = {
+				pop_type = shopkeepers
 				culture = sephardic
 				size = 3796
 			}
@@ -1013,6 +1068,29 @@
 	s:STATE_MACEDONIA = {
 		region_state:TUR = {
 			create_pop = {
+				culture = sephardic
+				size = 52102
+			}
+			
+			create_pop = {
+				pop_type = capitalists
+				culture = sephardic
+				size = 300
+			}
+			
+			create_pop = {
+				pop_type = machinists
+				culture = sephardic
+				size = 2000
+			}
+			
+			create_pop = {
+				pop_type = shopkeepers
+				culture = sephardic
+				size = 3000
+			}
+			
+			create_pop = {
 				culture = turkish
 				size = 84000
 			}
@@ -1025,11 +1103,6 @@
 			create_pop = {
 				culture = bulgarian
 				size = 28000
-			}
-			
-			create_pop = {
-				culture = sephardic
-				size = 57204
 			}
 			
 			create_pop = {
@@ -1055,7 +1128,13 @@
 			
 			create_pop = {
 				culture = greek
-				size = 376000
+				size = 346000
+			}
+			
+			create_pop = {
+				pop_type = shopkeepers
+				culture = greek
+				size = 30000
 			}
 			
 			create_pop = {

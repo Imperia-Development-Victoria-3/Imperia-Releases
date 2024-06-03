@@ -65,6 +65,13 @@ law_state_religion = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -162,6 +169,13 @@ law_freedom_of_conscience = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -246,6 +260,13 @@ law_total_separation = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -287,18 +308,27 @@ law_state_atheism = {
 		add_modifier = {
 			name = antireligious_policies
 			months = long_modifier_time
+			is_decaying = yes	# VTM
 		}
 		
 		custom_tooltip = {
 			text = state_atheism_conversion_tt
-			every_scope_state = {
+			if = {
 				limit = {
-					is_incorporated = yes
+					NOT = {
+						has_variable = did_state_atheism_already	# no fun allowed
+					}
 				}
 				
-				convert_population = {
-					target = rel:atheist
-					value = 0.25
+				every_scope_state = {
+					limit = {
+						is_incorporated = yes
+					}
+					
+					convert_population = {
+						target = rel:atheist
+						value = 0.25
+					}
 				}
 			}
 		}
@@ -337,8 +367,31 @@ law_state_atheism = {
 		}
 	}
 	
-	ai_enact_weight_modifier = {	#Petitions
-		value = 0
+	ai_enact_weight_modifier = {
+		value = -75	# AI is less likely to pass State Atheism by default
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
+				any_interest_group = {
+					is_in_government = yes
+					is_powerful = yes
+					leader ?= {
+						OR = {
+							has_ideology = ideology:ideology_vanguardist
+							has_ideology = ideology:ideology_atheist
+						}
+					}
+				}
+			}
+			add = 75
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition

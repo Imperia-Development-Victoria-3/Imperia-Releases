@@ -48,6 +48,13 @@ law_mercantilism = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -92,6 +99,13 @@ law_protectionism = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -150,6 +164,13 @@ law_free_trade = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -195,6 +216,13 @@ law_isolationism = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition

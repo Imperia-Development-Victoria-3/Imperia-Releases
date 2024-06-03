@@ -90,6 +90,13 @@ law_autocracy = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -174,6 +181,13 @@ law_technocracy = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -276,6 +290,13 @@ law_oligarchy = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -350,6 +371,13 @@ law_elder_council = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -435,6 +463,13 @@ law_landed_voting = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -517,6 +552,13 @@ law_wealth_voting = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -586,6 +628,13 @@ law_census_voting = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -673,6 +722,13 @@ law_universal_suffrage = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -740,6 +796,13 @@ law_anarchy = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -827,8 +890,7 @@ law_single_party_state = {
 			}
 		}
 		
-		hidden_effect = {
-			#Clears all currently active parties
+		hidden_effect = {	#Clears all currently active parties
 			deactivate_parties = yes
 		}
 		update_party_support = yes	#Reactivates precisely one legal party
@@ -837,8 +899,7 @@ law_single_party_state = {
 			every_interest_group = {
 				limit = {
 					is_in_government = yes
-					NOT = {
-						#Removes all IGs from government that aren't in your party
+					NOT = {	#Removes all IGs from government that aren't in your party
 						has_party = yes
 					}
 				}
@@ -846,8 +907,7 @@ law_single_party_state = {
 			}
 			
 			every_interest_group = {
-				limit = {
-					#Adds all IGs that are in your party to the government
+				limit = {	#Adds all IGs that are in your party to the government
 					is_in_government = no
 					has_party = yes
 				}
@@ -915,6 +975,13 @@ law_single_party_state = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition

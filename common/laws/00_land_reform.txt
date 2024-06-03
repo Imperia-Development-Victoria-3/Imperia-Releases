@@ -62,9 +62,15 @@
 		always = no
 	}
 	
-	ai_enact_weight_modifier = {
-		#Petitions
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -154,6 +160,13 @@ law_tenant_farmers = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -222,6 +235,21 @@ law_commercialized_agriculture = {
 		}
 	}
 	
+	on_activate = {
+		add_modifier = {
+			name = land_redistribution_modifier
+			months = long_modifier_time
+			is_decaying = yes
+		}
+		
+		add_modifier = {
+			name = land_redistribution_compensation_modifier
+			multiplier = money_amount_multiplier_small
+			months = long_modifier_time
+			is_decaying = yes
+		}
+	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -254,6 +282,13 @@ law_commercialized_agriculture = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -316,6 +351,21 @@ law_homesteading = {
 		}
 	}
 	
+	on_activate = {
+		add_modifier = {
+			name = land_redistribution_modifier
+			months = long_modifier_time
+			is_decaying = yes
+		}
+		
+		add_modifier = {
+			name = land_redistribution_compensation_modifier
+			months = long_modifier_time
+			is_decaying = yes
+			multiplier = money_amount_multiplier_medium
+		}
+	}
+	
 	pop_support = {
 		value = 0
 		add = {
@@ -350,6 +400,13 @@ law_homesteading = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -409,6 +466,15 @@ law_collectivized_agriculture = {
 		law_commercialized_agriculture
 	}
 	
+	on_activate = {
+		add_modifier = {
+			name = land_redistribution_modifier
+			months = long_modifier_time
+			is_decaying = yes
+		}
+		## Red Sun in the Sky starts playing ##
+	}
+	
 	unlocking_technologies = {
 		socialism
 	}
@@ -434,6 +500,13 @@ law_collectivized_agriculture = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition

@@ -1,0 +1,123 @@
+﻿vtm_outfits = {
+	usage = game
+	selection_behavior = weighted_random
+
+    ### Outfits ###
+    # OPB
+    opb_clothes = {
+		dna_modifiers = {   
+            accessory = {
+                mode = add
+                gene = vtm_outfits
+                template = opb_suit
+                accessory = male_clothes_secular_opb_suit
+            }
+            accessory = {
+                mode = add
+                gene = vtm_legwear
+                template = opb_suit_legwear
+                accessory = male_legwear_secular_opb_suit
+            }
+        }
+		weight = {
+			base = 0
+			modifier = {
+				add = 100000
+				scope:character ?= {
+					OR = {
+                        has_template = agitator_opb
+                        has_template = agitator_vtm_doodlez_template
+                    }
+				}
+			}
+		}
+	}
+
+    # Teddy
+    vtm_teddy_regular_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = civilian_coats
+                template = european_civilian_coats
+                accessory = male_civilian_coat_european_01
+            }
+            accessory = {
+                mode = add
+                gene = waistcoats
+                template = historical_waistcoats_lenin
+                accessory = male_waistcoat_historical_01_lenin
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = european_legwear_colors
+                accessory = male_legwear_european_01_black
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100000
+                scope:character ?= {
+                    has_template = agitator_opb
+                    has_template = agitator_vtm_doodlez_template
+                    NOR = {
+                        has_role = general
+                        has_role = admiral
+                    }
+                }
+            }
+        }
+    }
+    # Rough Rider Teddy
+    vtm_teddy_rough_rider_clothes = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = headgear
+                template = american_military_headgear
+                accessory = male_headgear_european_military_06
+            }        
+            accessory = {
+                mode = add
+                gene = outfits
+                template = late_american_soldier_outfit
+                accessory = male_outfit_south_american_01_late_american
+            }
+            accessory = {
+                mode = add
+                gene = legwear
+                template = late_american_soldier_legwear
+                accessory = male_legwear_south_american_01_late_american 
+            }
+            accessory = {
+                mode = add
+                gene = belts
+                template = generic_belts
+                accessory = male_belt_suspenders_01
+            }
+        }
+
+        weight = {
+            base = 0
+            modifier = {
+                add = 100001
+                scope:character ?= {
+                    has_template = usa_roosevelt_character_template
+                    OR = {
+                        has_role = general
+                        has_role = admiral
+                        AND = {
+                            is_ruler = yes
+                            owner ?= {
+                                is_at_war = yes
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

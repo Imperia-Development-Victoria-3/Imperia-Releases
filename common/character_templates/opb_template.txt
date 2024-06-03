@@ -1,0 +1,47 @@
+﻿agitator_opb = {	# NEVER RENAME THIS
+	first_name = Johannes
+	last_name = Bajuware
+	culture = cu:south_german
+	age = default
+	is_agitator = yes
+	historical = yes
+	female = no
+	religion = rel:catholic
+	interest_group = ig_petty_bourgeoisie
+	ideology = ideology_radical	# _bavarianism can bring this back once ive set up the triggers 
+	dna = dna_opb
+	traits = {
+		naval_theory_enthusiast
+		direct
+		ambitious
+		inspirational_orator
+	}
+	
+	agitator_usage = {
+		country_trigger = {
+			NOT = {
+				has_global_variable = spawned_opb
+			}
+			
+			OR = {
+				c:BAV ?= this
+				any_scope_state = {
+					state_region = s:STATE_BAVARIA
+				}
+			}
+		}
+		
+		interest_group_trigger = {
+			is_marginal = no
+			is_interest_group_type = ig_petty_bourgeoisie
+		}
+		earliest_usage_date = 1836.1.1
+		latest_usage_date = 1871.12.31
+		chance = 1
+	}
+	
+	on_created = {
+		set_global_variable = spawned_opb
+		# set_variable = is_opb # might use this later
+	}
+}

@@ -1,0 +1,7 @@
+﻿vtm_outfits_trigger = {
+	OR = {
+		has_variable = has_scripted_outfit
+		has_template = agitator_opb
+		has_template = agitator_vtm_doodlez_template
+	}
+}

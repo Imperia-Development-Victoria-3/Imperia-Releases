@@ -1,0 +1,25 @@
+﻿missouri_compromise = {	#edited to increase landowner strength in USA
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_ig_landowners_pol_str_mult = 0.3
+	country_aristocrats_voting_power_add = 50
+	country_farmers_voting_power_add = 25
+}
+
+modifier_texas_war_of_independence = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	state_conscription_rate_add = 0.3
+	unit_defense_mult = 0.5	# new
+	unit_morale_loss_mult = -0.5	# new
+}
+
+taiping_army_modifier = {	#Taiping 
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	state_conscription_rate_mult = 0.10	#1.0
+	building_training_rate_mult = 0.10	#0.5 #1.0
+	unit_army_defense_mult = 0.10	#0.15
+}
+
+modifier_bank_robbery_payments = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}

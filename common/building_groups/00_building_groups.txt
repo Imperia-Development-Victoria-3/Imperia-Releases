@@ -417,7 +417,7 @@ bg_power = {
 	should_auto_expand = {
 		default_auto_expand_rule = yes
 	}
-	economy_of_scale_ai_factor = 1.5
+	economy_of_scale_ai_factor = 1.0
 	infrastructure_usage_per_level = 2
 	urbanization = 10
 }

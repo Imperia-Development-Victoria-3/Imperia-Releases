@@ -45,7 +45,7 @@ base_values = {
 	country_construction_add = 10
 	building_mobilization_cost_mult = 0.6
 	building_economy_of_scale_level_cap_add = 20
-	state_market_access_price_impact = 0.75
+	state_market_access_price_impact = 0.65	# 0.75
 	country_company_throughput_bonus_add = 0.1
 	country_company_construction_efficiency_bonus_add = 0.25
 	country_max_weekly_construction_progress_add = 10
@@ -459,17 +459,17 @@ battle_average_provinces_lost = {
 
 battle_army_experience = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	unit_army_experience_gain_add = 5.0
+	unit_army_experience_gain_add = 1.0	# 5.0
 }
 
 battle_navy_experience = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	unit_navy_experience_gain_add = 5.0
+	unit_navy_experience_gain_add = 1.0	# 5.0
 }
 
 battle_unit_experience = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	unit_experience_gain_add = 5.0
+	unit_experience_gain_add = 1.0	# 5.0
 }
 
 # Scales with how much population is under low pop threshold
@@ -678,7 +678,7 @@ repudiated_obligation = {
 }
 
 base_army_attrition = {
-	military_formation_attrition_risk_add = 0.1
+	military_formation_attrition_risk_add = 0.1	#0.2
 }
 
 base_navy_attrition = {

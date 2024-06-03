@@ -1,0 +1,4 @@
+﻿# This is executed last among all history
+# Doing this to avoid editing map_data or history files as much as possible as they need to be overridden in full
+# Avoids a lot of headaches when updating after each patch
+# If you are already editing the map you can remove this and just do all your changes in the respective files if you so desire

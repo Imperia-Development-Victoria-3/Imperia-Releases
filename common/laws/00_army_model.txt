@@ -61,6 +61,13 @@
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -139,6 +146,13 @@ law_professional_army = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -211,6 +225,13 @@ law_national_militia = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -263,6 +284,13 @@ law_mass_conscription = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition

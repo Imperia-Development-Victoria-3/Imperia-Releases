@@ -19,9 +19,15 @@
 		always = no
 	}
 	
-	ai_enact_weight_modifier = {
-		#Petitions
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -163,6 +169,13 @@ law_inquisition = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -233,6 +246,13 @@ law_secret_police = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
+				law_is_important = yes
 			}
 			add = 750
 		}
@@ -359,6 +379,13 @@ law_guaranteed_liberties = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition

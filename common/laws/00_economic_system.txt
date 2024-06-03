@@ -48,9 +48,15 @@ law_traditionalism = {
 		always = no
 	}
 	
-	ai_enact_weight_modifier = {
-		#Petitions
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -130,6 +136,13 @@ law_interventionism = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -230,9 +243,15 @@ law_agrarianism = {
 		}
 	}
 	
-	ai_enact_weight_modifier = {
-		#Petitions
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -373,9 +392,15 @@ law_industry_banned = {
 		always = no
 	}
 	
-	ai_enact_weight_modifier = {
-		#Petitions
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -461,6 +486,13 @@ law_laissez_faire = {
 		value = 0
 		if = {
 			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
+		if = {
+			limit = {
 				has_journal_entry = je_government_petition
 				has_variable = desired_law_var
 				scope:law = var:desired_law_var
@@ -538,6 +570,13 @@ law_cooperative_ownership = {
 	
 	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
@@ -630,9 +669,15 @@ law_command_economy = {
 		}
 	}
 	
-	ai_enact_weight_modifier = {
-		#Petitions
+	ai_enact_weight_modifier = {	#Petitions
 		value = 0
+		if = {
+			limit = {
+				law_is_important = yes
+			}
+			add = 750
+		}
+		
 		if = {
 			limit = {
 				has_journal_entry = je_government_petition
