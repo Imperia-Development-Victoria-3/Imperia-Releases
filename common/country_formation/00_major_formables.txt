@@ -9,18 +9,18 @@
 	}
 	
 	possible = {
-		AND = {
-			has_technology_researched = pan-nationalism
-			custom_tooltip = {
-				text = je_german_unification_idea_trigger_desc
-				has_variable = je_german_unification_idea
-			}
-			
+		OR = {
+			AND = {
+				has_technology_researched = pan-nationalism
+				custom_tooltip = {
+					text = je_german_unification_idea_trigger_desc
+					has_variable = je_german_unification_idea
+				}		
+			}	
 			custom_tooltip = {
 				text = german_homelands_trigger_desc
 				has_global_variable = german_homelands_under_threat
-			}
-			
+			}					
 			custom_tooltip = {
 				text = no_confederation_of_the_rhine_tt
 				NOT = {
