@@ -49,12 +49,14 @@ ITA = {
 		}
 		
 		any_country = {
-			OR = {
-				country_has_primary_culture = cu:north_italian
-				country_has_primary_culture = cu:south_italian
+			filter = {
+				OR = {
+					country_has_primary_culture = cu:north_italian
+					country_has_primary_culture = cu:south_italian
+				}
 			}
 			has_technology_researched = pan-nationalism
-			percent = 0.5
+			percent >= 0.5
 		}
 		has_technology_researched = pan-nationalism
 	}
