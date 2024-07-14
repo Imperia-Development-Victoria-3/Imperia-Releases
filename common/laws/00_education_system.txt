@@ -118,7 +118,7 @@ law_religious_schools = {
 		if = {
 			limit = { 
 				OR = {
-					has_journal_entry = je_sick_man_education
+					has_journal_entry = je_sick_man_absolute_education
 					has_journal_entry = je_terakoya
 				}
 				has_law = law_type:law_no_schools
@@ -238,6 +238,17 @@ law_patriot_schools = {
 			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
+
+		if = {
+			limit = { 
+				OR = {
+					has_journal_entry = je_sick_man_absolute_education
+					has_journal_entry = je_terakoya
+				}
+				has_law = law_type:law_no_schools
+			}
+			add = 1000
+		}
 	}
 }
 
@@ -308,7 +319,7 @@ law_private_schools = {
 		if = {
 			limit = { 
 				OR = {
-					has_journal_entry = je_sick_man_education
+					has_journal_entry = je_sick_man_liberal_education
 					has_journal_entry = je_terakoya
 				}
 				has_law = law_type:law_no_schools
@@ -415,7 +426,7 @@ law_public_schools = {
 		if = {
 			limit = { 
 				OR = {
-					has_journal_entry = je_sick_man_education
+					has_journal_entry = je_sick_man_liberal_education
 					has_journal_entry = je_terakoya
 				}
 				has_law = law_type:law_no_schools
