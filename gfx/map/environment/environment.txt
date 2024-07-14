@@ -1,4 +1,4 @@
-## Global environment settings
+﻿## Global environment settings
 
 ######## Light ########
 # Sun
