@@ -500,7 +500,7 @@ PixelShader =
 
 				// MOD
 				#ifndef EG_FLATMAP_DAYNIGHT_OFF
-					Flatmap *= _NightWaterAdjustment;
+					Flatmap *= max(_NightWaterAdjustment, 0.5);
 				#endif
 				// END MOD
 
