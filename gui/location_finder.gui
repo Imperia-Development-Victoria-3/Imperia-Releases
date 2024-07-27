@@ -87,7 +87,7 @@ default_popup =  {
 				visible = "[GetVariableSystem.HasValue( 'finder_tabs', 'enhanced_graphics' )]"
 			}
 			blockoverride "second_button_visibility_checked" {
-				visible = "[Not(GetVariableSystem.HasValue( 'finder_tabs', 'enhanced_graphics' ))]"
+				visible = "[And(Not(GetVariableSystem.HasValue( 'finder_tabs', 'enhanced_graphics' )), JominiIsHostOrLocal)]"
 			}
 			blockoverride "second_button_selected" {
 				raw_text = "#Bold Enhanced Graphics Settings#!"
