@@ -645,8 +645,7 @@ warlord_china_events.200 = {
 	trigger = {
 		# Triggered by JE
 	}
-	immediate = {
-	}
+	immediate = {}
 	option = {
 		default_option = yes
 		name = warlord_china_events.200.a
@@ -772,16 +771,16 @@ warlord_china_events.301 = {
 								}
 							}
 						}
+						add = 25
 					}
-					add = 25
 				}
 				modifier = {
 					if = {
 						limit = {
 							government_legitimacy = 75
 						}
+						add = 25
 					}
-					add = 25
 				}
 				root = {
 					add_modifier = {
@@ -795,8 +794,8 @@ warlord_china_events.301 = {
 						limit = {
 							government_legitimacy = 50
 						}
+						add = 25
 					}
-					add = 25
 				}
 				root = {
 					add_modifier = {

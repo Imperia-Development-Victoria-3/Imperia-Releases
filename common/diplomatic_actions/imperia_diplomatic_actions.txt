@@ -1,5 +1,5 @@
 ﻿player_diplomatic_backlash = {
-	groups= {
+	groups = {
 		general
 	}
 	requires_approval = yes
@@ -49,14 +49,14 @@
 }
 
 player_diplomatic_support = {
-	groups= {
+	groups = {
 		general
 	}
 	requires_approval = yes
 	should_notify_third_parties = yes
 	show_effect_in_tooltip = yes
 	show_confirmation_box = no
-	is_hostile = yes
+	is_hostile = no
 	selectable = {
 		is_player = yes
 	}
@@ -99,7 +99,7 @@ player_diplomatic_support = {
 }
 
 minor_war_reparations = {
-	groups= {
+	groups = {
 		general
 	}
 	requires_approval = no
@@ -148,7 +148,7 @@ forced_embargo_pact = {
 		cost = 0
 		is_embargo = yes
 		is_two_sided_pact = no
-		relations_progress_per_day = -1		# At -100, -1 relations
+		relations_progress_per_day = -1	# At -100, -1 relations
 		requirement_to_maintain = {
 			trigger = {
 				scope:target_country = {
