@@ -60,18 +60,6 @@ law_national_guard = {
 			}
 		}
 	}
-	pop_support = {
-		value = 0
-		add = {
-			desc = "POP_OFFICERS"
-			if = {
-				limit = {
-					is_pop_type = officers
-				}
-				value = 0.33
-			}
-		}
-	}
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -100,7 +88,7 @@ law_localized_garrisons = {
 	modifier = {
 		country_institution_home_defence_max_investment_add = 1
 		country_institution_cost_institution_home_defence_mult = -0.1
-	}	
+	}
 	institution = institution_home_defence
 	institution_modifier = {
 		state_conscription_rate_add = 0.003
@@ -114,7 +102,7 @@ law_localized_garrisons = {
 		political_movement_radicalism_mult = 0.05
 		tax_land_add = 0.03
 		tax_per_capita_add = 0.01
-
+		
 	}
 	possible_political_movements = {
 		law_national_guard
@@ -125,7 +113,7 @@ law_localized_garrisons = {
 	pop_support = {
 		value = 0
 		add = {
-			desc = "POP_LANDOWNERS"
+			desc = "POP_ARISTOCRATS"
 			if = {
 				limit = {
 					is_pop_type = aristocrats
@@ -133,9 +121,6 @@ law_localized_garrisons = {
 				value = 0.33
 			}
 		}
-	}
-	pop_support = {
-		value = 0
 		add = {
 			desc = "POP_OFFICERS"
 			if = {
@@ -145,7 +130,7 @@ law_localized_garrisons = {
 				value = 0.20
 			}
 		}
-	} 
+	}
 	ai_enact_weight_modifier = {
 		#Petitions
 		value = 0
@@ -175,7 +160,7 @@ law_faith_orders = {
 	}
 	modifier = {
 		country_institution_cost_institution_home_defence_mult = -0.1
-	}	
+	}
 	institution = institution_home_defence
 	institution_modifier = {
 		state_conscription_rate_add = 0.002
@@ -203,9 +188,6 @@ law_faith_orders = {
 				value = 0.33
 			}
 		}
-	}
-	pop_support = {
-		value = 0
 		add = {
 			desc = "POP_OFFICERS"
 			if = {
@@ -224,7 +206,7 @@ law_faith_orders = {
 			add = 750
 		}
 		if = {
-			limit = { 
+			limit = {
 				OR = {
 					has_law = law_type:law_no_home_defence
 					has_law = law_type:law_localized_garrisons
@@ -272,7 +254,7 @@ law_private_paramilitaries = {
 	pop_support = {
 		value = 0
 		add = {
-			desc = "POP_INDUSTRIALISTS"
+			desc = "POP_CAPITALISTS"
 			if = {
 				limit = {
 					is_pop_type = capitalists
@@ -280,9 +262,6 @@ law_private_paramilitaries = {
 				value = 0.33
 			}
 		}
-	}
-	pop_support = {
-		value = 0
 		add = {
 			desc = "POP_SHOPKEEPERS"
 			if = {
@@ -339,9 +318,6 @@ law_emergency_relief_services = {
 				value = 0.20
 			}
 		}
-	}
-	pop_support = {
-		value = 0
 		add = {
 			desc = "POP_LABORERS"
 			if = {
