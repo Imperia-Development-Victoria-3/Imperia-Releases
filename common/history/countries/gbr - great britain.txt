@@ -1,5 +1,6 @@
 ﻿COUNTRIES = {
 	c:GBR ?= {
+		effect_starting_politics_base_imperia = yes
 		set_next_election_date = 1836.2.1
 		
 		ig:ig_intelligentsia = {
@@ -78,6 +79,12 @@
 		add_modifier = {
 			name = brazilian_slave_trade_modifier
 			months = 600	# 50 Years
+		}
+		
+		add_modifier = {
+			name = british_empire_bureaucracy
+			months = 360	# 30 Years
+			is_decaying = yes
 		}
 		
 		add_company = company_type:company_gwr

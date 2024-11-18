@@ -1,5 +1,6 @@
 ﻿COUNTRIES = {
 	c:BIC ?= {
+		effect_starting_politics_base_imperia = yes
 		ig:ig_armed_forces = {
 			add_ruling_interest_group = yes
 		}
@@ -42,6 +43,10 @@
 		
 		add_journal_entry = {
 			type = je_avert_sepoy_mutiny
+		}
+		
+		trigger_event = {
+			id = east_indies.4
 		}
 		
 		add_company = company_type:company_east_india_company
