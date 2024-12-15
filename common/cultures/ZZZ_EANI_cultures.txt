@@ -3,7 +3,7 @@ korean={
 	color= hsv{ 0.17 0.41 0.34 }
 	religion = confucian
 	traits = { korean_language east_asian_heritage }
-	male_common_first_names={
+	male_common_first_names = {
 		Bong-haek
 		Chwa-chin
 		Gu
@@ -425,7 +425,7 @@ korean={
 		Hyoyu
 		Ok-jeong
 	}
-	regal_last_names={
+	regal_last_names = {
 		Yi
 		Kim
 	}
@@ -439,7 +439,7 @@ manchu={
 	color= rgb{ 233 207 84 }
 	religion = confucian
 	traits = { sinosphere north_asian_heritage }
-	male_common_first_names={
+	male_common_first_names = {
 		Hesehn
 		Mingzhu
 		Oboi
@@ -564,7 +564,7 @@ manchu={
 		EANI_F_Yanje
 		EANI_F_Yatu
 	}	
-	common_last_names={
+	common_last_names = {
 		Nalan
 		Yanzha
 		Wanggiya
@@ -610,7 +610,7 @@ manchu={
 		EANI_M_Pujie
 		EANI_M_Puwei
 	}
-	regal_last_names={
+	regal_last_names = {
 		Aisin_Gioro
 	}
 	ethnicities = {
@@ -626,7 +626,7 @@ han={
 	obsessions = {
 		opium
 	}
-	male_common_first_names={
+	male_common_first_names = {
 		An
 		Fang
 		Gao
@@ -1071,7 +1071,7 @@ han={
 		EANI_F_Zhuzhu
 		EANI_F_Zongmiao
 	}	
-	common_last_names={
+	common_last_names = {
 		Chen
 		Cui
 		Deng
@@ -1236,7 +1236,7 @@ hakka={
 	color= hsv{ 0.1 0.43 0.34 }
 	religion = confucian
 	traits = { han_chinese east_asian_heritage }
-	male_common_first_names={
+	male_common_first_names = {
 		An
 		Fang
 		Gao
@@ -1681,7 +1681,7 @@ hakka={
 		EANI_F_Zhuzhu
 		EANI_F_Zongmiao
 	}	
-	common_last_names={
+	common_last_names = {
 		Chen
 		Deng
 		Feng
@@ -1713,7 +1713,7 @@ vietnamese={
 	color= hsv{ 0.31 0.37 0.48 }
 	religion = mahayana
 	traits = { sinosphere southeast_asian_heritage }
-	male_common_first_names={
+	male_common_first_names = {
 		Bui_An
 		Noang_Cao
 		Buu_Lan
@@ -1878,7 +1878,7 @@ vietnamese={
 		EANI_L_V_Hoang
 		Ton_That
 	}
-	common_last_names={
+	common_last_names = {
 		EANI_L_V_Nguyen
 		EANI_L_V_Tran
 		EANI_L_V_Le
@@ -2015,7 +2015,7 @@ vietnamese={
 		EANI_M_V_Tuan
 		EANI_M_V_Tuyen
 	}
-	regal_last_names={
+	regal_last_names = {
 		Nguyen_Phuoc
 	}
 	ethnicities = {
@@ -2028,7 +2028,7 @@ mongol={
 	color= rgb{ 74 125 155 }
 	religion = gelugpa
 	traits = { north_asian_heritage mongol_language }
-	male_common_first_names={
+	male_common_first_names = {
 		Badamdorj
 		Batbayar
 		Baterdene
@@ -2122,7 +2122,7 @@ mongol={
 		EANI_F_Monkhtsetseg
 		EANI_F_Munkhtuyaa
 	}	
-	common_last_names={
+	common_last_names = {
 		Balingiin
 		Dambyan
 		Damdin
@@ -2140,7 +2140,7 @@ mongol={
 		EANI_L_Rinchingiin
 		EANI_L_Soliin
 	}
-	regal_last_names={
+	regal_last_names = {
 		Borjigin
 	}
 	ethnicities = {
@@ -2153,7 +2153,7 @@ kalmyk={
 	color= rgb{ 250 182 3 }
 	religion = gelugpa
 	traits = { central_asian_heritage mongol_language }
-	male_common_first_names={
+	male_common_first_names = {
 		Badamdorj
 		Batbayar
 		Baterdene
@@ -2247,7 +2247,7 @@ kalmyk={
 		EANI_F_Monkhtsetseg
 		EANI_F_Munkhtuyaa
 	}	
-	common_last_names={
+	common_last_names = {
 		Balingiin
 		Dambyan
 		Damdin
@@ -2265,7 +2265,7 @@ kalmyk={
 		EANI_L_Rinchingiin
 		EANI_L_Soliin
 	}
-	regal_last_names={
+	regal_last_names = {
 		Borjigin
 	}
 	ethnicities = {

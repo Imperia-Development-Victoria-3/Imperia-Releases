@@ -1,8 +1,8 @@
 ﻿japanese={
 	color= hsv{ 0 0 90 }
 	religion = mahayana
-	traits = { yamato east_asian_heritage }
-	male_common_first_names={
+	traits = { east_asian_heritage yamato }
+	male_common_first_names = {
 		Aritomo
 		Gentaro
 		Gonnohyoe
@@ -124,7 +124,7 @@
 		JNI_L_Abe JNI_L_Ando JNI_L_Honda JNI_L_Hotta JNI_L_Ii 
 		JNI_L_Itakura JNI_L_Manabe JNI_L_Matsudaira JNI_L_Sakai 
 	}
-	common_last_names={
+	common_last_names = {
 		Akiyama
 		Araki
 		Arichi
@@ -242,8 +242,8 @@
 ainu={
 	color= hsv{ 0 0 0.5 }
 	religion = animist
-	traits = { ainu_language north_asian_heritage }
-	male_common_first_names={
+	traits = { north_asian_heritage ainu_language }
+	male_common_first_names = {
 		Menkakush
 		Munkeke
 		Shinriki

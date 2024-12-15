@@ -157,43 +157,70 @@ default_popup =  {
 											align = nobaseline
 											using = fontsize_large
 										}
-
 										textbox = {
 											visible = "[EqualTo_string(Location.GetType, 'state')]"
 											autoresize = yes
 											text = "[concept_state]"
 											align = nobaseline
 										}
-
+	
 										textbox = {
 											visible = "[EqualTo_string(Location.GetType, 'country')]"
 											autoresize = yes
 											text = "[concept_country]"
 											align = nobaseline
 										}
-
+	
 										textbox = {
 											visible = "[EqualTo_string(Location.GetType, 'state_region')]"
 											autoresize = yes
 											text = "[concept_state_region]"
 											align = nobaseline
 										}
-
+	
 										textbox = {
 											visible = "[EqualTo_string(Location.GetType, 'province')]"
 											autoresize = yes
 											text = "[concept_province]"
 											align = nobaseline
 										}
-
+	
 										textbox = {
 											visible = "[EqualTo_string(Location.GetType, 'city_hub')]"
 											autoresize = yes
-											text = "LEDGER_HUB_NAME"
+											text = "CITY_NAME"
+											align = nobaseline
+										}
+										
+										textbox = {
+											visible = "[EqualTo_string(Location.GetType, 'port_hub')]"
+											autoresize = yes
+											text = "PORT_NAME"
+											align = nobaseline
+										}
+										
+										textbox = {
+											visible = "[EqualTo_string(Location.GetType, 'farm_hub')]"
+											autoresize = yes
+											text = "FARM_NAME"
+											align = nobaseline
+										}
+										
+										textbox = {
+											visible = "[EqualTo_string(Location.GetType, 'mine_hub')]"
+											autoresize = yes
+											text = "MINE_NAME"
+											align = nobaseline
+										}
+										
+										textbox = {
+											visible = "[EqualTo_string(Location.GetType, 'wood_hub')]"
+											autoresize = yes
+											text = "WOOD_NAME"
 											align = nobaseline
 										}
 									}
-
+			
 									textbox = {
 										visible = "[InDebugMode]"
 										autoresize = yes

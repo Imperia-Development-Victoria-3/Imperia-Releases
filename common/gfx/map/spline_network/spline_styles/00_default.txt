@@ -21,7 +21,6 @@
 			texture =  { file = "gfx/map/spline_network/road_dirt_diffuse.dds" }
 			texture =  { file = "gfx/map/spline_network/road_dirt_normal.dds" srgb = no}
 			texture =  { file = "gfx/map/spline_network/road_dirt_properties.dds" }
-			#texture = { file = "gfx/map/spline_network/test_road_mask.dds" }
 		}
 	}
 	connections = none
@@ -116,9 +115,9 @@ coastal_naval_route = {
 pavedroad = {
 	id = 4
 	spline = {
-		uv_scale = 0.25
+		uv_scale = 0.015625
 		width = 1
-		uv_rounding = yes
+		uv_rounding = no
 		smooth_fade_distance = 10
 		smooth_iterations = 0
 		smooth_kernel_size = 1
@@ -133,10 +132,9 @@ pavedroad = {
 
 		texture_set = {
 			name = ""
-			texture =  { file = "gfx/map/spline_network/roadpaved_diffuse.dds" }
-			texture =  { file = "gfx/map/spline_network/roadpaved_normal.dds" srgb = no}
-			texture =  { file = "gfx/map/spline_network/roadpaved_properties.dds" }
-			#texture = { file = "gfx/map/spline_network/test_road_mask.dds" }
+			texture =  { file = "gfx/map/spline_network/road_paved_diffuse.dds" }
+			texture =  { file = "gfx/map/spline_network/road_paved_normal.dds" srgb = no}
+			texture =  { file = "gfx/map/spline_network/road_paved_properties.dds" }
 		}
 	}
 	connections = none
@@ -145,9 +143,9 @@ pavedroad = {
 pavedroadsandstone = {
 	id = 5
 	spline = {
-		uv_scale = 0.25
+		uv_scale = 0.015625
 		width = 1
-		uv_rounding = yes
+		uv_rounding = no
 		smooth_fade_distance = 10
 		smooth_iterations = 0
 		smooth_kernel_size = 1
@@ -162,10 +160,9 @@ pavedroadsandstone = {
 
 		texture_set = {
 			name = ""
-			texture =  { file = "gfx/map/spline_network/roadpavedsandstone_diffuse.dds" }
-			texture =  { file = "gfx/map/spline_network/roadpaved_normal.dds" srgb = no}
-			texture =  { file = "gfx/map/spline_network/roadpaved_properties.dds" }
-			#texture = { file = "gfx/map/spline_network/test_road_mask.dds" }
+			texture =  { file = "gfx/map/spline_network/road_paved_diffuse.dds" }
+			texture =  { file = "gfx/map/spline_network/road_paved_normal.dds" srgb = no}
+			texture =  { file = "gfx/map/spline_network/road_paved_properties.dds" }
 		}
 	}
 	connections = none
@@ -196,7 +193,6 @@ undeveloped = {
 			texture =  { file = "gfx/map/spline_network/road_dirt_diffuse.dds" }
 			texture =  { file = "gfx/map/spline_network/road_dirt_normal.dds" srgb = no}
 			texture =  { file = "gfx/map/spline_network/road_dirt_properties.dds" }
-			#texture = { file = "gfx/map/spline_network/test_road_mask.dds" }
 		}
 	}
 	connections = none
