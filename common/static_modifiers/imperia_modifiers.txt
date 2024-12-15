@@ -69,7 +69,9 @@ imperia_true_neutral = {
 
 afro_american_acceptance = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	state_radicals_from_discrimination_mult = -0.25
+	state_radicalism_increases_violent_hostility_mult = -0.25
+	state_radicalism_increases_cultural_erasure_mult = -0.25
+	state_radicalism_increases_open_prejudice_mult = -0.25
 	state_turmoil_effects_mult = -0.1
 	state_dependent_wage_mult = 0.1
 	state_dependent_political_participation_add = 0.1
@@ -91,115 +93,15 @@ british_retribution = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
 	building_group_bg_agriculture_throughput_add = -0.1
 	building_group_bg_plantations_throughput_add = -0.1
-	state_radicals_from_discrimination_mult = 0.15
+	state_radicalism_increases_violent_hostility_mult = 0.15
+	state_radicalism_increases_cultural_erasure_mult = 0.15
+	state_radicalism_increases_open_prejudice_mult = 0.15
 }
 
 british_empire_bureaucracy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	country_consumption_tax_cost_mult = 0.33
 	country_leverage_generation_mult = -0.15
-}
-
-#########################
-### POLITICAL DISCORD ###
-#########################
-discord_lvl_0_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
-	country_law_enactment_time_mult = -0.025
-	state_loyalists_from_sol_change_mult = 0.01
-}
-
-discord_lvl_1_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	country_law_enactment_time_mult = 0.1
-	state_migration_push_mult = 0.05
-	state_turmoil_effects_mult = 0.05
-}
-
-discord_lvl_2_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	country_law_enactment_time_mult = 0.2
-	state_migration_push_mult = 0.1
-	state_turmoil_effects_mult = 0.1
-	country_authority_mult = -0.1
-	country_revolution_progress_mult = 0.1
-}
-
-discord_lvl_3_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	country_law_enactment_time_mult = 0.3
-	state_migration_push_mult = 0.15
-	state_turmoil_effects_mult = 0.15
-	country_authority_mult = -0.15
-	country_revolution_progress_mult = 0.15
-}
-
-discord_bureaucracy_penalty = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	country_bureaucracy_mult = -0.01
-}
-
-discord_state_corruption_penalty = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	state_tax_collection_mult = -0.01
-}
-
-discord_building_strike = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	building_throughput_add = -0.01
-}
-
-discord_country_nationwide_disruption = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	building_throughput_add = -0.01
-}
-
-discord_political_movement_boost = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	political_movement_support_add = 1
-	political_movement_support_mult = 0.01
-	political_movement_radicalism_add = 1
-	political_movement_radicalism_mult = 0.01
-}
-
-discord_interest_group_weakened = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	interest_group_pol_str_mult = -0.01
-	interest_group_pop_attraction_mult = -0.01
-}
-
-discord_interest_group_strengthened = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
-	interest_group_pol_str_mult = 0.01
-	interest_group_pop_attraction_mult = 0.01
-}
-
-discord_state_law_breakdown_penalty = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	state_tax_collection_mult = -0.01
-}
-
-discord_country_widespread_corruption = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	state_tax_collection_mult = -0.01
-	country_bureaucracy_mult = -0.01
-}
-
-discord_country_interest_groups_unhappy = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	interest_group_in_government_attraction_mult = -0.35
-	country_opposition_ig_approval_add = -8
-}
-
-discord_country_brain_drain = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	country_weekly_innovation_mult = -0.1
-}
-
-discord_country_severe_goods_shortage = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	state_market_access_price_impact = -0.3
-	building_throughput_add = -0.15
 }
 
 ##################
@@ -276,21 +178,21 @@ modifier_infamy_infamous = {
 	icon = gfx/interface/icons/infamy_icons/infamous.dds
 	state_migration_pull_mult = -0.15
 	state_migration_push_mult = 0.05
-	state_radicals_from_sol_change_mult = 0.15
+	state_radicals_from_political_movements_mult = 0.15
 }
 
 modifier_infamy_notorious = {
 	icon = gfx/interface/icons/infamy_icons/notorious.dds
 	state_migration_pull_mult = -0.3
 	state_migration_push_mult = 0.1
-	state_radicals_from_sol_change_mult = 0.3
+	state_radicals_from_political_movements_mult = 0.3
 }
 
 modifier_infamy_pariah = {
 	icon = gfx/interface/icons/infamy_icons/pariah.dds
 	state_migration_pull_mult = -0.6
 	state_migration_push_mult = 0.2
-	state_radicals_from_sol_change_mult = 0.5
+	state_radicals_from_political_movements_mult = 0.5
 }
 
 modifier_pariah_neighbour = {
@@ -330,7 +232,9 @@ modifier_international_pariah = {
 	country_trade_route_cost_mult = 0.25
 	country_influence_mult = -0.25
 	country_radicals_from_conquest_mult = 0.2
-	state_radicals_from_discrimination_mult = 0.2
+	state_radicalism_increases_violent_hostility_mult = 0.2
+	state_radicalism_increases_cultural_erasure_mult = 0.2
+	state_radicalism_increases_open_prejudice_mult = 0.2
 	country_prestige_mult = -0.2
 }
 
@@ -340,8 +244,10 @@ modifier_pariah_economic_sanctions = {
 	country_loan_interest_rate_mult = 3
 	country_influence_mult = -0.3
 	country_radicals_from_conquest_mult = 0.2
-	state_radicals_from_discrimination_mult = 0.2
 	unit_morale_recovery_mult = -0.1
+	state_radicalism_increases_violent_hostility_mult = 0.2
+	state_radicalism_increases_cultural_erasure_mult = 0.2
+	state_radicalism_increases_open_prejudice_mult = 0.2
 }
 
 modifier_pariah_international_isolation = {
@@ -350,8 +256,10 @@ modifier_pariah_international_isolation = {
 	country_loan_interest_rate_mult = 6
 	country_influence_mult = -0.6
 	country_radicals_from_conquest_mult = 0.4
-	state_radicals_from_discrimination_mult = 0.4
 	unit_morale_recovery_mult = -0.2
+	state_radicalism_increases_violent_hostility_mult = 0.4
+	state_radicalism_increases_cultural_erasure_mult = 0.4
+	state_radicalism_increases_open_prejudice_mult = 0.4
 }
 
 no_more_war = {
@@ -381,7 +289,7 @@ imperia_state_infamy = {
 	icon = gfx/interface/icons/infamy_icons/pariah.dds
 	state_migration_pull_mult = -0.1
 	state_migration_push_mult = 0.1
-	state_radicals_from_sol_change_mult = 0.25
+	state_radicals_from_political_movements_mult = 0.25
 }
 
 imperia_china_ownership_infamy = {
@@ -445,15 +353,8 @@ modifier_carlist_war_funding = {
 
 modifier_carlist_war_legacy = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
-	state_radicals_from_sol_change_mult = 0.1
+	state_radicals_from_political_movements_mult = 0.1
 	building_group_bg_agriculture_throughput_add = -0.15
-}
-
-austrian_minority_oppression = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-	state_pop_support_law_racial_segregation_add = -1
-	state_pop_support_law_cultural_exclusion_add = -1
-	state_pop_support_law_multicultural_add = -1
 }
 
 eic_reinvestment_failure = {
