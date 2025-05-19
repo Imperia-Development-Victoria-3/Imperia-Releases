@@ -434,6 +434,15 @@ country_tech_research_speed_mult = {
 	}
 }
 
+country_pan_nationalism_tech_spread_add = {
+	color = good
+	percent = no
+	decimals = 0
+	game_data = {
+		ai_value = 0
+	}
+}
+
 #############
 ### TRADE ###
 #############
@@ -549,6 +558,32 @@ country_bureaucracy_investment_cost_factor_mult = {
 	game_data = {
 		ai_value = 0
 	}
+}
+
+## Lignite Mine
+building_group_bg_lignite_mining_tax_mult = {
+	color = neutral
+	percent = yes
+}
+
+building_group_bg_lignite_mining_mortality_mult = {
+	color = bad
+	percent = yes
+}
+
+building_group_bg_lignite_mining_standard_of_living_add = {
+	color = good
+	percent = no
+}
+
+building_group_bg_lignite_mining_employee_mult = {
+	color = bad
+	percent = yes
+}
+
+building_group_bg_lignite_mining_throughput_add = {
+	color = good
+	percent = yes
 }
 
 #####################################
