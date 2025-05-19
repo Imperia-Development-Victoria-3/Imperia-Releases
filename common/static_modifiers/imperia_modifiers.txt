@@ -104,12 +104,30 @@ british_empire_bureaucracy = {
 	country_consumption_tax_cost_mult = 0.33
 	country_leverage_generation_mult = -0.15
 }
+
+# This part is just for show, it doesn't actually do anything.
+imperia_german_pan_nationalism_spread = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_pan_nationalism_tech_spread_add = 200
+}
 # Here you go Fallonar, the modifier you wanted for British India (+ subjects), go wild.
 # Decays over 30 years.
 imperia_british_india_mortality_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	state_peasants_mortality_mult = 0.20
 }
+
+imperia_private_allocation_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_private_construction_allocation_mult = 1
+}
+
+state_lignite_rush = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_group_bg_lignite_mining_employee_mult = 0.2
+	state_migration_pull_mult = 0.2
+}
+
 ##################
 ### INVENTIONS ###
 ##################
@@ -468,6 +486,16 @@ eic_reinvestment_failure = {
 ### Military (tech) exchange ###
 ################################
 imperia_invalid_mobilization_option_penalty = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
 	building_arms_industry_throughput_add = -2
 	building_mobilization_cost_mult = 2
+}
+
+#####################
+### Army bonusses ###
+#####################
+
+imperia_adding_wargoal_defense = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	unit_defense_mult = 0.05
 }
