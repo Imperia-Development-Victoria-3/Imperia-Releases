@@ -1879,7 +1879,7 @@
 		
 		create_military_formation = {
 			type = army
-			hq_region = sr:region_poland
+			hq_region = sr:region_belarus
 			name = 5y_Pekhotniy_Korpus
 			
 			combat_unit = {	# Brest and Bialystok Infantry
@@ -1947,6 +1947,7 @@
 		
 		create_character = {
 			template = RUS_ivan_paskevich
+			hq = region_belarus # Poland -> Belarus override
 			save_scope_as = paskevich_gen
 		}
 		

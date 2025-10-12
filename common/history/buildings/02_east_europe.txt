@@ -261,7 +261,7 @@
 				add_ownership = {
 					building = {
 						type = "building_financial_district"
-						country = "c:RUS"
+						country = "c:POL"
 						levels = 1
 						region = "STATE_GREATER_POLAND"
 					}
@@ -273,7 +273,7 @@
 				add_ownership = {
 					building = {
 						type = "building_furniture_manufacturies"
-						country = "c:RUS"
+						country = "c:POL"
 						levels = 1
 						region = "STATE_GREATER_POLAND"
 					}
@@ -286,13 +286,13 @@
 				add_ownership = {
 					building = {
 						type = "building_paper_mills"
-						country = "c:RUS"
+						country = "c:POL"
 						levels = 1
 						region = "STATE_GREATER_POLAND"
 					}
 					building = {
 						type = "building_financial_district"
-						country = "c:RUS"
+						country = "c:POL"
 						levels = 1
 						region = "STATE_GREATER_POLAND"
 					}
@@ -309,7 +309,7 @@
 				add_ownership = {
 					building = {
 						type = "building_tooling_workshops"
-						country = "c:RUS"
+						country = "c:POL"
 						levels = 1
 						region = "STATE_GREATER_POLAND"
 					}
