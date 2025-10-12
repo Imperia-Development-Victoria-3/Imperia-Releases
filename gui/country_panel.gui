@@ -909,7 +909,7 @@ types country_panel_types
 						text = "COUNTRY_GDP_ONE_LINE"
 					}
 					blockoverride "stats_value" {
-						raw_text = "@money!#v [Country.GetGDP|D]#!"
+						raw_text = "@money![Country.GetGDP|Dv]"
 					}
 
 					blockoverride "stats_rank" {
@@ -917,26 +917,28 @@ types country_panel_types
 					}
 				}
 
-				#GDP Ownership
-				country_stats_entry = {
+				#GDP Ownership Ratio
+				country_stats_entry = { #DA
 					onmousehierarchyenter = "[SetTempMapModeByKey('mm_gdp_ownership_ratio')]"
 					onmousehierarchyleave = "[RemoveTempMapMode]"
 					alwaystransparent = no
 
 					blockoverride "stats_tooltip" {
-						tooltip = "#header [concept_gdp_ownership] in [Country.GetName]#!\n#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#! (@money![Country.GetGDP|Dv]) domestically owned $concept_gdp_short$\n$TOOLTIP_DELIMITER$\n[SelectLocalization(IsZero_CFixedPoint(Country.GetForeignOwnedGDPFraction), 'NO_FOREIGNLY_OWNED_PERCENTAGE', 'COUNTRY_FOREIGNLY_OWNED_PERCENTAGE')]\n\n[SelectLocalization(IsZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'NO_OWNED_FOREIGN_GDP_BY_COUNTRY', 'OWNED_FOREIGN_GDP_BY_COUNTRY')]"
+						tooltip = "GDP_OWNERSHIP_RATIO_TT"
 					}
 					blockoverride "information_icon" {
 						texture = "gfx/interface/buttons/button_icons/foreign_invest.dds"
 					}
 					blockoverride "stats_label" {
-						text = "[concept_gdp_ownership]"
+						text = "COUNTRY_GDP_OWNERSHIP_ONE_LINE"
 					}
 					blockoverride "stats_value" {
-						raw_text = "#u [Country.GetDomesticallyOwnedGDPFraction|%1b]#![ConcatIfNeitherEmpty(' + ', AddLocalizationIf(NotZero_CFixedPoint(Country.GetGDPOwnedInForeignCountries), 'FOREIGN_COUNTRY_GDP'))]"
+						raw_text = "[Country.MakeScope.ScriptValue('gdp_ownership_by_self')|%v0] + [Country.MakeScope.ScriptValue('gdp_ownership_of_other')|%v0]"
 					}
 
-					blockoverride "stats_rank" {}
+					blockoverride "stats_rank" {
+						text = "[Country.GetGDPRanking]"
+					}
 				}
 
 				##POPULATION
@@ -3517,7 +3519,7 @@ types war_panel
 
 	#COUNTRY STATS ENTRY
 	type country_stats_entry = widget {
-		size =  { 230 57 }
+		size =  { 230 53 }
 		block "stats_tooltip" {}
 
 		divider_clean = {
@@ -3552,8 +3554,8 @@ types war_panel
 		}
 
 		textbox = {
-			size = { 200 20 }
-			position = { -60 5 }
+			size = { 200 18 }
+			position = { -60 2 }
 			elide = right
 			parentanchor = right
 			align = right|nobaseline
@@ -3563,7 +3565,7 @@ types war_panel
 		}
 		textbox = {
 			block "textsize" {
-				size = { 200 20 }
+				size = { 200 18 }
 			}
 			position = { -60 -10 }
 			elide = right
