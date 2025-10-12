@@ -554,3 +554,13 @@ jewish_ethiopia_jewish_conversion = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	state_conversion_mult = 1.5
 }
+
+beta_israel_standard_of_living_modifier_positive = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_beta_israel_standard_of_living_add = 1
+}
+
+beta_israel_standard_of_living_modifier_negative = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_beta_israel_standard_of_living_add = 1
+}

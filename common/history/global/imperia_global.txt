@@ -57,7 +57,9 @@
 				any_scope_pop = {
 					limit = {
 						religion = rel:jewish
-						culture = cu:ethiopian
+						culture = {
+							has_discrimination_trait = ethiopian
+						}
 					}
 				}
 			}
