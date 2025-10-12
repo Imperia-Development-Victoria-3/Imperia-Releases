@@ -177,37 +177,40 @@ je_sick_man_army = {
 			has_law = law_type:law_mass_conscription
 		}
 		has_technology_researched = napoleonic_warfare
-		NOR = {
-			any_scope_building = {
+		any_scope_building = {
+			filter = {
 				is_building_type = building_barracks
+			}
+			NOR = {
+				building_has_goods_shortage = yes
+				has_active_production_method = pm_no_organization
+			}
+			percent = 1
+		}
+		any_military_formation = {
+			filter = {
+				is_army = yes
+			}
+			any_combat_unit = {
+				has_unit_type = unit_type:combat_unit_type_irregular_infantry
+				percent < 0.1
+			}
+			count = all
+		}
+		any_military_formation = {
+			filter = {
+				is_army = yes
+			}
+			any_combat_unit = {
 				OR = {
-					building_has_goods_shortage = yes
-					has_active_production_method = pm_no_organization
+					has_unit_type = unit_type:combat_unit_type_cannon_artillery
+					has_unit_type = unit_type:combat_unit_type_mobile_artillery
+					has_unit_type = unit_type:combat_unit_type_shrapnel_artillery
+					has_unit_type = unit_type:combat_unit_type_siege_artillery
 				}
+				percent > 0.15
 			}
-			any_military_formation = {
-				filter = {
-					is_army = yes
-				}
-				any_combat_unit = {
-					has_unit_type = unit_type:combat_unit_type_irregular_infantry
-				}
-				percent >= 0.1
-			}
-			any_military_formation = {
-				filter = {
-					is_army = yes
-				}
-				any_combat_unit = {
-					OR = {
-						has_unit_type = unit_type:combat_unit_type_cannon_artillery
-						has_unit_type = unit_type:combat_unit_type_mobile_artillery
-						has_unit_type = unit_type:combat_unit_type_shrapnel_artillery
-						has_unit_type = unit_type:combat_unit_type_siege_artillery
-					}
-					percent <= 0.15
-				}
-			}
+			count = all
 		}
 	}
 	on_complete = {
