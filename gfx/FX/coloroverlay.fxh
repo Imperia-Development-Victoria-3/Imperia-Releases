@@ -33,7 +33,7 @@ PixelShader = {
 		// END MOD
 		#define HIGHLIGHT_RANGE 0.5f
 
-		// Stripes
+		// Coa Stripes
 		#define StripesGradientEdge 			0.25
 		#define StripeMaskMin					0.5
 		#define StripeMaskMax					1.5
@@ -47,7 +47,7 @@ PixelShader = {
 		#define StripeControlledColor 			float3( 1.000, 0.374, 0.100 )
 		#define StripeControlledColorStrength 	2.5
 
-		// Animated Stripe pulse
+		// Coa Animated Stripe pulse
 		#define StripePulseAngle 				-1.0
 		#define StripePulseTiling 				150.0
 		#define StripePulsePulseSpeed 			1.0
@@ -63,6 +63,7 @@ PixelShader = {
 		#define CoaGapSize 						1.02
 		#define CoaGapBlend 					0.02
 		#define CoaClothSizeFlatmap				1.5
+
 
 		void ApplyStripeColorBlend( float2 MapCoords, float2 ParallaxCoord, inout float3 Color, inout float PreLightingBlend, inout float PostLightingBlend )
 		{
@@ -279,13 +280,28 @@ PixelShader = {
 			if ( !_UseMapmodeTextures )
 			{
 				// Get color
-				ProvinceOverlayColorWithAlpha = AlphaBlendAOverB( PrimaryColor, SecondaryColor );
+				ProvinceOverlayColorWithAlpha = PrimaryColor;
+
+				// Stripe visuals
+				float2 StripeUv = ParallaxCoord.xz;
+				float StripeAlpha = SecondaryColor.a * _FlatmapLerp;
+
+				float Height = max( 1.0, CameraPosition.y / _MapmodeStripeConstants._StripeEdgeHeightSteps ); // Denominator controls the height steps
+				float LogarithmicHeight = log2( max( Height, 1.0f ) ); // Logarimic scale of the height
+				float LogarithmicRepetition = pow( 2.0f, floor( LogarithmicHeight ) ); // Tiling modifier everytime height doubles
+				float2 LogarithmicUV = ( StripeUv * _MapmodeStripeConstants._StripeTiling / LogarithmicRepetition );
+				float StripeMaskEdge = CalculateStripeMaskDynamic( LogarithmicUV, LogarithmicHeight, _MapmodeStripeConstants._StripeEdgeWidth );
+				float StripeMaskInner = CalculateStripeMaskDynamic( LogarithmicUV, LogarithmicHeight, 0.0 );
+				ProvinceOverlayColorWithAlpha.rgb = lerp( ProvinceOverlayColorWithAlpha.rgb, SecondaryColor.rgb * _MapmodeStripeConstants._StripeEdgeColorMultiplier, StripeMaskEdge * StripeAlpha );
+				ProvinceOverlayColorWithAlpha.rgb = lerp( ProvinceOverlayColorWithAlpha.rgb, SecondaryColor.rgb, StripeMaskInner * StripeAlpha );
+
+				// Gradient
 				ProvinceOverlayColorWithAlpha.rgb = lerp( ProvinceOverlayColorWithAlpha.rgb * GB_GradientColorMul, ProvinceOverlayColorWithAlpha.rgb * GB_EdgeColorMul, Edge );
-				ProvinceOverlayColorWithAlpha.a = ProvinceOverlayColorWithAlpha.a * max( GradientAlpha, GB_EdgeAlpha * Edge );
+				ProvinceOverlayColorWithAlpha.a = ProvinceOverlayColorWithAlpha.a * max( GradientAlpha, GB_EdgeAlpha * Edge  );
 
 				// Apply decentralized country color
 				float4 DecentralizedColor = _DecentralizedCountryColor;
-				float DecentralizedMask = saturate( 1.0f - Edge );
+				float DecentralizedMask = saturate( 1.0f - Edge * PrimaryColor.a );
 
 				DecentralizedColor.rgb = _DecentralizedCountryColor.rgb;
 				DecentralizedColor.a *= AlternateColor.g;

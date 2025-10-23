@@ -1,8 +1,8 @@
 {
   "name" : "Imperia Roleplay",
   "id" : "",
-  "version" : "0.12.2",
-  "supported_game_version" : "1.9.*",
+  "version" : "0.13.0",
+  "supported_game_version" : "1.10.*",
   "picture" : "thumbnail.png",
   "short_description" : "",
   "tags" : ["balance", "events", "expansion", "fixes", "gameplay", "graphics", "journal_entries", "map", "technologies", "utilities"],

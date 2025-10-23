@@ -13,7 +13,7 @@
 			# If theres infamy present...
 			if = {
 				limit = {
-					has_law = law_type:law_command_economy
+					has_law_or_variant = law_type:law_command_economy
 				}
 				# Give command economies their own modifiers
 				add_modifier = {
@@ -141,29 +141,29 @@
 		remove_modifier ?= modifier_state_religion_health_discount
 		if = {
 			limit = {
-				has_law = law_type:law_state_religion
+				has_law_or_variant = law_type:law_state_religion
 			}
 			if = {
 				limit = {
-					has_law = law_type:law_faith_orders
+					has_law_or_variant = law_type:law_faith_orders
 				}
 				add_modifier = modifier_state_religion_home_defence_discount
 			}
 			if = {
 				limit = {
-					has_law = law_type:law_inquisition
+					has_law_or_variant = law_type:law_inquisition
 				}
 				add_modifier = modifier_state_religion_home_affairs_discount
 			}
 			if = {
 				limit = {
-					has_law = law_type:law_religious_schools
+					has_law_or_variant = law_type:law_religious_schools
 				}
 				add_modifier = modifier_state_religion_education_discount
 			}
 			if = {
 				limit = {
-					has_law = law_type:law_charitable_health_system
+					has_law_or_variant = law_type:law_charitable_health_system
 				}
 				add_modifier = modifier_state_religion_health_discount
 			}
@@ -364,37 +364,38 @@
 		if = {
 			limit = {
 				NOT = {
-					has_variable = imperia_arms_deal_active
+					any_scope_treaty = {
+						any_scope_article = {
+							has_type = military_assistance
+							target_country ?= root
+						}
+					}
+				}
+				# Check if the country has the penalty, just so it doesnt start stacking
+				NOT = {
+					has_modifier = imperia_invalid_mobilization_option_penalty
 				}
 				OR = {
 					AND = {
-						NOT = {
-							has_technology_researched = gunsmithing
-						}
+						can_use_mobilization_option_flintlocks = no
 						any_military_formation = {
 							has_mobilization_option = mobilization_option:mobilization_option_flintlocks
 						}
 					}
 					AND = {
-						NOT = {
-							has_technology_researched = rifling
-						}
+						can_use_mobilization_option_caplocks = no
 						any_military_formation = {
 							has_mobilization_option = mobilization_option:mobilization_option_caplocks
 						}
 					}
 					AND = {
-						NOT = {
-							has_technology_researched = repeaters
-						}
+						can_use_mobilization_option_repeaters = no
 						any_military_formation = {
 							has_mobilization_option = mobilization_option:mobilization_option_repeaters
 						}
 					}
 					AND = {
-						NOT = {
-							has_technology_researched = bolt_action_rifles
-						}
+						can_use_mobilization_option_bolt_action_rifles = no
 						any_military_formation = {
 							has_mobilization_option = mobilization_option:mobilization_option_bolt_actions
 						}
@@ -545,7 +546,7 @@
 					any_scope_pop = {
 						pop_acceptance < 60
 						culture = {
-							has_discrimination_trait = jewish_group
+							has_discrimination_trait = tradition_israelite
 						}
 					}
 				}
@@ -562,18 +563,18 @@
 						country_has_state_religion = rel:jewish
 					}
 					any_scope_pop = {
-						pop_acceptance < 60
+						pop_acceptance <= 60
 						culture = {
-							has_discrimination_trait = jewish_group
+							has_discrimination_trait = tradition_israelite
 						}
 					}
 				}
 				save_scope_as = migration_country
 				random_scope_pop = {
 					limit = {
-						pop_acceptance < 60
+						pop_acceptance <= 60
 						culture = {
-							has_discrimination_trait = jewish_group
+							has_discrimination_trait = tradition_israelite
 						}
 					}
 					save_scope_as = migration_pop
@@ -588,7 +589,7 @@
 				scope:migration_pop = {
 					move_partial_pop = {
 						state = scope:migration_state
-						population_ratio = 0.025
+						population_ratio = 0.05
 					}
 				}
 			}
@@ -601,7 +602,7 @@
 				scope:migration_pop = {
 					move_partial_pop = {
 						state = scope:migration_state
-						population_ratio = 0.05
+						population_ratio = 0.1
 					}
 				}
 			}
@@ -614,7 +615,7 @@
 				scope:migration_pop = {
 					move_partial_pop = {
 						state = scope:migration_state
-						population_ratio = 0.1
+						population_ratio = 0.2
 					}
 				}
 			}

@@ -27,7 +27,12 @@ grant_command_to_ruler = {
 	
 	possible = {
 		age >= define:NCharacters|ADULT_AGE
-		is_female = no
+		OR = {
+			is_female = no
+			owner ?= {
+				has_law_or_variant = law_type:law_womens_suffrage
+			}
+		}
 		owner ?= {
 			ruler_can_have_command = yes
 		}
@@ -111,11 +116,25 @@ grant_leadership_to_agitator = {
 	}
 	
 	possible = {
-		interest_group = {
+		interest_group ?= {
 			is_in_government = yes
 		}
 		trigger_if = {
-			limit = { owner ?= { has_law = law_type:law_state_atheism } }
+			limit = {
+				scope:actor ?= {
+					AND = {
+						has_law_or_variant = law_type:law_multicultural
+						has_law_or_variant = law_type:law_total_separation
+					}
+				}
+			}
+			character_acceptance = {	# In light of the Multiculturalism nerf
+				target = scope:actor
+				value >= acceptance_status_3
+			}
+		}
+		trigger_else_if = {
+			limit = { owner ?= { has_law_or_variant = law_type:law_state_atheism } }
 			character_acceptance = {
 				target = scope:actor
 				value >= acceptance_status_4
@@ -135,7 +154,7 @@ grant_leadership_to_agitator = {
 		}
 		OR = {
 			is_female = no
-			scope:actor ?= { has_law = law_type:law_womens_suffrage }
+			scope:actor ?= { has_law_or_variant = law_type:law_womens_suffrage }
 		}
 		custom_tooltip = {
 			text = grant_leadership_must_be_pressured_ig
@@ -156,7 +175,7 @@ grant_leadership_to_agitator = {
 		}
 	}
 	
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = short_modifier_time }
 	
 	ai_chance = {
 		value = -50
@@ -180,7 +199,7 @@ grant_leadership_to_agitator = {
 		}
 		if = {
 			limit = {
-				interest_group = {
+				interest_group ?= {
 					ig_approval <= 0
 				}
 			}
@@ -217,7 +236,7 @@ grant_command_to_agitator = {
 		add_character_role = general
 	}
 	
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = short_modifier_time }
 	
 	ai_chance = {
 		value = 0
@@ -271,9 +290,9 @@ marry_ruler_or_heir = {
 			is_heir = yes
 		}
 		scope:actor ?= {
-			has_law = law_type:law_monarchy
+			has_law_or_variant = law_type:law_monarchy
 			religion = {
-				has_discrimination_trait = christian
+				has_discrimination_trait = heritage_christian
 			}
 		}
 		age >= 18
@@ -285,7 +304,7 @@ marry_ruler_or_heir = {
 		any_country = {
 			NOT = { THIS = scope:actor }
 			NOT = { is_subject_type = subject_type_personal_union }
-			has_law = law_type:law_monarchy
+			has_law_or_variant = law_type:law_monarchy
 			religion = scope:actor.religion
 			ruler = {
 				age > 36
@@ -303,7 +322,7 @@ marry_ruler_or_heir = {
 			trigger_event = { id = wedding.2 popup = yes }
 		}
 	}
-	cooldown = { days = normal_modifier_time }
+	cooldown = { days = short_modifier_time }
 	
 	ai_chance = {
 		value = 25
@@ -319,7 +338,7 @@ abdicate_monarch = {
 		owner ?= scope:actor
 		is_ruler = yes
 		owner ?= {
-			has_law = law_type:law_monarchy
+			has_law_or_variant = law_type:law_monarchy
 		}
 		exists = owner.heir
 		is_immortal = no
@@ -327,7 +346,7 @@ abdicate_monarch = {
 	
 	possible = {
 		OR = {
-			interest_group = {
+			interest_group ?= {
 				is_marginal = yes
 			}
 			popularity <= -50
@@ -337,12 +356,12 @@ abdicate_monarch = {
 				trigger_if = {
 					limit = {
 						any_political_movement = {
-							is_insurrectionary = yes
+							is_revolutionary = yes
 							exists = most_desired_law
 						}
 					}
 					any_political_movement = {
-						is_insurrectionary = yes
+						is_revolutionary = yes
 						exists = most_desired_law
 						most_desired_law ?= { save_temporary_scope_as = revolutionary_law }
 						custom_tooltip = {
@@ -367,7 +386,7 @@ abdicate_monarch = {
 				trigger_else = {
 					AND = {
 						any_political_movement = {
-							is_insurrectionary = yes
+							is_revolutionary = yes
 						}
 						custom_tooltip = {
 							text = ruler_disapproves_of_revolutionary_law_contextless
@@ -382,12 +401,12 @@ abdicate_monarch = {
 				NOT = {
 					owner ?= {
 						any_interest_group = {
-							is_insurrectionary = yes
+							is_revolutionary = yes
 						}
 					}
 				}
 			}
-			owner.heir = {
+			owner.heir ?= {
 				age >= 18
 			}
 		}
@@ -400,7 +419,7 @@ abdicate_monarch = {
 				owner ?= {
 					any_political_movement = {
 						exists = most_desired_law
-						is_insurrectionary = yes
+						is_revolutionary = yes
 					}
 				}
 			}
@@ -422,7 +441,7 @@ abdicate_monarch = {
 		value = -50
 		if = {
 			limit = {
-				interest_group = {
+				interest_group ?= {
 					ig_approval <= angry
 				}
 			}
@@ -430,7 +449,7 @@ abdicate_monarch = {
 		}
 		if = {
 			limit = {
-				interest_group = {
+				interest_group ?= {
 					is_marginal = yes
 				}
 			}
@@ -466,6 +485,16 @@ abdicate_monarch = {
 exile_character = {
 	clicksound = "event:/SFX/DLC/1.3_ip1/UI/exile_character"
 	
+	should_ai_evaluate = {
+		OR = {
+			has_law_or_variant = law_type:law_autocracy
+			has_law_or_variant = law_type:law_oligarchy
+			has_law_or_variant = law_type:law_single_party_state
+			has_law_or_variant = law_type:law_secret_police
+			has_law_or_variant = law_type:law_outlawed_dissent
+		}
+	}
+	
 	potential = {
 		is_in_exile_pool = no
 		is_in_void = no
@@ -482,8 +511,9 @@ exile_character = {
 	
 	possible = {
 		owner ?= {
-			NOT = {
-				has_law = law_type:law_protected_speech
+			NOR = {
+				has_law_or_variant = law_type:law_protected_speech
+				has_law_or_variant = law_type:law_guaranteed_liberties
 			}
 		}
 		is_busy = no
@@ -495,7 +525,7 @@ exile_character = {
 			political_movement ?= { is_insurrectionary = no }
 		}
 		trigger_else = {
-			interest_group = {
+			interest_group ?= {
 				is_in_government = no
 				is_insurrectionary = no
 				is_marginal = no
@@ -541,7 +571,7 @@ exile_character = {
 	}
 	
 	effect = {
-		this.interest_group = {
+		this.interest_group ?= {
 			save_scope_as = relevant_ig
 		}
 		this = {
@@ -567,13 +597,13 @@ exile_character = {
 		if = {
 			limit = {
 				owner ?= { has_journal_entry = je_caudillo }
-				interest_group = {
+				interest_group ?= {
 					is_interest_group_type = ig_armed_forces
 				}
 			}
 			if = {
 				limit = {
-					interest_group = {
+					interest_group ?= {
 						leader = {
 							this = ROOT
 						}
@@ -655,7 +685,7 @@ exile_character = {
 		# Standard radicals from having Right of Assembly
 		if = {
 			limit = {
-				owner ?= { has_law = law_type:law_right_of_assembly }
+				owner ?= { has_law_or_variant = law_type:law_right_of_assembly }
 			}
 			owner ?= {
 				add_radicals = {
@@ -667,7 +697,7 @@ exile_character = {
 		# Fewer radicals from Censorship
 		else_if = {
 			limit = {
-				owner ?= { has_law = law_type:law_censorship }
+				owner ?= { has_law_or_variant = law_type:law_censorship }
 			}
 			owner ?= {
 				add_radicals = {
@@ -736,90 +766,146 @@ exile_character = {
 	show_confirmation_box = yes
 	
 	ai_chance = {
-		value = -50
+		value = 0
+		
 		if = {
 			limit = {
-				interest_group = {
-					ig_approval <= -5
-				}
-			}
-			add = 25
-		}
-		if = {
-			limit = {
-				interest_group = {
-					ig_approval <= -10
-				}
-			}
-			add = 30
-		}
-		if = {
-			limit = {
-				scope:actor ?= {
-					NOR = {
-						has_law = law_type:law_autocracy
-						has_law = law_type:law_oligarchy
-						has_law = law_type:law_single_party_state
+				OR = {
+					interest_group ?= {
+						ig_approval < 0
+					}
+					political_movement ?= {
+						is_being_suppressed = yes
 					}
 				}
 			}
-			add = -25
-		}
-		if = {
-			limit = {
-				scope:actor ?= {
-					has_law = law_type:law_secret_police
-				}
+			
+			add = {
+				value = popularity
+				multiply = 0.2
 			}
-			add = 30
-		}
-		if = {
-			limit = {
-				scope:actor ?= {
-					has_law = law_type:law_national_guard
+			
+			if = {
+				limit = {
+					scope:actor ?= {
+						has_law_or_variant = law_type:law_outlawed_dissent
+					}
 				}
+				multiply = 1.5
 			}
-			add = 15
-		}
-		if = {
-			limit = {
-				scope:actor ?= {
-					has_law = law_type:law_guaranteed_liberties
+			else_if = {
+				limit = {
+					scope:actor ?= {
+						has_law_or_variant = law_type:law_censorship
+					}
 				}
+				multiply = 1.25
 			}
-			add = -100
-		}
-		if = {
-			limit = {
-				scope:actor ?= {
-					has_law = law_type:law_outlawed_dissent
+			else_if = {
+				limit = {
+					scope:actor ?= {
+						has_law_or_variant = law_type:law_right_of_assembly
+					}
 				}
+				multiply = 0.75
 			}
-			add = 30
-		}
-		if = {
-			limit = {
-				scope:actor ?= {
-					has_law = law_type:law_censorship
+			
+			if = {
+				limit = {
+					scope:actor ?= {
+						has_law_or_variant = law_type:law_secret_police
+					}
 				}
+				multiply = 1.5
 			}
-			add = 10
-		}
-		if = {
-			limit = {
-				scope:actor ?= {
-					has_law = law_type:law_right_of_assembly
+			else_if = {
+				limit = {
+					scope:actor ?= {
+						has_law_or_variant = law_type:law_national_guard
+					}
 				}
+				multiply = 1.25
 			}
-			add = -10
-		}
-		if = {
-			limit = {
-				scope:actor ?= {
-					has_law = law_type:law_protected_speech
+			else_if = {
+				limit = {
+					scope:actor ?= {
+						has_law_or_variant = law_type:law_no_home_affairs
+					}
 				}
+				multiply = 0.5
 			}
-			add = -20
+			
+			if = {
+				limit = {
+					interest_group ?= {
+						ig_approval <= -5
+					}
+				}
+				multiply = 1.25
+			}
+			else_if = {
+				limit = {
+					interest_group ?= {
+						ig_approval <= -10
+					}
+				}
+				multiply = 1.5
+			}
+			
+			if = {	# If we are Conservative dont immediately hang any Liberal politician and so on
+				limit = {
+					scope:actor ?= {
+						has_strategy = ai_strategy_conservative_agenda
+					}
+					has_liberal_ideology = yes
+				}
+				multiply = 0.5
+			}
+			else_if = {
+				limit = {
+					scope:actor ?= {
+						has_strategy = ai_strategy_progressive_agenda
+					}
+					OR = {
+						has_liberal_ideology = yes
+						has_progressive_ideology = yes
+					}
+				}
+				multiply = 0.5
+			}
+			else_if = {
+				limit = {
+					scope:actor ?= {
+						has_strategy = ai_strategy_egalitarian_agenda
+						NOT = { has_law_or_variant = law_type:law_council_republic }
+					}
+					OR = {
+						has_liberal_ideology = yes
+						has_progressive_ideology = yes
+						has_socialist_ideology = yes
+					}
+				}
+				multiply = 0.5
+			}
+			else_if = {
+				limit = {
+					scope:actor ?= {
+						has_strategy = ai_strategy_egalitarian_agenda
+					}
+					OR = {
+						has_progressive_ideology = yes
+						has_socialist_ideology = yes
+					}
+				}
+				multiply = 0.5
+			}
+			
+			if = {	# Be less inclined to toss out politicians
+				limit = {
+					NOT = { has_role = agitator }
+				}
+				multiply = 0.25
+			}
 		}
 	}
 }
@@ -859,7 +945,7 @@ invite_exile = {
 			limit = {
 				NOT = { is_interest_group_type = ig_devout }
 				scope:actor ?= {
-					has_law = law_type:law_state_religion
+					has_law = law_type:law_state_religion	# Millet System should just rely on average acceptance
 				}
 			}
 			custom_tooltip = {
@@ -871,7 +957,7 @@ invite_exile = {
 		character_acceptance = { target = scope:actor value >= acceptance_status_3 }
 		# Cannot invite exiles if you have Closed Borders
 		scope:actor ?= {
-			NOT = { has_law = law_type:law_closed_borders }
+			NOT = { has_law_or_variant = law_type:law_closed_borders }
 		}
 		# Agitator must be able to start or join a movement
 		can_agitate = scope:actor
@@ -990,19 +1076,19 @@ invite_exile = {
 		}
 		if = {
 			limit = {
-				scope:actor ?= { has_law = law_type:law_closed_borders }
+				scope:actor ?= { has_law_or_variant = law_type:law_closed_borders }
 			}
 			add = -200
 		}
 		if = {
 			limit = {
-				scope:actor ?= { has_law = law_type:law_no_migration_controls }
+				scope:actor ?= { has_law_or_variant = law_type:law_no_migration_controls }
 			}
 			add = 15
 		}
 		if = {
 			limit = {
-				scope:actor ?= { has_law = law_type:law_multicultural }
+				scope:actor ?= { has_law_or_variant = law_type:law_multicultural }
 			}
 			add = 15
 		}
@@ -1029,7 +1115,7 @@ retire_commander = {
 	
 	possible = {
 		is_ruler = no
-		interest_group = {
+		interest_group ?= {
 			is_insurrectionary = no
 		}
 		commander_is_available = yes
@@ -1052,7 +1138,7 @@ retire_commander = {
 			}
 		}
 		
-		interest_group = {
+		interest_group ?= {
 			add_modifier = {
 				name = retired_commander_interest_group_impact
 				multiplier = {
@@ -1231,115 +1317,3 @@ return_to_home_country = {
 	}
 }
 
-foster_national_agitation = {
-	potential = {
-		is_in_exile_pool = no
-		has_role = agitator
-		owner ?= scope:actor
-		owner ?= {
-			any_primary_culture = {
-				this = root.culture
-			}
-			has_technology_researched = nationalism
-		}
-	}
-	
-	show_requirements = yes
-	
-	possible = {
-		root.culture = {
-			save_temporary_scope_as = agitator_culture
-		}
-		this.interest_group = {
-			is_in_government = yes
-		}
-		any_state = {
-			this.state_region ?= {
-				is_homeland = root.culture
-			}
-			custom_tooltip = {
-				text = is_rival_of_owner_tt
-				OR = {
-					owner ?= {
-						has_diplomatic_pact = {
-							who = root.owner
-							type = rivalry
-						}
-					}
-					root.owner ?= {
-						has_diplomatic_pact = {
-							who = prev.owner
-							type = rivalry
-						}
-					}
-				}
-			}
-			custom_tooltip = {
-				text = not_homeland_of_states_tt
-				owner ?= {
-					NOR = {
-						this = root.owner
-						any_primary_culture = {
-							this = root.culture
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	effect = {
-		root.culture = {
-			save_scope_as = agitation_culture
-		}
-		root.owner ?= {
-			save_scope_as = agitation_sponsor
-		}
-		random_state = {
-			limit = {
-				state_region = {
-					is_homeland = root.culture
-				}
-				OR = {
-					owner ?= {
-						has_diplomatic_pact = {
-							who = root.owner
-							type = rivalry
-						}
-					}
-					root.owner ?= {
-						has_diplomatic_pact = {
-							who = prev.owner
-							type = rivalry
-						}
-					}
-				}
-				owner ?= {
-					NOR = {
-						this = root.owner
-						any_primary_culture = {
-							this = root.culture
-						}
-					}
-				}
-			}
-			save_scope_as = agitation_state
-			add_radicals_in_state = {
-				culture = root.culture
-				value = large_radicals
-			}
-			owner ?= {
-				post_notification = nationalism_national_agitation_occurred
-				change_relations = {
-					country = root.owner					value = -10
-				}
-			}
-		}
-	}
-	
-	cooldown = { days = short_modifier_time }
-	
-	ai_chance = {
-		value = 100
-	}
-}
