@@ -55,9 +55,9 @@
 		if = {
 			limit = {
 				any_scope_pop = {
-					limit = {
-						religion = rel:jewish
-						culture = cu:ethiopian
+					religion = rel:jewish
+					culture = {
+						has_discrimination_trait = heritage_abyssinian
 					}
 				}
 			}
@@ -65,7 +65,7 @@
 				limit = {
 					religion = rel:jewish
 					culture = {
-						has_discrimination_trait = ethiopian
+						has_discrimination_trait = heritage_abyssinian
 					}
 				}
 				# Done like this so we dont have to import the african pop history file...

@@ -77,7 +77,7 @@ cutting_red_tape = {
 
 renowned_playwright = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_prestige_add = 20
+	country_prestige_mult = 0.05
 }
 
 political_discord = {
@@ -328,14 +328,9 @@ expanding_holdings = {
 	interest_group_approval_add = 1
 }
 
-cizye_tax = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	tax_heathen_add = 0.5
-	state_conscription_rate_mult = -0.4
-}
-
 draft_exemption_tax = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_law_enactment_success_add = 0.2
 	state_conscription_rate_mult = -0.3
 }
 
