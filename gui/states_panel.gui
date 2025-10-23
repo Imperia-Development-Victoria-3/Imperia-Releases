@@ -501,11 +501,13 @@ types state_panel_types
 				parentanchor = hcenter
 
 				state_panel_overview_content = {
+					# CHANGED BY CSO
 					visible = "[And(GetVariableSystem.Exists('state_panel_detailed'), InformationPanel.IsTabSelected('default'))]"
 					using = default_content_fade
 				}
 
 				state_panel_condensed = {
+					# CHANGED BY CSO
 					visible = "[And(Not(GetVariableSystem.Exists('state_panel_detailed')), InformationPanel.IsTabSelected('default'))]"
 					using = default_content_fade
 				}
@@ -1040,14 +1042,6 @@ types state_panel_types
 						entity_instance = "[State.GetBestTextureEffect]"
 					}
 				}
-
-				onrightclick = "[RightClickMenuManager.ShowForState(State.AccessSelf)]"
-				effectname = "NoHighlight"
-				distribute_visual_state = no
-				inherit_visual_state = no
-
-				using = fade_top_illus
-
 				toggle_condensed = {}
 			}
 
@@ -1306,7 +1300,6 @@ types state_panel_types
 				}
 
 				blockoverride "goto" {
-					datacontext = "[State.GetMarket]"
 					tooltip = "GO_TO_BUTTON_MARKET"
 					onclick = "[InformationPanelBar.OpenMarketPanel(State.GetMarket)]"
 				}
@@ -2828,6 +2821,7 @@ types state_panel_types
 			block "icon" {
 				icon = {
 					block "texture" {}
+					block "alpha" {}
 					size = { 35 35 }
 					parentanchor = vcenter
 				}
@@ -2842,6 +2836,7 @@ types state_panel_types
 				block "heading" {
 					textbox = {
 						block "name" {}
+						block "alpha" {}
 						autoresize = yes
 						block "maximumsize" {
 							minimumsize = { 160 -1 }
@@ -3173,6 +3168,8 @@ types state_panel_types
 					}
 				}
 				state_panel_status_item_condensed = {
+					onmousehierarchyenter = "[SetTempMapModeByKey('mm_trade')]"
+					onmousehierarchyleave = "[RemoveTempMapMode]"
 					visible = "[State.IsMarketCapital]"
 					tooltip = "TOOLTIP_MARKET_CAPITAL_STATE"
 					onmousehierarchyenter = "[AccessHighlightManager.HighlightMarket(State.GetMarket.Self)]"
@@ -3193,6 +3190,8 @@ types state_panel_types
 					}
 				}
 				state_panel_status_item_condensed = {
+					onmousehierarchyenter = "[SetTempMapModeByKey('mm_trade')]"
+					onmousehierarchyleave = "[RemoveTempMapMode]"
 					visible = "[Not(State.IsMarketCapital)]"
 					tooltip = "MARKET_STATES_PANEL_MARKET_ACCESS_TOOLTIP"
 					onmousehierarchyenter = "[AccessHighlightManager.HighlightMarket(State.GetMarket.Self)]"
@@ -3213,8 +3212,54 @@ types state_panel_types
 					}
 				}
 
+				# ADDED BY CSO
+				state_panel_status_item_condensed = {
+					tooltip = "STATE_WORLD_MARKET_ACCESS_DESC"
+					alwaystransparent = no
+
+					blockoverride "texture" {
+						texture = "gfx/interface/icons/state_status_icons/world_market_access.dds"
+					}
+
+					blockoverride "name" {
+						text = "STATE_WORLD_MARKET_ACCESS"
+					}
+
+					blockoverride "alpha" {
+						alpha = "[TransparentIfZero_int32(State.GetTradeCapacity)]"
+					}
+
+					blockoverride "goto" {
+						onclick = "[InformationPanelBar.OpenPanel('world_market')]"
+						tooltip = "GOTO_WORLD_MARKET"
+					}
+				}
+
+				# ADDED BY CSO
+				state_panel_status_item_condensed = {
+					tooltip = "STATE_TRADE_CAPACITY_DESC"
+					visible = "[GreaterThan_int32(State.GetTradeCapacity,'(int32)0')]"
+					alwaystransparent = no
+
+					blockoverride "texture" {
+						texture = "gfx/interface/icons/state_status_icons/trade_capacity.dds"
+					}
+
+					blockoverride "name" {
+						text = "STATE_TRADE_CAPACITY"
+					}
+
+					blockoverride "goto" {
+						datacontext = "[State.AccessBuilding('building_trade_center')]"
+						tooltip = "GO_TO_BUTTON_BUILDING"
+						onclick = "[InformationPanelBar.OpenBuildingDetailsPanel(Building.AccessSelf)]"
+					}
+				}
+
 				state_panel_status_item_condensed = {
 					tooltip = "TOOLTIP_STATE_POPULATION"
+					onmousehierarchyenter = "[SetTempMapModeByKey('mm_population')]"
+					onmousehierarchyleave = "[RemoveTempMapMode]"
 
 					blockoverride "texture" {
 						texture = "gfx/interface/icons/generic_icons/population.dds"
@@ -3237,6 +3282,7 @@ types state_panel_types
 					}
 				}
 
+				# ADDED BY CSO
 				state_panel_status_item_condensed = {
 					tooltip = "concept_unemployed_desc"
 					
@@ -3245,7 +3291,7 @@ types state_panel_types
 					}
 
 					blockoverride "name" {
-						text = "#variable [State.GetNumUnemployedWorkingAdults|D]#!"
+						raw_text = "#variable [State.GetNumUnemployedWorkingAdults|D]#!"
 					}
 				}
 
@@ -3478,6 +3524,54 @@ types state_panel_types
 					}
 				}
 
+				# ADDED BY CSO
+				# Food security - Mild Starvation
+				state_panel_status_item_condensed = {
+					datacontext = "[State.GetFoodSecurity]"
+					visible = "[And(And(GreaterThan_int64(FoodSecurity.GetNumStarvingPops, '(int64)0'), Not(State.HasFamine)), Not(GreaterThan_CFixedPoint(FoodSecurity.GetPercentageStarvingPopsSevere, '(CFixedPoint)0.02')))]"
+					tooltip = "STATE_FOOD_SECURITY_TOOLTIP"
+
+					blockoverride "texture" {
+						texture = "gfx/interface/icons/famine_icons/famine_icon.dds"
+					}
+
+					blockoverride "name" {
+						text = "STATE_FOOD_SECURITY"
+					}
+				}
+
+				# ADDED BY CSO
+				# Food security - Severe Starvation
+				state_panel_status_item_condensed = {
+					datacontext = "[State.GetFoodSecurity]"
+
+					visible = "[And(GreaterThan_CFixedPoint(FoodSecurity.GetPercentageStarvingPopsSevere, '(CFixedPoint)0.02'), Not(State.HasFamine))]"
+					tooltip = "STATE_FOOD_SECURITY_TOOLTIP"
+
+					blockoverride "texture" {
+						texture = "gfx/interface/icons/famine_icons/famine_icon.dds"
+					}
+
+					blockoverride "name" {
+						text = "STATE_FOOD_SECURITY"
+					}
+				}
+
+				# ADDED BY CSO
+				# Food security - Famine
+				state_panel_status_item_condensed = {
+					visible = "[State.HasFamine]"
+					tooltip = "STATE_FOOD_SECURITY_TOOLTIP"
+
+					blockoverride "texture" {
+						texture = "gfx/interface/icons/famine_icons/famine_icon.dds"
+					}
+
+					blockoverride "name" {
+						text = "STATE_FOOD_SECURITY"
+					}
+				}
+
 				state_panel_status_item_condensed = {
 					visible = "[State.HasTurmoilEffects]"
 					tooltip = "TOOLTIP_STATE_TURMOIL"
@@ -3502,6 +3596,21 @@ types state_panel_types
 
 					blockoverride "name" {
 						text = "STATE_DEVASTATION_CONDENSED"
+					}
+				}
+
+				# ADDED BY CSO
+				state_panel_status_item_condensed = {
+					visible = "[GreaterThan_CFixedPoint(State.GetBlockadeLevel, '(CFixedPoint)0')]"
+					datacontext = "[State.GetStateRegion]"
+					tooltip = "TOOLTIP_STATE_BLOCKADE_LEVEL"
+
+					blockoverride "texture" {
+						texture = "gfx/interface/icons/state_status_icons/blockaded.dds"
+					}
+
+					blockoverride "name" {
+						text = "STATE_BLOCKADE_LEVEL"
 					}
 				}
 
@@ -3599,7 +3708,8 @@ types state_panel_types
 							blockoverride "chart_button_button_position" {
 								position = { 0 0 }
 							}
-					
+							
+							# ADDED BY CSO
 							empty_state = {
 								blockoverride "visible" {
 									visible = "[IsDataModelEmpty(State.AccessPopTypes)]"
@@ -3613,24 +3723,21 @@ types state_panel_types
 								}
 							}
 						}
-
 						state_ig_piechart = {
 							blockoverride "title" {}
 							blockoverride "labels" {}
 							blockoverride "background" {}
-
 							blockoverride "piechartsize" {
 								size = { 90 90 }
 							}
-
 							blockoverride "chart_button_position" {
 								position = { 8 -8 }
 							}
-
 							blockoverride "chart_button_button_position" {
 								position = { 0 0 }
 							}
 
+							# ADDED BY CSO
 							empty_state = {
 								blockoverride "visible" {
 									visible = "[IsDataModelEmpty(State.AccessPopInterestGroups)]"
@@ -3646,13 +3753,14 @@ types state_panel_types
 						}
 					}
 				}
-			}
 
+			}
 			flowcontainer = {
 				ignoreinvisible = yes
 				direction = vertical
 				using = default_list_position
 
+				# ADDED BY CSO
 				flowcontainer = {
 					direction = horizontal
 					visible = "[State.GetCountry.IsLocalPlayer]"
@@ -3667,7 +3775,7 @@ types state_panel_types
 						}
 	
 						textbox = {
-							text = "#BOLD [StatesPanel.AccessState.GetNumConstructableUrbanBuildings|+]#!"
+							raw_text = "#BOLD [StatesPanel.AccessState.GetNumConstructableUrbanBuildings|+]#!"
 							parentanchor = right|vcenter
 							align = hcenter|nobaseline
 							autoresize = yes
@@ -3681,19 +3789,6 @@ types state_panel_types
 
 					toggle_hide_empty = {}
 				}
-
-				flowcontainer = {
-					direction = horizontal
-					visible = "[Not(State.GetCountry.IsLocalPlayer)]"
-
-					toggle_hide_empty = {
-						size = { 249 45 }
-						position = { 0 0 }
-						# parentanchor = right
-					}
-				}
-
-				
 
 				building_item_condensed = {
 					datacontext = "[StatesPanel.AccessBuilding('building_urban_center')]"
@@ -3751,7 +3846,12 @@ types state_panel_types
 					direction = vertical
 
 					item = {
-						building_item_condensed = {}
+						building_item_condensed = {
+							# ADDED BY CSO
+							tooltipwidget = {
+								FancyTooltip_Building = {}
+							}
+						}
 					}
 				}
 
@@ -3760,7 +3860,12 @@ types state_panel_types
 					direction = vertical
 
 					item = {
-						building_item_condensed = {}
+						building_item_condensed = {
+							# ADDED BY CSO
+							tooltipwidget = {
+								FancyTooltip_Building = {}
+							}
+						}
 					}
 				}
 
@@ -3781,21 +3886,27 @@ types state_panel_types
 					direction = vertical
 
 					item = {
-						building_item_condensed = {}
+						building_item_condensed = {
+							# ADDED BY CSO
+							tooltipwidget = {
+								FancyTooltip_Building = {}
+							}
+						}
 					}
 				}
 
-				building_item_condensed = {
-					datacontext = "[StatesPanel.AccessBuilding('building_barracks')]"
+				# REMOVED BY CSO - SHOWS TWICE OTHERWISE
+				# building_item_condensed = {
+				# 	datacontext = "[StatesPanel.AccessBuilding('building_barracks')]"
 
-					tooltipwidget = {
-						FancyTooltip_Building = {}
-					}
+				# 	tooltipwidget = {
+				# 		FancyTooltip_Building = {}
+				# 	}
 
-					blockoverride "text" {
-						text = "TOTAL_BARRACKS"
-					}
-				}
+				# 	blockoverride "text" {
+				# 		text = "TOTAL_BARRACKS"
+				# 	}
+				# }
 
 				building_item_condensed = {
 					datacontext = "[StatesPanel.AccessBuilding('building_conscription_center')]"
@@ -3809,26 +3920,56 @@ types state_panel_types
 					}
 				}
 
-				building_item_condensed = {
-					datacontext = "[StatesPanel.AccessBuilding('building_naval_base')]"
+				# REMOVED BY CSO - SHOWS TWICE OTHERWISE
+				# building_item_condensed = {
+				# 	datacontext = "[StatesPanel.AccessBuilding('building_naval_base')]"
 
-					tooltipwidget = {
-						FancyTooltip_Building = {}
-					}
+				# 	tooltipwidget = {
+				# 		FancyTooltip_Building = {}
+				# 	}
 
-					blockoverride "text" {
-						text = "TOTAL_CONSCRIPTION_CENTER"
-					}
-				}
+				# 	blockoverride "text" {
+				# 		text = "TOTAL_CONSCRIPTION_CENTER"
+				# 	}
+				# }
 
 				flowcontainer = {
 					datamodel = "[State.AccessDevelopmentBuildings]"
 					direction = vertical
 
 					item = {
-						building_item_condensed = {}
+						building_item_condensed = {
+							# ADDED BY CSO
+							tooltipwidget = {
+								FancyTooltip_Building = {}
+							}
+						}
 					}
-				}	
+				}
+
+				# REMOVED BY CSO
+				# button_icon_plus_square = {
+				# 	visible = "[State.GetCountry.IsLocalPlayer]"
+				# 	enabled = "[GreaterThan_int32( StatesPanel.AccessState.GetNumConstructableUrbanBuildings,'(int32)0')]"
+				# 	size = { 260 45 }
+				# 	tooltip = "BUILD_URBAN_BUILDING"
+				# 	onclick = "[StatesPanel.ToggleBuildUrbanBuildingsMenu(PdxGuiWidget.AccessSelf)]"
+				# 	blockoverride "icon_size" {
+				# 		size = { 45 100% }
+				# 	}
+
+				# 	textbox = {
+				# 		raw_text = "#BOLD [StatesPanel.AccessState.GetNumConstructableUrbanBuildings|+]#!"
+				# 		parentanchor = right|vcenter
+				# 		align = hcenter|nobaseline
+				# 		autoresize = yes
+				# 		position = { -10 0 }
+
+				# 		background = {
+				# 			using = blurry_dark_background
+				# 		}
+				# 	}
+				# }
 			}
 		}
 	}
@@ -3865,6 +4006,9 @@ types information_panels_types
 	type toggle_condensed = widget {
 		parentanchor = bottom
 		size = { 60 60 }
+		# REMOVED BY CSO
+		# onmousehierarchyenter = "[PdxGuiWidget.FindChild('toggle_condensed_button').TriggerAnimation('show_toggle_condensed_button')]"
+		# onmousehierarchyleave = "[PdxGuiWidget.FindChild('toggle_condensed_button').TriggerAnimation('hide_toggle_condensed_button')]"
 		alwaystransparent = no
 
 		button_icon_round_toggle = {
@@ -3874,6 +4018,7 @@ types information_panels_types
 			parentanchor = bottom
 			position = { 8 -15 }
 
+			# ADDED BY CSO
 			size = { 29 29 }
 
 			blockoverride "on_click" {
@@ -3900,6 +4045,7 @@ types information_panels_types
 		}
 	}
 
+	# ADDED BY CSO
 	type toggle_hide_empty = widget {
 		parentanchor = vcenter
 		size = { 29 29 }
@@ -4571,6 +4717,9 @@ types building_item_types
 		onmousehierarchyenter = "[AccessHighlightManager.HighlightBuilding(Building.Self)]"
 		onmousehierarchyleave = "[AccessHighlightManager.RemoveHighlight]"
 
+		# ADDED BY CSO
+		visible = "[Or(Not(GetVariableSystem.Exists('cso_hide_empty_buildings')), Or(GreaterThan_int32( Building.GetExpansionLevel, '(int32)0'), Building.HasConstructionQueued))]"
+
 		flowcontainer = {
 			minimumsize = { 260 51 }
 			margin_left = 4
@@ -4663,34 +4812,43 @@ types building_item_types
 					margin_left = 7
 					spacing = 2
 
+					# ADDED BY CSO
 					widget = {
 						size = { 30 30 }
 						parentanchor = vcenter
 						### DOWNSIZE
-						# button_icon_down_action = {
 						button_icon_minus_action = {
 							size = { 29 29 }
 							parentanchor = center
 							tooltip = "[Building.GetDownsizeTooltip]"
 							onclick = "[Execute( Building.Downsize )]"
 							enabled = "[IsValid( Building.Downsize )]"
-							visible = "[And(Building.IsValid, Building.IsDownsizeable)]"
+							visible = "[And(And( And( Building.IsValid, Building.IsDownsizeable ), Not( ShouldAskConfirmation( Building.Downsize ) ) ), Not(Building.IsMilitaryBuilding))]"
+							using = tooltip_below
+						}
+
+						### DOWNSIZE WITH CONFIRMATION
+						button_icon_minus_action = {
+							size = { 29 29 }
+							parentanchor = center
+							tooltip = "[Building.GetDownsizeTooltip]"
+							onclick = "[PopupManager.AskConfirmation( Building.Downsize )]"
+							enabled = "[IsValid( Building.Downsize )]"
+							visible = "[And(And( And( Building.IsValid, Building.IsDownsizeable ), ShouldAskConfirmation( Building.Downsize ) ), Not(Building.IsMilitaryBuilding))]"
 							using = tooltip_below
 						}
 
 						### CANCEL CONSTRUCTION
 						button_icon_minus_action = {
-							parentanchor = center
 							size = { 29 29 }
+							parentanchor = center
 							tooltip = "[Building.GetCancelConstructionTooltip]"
-							# visible = "[Or( Or( And( Not( Building.IsValid ), IsValid( Building.QueueConstruction ) ), Not(Building.HasReachedLevelCap) ), Building.HasConstructionQueued )]"
-							visible = "[IsValid( Building.CancelConstruction )]"
-							# enabled = "[IsValid( Building.CancelConstruction )]"
+							visible = "[And(IsValid( Building.CancelConstruction ), Not(Building.IsMilitaryBuilding))]"
 							onclick = "[Execute( Building.CancelConstruction )]"
 							using = tooltip_below
 						}
 					}
-				
+
 					### EXPAND BUTTON
 					widget = {
 						size = { 30 30 }
@@ -4704,6 +4862,8 @@ types building_item_types
 							enabled = "[IsValid( Building.QueueConstruction )]"
 						}
 					}
+
+					# REMOVED BY CSO
 					# widget = {
 					# 	size = { 30 30 }
 					# 	parentanchor = vcenter
