@@ -17,6 +17,7 @@
 		activate_law = law_type:law_banner_system
 		activate_law = law_type:law_meritocratic_bureaucracy
 		activate_law = law_type:law_national_supremacy
+		activate_law = law_type:law_subjecthood
 		activate_law = law_type:law_traditionalism
 		activate_law = law_type:law_censorship
 		activate_law = law_type:law_no_migration_controls
@@ -40,7 +41,7 @@
 		trigger_event = {
 			id = imperia_qing.1
 		}
-		ig:ig_armed_forces = {
+		ig:ig_armed_forces ?= {
 			set_interest_group_name = ig_eight_banners
 			add_ideology = ideology_pro_slavery
 		}
