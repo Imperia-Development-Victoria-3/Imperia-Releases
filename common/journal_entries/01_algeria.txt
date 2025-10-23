@@ -1,6 +1,12 @@
 ﻿je_conquest_of_algeria = {
 	icon = "gfx/interface/icons/event_icons/bicorne_hat.dds"
 	group = je_group_france_expansion
+	
+	is_shown_in_lobby = {
+		has_dlc_feature = voice_of_the_people_content	#France DLC
+		c:FRA = THIS
+	}
+	
 	complete = {
 		country_or_subject_owns_entire_state_region = STATE_ORAN
 		country_or_subject_owns_entire_state_region = STATE_ALGIERS
@@ -165,14 +171,9 @@ je_the_algerian_departements = {
 				}
 			}
 			AND = {
-				cultural_acceptance_base = {
-					target = cu:maghrebi
-					value >= acceptance_status_3
-				}
-				cultural_acceptance_base = {
-					target = cu:berber
-					value >= acceptance_status_3
-				}
+				country_average_religious_acceptance = { target = rel:sunni value >= religious_acceptance_low }
+				country_average_cultural_acceptance = { target = cu:maghrebi value >= acceptance_status_3 }
+				country_average_cultural_acceptance = { target = cu:berber value >= acceptance_status_3 }
 			}
 		}
 	}

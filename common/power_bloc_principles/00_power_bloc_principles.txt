@@ -41,7 +41,7 @@ principle_construction_2 = {
 	icon = "gfx/interface/icons/principles_icons/construction.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = -5
+		power_bloc_cohesion_add = -4
 	}
 	leader_modifier = {
 		building_construction_sector_throughput_add = 0.1
@@ -97,8 +97,8 @@ principle_internal_trade_1 = {
 		if = {
 			limit = {
 				OR = {
-					has_law = law_type:law_mercantilism
-					has_law = law_type:law_command_economy
+					has_law_or_variant = law_type:law_mercantilism
+					has_law_or_variant = law_type:law_command_economy
 				}
 			}
 			add = 100
@@ -259,7 +259,7 @@ principle_vassalization_2 = {
 	icon = "gfx/interface/icons/principles_icons/vassals_subjects.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = -10
+		power_bloc_cohesion_add = -8
 	}
 	leader_modifier = {
 		# Increase leader country authority
@@ -279,7 +279,7 @@ principle_vassalization_3 = {
 	icon = "gfx/interface/icons/principles_icons/vassals_subjects.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_3.dds"
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = -15
+		power_bloc_cohesion_add = -12
 	}
 	leader_modifier = {
 		# Increase leader country authority
@@ -322,7 +322,7 @@ principle_advanced_research_1 = {
 	institution_modifier = {
 		# School institution gives more research speed
 		country_tech_research_speed_mult = 0.02
-		country_weekly_innovation_max_add = 1
+		country_weekly_innovation_max_add = 1.5
 	}
 	ai_weight = {
 		value = 100
@@ -347,6 +347,10 @@ principle_advanced_research_2 = {
 	icon = "gfx/interface/icons/principles_icons/advanced_research.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
 	
+	power_bloc_modifier = {
+		power_bloc_cohesion_add = 4
+	}
+	
 	member_modifier = {
 		country_institution_size_change_speed_institution_schools_mult = 0.25
 		country_institution_cost_institution_schools_mult = -0.1
@@ -362,13 +366,14 @@ principle_advanced_research_2 = {
 	}
 	non_leader_modifier = {
 		country_bureaucracy_mult = -0.04
+		country_tech_spread_mult = 0.05
 	}
 	
 	institution = institution_schools
 	institution_modifier = {
 		# School institution gives research speed
 		country_tech_research_speed_mult = 0.03
-		country_weekly_innovation_max_add = 2
+		country_weekly_innovation_max_add = 2.5
 		state_pop_qualifications_mult = 0.02
 	}
 	ai_weight = {
@@ -380,7 +385,7 @@ principle_advanced_research_3 = {
 	icon = "gfx/interface/icons/principles_icons/advanced_research.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_3.dds"
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = 5
+		power_bloc_cohesion_add = 8
 	}
 	member_modifier = {
 		country_institution_size_change_speed_institution_schools_mult = 0.5
@@ -396,17 +401,17 @@ principle_advanced_research_3 = {
 	}
 	non_leader_modifier = {
 		country_bureaucracy_mult = -0.08
-		country_tech_spread_mult = 0.05
+		country_tech_spread_mult = 0.10
 	}
 	
 	institution = institution_schools
 	institution_modifier = {
 		# School institution gives more research speed
 		country_tech_research_speed_mult = 0.05
-		# School isntitution reduces ahead of time research penalty
+		# School institution reduces ahead of time research penalty
 		country_ahead_of_time_research_penalty_mult = -0.02
 		# Increase Country max innovation
-		country_weekly_innovation_max_add = 3
+		country_weekly_innovation_max_add = 4
 		state_pop_qualifications_mult = 0.05
 	}
 	ai_weight = {
@@ -582,7 +587,7 @@ principle_aggressive_coordination_3 = {
 	icon = "gfx/interface/icons/principles_icons/aggressive_coordination.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_3.dds"
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = -10
+		power_bloc_cohesion_add = -5
 	}
 	leader_modifier = {
 		interest_group_ig_armed_forces_pol_str_mult = 0.15
@@ -611,6 +616,11 @@ principle_external_trade_1 = {
 	leader_modifier = {
 		state_trade_advantage_mult = 0.1
 	}
+	
+	power_bloc_modifier = {
+		power_bloc_cohesion_add = 4
+	}
+	
 	member_modifier = {
 		# Increased trade capacity
 		state_trade_capacity_mult = 0.25
@@ -619,6 +629,12 @@ principle_external_trade_1 = {
 	}
 	ai_weight = {
 		value = 100
+		
+		if = {
+			limit = { has_law_or_variant = law_type:law_free_trade }
+			add = 100
+		}
+		
 		if = {
 			limit = {
 				has_law = law_type:law_free_trade
@@ -652,6 +668,11 @@ principle_external_trade_2 = {
 	leader_modifier = {
 		state_trade_advantage_mult = 0.15
 	}
+	
+	power_bloc_modifier = {
+		power_bloc_cohesion_add = 8
+	}
+	
 	member_modifier = {
 		# Modifiers from previous level(s)
 		state_trade_capacity_mult = 0.25
@@ -829,6 +850,9 @@ principle_police_coordination_2 = {
 	icon = "gfx/interface/icons/principles_icons/dedicated_police.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
 	
+	power_bloc_modifier = {
+		power_bloc_cohesion_add = 5
+	}
 	member_modifier = {
 		# Cheaper and faster police institution
 		country_institution_size_change_speed_institution_police_mult = 0.4
@@ -860,7 +884,7 @@ principle_police_coordination_3 = {
 	icon = "gfx/interface/icons/principles_icons/dedicated_police.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_3.dds"
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = 5
+		power_bloc_cohesion_add = 10
 	}
 	member_modifier = {
 		# Cheaper and faster police institution
@@ -934,6 +958,10 @@ principle_transport_1 = {
 principle_transport_2 = {
 	icon = "gfx/interface/icons/principles_icons/transport.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
+	
+	power_bloc_modifier = {
+		power_bloc_cohesion_add = 5
+	}
 	leader_modifier = {
 		character_supply_route_cost_mult = -0.25
 	}
@@ -955,7 +983,7 @@ principle_transport_3 = {
 	icon = "gfx/interface/icons/principles_icons/transport.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_3.dds"
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = 5
+		power_bloc_cohesion_add = 10
 	}
 	leader_modifier = {
 		character_supply_route_cost_mult = -0.33
@@ -1037,6 +1065,9 @@ principle_military_industry_1 = {
 principle_military_industry_2 = {
 	icon = "gfx/interface/icons/principles_icons/military_industry.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
+	power_bloc_modifier = {
+		power_bloc_cohesion_add = -4
+	}
 	leader_modifier = {
 		country_military_goods_cost_mult = -0.1
 		country_nationalization_cost_non_members_mult = -0.3333
@@ -1103,7 +1134,6 @@ principle_colonial_offices_1 = {
 		# Cheaper and faster colonial institution
 		country_institution_size_change_speed_institution_colonial_affairs_mult = 0.25
 		country_institution_cost_institution_colonial_affairs_mult = -0.1
-		country_disallow_law_no_colonial_affairs_bool = yes
 	}
 	
 	leader_modifier = {
@@ -1139,13 +1169,12 @@ principle_colonial_offices_2 = {
 	icon = "gfx/interface/icons/principles_icons/colonial_offices.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = -5
+		power_bloc_cohesion_add = -4
 	}
 	member_modifier = {
 		# Cheaper and faster colonial institution
 		country_institution_size_change_speed_institution_colonial_affairs_mult = 0.4
 		country_institution_cost_institution_colonial_affairs_mult = -0.25
-		country_disallow_law_no_colonial_affairs_bool = yes
 	}
 	
 	leader_modifier = {
@@ -1181,7 +1210,6 @@ principle_colonial_offices_3 = {
 		# Cheaper and faster colonial institution
 		country_institution_size_change_speed_institution_colonial_affairs_mult = 0.6
 		country_institution_cost_institution_colonial_affairs_mult = -0.5
-		country_disallow_law_no_colonial_affairs_bool = yes
 	}
 	leader_modifier = {
 		country_can_impose_same_lawgroup_colonization_in_power_bloc_bool = yes
@@ -1402,11 +1430,11 @@ principle_freedom_of_movement_1 = {
 	}
 	possible = {
 		NOT = {
-			has_law = law_type:law_closed_borders
+			has_law_or_variant = law_type:law_closed_borders
 		}
 	}
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = -5
+		power_bloc_cohesion_add = -4
 	}
 	member_modifier = {
 		# Increased migration
@@ -1439,7 +1467,7 @@ principle_freedom_of_movement_1 = {
 		}
 		if = {
 			limit = {
-				has_law = law_type:law_migration_controls
+				has_law_or_variant = law_type:law_migration_controls
 			}
 			multiply = 0.5
 		}
@@ -1465,7 +1493,7 @@ principle_freedom_of_movement_2 = {
 	icon = "gfx/interface/icons/principles_icons/freedom_of_movement.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = -10
+		power_bloc_cohesion_add = -8
 	}
 	member_modifier = {
 		country_mass_migration_attraction_mult = 0.05
@@ -1740,7 +1768,7 @@ principle_sacred_civics_1 = {
 				}
 				# State Atheist Ideology bloc wants the power to enforce atheism
 				NAND = {
-					has_law = law_type:law_state_atheism
+					has_law_or_variant = law_type:law_state_atheism
 					power_bloc ?= {
 						has_identity = identity:identity_ideological_union
 					}
@@ -1839,6 +1867,9 @@ principle_ideological_truth_1 = {
 principle_ideological_truth_2 = {
 	icon = "gfx/interface/icons/principles_icons/ideological_truth.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
+	power_bloc_modifier = {
+		power_bloc_cohesion_add = 4
+	}
 	leader_modifier = {
 		country_legitimacy_base_add = 5
 	}
@@ -1851,7 +1882,7 @@ principle_ideological_truth_2 = {
 		country_bolster_cost_mult = -0.35
 		country_suppression_cost_mult = -0.35
 		# Reduces ideological coherence penalty for IGs in same party
-		country_party_whip_impact_mult = 0.2
+		country_party_whip_impact_add = 0.1
 		interest_group_in_government_attraction_mult = 0.1
 		country_legitimacy_min_add = 25
 	}
@@ -1864,7 +1895,7 @@ principle_ideological_truth_3 = {
 	icon = "gfx/interface/icons/principles_icons/ideological_truth.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_3.dds"
 	power_bloc_modifier = {
-		power_bloc_cohesion_add = 5
+		power_bloc_cohesion_add = 8
 	}
 	leader_modifier = {
 		country_legitimacy_base_add = 10
@@ -1876,7 +1907,7 @@ principle_ideological_truth_3 = {
 		interest_group_in_opposition_agitator_popularity_add = -33
 		country_bolster_cost_mult = -0.5
 		country_suppression_cost_mult = -0.5
-		country_party_whip_impact_mult = 0.2
+		country_party_whip_impact_add = 0.1
 		interest_group_in_government_attraction_mult = 0.15
 		# Members Legitimacy can't fall under 33
 		country_legitimacy_min_add = 33
@@ -1923,7 +1954,9 @@ principle_companies_1 = {
 principle_companies_2 = {
 	icon = "gfx/interface/icons/principles_icons/companies.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_2.dds"
-	
+	power_bloc_modifier = {
+		power_bloc_cohesion_add = -4
+	}
 	member_modifier = {
 		# Modifiers from previous level(s)
 		country_company_throughput_bonus_add = 0.1
@@ -1940,7 +1973,9 @@ principle_companies_2 = {
 principle_companies_3 = {
 	icon = "gfx/interface/icons/principles_icons/companies.dds"
 	background = "gfx/interface/icons/principles_icons/principle_tier_3.dds"
-	
+	power_bloc_modifier = {
+		power_bloc_cohesion_add = -8
+	}
 	member_modifier = {
 		# Modifiers from previous level(s)
 		country_company_throughput_bonus_add = 0.15

@@ -20,7 +20,6 @@
  no_natives_left_oregon_tt: "No Natives are left on the way to Oregon"
  imperia_vassal_civil_war_call_in_decision: "Call in vassals in civil war"
  imperia_vassal_civil_war_call_in_decision_desc: "In case of a civil war in a vassal, we can call in other nearby vassals to stamp out the revolution. Granted we have good enough relations with them."
- mm_players: "Player Mapmode"
 
  would_happen_tt: "#b The following would happen#!:"
  civil_war_starts_tt: "#r A civil war starts!#!"
@@ -144,10 +143,15 @@
  lignite.1.f: "Apparently the peasants have been harvesting it for generations, but no one bothered to listen to them until now. Who would have thought they have something useful to say!"
  lignite.1.a: "Is that smog I see on the horizon?"
  lignite.1.b: "The children yearn for the mines."
+ lignite.1.c: "Lignite is just coal, right? No need to get excited."
+
  state_lignite_rush: "Lignite Rush"
+
+ ignore_lignite_events_tt: "This event will be hidden in the future, and the above effects will be applied automatically during every lignite rush."
 
  #Balance Stuff
  afro_american_acceptance: "Afro-American Acceptance"
+ tradition_anglo_american: "Anglo-American"
 
  imperia_british_india_mortality_modifier: "Oppressive Agrarianization"
 
@@ -166,3 +170,9 @@
  british_republican_flag_events.1.c: "The Spartacus Tricolour"
  british_republican_flag_events.1.d: "The Union Flag"
  british_republican_flag_events.1.e: "The Union Stripes"
+
+ IMPERIA_ZERO: ""
+ NUM_FIFTY: "50"
+ NUM_ONE_HUNDRED: "100"
+ NUM_TWO_HUNDRED_FIFTY: "250"
+ NUM_FIVE_HUNDRED: "500"

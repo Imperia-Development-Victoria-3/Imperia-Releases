@@ -732,7 +732,7 @@ warlord_china_events.301 = {
 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
 	trigger = {
 		has_journal_entry = je_reunify_china
-		has_law = law_type:law_autocracy
+		has_law_or_variant = law_type:law_autocracy
 		has_technology_researched = mass_propaganda
 		NOT = {
 			ruler = {
@@ -841,8 +841,8 @@ warlord_china_events.302 = {
 		trigger = {
 			ROOT = {
 				OR = {
-					has_law = law_type:law_presidential_republic
-					has_law = law_type:law_parliamentary_republic
+					has_law_or_variant = law_type:law_presidential_republic
+					has_law_or_variant = law_type:law_parliamentary_republic
 				}
 			}
 		}
@@ -856,8 +856,8 @@ warlord_china_events.302 = {
 		trigger = {
 			ROOT = {
 				OR = {
-					has_law = law_type:law_presidential_republic
-					has_law = law_type:law_parliamentary_republic
+					has_law_or_variant = law_type:law_presidential_republic
+					has_law_or_variant = law_type:law_parliamentary_republic
 				}
 			}
 		}
@@ -873,8 +873,8 @@ warlord_china_events.302 = {
 		trigger = {
 			ROOT = {
 				OR = {
-					has_law = law_type:law_monarchy
-					has_law = law_type:law_theocracy
+					has_law_or_variant = law_type:law_monarchy
+					has_law_or_variant = law_type:law_theocracy
 				}
 			}
 		}
@@ -930,8 +930,8 @@ warlord_china_events.302 = {
 		trigger = {
 			ROOT = {
 				OR = {
-					has_law = law_type:law_monarchy
-					has_law = law_type:law_theocracy
+					has_law_or_variant = law_type:law_monarchy
+					has_law_or_variant = law_type:law_theocracy
 				}
 			}
 		}
@@ -946,7 +946,7 @@ warlord_china_events.302 = {
 		name = warlord_china_events.302.g
 		trigger = {
 			ROOT = {
-				has_law = law_type:law_council_republic
+				has_law_or_variant = law_type:law_council_republic
 			}
 		}
 		default_option = yes
