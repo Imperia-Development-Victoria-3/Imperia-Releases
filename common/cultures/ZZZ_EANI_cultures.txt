@@ -2,7 +2,14 @@
 korean={
 	color= hsv{ 0.17 0.41 0.34 }
 	religion = confucian
-	traits = { korean_language east_asian_heritage }
+	heritage = heritage_korean
+	language = language_korean
+
+	obsessions = {
+		liquor
+	}
+
+	traditions = { tradition_sinosphere }
 	male_common_first_names = {
 		Bong-haek
 		Chwa-chin
@@ -438,7 +445,14 @@ korean={
 manchu={
 	color= rgb{ 233 207 84 }
 	religion = confucian
-	traits = { sinosphere north_asian_heritage }
+	heritage = heritage_manchu
+	language = language_jurchenic
+
+	obsessions = {
+		tea
+	}
+
+	traditions = { tradition_sinosphere }
 	male_common_first_names = {
 		Hesehn
 		Mingzhu
@@ -622,7 +636,9 @@ manchu={
 han={
 	color= rgb{ 190 80 48 }
 	religion = confucian
-	traits = { sinosphere han_chinese east_asian_heritage }
+	heritage = heritage_han
+	language = language_mandarin
+	traditions = { tradition_sinosphere }
 	obsessions = {
 		opium
 	}
@@ -1235,7 +1251,9 @@ han={
 hakka={
 	color= hsv{ 0.1 0.43 0.34 }
 	religion = confucian
-	traits = { han_chinese east_asian_heritage }
+	heritage = heritage_han
+	language = language_hakka
+	traditions = { tradition_sinosphere }
 	male_common_first_names = {
 		An
 		Fang
@@ -1712,7 +1730,14 @@ hakka={
 vietnamese={
 	color= hsv{ 0.31 0.37 0.48 }
 	religion = mahayana
-	traits = { sinosphere southeast_asian_heritage }
+	heritage = heritage_vietnamese
+	language = language_vietic
+
+	obsessions = {
+		coffee
+	}
+
+	traditions = { tradition_sinosphere }
 	male_common_first_names = {
 		Bui_An
 		Noang_Cao
@@ -2027,7 +2052,14 @@ vietnamese={
 mongol={
 	color= rgb{ 74 125 155 }
 	religion = gelugpa
-	traits = { north_asian_heritage mongol_language }
+	heritage = heritage_mongolian
+	language = language_mongolian
+
+	obsessions = {
+		meat
+	}
+
+	traditions = { }
 	male_common_first_names = {
 		Badamdorj
 		Batbayar
@@ -2152,7 +2184,9 @@ mongol={
 kalmyk={
 	color= rgb{ 250 182 3 }
 	religion = gelugpa
-	traits = { central_asian_heritage mongol_language }
+	heritage = heritage_mongolian
+	language = language_mongolian
+	traditions = { tradition_russosphere }
 	male_common_first_names = {
 		Badamdorj
 		Batbayar
